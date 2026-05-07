@@ -1,4 +1,4 @@
-import { localContent } from '@/lib/content/localContentRepository'
+import { getContentRepository } from '@/lib/content'
 import { notFound } from 'next/navigation'
 import { LearnPageClient } from './LearnPageClient'
 
@@ -7,7 +7,7 @@ interface LearnPageProps {
 }
 
 export default async function LearnPage({ params }: LearnPageProps) {
-  const node = await localContent.getNode(params.nodeId)
+  const node = await getContentRepository().getNode(params.nodeId)
 
   if (!node) {
     notFound()
