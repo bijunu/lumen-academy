@@ -15,11 +15,17 @@ interface TutorPanelProps {
   nodeId: string
   nodeTitle: string
   currentQuestionStem?: string
+  onHintConsumed?: (level: HintLevel) => void
 }
 
 const HINT_ESCALATION: HintLevel[] = ['nudge', 'partial', 'worked']
 
-export function TutorPanel({ nodeId, nodeTitle, currentQuestionStem }: TutorPanelProps) {
+export function TutorPanel({
+  nodeId,
+  nodeTitle,
+  currentQuestionStem,
+  onHintConsumed,
+}: TutorPanelProps) {
   const [messages, setMessages] = useState<TutorMessage[]>([
     {
       role: 'system',
@@ -63,6 +69,8 @@ export function TutorPanel({ nodeId, nodeTitle, currentQuestionStem }: TutorPane
         { role: 'tutor', content: result.message, hintLevel: currentLevel },
       ])
 
+      onHintConsumed?.(currentLevel)
+
       if (result.shouldOfferBreak) {
         setMessages(prev => [
           ...prev,
@@ -82,7 +90,16 @@ export function TutorPanel({ nodeId, nodeTitle, currentQuestionStem }: TutorPane
     } finally {
       setLoading(false)
     }
-  }, [currentQuestionStem, loading, currentLevel, messages, nodeId, nodeTitle, hintIndex])
+  }, [
+    currentQuestionStem,
+    loading,
+    currentLevel,
+    messages,
+    nodeId,
+    nodeTitle,
+    hintIndex,
+    onHintConsumed,
+  ])
 
   return (
     <div className="flex h-full flex-col">

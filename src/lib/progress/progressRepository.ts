@@ -6,6 +6,8 @@ import {
   SESSION_RECORDS_COLLECTION,
 } from '@/lib/db/ensureIndexes'
 import { getMongoDb } from '@/lib/db/mongoClient'
+import { qualityFromAttempt } from '@/lib/mastery/qualityFromAttempt'
+import { scheduleNext } from '@/lib/mastery/sm2'
 import type {
   Attempt,
   NodeProgress,
@@ -44,12 +46,25 @@ export function applyAttempt(
   progress: NodeProgress,
   attempt: Attempt
 ): NodeProgress {
+  const quality = qualityFromAttempt({
+    correct: attempt.correct,
+    attemptCount: attempt.attemptCount,
+    hintLevel: attempt.hintLevel,
+  })
+  const scheduled = scheduleNext(progress.sm2, quality, attempt.answeredAt)
+
   return {
     ...progress,
     totalAttempts: progress.totalAttempts + 1,
     totalCorrect: progress.totalCorrect + (attempt.correct ? 1 : 0),
     correctStreak: attempt.correct ? progress.correctStreak + 1 : 0,
     lastAttemptAt: attempt.answeredAt,
+    sm2: {
+      interval: scheduled.interval,
+      repetition: scheduled.repetition,
+      easeFactor: scheduled.easeFactor,
+    },
+    nextReviewAt: scheduled.nextReviewAt,
   }
 }
 

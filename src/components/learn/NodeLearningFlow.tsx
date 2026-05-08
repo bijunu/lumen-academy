@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { useSession } from 'next-auth/react'
 import type { SkillNode } from '@/types/content'
+import type { HintLevel } from '@/types/tutor'
 import { FractionWall } from '@/components/scenes/FractionWall'
 import { WorkedExample } from './WorkedExample'
 import { QuestionShell } from '@/components/questions/QuestionShell'
@@ -15,9 +16,14 @@ type FlowPhase = 'scenes' | 'worked-examples' | 'questions' | 'summary'
 interface NodeLearningFlowProps {
   node: SkillNode
   onRequestHint: (questionStem: string) => void
+  lookupHintLevel?: (questionStem: string) => HintLevel | undefined
 }
 
-export function NodeLearningFlow({ node, onRequestHint }: NodeLearningFlowProps) {
+export function NodeLearningFlow({
+  node,
+  onRequestHint,
+  lookupHintLevel,
+}: NodeLearningFlowProps) {
   const [phase, setPhase] = useState<FlowPhase>('scenes')
   const [sceneIndex, setSceneIndex] = useState(0)
   const [exampleIndex, setExampleIndex] = useState(0)
@@ -51,11 +57,13 @@ export function NodeLearningFlow({ node, onRequestHint }: NodeLearningFlowProps)
       tracker.recordAnswer(correct, question.xpValue, attemptCount)
 
       if (status === 'authenticated') {
+        const hintLevel = lookupHintLevel?.(question.stem)
         void postAttempt({
           nodeId: node.id,
           questionId: question.id,
           correct,
           attemptCount,
+          ...(hintLevel ? { hintLevel } : {}),
         })
       }
 
@@ -65,7 +73,7 @@ export function NodeLearningFlow({ node, onRequestHint }: NodeLearningFlowProps)
         setPhase('summary')
       }
     },
-    [questionIndex, node.id, node.questions, status, tracker]
+    [questionIndex, node.id, node.questions, status, tracker, lookupHintLevel]
   )
 
   useEffect(() => {

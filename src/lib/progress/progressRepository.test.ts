@@ -92,12 +92,31 @@ describe('applyAttempt', () => {
     expect(next.totalCorrect).toBe(4)
   })
 
-  it('leaves sm2, mastery, and nextReviewAt unchanged', () => {
+  it('advances sm2 and stamps nextReviewAt on a correct attempt', () => {
+    const base = freshProgress(userId, nodeId)
+    const at = new Date('2026-05-08T12:00:00Z')
+    const next = applyAttempt(base, makeAttempt({ answeredAt: at }))
+    expect(next.sm2.repetition).toBe(1)
+    expect(next.sm2.interval).toBe(1)
+    expect(next.nextReviewAt).toEqual(
+      new Date(at.getTime() + 24 * 60 * 60 * 1000)
+    )
+  })
+
+  it('resets sm2 repetition on an incorrect attempt', () => {
+    const base: NodeProgress = {
+      ...freshProgress(userId, nodeId),
+      sm2: { interval: 6, repetition: 2, easeFactor: 2.5 },
+    }
+    const next = applyAttempt(base, makeAttempt({ correct: false }))
+    expect(next.sm2.repetition).toBe(0)
+    expect(next.sm2.interval).toBe(1)
+  })
+
+  it('leaves mastery unchanged (deferred to gamification phase)', () => {
     const base = freshProgress(userId, nodeId)
     const next = applyAttempt(base, makeAttempt())
-    expect(next.sm2).toEqual(base.sm2)
     expect(next.mastery).toBe(base.mastery)
-    expect(next.nextReviewAt).toBeNull()
   })
 
   it('stamps lastAttemptAt from the attempt', () => {
