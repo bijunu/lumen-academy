@@ -206,7 +206,9 @@ export function NodeLearningFlow({
 
   return (
     <SessionSummary
+      nodeId={node.id}
       nodeTitle={node.title}
+      realm={node.realm}
       questionsAttempted={tracker.questionsAttempted}
       questionsCorrect={tracker.questionsCorrect}
       xpEarned={tracker.xpEarned}

@@ -37,6 +37,12 @@ export interface ProgressRepository {
   listTouchedNodeIds(userId: string): Promise<string[]>
   listAllProgress(userId: string): Promise<NodeProgress[]>
   listSessionDays(userId: string, sinceDays: number, now?: Date): Promise<string[]>
+  listAttemptsForNode(
+    userId: string,
+    nodeId: string,
+    sinceDays: number,
+    now?: Date
+  ): Promise<Attempt[]>
 }
 
 export function freshProgress(userId: string, nodeId: string): NodeProgress {
@@ -174,6 +180,24 @@ export class MongoProgressRepository implements ProgressRepository {
       days.add(utcDayKey(new Date(row.startedAt)))
     }
     return Array.from(days)
+  }
+
+  async listAttemptsForNode(
+    userId: string,
+    nodeId: string,
+    sinceDays: number,
+    now: Date = new Date()
+  ): Promise<Attempt[]> {
+    const db = await this.dbPromise
+    const cutoff = new Date(now.getTime() - sinceDays * 24 * 60 * 60 * 1000)
+    return db
+      .collection<Attempt>(ATTEMPTS_COLLECTION)
+      .find(
+        { userId, nodeId, answeredAt: { $gte: cutoff } },
+        { projection: { _id: 0 } }
+      )
+      .sort({ answeredAt: 1 })
+      .toArray()
   }
 }
 

@@ -2,9 +2,13 @@
 
 import Link from 'next/link'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { NodeTrend } from '@/components/progress/NodeTrend'
+import type { RealmId } from '@/lib/constants/realms'
 
 interface SessionSummaryProps {
+  nodeId: string
   nodeTitle: string
+  realm: RealmId
   questionsAttempted: number
   questionsCorrect: number
   xpEarned: number
@@ -12,7 +16,9 @@ interface SessionSummaryProps {
 }
 
 export function SessionSummary({
+  nodeId,
   nodeTitle,
+  realm,
   questionsAttempted,
   questionsCorrect,
   xpEarned,
@@ -50,6 +56,8 @@ export function SessionSummary({
             <p className="text-xs text-muted-foreground">Best Streak</p>
           </div>
         </div>
+
+        <NodeTrend nodeId={nodeId} realm={realm} />
 
         <Link
           href="/"

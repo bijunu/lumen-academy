@@ -248,6 +248,36 @@ describe('MongoProgressRepository', () => {
     expect(due[0].userId).toBe(userId)
   })
 
+  it('listAttemptsForNode returns this user/node within the window in ascending order', async () => {
+    const otherUserId = 'user-2'
+    const inWindow = new Date('2026-05-08T00:00:00Z')
+    const earlier = new Date('2026-05-07T00:00:00Z')
+    const stale = new Date('2026-04-01T00:00:00Z')
+    await db.collection<Attempt>(ATTEMPTS_COLLECTION).insertMany([
+      makeAttempt({ answeredAt: inWindow, questionId: 'q1' }),
+      makeAttempt({ answeredAt: earlier, questionId: 'q2' }),
+      makeAttempt({ answeredAt: stale, questionId: 'q3' }),
+      makeAttempt({
+        answeredAt: inWindow,
+        nodeId: 'other-node',
+        questionId: 'q4',
+      }),
+      makeAttempt({
+        userId: otherUserId,
+        answeredAt: inWindow,
+        questionId: 'q5',
+      }),
+    ])
+
+    const out = await repo.listAttemptsForNode(
+      userId,
+      nodeId,
+      10,
+      new Date('2026-05-09T00:00:00Z')
+    )
+    expect(out.map(a => a.questionId)).toEqual(['q2', 'q1'])
+  })
+
   it('listAllProgress returns every row for the user', async () => {
     const otherUserId = 'user-2'
     const rows: NodeProgress[] = [
