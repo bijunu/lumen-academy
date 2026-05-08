@@ -7,6 +7,7 @@ export const CONTENT_ZONES_COLLECTION = 'content_zones'
 export const NODE_PROGRESS_COLLECTION = 'node_progress'
 export const SESSION_RECORDS_COLLECTION = 'session_records'
 export const ATTEMPTS_COLLECTION = 'attempts'
+export const SCHOLAR_PROFILES_COLLECTION = 'scholar_profiles'
 
 export async function ensureIndexes(db: Db): Promise<void> {
   const nodes = db.collection(CONTENT_NODES_COLLECTION)
@@ -27,6 +28,9 @@ export async function ensureIndexes(db: Db): Promise<void> {
 
   const attempts = db.collection(ATTEMPTS_COLLECTION)
   await attempts.createIndex({ userId: 1, nodeId: 1, answeredAt: -1 })
+
+  const scholarProfiles = db.collection(SCHOLAR_PROFILES_COLLECTION)
+  await scholarProfiles.createIndex({ userId: 1 }, { unique: true })
 
   const parentTokens = db.collection(PARENT_TOKENS_COLLECTION)
   await parentTokens.createIndex({ token: 1 }, { unique: true })

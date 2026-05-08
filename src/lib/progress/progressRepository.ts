@@ -11,10 +11,16 @@ import { scheduleNext } from '@/lib/mastery/sm2'
 import { upgradeMastery } from '@/lib/mastery/upgradeMastery'
 import type {
   Attempt,
+  MasteryLevel,
   NodeProgress,
   SessionRecord,
   SpacedRepetitionCard,
 } from '@/types/progress'
+
+export interface UpsertAttemptResult {
+  progress: NodeProgress
+  previousMastery: MasteryLevel
+}
 
 const DEFAULT_SM2: SpacedRepetitionCard = {
   interval: 0,
@@ -24,7 +30,7 @@ const DEFAULT_SM2: SpacedRepetitionCard = {
 
 export interface ProgressRepository {
   getNodeProgress(userId: string, nodeId: string): Promise<NodeProgress | null>
-  upsertAttempt(attempt: Attempt): Promise<NodeProgress>
+  upsertAttempt(attempt: Attempt): Promise<UpsertAttemptResult>
   recordSession(record: SessionRecord): Promise<void>
   listDueReviews(userId: string, now?: Date): Promise<NodeProgress[]>
 }
@@ -87,7 +93,7 @@ export class MongoProgressRepository implements ProgressRepository {
       .findOne({ userId, nodeId }, { projection: { _id: 0 } })
   }
 
-  async upsertAttempt(attempt: Attempt): Promise<NodeProgress> {
+  async upsertAttempt(attempt: Attempt): Promise<UpsertAttemptResult> {
     const db = await this.dbPromise
 
     await db.collection<Attempt>(ATTEMPTS_COLLECTION).insertOne({ ...attempt })
@@ -104,7 +110,7 @@ export class MongoProgressRepository implements ProgressRepository {
         { upsert: true }
       )
 
-    return next
+    return { progress: next, previousMastery: base.mastery }
   }
 
   async recordSession(record: SessionRecord): Promise<void> {

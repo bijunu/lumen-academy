@@ -1,22 +1,29 @@
 import type { RealmId } from '@/lib/constants/realms'
 
-export interface ScholarProfile {
-  userId: string
-  displayName: string
-  avatarConfig: Record<string, string>
-  companionLevel: number
-  overallRank: number
-  realmRanks: Record<RealmId, number>
-  currencies: Currency
-  badges: Badge[]
-  streakDays: number
-  lastActiveDate: string
-  autoFreezeAvailable: boolean
-}
-
 export interface Currency {
   insight: number
   spark: number
+}
+
+export interface ScholarProfile {
+  userId: string
+  xpTotal: number
+  xpByRealm: Record<RealmId, number>
+  currencies: Currency
+  updatedAt: Date | null
+}
+
+export interface ScholarUpdate {
+  realm: RealmId
+  xpDelta: number
+  insightDelta: number
+  sparkDelta: number
+  occurredAt: Date
+}
+
+export interface ScholarRanks {
+  overall: number
+  byRealm: Record<RealmId, number>
 }
 
 export type BadgeId =
@@ -38,12 +45,4 @@ export interface Badge {
   name: string
   description: string
   earnedAt: Date | null
-}
-
-export interface XPEvent {
-  nodeId: string
-  questionId: string
-  xp: number
-  reason: 'correct' | 'first-try' | 'streak-bonus' | 'challenge-tier' | 'boss-defeat'
-  timestamp: Date
 }

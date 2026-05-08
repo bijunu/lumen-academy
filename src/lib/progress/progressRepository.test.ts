@@ -152,21 +152,32 @@ describe('MongoProgressRepository', () => {
 
   it('creates progress on the first upsertAttempt', async () => {
     const result = await repo.upsertAttempt(makeAttempt({ correct: true }))
-    expect(result.totalAttempts).toBe(1)
-    expect(result.correctStreak).toBe(1)
+    expect(result.progress.totalAttempts).toBe(1)
+    expect(result.progress.correctStreak).toBe(1)
+    expect(result.previousMastery).toBe('none')
 
     const stored = await repo.getNodeProgress(userId, nodeId)
     expect(stored?.totalAttempts).toBe(1)
     expect(stored?.correctStreak).toBe(1)
   })
 
+  it('exposes previousMastery so callers can detect upgrade boundaries', async () => {
+    const first = await repo.upsertAttempt(makeAttempt({ questionId: 'q1' }))
+    expect(first.previousMastery).toBe('none')
+    expect(first.progress.mastery).toBe('bronze')
+
+    const second = await repo.upsertAttempt(makeAttempt({ questionId: 'q2' }))
+    expect(second.previousMastery).toBe('bronze')
+    expect(second.progress.mastery).toBe('silver')
+  })
+
   it('grows streak across consecutive correct attempts', async () => {
     await repo.upsertAttempt(makeAttempt({ questionId: 'q1' }))
     await repo.upsertAttempt(makeAttempt({ questionId: 'q2' }))
     const final = await repo.upsertAttempt(makeAttempt({ questionId: 'q3' }))
-    expect(final.correctStreak).toBe(3)
-    expect(final.totalCorrect).toBe(3)
-    expect(final.totalAttempts).toBe(3)
+    expect(final.progress.correctStreak).toBe(3)
+    expect(final.progress.totalCorrect).toBe(3)
+    expect(final.progress.totalAttempts).toBe(3)
   })
 
   it('resets streak when an attempt is wrong', async () => {
@@ -175,9 +186,9 @@ describe('MongoProgressRepository', () => {
     const after = await repo.upsertAttempt(
       makeAttempt({ questionId: 'q3', correct: false })
     )
-    expect(after.correctStreak).toBe(0)
-    expect(after.totalCorrect).toBe(2)
-    expect(after.totalAttempts).toBe(3)
+    expect(after.progress.correctStreak).toBe(0)
+    expect(after.progress.totalCorrect).toBe(2)
+    expect(after.progress.totalAttempts).toBe(3)
   })
 
   it('persists each attempt to the attempts collection', async () => {

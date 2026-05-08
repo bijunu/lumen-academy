@@ -1,9 +1,12 @@
 import { NextResponse } from 'next/server'
 
 import { auth } from '@/lib/auth/authOptions'
+import { getContentRepository } from '@/lib/content'
 import { logger } from '@/lib/logger'
+import { xpForAttempt } from '@/lib/gamification/xpForAttempt'
 import { getProgressRepository } from '@/lib/progress/progressRepository'
 import { attemptWriteSchema } from '@/lib/progress/schemas'
+import { getScholarRepository } from '@/lib/scholar/scholarRepository'
 import type { Attempt } from '@/types/progress'
 
 export const runtime = 'nodejs'
@@ -29,14 +32,42 @@ export async function POST(request: Request) {
     )
   }
 
+  const answeredAt = new Date()
   const attempt: Attempt = {
     ...parsed.data,
     userId: session.user.id,
-    answeredAt: new Date(),
+    answeredAt,
   }
 
   try {
-    const progress = await getProgressRepository().upsertAttempt(attempt)
+    const { progress, previousMastery } =
+      await getProgressRepository().upsertAttempt(attempt)
+
+    const node = await getContentRepository().getNode(attempt.nodeId)
+    const question = node?.questions.find(q => q.id === attempt.questionId)
+
+    if (node && question) {
+      const xpDelta = attempt.correct
+        ? xpForAttempt({
+            baseXp: question.xpValue,
+            tier: question.tier,
+            firstTry: attempt.attemptCount === 1,
+          })
+        : 0
+      const insightDelta = attempt.correct ? 1 : 0
+      const sparkDelta = progress.mastery !== previousMastery ? 1 : 0
+
+      if (xpDelta > 0 || insightDelta > 0 || sparkDelta > 0) {
+        await getScholarRepository().applyUpdate(session.user.id, {
+          realm: node.realm,
+          xpDelta,
+          insightDelta,
+          sparkDelta,
+          occurredAt: answeredAt,
+        })
+      }
+    }
+
     return NextResponse.json(progress)
   } catch (err) {
     logger.error('progress.attempt.failed', { err })

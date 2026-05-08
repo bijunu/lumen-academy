@@ -22,6 +22,10 @@ vi.mock('@/components/providers/ThemeProvider', () => ({
   }),
 }))
 
+vi.mock('next-auth/react', () => ({
+  useSession: () => ({ status: 'unauthenticated', data: null }),
+}))
+
 describe('AppShell', () => {
   it('renders sidebar, main content, and right rail', () => {
     const { getByTestId, getByText } = render(
