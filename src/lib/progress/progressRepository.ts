@@ -9,6 +9,7 @@ import { getMongoDb } from '@/lib/db/mongoClient'
 import { qualityFromAttempt } from '@/lib/mastery/qualityFromAttempt'
 import { scheduleNext } from '@/lib/mastery/sm2'
 import { upgradeMastery } from '@/lib/mastery/upgradeMastery'
+import { utcDayKey } from '@/lib/time/utcDay'
 import type {
   Attempt,
   MasteryLevel,
@@ -34,6 +35,8 @@ export interface ProgressRepository {
   recordSession(record: SessionRecord): Promise<void>
   listDueReviews(userId: string, now?: Date): Promise<NodeProgress[]>
   listTouchedNodeIds(userId: string): Promise<string[]>
+  listAllProgress(userId: string): Promise<NodeProgress[]>
+  listSessionDays(userId: string, sinceDays: number, now?: Date): Promise<string[]>
 }
 
 export function freshProgress(userId: string, nodeId: string): NodeProgress {
@@ -142,6 +145,35 @@ export class MongoProgressRepository implements ProgressRepository {
       .find({ userId }, { projection: { _id: 0, nodeId: 1 } })
       .toArray()
     return rows.map(r => r.nodeId)
+  }
+
+  async listAllProgress(userId: string): Promise<NodeProgress[]> {
+    const db = await this.dbPromise
+    return db
+      .collection<NodeProgress>(NODE_PROGRESS_COLLECTION)
+      .find({ userId }, { projection: { _id: 0 } })
+      .toArray()
+  }
+
+  async listSessionDays(
+    userId: string,
+    sinceDays: number,
+    now: Date = new Date()
+  ): Promise<string[]> {
+    const db = await this.dbPromise
+    const cutoff = new Date(now.getTime() - sinceDays * 24 * 60 * 60 * 1000)
+    const rows = await db
+      .collection<{ startedAt: Date }>(SESSION_RECORDS_COLLECTION)
+      .find(
+        { userId, startedAt: { $gte: cutoff } },
+        { projection: { _id: 0, startedAt: 1 } }
+      )
+      .toArray()
+    const days = new Set<string>()
+    for (const row of rows) {
+      days.add(utcDayKey(new Date(row.startedAt)))
+    }
+    return Array.from(days)
   }
 }
 

@@ -247,4 +247,88 @@ describe('MongoProgressRepository', () => {
     expect(due[0].nodeId).toBe('node-due')
     expect(due[0].userId).toBe(userId)
   })
+
+  it('listAllProgress returns every row for the user', async () => {
+    const otherUserId = 'user-2'
+    const rows: NodeProgress[] = [
+      { ...freshProgress(userId, 'a'), mastery: 'bronze' },
+      { ...freshProgress(userId, 'b') },
+      { ...freshProgress(otherUserId, 'c') },
+    ]
+    await db
+      .collection<NodeProgress>(NODE_PROGRESS_COLLECTION)
+      .insertMany(rows.map(r => ({ ...r })))
+
+    const all = await repo.listAllProgress(userId)
+    expect(all.map(r => r.nodeId).sort()).toEqual(['a', 'b'])
+  })
+
+  it('listSessionDays returns distinct UTC days within the window', async () => {
+    const otherUserId = 'user-2'
+    const records: SessionRecord[] = [
+      {
+        id: 's1',
+        userId,
+        startedAt: new Date('2026-05-09T08:00:00Z'),
+        endedAt: null,
+        nodeIds: [],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      },
+      {
+        id: 's2',
+        userId,
+        startedAt: new Date('2026-05-09T20:00:00Z'),
+        endedAt: null,
+        nodeIds: [],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      },
+      {
+        id: 's3',
+        userId,
+        startedAt: new Date('2026-05-07T10:00:00Z'),
+        endedAt: null,
+        nodeIds: [],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      },
+      {
+        id: 's4',
+        userId,
+        startedAt: new Date('2026-04-01T10:00:00Z'),
+        endedAt: null,
+        nodeIds: [],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      },
+      {
+        id: 's5',
+        userId: otherUserId,
+        startedAt: new Date('2026-05-09T10:00:00Z'),
+        endedAt: null,
+        nodeIds: [],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      },
+    ]
+    for (const r of records) await repo.recordSession(r)
+
+    const days = await repo.listSessionDays(
+      userId,
+      14,
+      new Date('2026-05-09T23:59:59Z')
+    )
+    expect(days.sort()).toEqual(['2026-05-07', '2026-05-09'])
+  })
 })
