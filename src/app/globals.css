@@ -93,3 +93,36 @@
   font-style: normal;
   font-display: swap;
 }
+
+@keyframes companion-pulse-core {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes companion-pulse-halo {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.companion-creature-svg {
+  transform-box: fill-box;
+}
+
+.companion-creature-core {
+  animation: companion-pulse-core 4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.companion-creature-halo {
+  animation: companion-pulse-halo 4s ease-in-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .companion-creature-core,
+  .companion-creature-halo {
+    animation: none;
+  }
+}

@@ -9,7 +9,7 @@ import { getProgressRepository } from '@/lib/progress/progressRepository'
 import { attemptWriteSchema } from '@/lib/progress/schemas'
 import { getScholarRepository } from '@/lib/scholar/scholarRepository'
 import type { Attempt } from '@/types/progress'
-import type { ScholarCounters } from '@/types/gamification'
+import type { BadgeId, ScholarCounters } from '@/types/gamification'
 
 export const runtime = 'nodejs'
 
@@ -47,6 +47,8 @@ export async function POST(request: Request) {
 
     const node = await getContentRepository().getNode(attempt.nodeId)
     const question = node?.questions.find(q => q.id === attempt.questionId)
+
+    let badgeUnlocks: BadgeId[] = []
 
     if (node && question) {
       const xpDelta = attempt.correct
@@ -99,11 +101,17 @@ export async function POST(request: Request) {
             newlyEarned,
             answeredAt
           )
+          badgeUnlocks = newlyEarned
         }
       }
     }
 
-    return NextResponse.json(progress)
+    return NextResponse.json({
+      progress,
+      badgeUnlocks,
+      masteryUpgraded: progress.mastery !== previousMastery,
+      previousMastery,
+    })
   } catch (err) {
     logger.error('progress.attempt.failed', { err })
     return NextResponse.json({ error: 'persistence-failed' }, { status: 500 })

@@ -10,6 +10,7 @@ import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
 import { postAttempt, postSession } from '@/lib/progress/client'
+import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
 
 type FlowPhase = 'scenes' | 'worked-examples' | 'questions' | 'summary'
 
@@ -30,6 +31,7 @@ export function NodeLearningFlow({
   const [questionIndex, setQuestionIndex] = useState(0)
   const tracker = useSessionTracker()
   const { status } = useSession()
+  const { celebrate } = useRewardCelebration()
   const startedAtRef = useRef<Date>(new Date())
   const sessionPostedRef = useRef(false)
 
@@ -58,12 +60,24 @@ export function NodeLearningFlow({
 
       if (status === 'authenticated') {
         const hintLevel = lookupHintLevel?.(question.stem)
-        void postAttempt({
+        postAttempt({
           nodeId: node.id,
           questionId: question.id,
           correct,
           attemptCount,
           ...(hintLevel ? { hintLevel } : {}),
+        }).then(response => {
+          if (!response) return
+          if (response.masteryUpgraded) {
+            celebrate({
+              type: 'mastery-upgrade',
+              level: response.progress.mastery,
+              nodeTitle: node.title,
+            })
+          }
+          for (const badgeId of response.badgeUnlocks) {
+            celebrate({ type: 'badge-unlock', badgeId })
+          }
         })
       }
 
@@ -73,7 +87,16 @@ export function NodeLearningFlow({
         setPhase('summary')
       }
     },
-    [questionIndex, node.id, node.questions, status, tracker, lookupHintLevel]
+    [
+      questionIndex,
+      node.id,
+      node.title,
+      node.questions,
+      status,
+      tracker,
+      lookupHintLevel,
+      celebrate,
+    ]
   )
 
   useEffect(() => {

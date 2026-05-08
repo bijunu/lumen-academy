@@ -2,6 +2,7 @@
 
 import { RightRailProvider } from '@/contexts/RightRailContext'
 import { AppShell } from '@/components/layout/AppShell'
+import { RewardCelebrationProvider } from '@/components/celebration/RewardCelebration'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 
 export default function LearnerLayout({ children }: { children: React.ReactNode }) {
@@ -9,7 +10,9 @@ export default function LearnerLayout({ children }: { children: React.ReactNode 
 
   return (
     <RightRailProvider>
-      <AppShell>{children}</AppShell>
+      <RewardCelebrationProvider>
+        <AppShell>{children}</AppShell>
+      </RewardCelebrationProvider>
     </RightRailProvider>
   )
 }

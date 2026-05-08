@@ -11,6 +11,10 @@ vi.mock('next-auth/react', () => ({
   useSession: () => ({ status: 'unauthenticated', data: null }),
 }))
 
+vi.mock('@/components/celebration/RewardCelebration', () => ({
+  useRewardCelebration: () => ({ celebrate: vi.fn() }),
+}))
+
 describe('NodeLearningFlow', () => {
   it('starts with the first scene', () => {
     const { getByText } = render(

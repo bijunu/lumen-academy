@@ -2,6 +2,7 @@ import { type ReactNode } from 'react'
 import { Sidebar } from './Sidebar'
 import { RightRail } from './RightRail'
 import { TopBar } from './TopBar'
+import { CompanionCreature } from '@/components/companion/CompanionCreature'
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -14,6 +15,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         </main>
       </div>
       <RightRail />
+      <CompanionCreature />
     </div>
   )
 }
