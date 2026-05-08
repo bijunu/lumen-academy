@@ -43,6 +43,11 @@ export interface ProgressRepository {
     sinceDays: number,
     now?: Date
   ): Promise<Attempt[]>
+  listSessionsInWindow(
+    userId: string,
+    start: Date,
+    end: Date
+  ): Promise<SessionRecord[]>
 }
 
 export function freshProgress(userId: string, nodeId: string): NodeProgress {
@@ -197,6 +202,22 @@ export class MongoProgressRepository implements ProgressRepository {
         { projection: { _id: 0 } }
       )
       .sort({ answeredAt: 1 })
+      .toArray()
+  }
+
+  async listSessionsInWindow(
+    userId: string,
+    start: Date,
+    end: Date
+  ): Promise<SessionRecord[]> {
+    const db = await this.dbPromise
+    return db
+      .collection<SessionRecord>(SESSION_RECORDS_COLLECTION)
+      .find(
+        { userId, startedAt: { $gte: start, $lt: end } },
+        { projection: { _id: 0 } }
+      )
+      .sort({ startedAt: 1 })
       .toArray()
   }
 }

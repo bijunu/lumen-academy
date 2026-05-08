@@ -248,6 +248,61 @@ describe('MongoProgressRepository', () => {
     expect(due[0].userId).toBe(userId)
   })
 
+  it('listSessionsInWindow returns this user sessions in [start,end) ordered by startedAt', async () => {
+    const otherUserId = 'user-2'
+    function baseRecord() {
+      return {
+        endedAt: null,
+        nodeIds: [] as string[],
+        questionsAttempted: 0,
+        questionsCorrect: 0,
+        xpEarned: 0,
+        masteryChanges: [],
+      }
+    }
+
+    const records: SessionRecord[] = [
+      {
+        ...baseRecord(),
+        id: 's-in-1',
+        userId,
+        startedAt: new Date('2026-05-04T12:00:00Z'),
+      },
+      {
+        ...baseRecord(),
+        id: 's-in-2',
+        userId,
+        startedAt: new Date('2026-05-09T08:00:00Z'),
+      },
+      {
+        ...baseRecord(),
+        id: 's-before',
+        userId,
+        startedAt: new Date('2026-04-25T12:00:00Z'),
+      },
+      {
+        ...baseRecord(),
+        id: 's-after',
+        userId,
+        startedAt: new Date('2026-05-10T00:00:00Z'),
+      },
+      {
+        ...baseRecord(),
+        id: 's-other',
+        userId: otherUserId,
+        startedAt: new Date('2026-05-05T12:00:00Z'),
+      },
+    ]
+    for (const r of records) await repo.recordSession(r)
+
+    const out = await repo.listSessionsInWindow(
+      userId,
+      new Date('2026-05-03T00:00:00Z'),
+      new Date('2026-05-10T00:00:00Z')
+    )
+    expect(out.map(s => s.id)).toEqual(['s-in-1', 's-in-2'])
+  })
+
   it('listAttemptsForNode returns this user/node within the window in ascending order', async () => {
     const otherUserId = 'user-2'
     const inWindow = new Date('2026-05-08T00:00:00Z')
