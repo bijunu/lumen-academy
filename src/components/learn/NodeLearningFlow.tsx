@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import { useSession } from 'next-auth/react'
 import type { SkillNode } from '@/types/content'
 import { FractionWall } from '@/components/scenes/FractionWall'
 import { WorkedExample } from './WorkedExample'
 import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
+import { postAttempt, postSession } from '@/lib/progress/client'
 
 type FlowPhase = 'scenes' | 'worked-examples' | 'questions' | 'summary'
 
@@ -21,6 +23,9 @@ export function NodeLearningFlow({ node, onRequestHint }: NodeLearningFlowProps)
   const [exampleIndex, setExampleIndex] = useState(0)
   const [questionIndex, setQuestionIndex] = useState(0)
   const tracker = useSessionTracker()
+  const { status } = useSession()
+  const startedAtRef = useRef<Date>(new Date())
+  const sessionPostedRef = useRef(false)
 
   const advanceScene = useCallback(() => {
     if (sceneIndex < node.scenes.length - 1) {
@@ -45,14 +50,46 @@ export function NodeLearningFlow({ node, onRequestHint }: NodeLearningFlowProps)
       const question = node.questions[questionIndex]
       tracker.recordAnswer(correct, question.xpValue, attemptCount)
 
+      if (status === 'authenticated') {
+        void postAttempt({
+          nodeId: node.id,
+          questionId: question.id,
+          correct,
+          attemptCount,
+        })
+      }
+
       if (questionIndex < node.questions.length - 1) {
         setQuestionIndex(prev => prev + 1)
       } else {
         setPhase('summary')
       }
     },
-    [questionIndex, node.questions, tracker]
+    [questionIndex, node.id, node.questions, status, tracker]
   )
+
+  useEffect(() => {
+    if (phase !== 'summary') return
+    if (status !== 'authenticated') return
+    if (sessionPostedRef.current) return
+    sessionPostedRef.current = true
+    void postSession({
+      startedAt: startedAtRef.current,
+      endedAt: new Date(),
+      nodeIds: [node.id],
+      questionsAttempted: tracker.questionsAttempted,
+      questionsCorrect: tracker.questionsCorrect,
+      xpEarned: tracker.xpEarned,
+      masteryChanges: [],
+    })
+  }, [
+    phase,
+    status,
+    node.id,
+    tracker.questionsAttempted,
+    tracker.questionsCorrect,
+    tracker.xpEarned,
+  ])
 
   if (phase === 'scenes') {
     const scene = node.scenes[sceneIndex]

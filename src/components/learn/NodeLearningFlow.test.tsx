@@ -7,6 +7,10 @@ vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn() }),
 }))
 
+vi.mock('next-auth/react', () => ({
+  useSession: () => ({ status: 'unauthenticated', data: null }),
+}))
+
 describe('NodeLearningFlow', () => {
   it('starts with the first scene', () => {
     const { getByText } = render(

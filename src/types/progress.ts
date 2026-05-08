@@ -1,4 +1,16 @@
+import type { HintLevel } from './tutor'
+
 export type MasteryLevel = 'none' | 'bronze' | 'silver' | 'gold' | 'platinum'
+
+export interface Attempt {
+  userId: string
+  nodeId: string
+  questionId: string
+  correct: boolean
+  attemptCount: number
+  hintLevel?: HintLevel
+  answeredAt: Date
+}
 
 export interface NodeProgress {
   nodeId: string

@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "seed": "tsx --env-file=.env.local scripts/seed-content.ts"
+    "seed": "tsx --env-file=.env.local scripts/seed-content.ts",
+    "ensure-indexes": "tsx --env-file=.env.local scripts/ensure-indexes.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.95.1",
@@ -33,7 +34,8 @@
     "nodemailer": "^7.0.13",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",
-    "tailwind-merge": "^2.5.0"
+    "tailwind-merge": "^2.5.0",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.0",

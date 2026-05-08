@@ -8,10 +8,13 @@
  */
 import { MongoClient } from 'mongodb'
 import { fractionsZoneNodes } from '../src/content/seed'
+import {
+  CONTENT_NODES_COLLECTION,
+  CONTENT_ZONES_COLLECTION,
+  ensureIndexes,
+} from '../src/lib/db/ensureIndexes'
 import type { SkillNode, Zone } from '../src/types/content'
 
-const NODES_COLLECTION = 'content_nodes'
-const ZONES_COLLECTION = 'content_zones'
 const DEFAULT_DB_NAME = 'lumen-academy'
 
 const allNodes: SkillNode[] = [...fractionsZoneNodes]
@@ -38,14 +41,10 @@ async function seed(): Promise<void> {
 
   try {
     const db = client.db(dbName)
-    const nodes = db.collection<SkillNode>(NODES_COLLECTION)
-    const zones = db.collection<Zone>(ZONES_COLLECTION)
+    const nodes = db.collection<SkillNode>(CONTENT_NODES_COLLECTION)
+    const zones = db.collection<Zone>(CONTENT_ZONES_COLLECTION)
 
-    await nodes.createIndex({ id: 1 }, { unique: true })
-    await nodes.createIndex({ zoneId: 1 })
-    await nodes.createIndex({ realm: 1 })
-    await zones.createIndex({ id: 1 }, { unique: true })
-    await zones.createIndex({ realm: 1 })
+    await ensureIndexes(db)
     console.info('[seed] Indexes ensured')
 
     let nodeCount = 0
