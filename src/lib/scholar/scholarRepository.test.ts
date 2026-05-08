@@ -88,4 +88,40 @@ describe('MongoScholarRepository', () => {
     const p = await repo.getProfile(userId)
     expect(p && '_id' in p).toBe(false)
   })
+
+  it('markBadgesEarned stamps timestamps for new badges', async () => {
+    const earnedAt = new Date('2026-05-08T13:00:00Z')
+    const result = await repo.markBadgesEarned(
+      userId,
+      ['polymath', 'deep-diver'],
+      earnedAt
+    )
+    expect(result.badges['polymath']).toEqual(earnedAt)
+    expect(result.badges['deep-diver']).toEqual(earnedAt)
+  })
+
+  it('markBadgesEarned preserves earlier earnedAt timestamps', async () => {
+    const first = new Date('2026-01-01T00:00:00Z')
+    const second = new Date('2026-05-08T13:00:00Z')
+    await repo.markBadgesEarned(userId, ['polymath'], first)
+    const after = await repo.markBadgesEarned(
+      userId,
+      ['polymath', 'deep-diver'],
+      second
+    )
+    expect(after.badges['polymath']).toEqual(first)
+    expect(after.badges['deep-diver']).toEqual(second)
+  })
+
+  it('markBadgesEarned creates a profile lazily if none exists', async () => {
+    const earnedAt = new Date('2026-05-08T13:00:00Z')
+    const result = await repo.markBadgesEarned(
+      'fresh-user',
+      ['polymath'],
+      earnedAt
+    )
+    expect(result.userId).toBe('fresh-user')
+    expect(result.badges['polymath']).toEqual(earnedAt)
+    expect(result.xpTotal).toBe(0)
+  })
 })

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Home, User, BookOpen, Users } from 'lucide-react'
+import { Home, User, BookOpen, Users, Award } from 'lucide-react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils'
 const NAV_ITEMS = [
   { href: '/', label: 'Home', icon: Home },
   { href: '/profile', label: 'Profile', icon: User },
+  { href: '/badges', label: 'Badges', icon: Award },
   { href: '/glossary', label: 'Glossary', icon: BookOpen },
   { href: '/parent', label: 'Parent', icon: Users },
 ] as const

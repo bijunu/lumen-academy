@@ -20,7 +20,58 @@ describe('freshScholarProfile', () => {
       elementia: 0,
       mechanica: 0,
     })
+    expect(p.counters).toEqual({
+      challengeCorrect: 0,
+      misconceptionCorrect: 0,
+      platinumCount: 0,
+      bouncedBackCount: 0,
+    })
+    expect(p.badges).toEqual({})
     expect(p.updatedAt).toBeNull()
+  })
+})
+
+describe('applyScholarUpdate counters', () => {
+  it('accumulates partial counter deltas without disturbing the others', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      counterDeltas: { challengeCorrect: 1, misconceptionCorrect: 1 },
+      occurredAt: NOW,
+    })
+    expect(p.counters.challengeCorrect).toBe(1)
+    expect(p.counters.misconceptionCorrect).toBe(1)
+    expect(p.counters.platinumCount).toBe(0)
+    expect(p.counters.bouncedBackCount).toBe(0)
+  })
+
+  it('leaves counters untouched when no counterDeltas provided', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 5,
+      insightDelta: 1,
+      sparkDelta: 0,
+      occurredAt: NOW,
+    })
+    expect(p.counters.challengeCorrect).toBe(0)
+    expect(p.counters.platinumCount).toBe(0)
+  })
+
+  it('preserves badges across updates', () => {
+    let p = freshScholarProfile('u1')
+    p = { ...p, badges: { 'deep-diver': new Date('2026-01-01T00:00:00Z') } }
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 5,
+      insightDelta: 1,
+      sparkDelta: 0,
+      occurredAt: NOW,
+    })
+    expect(p.badges['deep-diver']).toEqual(new Date('2026-01-01T00:00:00Z'))
   })
 })
 

@@ -24,6 +24,7 @@ describe('Sidebar', () => {
     const { getByText } = render(<Sidebar />)
     expect(getByText('Home')).toBeTruthy()
     expect(getByText('Profile')).toBeTruthy()
+    expect(getByText('Badges')).toBeTruthy()
     expect(getByText('Glossary')).toBeTruthy()
     expect(getByText('Parent')).toBeTruthy()
   })

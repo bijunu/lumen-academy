@@ -5,11 +5,20 @@ export interface Currency {
   spark: number
 }
 
+export interface ScholarCounters {
+  challengeCorrect: number
+  misconceptionCorrect: number
+  platinumCount: number
+  bouncedBackCount: number
+}
+
 export interface ScholarProfile {
   userId: string
   xpTotal: number
   xpByRealm: Record<RealmId, number>
   currencies: Currency
+  counters: ScholarCounters
+  badges: Partial<Record<BadgeId, Date>>
   updatedAt: Date | null
 }
 
@@ -18,6 +27,7 @@ export interface ScholarUpdate {
   xpDelta: number
   insightDelta: number
   sparkDelta: number
+  counterDeltas?: Partial<ScholarCounters>
   occurredAt: Date
 }
 
@@ -40,9 +50,9 @@ export type BadgeId =
   | 'misconception-hunter'
   | 'lumen-scholar'
 
-export interface Badge {
+export interface BadgeMeta {
   id: BadgeId
   name: string
   description: string
-  earnedAt: Date | null
+  earnable: boolean
 }
