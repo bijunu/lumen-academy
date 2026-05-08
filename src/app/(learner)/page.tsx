@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge'
 import { Skeleton } from '@/components/ui/skeleton'
 import { REALM_LIST } from '@/lib/constants/realms'
 import { ShortcutHelpOverlay } from '@/components/layout/ShortcutHelpOverlay'
+import { DailyChallengeCard } from '@/components/home/DailyChallengeCard'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 
 function StreakStrip() {
@@ -83,17 +84,7 @@ export default function HomePage() {
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Daily Challenge</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Skeleton className="h-16 w-full" />
-              <p className="mt-3 text-sm text-muted-foreground">
-                One bonus question for 25 XP. Refreshes daily.
-              </p>
-            </CardContent>
-          </Card>
+          <DailyChallengeCard />
 
           <Card>
             <CardHeader>

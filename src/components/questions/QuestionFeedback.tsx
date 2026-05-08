@@ -8,9 +8,15 @@ interface QuestionFeedbackProps {
   status: AnswerStatus
   misconception?: Misconception
   onNext: () => void
+  nextLabel?: string
 }
 
-export function QuestionFeedback({ status, misconception, onNext }: QuestionFeedbackProps) {
+export function QuestionFeedback({
+  status,
+  misconception,
+  onNext,
+  nextLabel,
+}: QuestionFeedbackProps) {
   if (status === 'unanswered') return null
 
   return (
@@ -36,7 +42,7 @@ export function QuestionFeedback({ status, misconception, onNext }: QuestionFeed
         onClick={onNext}
         className="mt-3 rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
       >
-        {status === 'correct' ? 'Next' : 'Try Again'}
+        {nextLabel ?? (status === 'correct' ? 'Next' : 'Try Again')}
       </button>
     </div>
   )

@@ -1,6 +1,10 @@
 import { describe, expect, it } from 'vitest'
 
-import { attemptWriteSchema, sessionRecordWriteSchema } from './schemas'
+import {
+  attemptWriteSchema,
+  dailyChallengeAttemptSchema,
+  sessionRecordWriteSchema,
+} from './schemas'
 
 describe('attemptWriteSchema', () => {
   const valid = {
@@ -87,5 +91,26 @@ describe('sessionRecordWriteSchema', () => {
       nodeIds: [],
     })
     expect(result.success).toBe(false)
+  })
+})
+
+describe('dailyChallengeAttemptSchema', () => {
+  it('accepts a boolean correct value', () => {
+    expect(dailyChallengeAttemptSchema.safeParse({ correct: true }).success).toBe(
+      true
+    )
+    expect(
+      dailyChallengeAttemptSchema.safeParse({ correct: false }).success
+    ).toBe(true)
+  })
+
+  it('rejects when correct is missing', () => {
+    expect(dailyChallengeAttemptSchema.safeParse({}).success).toBe(false)
+  })
+
+  it('rejects when correct is not a boolean', () => {
+    expect(
+      dailyChallengeAttemptSchema.safeParse({ correct: 'yes' }).success
+    ).toBe(false)
   })
 })

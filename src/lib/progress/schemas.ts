@@ -43,3 +43,11 @@ export const sessionRecordWriteSchema = z
   })
 
 export type SessionRecordWriteInput = z.infer<typeof sessionRecordWriteSchema>
+
+export const dailyChallengeAttemptSchema = z.object({
+  correct: z.boolean(),
+})
+
+export type DailyChallengeAttemptInput = z.infer<
+  typeof dailyChallengeAttemptSchema
+>

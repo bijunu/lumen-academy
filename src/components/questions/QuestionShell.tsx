@@ -15,6 +15,7 @@ interface QuestionShellProps {
   misconceptions: Misconception[]
   onComplete: (correct: boolean, attemptCount: number) => void
   onHintRequest?: () => void
+  oneShot?: boolean
 }
 
 export function QuestionShell({
@@ -22,6 +23,7 @@ export function QuestionShell({
   misconceptions,
   onComplete,
   onHintRequest,
+  oneShot = false,
 }: QuestionShellProps) {
   const { selectedAnswer, status, attemptCount, showFeedback, submit, reset, setSelectedAnswer } =
     useQuestionState(question)
@@ -31,12 +33,12 @@ export function QuestionShell({
     : undefined
 
   const handleNext = useCallback(() => {
-    if (status === 'correct') {
-      onComplete(true, attemptCount)
+    if (oneShot || status === 'correct') {
+      onComplete(status === 'correct', attemptCount)
     } else {
       reset()
     }
-  }, [status, attemptCount, onComplete, reset])
+  }, [oneShot, status, attemptCount, onComplete, reset])
 
   const handleSubmitAnswer = useCallback(
     (answer: string | number) => {
@@ -99,6 +101,7 @@ export function QuestionShell({
           status={status}
           misconception={status === 'incorrect' ? activeMisconception : undefined}
           onNext={handleNext}
+          nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
         />
       )}
 
