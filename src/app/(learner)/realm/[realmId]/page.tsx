@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 
 import { auth } from '@/lib/auth/authOptions'
+import { getBossRepository } from '@/lib/boss/bossRepository'
 import { REALMS, type RealmId } from '@/lib/constants/realms'
 import { getContentRepository } from '@/lib/content'
 import { getProgressRepository } from '@/lib/progress/progressRepository'
@@ -28,6 +29,7 @@ export default async function RealmPage({ params }: RealmPageProps) {
   const realmNodes = allNodes.filter(n => n.realm === params.realmId)
 
   const progressByNodeId: Record<string, NodeProgress> = {}
+  let defeatedZoneIds: string[] = []
   const session = await auth()
   if (session?.user) {
     const progressRepo = getProgressRepository()
@@ -35,6 +37,10 @@ export default async function RealmPage({ params }: RealmPageProps) {
       const p = await progressRepo.getNodeProgress(session.user.id, node.id)
       if (p) progressByNodeId[node.id] = p
     }
+    const defeats = await getBossRepository().getDefeats(session.user.id)
+    defeatedZoneIds = defeats
+      .filter(d => d.realmId === params.realmId)
+      .map(d => d.zoneId)
   }
 
   return (
@@ -48,6 +54,7 @@ export default async function RealmPage({ params }: RealmPageProps) {
       <RealmMapClient
         nodes={realmNodes}
         progressByNodeId={progressByNodeId}
+        defeatedZoneIds={defeatedZoneIds}
         realmLabel={realm.label}
       />
     </div>

@@ -1,3 +1,4 @@
+import type { RealmZoneCoverage } from '@/lib/boss/realmCoverage'
 import {
   countQuestCompletionsInWindow,
   deriveRanks,
@@ -10,6 +11,10 @@ import type {
 
 const QUEST_KEEPER_WINDOW_DAYS = 14
 const QUEST_KEEPER_THRESHOLD = 10
+
+export interface BadgeEvalContext {
+  realmZoneCoverage?: RealmZoneCoverage
+}
 
 export const BADGES: readonly BadgeMeta[] = [
   {
@@ -46,13 +51,13 @@ export const BADGES: readonly BadgeMeta[] = [
     id: 'boss-tamer',
     name: 'Boss Tamer',
     description: 'Defeat your first boss.',
-    earnable: false,
+    earnable: true,
   },
   {
     id: 'realm-walker',
     name: 'Realm Walker',
-    description: 'Complete a full zone in any realm.',
-    earnable: false,
+    description: 'Defeat the boss in every zone of any realm.',
+    earnable: true,
   },
   {
     id: 'stretch-scholar',
@@ -97,7 +102,11 @@ export const BADGE_BY_ID: Readonly<Record<BadgeId, BadgeMeta>> =
     )
   )
 
-type BadgeRule = (profile: ScholarProfile, now: Date) => boolean
+type BadgeRule = (
+  profile: ScholarProfile,
+  now: Date,
+  ctx: BadgeEvalContext
+) => boolean
 
 const RULES: Record<BadgeId, BadgeRule> = {
   'first-light': () => false,
@@ -109,8 +118,15 @@ const RULES: Record<BadgeId, BadgeRule> = {
     p.xpByRealm.elementia > 0 &&
     p.xpByRealm.mechanica > 0,
   'deep-diver': p => p.counters.platinumCount >= 5,
-  'boss-tamer': () => false,
-  'realm-walker': () => false,
+  'boss-tamer': p => (p.counters.bossDefeats ?? 0) >= 1,
+  'realm-walker': (_p, _now, ctx) => {
+    const cov = ctx.realmZoneCoverage
+    if (!cov) return false
+    for (const r of Object.values(cov)) {
+      if (r.total > 0 && r.defeated >= r.total) return true
+    }
+    return false
+  },
   'stretch-scholar': p => p.counters.challengeCorrect >= 10,
   'steady-hand': () => false,
   'quest-keeper': (p, now) =>
@@ -133,13 +149,14 @@ const RULES: Record<BadgeId, BadgeRule> = {
 
 export function evaluateBadges(
   profile: ScholarProfile,
-  now: Date = new Date()
+  now: Date = new Date(),
+  ctx: BadgeEvalContext = {}
 ): BadgeId[] {
   const newly: BadgeId[] = []
   for (const meta of BADGES) {
     if (!meta.earnable) continue
     if (profile.badges[meta.id]) continue
-    if (RULES[meta.id](profile, now)) newly.push(meta.id)
+    if (RULES[meta.id](profile, now, ctx)) newly.push(meta.id)
   }
   return newly
 }

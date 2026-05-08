@@ -27,11 +27,17 @@ const TIER_COLOURS: Record<Tier, string> = {
   challenge: '#F97316',
 }
 
+export interface BossMarkerState {
+  eligible: boolean
+  defeated: boolean
+}
+
 interface SkillTreeMapProps {
   nodes: SkillNode[]
   layout: SkillTreeLayout
   lockStates: Map<string, LockState>
   masteryByNodeId?: Map<string, MasteryLevel>
+  bossesByZoneId?: Map<string, BossMarkerState>
   realmLabel: string
 }
 
@@ -40,6 +46,7 @@ export function SkillTreeMap({
   layout,
   lockStates,
   masteryByNodeId,
+  bossesByZoneId,
   realmLabel,
 }: SkillTreeMapProps) {
   const router = useRouter()
@@ -145,6 +152,46 @@ export function SkillTreeMap({
     router.push(`/learn/${id}`)
   }
 
+  const handleBossClick = (zoneId: string, state: BossMarkerState) => {
+    if (!state.eligible && !state.defeated) return
+    router.push(`/boss/${zoneId}`)
+  }
+
+  const bossMarkers: {
+    zoneId: string
+    x: number
+    y: number
+    state: BossMarkerState
+    zoneName: string
+  }[] = []
+  if (bossesByZoneId && bossesByZoneId.size > 0) {
+    const byZone = new Map<string, SkillNode[]>()
+    for (const node of nodes) {
+      const arr = byZone.get(node.zoneId) ?? []
+      arr.push(node)
+      byZone.set(node.zoneId, arr)
+    }
+    Array.from(byZone.entries()).forEach(([zoneId, zoneNodes]) => {
+      const state = bossesByZoneId.get(zoneId)
+      if (!state) return
+      let sumX = 0
+      let minY = Number.POSITIVE_INFINITY
+      for (const node of zoneNodes) {
+        sumX += cx(node.id)
+        minY = Math.min(minY, cy(node.id))
+      }
+      const avgX = sumX / Math.max(1, zoneNodes.length)
+      const markerY = minY - NODE_RADIUS - 56
+      bossMarkers.push({
+        zoneId,
+        x: avgX,
+        y: markerY,
+        state,
+        zoneName: zoneNodes[0]?.zoneName ?? zoneId,
+      })
+    })
+  }
+
   return (
     <div className="relative h-[calc(100vh-12rem)] overflow-hidden rounded-lg border bg-card">
       <svg
@@ -173,6 +220,48 @@ export function SkillTreeMap({
               strokeWidth={2}
             />
           ))}
+          {bossMarkers.map(marker => {
+            const interactive = marker.state.defeated || marker.state.eligible
+            const fill = marker.state.defeated
+              ? '#F59E0B'
+              : marker.state.eligible
+                ? '#A855F7'
+                : 'hsl(var(--muted-foreground))'
+            const ariaState = marker.state.defeated
+              ? 'defeated'
+              : marker.state.eligible
+                ? 'available'
+                : 'locked'
+            return (
+              <g
+                key={`boss-${marker.zoneId}`}
+                data-boss-marker={marker.zoneId}
+                data-boss-state={ariaState}
+                className={
+                  interactive ? 'cursor-pointer' : 'cursor-not-allowed'
+                }
+                opacity={interactive ? 1 : 0.55}
+                onClick={() => handleBossClick(marker.zoneId, marker.state)}
+                role={interactive ? 'link' : undefined}
+                aria-label={`${marker.zoneName} boss, ${ariaState}`}
+              >
+                <polygon
+                  points={`${marker.x},${marker.y - 14} ${marker.x + 12},${marker.y - 4} ${marker.x + 8},${marker.y + 12} ${marker.x - 8},${marker.y + 12} ${marker.x - 12},${marker.y - 4}`}
+                  fill={fill}
+                  stroke="hsl(var(--background))"
+                  strokeWidth={2}
+                />
+                <text
+                  x={marker.x}
+                  y={marker.y - 18}
+                  textAnchor="middle"
+                  className="fill-foreground text-[10px] font-semibold uppercase tracking-wide"
+                >
+                  Boss
+                </text>
+              </g>
+            )
+          })}
           {nodes.map(node => {
             const state = lockStates.get(node.id) ?? 'locked'
             const colour = TIER_COLOURS[node.tier]

@@ -15,6 +15,7 @@ export function freshScholarCounters(): ScholarCounters {
     misconceptionCorrect: 0,
     platinumCount: 0,
     bouncedBackCount: 0,
+    bossDefeats: 0,
   }
 }
 
@@ -31,6 +32,7 @@ export function freshScholarProfile(userId: string): ScholarProfile {
     currencies: { insight: 0, spark: 0 },
     counters: freshScholarCounters(),
     questCompletionDates: [],
+    defeatedZoneIds: [],
     badges: {},
     updatedAt: null,
   }
@@ -44,6 +46,10 @@ export function applyScholarUpdate(
   const questCompletionDates = mergeQuestCompletionDates(
     profile.questCompletionDates ?? [],
     update.questCompletedOn
+  )
+  const defeatedZoneIds = mergeDefeatedZoneIds(
+    profile.defeatedZoneIds ?? [],
+    update.bossZoneDefeated
   )
   return {
     ...profile,
@@ -59,8 +65,18 @@ export function applyScholarUpdate(
     },
     counters,
     questCompletionDates,
+    defeatedZoneIds,
     updatedAt: update.occurredAt,
   }
+}
+
+function mergeDefeatedZoneIds(
+  current: readonly string[],
+  next?: string
+): string[] {
+  if (!next) return [...current]
+  if (current.includes(next)) return [...current]
+  return [...current, next]
 }
 
 function mergeQuestCompletionDates(
@@ -112,6 +128,7 @@ function applyCounterDeltas(
       base.misconceptionCorrect + (deltas.misconceptionCorrect ?? 0),
     platinumCount: base.platinumCount + (deltas.platinumCount ?? 0),
     bouncedBackCount: base.bouncedBackCount + (deltas.bouncedBackCount ?? 0),
+    bossDefeats: (base.bossDefeats ?? 0) + (deltas.bossDefeats ?? 0),
   }
 }
 

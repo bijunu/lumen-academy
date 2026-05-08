@@ -10,6 +10,7 @@ export interface ScholarCounters {
   misconceptionCorrect: number
   platinumCount: number
   bouncedBackCount: number
+  bossDefeats: number
 }
 
 export interface ScholarProfile {
@@ -19,6 +20,7 @@ export interface ScholarProfile {
   currencies: Currency
   counters: ScholarCounters
   questCompletionDates: string[]
+  defeatedZoneIds: string[]
   badges: Partial<Record<BadgeId, Date>>
   updatedAt: Date | null
 }
@@ -30,6 +32,7 @@ export interface ScholarUpdate {
   sparkDelta: number
   counterDeltas?: Partial<ScholarCounters>
   questCompletedOn?: string
+  bossZoneDefeated?: string
   occurredAt: Date
 }
 

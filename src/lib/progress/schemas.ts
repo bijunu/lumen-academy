@@ -51,3 +51,17 @@ export const dailyChallengeAttemptSchema = z.object({
 export type DailyChallengeAttemptInput = z.infer<
   typeof dailyChallengeAttemptSchema
 >
+
+export const bossAttemptSchema = z.object({
+  answers: z
+    .array(
+      z.object({
+        nodeId: z.string().min(1),
+        questionId: z.string().min(1),
+        correct: z.boolean(),
+      })
+    )
+    .min(1),
+})
+
+export type BossAttemptInput = z.infer<typeof bossAttemptSchema>

@@ -24,7 +24,7 @@ export default async function BadgesPage() {
       <header>
         <h1 className="text-2xl font-bold tracking-tight">Badges</h1>
         <p className="text-sm text-muted-foreground">
-          Earned {earnedCount} of {totalEarnable} unlockable badges. Five more
+          Earned {earnedCount} of {totalEarnable} unlockable badges. Three more
           unlock as new game modes arrive.
         </p>
       </header>

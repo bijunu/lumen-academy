@@ -26,10 +26,55 @@ describe('freshScholarProfile', () => {
       misconceptionCorrect: 0,
       platinumCount: 0,
       bouncedBackCount: 0,
+      bossDefeats: 0,
     })
     expect(p.badges).toEqual({})
     expect(p.questCompletionDates).toEqual([])
+    expect(p.defeatedZoneIds).toEqual([])
     expect(p.updatedAt).toBeNull()
+  })
+})
+
+describe('applyScholarUpdate defeatedZoneIds', () => {
+  it('appends a new zone id', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      bossZoneDefeated: 'fractions',
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    })
+    expect(p.defeatedZoneIds).toEqual(['fractions'])
+  })
+
+  it('dedupes when the same zone id is recorded twice', () => {
+    let p = freshScholarProfile('u1')
+    const args = {
+      realm: 'numerica' as const,
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      bossZoneDefeated: 'fractions',
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    }
+    p = applyScholarUpdate(p, args)
+    p = applyScholarUpdate(p, args)
+    expect(p.defeatedZoneIds).toEqual(['fractions'])
+  })
+
+  it('accumulates bossDefeats counter delta', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      counterDeltas: { bossDefeats: 1 },
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    })
+    expect(p.counters.bossDefeats).toBe(1)
   })
 })
 

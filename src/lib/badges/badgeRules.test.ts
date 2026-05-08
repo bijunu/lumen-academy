@@ -17,7 +17,7 @@ describe('BADGES metadata', () => {
     expect(BADGES).toHaveLength(12)
   })
 
-  it('marks seven as earnable today', () => {
+  it('marks nine as earnable today', () => {
     const earnable = BADGES.filter(b => b.earnable).map(b => b.id)
     expect(earnable.sort()).toEqual(
       [
@@ -28,6 +28,8 @@ describe('BADGES metadata', () => {
         'misconception-hunter',
         'lumen-scholar',
         'quest-keeper',
+        'boss-tamer',
+        'realm-walker',
       ].sort()
     )
   })
@@ -126,14 +128,78 @@ describe('evaluateBadges', () => {
         misconceptionCorrect: 100,
         platinumCount: 100,
         bouncedBackCount: 100,
+        bossDefeats: 0,
       },
     })
     const newly = evaluateBadges(p)
     expect(newly).not.toContain('first-light')
     expect(newly).not.toContain('curious-mind')
-    expect(newly).not.toContain('boss-tamer')
-    expect(newly).not.toContain('realm-walker')
     expect(newly).not.toContain('steady-hand')
+  })
+})
+
+describe('boss-tamer rule', () => {
+  it('does not grant when bossDefeats is 0', () => {
+    const p = makeProfile()
+    expect(evaluateBadges(p)).not.toContain('boss-tamer')
+  })
+
+  it('grants on the first defeat', () => {
+    const p = makeProfile({
+      counters: { ...makeProfile().counters, bossDefeats: 1 },
+    })
+    expect(evaluateBadges(p)).toContain('boss-tamer')
+  })
+})
+
+describe('realm-walker rule', () => {
+  const NOW = new Date('2026-05-09T12:00:00Z')
+
+  it('does not grant when no coverage context is supplied', () => {
+    const p = makeProfile({ defeatedZoneIds: ['fractions'] })
+    expect(evaluateBadges(p, NOW)).not.toContain('realm-walker')
+  })
+
+  it('does not grant when no realm has full coverage', () => {
+    const p = makeProfile()
+    expect(
+      evaluateBadges(p, NOW, {
+        realmZoneCoverage: {
+          numerica: { defeated: 1, total: 2 },
+          vitalia: { defeated: 0, total: 1 },
+          elementia: { defeated: 0, total: 0 },
+          mechanica: { defeated: 0, total: 0 },
+        },
+      })
+    ).not.toContain('realm-walker')
+  })
+
+  it('grants when one realm has full coverage', () => {
+    const p = makeProfile()
+    expect(
+      evaluateBadges(p, NOW, {
+        realmZoneCoverage: {
+          numerica: { defeated: 2, total: 2 },
+          vitalia: { defeated: 0, total: 1 },
+          elementia: { defeated: 0, total: 0 },
+          mechanica: { defeated: 0, total: 0 },
+        },
+      })
+    ).toContain('realm-walker')
+  })
+
+  it('does not grant for an empty realm with 0/0 coverage', () => {
+    const p = makeProfile()
+    expect(
+      evaluateBadges(p, NOW, {
+        realmZoneCoverage: {
+          numerica: { defeated: 0, total: 0 },
+          vitalia: { defeated: 0, total: 0 },
+          elementia: { defeated: 0, total: 0 },
+          mechanica: { defeated: 0, total: 0 },
+        },
+      })
+    ).not.toContain('realm-walker')
   })
 })
 

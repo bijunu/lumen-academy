@@ -31,7 +31,12 @@ export class MongoScholarRepository implements ScholarRepository {
     if (!stored) return null
     return {
       ...stored,
+      counters: {
+        ...stored.counters,
+        bossDefeats: stored.counters?.bossDefeats ?? 0,
+      },
       questCompletionDates: stored.questCompletionDates ?? [],
+      defeatedZoneIds: stored.defeatedZoneIds ?? [],
     }
   }
 
