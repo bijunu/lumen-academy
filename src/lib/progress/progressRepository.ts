@@ -8,6 +8,7 @@ import {
 import { getMongoDb } from '@/lib/db/mongoClient'
 import { qualityFromAttempt } from '@/lib/mastery/qualityFromAttempt'
 import { scheduleNext } from '@/lib/mastery/sm2'
+import { upgradeMastery } from '@/lib/mastery/upgradeMastery'
 import type {
   Attempt,
   NodeProgress,
@@ -53,7 +54,7 @@ export function applyAttempt(
   })
   const scheduled = scheduleNext(progress.sm2, quality, attempt.answeredAt)
 
-  return {
+  const interim: NodeProgress = {
     ...progress,
     totalAttempts: progress.totalAttempts + 1,
     totalCorrect: progress.totalCorrect + (attempt.correct ? 1 : 0),
@@ -65,6 +66,11 @@ export function applyAttempt(
       easeFactor: scheduled.easeFactor,
     },
     nextReviewAt: scheduled.nextReviewAt,
+  }
+
+  return {
+    ...interim,
+    mastery: upgradeMastery(interim),
   }
 }
 

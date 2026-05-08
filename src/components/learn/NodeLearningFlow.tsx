@@ -54,7 +54,7 @@ export function NodeLearningFlow({
   const handleQuestionComplete = useCallback(
     (correct: boolean, attemptCount: number) => {
       const question = node.questions[questionIndex]
-      tracker.recordAnswer(correct, question.xpValue, attemptCount)
+      tracker.recordAnswer(correct, question.xpValue, attemptCount, question.tier)
 
       if (status === 'authenticated') {
         const hintLevel = lookupHintLevel?.(question.stem)

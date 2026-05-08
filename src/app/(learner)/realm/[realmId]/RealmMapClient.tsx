@@ -2,7 +2,7 @@
 
 import { useMemo } from 'react'
 import type { SkillNode } from '@/types/content'
-import type { NodeProgress } from '@/types/progress'
+import type { MasteryLevel, NodeProgress } from '@/types/progress'
 import { layoutSkillTree } from '@/lib/skillTree/layout'
 import { computeLockState } from '@/lib/skillTree/lockState'
 import { SkillTreeMap } from '@/components/skillTree/SkillTreeMap'
@@ -24,12 +24,20 @@ export function RealmMapClient({
       computeLockState(nodes, new Map(Object.entries(progressByNodeId))),
     [nodes, progressByNodeId]
   )
+  const masteryByNodeId = useMemo(() => {
+    const map = new Map<string, MasteryLevel>()
+    for (const [id, p] of Object.entries(progressByNodeId)) {
+      map.set(id, p.mastery)
+    }
+    return map
+  }, [progressByNodeId])
 
   return (
     <SkillTreeMap
       nodes={nodes}
       layout={layout}
       lockStates={lockStates}
+      masteryByNodeId={masteryByNodeId}
       realmLabel={realmLabel}
     />
   )

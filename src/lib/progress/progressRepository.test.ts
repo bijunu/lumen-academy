@@ -113,10 +113,27 @@ describe('applyAttempt', () => {
     expect(next.sm2.interval).toBe(1)
   })
 
-  it('leaves mastery unchanged (deferred to gamification phase)', () => {
+  it('upgrades mastery to bronze on the first correct attempt', () => {
     const base = freshProgress(userId, nodeId)
-    const next = applyAttempt(base, makeAttempt())
-    expect(next.mastery).toBe(base.mastery)
+    const next = applyAttempt(base, makeAttempt({ correct: true }))
+    expect(next.mastery).toBe('bronze')
+  })
+
+  it('does not award bronze on a wrong first attempt', () => {
+    const base = freshProgress(userId, nodeId)
+    const next = applyAttempt(base, makeAttempt({ correct: false }))
+    expect(next.mastery).toBe('none')
+  })
+
+  it('keeps existing mastery after a wrong answer (never downgrades)', () => {
+    const base: NodeProgress = {
+      ...freshProgress(userId, nodeId),
+      mastery: 'silver',
+      totalCorrect: 2,
+      sm2: { interval: 6, repetition: 2, easeFactor: 2.5 },
+    }
+    const next = applyAttempt(base, makeAttempt({ correct: false }))
+    expect(next.mastery).toBe('silver')
   })
 
   it('stamps lastAttemptAt from the attempt', () => {

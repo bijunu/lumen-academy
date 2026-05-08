@@ -4,6 +4,7 @@ import { SkillTreeMap } from './SkillTreeMap'
 import { layoutSkillTree } from '@/lib/skillTree/layout'
 import { computeLockState } from '@/lib/skillTree/lockState'
 import { fractionsZoneNodes } from '@/content/seed'
+import type { MasteryLevel } from '@/types/progress'
 
 vi.mock('next/navigation', () => ({
   useRouter: () => ({ push: vi.fn() }),
@@ -60,5 +61,45 @@ describe('SkillTreeMap', () => {
     // Only "What is a Fraction?" has no prerequisites; the other two are locked.
     expect(unlocked.length).toBe(1)
     expect(locked.length).toBe(2)
+  })
+
+  it('renders mastery stars for nodes with a mastery level', () => {
+    const layout = layoutSkillTree(fractionsZoneNodes)
+    const lockStates = computeLockState(fractionsZoneNodes, new Map())
+    const target = fractionsZoneNodes[0]
+    const masteryByNodeId = new Map<string, MasteryLevel>([
+      [target.id, 'gold'],
+    ])
+    const { container } = render(
+      <SkillTreeMap
+        nodes={fractionsZoneNodes}
+        layout={layout}
+        lockStates={lockStates}
+        masteryByNodeId={masteryByNodeId}
+        realmLabel="Numerica"
+      />
+    )
+    const el = container.querySelector(`[data-skill-node="${target.id}"]`)
+    expect(el?.getAttribute('data-mastery-level')).toBe('gold')
+    expect(el?.getAttribute('data-mastery-stars')).toBe('3')
+    expect(el?.textContent).toContain('★★★☆')
+  })
+
+  it('omits the star row when a node has no mastery progress', () => {
+    const layout = layoutSkillTree(fractionsZoneNodes)
+    const lockStates = computeLockState(fractionsZoneNodes, new Map())
+    const { container } = render(
+      <SkillTreeMap
+        nodes={fractionsZoneNodes}
+        layout={layout}
+        lockStates={lockStates}
+        realmLabel="Numerica"
+      />
+    )
+    for (const node of fractionsZoneNodes) {
+      const el = container.querySelector(`[data-skill-node="${node.id}"]`)
+      expect(el?.getAttribute('data-mastery-stars')).toBe('0')
+      expect(el?.textContent).not.toContain('★')
+    }
   })
 })

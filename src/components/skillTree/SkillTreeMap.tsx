@@ -11,6 +11,8 @@ import { useRouter } from 'next/navigation'
 import type { SkillNode, Tier } from '@/types/content'
 import type { SkillTreeLayout } from '@/lib/skillTree/layout'
 import type { LockState } from '@/lib/skillTree/lockState'
+import { masteryStarCount } from '@/lib/mastery/upgradeMastery'
+import type { MasteryLevel } from '@/types/progress'
 
 const NODE_RADIUS = 36
 const COL_SPACING = 220
@@ -29,6 +31,7 @@ interface SkillTreeMapProps {
   nodes: SkillNode[]
   layout: SkillTreeLayout
   lockStates: Map<string, LockState>
+  masteryByNodeId?: Map<string, MasteryLevel>
   realmLabel: string
 }
 
@@ -36,6 +39,7 @@ export function SkillTreeMap({
   nodes,
   layout,
   lockStates,
+  masteryByNodeId,
   realmLabel,
 }: SkillTreeMapProps) {
   const router = useRouter()
@@ -176,17 +180,24 @@ export function SkillTreeMap({
             const y = cy(node.id)
             const isLocked = state === 'locked'
             const isCompleted = state === 'completed'
+            const mastery = masteryByNodeId?.get(node.id) ?? 'none'
+            const stars = masteryStarCount(mastery)
+            const ariaLabel = stars > 0
+              ? `${node.title}, ${state}, ${stars} of 4 mastery stars`
+              : `${node.title}, ${state}`
 
             return (
               <g
                 key={node.id}
                 data-skill-node={node.id}
                 data-skill-state={state}
+                data-mastery-level={mastery}
+                data-mastery-stars={stars}
                 opacity={isLocked ? 0.45 : 1}
                 onClick={() => handleNodeClick(node.id, state)}
                 className={isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}
                 role={isLocked ? undefined : 'link'}
-                aria-label={`${node.title}, ${state}`}
+                aria-label={ariaLabel}
               >
                 <circle
                   cx={x}
@@ -196,6 +207,18 @@ export function SkillTreeMap({
                   stroke={colour}
                   strokeWidth={3}
                 />
+                {stars > 0 && (
+                  <text
+                    x={x}
+                    y={y - NODE_RADIUS - 6}
+                    textAnchor="middle"
+                    className="select-none text-sm font-medium"
+                    fill={colour}
+                    aria-hidden
+                  >
+                    {'★'.repeat(stars) + '☆'.repeat(4 - stars)}
+                  </text>
+                )}
                 {isLocked && (
                   <g
                     transform={`translate(${x - 6} ${y - 8})`}
