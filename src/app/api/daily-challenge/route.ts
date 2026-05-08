@@ -121,7 +121,7 @@ export async function POST(request: Request) {
           sparkDelta: 0,
           occurredAt: now,
         })
-        const newlyEarned = evaluateBadges(profile)
+        const newlyEarned = evaluateBadges(profile, now)
         if (newlyEarned.length > 0) {
           await scholarRepo.markBadgesEarned(userId, newlyEarned, now)
           badgeUnlocks = newlyEarned

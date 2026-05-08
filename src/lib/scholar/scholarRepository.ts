@@ -25,9 +25,14 @@ export class MongoScholarRepository implements ScholarRepository {
 
   async getProfile(userId: string): Promise<ScholarProfile | null> {
     const db = await this.dbPromise
-    return db
+    const stored = await db
       .collection<ScholarProfile>(SCHOLAR_PROFILES_COLLECTION)
       .findOne({ userId }, { projection: { _id: 0 } })
+    if (!stored) return null
+    return {
+      ...stored,
+      questCompletionDates: stored.questCompletionDates ?? [],
+    }
   }
 
   async applyUpdate(

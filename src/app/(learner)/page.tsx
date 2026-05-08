@@ -1,11 +1,11 @@
 'use client'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
 import { Skeleton } from '@/components/ui/skeleton'
 import { REALM_LIST } from '@/lib/constants/realms'
 import { ShortcutHelpOverlay } from '@/components/layout/ShortcutHelpOverlay'
 import { DailyChallengeCard } from '@/components/home/DailyChallengeCard'
+import { DailyQuestCard } from '@/components/home/DailyQuestCard'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 
 function StreakStrip() {
@@ -57,20 +57,7 @@ export default function HomePage() {
         <h1 className="text-2xl font-bold tracking-tight">Welcome back, Scholar</h1>
 
         <div className="grid gap-4 md:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                Today&apos;s Quest
-                <Badge variant="secondary">3 tasks</Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Skeleton className="h-24 w-full" />
-              <p className="mt-3 text-sm text-muted-foreground">
-                Complete three mixed tasks to earn bonus XP.
-              </p>
-            </CardContent>
-          </Card>
+          <DailyQuestCard />
 
           <Card>
             <CardHeader>

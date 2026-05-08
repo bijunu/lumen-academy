@@ -17,7 +17,7 @@ describe('BADGES metadata', () => {
     expect(BADGES).toHaveLength(12)
   })
 
-  it('marks six as earnable today', () => {
+  it('marks seven as earnable today', () => {
     const earnable = BADGES.filter(b => b.earnable).map(b => b.id)
     expect(earnable.sort()).toEqual(
       [
@@ -27,6 +27,7 @@ describe('BADGES metadata', () => {
         'stretch-scholar',
         'misconception-hunter',
         'lumen-scholar',
+        'quest-keeper',
       ].sort()
     )
   })
@@ -133,6 +134,40 @@ describe('evaluateBadges', () => {
     expect(newly).not.toContain('boss-tamer')
     expect(newly).not.toContain('realm-walker')
     expect(newly).not.toContain('steady-hand')
-    expect(newly).not.toContain('quest-keeper')
+  })
+})
+
+describe('quest-keeper rule', () => {
+  const NOW = new Date('2026-05-09T12:00:00Z')
+
+  function recentDays(n: number, anchor = NOW): string[] {
+    const out: string[] = []
+    for (let i = 0; i < n; i++) {
+      const d = new Date(anchor.getTime() - i * 24 * 60 * 60 * 1000)
+      out.push(d.toISOString().slice(0, 10))
+    }
+    return out
+  }
+
+  it('does not grant quest-keeper at nine completions in fourteen days', () => {
+    const p = makeProfile({ questCompletionDates: recentDays(9) })
+    expect(evaluateBadges(p, NOW)).not.toContain('quest-keeper')
+  })
+
+  it('grants quest-keeper at ten completions in fourteen days', () => {
+    const p = makeProfile({ questCompletionDates: recentDays(10) })
+    expect(evaluateBadges(p, NOW)).toContain('quest-keeper')
+  })
+
+  it('keeps granting quest-keeper at eleven completions in fourteen days', () => {
+    const p = makeProfile({ questCompletionDates: recentDays(11) })
+    expect(evaluateBadges(p, NOW)).toContain('quest-keeper')
+  })
+
+  it('does not count dates older than the trailing fourteen day window', () => {
+    const inWindow = recentDays(9)
+    const stale = '2026-04-10'
+    const p = makeProfile({ questCompletionDates: [...inWindow, stale] })
+    expect(evaluateBadges(p, NOW)).not.toContain('quest-keeper')
   })
 })

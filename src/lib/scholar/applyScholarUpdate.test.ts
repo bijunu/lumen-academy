@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest'
 
 import {
   applyScholarUpdate,
+  countQuestCompletionsInWindow,
   deriveRanks,
   freshScholarProfile,
 } from './applyScholarUpdate'
@@ -27,7 +28,102 @@ describe('freshScholarProfile', () => {
       bouncedBackCount: 0,
     })
     expect(p.badges).toEqual({})
+    expect(p.questCompletionDates).toEqual([])
     expect(p.updatedAt).toBeNull()
+  })
+})
+
+describe('applyScholarUpdate questCompletionDates', () => {
+  it('appends a new utcDay key', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      questCompletedOn: '2026-05-09',
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    })
+    expect(p.questCompletionDates).toEqual(['2026-05-09'])
+  })
+
+  it('dedupes when the same day is recorded twice', () => {
+    let p = freshScholarProfile('u1')
+    const args = {
+      realm: 'numerica' as const,
+      xpDelta: 0,
+      insightDelta: 0,
+      sparkDelta: 0,
+      questCompletedOn: '2026-05-09',
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    }
+    p = applyScholarUpdate(p, args)
+    p = applyScholarUpdate(p, args)
+    expect(p.questCompletionDates).toEqual(['2026-05-09'])
+  })
+
+  it('keeps only the 28 most recent dates', () => {
+    let p = freshScholarProfile('u1')
+    for (let i = 0; i < 35; i++) {
+      const day = new Date(Date.UTC(2026, 0, i + 1))
+      const key = day.toISOString().slice(0, 10)
+      p = applyScholarUpdate(p, {
+        realm: 'numerica',
+        xpDelta: 0,
+        insightDelta: 0,
+        sparkDelta: 0,
+        questCompletedOn: key,
+        occurredAt: day,
+      })
+    }
+    expect(p.questCompletionDates).toHaveLength(28)
+    expect(p.questCompletionDates[0]).toBe('2026-02-04')
+    expect(p.questCompletionDates[27]).toBe('2026-01-08')
+  })
+
+  it('leaves dates untouched when no questCompletedOn provided', () => {
+    let p = freshScholarProfile('u1')
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 5,
+      insightDelta: 0,
+      sparkDelta: 0,
+      questCompletedOn: '2026-05-09',
+      occurredAt: new Date('2026-05-09T08:00:00Z'),
+    })
+    p = applyScholarUpdate(p, {
+      realm: 'numerica',
+      xpDelta: 5,
+      insightDelta: 0,
+      sparkDelta: 0,
+      occurredAt: new Date('2026-05-10T08:00:00Z'),
+    })
+    expect(p.questCompletionDates).toEqual(['2026-05-09'])
+  })
+})
+
+describe('countQuestCompletionsInWindow', () => {
+  const now = new Date('2026-05-09T12:00:00Z')
+
+  it('counts dates strictly within the trailing window', () => {
+    const dates = [
+      '2026-05-09',
+      '2026-05-08',
+      '2026-05-01',
+      '2026-04-26',
+      '2026-04-25',
+    ]
+    expect(countQuestCompletionsInWindow(dates, now, 14)).toBe(4)
+  })
+
+  it('returns 0 for an empty list', () => {
+    expect(countQuestCompletionsInWindow([], now, 14)).toBe(0)
+  })
+
+  it('ignores malformed entries', () => {
+    expect(
+      countQuestCompletionsInWindow(['nonsense', '2026-05-09'], now, 14)
+    ).toBe(1)
   })
 })
 

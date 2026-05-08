@@ -94,7 +94,7 @@ export async function POST(request: Request) {
           occurredAt: answeredAt,
         })
 
-        const newlyEarned = evaluateBadges(profile)
+        const newlyEarned = evaluateBadges(profile, answeredAt)
         if (newlyEarned.length > 0) {
           await scholarRepo.markBadgesEarned(
             session.user.id,

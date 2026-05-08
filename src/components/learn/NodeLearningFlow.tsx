@@ -11,6 +11,10 @@ import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
 import { postAttempt, postSession } from '@/lib/progress/client'
 import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
+import {
+  DAILY_QUEST_BONUS_SPARK,
+  DAILY_QUEST_BONUS_XP,
+} from '@/types/dailyQuest'
 
 type FlowPhase = 'scenes' | 'worked-examples' | 'questions' | 'summary'
 
@@ -104,7 +108,7 @@ export function NodeLearningFlow({
     if (status !== 'authenticated') return
     if (sessionPostedRef.current) return
     sessionPostedRef.current = true
-    void postSession({
+    postSession({
       startedAt: startedAtRef.current,
       endedAt: new Date(),
       nodeIds: [node.id],
@@ -112,6 +116,18 @@ export function NodeLearningFlow({
       questionsCorrect: tracker.questionsCorrect,
       xpEarned: tracker.xpEarned,
       masteryChanges: [],
+    }).then(response => {
+      if (!response) return
+      if (response.questCompleted) {
+        celebrate({
+          type: 'quest-complete',
+          xp: DAILY_QUEST_BONUS_XP,
+          spark: DAILY_QUEST_BONUS_SPARK,
+        })
+      }
+      for (const badgeId of response.badgeUnlocks) {
+        celebrate({ type: 'badge-unlock', badgeId })
+      }
     })
   }, [
     phase,
@@ -120,6 +136,7 @@ export function NodeLearningFlow({
     tracker.questionsAttempted,
     tracker.questionsCorrect,
     tracker.xpEarned,
+    celebrate,
   ])
 
   if (phase === 'scenes') {

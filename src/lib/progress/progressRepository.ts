@@ -33,6 +33,7 @@ export interface ProgressRepository {
   upsertAttempt(attempt: Attempt): Promise<UpsertAttemptResult>
   recordSession(record: SessionRecord): Promise<void>
   listDueReviews(userId: string, now?: Date): Promise<NodeProgress[]>
+  listTouchedNodeIds(userId: string): Promise<string[]>
 }
 
 export function freshProgress(userId: string, nodeId: string): NodeProgress {
@@ -132,6 +133,15 @@ export class MongoProgressRepository implements ProgressRepository {
         { projection: { _id: 0 } }
       )
       .toArray()
+  }
+
+  async listTouchedNodeIds(userId: string): Promise<string[]> {
+    const db = await this.dbPromise
+    const rows = await db
+      .collection<NodeProgress>(NODE_PROGRESS_COLLECTION)
+      .find({ userId }, { projection: { _id: 0, nodeId: 1 } })
+      .toArray()
+    return rows.map(r => r.nodeId)
   }
 }
 

@@ -35,17 +35,26 @@ export async function postAttempt(
   }
 }
 
+export interface SessionResponse {
+  ok: boolean
+  id: string
+  questCompleted: boolean
+  badgeUnlocks: BadgeId[]
+}
+
 export async function postSession(
   input: SessionRecordWriteInput
-): Promise<void> {
+): Promise<SessionResponse | null> {
   try {
-    await fetch(SESSION_URL, {
+    const res = await fetch(SESSION_URL, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(input),
       credentials: 'same-origin',
     })
+    if (!res.ok) return null
+    return (await res.json()) as SessionResponse
   } catch {
-    // Best-effort: see postAttempt.
+    return null
   }
 }

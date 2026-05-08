@@ -9,6 +9,7 @@ export const SESSION_RECORDS_COLLECTION = 'session_records'
 export const ATTEMPTS_COLLECTION = 'attempts'
 export const SCHOLAR_PROFILES_COLLECTION = 'scholar_profiles'
 export const DAILY_CHALLENGES_COLLECTION = 'daily_challenges'
+export const DAILY_QUESTS_COLLECTION = 'daily_quests'
 
 export async function ensureIndexes(db: Db): Promise<void> {
   const nodes = db.collection(CONTENT_NODES_COLLECTION)
@@ -35,6 +36,9 @@ export async function ensureIndexes(db: Db): Promise<void> {
 
   const dailyChallenges = db.collection(DAILY_CHALLENGES_COLLECTION)
   await dailyChallenges.createIndex({ userId: 1, utcDay: 1 }, { unique: true })
+
+  const dailyQuests = db.collection(DAILY_QUESTS_COLLECTION)
+  await dailyQuests.createIndex({ userId: 1, utcDay: 1 }, { unique: true })
 
   const parentTokens = db.collection(PARENT_TOKENS_COLLECTION)
   await parentTokens.createIndex({ token: 1 }, { unique: true })

@@ -1,9 +1,15 @@
-import { deriveRanks } from '@/lib/scholar/applyScholarUpdate'
+import {
+  countQuestCompletionsInWindow,
+  deriveRanks,
+} from '@/lib/scholar/applyScholarUpdate'
 import type {
   BadgeId,
   BadgeMeta,
   ScholarProfile,
 } from '@/types/gamification'
+
+const QUEST_KEEPER_WINDOW_DAYS = 14
+const QUEST_KEEPER_THRESHOLD = 10
 
 export const BADGES: readonly BadgeMeta[] = [
   {
@@ -64,7 +70,7 @@ export const BADGES: readonly BadgeMeta[] = [
     id: 'quest-keeper',
     name: 'Quest Keeper',
     description: 'Complete the Daily Quest on ten days in a fourteen day window.',
-    earnable: false,
+    earnable: true,
   },
   {
     id: 'misconception-hunter',
@@ -91,7 +97,9 @@ export const BADGE_BY_ID: Readonly<Record<BadgeId, BadgeMeta>> =
     )
   )
 
-const RULES: Record<BadgeId, (profile: ScholarProfile) => boolean> = {
+type BadgeRule = (profile: ScholarProfile, now: Date) => boolean
+
+const RULES: Record<BadgeId, BadgeRule> = {
   'first-light': () => false,
   'curious-mind': () => false,
   'bounce-back': p => p.counters.bouncedBackCount >= 1,
@@ -105,7 +113,12 @@ const RULES: Record<BadgeId, (profile: ScholarProfile) => boolean> = {
   'realm-walker': () => false,
   'stretch-scholar': p => p.counters.challengeCorrect >= 10,
   'steady-hand': () => false,
-  'quest-keeper': () => false,
+  'quest-keeper': (p, now) =>
+    countQuestCompletionsInWindow(
+      p.questCompletionDates ?? [],
+      now,
+      QUEST_KEEPER_WINDOW_DAYS
+    ) >= QUEST_KEEPER_THRESHOLD,
   'misconception-hunter': p => p.counters.misconceptionCorrect >= 5,
   'lumen-scholar': p => {
     const ranks = deriveRanks(p)
@@ -118,12 +131,15 @@ const RULES: Record<BadgeId, (profile: ScholarProfile) => boolean> = {
   },
 }
 
-export function evaluateBadges(profile: ScholarProfile): BadgeId[] {
+export function evaluateBadges(
+  profile: ScholarProfile,
+  now: Date = new Date()
+): BadgeId[] {
   const newly: BadgeId[] = []
   for (const meta of BADGES) {
     if (!meta.earnable) continue
     if (profile.badges[meta.id]) continue
-    if (RULES[meta.id](profile)) newly.push(meta.id)
+    if (RULES[meta.id](profile, now)) newly.push(meta.id)
   }
   return newly
 }

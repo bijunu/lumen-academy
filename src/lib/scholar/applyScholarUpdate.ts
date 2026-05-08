@@ -7,6 +7,7 @@ import type {
 } from '@/types/gamification'
 
 const XP_PER_RANK = 100
+const MAX_QUEST_COMPLETION_DATES = 28
 
 export function freshScholarCounters(): ScholarCounters {
   return {
@@ -29,6 +30,7 @@ export function freshScholarProfile(userId: string): ScholarProfile {
     },
     currencies: { insight: 0, spark: 0 },
     counters: freshScholarCounters(),
+    questCompletionDates: [],
     badges: {},
     updatedAt: null,
   }
@@ -39,6 +41,10 @@ export function applyScholarUpdate(
   update: ScholarUpdate
 ): ScholarProfile {
   const counters = applyCounterDeltas(profile.counters, update.counterDeltas)
+  const questCompletionDates = mergeQuestCompletionDates(
+    profile.questCompletionDates ?? [],
+    update.questCompletedOn
+  )
   return {
     ...profile,
     xpTotal: profile.xpTotal + update.xpDelta,
@@ -52,8 +58,47 @@ export function applyScholarUpdate(
       spark: profile.currencies.spark + update.sparkDelta,
     },
     counters,
+    questCompletionDates,
     updatedAt: update.occurredAt,
   }
+}
+
+function mergeQuestCompletionDates(
+  current: readonly string[],
+  next?: string
+): string[] {
+  if (!next) return [...current]
+  const merged = new Set(current)
+  merged.add(next)
+  return Array.from(merged)
+    .sort((a, b) => (a < b ? 1 : a > b ? -1 : 0))
+    .slice(0, MAX_QUEST_COMPLETION_DATES)
+}
+
+export function countQuestCompletionsInWindow(
+  dates: readonly string[],
+  now: Date,
+  windowDays: number
+): number {
+  const ms = windowDays * 24 * 60 * 60 * 1000
+  const cutoff = new Date(now.getTime() - ms)
+  let count = 0
+  for (const d of dates) {
+    const parsed = parseUtcDay(d)
+    if (parsed && parsed.getTime() > cutoff.getTime()) count++
+  }
+  return count
+}
+
+function parseUtcDay(key: string): Date | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(key)
+  if (!m) return null
+  const [, y, mo, d] = m
+  const date = new Date(
+    Date.UTC(Number(y), Number(mo) - 1, Number(d))
+  )
+  if (Number.isNaN(date.getTime())) return null
+  return date
 }
 
 function applyCounterDeltas(

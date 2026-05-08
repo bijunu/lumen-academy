@@ -18,6 +18,7 @@ export interface ScholarProfile {
   xpByRealm: Record<RealmId, number>
   currencies: Currency
   counters: ScholarCounters
+  questCompletionDates: string[]
   badges: Partial<Record<BadgeId, Date>>
   updatedAt: Date | null
 }
@@ -28,6 +29,7 @@ export interface ScholarUpdate {
   insightDelta: number
   sparkDelta: number
   counterDeltas?: Partial<ScholarCounters>
+  questCompletedOn?: string
   occurredAt: Date
 }
 

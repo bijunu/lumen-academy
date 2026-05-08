@@ -7,7 +7,7 @@ import {
   useState,
   type ReactNode,
 } from 'react'
-import { Award, Sparkles } from 'lucide-react'
+import { Award, Scroll, Sparkles } from 'lucide-react'
 
 import { fireConfetti } from '@/lib/celebration/confetti'
 import { BADGE_BY_ID } from '@/lib/badges/badgeRules'
@@ -19,6 +19,7 @@ const TOAST_TTL_MS = 4000
 export type CelebrationEvent =
   | { type: 'badge-unlock'; badgeId: BadgeId }
   | { type: 'mastery-upgrade'; level: MasteryLevel; nodeTitle: string }
+  | { type: 'quest-complete'; xp: number; spark: number }
 
 interface RewardCelebrationContextValue {
   celebrate: (event: CelebrationEvent) => void
@@ -100,19 +101,39 @@ function CelebrationToast({ event }: { event: CelebrationEvent }) {
     )
   }
 
+  if (event.type === 'mastery-upgrade') {
+    return (
+      <div
+        data-testid="celebration-toast"
+        data-celebration-type="mastery-upgrade"
+        className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 shadow-lg"
+      >
+        <Sparkles className="h-5 w-5" aria-hidden />
+        <div className="text-sm">
+          <p className="font-semibold">
+            {capitalise(event.level)} mastery on {event.nodeTitle}
+          </p>
+          <p className="text-xs text-muted-foreground">
+            Spaced reviews will keep it fresh.
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div
       data-testid="celebration-toast"
-      data-celebration-type="mastery-upgrade"
+      data-celebration-type="quest-complete"
       className="flex items-center gap-3 rounded-lg border bg-card px-4 py-3 shadow-lg"
     >
-      <Sparkles className="h-5 w-5" aria-hidden />
+      <Scroll className="h-5 w-5" aria-hidden />
       <div className="text-sm">
         <p className="font-semibold">
-          {capitalise(event.level)} mastery on {event.nodeTitle}
+          Daily Quest complete. +{event.xp} XP, +{event.spark} Spark.
         </p>
         <p className="text-xs text-muted-foreground">
-          Spaced reviews will keep it fresh.
+          Come back tomorrow for a fresh quest.
         </p>
       </div>
     </div>
