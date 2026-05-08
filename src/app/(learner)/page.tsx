@@ -10,6 +10,7 @@ import { REALM_LIST, type RealmId } from '@/lib/constants/realms'
 import { ShortcutHelpOverlay } from '@/components/layout/ShortcutHelpOverlay'
 import { DailyChallengeCard } from '@/components/home/DailyChallengeCard'
 import { DailyQuestCard } from '@/components/home/DailyQuestCard'
+import { WeakSpotsCard } from '@/components/home/WeakSpotsCard'
 import {
   STREAK_WINDOW_DAYS,
   emptyRealmProgress,
@@ -169,17 +170,7 @@ export default function HomePage() {
 
           <DailyChallengeCard />
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Weak Spots</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Skeleton className="h-16 w-full" />
-              <p className="mt-3 text-sm text-muted-foreground">
-                Three topics ready for another go.
-              </p>
-            </CardContent>
-          </Card>
+          <WeakSpotsCard />
         </div>
 
         <Card>
