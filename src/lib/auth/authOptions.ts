@@ -16,11 +16,11 @@ export const authConfig: NextAuthConfig = {
   trustHost: true,
   providers: [
     Nodemailer({
+      // Placeholder satisfies Auth.js init validation; sendVerificationRequest
+      // below short-circuits before any SMTP call, so the URI is never used.
+      server: process.env.EMAIL_SERVER ?? 'smtp://localhost:25',
       from: process.env.EMAIL_FROM ?? DEFAULT_FROM,
       sendVerificationRequest: async ({ identifier, url, expires }) => {
-        // SMTP transport is intentionally unwired in Phase 4b. The override
-        // prints the magic link to the server console so the dev can copy it
-        // from the logs. Real email send is deferred to a later phase.
         logger.info('auth.magic_link', {
           email: identifier,
           url,
