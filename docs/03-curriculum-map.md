@@ -31,10 +31,10 @@
 ### Zone: Cells (`biology-cells`)
 
 #### Animal Cell (Core, `biology-cells-animal-cell`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Cells and organisation)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The functions of the cell wall, cell membrane, cytoplasm, nucleus, vacuole, mitochondria and chloroplasts; the similarities and differences between plant and animal cells
+- **AQA**: 4.1.1.2 Animal and plant cells (GCSE Biology 8461)
+- **Edexcel**: CB1a Plant and animal cells (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.1 Cell structures (GCSE Biology A J247)
 
 #### Plant Cell (Core, `biology-cells-plant-cell`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Cells and organisation)_

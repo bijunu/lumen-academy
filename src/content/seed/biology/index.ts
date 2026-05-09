@@ -1,5 +1,9 @@
 import type { SkillNode, Zone } from '@/types/content'
 
-export const biologyNodes: SkillNode[] = []
+import { cellsZone, cellsZoneNodes } from './cells'
 
-export const biologyZones: Zone[] = []
+export { animalCell, cellsZone, cellsZoneNodes } from './cells'
+
+export const biologyNodes: SkillNode[] = [...cellsZoneNodes]
+
+export const biologyZones: Zone[] = [cellsZone]

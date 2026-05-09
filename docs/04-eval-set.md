@@ -481,13 +481,39 @@ Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear g
 Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-specialised-cells`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session alongside the first node in this zone (see docs/03 for suggested node IDs and tier guidance)_
+
+- C-CELL-1: Learner believes animal cells have a cell wall like plant cells.
+  - Required handling: misconception entry; at least one question whose distractors include the cell-wall-on-animal-cell trap.
+- C-CELL-2: Learner says mitochondria "make" or "create" energy, rather than releasing energy from glucose during respiration.
+  - Required handling: misconception entry; at least one spot-misconception or MCQ that surfaces the make-energy phrasing.
+- C-CELL-3: Learner believes animal cells contain chloroplasts.
+  - Required handling: misconception entry; at least one question whose distractors include chloroplast on an animal cell, ideally a Challenge tier item linking the absence of chloroplasts to animals taking in food rather than photosynthesising.
+- C-CELL-4: Learner attributes control of substances entering and leaving the cell to the nucleus rather than the cell membrane.
+  - Required handling: misconception entry; at least one MCQ that pairs nucleus and cell membrane as competing answers for that role.
+- C-CELL-5: Learner blurs the hierarchy of organisation, treating cell, tissue, organ, organ system, and organism as interchangeable.
+  - Required handling: misconception entry; at least one drag-order question that places the five levels in size order.
+- C-CELL-6: Learner believes animal cells have a large permanent vacuole like plant cells, or otherwise treats the vacuole as a feature shared by both cell types.
+  - Required handling: misconception entry; at least one question whose distractors include large permanent vacuole on an animal cell.
+- C-CELL-7: Learner believes all cells in the body are about the same size, so cell size cannot be used to compare cell types.
+  - Required handling: misconception entry; at least one spot-misconception or Challenge tier question that surfaces cell-size variation between cell types.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-CELL-1: At least one labelled-image question places animal-cell organelle labels onto hotspots on an animal-cell diagram, with at least one plant-only label included as a distractor in the pool.
+- Q-CELL-2: At least one MCQ pairs an animal-cell-only feature against a plant-cell-only feature as distractors, so the question tests structure recognition rather than recall of a single name.
+- Q-CELL-3: At least one drag-order or drag-drop-builder question requires placing the five levels of organisation (cell, tissue, organ, organ system, organism) in size order, or building an animal cell from a parts pool that includes plant-only structures.
+- Q-CELL-4: At least one Challenge tier word problem set in a UK context (school nurse, classroom microscope, school sample slide) requires reading or computing on cell counts or cell sizes with at least one inferred intermediate step.
+- Q-CELL-5: At least one spot-misconception question presents a "mitochondria make energy" or "animal cells have a cell wall" argument and asks whether the reasoning is sound.
+- Q-CELL-6: At least one numeric-entry question asks the learner to count which of a listed set of structures are found in animal cells, distinguishing animal-cell from plant-only features.
+- Q-CELL-7: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (specialised cell adaptation, sperm cell mitochondria density, nerve cell length) to stretch the learner beyond the bare KS3 list.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-CELL-1: Given "Animal cells have cell walls because they need to be strong, right?", the tutor's first reply is a Socratic prompt about what holds an animal cell in shape, not a direct correction.
+- T-CELL-2: Given a wrong answer matching the chloroplast trigger (for example "skin cells contain chloroplasts"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-CELL-3: Given "Mitochondria make energy from nothing, right?", the tutor walks the learner through a respiration analogy (glucose plus oxygen, energy transferred), not a definition dump.
+- T-CELL-4: Given an off-topic input (for example a question about US biology textbook diagrams or AP Biology mitochondria), the tutor steers back to UK KS3 cell language politely.
+- T-CELL-5: Given a request for an inline definition (tap on "cytoplasm" or "mitochondrion"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Vitalia > Microscopy
 
