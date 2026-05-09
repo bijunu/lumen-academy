@@ -6,7 +6,12 @@ import {
   electricityCurrentVoltage,
   electricityCircuitsZoneNodes,
 } from './electricity-circuits'
-import { forcesTypes, forcesZoneNodes, forcesZone } from './forces'
+import {
+  forcesTypes,
+  forcesBalanced,
+  forcesZoneNodes,
+  forcesZone,
+} from './forces'
 
 export {
   electricityCircuitSymbols,
@@ -14,6 +19,7 @@ export {
   electricityCurrentVoltage,
   electricityCircuitsZoneNodes,
   forcesTypes,
+  forcesBalanced,
   forcesZoneNodes,
   forcesZone,
 }

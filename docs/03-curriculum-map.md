@@ -361,10 +361,10 @@
 - **OCR**: P2.1 Motion and forces, contact and non-contact forces (GCSE Physics J259 Gateway)
 
 #### Balanced and Unbalanced Forces (Core, `physics-forces-balanced`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces.
+- **AQA**: 4.5.1.4 Resultant forces; 4.5.6.1 Newton's First Law (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.21-1.23 Resultant forces and Newton's First Law (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws, balanced and unbalanced forces (GCSE Physics J259 Gateway)
 
 #### Friction and Drag (Confident, `physics-forces-friction`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Forces)_

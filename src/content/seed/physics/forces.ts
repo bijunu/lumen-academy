@@ -754,7 +754,693 @@ export const forcesTypes: SkillNode = {
   },
 }
 
-export const forcesZoneNodes = [forcesTypes]
+const BALANCED_BOOK_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="300" y="50" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Book on a desk: balanced</text>
+    <line x1="100" y1="220" x2="500" y2="220" />
+    <rect x="240" y="170" width="120" height="50" fill="currentColor" />
+    <!-- Weight arrow downwards -->
+    <line x1="300" y1="195" x2="300" y2="290" />
+    <polygon points="292,278 300,295 308,278" fill="currentColor" stroke="none" />
+    <text x="320" y="285" font-size="14" font-weight="700" stroke="none" fill="currentColor">Weight 5 N</text>
+    <!-- Normal contact arrow upwards -->
+    <line x1="300" y1="195" x2="300" y2="100" />
+    <polygon points="292,112 300,95 308,112" fill="currentColor" stroke="none" />
+    <text x="320" y="110" font-size="14" font-weight="700" stroke="none" fill="currentColor">Normal contact 5 N</text>
+    <text x="300" y="350" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">Two equal and opposite arrows. Net force = 0 N. Book stays still.</text>
+  </g>
+`
+
+const COASTING_CYCLIST_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="50" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Cyclist coasting at constant speed</text>
+    <line x1="60" y1="240" x2="740" y2="240" />
+    <!-- Bike body -->
+    <circle cx="320" cy="220" r="22" />
+    <circle cx="480" cy="220" r="22" />
+    <line x1="320" y1="220" x2="400" y2="160" />
+    <line x1="480" y1="220" x2="400" y2="160" />
+    <line x1="400" y1="160" x2="380" y2="120" />
+    <line x1="380" y1="120" x2="420" y2="120" />
+    <!-- Cyclist body (stick) -->
+    <circle cx="400" cy="100" r="14" />
+    <line x1="400" y1="114" x2="400" y2="155" />
+    <!-- Forward push from pedals (long arrow) -->
+    <line x1="500" y1="180" x2="610" y2="180" />
+    <polygon points="600,172 615,180 600,188" fill="currentColor" stroke="none" />
+    <text x="555" y="170" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Forward push 30 N</text>
+    <!-- Backward drag (same length) -->
+    <line x1="290" y1="180" x2="180" y2="180" />
+    <polygon points="190,172 175,180 190,188" fill="currentColor" stroke="none" />
+    <text x="235" y="170" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Drag 30 N</text>
+    <!-- Weight downwards -->
+    <line x1="400" y1="125" x2="400" y2="190" />
+    <polygon points="392,180 400,195 408,180" fill="currentColor" stroke="none" />
+    <text x="425" y="200" font-size="13" font-weight="700" stroke="none" fill="currentColor">Weight</text>
+    <!-- Normal contact upwards -->
+    <line x1="400" y1="240" x2="400" y2="290" />
+    <polygon points="392,250 400,235 408,250" fill="currentColor" stroke="none" />
+    <text x="425" y="270" font-size="13" font-weight="700" stroke="none" fill="currentColor">Normal contact</text>
+    <text x="400" y="345" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">Forward and backward forces are equal. Net force = 0 N. Cyclist coasts at the same speed.</text>
+  </g>
+`
+
+const UNBALANCED_BOX_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="50" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Pushed box: unbalanced</text>
+    <line x1="60" y1="220" x2="740" y2="220" />
+    <rect x="320" y="160" width="120" height="60" fill="currentColor" />
+    <!-- Push arrow long -->
+    <line x1="450" y1="190" x2="610" y2="190" />
+    <polygon points="600,182 615,190 600,198" fill="currentColor" stroke="none" />
+    <text x="530" y="180" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Push 40 N</text>
+    <!-- Friction arrow shorter -->
+    <line x1="310" y1="190" x2="240" y2="190" />
+    <polygon points="250,182 235,190 250,198" fill="currentColor" stroke="none" />
+    <text x="275" y="180" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Friction 15 N</text>
+    <!-- Net force result -->
+    <text x="400" y="280" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">Net force = 40 N forward minus 15 N back = 25 N forward</text>
+    <text x="400" y="305" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">Box speeds up in the forward direction.</text>
+  </g>
+`
+
+const STATIONARY_FBD_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <line x1="100" y1="280" x2="700" y2="280" />
+    <rect x="320" y="200" width="160" height="80" fill="currentColor" />
+    <!-- Weight down -->
+    <line x1="400" y1="240" x2="400" y2="350" />
+    <polygon points="392,338 400,355 408,338" fill="currentColor" stroke="none" />
+    <text x="420" y="350" font-size="14" font-weight="700" stroke="none" fill="currentColor">F1 = 80 N</text>
+    <!-- Normal up -->
+    <line x1="400" y1="240" x2="400" y2="130" />
+    <polygon points="392,142 400,125 408,142" fill="currentColor" stroke="none" />
+    <text x="420" y="140" font-size="14" font-weight="700" stroke="none" fill="currentColor">F2 = 80 N</text>
+  </g>
+`
+
+export const forcesBalanced: SkillNode = {
+  id: 'physics-forces-balanced',
+  title: 'Balanced and Unbalanced Forces',
+  description:
+    'Use force arrows on a free-body diagram to decide whether the forces on an object are balanced or unbalanced. Predict that balanced forces leave the motion unchanged (still or moving at the same speed in a straight line) and unbalanced forces change the motion (speeding up, slowing down, or changing direction).',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-forces',
+  zoneName: 'Forces',
+  tier: 'core',
+  prerequisites: ['physics-forces-types'],
+  curriculum: {
+    ks3Objective:
+      'Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces.',
+    awardingBodies: {
+      aqa: '4.5.1.4 Resultant forces; 4.5.6.1 Newton’s First Law (GCSE Physics 8463)',
+      edexcel: 'Topic 1 Motion and forces, 1.21-1.23 Resultant forces and Newton’s First Law (GCSE Physics 1PH0)',
+      ocr: 'P2.2 Newton’s laws, balanced and unbalanced forces (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'fb-scene-balanced-book',
+      title: 'A Book at Rest: Balanced Forces',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the two arrows on the book and check that they balance.',
+      data: {
+        viewBox: '0 0 600 400',
+        svg: BALANCED_BOOK_SVG,
+        hotspots: [
+          {
+            id: 'fb-bb-weight',
+            x: 53,
+            y: 73,
+            label: 'Weight 5 N down',
+            description:
+              'Gravity pulls the book down with a force of 5 N. The arrow points straight down to show the direction.',
+          },
+          {
+            id: 'fb-bb-normal',
+            x: 53,
+            y: 28,
+            label: 'Normal contact 5 N up',
+            description:
+              'The desk pushes back on the book with a force of 5 N upwards. Equal in size and opposite in direction to the weight.',
+          },
+          {
+            id: 'fb-bb-net',
+            x: 50,
+            y: 88,
+            label: 'Net force 0 N',
+            description:
+              'The two arrows are equal and opposite, so they balance out. The net force is 0 N and the book stays still.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fb-scene-coasting',
+      title: 'Coasting at Constant Speed: Still Balanced',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see why a cyclist moving at the same speed has balanced forces too.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: COASTING_CYCLIST_SVG,
+        hotspots: [
+          {
+            id: 'fb-cc-forward',
+            x: 70,
+            y: 45,
+            label: 'Forward push 30 N',
+            description:
+              'The pedals drive the bike forward with a force of 30 N. The arrow length shows the size of the force.',
+          },
+          {
+            id: 'fb-cc-drag',
+            x: 30,
+            y: 45,
+            label: 'Drag 30 N',
+            description:
+              'Friction and air resistance together drag back with the same 30 N. Equal and opposite to the forward push.',
+          },
+          {
+            id: 'fb-cc-vertical',
+            x: 53,
+            y: 67,
+            label: 'Weight and normal contact balance',
+            description:
+              'The two vertical arrows are also equal and opposite. So all four arrows balance, the net force is 0 N, and the cyclist coasts at the same speed in a straight line.',
+          },
+          {
+            id: 'fb-cc-rule',
+            x: 50,
+            y: 86,
+            label: 'Rule for balanced forces',
+            description:
+              'Balanced forces do not stop a moving object. They keep its motion the same: still if it was still, or moving at the same speed in a straight line if it was already moving.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fb-scene-unbalanced',
+      title: 'Unbalanced Forces Change Motion',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the arrows and work out what the box does next.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: UNBALANCED_BOX_SVG,
+        hotspots: [
+          {
+            id: 'fb-ub-push',
+            x: 66,
+            y: 45,
+            label: 'Push 40 N forward',
+            description:
+              'A person pushes the box to the right with a force of 40 N. The arrow is drawn long.',
+          },
+          {
+            id: 'fb-ub-friction',
+            x: 34,
+            y: 45,
+            label: 'Friction 15 N back',
+            description:
+              'Friction drags back on the box with a force of 15 N. The arrow is drawn shorter to show a smaller force.',
+          },
+          {
+            id: 'fb-ub-net',
+            x: 50,
+            y: 70,
+            label: 'Net force 25 N forward',
+            description:
+              'Subtract the smaller arrow from the larger one: 40 minus 15 is 25. The net force is 25 N to the right. The forces are unbalanced.',
+          },
+          {
+            id: 'fb-ub-result',
+            x: 50,
+            y: 78,
+            label: 'Result',
+            description:
+              'A non-zero net force changes the motion. The box speeds up in the direction of the net force, which here is to the right.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'fb-worked-1',
+      title: 'A 60 kg child stood still on the kitchen floor',
+      steps: [
+        {
+          explanation:
+            'Pick the object. The object is the child stood on the floor. Every arrow goes on the child.',
+        },
+        {
+          explanation:
+            'Find the pull of gravity. The Earth pulls the child downwards. Call this the weight, 600 N (rounded so each kilogram weighs about 10 N at the Earth’s surface).',
+          maths: 'Weight = 600 N down',
+        },
+        {
+          explanation:
+            'Find the push of the floor. The floor pushes upwards on the bottom of the child’s shoes. Call this the normal contact force.',
+        },
+        {
+          explanation:
+            'The child is stood still. So the upward push of the floor must exactly cancel the downward pull of gravity, otherwise the child would not be still.',
+          maths: 'Normal contact = 600 N up',
+        },
+        {
+          explanation:
+            'Add the forces. 600 N down and 600 N up cancel out. The net force is 0 N. The forces are balanced.',
+          maths: 'Net force = 600 - 600 = 0 N',
+        },
+        {
+          explanation:
+            'Predict the motion. With balanced forces, a still object stays still. The child stays at rest. Easy check: this matches what we said in the stem.',
+        },
+      ],
+    },
+    {
+      id: 'fb-worked-2',
+      title: 'A toy car pushed across the floor with friction in the way',
+      steps: [
+        {
+          explanation:
+            'Set the scene. A child pushes a toy car along a smooth floor with a forward force of 8 N. Friction drags back on the car with 3 N.',
+        },
+        {
+          explanation:
+            'Draw the two horizontal arrows. The forward push is the longer arrow (8 N), the friction is the shorter arrow (3 N), in the opposite direction.',
+        },
+        {
+          explanation:
+            'Add the forces in one dimension. Take forwards as positive: 8 forward minus 3 back gives 5 N forward.',
+          maths: 'Net force = 8 - 3 = 5 N forward',
+        },
+        {
+          explanation:
+            'Decide if the forces are balanced or unbalanced. The two horizontal arrows are not equal, so the forces are unbalanced.',
+        },
+        {
+          explanation:
+            'Predict the motion. A non-zero net force changes the motion. The car was moving forwards already, so it speeds up in the forwards direction.',
+        },
+        {
+          explanation:
+            'Check the vertical arrows too. Weight (down) and normal contact (up) balance out, so they do not change the motion. The horizontal pair is what makes the car speed up.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'fb-q1',
+      type: 'multiple-choice',
+      stem: 'A book sits still on a desk. Which sentence describes the forces on the book?',
+      tier: 'core',
+      options: [
+        'Only weight acts on the book; the desk does nothing.',
+        'A push acts forwards on the book; everything else is zero.',
+        'Friction pulls the book back along the desk.',
+        'Weight pulls the book down and the desk pushes up with the same size of force; the forces are balanced.',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'fb-mis-only-weight-on-still',
+      hint: 'A still object on a flat surface has two main vertical forces.',
+    },
+    {
+      id: 'fb-q2',
+      type: 'multiple-choice',
+      stem: 'Two force arrows are drawn on an object. They are the same length and point in opposite directions. What is the net force on the object?',
+      tier: 'core',
+      options: [
+        'Twice the size of one arrow.',
+        'The size of one arrow.',
+        'Zero.',
+        'Half the size of one arrow.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'Equal and opposite arrows cancel out.',
+    },
+    {
+      id: 'fb-q3',
+      type: 'multiple-choice',
+      stem: 'Two force arrows are drawn on an object. The forwards arrow is 30 N. The backwards arrow is 30 N. The object was already moving forwards. What happens next?',
+      tier: 'core',
+      options: [
+        'The object stops, because balanced forces always stop motion.',
+        'The object keeps moving forwards at the same speed, because the net force is zero.',
+        'The object speeds up forwards, because the forwards arrow is shown first.',
+        'The object slows down, because the backwards arrow stops it.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'fb-mis-balanced-means-stopped',
+      hint: 'Balanced forces leave the motion as it was. The object was already moving forwards.',
+    },
+    {
+      id: 'fb-q4',
+      type: 'numeric-entry',
+      stem: 'A box is pushed forwards with a force of 50 N. Friction drags back on the box with a force of 30 N. What is the net force on the box, in newtons, in the forwards direction?',
+      tier: 'core',
+      correctAnswer: 20,
+      unit: 'N',
+      xpValue: 10,
+      hint: 'Subtract the backward arrow from the forward arrow.',
+    },
+    {
+      id: 'fb-q5',
+      type: 'numeric-entry',
+      stem: 'A child pulls a sledge across smooth ice with a 25 N pull along the rope. Friction with the ice is so small it can be ignored. What is the net force on the sledge, in newtons, in the direction of the pull?',
+      tier: 'core',
+      correctAnswer: 25,
+      unit: 'N',
+      xpValue: 10,
+      hint: 'With friction zero, only the pull along the rope counts in the horizontal direction.',
+    },
+    {
+      id: 'fb-q6',
+      type: 'numeric-entry',
+      stem: 'Two children pull on the same rope in a tug of war. Anya pulls to her side with 200 N. Theo pulls to his side with 200 N. What is the net force on the rope, in newtons?',
+      tier: 'core',
+      correctAnswer: 0,
+      unit: 'N',
+      xpValue: 10,
+      hint: 'Equal and opposite pulls cancel out.',
+    },
+    {
+      id: 'fb-q7',
+      type: 'multiple-choice',
+      stem: 'A diagram shows a sledge on snow with a 12 N forwards pull and a 4 N backwards friction. What does the diagram tell you about the motion of the sledge?',
+      tier: 'core',
+      options: [
+        'The sledge stays still, because there is friction.',
+        'The forces are unbalanced. The sledge will speed up in the forwards direction.',
+        'The forces are balanced. The sledge will keep moving at the same speed.',
+        'The sledge will stop, because friction always wins.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'fb-mis-friction-always-wins',
+      hint: 'Compare the forwards arrow length with the backwards arrow length.',
+    },
+    {
+      id: 'fb-q8',
+      type: 'labelled-image',
+      stem: 'A 80 N box rests still on a flat floor. Place the names on the two force arrows shown on the free-body diagram.',
+      tier: 'core',
+      viewBox: '0 0 800 400',
+      svg: STATIONARY_FBD_SVG,
+      hotspots: [
+        { id: 'fb-q8-h1', x: 55, y: 87, correctLabel: 'Weight' },
+        { id: 'fb-q8-h2', x: 55, y: 35, correctLabel: 'Normal contact' },
+      ],
+      labels: ['Weight', 'Normal contact', 'Friction', 'Tension'],
+      xpValue: 15,
+      hint: 'F1 points down from the bottom of the box; F2 points up from the top.',
+    },
+    {
+      id: 'fb-q9',
+      type: 'multiple-choice',
+      stem: 'A car drives along a flat motorway at a steady 70 mph (constant speed in a straight line). Which sentence is correct? Note that weight pulls the car down and the road pushes up with the same size of force, so the vertical pair already balances.',
+      tier: 'confident',
+      options: [
+        'The forwards engine force is bigger than the drag, otherwise the car would not move.',
+        'The forwards engine force equals the drag, so the net force is zero and the car keeps moving at the same speed.',
+        'The drag is bigger than the engine force, so the car is slowing down.',
+        'There is no friction or drag, because the car is on a smooth motorway.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'fb-mis-skip-vertical-on-moving',
+      hint: 'Constant speed in a straight line means a net force of zero. The vertical arrows already balance, so look at the horizontal pair.',
+    },
+    {
+      id: 'fb-q10',
+      type: 'multiple-choice',
+      stem: 'A toy boat is pushed across a bath. The hand lets go and the boat now coasts forward. Friction with the water is small but not zero. What does the boat do next?',
+      tier: 'confident',
+      options: [
+        'It speeds up, because there is no hand pushing back on it.',
+        'It keeps moving at exactly the same speed forever.',
+        'It slows down, because friction with the water is now the only horizontal force, and it acts backwards.',
+        'It stops at once, because the applied push has gone.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'fb-mis-balanced-means-stopped',
+      hint: 'List only the forces still acting once the hand has let go. Friction is unbalanced now.',
+    },
+    {
+      id: 'fb-q11',
+      type: 'numeric-entry',
+      stem: 'Two forces act horizontally on a trolley. A 65 N forwards push and a 25 N backwards friction. What is the net force on the trolley, in newtons, in the forwards direction?',
+      tier: 'confident',
+      correctAnswer: 40,
+      unit: 'N',
+      xpValue: 15,
+      misconceptionId: 'fb-mis-add-not-subtract',
+      hint: 'Take forwards as positive. Forwards minus backwards.',
+    },
+    {
+      id: 'fb-q12',
+      type: 'numeric-entry',
+      stem: 'A skydiver in mid-fall has a weight of 700 N pulling down and an air resistance of 700 N pushing up. The skydiver is falling. What is the net force on the skydiver, in newtons?',
+      tier: 'confident',
+      correctAnswer: 0,
+      unit: 'N',
+      xpValue: 15,
+      misconceptionId: 'fb-mis-balanced-means-stopped',
+      hint: 'Equal and opposite arrows cancel out, even on a moving object.',
+    },
+    {
+      id: 'fb-q13',
+      type: 'spot-misconception',
+      stem: 'Theo says, "If two forces on a box are balanced, the box must be stood still. So a moving box always has unbalanced forces." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Theo is right. Balanced forces only happen on a still object. A moving object must have a net force on it.',
+          isMisconception: true,
+        },
+        {
+          text: 'Theo is not right. Balanced forces happen on any object whose motion is not changing. A box moving in a straight line at constant speed has balanced forces, with a net force of zero.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'fb-mis-balanced-means-stopped',
+    },
+    {
+      id: 'fb-q14',
+      type: 'spot-misconception',
+      stem: 'Lila says, "An object only keeps moving if a force keeps pushing it. So a coasting bicycle must have a forwards force on it as long as it keeps moving." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Lila is right. Without a forwards push, a moving object would stop straight away.',
+          isMisconception: true,
+        },
+        {
+          text: 'Lila is not right. A moving object keeps going if no net force acts on it. A coasting bicycle slows down only because friction and air resistance act backwards; the rider is not still pushing it.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'fb-mis-needs-force-to-keep-moving',
+    },
+    {
+      id: 'fb-q15',
+      type: 'drag-order',
+      stem: 'A pupil is asked to decide whether the forces on a moving cycle are balanced. Place the four steps in the right order.',
+      tier: 'confident',
+      items: [
+        'Compare the forwards arrow with the backwards arrow on the cycle.',
+        'Add the forces in one dimension to find the net force.',
+        'Identify the object as the cycle (with the rider treated as part of it).',
+        'Decide whether the forces are balanced (net force zero) or unbalanced (net force not zero).',
+      ],
+      correctOrder: [2, 0, 1, 3],
+      xpValue: 15,
+      hint: 'Pick the object first, then look at the arrows, then add them, then decide.',
+    },
+    {
+      id: 'fb-q16',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is working out whether a parked car has balanced or unbalanced forces.',
+      tier: 'confident',
+      steps: [
+        'Pick the object: the parked car.',
+        'List the forces on the car. Weight pulls down 12 000 N. The road pushes up with the normal contact force.',
+        'Note that the car is at rest, so the road must exactly cancel the weight.',
+        null,
+        'State the result. The forces on the parked car are balanced. The net force is 0 N and the car stays still.',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'Set the normal contact force at 12 000 N up so it cancels the 12 000 N weight, then add: 12 000 down and 12 000 up give a net force of 0 N.',
+      xpValue: 15,
+    },
+    {
+      id: 'fb-q17',
+      type: 'numeric-entry',
+      stem: 'A trolley in a warehouse has a 90 N forwards push and a 50 N backwards friction. What is the net force on the trolley, in newtons, in the forwards direction?',
+      tier: 'challenge',
+      correctAnswer: 40,
+      unit: 'N',
+      xpValue: 20,
+      hint: 'Take forwards as positive and add the two arrows in one dimension.',
+    },
+    {
+      id: 'fb-q18',
+      type: 'multiple-choice',
+      stem: 'A South Downs cyclist used to ride a flat road at a steady 8 m/s with the wind behind her. The wind drops to nothing and she keeps pedalling at the same effort. Drag now exceeds her forwards force by 5 N. Which sentence is correct?',
+      tier: 'challenge',
+      options: [
+        'The cyclist speeds up, because she is still pedalling.',
+        'The cyclist keeps coasting at 8 m/s, because pedalling and drag balance.',
+        'The cyclist slows down, because the net force is now backwards.',
+        'The cyclist stops at once, because the wind no longer helps her.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'fb-mis-needs-force-to-keep-moving',
+      hint: 'A net force of 5 N backwards on a forwards-moving cyclist gives a slow-down.',
+    },
+    {
+      id: 'fb-q19',
+      type: 'multiple-choice',
+      stem: 'A double-decker bus pulling out of a Manchester stop accelerates from rest. The driver presses the accelerator. Which row matches the forces and the result?',
+      tier: 'challenge',
+      options: [
+        'Forwards engine force is bigger than backwards drag; net force forwards; the bus speeds up.',
+        'Forwards engine force equals backwards drag; net force zero; the bus speeds up.',
+        'Backwards drag is bigger than forwards engine force; net force backwards; the bus speeds up.',
+        'There is no drag at low speeds, so the engine alone moves the bus at constant speed.',
+      ],
+      correctIndex: 0,
+      xpValue: 20,
+      misconceptionId: 'fb-mis-applied-equals-motion',
+      hint: 'A net force in the same direction as the motion makes the object speed up.',
+    },
+    {
+      id: 'fb-q20',
+      type: 'multiple-choice',
+      stem: 'A football is kicked along a flat school field. Once it is rolling, the kicker no longer touches it. Friction with the grass acts on the football. What does the ball do next, and what does its free-body diagram in the horizontal direction show?',
+      tier: 'challenge',
+      options: [
+        'The ball speeds up; only a forwards force from the kick acts on it.',
+        'The ball moves at the same speed forever; the diagram shows a forwards force from the kick balancing friction.',
+        'The ball slows down; the diagram shows only a backwards friction arrow, with no forwards arrow because the kick has ended.',
+        'The ball stops at once; the diagram shows a forwards friction arrow.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'fb-mis-applied-equals-motion',
+      hint: 'After the kick, the boot is no longer in contact with the ball. List only the forces still acting on the ball.',
+    },
+    {
+      id: 'fb-q21',
+      type: 'free-text',
+      stem: 'A cycling helmet light hangs from a hook in a hallway, not swinging. Explain whether the forces on the light are balanced or unbalanced. Name each force, give its direction, and say what the net force is.',
+      tier: 'challenge',
+      sampleAnswer:
+        'Two forces act on the hanging light. Weight pulls it downwards because of gravity. Tension in the hook string pulls it upwards. The light is not swinging and is staying still, so its motion is not changing. By the rule for balanced forces, the two arrows must be equal in size and opposite in direction. So the upward tension equals the downward weight, and the net force on the light is zero. The forces are balanced.',
+      keywords: ['weight', 'tension', 'balanced', 'equal', 'opposite', 'zero', 'net force'],
+      xpValue: 20,
+      misconceptionId: 'fb-mis-balanced-means-stopped',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 1F, learners think balanced forces always mean a stationary object
+    {
+      id: 'fb-mis-balanced-means-stopped',
+      description:
+        'Believing that balanced forces only happen on a still object, so a moving object must always have unbalanced forces.',
+      triggerAnswer: 'balanced-means-stopped',
+      correction:
+        'Balanced forces happen on any object whose motion is not changing. A still object has balanced forces; an object moving in a straight line at constant speed also has balanced forces.',
+      reExplanation:
+        'Picture a hockey puck sliding on ice with no friction. Weight (down) and the ice pushing up (normal contact) cancel. There is no horizontal arrow at all, so the horizontal forces also balance. The puck keeps gliding at the same speed in a straight line. Balanced forces leave the motion as it was, whether that motion is "stood still" or "moving along".',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2019, Paper 1PH0/1F, the "needs a force to keep moving" Aristotelian misconception
+    {
+      id: 'fb-mis-needs-force-to-keep-moving',
+      description:
+        'Believing that a moving object must have a forwards force on it for as long as it keeps moving; without a push, it would stop straight away.',
+      triggerAnswer: 'needs-force-to-keep-moving',
+      correction:
+        'A moving object keeps going if there is no net force on it. Things slow down because friction or air resistance act backwards, not because forwards motion needs a force to last.',
+      reExplanation:
+        'Imagine a curling stone sliding on ice. Once the player has let go, no hand is pushing it forwards. With almost no friction, the stone slides for a very long way at almost the same speed. The motion does not need a force to keep it going; it only changes when a net force appears.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on free-body diagrams
+    {
+      id: 'fb-mis-only-weight-on-still',
+      description:
+        'Drawing only the weight arrow on a still object on a surface, forgetting the normal contact force pushing back from the surface.',
+      triggerAnswer: 'only-weight-on-still',
+      correction:
+        'A still object on a surface has at least two forces: weight downwards from gravity, and normal contact upwards from the surface. Both arrows go on the diagram.',
+      reExplanation:
+        'A book sat on a desk has weight pulling it down and the desk pushing it back up. The two arrows are equal and opposite, so they balance, and the book stays still. Miss the normal contact arrow and the diagram says the book should be falling, which it clearly is not.',
+    },
+    // Source: OCR GCSE Physics examiner report June 2022, J259/02, learners say friction always wins
+    {
+      id: 'fb-mis-friction-always-wins',
+      description:
+        'Believing friction always wins, so a sledge with a forwards pull bigger than friction will still stop or stay still.',
+      triggerAnswer: 'friction-always-wins',
+      correction:
+        'Friction is one force on the diagram. If the forwards pull is bigger than friction, the net force is forwards, so the sledge speeds up forwards.',
+      reExplanation:
+        'Compare arrow lengths on the diagram. A 12 N forwards pull and a 4 N backwards friction give a net force of 12 minus 4, which is 8 N forwards. Friction does not win; it just reduces the net force. Only when friction equals or exceeds the forwards pull does the motion stop changing forwards.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 1F, applied-force-equals-motion confusion
+    {
+      id: 'fb-mis-applied-equals-motion',
+      description:
+        'Believing the applied push on an object stays on the diagram for as long as the object keeps moving, so a kicked ball still has a forwards force from the boot.',
+      triggerAnswer: 'applied-equals-motion',
+      correction:
+        'An applied force only acts while the thing applying it is in contact. Once the boot has left the ball, only the forces still acting (weight, air resistance, friction) belong on the diagram.',
+      reExplanation:
+        'A football leaves the boot. While the boot is touching, the boot pushes the ball forwards. The instant the boot loses contact, that arrow comes off the diagram. The ball carries on through the air with weight (down) and air resistance (backwards) only. The push is in the past; it is not still acting on the ball.',
+    },
+    // Source: CGP KS3 Physics Workbook Common Mistake box on adding force arrows
+    {
+      id: 'fb-mis-add-not-subtract',
+      description:
+        'Adding the sizes of two opposite force arrows together to get the net force, instead of subtracting the smaller from the larger.',
+      triggerAnswer: 'add-not-subtract',
+      correction:
+        'When two forces act in opposite directions, take one direction as positive and subtract the smaller from the larger. The net force points in the direction of the larger arrow.',
+      reExplanation:
+        'A 50 N forwards push and a 30 N backwards friction do not give 80 N. They give 50 minus 30, which is 20 N, in the forwards direction. The 80 N answer would only be right if both arrows pointed the same way. Direction matters when adding forces in one dimension.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2022, Paper 1PH0/1F, learners forget to balance vertical forces on a moving horizontal object
+    {
+      id: 'fb-mis-skip-vertical-on-moving',
+      description:
+        'On a horizontally moving object (cycle, car, trolley), drawing only the horizontal force arrows and skipping the vertical pair, then claiming the diagram shows balanced forces because "weight and normal aren’t important here".',
+      triggerAnswer: 'skip-vertical-on-moving',
+      correction:
+        'Every object on a flat surface has weight downwards and a normal contact force upwards. Draw both pairs of arrows; only then can you say whether the overall forces are balanced.',
+      reExplanation:
+        'A coasting trolley has weight down and normal contact up, even though it is moving sideways. Those two arrows are equal and balance. The trolley speeds up or slows down only because of an unbalanced horizontal pair (push or friction). Skip the vertical arrows and you cannot prove the diagram is right.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const forcesZoneNodes = [forcesTypes, forcesBalanced]
 
 export const forcesZone: Zone = {
   id: 'physics-forces',
