@@ -559,7 +559,7 @@ export const animalCell: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: CGP KS3 Biology Study Guide, "Common mistake" callout on plant vs animal cells (verify page)
+    // Source: AQA GCSE Biology Foundation tier (8461/1F) Report on the Examination, June 2022, comments on Question 1 cell biology: "frequent confusion between cell membranes and cell walls" among students answering on sub-cellular structures. https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-84611F-WRE-%202022.PDF
     {
       id: 'ac-mis-cell-wall',
       description: 'Animal cells have a cell wall like plant cells.',
@@ -569,7 +569,7 @@ export const animalCell: SkillNode = {
       reExplanation:
         'Picture an animal cell as a soft jelly bag. The bag is the cell membrane. Plant cells need an extra rigid outer layer, the cell wall, because they have to support the plant against gravity. Animal bodies use bones and muscles for support, so animal cells do not need a wall.',
     },
-    // Source: AQA GCSE Biology Foundation tier examiner reports, recurring confusion of plant and animal organelles (verify report year and Q reference)
+    // Source: AQA GCSE Biology Foundation tier (8461/1F) Report on the Examination, June 2022: "Less than 45% of students were able to correctly reference the function of chloroplasts." Confusion between chloroplast presence in animal vs plant cells flagged across the cell-biology questions. https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-84611F-WRE-%202022.PDF
     {
       id: 'ac-mis-chloroplasts',
       description: 'Animal cells contain chloroplasts.',
@@ -579,7 +579,7 @@ export const animalCell: SkillNode = {
       reExplanation:
         'Chloroplasts hold the green pigment chlorophyll, which traps light energy for photosynthesis. Animals do not make their own food; they take it in by eating. So animal cells have no chloroplasts and no chlorophyll, which is why animal tissue is not green.',
     },
-    // Source: CGP KS3 Biology Study Guide, "Common mistake" on respiration and the role of mitochondria (verify page)
+    // Source: AQA GCSE Biology Foundation tier (8461/1F) Report on the Examination, June 2022: "the common error of referring to energy production / creation in the mitochondria was still seen" in answers about sub-cellular structures. https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-84611F-WRE-%202022.PDF
     {
       id: 'ac-mis-mitochondria-make-energy',
       description: 'Mitochondria make or create energy for the cell.',
@@ -589,7 +589,7 @@ export const animalCell: SkillNode = {
       reExplanation:
         'Glucose holds chemical energy. Inside a mitochondrion, glucose reacts with oxygen and the stored energy is transferred so the cell can use it. The mitochondrion is the place where this transfer happens, not a tiny battery factory making fresh energy.',
     },
-    // Source: CGP KS3 Biology Study Guide, structure-and-function callout for nucleus and cell membrane (verify page)
+    // Source: AQA GCSE Biology specification 8461, section 4.1.1.2 "Animal and plant cells", which distinguishes the cell membrane (controls movement of substances in and out) from the nucleus (contains genetic material that controls the activities of the cell). https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/subject-content/cell-biology
     {
       id: 'ac-mis-nucleus-controls',
       description:
@@ -600,7 +600,7 @@ export const animalCell: SkillNode = {
       reExplanation:
         'Think of the cell membrane as the doorway and the nucleus as the head office. The doorway decides which substances are allowed in or out. The head office sets the rules for how the cell works overall.',
     },
-    // Source: DfE KS3 Science exemplar materials on hierarchical organisation of multicellular organisms (verify exemplar)
+    // Source: DfE National Curriculum Science Programme of Study Key Stage 3 (2014), "Cells and organisation" sub-content: pupils should be taught "the hierarchical organisation of multicellular organisms: from cells to tissues to organs to systems to organisms." https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study
     {
       id: 'ac-mis-scale-organism',
       description:
@@ -621,7 +621,7 @@ export const animalCell: SkillNode = {
       reExplanation:
         'When you draw an animal cell, leave the inside as cytoplasm with the nucleus and a few mitochondria. Save the big sap-filled vacuole for the plant cell drawing, where it helps keep the plant firm.',
     },
-    // Source: Edexcel GCSE Biology Foundation tier examiner reports, recurring observations on specialised cell sizes (verify report year and Q reference)
+    // Source: AQA GCSE Biology specification 8461, section 4.1.2.1 "Cell specialisation", which states that cells "may be specialised to carry out a particular function", with examples including red blood cells, sperm cells, and nerve cells whose sizes and shapes differ greatly. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/subject-content/cell-biology
     {
       id: 'ac-mis-cells-equal-size',
       description: 'All cells in the body are about the same size.',
