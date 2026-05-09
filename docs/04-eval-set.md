@@ -601,6 +601,16 @@ Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`
   - Required handling: misconception entry on the light-microscope node; at least one spot-misconception or Challenge tier numeric that quantifies the field-of-view trade-off.
 - C-MICRO-6: Learner places the coverslip flat onto the specimen and traps air bubbles, or places it before adding water and specimen.
   - Required handling: misconception entry on the light-microscope node; at least one drag-order or Challenge tier MCQ that surfaces the coverslip-from-an-edge step.
+- C-MICRO-7: Learner writes magnification with units (for example "x400 mm") rather than as a unit-less ratio.
+  - Required handling: misconception entry on the magnification node; at least one MCQ that flags the units error and reinforces magnification as a ratio.
+- C-MICRO-8: Learner reports the objective magnification as the total magnification, ignoring the eyepiece.
+  - Required handling: misconception entry on the magnification node; at least one spot-misconception or MCQ that requires multiplying the two stages.
+- C-MICRO-9: Learner divides image size by actual size (or vice versa) without converting to a common unit first.
+  - Required handling: misconception entry on the magnification node; at least one Confident or Challenge tier numeric that requires a mm-to-µm conversion before the division.
+- C-MICRO-10: Learner multiplies image size by magnification to find the actual cell size, instead of dividing.
+  - Required handling: misconception entry on the magnification node; at least one MCQ that flags the wrong direction of the formula.
+- C-MICRO-11: Learner treats a scale bar as if it is the magnification, rather than a labelled real distance from which the magnification is computed.
+  - Required handling: misconception entry on the magnification node; at least one Challenge tier numeric that asks the learner to derive magnification from a scale bar.
 
 ### Question shape probes
 
@@ -609,6 +619,10 @@ Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`
 - Q-MICRO-3: At least one drag-drop-builder question on the light-microscope node requires building a working slide from a parts pool that mixes correct items (slide, water, specimen, coverslip) with off-slide distractors (mirror, lens, pencil).
 - Q-MICRO-4: At least one Challenge tier numeric on the light-microscope node requires reasoning about field-of-view shrinkage or class-time arithmetic in a UK school context.
 - Q-MICRO-5: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (image inversion, slide-direction reasoning, error diagnosis) to stretch the learner beyond the bare KS3 list.
+- Q-MICRO-6: At least one numeric-entry on the magnification node asks the learner to compute total magnification from eyepiece x objective, with at least one Confident-tier item using a non-standard eyepiece (for example x15) to test whether the learner reads both numbers.
+- Q-MICRO-7: At least one numeric-entry on the magnification node uses the rearranged formula A = I / M with image size in mm and asks for the actual size in micrometres, requiring the learner to convert units in the final step.
+- Q-MICRO-8: At least one Challenge tier numeric on the magnification node requires deriving the magnification from a scale bar (image distance plus labelled real distance), with at least one mm-to-µm conversion in the working.
+- Q-MICRO-9: At least one drag-order question on the magnification node sequences the steps from picture to actual size (read image, find total magnification, divide, convert units).
 
 ### Tutor probes
 
@@ -617,6 +631,8 @@ Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`
 - T-MICRO-3: Given "Why can I not use the coarse knob at x40?", the tutor walks the learner through the close lens-to-slide distance at high power, not a definition dump.
 - T-MICRO-4: Given an off-topic input (for example a question about US lab microscopes or electron microscopes beyond KS3), the tutor steers back to UK KS3 light-microscope language politely.
 - T-MICRO-5: Given a request for an inline definition (tap on "objective" or "coverslip"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-MICRO-6: Given "Why does my magnification answer have x400 mm at the end?", the tutor's first reply is a Socratic prompt about the units in the formula, not a direct correction.
+- T-MICRO-7: Given a wrong answer matching the multiply-not-divide trigger on actual cell size, the tutor cites the relevant misconception's `reExplanation` (the magnification triangle) rather than producing a fresh hint.
 
 ## Zone: Vitalia > Body Systems
 

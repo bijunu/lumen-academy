@@ -698,11 +698,597 @@ export const lightMicroscope: SkillNode = {
   },
 }
 
-export const microscopyZoneNodes: SkillNode[] = [lightMicroscope]
+const magnificationFormulaSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="40" text-anchor="middle" font-family="sans-serif" font-size="20" fill="#1F2937">The magnification triangle</text>
+  <polygon points="300,80 80,330 520,330" fill="#FCE7F3" stroke="#BE185D" stroke-width="4" />
+  <line x1="180" y1="240" x2="420" y2="240" stroke="#BE185D" stroke-width="3" />
+  <line x1="300" y1="80" x2="300" y2="240" stroke="#BE185D" stroke-width="3" />
+  <text x="300" y="180" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">I</text>
+  <text x="300" y="200" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Image size</text>
+  <text x="220" y="290" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">M</text>
+  <text x="220" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Magnification</text>
+  <text x="380" y="290" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">A</text>
+  <text x="380" y="310" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Actual size</text>
+  <text x="60" y="390" font-family="sans-serif" font-size="14" fill="#1F2937">M = I / A</text>
+  <text x="240" y="390" font-family="sans-serif" font-size="14" fill="#1F2937">A = I / M</text>
+  <text x="420" y="390" font-family="sans-serif" font-size="14" fill="#1F2937">I = M x A</text>
+</svg>
+`.trim()
+
+const totalMagSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="34" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Total magnification on a school microscope</text>
+  <rect x="60" y="80" width="160" height="100" rx="8" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="140" y="120" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1F2937">Eyepiece</text>
+  <text x="140" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">x10</text>
+  <text x="270" y="140" text-anchor="middle" font-family="sans-serif" font-size="36" fill="#BE185D">x</text>
+  <rect x="320" y="80" width="160" height="100" rx="8" fill="#FEF3C7" stroke="#92400E" stroke-width="3" />
+  <text x="400" y="120" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1F2937">Objective</text>
+  <text x="400" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">x40</text>
+  <text x="300" y="240" text-anchor="middle" font-family="sans-serif" font-size="36" fill="#BE185D">=</text>
+  <rect x="200" y="260" width="200" height="100" rx="8" fill="#FCE7F3" stroke="#BE185D" stroke-width="3" />
+  <text x="300" y="300" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1F2937">Total magnification</text>
+  <text x="300" y="335" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">x400</text>
+</svg>
+`.trim()
+
+const unitsLadderSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="34" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Going between millimetres and micrometres</text>
+  <rect x="80" y="80" width="180" height="80" rx="8" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="170" y="115" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">1 mm</text>
+  <text x="170" y="145" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">millimetre</text>
+  <text x="300" y="125" text-anchor="middle" font-family="sans-serif" font-size="32" fill="#BE185D">=</text>
+  <rect x="340" y="80" width="180" height="80" rx="8" fill="#FEF3C7" stroke="#92400E" stroke-width="3" />
+  <text x="430" y="115" text-anchor="middle" font-family="sans-serif" font-size="22" fill="#1F2937">1000 µm</text>
+  <text x="430" y="145" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">micrometres</text>
+  <text x="80" y="220" font-family="sans-serif" font-size="16" fill="#1F2937">From mm to µm: multiply by 1000</text>
+  <text x="80" y="260" font-family="sans-serif" font-size="16" fill="#1F2937">From µm to mm: divide by 1000</text>
+  <rect x="80" y="290" width="440" height="80" rx="8" fill="#BFDBFE" stroke="#1D4ED8" stroke-width="3" />
+  <text x="300" y="320" text-anchor="middle" font-family="sans-serif" font-size="16" fill="#1F2937">Always match the units before dividing.</text>
+  <text x="300" y="350" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Image and actual size must be in the same unit. Magnification has no unit.</text>
+</svg>
+`.trim()
+
+export const magnificationCalculations: SkillNode = {
+  id: 'biology-microscopy-magnification',
+  title: 'Magnification Calculations',
+  description:
+    'Work out the total magnification of a microscope, then use it to find the actual size of a cell from its image. Practise the magnification formula in both directions, in millimetres and micrometres, with the unit conversion that always trips Year 7 up.',
+  subject: 'biology',
+  realm: 'vitalia',
+  zoneId: 'biology-microscopy',
+  zoneName: 'Microscopy',
+  tier: 'confident',
+  prerequisites: ['biology-microscopy-light-microscope'],
+  curriculum: {
+    ks3Objective:
+      'Cells as the fundamental unit of living organisms, including how to observe, interpret and record cell structure using a light microscope.',
+    awardingBodies: {
+      aqa: '4.1.1.5 Size and scale of cells (GCSE Biology 8461). Apply the magnification formula M = I / A and rearrange it to find I or A. Convert between mm and micrometres.',
+      edexcel: 'CB1e Magnification (GCSE Biology 1BI0, Topic 1). Use the magnification formula and convert between units.',
+      ocr: 'B1.1.4 Calculating magnification and size (GCSE Biology A J247). Apply M = I / A and convert between mm and micrometres.',
+    },
+  },
+  scenes: [
+    {
+      id: 'mc-scene-formula',
+      title: 'The Magnification Formula',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each label on the triangle to read the rule.',
+      data: {
+        svg: magnificationFormulaSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'mc-hs-image',
+            x: 50,
+            y: 45,
+            label: 'Image size',
+            description:
+              'How big the image looks. Read it off the picture in mm.',
+          },
+          {
+            id: 'mc-hs-mag',
+            x: 35,
+            y: 75,
+            label: 'Magnification',
+            description:
+              'A number with no units. Tells you how many times bigger the image is than the real cell.',
+          },
+          {
+            id: 'mc-hs-actual',
+            x: 65,
+            y: 75,
+            label: 'Actual size',
+            description:
+              'How big the real cell is. Often given in micrometres because real cells are tiny.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'mc-scene-total-mag',
+      title: 'Two Lenses, One Total',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each lens box to read how the two magnifications combine.',
+      data: {
+        svg: totalMagSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'mc-tm-eyepiece',
+            x: 23,
+            y: 32,
+            label: 'Eyepiece magnification',
+            description:
+              'School eyepieces are usually x10. This is the first stage of magnification.',
+          },
+          {
+            id: 'mc-tm-objective',
+            x: 67,
+            y: 32,
+            label: 'Objective magnification',
+            description:
+              'Choose one objective from the nosepiece (x4, x10, or x40). This is the second stage.',
+          },
+          {
+            id: 'mc-tm-total',
+            x: 50,
+            y: 80,
+            label: 'Total magnification',
+            description:
+              'Total magnification = eyepiece x objective. So x10 eyepiece with x40 objective gives x400.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'mc-scene-units',
+      title: 'Millimetres and Micrometres',
+      type: 'labelled-diagram',
+      instructions:
+        'Click the boxes to read how the two units link, and the rule for using them in the formula.',
+      data: {
+        svg: unitsLadderSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'mc-units-mm',
+            x: 28,
+            y: 30,
+            label: '1 mm',
+            description:
+              'A millimetre is one thousandth of a metre. You can see this size with the naked eye.',
+          },
+          {
+            id: 'mc-units-um',
+            x: 72,
+            y: 30,
+            label: '1000 µm',
+            description:
+              'A micrometre, written µm, is one thousandth of a millimetre. So 1 mm equals 1000 µm.',
+          },
+          {
+            id: 'mc-units-rule',
+            x: 50,
+            y: 80,
+            label: 'Same unit rule',
+            description:
+              'Image size and actual size must be in the same unit before you divide. Magnification has no unit.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'mc-worked-1',
+      title: 'Finding the actual size of a plant cell',
+      steps: [
+        {
+          explanation:
+            'A pupil sees a plant cell that measures 30 mm across in the picture, taken at a total magnification of x500.',
+        },
+        {
+          explanation:
+            'Choose the right form of the formula. We know image size and magnification, so use actual size = image size divided by magnification.',
+        },
+        {
+          explanation:
+            'Substitute the numbers in the same unit. Actual size = 30 mm divided by 500.',
+          maths: 'A = 30 mm / 500',
+        },
+        {
+          explanation:
+            'Work out the division. 30 divided by 500 equals 0.06 mm.',
+          maths: 'A = 0.06 mm',
+        },
+        {
+          explanation:
+            'Convert to micrometres because the cell is small. Multiply by 1000. So 0.06 mm equals 60 micrometres.',
+          maths: 'A = 0.06 x 1000 = 60 micrometres',
+        },
+      ],
+    },
+    {
+      id: 'mc-worked-2',
+      title: 'Finding the magnification when both sizes are known',
+      steps: [
+        {
+          explanation:
+            'A pupil knows that a real onion cell is 0.2 mm across. In the picture it measures 80 mm across. What magnification was used?',
+        },
+        {
+          explanation:
+            'Use the formula in the form magnification = image size divided by actual size.',
+          maths: 'M = I / A',
+        },
+        {
+          explanation:
+            'Check the units. Both image size and actual size are already in millimetres, so no conversion is needed.',
+        },
+        {
+          explanation:
+            'Substitute the numbers. Magnification = 80 mm divided by 0.2 mm.',
+          maths: 'M = 80 / 0.2',
+        },
+        {
+          explanation:
+            'Work out the division. 80 divided by 0.2 equals 400.',
+          maths: 'M = 400',
+        },
+        {
+          explanation:
+            'Magnification has no unit. The answer is x400. This is what a school microscope gives with a x10 eyepiece and a x40 objective.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'mc-q1',
+      type: 'multiple-choice',
+      stem: 'A school microscope has an eyepiece of x10 and an objective of x4. What is the total magnification?',
+      tier: 'core',
+      options: ['x14', 'x40', 'x4', 'x10'],
+      correctIndex: 1,
+      xpValue: 10,
+      hint: 'Total magnification = eyepiece x objective.',
+    },
+    {
+      id: 'mc-q2',
+      type: 'numeric-entry',
+      stem: 'A school microscope has an eyepiece of x10 and an objective of x40. What is the total magnification?',
+      tier: 'core',
+      correctAnswer: 400,
+      xpValue: 10,
+      hint: 'Total magnification = eyepiece x objective.',
+    },
+    {
+      id: 'mc-q3',
+      type: 'multiple-choice',
+      stem: 'Which version of the magnification formula gives the actual size of a cell?',
+      tier: 'core',
+      options: [
+        'Magnification = image size x actual size.',
+        'Image size = magnification + actual size.',
+        'Actual size = image size divided by magnification.',
+        'Actual size = magnification x image size.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+    },
+    {
+      id: 'mc-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil writes a magnification answer as "x400 mm." What has gone wrong?',
+      tier: 'core',
+      options: [
+        'Magnification has no unit. Write only x400.',
+        'Magnification is always given in millimetres, so the answer is fine.',
+        'Magnification should always be in micrometres, not millimetres.',
+        'Magnification should be written as a fraction, not a multiple.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'mc-mis-mag-has-units',
+    },
+    {
+      id: 'mc-q5',
+      type: 'multiple-choice',
+      stem: 'Which statement about millimetres and micrometres is correct?',
+      tier: 'core',
+      options: [
+        'A millimetre and a micrometre are the same size.',
+        'A micrometre is bigger than a millimetre.',
+        'There are 100 micrometres in a millimetre.',
+        'There are 1000 micrometres in a millimetre.',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'mc-mis-mm-same-as-um',
+    },
+    {
+      id: 'mc-q6',
+      type: 'numeric-entry',
+      stem: 'A cell measures 0.05 mm across. How many micrometres is this?',
+      tier: 'core',
+      correctAnswer: 50,
+      unit: 'µm',
+      xpValue: 10,
+      hint: 'Multiply by 1000 to go from mm to µm.',
+    },
+    {
+      id: 'mc-q7',
+      type: 'numeric-entry',
+      stem: 'A drawing of a cell measures 50 mm across. The total magnification is x100. What is the actual size of the cell in mm?',
+      tier: 'core',
+      correctAnswer: 0.5,
+      unit: 'mm',
+      xpValue: 15,
+      hint: 'Actual size = image size divided by magnification.',
+    },
+    {
+      id: 'mc-q8',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "the magnification of a microscope is just whatever the objective lens says." Is this method sound?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'The method is sound. Whatever the objective says is the total magnification.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Total magnification is the eyepiece magnification multiplied by the objective magnification, never just one of them.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'mc-mis-objective-only',
+    },
+    {
+      id: 'mc-q9',
+      type: 'multiple-choice',
+      stem: 'A drawing of a cell measures 30 mm across at a total magnification of x500. What is the actual size of the cell?',
+      tier: 'confident',
+      options: [
+        '15 000 micrometres',
+        '0.6 micrometres',
+        '60 micrometres',
+        '6 millimetres',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      hint: 'Divide image by magnification, then convert mm to µm.',
+    },
+    {
+      id: 'mc-q10',
+      type: 'numeric-entry',
+      stem: 'A real onion cell is 0.2 mm across. In a picture it measures 80 mm across. What is the magnification used?',
+      tier: 'confident',
+      correctAnswer: 400,
+      xpValue: 15,
+      hint: 'Magnification = image size divided by actual size. Make sure the units match.',
+    },
+    {
+      id: 'mc-q11',
+      type: 'multiple-choice',
+      stem: 'A pupil draws a red blood cell that measures 35 mm across in their book. The actual cell is 7 micrometres across. What total magnification did the drawing use?',
+      tier: 'confident',
+      options: ['x5', 'x500', 'x50 000', 'x5000'],
+      correctIndex: 3,
+      xpValue: 20,
+      hint: 'Convert 35 mm to micrometres first, so both sizes use the same unit.',
+      misconceptionId: 'mc-mis-mismatched-units',
+    },
+    {
+      id: 'mc-q13',
+      type: 'multiple-choice',
+      stem: 'A pupil writes that "to find the real size of a cell, you multiply the image size by the magnification." What has gone wrong?',
+      tier: 'confident',
+      options: [
+        'Nothing. Image size times magnification gives the real size.',
+        'Real size = image size divided by magnification, not multiplied. Multiplying would make the cell even bigger.',
+        'You should add image size and magnification to get the real size.',
+        'Magnification has units, so this would not work.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'mc-mis-multiply-not-divide',
+    },
+    {
+      id: 'mc-q14',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this calculation of an actual cell size.',
+      tier: 'confident',
+      steps: [
+        'A cell drawing measures 60 mm across at a total magnification of x300.',
+        'Use actual size = image size divided by magnification, with both sizes in mm.',
+        null,
+        'Convert to micrometres by multiplying by 1000. So the actual cell size is 200 micrometres.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Substitute the numbers: actual size = 60 divided by 300, which equals 0.2 mm.',
+      xpValue: 20,
+    },
+    {
+      id: 'mc-q15',
+      type: 'drag-order',
+      stem: 'Place these steps in the right order for finding the actual size of a cell from its image.',
+      tier: 'confident',
+      items: [
+        'Convert the result to micrometres if the answer is small.',
+        'Read the image size off the picture in millimetres.',
+        'Find the total magnification by multiplying eyepiece by objective.',
+        'Divide the image size by the total magnification.',
+      ],
+      correctOrder: [1, 2, 3, 0],
+      xpValue: 20,
+    },
+    {
+      id: 'mc-q16',
+      type: 'multiple-choice',
+      stem: 'A pupil notices that on the same school microscope, the field of view at x40 holds about a quarter as many cells across as at x10. Which sentence best explains this?',
+      tier: 'confident',
+      options: [
+        'A higher magnification shows a wider area, so each cell looks smaller.',
+        'The cells shrink at x40, so you can see fewer of them.',
+        'The objective lens stops working at x40.',
+        'A higher magnification shows a narrower area, so the same cells fill more of the view and fewer fit across.',
+      ],
+      correctIndex: 3,
+      misconceptionId: 'mc-mis-bigger-is-more',
+      xpValue: 15,
+    },
+    {
+      id: 'mc-q17',
+      type: 'data-extraction',
+      stem: 'Which slide setting in the table gives the highest total magnification?',
+      tier: 'confident',
+      dataSource:
+        'A class records four microscope settings: A. x10 eyepiece with x4 objective. B. x10 eyepiece with x10 objective. C. x10 eyepiece with x40 objective. D. x15 eyepiece with x10 objective.',
+      correctAnswer: 'C',
+      xpValue: 15,
+      hint: 'Multiply each pair and pick the largest.',
+    },
+    {
+      id: 'mc-q18',
+      type: 'numeric-entry',
+      stem: 'A Year 7 pupil in a Tunbridge Wells school draws a single onion cell at total magnification x100. The drawing is 25 mm across. The teacher then asks the pupil to redraw it to fit in a notebook column 10 mm wide. What total magnification should the new drawing use, to keep the same actual cell size?',
+      tier: 'challenge',
+      correctAnswer: 40,
+      xpValue: 25,
+      hint: 'First find the actual cell size from the first drawing, then use it with the new image size.',
+      misconceptionId: 'mc-mis-multiply-not-divide',
+    },
+    {
+      id: 'mc-q19',
+      type: 'numeric-entry',
+      stem: 'A scientist photographs a cheek cell at a total magnification of x800. The cell in the picture is 48 mm across. A separate measurement shows that the actual cheek cell is 60 micrometres across. Has the magnification been recorded correctly? Enter the correct magnification.',
+      tier: 'challenge',
+      correctAnswer: 800,
+      xpValue: 25,
+      hint: 'Convert 48 mm to micrometres, then divide by the actual size in the same unit.',
+    },
+    {
+      id: 'mc-q20',
+      type: 'multiple-choice',
+      stem: 'In a Sevenoaks classroom, a pupil sees a cell that the textbook lists as 50 micrometres across, but their drawing at x200 only measures 8 mm across. Which step most likely went wrong?',
+      tier: 'challenge',
+      options: [
+        'They used the wrong magnification formula.',
+        'They drew the cell smaller than the formula gives. The image should be 10 mm at x200, since 50 micrometres x 200 = 10 000 micrometres = 10 mm.',
+        'The textbook value must be wrong.',
+        'The microscope was set to a different objective during the drawing.',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      hint: 'Use image size = magnification x actual size, with units that match.',
+    },
+    {
+      id: 'mc-q21',
+      type: 'numeric-entry',
+      stem: 'A teacher prints a scale bar 20 mm long beside a cell drawing. The label says the bar represents 50 micrometres of real distance. What total magnification does this drawing use?',
+      tier: 'challenge',
+      correctAnswer: 400,
+      xpValue: 25,
+      hint: 'The scale bar is just a small image of a known real distance. Use M = image / actual, with both in the same units.',
+      misconceptionId: 'mc-mis-scale-bar-magnification',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Biology specification 8461, section 4.1.1.5 "Size and scale of cells", which states magnification has no unit and is the ratio of image size to actual size. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/subject-content/cell-biology
+    {
+      id: 'mc-mis-mag-has-units',
+      description: 'Magnification has units like millimetres or micrometres.',
+      triggerAnswer: 'mag-units',
+      correction:
+        'Actually, magnification is a ratio of two sizes that share the same unit. The units cancel out, so magnification itself has no unit. Write x400, not x400 mm.',
+      reExplanation:
+        'When you divide image size by actual size, both should be in the same unit. The unit on the top and the unit on the bottom cancel, leaving just a number. That number is the magnification, and it gets written with an x in front, like x10 or x400. Adding mm or micrometres on the end is always wrong.',
+    },
+    // Source: AQA GCSE Biology specification 8461, which gives the total magnification of a compound light microscope as the eyepiece magnification multiplied by the objective magnification. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/subject-content/cell-biology
+    {
+      id: 'mc-mis-objective-only',
+      description:
+        'The total magnification of a microscope is whatever number the objective lens says.',
+      triggerAnswer: 'objective-only',
+      correction:
+        'In fact, total magnification is the eyepiece multiplied by the objective. A x10 eyepiece with a x40 objective gives x400, not x40.',
+      reExplanation:
+        'A compound light microscope magnifies in two stages. First the objective lens above the slide makes an enlarged image. Then the eyepiece lens at the top enlarges that image again. To get the total, multiply the two together. So always read both numbers, then multiply.',
+    },
+    // Source: AQA GCSE Biology Foundation tier (8461/1F) Report on the Examination, June 2022, on cell-size questions where students often forget the unit conversion between mm and micrometres before dividing. https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-84611F-WRE-%202022.PDF
+    {
+      id: 'mc-mis-mismatched-units',
+      description:
+        'You can divide an image size in millimetres by an actual size in micrometres without converting first.',
+      triggerAnswer: 'mismatched-units',
+      correction:
+        'Actually, image size and actual size must be in the same unit before you divide. Convert one of them first.',
+      reExplanation:
+        'A drawing of a cell might be 35 mm across, while the real cell is 7 micrometres across. Dividing 35 by 7 gives the wrong answer because the units differ. First convert 35 mm to micrometres: 35 mm equals 35 000 micrometres. Now divide 35 000 by 7 to get the magnification of x5000.',
+    },
+    // Source: AQA GCSE Biology specification 8461, section 4.1.1.5, which states the formula M = I / A and rearrangements. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification/subject-content/cell-biology
+    {
+      id: 'mc-mis-multiply-not-divide',
+      description:
+        'To find the actual size of a cell, multiply the image size by the magnification.',
+      triggerAnswer: 'multiply-not-divide',
+      correction:
+        'Actually, divide the image size by the magnification. Multiplying would make the result even bigger than the picture, when the real cell is smaller.',
+      reExplanation:
+        'A microscope makes the image larger than the real cell, so the real cell must be smaller than the image. Smaller comes from dividing, not multiplying. Use the magnification triangle: I sits on top, M and A sit underneath. Cover A and you see I divided by M. Cover I and you see M times A.',
+    },
+    // Source: Oak National Academy KS3 Biology lesson, "Using a light microscope", on the trade-off between magnification and field of view. https://www.thenational.academy/teachers/programmes/science-secondary-ks3/units/cells
+    {
+      id: 'mc-mis-bigger-is-more',
+      description:
+        'A higher magnification always shows you more cells than a lower one.',
+      triggerAnswer: 'bigger-more-cells',
+      correction:
+        'In fact, a higher magnification shows fewer cells at once, but each looks larger. The wider view of many cells is at low magnification.',
+      reExplanation:
+        'Magnification trades width of view for detail. At x4 you might see 50 cells across the field of view, each tiny. At x40 only a handful of cells fit across the same field, but each looks ten times bigger. To count cells, choose low power. To see one cell in detail, choose high power.',
+    },
+    // Source: AQA GCSE Biology Required Practical 1 (Microscopy) handbook, on writing the scale bar correctly with units that match the magnification work. https://filestore.aqa.org.uk/resources/biology/AQA-8461-PRACTICALS.PDF
+    {
+      id: 'mc-mis-scale-bar-magnification',
+      description:
+        'A scale bar on a microscope drawing is the same as the magnification.',
+      triggerAnswer: 'scale-bar-mag',
+      correction:
+        'Actually, a scale bar shows a real distance on the slide, in micrometres or millimetres. The magnification is then worked out from the bar length and the labelled real distance.',
+      reExplanation:
+        'A scale bar is a tiny image of a known real distance. If a 20 mm bar on the page represents 50 micrometres on the slide, the magnification is 20 mm divided by 50 micrometres. Convert to the same unit: 20 mm = 20 000 micrometres, so magnification = 20 000 / 50 = 400. The bar itself is not the magnification; it is the data you use to work it out.',
+    },
+    // Authored, no external source: classroom-observed Year 7 slip of treating mm and µm as the same when both look small
+    {
+      id: 'mc-mis-mm-same-as-um',
+      description: 'A millimetre and a micrometre are the same thing because both are small.',
+      triggerAnswer: 'mm-equals-um',
+      correction:
+        'In fact, 1 millimetre is 1000 times bigger than 1 micrometre. Mixing them up changes any answer by a factor of 1000.',
+      reExplanation:
+        'A millimetre is one of the small marks on a school ruler; you can see it with the naked eye. A micrometre is one thousandth of that; you only see it under a microscope. Always check the unit on every number before you divide. A wrong unit guess turns 60 micrometres into 60 millimetres, which is bigger than your hand.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const microscopyZoneNodes: SkillNode[] = [lightMicroscope, magnificationCalculations]
 
 export const microscopyZone: Zone = {
   id: 'biology-microscopy',
   name: 'Microscopy',
   realm: 'vitalia',
-  nodeIds: [lightMicroscope.id],
+  nodeIds: [lightMicroscope.id, magnificationCalculations.id],
 }

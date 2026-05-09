@@ -6,7 +6,12 @@ import { microscopyZone, microscopyZoneNodes } from './microscopy'
 export { animalCell, cellsZone, cellsZoneNodes } from './cells'
 export { plantCell } from './plant-cell'
 export { specialisedCells } from './specialised-cells'
-export { lightMicroscope, microscopyZone, microscopyZoneNodes } from './microscopy'
+export {
+  lightMicroscope,
+  magnificationCalculations,
+  microscopyZone,
+  microscopyZoneNodes,
+} from './microscopy'
 
 export const biologyNodes: SkillNode[] = [...cellsZoneNodes, ...microscopyZoneNodes]
 

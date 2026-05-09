@@ -153,10 +153,10 @@
 - **OCR**: PAG B1 Microscopy / B1.1.3 (GCSE Biology A J247)
 
 #### Magnification Calculations (Confident, `biology-microscopy-magnification`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Cells and organisation)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: Cells as the fundamental unit of living organisms, including how to observe, interpret and record cell structure using a light microscope
+- **AQA**: 4.1.1.5 Size and scale of cells (GCSE Biology 8461)
+- **Edexcel**: CB1e Magnification (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.4 Calculating magnification and size (GCSE Biology A J247)
 
 ### Zone: Body Systems (`biology-body-systems`)
 
