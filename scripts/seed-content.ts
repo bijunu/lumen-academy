@@ -3,23 +3,16 @@
  * Idempotent: re-running upserts existing documents by `id`.
  *
  * Usage:
- *   npm run seed                    (loads .env.local via --env-file)
- *   MONGODB_URI=... npm run seed    (override)
+ *   npm run seed                              (all subjects)
+ *   npm run seed -- --subject=biology        (one subject only)
+ *   MONGODB_URI=... npm run seed              (override URI)
  */
 import { MongoClient } from 'mongodb'
 import {
-  algebraZoneNodes,
+  SUBJECT_BUNDLES,
   allSeededNodes,
-  bidmasZoneNodes,
-  coordinatesZoneNodes,
-  decimalsZoneNodes,
-  factorsMultiplesZoneNodes,
-  fractionsZoneNodes,
-  percentagesZoneNodes,
-  placeValueZoneNodes,
-  primesZoneNodes,
-  ratioZoneNodes,
-  sequencesZoneNodes,
+  allSeededZones,
+  type SeederSubject,
 } from '../src/content/seed'
 import {
   CONTENT_NODES_COLLECTION,
@@ -30,76 +23,27 @@ import type { SkillNode, Zone } from '../src/types/content'
 
 const DEFAULT_DB_NAME = 'lumen-academy'
 
-const allNodes: SkillNode[] = allSeededNodes
+function parseSubjectArg(): SeederSubject | null {
+  const arg = process.argv.find(a => a.startsWith('--subject='))
+  if (!arg) return null
+  const value = arg.split('=')[1]
+  if (!value || !(value in SUBJECT_BUNDLES)) {
+    const allowed = Object.keys(SUBJECT_BUNDLES).join(', ')
+    throw new Error(
+      `--subject=${value} is not recognised. Allowed: ${allowed}.`
+    )
+  }
+  return value as SeederSubject
+}
 
-const allZones: Zone[] = [
-  {
-    id: 'maths-fractions',
-    name: 'Fractions',
-    realm: 'numerica',
-    nodeIds: fractionsZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-factors-multiples',
-    name: 'Factors and Multiples',
-    realm: 'numerica',
-    nodeIds: factorsMultiplesZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-primes',
-    name: 'Primes',
-    realm: 'numerica',
-    nodeIds: primesZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-decimals',
-    name: 'Decimals',
-    realm: 'numerica',
-    nodeIds: decimalsZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-place-value',
-    name: 'Place Value',
-    realm: 'numerica',
-    nodeIds: placeValueZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-percentages',
-    name: 'Percentages',
-    realm: 'numerica',
-    nodeIds: percentagesZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-ratio',
-    name: 'Ratio and Proportion',
-    realm: 'numerica',
-    nodeIds: ratioZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-bidmas',
-    name: 'BIDMAS',
-    realm: 'numerica',
-    nodeIds: bidmasZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-algebra',
-    name: 'Basic Algebra',
-    realm: 'numerica',
-    nodeIds: algebraZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-sequences',
-    name: 'Sequences',
-    realm: 'numerica',
-    nodeIds: sequencesZoneNodes.map(n => n.id),
-  },
-  {
-    id: 'maths-coordinates',
-    name: 'Coordinates',
-    realm: 'numerica',
-    nodeIds: coordinatesZoneNodes.map(n => n.id),
-  },
-]
+function selectBundle(): { nodes: SkillNode[]; zones: Zone[]; label: string } {
+  const subject = parseSubjectArg()
+  if (subject) {
+    const bundle = SUBJECT_BUNDLES[subject]
+    return { nodes: bundle.nodes, zones: bundle.zones, label: subject }
+  }
+  return { nodes: allSeededNodes, zones: allSeededZones, label: 'all subjects' }
+}
 
 async function seed(): Promise<void> {
   const uri = process.env.MONGODB_URI
@@ -108,9 +52,11 @@ async function seed(): Promise<void> {
   }
   const dbName = process.env.MONGODB_DB_NAME ?? DEFAULT_DB_NAME
 
+  const { nodes: targetNodes, zones: targetZones, label } = selectBundle()
+
   const client = new MongoClient(uri)
   await client.connect()
-  console.info(`[seed] Connected to ${dbName}`)
+  console.info(`[seed] Connected to ${dbName}; seeding ${label}`)
 
   try {
     const db = client.db(dbName)
@@ -121,14 +67,14 @@ async function seed(): Promise<void> {
     console.info('[seed] Indexes ensured')
 
     let nodeCount = 0
-    for (const node of allNodes) {
+    for (const node of targetNodes) {
       await nodes.replaceOne({ id: node.id }, node, { upsert: true })
       nodeCount++
     }
     console.info(`[seed] Upserted ${nodeCount} nodes`)
 
     let zoneCount = 0
-    for (const zone of allZones) {
+    for (const zone of targetZones) {
       await zones.replaceOne({ id: zone.id }, zone, { upsert: true })
       zoneCount++
     }

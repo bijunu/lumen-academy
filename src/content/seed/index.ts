@@ -1,65 +1,34 @@
-import type { SkillNode } from '@/types/content'
+import type { SkillNode, Zone } from '@/types/content'
 
-import {
-  whatIsAFraction,
-  equivalentFractions,
-  simplifyingFractions,
-  fractionsZoneNodes,
-} from './maths-fractions'
-import {
-  findingFactorsAndMultiples,
-  factorsMultiplesZoneNodes,
-} from './maths-factors-multiples'
-import { recognisingPrimes, primesZoneNodes } from './maths-primes'
-import { decimalPlaceValue, decimalsZoneNodes } from './maths-decimals'
-import { wholeNumberPlaceValue, placeValueZoneNodes } from './maths-place-value'
-import {
-  percentagesAsDecimalsFractions,
-  percentagesZoneNodes,
-} from './maths-percentages'
-import { ratioIntroduction, ratioZoneNodes } from './maths-ratio'
-import { bidmasOrderOfOperations, bidmasZoneNodes } from './maths-bidmas'
-import { algebraIntroduction, algebraZoneNodes } from './maths-algebra'
-import { sequencesRules, sequencesZoneNodes } from './maths-sequences'
-import { coordinatesGrid, coordinatesZoneNodes } from './maths-coordinates'
+export * from './maths'
+export * from './biology'
+export * from './chemistry'
+export * from './physics'
 
-export {
-  whatIsAFraction,
-  equivalentFractions,
-  simplifyingFractions,
-  fractionsZoneNodes,
-  findingFactorsAndMultiples,
-  factorsMultiplesZoneNodes,
-  recognisingPrimes,
-  primesZoneNodes,
-  decimalPlaceValue,
-  decimalsZoneNodes,
-  wholeNumberPlaceValue,
-  placeValueZoneNodes,
-  percentagesAsDecimalsFractions,
-  percentagesZoneNodes,
-  ratioIntroduction,
-  ratioZoneNodes,
-  bidmasOrderOfOperations,
-  bidmasZoneNodes,
-  algebraIntroduction,
-  algebraZoneNodes,
-  sequencesRules,
-  sequencesZoneNodes,
-  coordinatesGrid,
-  coordinatesZoneNodes,
-}
+import { mathsNodes, mathsZones } from './maths'
+import { biologyNodes, biologyZones } from './biology'
+import { chemistryNodes, chemistryZones } from './chemistry'
+import { physicsNodes, physicsZones } from './physics'
 
 export const allSeededNodes: SkillNode[] = [
-  ...fractionsZoneNodes,
-  ...factorsMultiplesZoneNodes,
-  ...primesZoneNodes,
-  ...decimalsZoneNodes,
-  ...placeValueZoneNodes,
-  ...percentagesZoneNodes,
-  ...ratioZoneNodes,
-  ...bidmasZoneNodes,
-  ...algebraZoneNodes,
-  ...sequencesZoneNodes,
-  ...coordinatesZoneNodes,
+  ...mathsNodes,
+  ...biologyNodes,
+  ...chemistryNodes,
+  ...physicsNodes,
 ]
+
+export const allSeededZones: Zone[] = [
+  ...mathsZones,
+  ...biologyZones,
+  ...chemistryZones,
+  ...physicsZones,
+]
+
+export const SUBJECT_BUNDLES = {
+  maths: { nodes: mathsNodes, zones: mathsZones },
+  biology: { nodes: biologyNodes, zones: biologyZones },
+  chemistry: { nodes: chemistryNodes, zones: chemistryZones },
+  physics: { nodes: physicsNodes, zones: physicsZones },
+} as const
+
+export type SeederSubject = keyof typeof SUBJECT_BUNDLES

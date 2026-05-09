@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { equivalentFractions, fractionsZoneNodes } from './maths-fractions'
+import { equivalentFractions, fractionsZoneNodes } from './fractions'
 
 describe('Equivalent fractions seed data', () => {
   it('has required fields', () => {
