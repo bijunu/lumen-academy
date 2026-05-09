@@ -3,12 +3,14 @@ import type { SkillNode, Zone } from '@/types/content'
 import {
   electricityCircuitSymbols,
   electricitySeriesParallel,
+  electricityCurrentVoltage,
   electricityCircuitsZoneNodes,
 } from './electricity-circuits'
 
 export {
   electricityCircuitSymbols,
   electricitySeriesParallel,
+  electricityCurrentVoltage,
   electricityCircuitsZoneNodes,
 }
 

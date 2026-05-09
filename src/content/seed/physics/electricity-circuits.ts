@@ -1517,7 +1517,716 @@ export const electricitySeriesParallel: SkillNode = {
   },
 }
 
+const CV_METER_LABELS_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <!-- Cell on left side -->
+    <line x1="80" y1="100" x2="80" y2="180" />
+    <line x1="80" y1="220" x2="80" y2="320" />
+    <line x1="60" y1="190" x2="100" y2="190" />
+    <line x1="70" y1="205" x2="90" y2="205" stroke-width="7" />
+    <!-- Top wire with ammeter at x=240 -->
+    <line x1="80" y1="100" x2="210" y2="100" />
+    <circle cx="240" cy="100" r="22" />
+    <text x="240" y="108" text-anchor="middle" font-size="22" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="240" y="64" text-anchor="middle" font-size="16" font-weight="600" stroke="none" fill="currentColor">0.30 A</text>
+    <line x1="262" y1="100" x2="500" y2="100" />
+    <!-- Right vertical wire and lamp at y=200 -->
+    <line x1="500" y1="100" x2="500" y2="170" />
+    <circle cx="500" cy="200" r="22" />
+    <line x1="484" y1="184" x2="516" y2="216" />
+    <line x1="484" y1="216" x2="516" y2="184" />
+    <line x1="500" y1="230" x2="500" y2="320" />
+    <!-- Voltmeter branch in parallel with the lamp -->
+    <line x1="500" y1="170" x2="380" y2="170" />
+    <line x1="380" y1="170" x2="380" y2="180" />
+    <circle cx="380" cy="200" r="22" />
+    <text x="380" y="208" text-anchor="middle" font-size="22" font-weight="700" stroke="none" fill="currentColor">V</text>
+    <text x="335" y="205" text-anchor="middle" font-size="16" font-weight="600" stroke="none" fill="currentColor">3.0 V</text>
+    <line x1="380" y1="222" x2="380" y2="232" />
+    <line x1="380" y1="232" x2="500" y2="232" />
+    <!-- Bottom wire -->
+    <line x1="80" y1="320" x2="500" y2="320" />
+  </g>
+`
+
+const CV_RESISTANCE_COMPARE_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <!-- Left circuit: low resistance, high current -->
+    <text x="180" y="60" text-anchor="middle" font-size="18" font-weight="700" stroke="none" fill="currentColor">Low resistance</text>
+    <line x1="60" y1="100" x2="60" y2="170" />
+    <line x1="60" y1="210" x2="60" y2="280" />
+    <line x1="40" y1="180" x2="80" y2="180" />
+    <line x1="50" y1="195" x2="70" y2="195" stroke-width="7" />
+    <line x1="60" y1="100" x2="160" y2="100" />
+    <!-- Resistor symbol (rectangle) at x=200 -->
+    <rect x="160" y="88" width="80" height="24" />
+    <text x="200" y="140" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">10 Ω</text>
+    <line x1="240" y1="100" x2="280" y2="100" />
+    <!-- Ammeter at x=300 -->
+    <circle cx="300" cy="100" r="20" />
+    <text x="300" y="108" text-anchor="middle" font-size="18" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="300" y="68" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">0.60 A</text>
+    <line x1="320" y1="100" x2="340" y2="100" />
+    <line x1="340" y1="100" x2="340" y2="280" />
+    <line x1="340" y1="280" x2="60" y2="280" />
+
+    <!-- Right circuit: high resistance, low current -->
+    <text x="580" y="60" text-anchor="middle" font-size="18" font-weight="700" stroke="none" fill="currentColor">High resistance</text>
+    <line x1="460" y1="100" x2="460" y2="170" />
+    <line x1="460" y1="210" x2="460" y2="280" />
+    <line x1="440" y1="180" x2="480" y2="180" />
+    <line x1="450" y1="195" x2="470" y2="195" stroke-width="7" />
+    <line x1="460" y1="100" x2="560" y2="100" />
+    <rect x="560" y="88" width="80" height="24" />
+    <text x="600" y="140" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">30 Ω</text>
+    <line x1="640" y1="100" x2="680" y2="100" />
+    <circle cx="700" cy="100" r="20" />
+    <text x="700" y="108" text-anchor="middle" font-size="18" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="700" y="68" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">0.20 A</text>
+    <line x1="720" y1="100" x2="740" y2="100" />
+    <line x1="740" y1="100" x2="740" y2="280" />
+    <line x1="740" y1="280" x2="460" y2="280" />
+    <text x="400" y="380" text-anchor="middle" font-size="16" font-weight="600" stroke="none" fill="currentColor">Same 6 V cell, different resistors</text>
+  </g>
+`
+
+const CV_VOLTAGE_LADDER_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <!-- Three side-by-side circuits with same 10 Ω resistor, different cell counts -->
+    <text x="120" y="60" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">1.5 V cell</text>
+    <line x1="60" y1="100" x2="60" y2="170" />
+    <line x1="60" y1="210" x2="60" y2="280" />
+    <line x1="40" y1="180" x2="80" y2="180" />
+    <line x1="50" y1="195" x2="70" y2="195" stroke-width="7" />
+    <line x1="60" y1="100" x2="105" y2="100" />
+    <rect x="105" y="88" width="60" height="24" />
+    <line x1="165" y1="100" x2="180" y2="100" />
+    <circle cx="200" cy="100" r="18" />
+    <text x="200" y="107" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="200" y="74" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">0.15 A</text>
+    <line x1="218" y1="100" x2="240" y2="100" />
+    <line x1="240" y1="100" x2="240" y2="280" />
+    <line x1="240" y1="280" x2="60" y2="280" />
+
+    <text x="380" y="60" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">3.0 V (two cells)</text>
+    <line x1="320" y1="100" x2="320" y2="170" />
+    <line x1="320" y1="210" x2="320" y2="280" />
+    <line x1="300" y1="180" x2="340" y2="180" />
+    <line x1="310" y1="195" x2="330" y2="195" stroke-width="7" />
+    <line x1="305" y1="220" x2="335" y2="220" />
+    <line x1="312" y1="232" x2="328" y2="232" stroke-width="7" />
+    <line x1="320" y1="100" x2="365" y2="100" />
+    <rect x="365" y="88" width="60" height="24" />
+    <line x1="425" y1="100" x2="440" y2="100" />
+    <circle cx="460" cy="100" r="18" />
+    <text x="460" y="107" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="460" y="74" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">0.30 A</text>
+    <line x1="478" y1="100" x2="500" y2="100" />
+    <line x1="500" y1="100" x2="500" y2="280" />
+    <line x1="500" y1="280" x2="320" y2="280" />
+
+    <text x="640" y="60" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">4.5 V (three cells)</text>
+    <line x1="580" y1="100" x2="580" y2="170" />
+    <line x1="580" y1="210" x2="580" y2="280" />
+    <line x1="560" y1="180" x2="600" y2="180" />
+    <line x1="570" y1="195" x2="590" y2="195" stroke-width="7" />
+    <line x1="565" y1="215" x2="595" y2="215" />
+    <line x1="572" y1="227" x2="588" y2="227" stroke-width="7" />
+    <line x1="565" y1="240" x2="595" y2="240" />
+    <line x1="572" y1="252" x2="588" y2="252" stroke-width="7" />
+    <line x1="580" y1="100" x2="625" y2="100" />
+    <rect x="625" y="88" width="60" height="24" />
+    <line x1="685" y1="100" x2="700" y2="100" />
+    <circle cx="720" cy="100" r="18" />
+    <text x="720" y="107" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">A</text>
+    <text x="720" y="74" text-anchor="middle" font-size="14" font-weight="600" stroke="none" fill="currentColor">0.45 A</text>
+    <line x1="738" y1="100" x2="760" y2="100" />
+    <line x1="760" y1="100" x2="760" y2="280" />
+    <line x1="760" y1="280" x2="580" y2="280" />
+    <text x="400" y="370" text-anchor="middle" font-size="16" font-weight="600" stroke="none" fill="currentColor">Same 10 Ω resistor in each circuit</text>
+  </g>
+`
+
+export const electricityCurrentVoltage: SkillNode = {
+  id: 'physics-electricity-current-voltage',
+  title: 'Voltage, Current and Resistance',
+  description:
+    'Understand current as flow of charge measured in amperes, potential difference as energy per charge measured in volts, and resistance as opposition to current measured in ohms. Read meters in a circuit and predict how current changes when voltage or resistance changes.',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-electricity-circuits',
+  zoneName: 'Electricity and Circuits',
+  tier: 'confident',
+  prerequisites: [
+    'physics-electricity-circuit-symbols',
+    'physics-electricity-series-parallel',
+  ],
+  curriculum: {
+    ks3Objective:
+      'Potential difference, measured in volts, battery and bulb ratings; resistance, measured in ohms, as the ratio of potential difference (p.d.) to current.',
+    awardingBodies: {
+      aqa: '4.2.1.3 Current, potential difference and resistance (GCSE Physics 8463)',
+      edexcel: '10.7 Potential difference and resistance, V = I x R (GCSE Physics 1PH0)',
+      ocr: 'P4.2 Resistance and Ohm’s law (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'cv-scene-meter-labels',
+      title: 'What the Meters Read',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see what the ammeter and voltmeter readings mean.',
+      data: {
+        viewBox: '0 0 600 400',
+        svg: CV_METER_LABELS_SVG,
+        hotspots: [
+          {
+            id: 'cv-h-ammeter',
+            x: 40,
+            y: 25,
+            label: 'Ammeter reads 0.30 A',
+            description:
+              'The ammeter sits in line with the lamp and reads the current. 0.30 A means 0.30 coulombs of charge pass each second.',
+          },
+          {
+            id: 'cv-h-voltmeter',
+            x: 63,
+            y: 50,
+            label: 'Voltmeter reads 3.0 V',
+            description:
+              'The voltmeter sits across the lamp and reads the potential difference. 3.0 V means each coulomb of charge gives 3.0 joules of energy to the lamp.',
+          },
+          {
+            id: 'cv-h-lamp',
+            x: 83,
+            y: 50,
+            label: 'Lamp',
+            description:
+              'The lamp resists the flow of charge. Its resistance, the cell’s push, and the rest of the loop together set the current.',
+          },
+          {
+            id: 'cv-h-cell',
+            x: 17,
+            y: 55,
+            label: 'Cell',
+            description:
+              'The cell is the source of potential difference. It pushes each coulomb of charge round the loop with a fixed number of joules of energy.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'cv-scene-resistance-compare',
+      title: 'More Resistance, Less Current',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to compare the two circuits and see how a bigger resistor cuts the current.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: CV_RESISTANCE_COMPARE_SVG,
+        hotspots: [
+          {
+            id: 'cv-rc-low',
+            x: 25,
+            y: 25,
+            label: '10 Ω with 0.60 A',
+            description:
+              'A 6 V cell pushes 0.60 A of current through a 10 Ω resistor. Use V divided by R: 6 divided by 10 is 0.6.',
+          },
+          {
+            id: 'cv-rc-high',
+            x: 73,
+            y: 25,
+            label: '30 Ω with 0.20 A',
+            description:
+              'The same 6 V cell pushes only 0.20 A through a 30 Ω resistor. Tripling the resistance with the same voltage gives a third of the current.',
+          },
+          {
+            id: 'cv-rc-rule',
+            x: 50,
+            y: 95,
+            label: 'Rule',
+            description:
+              'For the same voltage, more resistance means less current. The relationship is V equals I times R, so I equals V over R.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'cv-scene-voltage-ladder',
+      title: 'More Voltage, More Current',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the ammeter as the cell voltage steps up.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: CV_VOLTAGE_LADDER_SVG,
+        hotspots: [
+          {
+            id: 'cv-vl-low',
+            x: 17,
+            y: 22,
+            label: '1.5 V gives 0.15 A',
+            description:
+              'One 1.5 V cell pushes 0.15 A of current through the 10 Ω resistor. Use I equals V over R: 1.5 divided by 10 is 0.15.',
+          },
+          {
+            id: 'cv-vl-mid',
+            x: 50,
+            y: 22,
+            label: '3.0 V gives 0.30 A',
+            description:
+              'Doubling to two cells doubles the voltage. With the same resistance the current also doubles to 0.30 A.',
+          },
+          {
+            id: 'cv-vl-high',
+            x: 83,
+            y: 22,
+            label: '4.5 V gives 0.45 A',
+            description:
+              'Three cells give 4.5 V. The current is now 0.45 A, three times the one-cell value, because resistance has not changed.',
+          },
+          {
+            id: 'cv-vl-rule',
+            x: 50,
+            y: 92,
+            label: 'Rule',
+            description:
+              'For the same resistance, more voltage means more current. Current is in direct proportion to voltage when the resistor stays the same.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'cv-worked-1',
+      title: 'Reading current and voltage on the same lamp',
+      steps: [
+        {
+          explanation:
+            'Find the ammeter on the diagram. The ammeter is the circle with the letter A, sitting on the same wire as the lamp.',
+        },
+        {
+          explanation:
+            'Read the ammeter. It says 0.30 A. This is the current through the lamp.',
+          maths: 'I = 0.30 A',
+        },
+        {
+          explanation:
+            'Find the voltmeter. It is the circle with the letter V, on its own branch across the lamp.',
+        },
+        {
+          explanation:
+            'Read the voltmeter. It says 3.0 V. This is the potential difference across the lamp.',
+          maths: 'V = 3.0 V',
+        },
+        {
+          explanation:
+            'Say what each reading means. 0.30 A means 0.30 coulombs of charge pass through the lamp every second. 3.0 V means each coulomb of charge gives 3.0 joules of energy to the lamp.',
+        },
+        {
+          explanation:
+            'Find the resistance using V equals I times R. Rearranging gives R equals V over I, which is 3.0 divided by 0.30. The lamp has a resistance of 10 Ω.',
+          maths: 'R = V ÷ I = 3.0 ÷ 0.30 = 10 Ω',
+        },
+      ],
+    },
+    {
+      id: 'cv-worked-2',
+      title: 'Predicting the current when the cell voltage doubles',
+      steps: [
+        {
+          explanation:
+            'Start with a 1.5 V cell pushing current through a 10 Ω resistor. The ammeter in the loop reads 0.15 A.',
+        },
+        {
+          explanation:
+            'Check the relationship V equals I times R. Plug in: 1.5 equals 0.15 times 10, which is true.',
+          maths: 'V = I × R = 0.15 × 10 = 1.5 V',
+        },
+        {
+          explanation:
+            'A second cell is added in series, so the battery voltage is now 3.0 V. The resistor is still 10 Ω.',
+        },
+        {
+          explanation:
+            'Use I equals V over R with the new voltage. So I equals 3.0 divided by 10, which is 0.30 A.',
+          maths: 'I = V ÷ R = 3.0 ÷ 10 = 0.30 A',
+        },
+        {
+          explanation:
+            'Compare the two readings. Doubling the voltage with the same resistor doubles the current. The relationship is direct: as V goes up, I goes up in step.',
+        },
+        {
+          explanation:
+            'State the result. The new ammeter reading is 0.30 A, twice the old reading of 0.15 A.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'cv-q1',
+      type: 'multiple-choice',
+      stem: 'Which unit is current measured in?',
+      tier: 'core',
+      options: ['Volts', 'Amperes', 'Ohms', 'Joules'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'cv-mis-current-vs-voltage-units',
+      hint: 'Current flows; an ammeter reads it.',
+    },
+    {
+      id: 'cv-q2',
+      type: 'multiple-choice',
+      stem: 'Which unit is potential difference measured in?',
+      tier: 'core',
+      options: ['Amperes', 'Watts', 'Volts', 'Ohms'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'cv-mis-current-vs-voltage-units',
+    },
+    {
+      id: 'cv-q3',
+      type: 'multiple-choice',
+      stem: 'Which unit is resistance measured in?',
+      tier: 'core',
+      options: ['Ohms', 'Volts', 'Amperes', 'Coulombs'],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'The Greek letter omega, written Ω, is its symbol.',
+    },
+    {
+      id: 'cv-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil wants to read the current passing through a lamp. Where should the ammeter go?',
+      tier: 'core',
+      options: [
+        'On its own branch across the lamp.',
+        'In series, in line with the lamp on the same wire.',
+        'In series with the cell, on the opposite side of the loop.',
+        'On a separate loop with its own cell.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'cv-mis-meter-placement-swap',
+      hint: 'The ammeter must let the same charge pass through it as passes through the lamp.',
+    },
+    {
+      id: 'cv-q5',
+      type: 'multiple-choice',
+      stem: 'A pupil wants to read the potential difference across a lamp. Where should the voltmeter go?',
+      tier: 'core',
+      options: [
+        'In series, in line with the lamp on the same wire.',
+        'On its own branch in parallel with the lamp.',
+        'Anywhere on the loop, as long as the switch is closed.',
+        'Inside the cell.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'cv-mis-meter-placement-swap',
+    },
+    {
+      id: 'cv-q6',
+      type: 'numeric-entry',
+      stem: 'An ammeter in a torch circuit reads 0.25 A. How many coulombs of charge pass through the lamp each second?',
+      tier: 'core',
+      correctAnswer: 0.25,
+      tolerance: 0.001,
+      unit: 'C',
+      xpValue: 10,
+      misconceptionId: 'cv-mis-amps-vs-coulombs',
+      hint: 'Current in amperes is the same as charge in coulombs per second.',
+    },
+    {
+      id: 'cv-q7',
+      type: 'numeric-entry',
+      stem: 'A voltmeter across a kettle element reads 230 V. How many joules of energy does each coulomb of charge give to the element?',
+      tier: 'core',
+      correctAnswer: 230,
+      unit: 'J',
+      xpValue: 10,
+      misconceptionId: 'cv-mis-voltage-as-flow',
+      hint: 'A reading in volts is the energy in joules per coulomb of charge.',
+    },
+    {
+      id: 'cv-q8',
+      type: 'multiple-choice',
+      stem: 'A 6 V cell pushes current through a 10 Ω resistor. The resistor is then swapped for a 30 Ω resistor. What happens to the current?',
+      tier: 'confident',
+      options: [
+        'The current goes up because more resistance pushes more current round.',
+        'The current stays the same because the cell is unchanged.',
+        'The current falls because more resistance opposes the flow more strongly.',
+        'The current stops completely because no current flows through a resistor.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'cv-mis-resistance-helps-current',
+      hint: 'Resistance opposes current. With the same voltage, more resistance means less current.',
+    },
+    {
+      id: 'cv-q9',
+      type: 'numeric-entry',
+      stem: 'Use V equals I times R. A 6 V cell drives a current of 0.5 A through a resistor. What is the resistance, in ohms?',
+      tier: 'confident',
+      correctAnswer: 12,
+      unit: 'Ω',
+      xpValue: 15,
+      hint: 'Rearrange to R equals V over I, then divide.',
+    },
+    {
+      id: 'cv-q10',
+      type: 'numeric-entry',
+      stem: 'A 9 V battery is connected across a 30 Ω resistor. What is the current, in amperes?',
+      tier: 'confident',
+      correctAnswer: 0.3,
+      tolerance: 0.005,
+      unit: 'A',
+      xpValue: 15,
+      hint: 'Use I equals V over R.',
+    },
+    {
+      id: 'cv-q11',
+      type: 'numeric-entry',
+      stem: 'A current of 0.4 A flows through a 5 Ω resistor. What is the potential difference across the resistor, in volts?',
+      tier: 'confident',
+      correctAnswer: 2,
+      unit: 'V',
+      xpValue: 15,
+      misconceptionId: 'cv-mis-vir-direction',
+      hint: 'Multiply current by resistance.',
+    },
+    {
+      id: 'cv-q12',
+      type: 'slider-explore',
+      stem: 'A 12 V battery is connected to a single resistor. As the resistance is changed, the current through the resistor changes too. Set the resistance so the ammeter reads about 0.5 A.',
+      tier: 'confident',
+      label: 'Resistance in ohms',
+      min: 4,
+      max: 60,
+      step: 1,
+      correctRange: [22, 26],
+      xpValue: 15,
+      misconceptionId: 'cv-mis-resistance-helps-current',
+      hint: 'Use R equals V over I. With V = 12 and I = 0.5, what does R need to be?',
+    },
+    {
+      id: 'cv-q13',
+      type: 'multiple-choice',
+      stem: 'A 1.5 V cell drives a current of 0.15 A through a 10 Ω resistor. A second 1.5 V cell is added in series, so the battery is now 3.0 V. The resistor is unchanged. What is the new ammeter reading?',
+      tier: 'confident',
+      options: ['0.15 A', '0.20 A', '0.30 A', '0.45 A'],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'cv-mis-current-used-up',
+      hint: 'Doubling the voltage with the same resistance doubles the current.',
+    },
+    {
+      id: 'cv-q14',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is finding the resistance of a torch lamp from meter readings.',
+      tier: 'challenge',
+      steps: [
+        'Read the ammeter on the loop. It says 0.20 A.',
+        'Read the voltmeter across the lamp. It says 1.5 V.',
+        'Choose the correct equation: V equals I times R.',
+        null,
+        'Divide 1.5 by 0.20 to get 7.5. So the resistance of the lamp is 7.5 Ω.',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'Rearrange the equation to make R the subject, giving R equals V divided by I.',
+      xpValue: 20,
+      misconceptionId: 'cv-mis-vir-direction',
+    },
+    {
+      id: 'cv-q15',
+      type: 'data-extraction',
+      stem: 'A bench supply was set to several voltages and the current through a fixed resistor was measured. The results were: 1.0 V gave 0.10 A; 2.0 V gave 0.20 A; 3.0 V gave 0.30 A; 4.0 V gave 0.40 A. What is the resistance of the resistor, in ohms?',
+      tier: 'confident',
+      dataSource:
+        'V = 1.0 V, I = 0.10 A; V = 2.0 V, I = 0.20 A; V = 3.0 V, I = 0.30 A; V = 4.0 V, I = 0.40 A',
+      correctAnswer: '10',
+      xpValue: 15,
+      hint: 'Pick any row and divide V by I. The same number should come out for every row.',
+    },
+    {
+      id: 'cv-q16',
+      type: 'spot-misconception',
+      stem: 'Sam says, "The lamp uses up the current, so the ammeter on the wire after the lamp will read less than the one on the wire before the lamp." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. The lamp burns up some of the current, so a second ammeter further round the loop reads a smaller value.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Current is the same at every point in a series loop, because charge is not used up. The lamp transfers energy from the charge but does not destroy it.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'cv-mis-current-used-up',
+    },
+    {
+      id: 'cv-q17',
+      type: 'drag-order',
+      stem: 'Place these steps in order so a pupil can find the resistance of a lamp from meter readings.',
+      tier: 'challenge',
+      items: [
+        'Divide V by I to find R.',
+        'Read the ammeter on the loop to find I.',
+        'Read the voltmeter across the lamp to find V.',
+        'Write the equation V equals I times R, rearranged to R equals V over I.',
+      ],
+      correctOrder: [1, 2, 3, 0],
+      xpValue: 20,
+      hint: 'Take the meter readings first, then pick the equation, then do the calculation.',
+    },
+    {
+      id: 'cv-q18',
+      type: 'numeric-entry',
+      stem: 'A bedside lamp is plugged into a 230 V mains socket and draws a current of 0.20 A. What is the resistance of the lamp, in ohms?',
+      tier: 'challenge',
+      correctAnswer: 1150,
+      unit: 'Ω',
+      xpValue: 20,
+      hint: 'Use R equals V over I. Treat 230 as the voltage and 0.20 as the current.',
+    },
+    {
+      id: 'cv-q19',
+      type: 'multiple-choice',
+      stem: 'A coursework circuit uses a 4.5 V battery (three 1.5 V cells in series) and a fixed 15 Ω resistor in a single loop. The pupil swaps the resistor for a 5 Ω one and leaves the battery the same. Which row gives the new ammeter reading and the reason?',
+      tier: 'challenge',
+      options: [
+        '0.30 A, because lowering the resistance lets more current flow for the same voltage.',
+        '0.10 A, because the resistor pushes back harder on the current.',
+        '0.90 A, because lowering the resistance lets more current flow for the same voltage.',
+        '0.30 A, because the cells stop supplying as much voltage when the resistance falls.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'cv-mis-resistance-helps-current',
+      hint: 'Work out the old current first, then use I equals V over R with the new resistance.',
+    },
+    {
+      id: 'cv-q20',
+      type: 'multiple-choice',
+      stem: 'In a Year 9 practical, three pupils take readings on the same lamp. Maya reads V = 3.0 V and I = 0.20 A. Theo reads V = 6.0 V and I = 0.40 A. Aisha reads V = 9.0 V and I = 0.60 A. They use V equals I times R to work out the resistance for each row. What can they conclude?',
+      tier: 'challenge',
+      options: [
+        'The resistance changes from 10 Ω to 15 Ω as the voltage rises, because higher voltage strains the lamp.',
+        'The resistance is 15 Ω in every row, because the lamp keeps the same shape.',
+        'The resistance is 0.07 Ω in every row, because resistance is current divided by voltage.',
+        'The resistance is 15 Ω in every row, because each row gives the same V divided by I.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      hint: 'Divide V by I in each row. Compare the answers.',
+    },
+    {
+      id: 'cv-q21',
+      type: 'free-text',
+      stem: 'Explain in your own words why adding more resistance to a circuit, with the cell unchanged, makes the current fall.',
+      tier: 'challenge',
+      sampleAnswer:
+        'Resistance opposes the flow of charge round the loop. The cell pushes each charge with a fixed energy per coulomb, set by the cell voltage. With more resistance in the way, the charges face a stronger push back, so fewer coulombs of charge can pass any point each second. The current, which is charge per second, falls. The relationship V equals I times R makes this clear: if V is held constant and R goes up, then I must go down to balance the equation.',
+      keywords: ['resistance', 'opposes', 'voltage', 'current', 'less'],
+      xpValue: 20,
+      misconceptionId: 'cv-mis-resistance-helps-current',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 1F, common confusions between current and voltage units
+    {
+      id: 'cv-mis-current-vs-voltage-units',
+      description:
+        'Mixing the units for current and voltage, writing things like a current of 230 V or a voltage of 0.5 A.',
+      triggerAnswer: 'current-vs-voltage-units',
+      correction:
+        'Current is measured in amperes, with the symbol A. Potential difference is measured in volts, with the symbol V. The unit you use tells the reader which quantity you mean.',
+      reExplanation:
+        'Hold a 1.5 V cell in your head. The 1.5 V tells you how much energy each coulomb of charge gets from the cell. The current that follows depends on what is in the loop and is read in amperes. So a cell rating is in volts, an ammeter reading is in amperes, and a resistor rating is in ohms.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on current and voltage relationship
+    {
+      id: 'cv-mis-voltage-as-flow',
+      description:
+        'Believing that voltage flows round the circuit the same way current does, so a voltmeter "in the wire" reads volts the way an ammeter reads amperes.',
+      triggerAnswer: 'voltage-as-flow',
+      correction:
+        'Voltage, or potential difference, is a difference in energy per charge between two points. It does not flow round a loop. Current does, and is read in amperes by an ammeter sitting in line.',
+      reExplanation:
+        'Picture a step in a path. The drop in height is a difference between two levels, not something that travels along the path. Voltage works the same way: it is the energy drop per coulomb across a component. To measure a drop you need a marker on each side, which is why a voltmeter sits in parallel.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2019, Paper 1PH0/1F, learners think more resistance means more current
+    {
+      id: 'cv-mis-resistance-helps-current',
+      description:
+        'Believing that adding more resistance pushes more current through a circuit, often by mixing up resistance with the cell or with energy.',
+      triggerAnswer: 'resistance-helps-current',
+      correction:
+        'Resistance opposes current. For the same voltage, more resistance gives less current. The equation I equals V over R makes this clear: dividing by a bigger R gives a smaller I.',
+      reExplanation:
+        'The cell is the push and the resistor is the brake. With one cell pushing 1.5 V and a 10 Ω resistor, the current is 0.15 A. Swap in a 30 Ω resistor and the current drops to 0.05 A, even though the cell is the same. More brake, less flow.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on current being used up by components
+    {
+      id: 'cv-mis-current-used-up',
+      description:
+        'Thinking that current is used up by a lamp or resistor, so an ammeter further round a series loop reads less than one earlier in the loop.',
+      triggerAnswer: 'current-used-up',
+      correction:
+        'Current is the same at every point in a series loop. Lamps and resistors transfer energy from the charge but do not destroy charge, so the rate of charge flow stays the same.',
+      reExplanation:
+        'Imagine cars on a single ring road. The cars do not vanish at a roundabout; the same number passes any point each minute. Charge in a series loop works the same way. A lamp in the loop turns electrical energy into light and heat, but the charge carries on round at the same rate, so two ammeters in the same loop read the same value.',
+    },
+    // Source: OCR GCSE Physics examiner report June 2022, J259/02, learners swap ammeter and voltmeter placement on a diagram
+    {
+      id: 'cv-mis-meter-placement-swap',
+      description:
+        'Swapping the placement rules for the two meters, putting the ammeter across a component and the voltmeter on the same wire as it.',
+      triggerAnswer: 'meter-placement-swap',
+      correction:
+        'The ammeter goes in series, in line with the component, so the same charge passes through both. The voltmeter goes in parallel, on its own branch across the component, so it can compare the two sides.',
+      reExplanation:
+        'A in line, V across. The ammeter measures the rate of charge flow, so it must sit on the path the charge takes. The voltmeter measures the energy drop between two points, so it needs one wire on each side of the component to compare them. Mix the two up and the readings make no sense.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 1F, learners assume V = I x R means current causes voltage
+    {
+      id: 'cv-mis-vir-direction',
+      description:
+        'Reading V equals I times R as if current causes the voltage in a circuit, rather than the cell setting the voltage and the resistance setting how much current flows.',
+      triggerAnswer: 'vir-direction',
+      correction:
+        'In a simple circuit the cell sets the potential difference and the resistor sets how much current flows. The equation V equals I times R links the three but does not say which one causes which.',
+      reExplanation:
+        'Treat the cell as fixing V at, say, 6 V. The resistor of, say, 30 Ω, then sets the current at 6 divided by 30, which is 0.2 A. Swap the resistor and the current changes; swap the cell and both V and I change. Use the equation to compute whichever quantity you do not know, given the other two.',
+    },
+    // Source: CGP KS3 Physics Workbook Common Mistake box on amperes versus coulombs
+    {
+      id: 'cv-mis-amps-vs-coulombs',
+      description:
+        'Treating amperes and coulombs as the same unit, saying for example that 0.20 A means 0.20 coulombs of charge in total.',
+      triggerAnswer: 'amps-vs-coulombs',
+      correction:
+        'A coulomb is a packet of charge. An ampere is one coulomb of charge passing per second. So 0.20 A means 0.20 coulombs pass each second, not 0.20 coulombs in total.',
+      reExplanation:
+        'Think of charge like litres of water and current like litres per second. A 5-litre bucket is a fixed amount; a 5 litres-per-second flow is a rate. In the same way, a coulomb is a fixed amount of charge while an ampere is a rate, so a 0.20 A current means 0.20 coulombs go past every second, every second.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
 export const electricityCircuitsZoneNodes = [
   electricityCircuitSymbols,
   electricitySeriesParallel,
+  electricityCurrentVoltage,
 ]

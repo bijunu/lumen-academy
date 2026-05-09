@@ -421,10 +421,10 @@
 - **OCR**: _GCSE Physics spec ref_
 
 #### Voltage, Current, Resistance (Confident, `physics-electricity-current-voltage`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Electricity and electromagnetism)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Potential difference, measured in volts, battery and bulb ratings; resistance, measured in ohms, as the ratio of potential difference (p.d.) to current.
+- **AQA**: 4.2.1.3 Current, potential difference and resistance (GCSE Physics 8463)
+- **Edexcel**: 10.7 Potential difference and resistance, V = I x R (GCSE Physics 1PH0)
+- **OCR**: P4.2 Resistance and Ohm's law (GCSE Physics J259 Gateway)
 
 ### Zone: Waves (`physics-waves`)
 

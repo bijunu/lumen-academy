@@ -835,6 +835,14 @@ Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parall
   - Required handling: misconception entry; at least one numeric-entry question where the two branch currents are unequal and add to the main current.
 - C-EC-12: Learner believes potential differences across parallel branches add up to the cell voltage, the way they do across components in series. (Covers `physics-electricity-series-parallel`.)
   - Required handling: misconception entry; at least one Challenge tier spot-misconception question that presents the parallel-voltages-add argument.
+- C-EC-13: Learner mixes the units of current and voltage, writing things like "a current of 230 V" or "a voltage of 0.5 A". (Covers `physics-electricity-current-voltage`.)
+  - Required handling: misconception entry; at least one core multiple-choice item on the units of current, voltage, and resistance.
+- C-EC-14: Learner believes adding more resistance to a circuit increases the current, often by mixing resistance up with the cell or with energy. (Covers `physics-electricity-current-voltage`.)
+  - Required handling: misconception entry; at least one Confident or Challenge multiple-choice question that contrasts the same cell with two different resistors.
+- C-EC-15: Learner thinks current is used up by a lamp or resistor, so an ammeter further round a series loop reads less than one earlier. (Covers `physics-electricity-current-voltage`.)
+  - Required handling: misconception entry; at least one spot-misconception question that presents the "current used up" argument on a series loop.
+- C-EC-16: Learner reads a voltmeter across a 230 V mains kettle as a flow rather than as energy per coulomb. (Covers `physics-electricity-current-voltage`.)
+  - Required handling: misconception entry; at least one numeric-entry question that asks the learner to interpret a voltmeter reading as joules per coulomb.
 
 ### Question shape probes
 
@@ -849,6 +857,10 @@ Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parall
 - Q-EC-9: At least three numeric-entry questions on the series-parallel node apply the junction rule (branch currents add up to the main current), spread across Core, Confident, and Challenge tiers, with at least one three-branch instance. (Covers `physics-electricity-series-parallel`.)
 - Q-EC-10: At least one Challenge tier multi-step word problem on the series-parallel node frames a UK context (Christmas fairy lights, kitchen and lounge lighting, school hall lights, cycling helmet light) and requires the learner to infer per-branch current before answering. (Covers `physics-electricity-series-parallel`.)
 - Q-EC-11: At least one labelled-image question on the series-parallel node has the learner place names ("Cell", "Junction", "Lamp", "Branch") on a parallel circuit. (Covers `physics-electricity-series-parallel`.)
+- Q-EC-12: At least three numeric-entry questions on the current-voltage node use V = I x R in different rearrangements (find R from V and I; find I from V and R; find V from I and R), spread across Confident and Challenge tiers. (Covers `physics-electricity-current-voltage`.)
+- Q-EC-13: At least one slider-explore question on the current-voltage node makes the learner set a resistance to hit a target current for a fixed cell voltage, with feedback that the rule is I equals V over R. (Covers `physics-electricity-current-voltage`.)
+- Q-EC-14: At least one data-extraction question on the current-voltage node gives a small table of V and I readings on a fixed resistor and asks for the resistance, requiring the learner to spot that V over I is the same in every row. (Covers `physics-electricity-current-voltage`.)
+- Q-EC-15: At least one Challenge tier word problem on the current-voltage node uses a UK domestic context (230 V mains kettle, bedside lamp, torch with 1.5 V cells) and requires the learner to compute resistance or current from V and I. (Covers `physics-electricity-current-voltage`.)
 
 ### Tutor probes
 
