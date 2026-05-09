@@ -550,6 +550,14 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
   - Required handling: misconception entry; at least one question whose distractors include large permanent vacuole on an animal cell.
 - C-CELL-7: Learner believes all cells in the body are about the same size, so cell size cannot be used to compare cell types.
   - Required handling: misconception entry; at least one spot-misconception or Challenge tier question that surfaces cell-size variation between cell types.
+- C-CELL-8: Learner believes a red blood cell has a nucleus like every other animal cell.
+  - Required handling: misconception entry on the specialised-cells node; at least one MCQ or spot-misconception that surfaces the missing-nucleus adaptation and links it to haemoglobin.
+- C-CELL-9: Learner attributes the energy that powers a sperm cell's swim to its tail rather than to the mitochondria packed in its midpiece.
+  - Required handling: misconception entry on the specialised-cells node; at least one spot-misconception or MCQ that pairs the tail (motion) against the midpiece mitochondria (energy release).
+- C-CELL-10: Learner believes root hair cells contain chloroplasts because they are plant cells, missing that no light reaches them in the soil.
+  - Required handling: misconception entry on the specialised-cells node; at least one MCQ that asks the learner to spot the chloroplast error on a root cell drawing.
+- C-CELL-11: Learner believes airway cilia trap dust and bacteria themselves, rather than wafting mucus that traps the particles.
+  - Required handling: misconception entry on the specialised-cells node; at least one Challenge tier MCQ that links damaged cilia to chest infection risk via the mucus-escalator model.
 
 ### Question shape probes
 
@@ -560,6 +568,10 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
 - Q-CELL-5: At least one spot-misconception question presents a "mitochondria make energy" or "animal cells have a cell wall" argument and asks whether the reasoning is sound.
 - Q-CELL-6: At least one numeric-entry question asks the learner to count which of a listed set of structures are found in animal cells, distinguishing animal-cell from plant-only features.
 - Q-CELL-7: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (specialised cell adaptation, sperm cell mitochondria density, nerve cell length) to stretch the learner beyond the bare KS3 list.
+- Q-CELL-8: At least one labelled-image question on the specialised-cells node places six specialised cell labels (red blood cell, sperm cell, root hair cell, ciliated epithelial cell, nerve cell, palisade leaf cell) onto hotspots on a single overview diagram, with at least one off-topic label in the pool.
+- Q-CELL-9: At least one drag-drop-builder question on the specialised-cells node requires building a sperm cell from a parts pool that mixes correct features (head, midpiece mitochondria, tail) with plant-only distractors (cell wall, chloroplasts).
+- Q-CELL-10: At least one Challenge tier numeric-entry on the specialised-cells node requires reading a UK clinical or class-microscope context (red-cell count per cubic millimetre, nerve cell length in metres versus red blood cell in micrometres) and computing through at least one inferred unit step.
+- Q-CELL-11: At least one data-extraction question on the specialised-cells node uses a small surface-area-to-volume ratio table and asks which cell best matches a job demanding a large surface for taking in dissolved substances.
 
 ### Tutor probes
 
@@ -568,6 +580,8 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
 - T-CELL-3: Given "Mitochondria make energy from nothing, right?", the tutor walks the learner through a respiration analogy (glucose plus oxygen, energy transferred), not a definition dump.
 - T-CELL-4: Given an off-topic input (for example a question about US biology textbook diagrams or AP Biology mitochondria), the tutor steers back to UK KS3 cell language politely.
 - T-CELL-5: Given a request for an inline definition (tap on "cytoplasm" or "mitochondrion"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-CELL-6: Given "A sperm cell's tail makes the energy that powers it, right?", the tutor's first reply is a Socratic prompt that separates motion (tail) from energy release (mitochondria), not a direct correction.
+- T-CELL-7: Given a wrong answer matching the red-blood-cell-has-nucleus trigger, the tutor cites the relevant misconception's `reExplanation` (mature red cells lose the nucleus to make room for haemoglobin) rather than producing a fresh hint.
 
 ## Zone: Vitalia > Microscopy
 

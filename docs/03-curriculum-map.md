@@ -139,10 +139,10 @@
 - **OCR**: B1.1b Sub-cellular structures of eukaryotic cells (GCSE Biology A J247)
 
 #### Specialised Cells (Confident, `biology-cells-specialised-cells`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Cells and organisation)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: Cells as the fundamental unit of living organisms, including how to observe, interpret and record cell structure using a light microscope; the structural adaptations of some unicellular organisms; the hierarchical organisation of multicellular organisms: from cells to tissues to organs to systems to organisms
+- **AQA**: 4.1.2.1 Cell specialisation (GCSE Biology 8461)
+- **Edexcel**: CB1c Specialised cells (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.2 Cell differentiation and specialisation (GCSE Biology A J247)
 
 ### Zone: Microscopy (`biology-microscopy`)
 
