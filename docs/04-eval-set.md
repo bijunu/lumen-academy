@@ -588,13 +588,35 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
 Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-MICRO-1: Learner believes the eyepiece lens does all the magnifying on a compound light microscope.
+  - Required handling: misconception entry on the light-microscope node; at least one MCQ or spot-misconception that distinguishes objective and eyepiece magnification, with at least one Confident tier item that pairs them.
+- C-MICRO-2: Learner believes the mirror or built-in light at the base magnifies the cell, rather than just providing illumination.
+  - Required handling: misconception entry on the light-microscope node; at least one MCQ that pairs the mirror's job with the lens system's job.
+- C-MICRO-3: Learner starts on the highest power objective and cannot find the specimen.
+  - Required handling: misconception entry on the light-microscope node; at least one Core MCQ on which objective to use first.
+- C-MICRO-4: Learner uses the coarse focus knob on the highest power objective and risks driving the lens through the slide.
+  - Required handling: misconception entry on the light-microscope node; at least one Confident tier MCQ or data-extraction that links coarse-knob misuse at high power to slide damage.
+- C-MICRO-5: Learner believes higher magnification shows a wider area of the slide, rather than a smaller patch in greater detail.
+  - Required handling: misconception entry on the light-microscope node; at least one spot-misconception or Challenge tier numeric that quantifies the field-of-view trade-off.
+- C-MICRO-6: Learner places the coverslip flat onto the specimen and traps air bubbles, or places it before adding water and specimen.
+  - Required handling: misconception entry on the light-microscope node; at least one drag-order or Challenge tier MCQ that surfaces the coverslip-from-an-edge step.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-MICRO-1: At least one labelled-image question on the light-microscope node places eyepiece, objective, stage, coarse focus, fine focus, and mirror or built-in light onto hotspots on a microscope diagram, with at least one off-microscope distractor in the pool.
+- Q-MICRO-2: At least one drag-order question on the light-microscope node places the steps of slide setup (slide on bench, water drop, specimen, coverslip, stage, focus) in order.
+- Q-MICRO-3: At least one drag-drop-builder question on the light-microscope node requires building a working slide from a parts pool that mixes correct items (slide, water, specimen, coverslip) with off-slide distractors (mirror, lens, pencil).
+- Q-MICRO-4: At least one Challenge tier numeric on the light-microscope node requires reasoning about field-of-view shrinkage or class-time arithmetic in a UK school context.
+- Q-MICRO-5: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (image inversion, slide-direction reasoning, error diagnosis) to stretch the learner beyond the bare KS3 list.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-MICRO-1: Given "I can just start at x40 and find the cells anyway, right?", the tutor's first reply is a Socratic prompt about the field of view at high power, not a direct correction.
+- T-MICRO-2: Given a wrong answer matching the mirror-magnifies trigger, the tutor cites the relevant misconception's `reExplanation` (mirror provides light, lenses magnify) rather than producing a fresh hint.
+- T-MICRO-3: Given "Why can I not use the coarse knob at x40?", the tutor walks the learner through the close lens-to-slide distance at high power, not a definition dump.
+- T-MICRO-4: Given an off-topic input (for example a question about US lab microscopes or electron microscopes beyond KS3), the tutor steers back to UK KS3 light-microscope language politely.
+- T-MICRO-5: Given a request for an inline definition (tap on "objective" or "coverslip"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Vitalia > Body Systems
 
