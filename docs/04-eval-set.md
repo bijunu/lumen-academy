@@ -721,7 +721,15 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - C-SM-6: Learner believes filtration alone can separate two insoluble solids that have been mixed together.
   - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one Challenge question whose distractors include the one-step-filtration answer for separating two insoluble solids.
 - C-SM-7: Learner believes simple distillation works because the salt evaporates with the water and gets caught in the condenser.
-  - Required handling: misconception entry on `chemistry-separating-distillation` once that node is authored.
+  - Required handling: misconception entry on `chemistry-separating-distillation`; at least one MCQ or spot-misconception whose distractors include the salt-evaporates answer.
+- C-SM-8: Learner places the thermometer bulb in the boiling liquid rather than at the side-arm where the vapour leaves the flask.
+  - Required handling: misconception entry on `chemistry-separating-distillation`; at least one apparatus-positioning question whose distractors include the bulb-in-the-liquid answer.
+- C-SM-9: Learner believes simple distillation alone can separate two miscible liquids of different boiling points; the lower boiling point liquid will come over pure.
+  - Required handling: misconception entry on `chemistry-separating-distillation`; at least one Confident or Challenge question pairing simple distillation against fractional distillation for an ethanol and water mixture.
+- C-SM-10: Learner believes the condenser in a distillation set-up warms the vapour to keep it as a gas, rather than cooling it back into a liquid.
+  - Required handling: misconception entry on `chemistry-separating-distillation`; at least one question about the role of cold water flow through the condenser.
+- C-SM-11: Learner believes the fractionating column is decorative and the apparatus would work the same without it.
+  - Required handling: misconception entry on `chemistry-separating-distillation`; at least one question whose distractors include the column-redundant answer.
 
 ### Question shape probes
 
@@ -731,6 +739,11 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - Q-SM-4: At least one numeric-entry question on `chemistry-separating-filtration-evaporation` applies conservation of mass through filtration or evaporation, including a multi-step Challenge tier item that combines a percentage of mass.
 - Q-SM-5: At least one Challenge tier word problem on `chemistry-separating-filtration-evaporation` uses a UK domestic or laboratory context (school lab, kitchen, garden) and requires the learner to choose a sequence of separating methods.
 - Q-SM-6: At least one missing-step question on `chemistry-separating-filtration-evaporation` hides the "particles that have dissolved are too small to be caught by the filter paper" step or the "salt is left behind because only the water turns to vapour" step in a separating-mixtures explanation.
+- Q-SM-7: At least one labelled-image question on `chemistry-separating-distillation` requires the learner to identify the apparatus pieces in the simple distillation set-up (round-bottom flask, thermometer, condenser, collecting beaker).
+- Q-SM-8: At least one drag-order question on `chemistry-separating-distillation` places the journey of a single water particle through the apparatus in the correct order from dissolved-in-flask to dripping-into-beaker.
+- Q-SM-9: At least one data-extraction question on `chemistry-separating-distillation` reads the boiling point of a fraction off a temperature-against-time table during a fractional distillation.
+- Q-SM-10: At least one Challenge tier question on `chemistry-separating-distillation` distinguishes simple from fractional distillation by reference to a 50:50 ethanol and water mixture and the role of the column.
+- Q-SM-11: At least one numeric-entry question on `chemistry-separating-distillation` applies conservation of mass through a distillation, including a Challenge tier item that combines what is left in the flask with what is collected in the beaker.
 
 ### Tutor probes
 
@@ -738,6 +751,8 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - T-SM-2: Given a wrong answer matching the "the water stays in the basin and the salt evaporates" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 - T-SM-3: Given "After filtering 100 g of muddy water and getting 80 g of filtrate, where did the missing 20 g go?", the tutor scaffolds the learner toward conservation of mass without simply stating the residue mass.
 - T-SM-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 separating-mixtures language and metric units politely.
+- T-SM-5: Given "if I distil a 50:50 ethanol and water mixture I will get pure ethanol in the beaker", the tutor's first reply is a Socratic prompt about whether a column is in use, not a flat correction.
+- T-SM-6: Given a wrong answer matching the "salt evaporates with the water during distillation" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 
 ## Zone: Elementia > Atoms, Elements, Compounds
 

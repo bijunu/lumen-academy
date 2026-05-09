@@ -4,6 +4,7 @@ import { stateChanges } from './state-changes'
 import {
   separatingMixturesZone,
   filtrationEvaporation,
+  distillation,
 } from './separating-mixtures'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
@@ -11,6 +12,7 @@ export { stateChanges } from './state-changes'
 export {
   separatingMixturesZone,
   filtrationEvaporation,
+  distillation,
 } from './separating-mixtures'
 
 export const chemistryNodes: SkillNode[] = [
@@ -18,6 +20,7 @@ export const chemistryNodes: SkillNode[] = [
   stateChanges,
   diffusion,
   filtrationEvaporation,
+  distillation,
 ]
 
 export const chemistryZones: Zone[] = [

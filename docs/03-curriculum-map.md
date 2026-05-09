@@ -267,10 +267,10 @@
 - **OCR**: C2.1a-c Pure and impure substances, separating insoluble solids by filtration, recovering soluble solids by evaporation (J248 Gateway Chemistry)
 
 #### Distillation (Confident, `chemistry-separating-distillation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.
+- **AQA**: 4.10.1.3 Distillation, including fractional distillation (8462)
+- **Edexcel**: Topic 1.45 Simple and fractional distillation (1CH0)
+- **OCR**: C2.1d Recover a solvent by simple distillation; C2.1e Separate miscible liquids by fractional distillation (J248 Gateway Chemistry)
 
 #### Chromatography (Confident, `chemistry-separating-chromatography`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_

@@ -638,9 +638,647 @@ export const filtrationEvaporation: SkillNode = {
   },
 }
 
+export const distillation: SkillNode = {
+  id: 'chemistry-separating-distillation',
+  title: 'Distillation',
+  description:
+    'Use simple distillation to recover a pure liquid from a solution by boiling and then condensing the vapour. Identify each piece of the distillation apparatus and explain its job. Recognise that fractional distillation extends the same idea to two miscible liquids with different boiling points.',
+  subject: 'chemistry',
+  realm: 'elementia',
+  zoneId: 'chemistry-separating-mixtures',
+  zoneName: 'Separating Mixtures',
+  tier: 'confident',
+  prerequisites: ['chemistry-separating-filtration-evaporation'],
+  curriculum: {
+    ks3Objective:
+      'The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.',
+    awardingBodies: {
+      aqa: '4.10.1.3 Distillation, including fractional distillation (8462)',
+      edexcel: 'Topic 1.45 Simple and fractional distillation (1CH0)',
+      ocr: 'C2.1d Recover a solvent by simple distillation; C2.1e Separate miscible liquids by fractional distillation (J248 Gateway Chemistry)',
+    },
+  },
+  scenes: [
+    {
+      id: 'di-scene-apparatus',
+      title: 'Simple Distillation: Following the Particles',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker on the distillation set-up to name the piece of apparatus and read what it does to the particles.',
+      data: {
+        viewBox: '0 0 360 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220"><rect x="0" y="0" width="360" height="220" fill="#FEF3C7"/><rect x="0" y="200" width="360" height="20" fill="#D6D3D1"/><g><circle cx="60" cy="120" r="32" fill="none" stroke="#475569" stroke-width="1.5"/><path d="M 60 88 L 60 70 L 50 60 L 70 60 z" fill="none" stroke="#475569" stroke-width="1.5"/><circle cx="60" cy="125" r="22" fill="#DBEAFE"/></g><g><line x1="60" y1="60" x2="120" y2="40" stroke="#475569" stroke-width="1.2"/><circle cx="120" cy="40" r="8" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><line x1="118" y1="40" x2="122" y2="40" stroke="#DC2626" stroke-width="1"/></g><g><rect x="120" y="55" width="160" height="18" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="125" y="58" width="150" height="12" fill="none" stroke="#94A3B8" stroke-width="0.6" stroke-dasharray="2 2"/><rect x="115" y="48" width="170" height="32" fill="none" stroke="#94A3B8" stroke-width="0.6"/><line x1="115" y1="48" x2="115" y2="80" stroke="#94A3B8" stroke-width="0.6"/><line x1="285" y1="48" x2="285" y2="80" stroke="#94A3B8" stroke-width="0.6"/><line x1="115" y1="48" x2="100" y2="40" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#a3)"/><line x1="285" y1="80" x2="305" y2="90" stroke="#3B82F6" stroke-width="1.5" marker-end="url(#a3)"/><text x="100" y="35" font-size="7" fill="#1E3A8A">cold water in</text><text x="295" y="100" font-size="7" fill="#1E3A8A">warm water out</text></g><g><rect x="285" y="100" width="50" height="90" rx="3" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="290" y="160" width="40" height="28" fill="#DBEAFE" opacity="0.85"/><text x="310" y="200" text-anchor="middle" font-size="7" fill="#1E3A8A">distillate</text></g><g><path d="M 50 175 Q 55 170 50 165 Q 45 160 50 155" stroke="#FB923C" stroke-width="2" fill="none"/><path d="M 60 175 Q 65 170 60 165 Q 55 160 60 155" stroke="#FB923C" stroke-width="2" fill="none"/><path d="M 70 175 Q 75 170 70 165 Q 65 160 70 155" stroke="#FB923C" stroke-width="2" fill="none"/></g><defs><marker id="a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#3B82F6"/></marker></defs></svg>',
+        hotspots: [
+          {
+            id: 'di-h-app-flask',
+            x: 18,
+            y: 60,
+            label: 'Round-bottom flask',
+            description:
+              'Holds the salt solution. The round shape lets the heat spread evenly, so the solution boils smoothly.',
+          },
+          {
+            id: 'di-h-app-bunsen',
+            x: 18,
+            y: 85,
+            label: 'Bunsen burner',
+            description:
+              'Heats the flask until the water in the solution boils. Salt boils far hotter than the Bunsen flame, so it stays as a solid.',
+          },
+          {
+            id: 'di-h-app-thermometer',
+            x: 35,
+            y: 22,
+            label: 'Thermometer at the side-arm',
+            description:
+              'Reads the temperature of the vapour going into the condenser. For pure water, the reading should hold at 100 C.',
+          },
+          {
+            id: 'di-h-app-condenser',
+            x: 56,
+            y: 33,
+            label: 'Condenser with cold water in and out',
+            description:
+              'A glass tube with a cold water jacket around it. The cold walls cool the water vapour back to liquid water.',
+          },
+          {
+            id: 'di-h-app-water-flow',
+            x: 85,
+            y: 50,
+            label: 'Cold water flows in at the bottom',
+            description:
+              'Cold water enters at the bottom of the jacket and warms up as it travels along, leaving warm at the top.',
+          },
+          {
+            id: 'di-h-app-collect',
+            x: 86,
+            y: 80,
+            label: 'Beaker collects the distillate',
+            description:
+              'The condensed liquid drips out into a clean beaker. With a salt solution the distillate is pure water.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'di-scene-particle-story',
+      title: 'A Particle Journey Through Distillation',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to follow a single water particle from the salt solution through to the collecting beaker.',
+      data: {
+        viewBox: '0 0 360 200',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200"><rect x="0" y="0" width="360" height="200" fill="#FEF3C7"/><g><rect x="20" y="100" width="80" height="80" rx="4" fill="#BFDBFE" stroke="#1E3A8A"/><text x="60" y="92" text-anchor="middle" font-size="8" font-weight="600" fill="#1E3A8A">SALT SOLUTION</text><g fill="#1E3A8A"><circle cx="35" cy="125" r="2.5"/><circle cx="50" cy="130" r="2.5"/><circle cx="65" cy="125" r="2.5"/><circle cx="80" cy="135" r="2.5"/><circle cx="40" cy="155" r="2.5"/><circle cx="60" cy="160" r="2.5"/><circle cx="80" cy="155" r="2.5"/><circle cx="50" cy="170" r="2.5"/><circle cx="70" cy="170" r="2.5"/></g><g fill="#475569"><circle cx="45" cy="140" r="2"/><circle cx="70" cy="145" r="2"/><circle cx="55" cy="165" r="2"/><circle cx="78" cy="170" r="2"/></g></g><g><rect x="135" y="40" width="80" height="80" rx="4" fill="#FECACA" stroke="#7C2D12"/><text x="175" y="32" text-anchor="middle" font-size="8" font-weight="600" fill="#7C2D12">VAPOUR (hot)</text><g fill="#1E3A8A" opacity="0.85"><circle cx="150" cy="55" r="2"/><circle cx="170" cy="65" r="2"/><circle cx="195" cy="60" r="2"/><circle cx="160" cy="80" r="2"/><circle cx="185" cy="85" r="2"/><circle cx="205" cy="100" r="2"/></g></g><g><rect x="250" y="40" width="80" height="40" rx="3" fill="#BBF7D0" stroke="#14532D"/><text x="290" y="32" text-anchor="middle" font-size="8" font-weight="600" fill="#14532D">CONDENSER (cold)</text><g fill="#1E3A8A"><circle cx="262" cy="58" r="2.5"/><circle cx="278" cy="65" r="2.5"/><circle cx="296" cy="60" r="2.5"/><circle cx="312" cy="68" r="2.5"/><circle cx="270" cy="72" r="2.5"/><circle cx="295" cy="75" r="2.5"/></g></g><g><rect x="265" y="120" width="50" height="60" rx="3" fill="#BFDBFE" stroke="#1E3A8A"/><text x="290" y="112" text-anchor="middle" font-size="8" font-weight="600" fill="#1E3A8A">PURE WATER</text><rect x="270" y="145" width="40" height="30" fill="#DBEAFE"/></g><g stroke="#475569" stroke-width="1" fill="none"><path d="M 100 140 Q 117 100 135 80" marker-end="url(#a4)"/><path d="M 215 80 L 250 70" marker-end="url(#a4)"/><path d="M 290 90 L 290 120" marker-end="url(#a4)"/></g><defs><marker id="a4" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker></defs></svg>',
+        hotspots: [
+          {
+            id: 'di-h-pj-start',
+            x: 17,
+            y: 75,
+            label: 'Start: dissolved in the flask',
+            description:
+              'A water particle starts mixed in among the salt particles in the round-bottom flask.',
+          },
+          {
+            id: 'di-h-pj-boil',
+            x: 50,
+            y: 50,
+            label: 'Boil: breaks away as vapour',
+            description:
+              'When the flask reaches 100 C, the water particles gain enough energy to break away from each other and become a gas.',
+          },
+          {
+            id: 'di-h-pj-saltleft',
+            x: 17,
+            y: 90,
+            label: 'Salt particles stay behind',
+            description:
+              'Salt boils above 1400 C, far hotter than a Bunsen flame, so the salt particles stay at the bottom of the flask.',
+          },
+          {
+            id: 'di-h-pj-condense',
+            x: 80,
+            y: 30,
+            label: 'Condense: back to liquid',
+            description:
+              'Inside the condenser the cold walls slow the vapour particles, which clump together and form liquid water again.',
+          },
+          {
+            id: 'di-h-pj-collect',
+            x: 80,
+            y: 80,
+            label: 'Collect: pure water in the beaker',
+            description:
+              'The liquid drips into the beaker. Only water particles made the trip, so the distillate is pure water.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'di-scene-fractional',
+      title: 'Fractional Distillation: Two Liquids, Two Boiling Points',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker on the fractional distillation set-up to see how the column lets a liquid with a lower boiling point come over first.',
+      data: {
+        viewBox: '0 0 360 240',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240"><rect x="0" y="0" width="360" height="240" fill="#FEF3C7"/><rect x="0" y="220" width="360" height="20" fill="#D6D3D1"/><g><circle cx="60" cy="170" r="28" fill="none" stroke="#475569" stroke-width="1.5"/><circle cx="60" cy="175" r="20" fill="#FEF3C7"/></g><g><rect x="50" y="80" width="20" height="60" fill="none" stroke="#475569" stroke-width="1.5"/><g fill="#94A3B8"><circle cx="58" cy="92" r="2"/><circle cx="65" cy="100" r="2"/><circle cx="55" cy="108" r="2"/><circle cx="62" cy="116" r="2"/><circle cx="58" cy="124" r="2"/><circle cx="65" cy="130" r="2"/></g><text x="105" y="110" font-size="7" fill="#1E3A8A">fractionating column</text><text x="105" y="120" font-size="7" fill="#1E3A8A">(glass beads inside)</text></g><g><line x1="60" y1="80" x2="120" y2="60" stroke="#475569" stroke-width="1.2"/><circle cx="120" cy="60" r="8" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><line x1="118" y1="60" x2="122" y2="60" stroke="#DC2626" stroke-width="1"/></g><g><rect x="120" y="75" width="160" height="18" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="125" y="78" width="150" height="12" fill="none" stroke="#94A3B8" stroke-width="0.6" stroke-dasharray="2 2"/></g><g><rect x="285" y="120" width="50" height="90" rx="3" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="290" y="170" width="40" height="35" fill="#DBEAFE" opacity="0.85"/></g><g><path d="M 50 220 Q 55 215 50 210 Q 45 205 50 200" stroke="#FB923C" stroke-width="2" fill="none"/><path d="M 60 220 Q 65 215 60 210 Q 55 205 60 200" stroke="#FB923C" stroke-width="2" fill="none"/><path d="M 70 220 Q 75 215 70 210 Q 65 205 70 200" stroke="#FB923C" stroke-width="2" fill="none"/></g></svg>',
+        hotspots: [
+          {
+            id: 'di-h-fr-mix',
+            x: 17,
+            y: 78,
+            label: 'A mixture of two liquids',
+            description:
+              'Two miscible liquids with different boiling points, for example ethanol (78 C) and water (100 C), sit in the flask.',
+          },
+          {
+            id: 'di-h-fr-column',
+            x: 17,
+            y: 50,
+            label: 'Fractionating column',
+            description:
+              'A tall glass column packed with beads. Hot vapour rising through the column meets cooler glass and partly condenses.',
+          },
+          {
+            id: 'di-h-fr-thermo',
+            x: 35,
+            y: 20,
+            label: 'Thermometer holds at 78 C',
+            description:
+              'When ethanol comes over, the reading sits at 78 C. Once the ethanol has finished, the temperature climbs toward 100 C.',
+          },
+          {
+            id: 'di-h-fr-collect-1',
+            x: 86,
+            y: 75,
+            label: 'First collection: pure ethanol',
+            description:
+              'Because ethanol has the lower boiling point, it leaves the flask first and is collected as the first fraction.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'di-worked-1',
+      title: 'Why pure water comes out of the condenser, but not the salt',
+      steps: [
+        {
+          explanation:
+            'Aisha sets up a simple distillation with a round-bottom flask of salt solution, a thermometer at the side-arm, a condenser with cold water in and out, and a beaker to catch the distillate.',
+        },
+        {
+          explanation:
+            'Step 1: heat the flask gently with a Bunsen burner. The water in the solution starts to boil at 100 C and the temperature reading at the side-arm holds steady there.',
+          maths: 'thermometer holds at 100 C',
+        },
+        {
+          explanation:
+            'Step 2: water particles gain enough energy to break away from each other and become water vapour. They rise out of the flask and into the condenser.',
+        },
+        {
+          explanation:
+            'Step 3: salt particles need to reach over 1400 C to boil. The Bunsen flame only takes the flask to 100 C, so salt particles stay at the bottom of the flask.',
+        },
+        {
+          explanation:
+            'Step 4: inside the condenser the cold water jacket cools the water vapour. The vapour particles slow down, clump back together and form liquid water again.',
+          maths: 'water vapour at 100 C condenses to liquid water',
+        },
+        {
+          explanation:
+            'Step 5: drops of liquid water flow out of the bottom of the condenser and collect in the beaker.',
+        },
+        {
+          explanation:
+            'So only water made the round trip from the flask to the beaker. The distillate is pure water, while the salt is left behind in the flask.',
+        },
+      ],
+    },
+    {
+      id: 'di-worked-2',
+      title: 'Choosing simple or fractional distillation',
+      steps: [
+        {
+          explanation:
+            'Question: Liam has two mixtures. Mixture 1 is salt dissolved in water; mixture 2 is a clear liquid that holds 50 ml of ethanol mixed with 50 ml of water. Which kind of distillation should he use for each, and why?',
+        },
+        {
+          explanation:
+            'Mixture 1: salt is a solid that does not turn into a gas at lab temperatures. Only the water boils and rises into the condenser, so a single side-arm condenser is enough.',
+        },
+        {
+          explanation:
+            'For mixture 1, simple distillation is the right choice. The thermometer holds at 100 C while pure water comes over, and the salt is left behind in the flask.',
+        },
+        {
+          explanation:
+            'Mixture 2: ethanol boils at 78 C and water boils at 100 C. If Liam used simple distillation, vapour from both liquids would rise together and condense together, so the distillate would still be a mixture.',
+        },
+        {
+          explanation:
+            'For mixture 2, fractional distillation is needed. Adding a fractionating column gives the vapour many chances to condense and re-evaporate. Only ethanol vapour reaches the top first, so ethanol is collected first while the thermometer holds at 78 C.',
+          maths: 'thermometer holds at 78 C while ethanol distils',
+        },
+        {
+          explanation:
+            'Once the ethanol has finished, the temperature climbs and water can be collected separately, or left in the flask.',
+        },
+        {
+          explanation:
+            'So the rule of thumb: simple distillation for a solid dissolved in a liquid; fractional distillation for two miscible liquids with different boiling points.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'di-q1',
+      type: 'multiple-choice',
+      stem: 'Which method should you use to recover pure water from a beaker of salt solution, in a way that lets you collect the water rather than letting it escape into the air?',
+      tier: 'core',
+      options: [
+        'Filtration',
+        'Stirring',
+        'Crushing',
+        'Simple distillation',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+    },
+    {
+      id: 'di-q2',
+      type: 'multiple-choice',
+      stem: 'During simple distillation of a salt solution, what happens to the salt?',
+      tier: 'core',
+      options: [
+        'The salt evaporates with the water and is collected in the beaker',
+        'The salt is destroyed by the heat',
+        'The salt stays in the round-bottom flask, because it does not boil at this temperature',
+        'The salt passes through the condenser as a fine powder',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'di-mis-salt-evaporates',
+    },
+    {
+      id: 'di-q3',
+      type: 'multiple-choice',
+      stem: 'In a simple distillation set-up, where on the apparatus should the thermometer bulb sit?',
+      tier: 'core',
+      options: [
+        'At the bottom of the round-bottom flask, in the salt solution',
+        'Inside the collecting beaker',
+        'Halfway down the cold water jacket of the condenser',
+        'Right at the side-arm where the vapour leaves the flask',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'di-mis-thermometer-position',
+    },
+    {
+      id: 'di-q4',
+      type: 'multiple-choice',
+      stem: 'Why does cold water flow into the condenser at the bottom and out at the top, instead of the other way round?',
+      tier: 'core',
+      options: [
+        'So the cold water flows against the vapour, keeping the whole condenser cold and the cooling efficient',
+        'So the warm water can be drunk afterwards',
+        'So the cold water can be filtered',
+        'It does not matter; the condenser works the same in both directions',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'di-mis-condenser-warms',
+    },
+    {
+      id: 'di-q5',
+      type: 'labelled-image',
+      stem: 'Drag each label onto the correct part of the simple distillation set-up.',
+      tier: 'core',
+      viewBox: '0 0 360 220',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220"><rect x="0" y="0" width="360" height="220" fill="#F8FAFC"/><rect x="0" y="200" width="360" height="20" fill="#D6D3D1"/><g><circle cx="60" cy="120" r="32" fill="none" stroke="#475569" stroke-width="1.5"/><path d="M 60 88 L 60 70 L 50 60 L 70 60 z" fill="none" stroke="#475569" stroke-width="1.5"/></g><g><line x1="60" y1="60" x2="120" y2="40" stroke="#475569" stroke-width="1.2"/><circle cx="120" cy="40" r="8" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/></g><g><rect x="120" y="55" width="160" height="18" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="115" y="48" width="170" height="32" fill="none" stroke="#94A3B8" stroke-width="0.6"/></g><g><rect x="285" y="100" width="50" height="90" rx="3" fill="none" stroke="#475569" stroke-width="1.5"/></g></svg>',
+      hotspots: [
+        { id: 'di-q5-h1', x: 18, y: 60, correctLabel: 'Round-bottom flask' },
+        { id: 'di-q5-h2', x: 35, y: 22, correctLabel: 'Thermometer' },
+        { id: 'di-q5-h3', x: 56, y: 33, correctLabel: 'Condenser' },
+        { id: 'di-q5-h4', x: 86, y: 80, correctLabel: 'Collecting beaker' },
+      ],
+      labels: [
+        'Round-bottom flask',
+        'Thermometer',
+        'Condenser',
+        'Collecting beaker',
+        'Filter funnel',
+        'Evaporating basin',
+      ],
+      xpValue: 20,
+    },
+    {
+      id: 'di-q6',
+      type: 'numeric-entry',
+      stem: 'Aisha distils 100 ml of pure water from a round-bottom flask of salt solution. The thermometer at the side-arm holds steady throughout. What temperature reading, in C, should she record while the water distils?',
+      tier: 'core',
+      correctAnswer: 100,
+      unit: 'C',
+      xpValue: 10,
+      hint: 'Pure water boils at the same temperature in any flask. The reading does not change during a state change.',
+    },
+    {
+      id: 'di-q7',
+      type: 'drag-order',
+      stem: 'Place the journey of a single water particle through a simple distillation in the correct order.',
+      tier: 'core',
+      items: [
+        'Cools on the inside walls of the condenser and clumps with other water particles to become liquid again',
+        'Sits dissolved in the salt solution in the round-bottom flask',
+        'Drips out of the bottom of the condenser into the collecting beaker as pure water',
+        'Gains energy from the Bunsen flame and breaks away from its neighbours as water vapour',
+      ],
+      correctOrder: [1, 3, 0, 2],
+      xpValue: 15,
+    },
+    {
+      id: 'di-q8',
+      type: 'spot-misconception',
+      stem: 'Sophie says: "When you distil a salt solution, the salt evaporates with the water. The condenser then catches the salt and the water together, so the distillate has salt in it." Is she right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Sophie is right. Both the water and the salt turn into a gas, so both end up in the beaker.',
+          isMisconception: true,
+        },
+        {
+          text: 'Sophie is wrong. Salt boils above 1400 C, far hotter than a Bunsen flame, so the salt does not turn into a gas. Only the water reaches the condenser and the distillate is pure water.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'di-mis-salt-evaporates',
+    },
+    {
+      id: 'di-q9',
+      type: 'multiple-choice',
+      stem: 'A pupil distils a salt solution but uses a thermometer that is sitting in the salt solution at the bottom of the flask, not at the side-arm. Why is this a problem?',
+      tier: 'confident',
+      options: [
+        'The thermometer cannot read above 100 C in any liquid',
+        'The thermometer reads the temperature of the boiling liquid, not the temperature of the vapour leaving the flask, so it cannot tell the pupil whether pure water is coming over',
+        'The thermometer would melt at the bottom of the flask',
+        'The thermometer would change the colour of the salt solution',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'di-mis-thermometer-position',
+    },
+    {
+      id: 'di-q10',
+      type: 'multiple-choice',
+      stem: 'A pupil tries to distil a 50 ml ethanol and 50 ml water mixture using a simple distillation set-up with no fractionating column. The thermometer reading climbs steadily from 78 C up to 100 C while the distillate is being collected. What does this tell the pupil about the distillate in the beaker?',
+      tier: 'confident',
+      options: [
+        'The distillate is pure ethanol, because ethanol has the lower boiling point',
+        'The distillate is pure water, because water boils at 100 C',
+        'The distillate is a mixture of ethanol and water, because both have boiled and come over together',
+        'The distillate is a new compound formed when ethanol and water boil at the same time',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'di-mis-simple-separates-liquids',
+    },
+    {
+      id: 'di-q11',
+      type: 'multiple-choice',
+      stem: 'What is the main job of the fractionating column in a fractional distillation?',
+      tier: 'confident',
+      options: [
+        'To filter the liquid before it reaches the condenser',
+        'To give the rising vapour many chances to condense and re-evaporate, so only the liquid with the lowest boiling point reaches the top',
+        'To slow down the speed of the cold water in the jacket',
+        'To stop the salt from rising up out of the round-bottom flask',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'di-mis-column-redundant',
+    },
+    {
+      id: 'di-q12',
+      type: 'numeric-entry',
+      stem: 'A pupil distils a 200 ml mixture made of 60 ml of ethanol and 140 ml of water using a fractional distillation set-up. The thermometer first holds at 78 C while the lower boiling point liquid distils over fully. What volume of distillate, in millilitres, should the pupil collect during the 78 C plateau?',
+      tier: 'confident',
+      correctAnswer: 60,
+      unit: 'ml',
+      xpValue: 15,
+      hint: 'The 78 C reading marks the boiling point of ethanol. Only ethanol distils over while the temperature holds there.',
+    },
+    {
+      id: 'di-q13',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. Question: A pupil distils a salt solution. The thermometer at the side-arm holds at 100 C while liquid drips into the beaker. After 10 minutes the flask runs dry, the temperature climbs and the dripping stops. The beaker now contains only pure water. Use the particle model to explain why the distillate is pure water and the salt has stayed behind.',
+      tier: 'confident',
+      steps: [
+        'Inside the round-bottom flask, the salt particles and the water particles are mixed evenly because the salt has dissolved.',
+        'When the flask is heated to 100 C, the water particles gain enough energy to break away from each other and become a gas.',
+        null,
+        'The water vapour rises through the side-arm into the condenser, where the cold walls cool the particles back into liquid water that drips into the beaker.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Salt particles need to be heated above 1400 C before they can break away as a gas, so at 100 C they stay where they are at the bottom of the flask.',
+      xpValue: 20,
+    },
+    {
+      id: 'di-q14',
+      type: 'data-extraction',
+      stem: 'A pupil records the thermometer reading every minute as a fractional distillation of an ethanol and water mixture proceeds. The readings are: 0 minutes 22 C; 4 minutes 78 C; 8 minutes 78 C; 12 minutes 78 C; 16 minutes 95 C; 20 minutes 100 C; 24 minutes 100 C. What temperature, in C, marks the boiling point of the lower boiling point liquid in the mixture?',
+      tier: 'confident',
+      dataSource:
+        'Thermometer readings during a fractional distillation of an ethanol and water mixture: 0 minutes 22 C; 4 minutes 78 C; 8 minutes 78 C; 12 minutes 78 C; 16 minutes 95 C; 20 minutes 100 C; 24 minutes 100 C.',
+      correctAnswer: '78',
+      xpValue: 15,
+      hint: 'Find the first plateau, where the reading stops rising for several minutes.',
+    },
+    {
+      id: 'di-q15',
+      type: 'multiple-choice',
+      stem: 'Liam runs a simple distillation of muddy salt water. He pours the mixture straight into the round-bottom flask without filtering it first. After distilling for 15 minutes, the beaker holds clear liquid. Which best describes the contents of the beaker?',
+      tier: 'confident',
+      options: [
+        'A clear mixture of salt, mud and water',
+        'Pure water; both the salt and the mud are left behind in the flask',
+        'Pure salt water, because the mud has been removed',
+        'A clear sample of mud particles too small to see',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+    },
+    {
+      id: 'di-q16',
+      type: 'numeric-entry',
+      stem: 'Aisha distils 250 g of clear salt solution that she made by stirring 25 g of salt into 225 g of water. After the distillation has finished, the round-bottom flask still holds all of the salt and a small puddle of water that did not get a chance to boil off, with a total mass of 35 g. What mass, in grams, of pure water has she collected in the beaker?',
+      tier: 'challenge',
+      correctAnswer: 215,
+      unit: 'g',
+      xpValue: 25,
+      hint: 'Mass is conserved overall. Total starting mass equals what is left in the flask plus what is in the beaker.',
+      misconceptionId: 'di-mis-mass-lost',
+    },
+    {
+      id: 'di-q17',
+      type: 'multiple-choice',
+      stem: 'A pupil sets up a simple distillation but forgets to turn on the cold water flow through the condenser. The Bunsen flame stays lit and the salt solution still boils. What is the most likely result?',
+      tier: 'challenge',
+      options: [
+        'Pure salt is collected in the beaker instead of pure water',
+        'No water vapour is produced, because the condenser is not cold',
+        'The water vapour escapes from the end of the condenser as a gas, instead of condensing into liquid in the beaker',
+        'The condenser explodes from the heat',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+    },
+    {
+      id: 'di-q18',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. Question: A school in Tunbridge Wells runs a fractional distillation in a Year 7 demo. The mixture is 80 ml of ethanol and 80 ml of water. The thermometer holds at 78 C while liquid is collected in beaker A, then climbs and holds at 100 C while liquid is collected in beaker B. Use the particle model to explain why the two beakers hold different liquids.',
+      tier: 'challenge',
+      steps: [
+        'In the round-bottom flask, ethanol particles and water particles are mixed evenly.',
+        'Ethanol boils at 78 C, the lower of the two boiling points, so when the flask reaches 78 C the ethanol particles break away as vapour while the water particles stay liquid.',
+        null,
+        'Once all the ethanol has gone, the temperature climbs again. When it reaches 100 C, the water particles break away as vapour and condense into beaker B as pure water.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'The fractionating column lets only the ethanol vapour reach the top, where it travels into the condenser, cools and drips into beaker A as pure ethanol while the temperature holds at 78 C.',
+      xpValue: 25,
+      misconceptionId: 'di-mis-simple-separates-liquids',
+    },
+    {
+      id: 'di-q19',
+      type: 'multiple-choice',
+      stem: 'A water company in Kent uses a giant version of distillation to make drinking water from a mixture of borehole water and dissolved minerals. The mixture is heated, the vapour rises into a long cooled section, and pure water drips out at the end. Which best describes the chemistry that the company is using?',
+      tier: 'challenge',
+      options: [
+        'A new compound is made when the vapour cools',
+        'The same simple distillation idea used in school labs, just on a much bigger scale',
+        'A chemical reaction destroys the dissolved minerals',
+        'A filter under pressure removes the dissolved minerals',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+    },
+    {
+      id: 'di-q20',
+      type: 'spot-misconception',
+      stem: 'Tom says: "If I just use simple distillation on a 50:50 ethanol and water mixture, I will get pure ethanol in the beaker, because ethanol has a lower boiling point and boils first." Is he right?',
+      tier: 'challenge',
+      statements: [
+        {
+          text: 'Tom is right. Whichever liquid boils first will come over alone, so the beaker will hold pure ethanol.',
+          isMisconception: true,
+        },
+        {
+          text: 'Tom is wrong. Without a fractionating column the water vapour rises and condenses too, so the beaker holds a mixture, not pure ethanol. Fractional distillation is needed for this.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 25,
+      misconceptionId: 'di-mis-simple-separates-liquids',
+    },
+    {
+      id: 'di-q21',
+      type: 'numeric-entry',
+      stem: 'A pupil distils 600 g of clear salt solution. The flask starts with 600 g and ends with 80 g of solid salt and unboiled solution at the bottom. The connecting glassware adds no mass to either side. What total mass, in grams, of liquid has the pupil collected in the beaker?',
+      tier: 'challenge',
+      correctAnswer: 520,
+      unit: 'g',
+      xpValue: 25,
+      hint: 'Mass is conserved overall. Total starting mass equals what is left in the flask plus what is collected in the beaker.',
+      misconceptionId: 'di-mis-mass-lost',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Chemistry examiner report June 2018 (8462/1F), Q07 on simple distillation: a recurring candidate response was that "the salt boils with the water and is caught in the condenser", showing that learners assume both components of a solution evaporate together. Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on separating mixtures.
+    {
+      id: 'di-mis-salt-evaporates',
+      description:
+        'During simple distillation of a salt solution, the salt evaporates along with the water and ends up in the distillate.',
+      triggerAnswer: 'salt-evaporates',
+      correction:
+        'In fact only the water turns into a gas at lab temperatures. Salt boils above 1400 C, far hotter than a Bunsen flame, so the salt particles stay in the flask.',
+      reExplanation:
+        'Picture a single salt particle and a single water particle side by side at the bottom of the flask. To turn into a gas, each particle has to gain enough energy to break away from its neighbours. A Bunsen flame can take a flask to about 100 C, plenty for water but nowhere near enough for salt. So when the flask boils, only water vapour rises and is caught by the condenser. The salt is left as solid crystals.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2019 (1CH0/1F), Q08 on distillation apparatus: candidates often placed the thermometer bulb in the boiling liquid rather than at the side-arm, missing that the reading must report the vapour temperature. Reinforced by RSC Education CPD article "Practical work in school chemistry" (David Paterson, 2020).
+    {
+      id: 'di-mis-thermometer-position',
+      description:
+        'The thermometer in a distillation should sit in the boiling liquid in the round-bottom flask.',
+      triggerAnswer: 'thermometer-position',
+      correction:
+        'In fact the thermometer bulb sits at the side-arm where the vapour leaves the flask, so it reads the temperature of the gas going into the condenser.',
+      reExplanation:
+        'The reason for the thermometer is to tell the pupil whether the vapour is the right substance. For a salt solution that is pure water, the bulb at the side-arm reads 100 C while pure water vapour goes over. If the bulb sat in the liquid, it would just tell us the temperature of the boiling solution, not whether the gas leaving really is pure water.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q09 on fractional distillation: candidates often wrote that "simple distillation can separate two liquids if they have different boiling points", missing that without a column both vapours rise together. The same trigger is documented in OCR Gateway Chemistry examiner reports (J248, 2019 and 2022).
+    {
+      id: 'di-mis-simple-separates-liquids',
+      description:
+        'Simple distillation alone is enough to separate two miscible liquids with different boiling points; the one with the lower boiling point will come over pure.',
+      triggerAnswer: 'simple-separates-liquids',
+      correction:
+        'In fact without a fractionating column both vapours rise and condense together, so the distillate is still a mixture. Fractional distillation is needed to separate the two liquids.',
+      reExplanation:
+        'In a 50:50 ethanol and water mixture, ethanol boils at 78 C and water at 100 C, but plenty of water particles also have enough energy to break away well below 100 C, especially as the flask warms past 78 C. So in a simple set-up both liquids reach the condenser and condense together. The fractionating column gives the rising vapour many chances to condense and re-evaporate, so only the liquid with the lower boiling point reaches the top.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q07 on distillation: candidates often wrote that "the mass goes down because the water has gone". The same conservation-of-mass slip is documented in Best Evidence Science Teaching (BEST) KS3 separating-mixtures diagnostics. Reinforced by Matthew Parks, "Teaching conservation of mass at 14-16", RSC Education CPD article (2024-12-05).
+    {
+      id: 'di-mis-mass-lost',
+      description:
+        'Mass is lost during distillation because some of the substance disappears between the flask and the beaker.',
+      triggerAnswer: 'mass-lost',
+      correction:
+        'In fact mass is conserved. Every particle that started in the flask is still there at the end, either left in the flask, collected in the beaker, or escaping as a gas if the condenser leaks.',
+      reExplanation:
+        'Place the whole apparatus, flask, condenser and collecting beaker on a balance before and after a distillation that is properly sealed. The total mass reading does not change. The water has not been destroyed; it has only moved from the flask, through the side-arm, into the beaker. If the apparatus has a gap and the vapour escapes, the missing mass is in the air, not gone forever.',
+    },
+    // Source: David Paterson, "Teaching pupils to separate mixtures", RSC Education CPD article (2020-09-21): a recurring Year 7 expectation is that the condenser warms the vapour rather than cools it, because water and pipes are being moved through it. Reinforced by CGP KS3 Chemistry common-mistake callouts on distillation apparatus.
+    {
+      id: 'di-mis-condenser-warms',
+      description:
+        'The condenser in a distillation set-up warms the vapour to keep it as a gas all the way to the beaker.',
+      triggerAnswer: 'condenser-warms',
+      correction:
+        'In fact the condenser cools the vapour. A jacket of cold water around the glass tube takes heat away, so the gas particles slow down and clump back into a liquid.',
+      reExplanation:
+        'The whole point of a distillation is to turn the boiled gas back into a liquid you can catch in a beaker. To do that, the vapour particles have to lose energy. Cold water flowing around the outside of the glass tube absorbs that energy, so the vapour cools below its boiling point and condenses into liquid drops on the inside of the tube. Without the cold water, the gas would just escape into the air.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q09 on fractional distillation: a common candidate confusion was to label fractional distillation as "the same as simple distillation" with no role for the column, missing that the column is what makes the separation of two liquids possible. Reinforced by CGP KS3 Chemistry on fractional distillation in the petrochemicals chapter.
+    {
+      id: 'di-mis-column-redundant',
+      description:
+        'The fractionating column in a fractional distillation is just decorative, and the apparatus would work the same without it.',
+      triggerAnswer: 'column-redundant',
+      correction:
+        'In fact the fractionating column is the part that makes the separation work. Without it the two liquids would condense together in the condenser as a mixture.',
+      reExplanation:
+        'Inside the column, hot vapour from the flask meets cooler glass and beads. Vapour with a higher boiling point condenses on the column and runs back down into the flask, while vapour with a lower boiling point keeps rising. After many such cycles, only the lower boiling point liquid reaches the top. Take the column away and both vapours travel straight into the condenser together, so the distillate is still a mixture.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
 export const separatingMixturesZone: Zone = {
   id: 'chemistry-separating-mixtures',
   name: 'Separating Mixtures',
   realm: 'elementia',
-  nodeIds: ['chemistry-separating-filtration-evaporation'],
+  nodeIds: [
+    'chemistry-separating-filtration-evaporation',
+    'chemistry-separating-distillation',
+  ],
 }
