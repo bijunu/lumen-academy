@@ -355,10 +355,10 @@
 ### Zone: Forces (`physics-forces`)
 
 #### Identifying Forces (Core, `physics-forces-types`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces as pushes or pulls, arising from the interaction between two objects; non-contact forces: gravity forces acting at a distance on Earth and in space, forces between magnets, and forces due to static electricity.
+- **AQA**: 4.5.1.1 Forces and their interactions; contact and non-contact forces (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.18-1.20 Contact and non-contact forces (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces, contact and non-contact forces (GCSE Physics J259 Gateway)
 
 #### Balanced and Unbalanced Forces (Core, `physics-forces-balanced`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Forces)_

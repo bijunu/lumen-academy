@@ -771,13 +771,45 @@ Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid
 Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-friction`.
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+
+- C-FO-1: Learner labels gravity as a contact force in a sort-into-two-families task, on the grounds that you are stood on the ground when it acts. (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one Confident multiple-choice question that asks the learner to pick a list containing only contact (or only non-contact) forces.
+- C-FO-2: Learner names the upward push of a surface vaguely as "force of the table" or "support force" rather than "normal contact" (also called reaction). (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one multiple-choice question whose distractors include vague names against the standard name "normal contact".
+- C-FO-3: Learner uses informal names for air resistance ("wind", "force of the air") rather than the standard "air resistance" or "drag". (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one multiple-choice question that pairs "air resistance" against "wind" or "force of the air" as distractors.
+- C-FO-4: Learner believes air resistance only acts on falling objects, so a car or runner on a flat road has no air resistance. (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one spot-misconception question presenting the "air resistance is for falls only" argument.
+- C-FO-5: Learner forgets to count tension in a rope or string holding a hanging object, listing only the weight on a free-body diagram. (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one numeric-entry or free-text question about a hanging object that requires both forces to be named.
+- C-FO-6: Learner believes an applied push or pull keeps acting on an object after the hand or boot has let go, e.g. saying a thrown ball still has a forwards force. (Covers `physics-forces-types`, `physics-forces-balanced`.)
+  - Required handling: misconception entry; at least one Challenge tier question about a kicked ball or a let-go boat that requires the learner to drop the applied force from the list.
+- C-FO-7: Learner draws or names forces on the wrong object in a free-body diagram, e.g. saying tension acts on the rope rather than on the sledge the rope pulls. (Covers `physics-forces-types`, `physics-forces-balanced`.)
+  - Required handling: misconception entry; at least one Challenge tier multiple-choice question that pairs the named force to the object it acts on.
+- C-FO-8: Learner calls the force between a charged balloon and a wall "magnetic" because both kinds of force act at a distance. (Covers `physics-forces-types`.)
+  - Required handling: misconception entry; at least one multiple-choice question that contrasts magnetic and electrostatic forces in the same stem.
+- C-FO-9: Learner believes a non-zero net force is needed to keep an object moving at a constant speed, so a coasting cyclist or sliding puck must have an applied force still acting on it. (Covers `physics-forces-balanced`.)
+  - Required handling: misconception entry; at least one Confident or Challenge multiple-choice question that asks what the net force is on an object moving at constant velocity.
+- C-FO-10: Learner predicts that two equal and opposite force arrows always make the object stop, rather than continue at constant velocity if it was already moving. (Covers `physics-forces-balanced`.)
+  - Required handling: misconception entry; at least one spot-misconception question presenting the "balanced means stopped" argument.
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+
+- Q-FO-1: At least one labelled-image question on the forces-types node has the learner place names ("Weight", "Normal contact", "Friction", "Air resistance", "Upthrust", "Tension", "Magnetic", "Electrostatic") onto a gallery diagram, with a label pool no larger than twice the hotspot count. (Covers `physics-forces-types`.)
+- Q-FO-2: At least three core multiple-choice questions on the forces-types node each show one everyday UK situation and ask the learner to pick the named force, with distractors drawn from neighbouring forces (tension vs upthrust, friction vs air resistance). (Covers `physics-forces-types`.)
+- Q-FO-3: At least one Confident drag-order or missing-step question walks the learner through naming all the forces on a moving object (cyclist, swimmer, or sledge). (Covers `physics-forces-types`.)
+- Q-FO-4: At least one Challenge tier multi-step word problem on the forces-types node maps a UK context (Tube carriage, school field, garden swing, kitchen ceiling hook) onto a free-body force list including a non-contact force and at least two contact forces. (Covers `physics-forces-types`.)
+- Q-FO-5: At least one labelled-image question on the forces-balanced node has the learner place named forces (with their direction) on a free-body diagram of a stationary or constant-velocity object. (Covers `physics-forces-balanced`.)
+- Q-FO-6: At least one Confident or Challenge multiple-choice question on the forces-balanced node uses a pair of arrow lengths (e.g. 30 N right, 20 N left) and asks for the net force value and direction. (Covers `physics-forces-balanced`.)
+- Q-FO-7: At least one spot-misconception question on the forces-balanced node presents the "balanced means stopped" or "needs a force to keep moving" argument and asks if the method is sound. (Covers `physics-forces-balanced`.)
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+
+- T-FO-1: Given "I think gravity is a contact force because I am stood on the ground", the tutor asks the learner whether the Earth still pulls a diver in mid-air, before stating the rule.
+- T-FO-2: Given a wrong answer matching the air-resistance-only-falls trigger (for example "A car on a flat road has no air resistance"), the tutor cites the relevant misconception's `reExplanation` and offers a Tube carriage or cycling example.
+- T-FO-3: Given "If two forces are balanced, does the object stop?", the tutor walks the learner through the difference between zero net force on a stationary object and zero net force on a moving object, using a coasting puck as a concrete example.
+- T-FO-4: Given an off-topic input (for example a question about US football tackling forces), the tutor steers back to KS3 UK Physics examples (Tube, cycling, garden, swimming pool).
+- T-FO-5: Given a request for an inline definition (tap on "tension" or "upthrust"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Gravity, Weight, Mass
 
