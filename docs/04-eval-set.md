@@ -707,13 +707,37 @@ Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-change
 Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-distillation`, `chemistry-separating-chromatography`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-SM-1: Learner believes filter paper can take a dissolved solid (such as salt or sugar) out of its solution.
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one MCQ or spot-misconception whose distractors include the filter-the-salt answer.
+- C-SM-2: Learner believes evaporation is the right method to remove an insoluble lump (such as sand) from water.
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one MCQ pairing the wrong evaporation choice with the correct filtration choice for an insoluble solid.
+- C-SM-3: Learner believes mass is lost during filtration or evaporation because part of the substance disappears.
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one numeric-entry question that requires the learner to apply conservation of mass through the process.
+- C-SM-4: Learner believes the salt evaporates and the water stays behind in an evaporating basin.
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one Confident question whose distractors include the salt-evaporates answer.
+- C-SM-5: Learner believes a clear liquid must be pure water (no dissolved particles in a clear solution).
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one question contrasting clear salt solution with pure water by reference to evaporation results.
+- C-SM-6: Learner believes filtration alone can separate two insoluble solids that have been mixed together.
+  - Required handling: misconception entry on `chemistry-separating-filtration-evaporation`; at least one Challenge question whose distractors include the one-step-filtration answer for separating two insoluble solids.
+- C-SM-7: Learner believes simple distillation works because the salt evaporates with the water and gets caught in the condenser.
+  - Required handling: misconception entry on `chemistry-separating-distillation` once that node is authored.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-SM-1: At least one Core MCQ on `chemistry-separating-filtration-evaporation` asks the learner to choose between filtration and evaporation given a named mixture (sand-and-water, salt-and-water, lemonade), with each distractor mapping to a known method confusion.
+- Q-SM-2: At least one labelled-image question on `chemistry-separating-filtration-evaporation` requires the learner to identify the apparatus pieces in either the filtration or evaporation set-up (filter funnel, filter paper, conical flask, evaporating basin, gauze, tripod, Bunsen burner).
+- Q-SM-3: At least one drag-order question on `chemistry-separating-filtration-evaporation` places the steps of filtration in the correct order from setting up the apparatus to recovering the residue and filtrate.
+- Q-SM-4: At least one numeric-entry question on `chemistry-separating-filtration-evaporation` applies conservation of mass through filtration or evaporation, including a multi-step Challenge tier item that combines a percentage of mass.
+- Q-SM-5: At least one Challenge tier word problem on `chemistry-separating-filtration-evaporation` uses a UK domestic or laboratory context (school lab, kitchen, garden) and requires the learner to choose a sequence of separating methods.
+- Q-SM-6: At least one missing-step question on `chemistry-separating-filtration-evaporation` hides the "particles that have dissolved are too small to be caught by the filter paper" step or the "salt is left behind because only the water turns to vapour" step in a separating-mixtures explanation.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-SM-1: Given "I will use filter paper to take the salt out of saltwater", the tutor's first reply is a Socratic prompt about whether the salt has dissolved or stayed as visible lumps, not a direct correction.
+- T-SM-2: Given a wrong answer matching the "the water stays in the basin and the salt evaporates" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SM-3: Given "After filtering 100 g of muddy water and getting 80 g of filtrate, where did the missing 20 g go?", the tutor scaffolds the learner toward conservation of mass without simply stating the residue mass.
+- T-SM-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 separating-mixtures language and metric units politely.
 
 ## Zone: Elementia > Atoms, Elements, Compounds
 
