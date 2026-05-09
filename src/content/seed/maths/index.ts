@@ -24,6 +24,7 @@ import { sequencesRules, sequencesZoneNodes } from './sequences'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
 import {
   negativeNumbersAddSubtract,
+  multiplyDivideNegatives,
   fourOperationsZoneNodes,
 } from './four-operations'
 
@@ -53,6 +54,7 @@ export {
   coordinatesGrid,
   coordinatesZoneNodes,
   negativeNumbersAddSubtract,
+  multiplyDivideNegatives,
   fourOperationsZoneNodes,
 }
 
