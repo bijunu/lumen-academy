@@ -253,24 +253,24 @@
 - **OCR**: _GCSE Chemistry spec ref_
 
 #### Diffusion (Confident, `chemistry-particle-model-diffusion`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The particulate nature of matter)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: Diffusion in terms of the particle model (the random movement of particles from a region of high concentration to a region of low concentration).
+- **AQA**: 4.2.2.2 Diffusion (8462)
+- **Edexcel**: Topic 1.13 Diffusion in terms of the particle model (1CH0)
+- **OCR**: C1.1d Diffusion and the particle model (J248 Gateway Chemistry)
 
 ### Zone: Separating Mixtures (`chemistry-separating-mixtures`)
 
 #### Filtration and Evaporation (Core, `chemistry-separating-filtration-evaporation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.
+- **AQA**: 4.10.1.1 Pure substances and mixtures; 4.10.1.2 Filtration, crystallisation (8462)
+- **Edexcel**: Topic 1.43 Filtration and crystallisation; 1.42 Mixtures (1CH0)
+- **OCR**: C2.1a-c Pure and impure substances, separating insoluble solids by filtration, recovering soluble solids by evaporation (J248 Gateway Chemistry)
 
 #### Distillation (Confident, `chemistry-separating-distillation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.
+- **AQA**: 4.10.1.3 Distillation, including fractional distillation (8462)
+- **Edexcel**: Topic 1.45 Simple and fractional distillation (1CH0)
+- **OCR**: C2.1d Recover a solvent by simple distillation; C2.1e Separate miscible liquids by fractional distillation (J248 Gateway Chemistry)
 
 #### Chromatography (Confident, `chemistry-separating-chromatography`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_
