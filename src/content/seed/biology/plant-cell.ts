@@ -631,7 +631,7 @@ export const plantCell: SkillNode = {
       reExplanation:
         'Respiration releases energy from glucose for the cell. All living cells, plant or animal, need this energy to grow, repair, and stay alive. A potato in the dark store room is still alive and its cells are still respiring. Photosynthesis sits on top of respiration in green plant cells: it makes the glucose that respiration then uses, and only happens when light shines on the chloroplasts.',
     },
-    // Source: SAPS, How can I model a plant cell at KS3? — chloroplasts framed as features of the green parts only. https://www.saps.org.uk/teaching-resources/resources/165/how-can-i-model-a-plant-cell-at-ks3/
+    // Source: SAPS, How can I model a plant cell at KS3?, chloroplasts framed as features of the green parts only. https://www.saps.org.uk/teaching-resources/resources/165/how-can-i-model-a-plant-cell-at-ks3/
     {
       id: 'plant-mis-all-cells-have-chloroplasts',
       description: 'Every plant cell contains chloroplasts.',
@@ -641,7 +641,7 @@ export const plantCell: SkillNode = {
       reExplanation:
         'Chloroplasts trap light energy. A root cell is buried in dark soil where no light reaches, so a chloroplast there would be useless. Roots get their food from sugars carried down from the leaves, where the chloroplasts do the work. When you draw a typical plant cell from a leaf, fill it with chloroplasts; when you draw a root cell, leave them out.',
     },
-    // Source: AQA GCSE Biology specification 8461, section 4.1.1.2 "Animal and plant cells" — distinguishes the cell membrane (controls movement of substances) from the cell wall (strengthens the cell). https://www.aqa.org.uk/subjects/science/gcse/biology-8461/specification/subject-content/cell-biology
+    // Source: AQA GCSE Biology specification 8461, section 4.1.1.2 "Animal and plant cells", distinguishes the cell membrane (controls movement of substances) from the cell wall (strengthens the cell). https://www.aqa.org.uk/subjects/science/gcse/biology-8461/specification/subject-content/cell-biology
     {
       id: 'plant-mis-wall-controls-entry',
       description:
@@ -652,7 +652,7 @@ export const plantCell: SkillNode = {
       reExplanation:
         'Picture the plant cell as a soft jelly bag inside a cardboard box. The box is the cell wall: it holds the shape and lets water and dissolved sugars pass through. The bag is the cell membrane, just inside the wall, and it is the bag that decides which substances are allowed in or out. Both layers are needed, but they do different jobs.',
     },
-    // Source: SAPS, How can I model a plant cell at KS3? — vacuole modelled as a "water-filled poly bag". https://www.saps.org.uk/teaching-resources/resources/165/how-can-i-model-a-plant-cell-at-ks3/
+    // Source: SAPS, How can I model a plant cell at KS3?, vacuole modelled as a "water-filled poly bag". https://www.saps.org.uk/teaching-resources/resources/165/how-can-i-model-a-plant-cell-at-ks3/
     {
       id: 'plant-mis-vacuole-empty',
       description: 'The large vacuole inside a plant cell is empty space.',
@@ -662,7 +662,7 @@ export const plantCell: SkillNode = {
       reExplanation:
         'Think of the vacuole as a water balloon at the centre of the cell. When the balloon is full, it pushes the rest of the cell outwards against the wall, and the plant feels firm. When the plant has too little water, the balloons empty, the cells stop pushing, and the leaves droop. That is why a thirsty house plant wilts. Animal cells have no large permanent vacuole at all.',
     },
-    // Source: SAPS, Misconceptions in Biology — "Aerobic respiration: Uses carbon dioxide and water and produces glucose and oxygen" reframes the energy transfer. https://www.saps.org.uk/growth-hub/misconceptions-in-biology/
+    // Source: SAPS, Misconceptions in Biology, "Aerobic respiration: Uses carbon dioxide and water and produces glucose and oxygen" reframes the energy transfer. https://www.saps.org.uk/growth-hub/misconceptions-in-biology/
     {
       id: 'plant-mis-mitochondria-make-energy',
       description: 'Mitochondria make new energy for the cell.',
@@ -672,7 +672,7 @@ export const plantCell: SkillNode = {
       reExplanation:
         'Glucose holds chemical energy. Inside a mitochondrion, glucose reacts with oxygen and the stored energy is transferred so the cell can use it. The mitochondrion is the place where this transfer happens, not a tiny battery factory making fresh energy. Plant cells contain mitochondria too, because plants respire just like animals do.',
     },
-    // Source: SAPS, Misconceptions in Biology — "Plant cells: Respire in the dark but not in the light." https://www.saps.org.uk/growth-hub/misconceptions-in-biology/
+    // Source: SAPS, Misconceptions in Biology, "Plant cells: Respire in the dark but not in the light." https://www.saps.org.uk/growth-hub/misconceptions-in-biology/
     {
       id: 'plant-mis-respire-only-night',
       description:
