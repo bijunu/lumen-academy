@@ -153,10 +153,10 @@
 ### Zone: Particle Model (`chemistry-particle-model`)
 
 #### States of Matter (Core, `chemistry-particle-model-states`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The particulate nature of matter)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The properties of the different states of matter (solid, liquid and gas) in terms of the particle model, including gas pressure.
+- **AQA**: 4.2.2.1 The three states of matter (8462)
+- **Edexcel**: Topic 2.1 States of matter (1CH0)
+- **OCR**: C1.1 The particle model (J248 Gateway Chemistry)
 
 #### State Changes (Core, `chemistry-particle-model-state-changes`)
 - **KS3**: _fill verbatim from DfE Science KS3 (The particulate nature of matter)_

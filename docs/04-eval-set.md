@@ -638,13 +638,41 @@ Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
 Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-changes`, `chemistry-particle-model-diffusion`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-PM-1: Learner believes that individual particles get bigger when a substance is heated, rather than moving faster with larger gaps between them.
+  - Required handling: misconception entry; at least one question whose distractors include the bigger-particles answer; at least one spot-misconception or worked example that contrasts particle size with particle spacing.
+- C-PM-2: Learner believes that particles in a solid stop moving completely.
+  - Required handling: misconception entry; at least one question that distinguishes "vibrating in place" from "completely still".
+- C-PM-3: Learner believes that gas particles fall to the bottom of a container because of gravity, instead of spreading out evenly.
+  - Required handling: misconception entry; at least one spot-misconception or MC question whose distractors include the gas-settles-at-the-bottom answer.
+- C-PM-4: Learner draws or expects liquid particles in a regular grid pattern, identical to a solid.
+  - Required handling: misconception entry; at least one question that pairs the regular-grid answer with the correct disordered-but-touching arrangement as distractors.
+- C-PM-5: Learner believes there is air (or some other substance) in the gaps between solid or liquid particles, rather than empty space.
+  - Required handling: misconception entry; at least one question whose distractors include the air-between answer, ideally in a "why can a gas be compressed but a liquid cannot" framing.
+- C-PM-6: Learner believes mass changes when a substance changes state (gains mass when melted, loses mass when boiled).
+  - Required handling: misconception entry; at least one numeric-entry question that requires conservation of mass through melting, freezing or boiling.
+- C-PM-7: Learner confuses melting with dissolving, describing sugar as having "melted" in tea.
+  - Required handling: misconception entry on a sibling node (state changes or solutions) once that node is authored. Not blocking for `chemistry-particle-model-states`.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-PM-1: At least one Core MCQ asks the learner to identify the particle behaviour of a single named state (solid, liquid or gas), with each distractor mapping to one of the other two states or to a known misconception.
+- Q-PM-2: At least one numeric-entry question requires applying conservation of mass through a state change (melting, freezing or boiling).
+- Q-PM-3: At least one question asks the learner to recognise that a gas fills the whole volume of its container, by stating the gas volume given the container volume.
+- Q-PM-4: At least one drag-order question places solid, liquid and gas in order by particle spacing or by particle motion.
+- Q-PM-5: At least one labelled-image question asks the learner to drag state labels onto particle pictures, with at least one composition-type distractor (such as "Mixture" or "Element") in the label pool.
+- Q-PM-6: At least one Challenge tier word problem in a UK domestic context (kettle, freezer, kitchen, garden) requires the learner to reason about which state change is happening and why.
+- Q-PM-7: At least one Challenge tier MCQ approaches early KS4 territory by linking faster particle motion in a sealed container to an increase in gas pressure.
+- Q-PM-8: At least one missing-step worked example hides the "particles spread out and fill the available space" or "particles break away from each other" step in a diffusion or boiling explanation.
+- Q-PM-9: At least one spot-misconception question presents the bigger-particles or gas-falls-because-of-gravity argument and asks whether the reasoning is sound.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-PM-1: Given "I think the water particles got bigger when the kettle boiled, that is why the steam takes up more room", the tutor's first reply is a Socratic prompt about whether the particles or the gaps between them grew, not a direct correction.
+- T-PM-2: Given a wrong answer matching the gas-falls-because-of-gravity trigger (for example "the helium particles sit at the bottom of the balloon"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-PM-3: Given "If 30 g of ice melts, how much water do I get?", the tutor scaffolds the learner toward conservation of mass without simply stating "30 g".
+- T-PM-4: Given an off-topic input (for example a question about Fahrenheit temperatures or US weather), the tutor steers back to UK KS3 particle model language and Celsius politely.
+- T-PM-5: Given a request for an inline definition (tap on "particle" or "state of matter"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Separating Mixtures
 
