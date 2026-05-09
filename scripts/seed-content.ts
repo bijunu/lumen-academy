@@ -7,7 +7,12 @@
  *   MONGODB_URI=... npm run seed    (override)
  */
 import { MongoClient } from 'mongodb'
-import { fractionsZoneNodes } from '../src/content/seed'
+import {
+  allSeededNodes,
+  factorsMultiplesZoneNodes,
+  fractionsZoneNodes,
+  primesZoneNodes,
+} from '../src/content/seed'
 import {
   CONTENT_NODES_COLLECTION,
   CONTENT_ZONES_COLLECTION,
@@ -17,7 +22,7 @@ import type { SkillNode, Zone } from '../src/types/content'
 
 const DEFAULT_DB_NAME = 'lumen-academy'
 
-const allNodes: SkillNode[] = [...fractionsZoneNodes]
+const allNodes: SkillNode[] = allSeededNodes
 
 const allZones: Zone[] = [
   {
@@ -25,6 +30,18 @@ const allZones: Zone[] = [
     name: 'Fractions',
     realm: 'numerica',
     nodeIds: fractionsZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-factors-multiples',
+    name: 'Factors and Multiples',
+    realm: 'numerica',
+    nodeIds: factorsMultiplesZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-primes',
+    name: 'Primes',
+    realm: 'numerica',
+    nodeIds: primesZoneNodes.map(n => n.id),
   },
 ]
 
