@@ -476,9 +476,269 @@ Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear g
 - T-COORD-4: Given an off-topic input (for example a question about US street grid coordinates or zip codes), the tutor steers back to UK KS3 coordinate language politely.
 - T-COORD-5: Given a request for an inline definition (tap on "quadrant"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Vitalia > Cells
+
+Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-specialised-cells`.
+
+### Content probes
+- _to be drafted by the Vitalia author session alongside the first node in this zone (see docs/03 for suggested node IDs and tier guidance)_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Microscopy
+
+Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Body Systems
+
+Covers `biology-body-systems-digestive`, `biology-body-systems-circulatory`, `biology-body-systems-respiratory`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Reproduction
+
+Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overview`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Variation and Classification
+
+Covers `biology-variation-continuous-discontinuous`, `biology-classification-five-kingdoms`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Ecosystems and Food Webs
+
+Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Vitalia > Photosynthesis
+
+Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
+
+### Content probes
+- _to be drafted by the Vitalia author session_
+
+### Question shape probes
+- _to be drafted by the Vitalia author session_
+
+### Tutor probes
+- _to be drafted by the Vitalia author session_
+
+## Zone: Elementia > Particle Model
+
+Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-changes`, `chemistry-particle-model-diffusion`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > Separating Mixtures
+
+Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-distillation`, `chemistry-separating-chromatography`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > Atoms, Elements, Compounds
+
+Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-formulae`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > Periodic Table
+
+Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > Acids and Alkalis
+
+Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > pH
+
+Covers `chemistry-ph-scale`, `chemistry-ph-strong-weak`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Elementia > Simple Reactions
+
+Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid-metal`.
+
+### Content probes
+- _to be drafted by the Elementia author session_
+
+### Question shape probes
+- _to be drafted by the Elementia author session_
+
+### Tutor probes
+- _to be drafted by the Elementia author session_
+
+## Zone: Mechanica > Forces
+
+Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-friction`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
+## Zone: Mechanica > Gravity, Weight, Mass
+
+Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
+## Zone: Mechanica > Energy Stores and Transfers
+
+Covers `physics-energy-stores`, `physics-energy-transfers`, `physics-energy-efficiency`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
+## Zone: Mechanica > Electricity and Circuits
+
+Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parallel`, `physics-electricity-current-voltage`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
+## Zone: Mechanica > Waves
+
+Covers `physics-waves-anatomy`, `physics-waves-sound-light`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
+## Zone: Mechanica > Space
+
+Covers `physics-space-solar-system`, `physics-space-day-night-seasons`.
+
+### Content probes
+- _to be drafted by the Mechanica author session_
+
+### Question shape probes
+- _to be drafted by the Mechanica author session_
+
+### Tutor probes
+- _to be drafted by the Mechanica author session_
+
 ## Pending zones
 
-The following zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
+The following Numerica zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
 
 ### Numerica
 - Four operations
@@ -488,29 +748,3 @@ The following zones are scheduled for authoring during Phase 10e+. Their eval se
 - Averages and range
 - Probability basics
 - Charts and graphs
-
-### Vitalia
-- Cells
-- Microscopy
-- Body systems
-- Reproduction
-- Variation and classification
-- Ecosystems and food webs
-- Photosynthesis basics
-
-### Elementia
-- Particle model
-- Separating mixtures
-- Atoms, elements, compounds
-- Periodic table
-- Acids and alkalis
-- pH
-- Simple reactions
-
-### Mechanica
-- Forces
-- Gravity, weight, mass
-- Energy stores and transfers
-- Electricity and circuits
-- Waves
-- Space
