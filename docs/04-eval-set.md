@@ -111,6 +111,16 @@ Covers `maths-four-operations-negative-numbers-add-subtract` plus future four-op
   - Required handling: misconception entry; at least one Confident or Challenge question that exposes the double-sign trap, plus a worked example or missing-step question that walks through the rewriting.
 - C-4OP-7: Learner relies on a memorised "rule" rather than the number-line picture, so cannot adapt when the calculation chains together more than two terms.
   - Required handling: a scene or worked example that explicitly walks a multi-term calculation on the number line or via counter pairs; at least one Challenge question whose stem has three or more directed-number steps.
+- C-4OP-8: Learner believes the addition rule for like signs (two negatives summing to a more-negative value) also governs multiplication, so writes `(-3) × (-4) = -12` or treats the leading negative as the only sign that matters. (Covers `maths-four-operations-multiply-divide-negatives`.)
+  - Required handling: misconception entry; at least one MCQ or spot-misconception question whose distractors include the wrongly negative product of two negatives, plus a scene or worked example that derives the sign rule from repeated addition or counter groups.
+- C-4OP-9: Learner believes the sign rule for multiplication does not apply to division, so writes `(-12) ÷ (-4) = -3` or attaches a sign by guesswork. (Covers `maths-four-operations-multiply-divide-negatives`.)
+  - Required handling: misconception entry; at least one numeric-entry or MCQ question that requires dividing two negatives or two unlike signs, plus an explicit statement in the node that the same rule applies to multiplication and division.
+- C-4OP-10: Learner reads `(-a)²` as `-(a × a)` and so writes `(-4)² = -16`, conflating the bracketed expression with the unbracketed `-4²`. (Covers `maths-four-operations-multiply-divide-negatives`.)
+  - Required handling: misconception entry; at least one spot-misconception or numeric-entry question whose stem explicitly brackets the negative before squaring and credits only the positive answer.
+- C-4OP-11: Learner believes that in a chain of three or more signed factors only the leading negative survives, so writes `(-3) × (-4) × (-2) = -24` from "the negative on the left wins" rather than from counting the negatives. (Covers `maths-four-operations-multiply-divide-negatives`.)
+  - Required handling: misconception entry; at least one Challenge tier numeric-entry or worked example that chains three or more signed factors, with reasoning that pairs the negatives.
+- C-4OP-12: Learner treats `(-a) × b` and `a × (-b)` as different cases and computes one correctly and the other not, missing the commutativity of multiplication for signed numbers. (Covers `maths-four-operations-multiply-divide-negatives`.)
+  - Required handling: misconception entry or worked-example callout; at least one question that pairs a positive-times-negative and a negative-times-positive of the same magnitudes.
 
 ### Question shape probes
 
@@ -122,6 +132,10 @@ Covers `maths-four-operations-negative-numbers-add-subtract` plus future four-op
 - Q-4OP-6: At least one missing-step or worked-example question walks through the rewriting of a `- (-N)` term into `+ N` before evaluating.
 - Q-4OP-7: At least one spot-misconception question presents a "two negatives make a positive" or "larger digit means larger negative" argument and asks whether the reasoning is sound.
 - Q-4OP-8: At least one slider-explore or number-line-anchored question asks the learner to place an integer (positive or negative) on a marked number line.
+- Q-4OP-9: At least one MCQ on the multiply-divide node tests the product of two negatives where the wrongly negative answer is among the distractors. (Covers `maths-four-operations-multiply-divide-negatives`.)
+- Q-4OP-10: At least one numeric-entry or MCQ on the multiply-divide node requires dividing two negatives, returning a positive integer answer. (Covers `maths-four-operations-multiply-divide-negatives`.)
+- Q-4OP-11: At least one spot-misconception question on the multiply-divide node presents the `(-a)² = -a²` argument and asks whether the reasoning is sound. (Covers `maths-four-operations-multiply-divide-negatives`.)
+- Q-4OP-12: At least one Challenge tier numeric-entry or word problem on the multiply-divide node chains three or more signed factors, requiring the learner to count the negatives. (Covers `maths-four-operations-multiply-divide-negatives`.)
 
 ### Tutor probes
 

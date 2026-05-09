@@ -553,4 +553,593 @@ export const negativeNumbersAddSubtract: SkillNode = {
   },
 }
 
-export const fourOperationsZoneNodes = [negativeNumbersAddSubtract]
+export const multiplyDivideNegatives: SkillNode = {
+  id: 'maths-four-operations-multiply-divide-negatives',
+  title: 'Multiplying and Dividing Negative Numbers',
+  description:
+    'Multiply and divide positive and negative integers using sign rules, repeated addition, and counter groups. Recognise that two matching signs give a positive result, that two different signs give a negative result, and that the same rule applies to both multiplication and division.',
+  subject: 'maths',
+  realm: 'numerica',
+  zoneId: 'maths-four-operations',
+  zoneName: 'Four Operations',
+  tier: 'core',
+  prerequisites: ['maths-four-operations-negative-numbers-add-subtract'],
+  curriculum: {
+    ks3Objective:
+      'Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.',
+    awardingBodies: {
+      aqa: 'N2 Apply the four operations, including formal written methods, to integers (positive and negative)',
+      edexcel: 'N2 The four operations applied to integers, both positive and negative',
+      ocr: '1.02a Apply the four operations to directed numbers',
+    },
+  },
+  scenes: [
+    {
+      id: 'mdneg-scene-sign-rule-grid',
+      title: 'The Sign Rule Grid',
+      type: 'diagram',
+      instructions:
+        'Read the four worked examples below. Each one pairs a sign on the left with a sign on the right. Two matching signs always give a positive result, two different signs always give a negative one.',
+      data: {
+        positiveColour: '#22C55E',
+        negativeColour: '#EF4444',
+        examples: [
+          {
+            sum: '4 × 3',
+            description: 'positive times positive',
+            sign: 'positive',
+            result: 12,
+          },
+          {
+            sum: '4 × (-3)',
+            description: 'positive times negative',
+            sign: 'negative',
+            result: -12,
+          },
+          {
+            sum: '(-4) × 3',
+            description: 'negative times positive',
+            sign: 'negative',
+            result: -12,
+          },
+          {
+            sum: '(-4) × (-3)',
+            description: 'negative times negative',
+            sign: 'positive',
+            result: 12,
+          },
+        ],
+        notes:
+          'Two signs that match give a positive result. Two signs that differ give a negative result. Division uses the same rule as multiplication.',
+      },
+    },
+    {
+      id: 'mdneg-scene-repeated-addition',
+      title: 'Repeated Addition on the Number Line',
+      type: 'number-line',
+      instructions:
+        'Look at how each multiplication is laid out as repeated jumps on the number line. Three jumps of -4 land on -12, just like four jumps of -3 do, because the order of the factors does not change the result.',
+      data: {
+        range: [-15, 15],
+        step: 1,
+        startMark: 0,
+        labelledTicks: [-15, -10, -5, 0, 5, 10, 15],
+        examples: [
+          {
+            calculation: '3 × (-4)',
+            from: 0,
+            direction: 'left',
+            steps: 12,
+            to: -12,
+          },
+          {
+            calculation: '4 × (-3)',
+            from: 0,
+            direction: 'left',
+            steps: 12,
+            to: -12,
+          },
+          {
+            calculation: '(-3) × 4',
+            from: 0,
+            direction: 'left',
+            steps: 12,
+            to: -12,
+          },
+        ],
+        notes:
+          'Three jumps of -4 land on -12. Four jumps of -3 land in the same place. Swapping the order of the factors does not change the result. A leading negative reverses the direction of the jumps.',
+      },
+    },
+    {
+      id: 'mdneg-scene-counter-groups',
+      title: 'Counters in Groups',
+      type: 'diagram',
+      instructions:
+        'Read each example as repeated grouping. A leading negative reads as "the opposite of": "(-2) × 5" is the opposite of "two groups of five", and the opposite of a negative result flips it back to a positive.',
+      data: {
+        positiveColour: '#22C55E',
+        negativeColour: '#EF4444',
+        examples: [
+          {
+            sum: '4 × (-3)',
+            description: 'four groups of three red counters',
+            groups: 4,
+            perGroup: -3,
+            result: -12,
+          },
+          {
+            sum: '(-2) × 5',
+            description: 'the opposite of two groups of five green counters',
+            groups: 2,
+            perGroup: 5,
+            negate: true,
+            result: -10,
+          },
+          {
+            sum: '(-3) × (-4)',
+            description: 'the opposite of three groups of four red counters',
+            groups: 3,
+            perGroup: -4,
+            negate: true,
+            result: 12,
+          },
+        ],
+        notes:
+          'A leading negative reads as "the opposite of". Taking the opposite of a negative result flips it back to a positive.',
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'mdneg-worked-1',
+      title: 'Computing 4 × (-7) by repeated addition',
+      steps: [
+        {
+          explanation:
+            'We want to work out 4 × (-7). Read it as four lots of negative seven.',
+          maths: '4 × (-7)',
+        },
+        {
+          explanation: 'Add four copies of -7 together.',
+          maths: '-7 + -7 + -7 + -7',
+        },
+        {
+          explanation: 'The first two give -14.',
+          maths: '-7 + -7 = -14',
+        },
+        {
+          explanation: 'Adding another -7 gives -21.',
+          maths: '-14 + -7 = -21',
+        },
+        {
+          explanation: 'Adding the last -7 gives -28.',
+          maths: '-21 + -7 = -28',
+        },
+        {
+          explanation:
+            'Check using the sign rule: positive times negative is negative, and 4 × 7 = 28.',
+          maths: '4 × (-7) = -28',
+        },
+      ],
+    },
+    {
+      id: 'mdneg-worked-2',
+      title: 'Computing (-6) × (-3) by reading the leading minus as "the opposite of"',
+      steps: [
+        {
+          explanation: 'We want to work out (-6) × (-3).',
+          maths: '(-6) × (-3)',
+        },
+        {
+          explanation:
+            'Read the leading -6 as "the opposite of 6". So the calculation is the opposite of 6 × (-3).',
+          maths: '(-6) × (-3) = - (6 × (-3))',
+        },
+        {
+          explanation: 'First find 6 × (-3). Six lots of -3 add to -18.',
+          maths: '6 × (-3) = -18',
+        },
+        {
+          explanation: 'Now take the opposite of -18, which is +18.',
+          maths: '- (-18) = 18',
+        },
+        {
+          explanation:
+            'So (-6) × (-3) = 18. The two minus signs cancel, the same way they cancel on a number line.',
+          maths: '(-6) × (-3) = 18',
+        },
+      ],
+    },
+    {
+      id: 'mdneg-worked-3',
+      title: 'Computing (-48) ÷ 6 and (-48) ÷ (-6) using the sign rule',
+      steps: [
+        {
+          explanation:
+            'We want to work out (-48) ÷ 6 and (-48) ÷ (-6). Division uses the same sign rule as multiplication.',
+          maths: '(-48) ÷ 6 and (-48) ÷ (-6)',
+        },
+        {
+          explanation:
+            'Sign rule: matching signs give a positive result; different signs give a negative result.',
+          maths: '+ ÷ + = +, - ÷ - = +, + ÷ - = -, - ÷ + = -',
+        },
+        {
+          explanation: 'For (-48) ÷ 6 the signs differ, so the answer is negative.',
+          maths: '(-48) ÷ 6 → negative',
+        },
+        {
+          explanation: 'Divide the digits: 48 ÷ 6 = 8. Apply the sign.',
+          maths: '(-48) ÷ 6 = -8',
+        },
+        {
+          explanation: 'For (-48) ÷ (-6) the signs match, so the answer is positive.',
+          maths: '(-48) ÷ (-6) → positive',
+        },
+        {
+          explanation: 'Divide the digits: 48 ÷ 6 = 8. Apply the sign.',
+          maths: '(-48) ÷ (-6) = 8',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'mdneg-q1',
+      type: 'multiple-choice',
+      stem: 'What is 3 × (-4)?',
+      tier: 'core',
+      options: ['12', '-12', '-7', '7'],
+      correctIndex: 1,
+      xpValue: 10,
+      hint: 'Three lots of -4. Add three copies of -4 and read off the result.',
+      misconceptionId: 'mdneg-mis-magnitude-then-sign',
+    },
+    {
+      id: 'mdneg-q2',
+      type: 'multiple-choice',
+      stem: 'What is (-2) × 6?',
+      tier: 'core',
+      options: ['12', '-8', '8', '-12'],
+      correctIndex: 3,
+      xpValue: 10,
+      hint: 'Negative times positive gives a negative. Multiply 2 × 6, then attach the minus sign.',
+      misconceptionId: 'mdneg-mis-add-rule-applied',
+    },
+    {
+      id: 'mdneg-q3',
+      type: 'multiple-choice',
+      stem: 'What is (-12) ÷ 3?',
+      tier: 'core',
+      options: ['-4', '4', '-9', '9'],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Different signs in a division give a negative result. Divide 12 ÷ 3, then attach the sign.',
+      misconceptionId: 'mdneg-mis-division-different-rule',
+    },
+    {
+      id: 'mdneg-q4',
+      type: 'multiple-choice',
+      stem: 'What is (-20) ÷ (-5)?',
+      tier: 'core',
+      options: ['-4', '-25', '4', '25'],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'Two matching signs in a division give a positive result. Divide 20 ÷ 5, then attach the sign.',
+      misconceptionId: 'mdneg-mis-division-different-rule',
+    },
+    {
+      id: 'mdneg-q5',
+      type: 'numeric-entry',
+      stem: 'Compute (-7) × 4. Enter your answer as an integer.',
+      tier: 'core',
+      correctAnswer: -28,
+      xpValue: 10,
+      hint: 'Negative times positive gives a negative. Multiply 7 × 4 and apply the sign.',
+      misconceptionId: 'mdneg-mis-magnitude-then-sign',
+    },
+    {
+      id: 'mdneg-q6',
+      type: 'numeric-entry',
+      stem: 'Compute (-6) × (-3). Enter your answer as an integer.',
+      tier: 'core',
+      correctAnswer: 18,
+      xpValue: 10,
+      hint: 'Two negatives multiplied give a positive. Multiply 6 × 3 and the result is positive.',
+      misconceptionId: 'mdneg-mis-neg-times-neg-negative',
+    },
+    {
+      id: 'mdneg-q7',
+      type: 'numeric-entry',
+      stem: 'Compute (-30) ÷ 6. Enter your answer as an integer.',
+      tier: 'core',
+      correctAnswer: -5,
+      xpValue: 10,
+      hint: 'Different signs in a division give a negative result. Divide 30 ÷ 6 and apply the sign.',
+    },
+    {
+      id: 'mdneg-q8',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this worked solution. Compute 5 × (-3).',
+      tier: 'core',
+      steps: [
+        'Read the calculation: 5 × (-3) means five lots of negative 3.',
+        null,
+        'Adding five copies of -3 gives -3 + -3 + -3 + -3 + -3 = -15.',
+        'Check using the sign rule: positive times negative is negative, and 5 × 3 = 15.',
+        'So 5 × (-3) = -15.',
+      ],
+      missingStepIndex: 1,
+      correctStep:
+        'Multiplication is repeated addition, so add five copies of -3 together.',
+      xpValue: 20,
+    },
+    {
+      id: 'mdneg-q9',
+      type: 'multiple-choice',
+      stem: 'Which calculation gives the largest result?',
+      tier: 'confident',
+      options: ['(-4) × (-5)', '(-7) × 3', '(-2) × 9', '4 × (-6)'],
+      correctIndex: 0,
+      xpValue: 15,
+      hint: 'Work each one out. Three of the four are negative; one is the only positive.',
+      misconceptionId: 'mdneg-mis-neg-times-neg-negative',
+    },
+    {
+      id: 'mdneg-q10',
+      type: 'multiple-choice',
+      stem: 'Without working out the digits, what is the sign of (-3) × (-4) × (-2)?',
+      tier: 'confident',
+      options: [
+        'positive, because pairs of negatives cancel',
+        'negative, because there are three negatives',
+        'zero, because the negatives cancel out',
+        'cannot be decided without computing the answer',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      hint: 'Pair the negatives. Each pair turns into a positive. An odd number of negatives leaves one minus sign behind.',
+      misconceptionId: 'mdneg-mis-only-one-sign-survives',
+    },
+    {
+      id: 'mdneg-q11',
+      type: 'multiple-choice',
+      stem: 'Pick the true statement about multiplying and dividing negatives.',
+      tier: 'confident',
+      options: [
+        'A negative divided by a negative is negative.',
+        'A positive times a negative is positive.',
+        'A negative times a negative is positive.',
+        'Two negatives multiplied always give a smaller result than either factor.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'mdneg-mis-add-rule-applied',
+    },
+    {
+      id: 'mdneg-q12',
+      type: 'numeric-entry',
+      stem: 'Compute (-8) × (-7). Enter your answer as an integer.',
+      tier: 'confident',
+      correctAnswer: 56,
+      xpValue: 15,
+      hint: 'Two negatives multiplied give a positive. Multiply 8 × 7.',
+      misconceptionId: 'mdneg-mis-neg-times-neg-negative',
+    },
+    {
+      id: 'mdneg-q13',
+      type: 'numeric-entry',
+      stem: 'Compute (-72) ÷ (-9). Enter your answer as an integer.',
+      tier: 'confident',
+      correctAnswer: 8,
+      xpValue: 15,
+      hint: 'Two matching signs in a division give a positive. Divide 72 ÷ 9.',
+      misconceptionId: 'mdneg-mis-division-different-rule',
+    },
+    {
+      id: 'mdneg-q14',
+      type: 'spot-misconception',
+      stem: 'Liam says: "(-4) × (-6) is -24, because the two negatives keep the answer negative." Is his reasoning sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Liam is right. Multiplying two negatives keeps the negative sign, so the answer is -24.',
+          isMisconception: true,
+        },
+        {
+          text: 'Liam is wrong. A negative times a negative gives a positive, so (-4) × (-6) = 24.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'mdneg-mis-neg-times-neg-negative',
+    },
+    {
+      id: 'mdneg-q15',
+      type: 'drag-order',
+      stem: 'Drag these calculations into order from smallest result to largest.',
+      tier: 'confident',
+      items: ['(-3) × 4', '(-2) × (-6)', '5 × (-2)', '(-15) ÷ (-3)', '(-20) ÷ 5'],
+      correctOrder: [0, 2, 4, 3, 1],
+      xpValue: 15,
+      hint: 'Work each one out, then place them on a number line from smallest to largest.',
+    },
+    {
+      id: 'mdneg-q16',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. Compute (-9) × 6 ÷ (-3).',
+      tier: 'confident',
+      steps: [
+        'Read the calculation: negative 9 times 6, divided by negative 3.',
+        'Work left to right. First (-9) × 6.',
+        null,
+        'Then (-54) ÷ (-3). Two matching signs in a division give a positive, so this is 54 ÷ 3 = 18.',
+        'So (-9) × 6 ÷ (-3) = 18.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Negative times positive gives a negative. Multiply 9 × 6 = 54, so (-9) × 6 = -54.',
+      xpValue: 20,
+    },
+    {
+      id: 'mdneg-q17',
+      type: 'multiple-choice',
+      stem: 'A submarine off the Cornish coast descends at -6 metres per minute for 8 minutes, then drifts back up 13 metres. What is the change in its depth, in metres, relative to where it started?',
+      tier: 'challenge',
+      options: ['-35', '35', '-61', '-48'],
+      correctIndex: 0,
+      xpValue: 25,
+      hint: 'Work it in two steps. First find the descent over the 8 minutes, then add the drift back up.',
+      misconceptionId: 'mdneg-mis-add-rule-applied',
+    },
+    {
+      id: 'mdneg-q18',
+      type: 'numeric-entry',
+      stem: 'A Premier League club is docked 3 points by the league panel each time a fan-zone breach is reported. The panel logs 4 breaches across the season. The club had finished its matches on 38 points before any deduction. How many points does the club end the season with?',
+      tier: 'challenge',
+      correctAnswer: 26,
+      xpValue: 25,
+      unit: 'points',
+      hint: 'First find the total deduction across the four breaches as a multiplication. Then apply that change to the starting points.',
+    },
+    {
+      id: 'mdneg-q19',
+      type: 'numeric-entry',
+      stem: 'Compute (-4) × (-3) × (-5). Enter your answer as an integer.',
+      tier: 'challenge',
+      correctAnswer: -60,
+      xpValue: 25,
+      hint: 'Pair the negatives. Two negatives give a positive; the leftover negative makes the final answer negative.',
+      misconceptionId: 'mdneg-mis-only-one-sign-survives',
+    },
+    {
+      id: 'mdneg-q20',
+      type: 'spot-misconception',
+      stem: 'Aisha says: "(-4) squared is -16, because squaring just multiplies a number by itself, and the minus sign stays." Is her reasoning sound?',
+      tier: 'challenge',
+      statements: [
+        {
+          text: 'Aisha is right. Squaring keeps the original sign, so (-4) squared is -16.',
+          isMisconception: true,
+        },
+        {
+          text: 'Aisha is wrong. (-4) squared means (-4) × (-4), and a negative times a negative gives a positive, so the answer is 16.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 20,
+      misconceptionId: 'mdneg-mis-neg-squared-negative',
+    },
+    {
+      id: 'mdneg-q21',
+      type: 'drag-order',
+      stem: 'Drag these calculations into order from smallest result to largest.',
+      tier: 'challenge',
+      items: [
+        '(-2) × (-2) × (-2)',
+        '(-3) × (-3)',
+        '4 × (-5)',
+        '(-24) ÷ (-3)',
+        '(-2) × (-3) × (-1)',
+      ],
+      correctOrder: [2, 0, 4, 3, 1],
+      xpValue: 25,
+      hint: 'Work out each one carefully. Watch the number of negative factors: an odd count keeps the result negative.',
+    },
+    {
+      id: 'mdneg-q22',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. Compute (-3) × (-2) × (-5) × 4.',
+      tier: 'challenge',
+      steps: [
+        'Read the calculation: (-3) × (-2) × (-5) × 4.',
+        'Work left to right. First (-3) × (-2). Two matching signs give a positive, so this is 6.',
+        null,
+        'Then (-30) × 4. Negative times positive is negative, so this is -120.',
+        'So (-3) × (-2) × (-5) × 4 = -120.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Then 6 × (-5). Positive times negative is negative, so this is -30.',
+      xpValue: 25,
+    },
+  ],
+  misconceptions: [
+    // Source: Vlassis, J. (2004), "Making sense of the minus sign or becoming flexible in 'negativity'", Learning and Instruction 14(5), 469-484, on the persistence of the negative-times-negative-stays-negative error in early directed-number work. Reinforced by CGP KS3 Maths Study Guide (Years 7-9), Negative Numbers chapter, "Common mistake" callout on multiplying two negatives.
+    {
+      id: 'mdneg-mis-neg-times-neg-negative',
+      description:
+        'Believing that multiplying two negative numbers gives a negative result, because the minus signs are seen as accumulating rather than cancelling.',
+      triggerAnswer: 'neg-times-neg-negative',
+      correction:
+        'In fact a negative multiplied by a negative gives a positive. The two minus signs cancel, the same way that subtracting a negative is the same as adding a positive.',
+      reExplanation:
+        '(-4) × (-6) reads as "the opposite of 4 lots of -6". Four lots of -6 is -24, and the opposite of -24 is +24. The same pattern shows on a number line: each leading minus reverses direction once, so two minuses send you back to the right.',
+    },
+    // Source: Hart, K.M. ed. (1981), "Children's Understanding of Mathematics 11-16" (CSMS), John Murray, Directed Numbers chapter, on the strategy of computing magnitudes first then attaching a sign at the end. Reinforced by Vlassis, J. (2008), Philosophical Psychology 21(4), 555-570, on the multiple roles of the minus sign.
+    {
+      id: 'mdneg-mis-magnitude-then-sign',
+      description:
+        'Computing a signed product or quotient by multiplying or dividing the digits, then attaching a sign at the end without applying the sign rule.',
+      triggerAnswer: 'magnitude-then-sign',
+      correction:
+        'In fact the signs of the factors decide the sign of the result. They cannot be ignored and added back later.',
+      reExplanation:
+        '3 × (-4) is not 3 × 4 with a sign attached. It is three lots of -4, which is -12. The sign rule says the answer is negative because one factor is negative; the digits 3 × 4 = 12 only set the size.',
+    },
+    // Source: Vlassis, J. (2004), Learning and Instruction 14(5), 469-484, on cross-contamination of additive sign rules into multiplicative settings. Reinforced by AQA GCSE Mathematics 8300 Foundation tier examiner reports across the 2017-2023 series, recurring on items mixing addition and multiplication of directed numbers.
+    {
+      id: 'mdneg-mis-add-rule-applied',
+      description:
+        'Applying the rule for adding signed numbers when the operation is multiplication or division, for example treating (-2) × 6 like (-2) + 6.',
+      triggerAnswer: 'add-rule-applied',
+      correction:
+        'Multiplication and division have their own sign rule. Matching signs give a positive result; different signs give a negative result. The size of the digits does not affect the sign.',
+      reExplanation:
+        '(-2) × 6 means six lots of -2 (or two lots of -6 by swapping the factors), which adds to -12. The rule for addition would have given a different answer, -2 + 6 = 4, which is the wrong operation here.',
+    },
+    // Source: CGP KS3 Maths Study Guide (Years 7-9), Powers and Roots chapter, "Common mistake" callout on the unary minus and bracket convention. Reinforced by OCR GCSE Mathematics J560 Foundation tier examiner reports across the 2017-2023 series, on items where pupils interpreted -a^2 and (-a)^2 as the same expression.
+    {
+      id: 'mdneg-mis-neg-squared-negative',
+      description:
+        'Believing that squaring a negative number gives a negative result, because the minus sign is treated as part of the number being multiplied without applying the sign rule.',
+      triggerAnswer: 'neg-squared-negative',
+      correction:
+        'In fact squaring a negative gives a positive, because (-a) × (-a) is two negatives multiplied, and two matching signs give a positive result.',
+      reExplanation:
+        '(-4) squared means (-4) × (-4). The two negatives cancel, the digits give 16, and the answer is +16.',
+    },
+    // Source: Bell, A. (1986), "Diagnostic teaching: 2 - Developing conflict - discussion lessons", Mathematics Teaching 116, 26-29, on the "only one sign survives" pattern in multi-factor products. Reinforced by CGP KS3 Maths Study Guide (Years 7-9), Negative Numbers chapter, on counting the number of negative factors.
+    {
+      id: 'mdneg-mis-only-one-sign-survives',
+      description:
+        'Believing that no matter how many negative factors a product has, only one minus sign survives, so the result is always negative when any factor is negative.',
+      triggerAnswer: 'only-one-sign-survives',
+      correction:
+        'In fact each pair of negatives cancels into a positive. An even number of negative factors gives a positive result; an odd number gives a negative result.',
+      reExplanation:
+        '(-3) × (-4) × (-2) has three negative factors. Pair the first two: (-3) × (-4) = 12. Now multiply by the third: 12 × (-2) = -24. The single leftover negative is what makes the result negative.',
+    },
+    // Source: Edexcel GCSE Mathematics 1MA1 Foundation tier (Paper 1F) examiner reports across the 2017-2023 series, on items where pupils applied the multiplication sign rule but reverted to a magnitude-only answer for division. Reinforced by Vlassis, J. (2004), Learning and Instruction 14(5), 469-484, on rule transfer between multiplication and division.
+    {
+      id: 'mdneg-mis-division-different-rule',
+      description:
+        'Believing that the sign rule for division is different from the sign rule for multiplication, so dividing two negatives gives a negative answer.',
+      triggerAnswer: 'division-different-rule',
+      correction:
+        'In fact division uses the same sign rule as multiplication. Matching signs give a positive result; different signs give a negative result.',
+      reExplanation:
+        '(-20) ÷ (-5) asks "how many groups of -5 are in -20?". The answer is 4 groups, which is positive. Treat division as the inverse of multiplication: if 4 × (-5) = -20, then (-20) ÷ (-5) = 4 and (-20) ÷ 4 = -5.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const fourOperationsZoneNodes = [
+  negativeNumbersAddSubtract,
+  multiplyDivideNegatives,
+]
