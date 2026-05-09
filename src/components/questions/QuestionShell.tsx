@@ -7,6 +7,9 @@ import { MultipleChoice } from './MultipleChoice'
 import { NumericEntry } from './NumericEntry'
 import { DragOrder } from './DragOrder'
 import { SpotMisconception } from './SpotMisconception'
+import { MissingStep } from './MissingStep'
+import { FreeText } from './FreeText'
+import { SliderExplore } from './SliderExplore'
 import { QuestionFeedback } from './QuestionFeedback'
 import { Badge } from '@/components/ui/badge'
 
@@ -96,12 +99,37 @@ export function QuestionShell({
         />
       )}
 
+      {question.type === 'missing-step' && (
+        <MissingStep
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'free-text' && (
+        <FreeText
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'slider-explore' && (
+        <SliderExplore
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
       {showFeedback && (
         <QuestionFeedback
           status={status}
           misconception={status === 'incorrect' ? activeMisconception : undefined}
           onNext={handleNext}
           nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
+          modelAnswer={question.type === 'free-text' ? question.sampleAnswer : undefined}
         />
       )}
 

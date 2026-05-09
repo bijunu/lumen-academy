@@ -9,6 +9,7 @@ interface QuestionFeedbackProps {
   misconception?: Misconception
   onNext: () => void
   nextLabel?: string
+  modelAnswer?: string
 }
 
 export function QuestionFeedback({
@@ -16,6 +17,7 @@ export function QuestionFeedback({
   misconception,
   onNext,
   nextLabel,
+  modelAnswer,
 }: QuestionFeedbackProps) {
   if (status === 'unanswered') return null
 
@@ -36,6 +38,12 @@ export function QuestionFeedback({
         <div className="mt-2 space-y-1 text-sm">
           <p>{misconception.correction}</p>
           <p className="text-muted-foreground">{misconception.reExplanation}</p>
+        </div>
+      )}
+      {status === 'incorrect' && modelAnswer && (
+        <div className="mt-2 space-y-1 text-sm">
+          <p className="font-medium">A good answer might say:</p>
+          <p className="text-muted-foreground">{modelAnswer}</p>
         </div>
       )}
       <button

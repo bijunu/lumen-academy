@@ -39,6 +39,8 @@ export function useQuestionState(question: Question) {
           isCorrect = answer === 'correct'
           break
         default:
+          // Renderer-side validation: caller passes 'correct' or 'incorrect' sentinel.
+          isCorrect = answer === 'correct'
           break
       }
 
