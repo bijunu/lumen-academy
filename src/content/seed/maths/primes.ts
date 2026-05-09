@@ -26,7 +26,7 @@ export const recognisingPrimes: SkillNode = {
       title: 'The Sieve of Eratosthenes',
       type: 'simulation',
       instructions:
-        'Click each number to cross out its multiples and watch the primes from 1 to 100 reveal themselves.',
+        'See how the Sieve of Eratosthenes uncovers the primes from 1 to 100. Crossing out 1 first, then the multiples of 2 above 2, then the multiples of 3 above 3, then 5, then 7, leaves exactly the prime numbers behind. Each prime survives because no smaller prime divides it.',
       data: {
         gridSize: { rows: 10, cols: 10 },
         start: 1,
@@ -49,7 +49,7 @@ export const recognisingPrimes: SkillNode = {
       title: 'Build a Rectangle',
       type: 'diagram',
       instructions:
-        'Drag the counters into rows to build a rectangle. If the only rectangles you can make are 1 by n, the number is prime.',
+        'Look at how counters can be arranged into rectangles. Seven counters only fit as a 1 by 7 line, so 7 is prime. Twelve counters fit as 1 by 12, 2 by 6, or 3 by 4, so 12 is composite. One counter fits only as 1 by 1, but a prime needs exactly two distinct factors, so 1 is not prime.',
       data: {
         examples: [
           {
@@ -82,7 +82,7 @@ export const recognisingPrimes: SkillNode = {
       title: 'Test Up To the Square Root',
       type: 'diagram',
       instructions:
-        'Click each candidate factor to see why you only need to test divisors up to the square root of the number.',
+        'See why testing divisors only up to the square root is enough. For 91, the square root is about 9.5, so checking the primes 2, 3, 5 and 7 is enough; 7 divides 91 and gives the partner 13, so 91 is composite. For 53, no prime up to 7 divides it, so 53 is prime.',
       data: {
         examples: [
           {
@@ -170,8 +170,8 @@ export const recognisingPrimes: SkillNode = {
       type: 'multiple-choice',
       stem: 'Which of these numbers is prime?',
       tier: 'core',
-      options: ['9', '11', '15', '21'],
-      correctIndex: 1,
+      options: ['9', '15', '21', '11'],
+      correctIndex: 3,
       xpValue: 10,
       misconceptionId: 'rp-mis-odd-equals-prime',
     },
@@ -261,8 +261,8 @@ export const recognisingPrimes: SkillNode = {
       type: 'multiple-choice',
       stem: 'To test whether 71 is prime, what is the largest prime you need to try as a divisor?',
       tier: 'confident',
-      options: ['3', '7', '11', '71'],
-      correctIndex: 1,
+      options: ['3', '11', '71', '7'],
+      correctIndex: 3,
       xpValue: 15,
       hint: 'The square root of 71 is just under 8.5. List the primes up to 8.',
       misconceptionId: 'rp-mis-test-all-divisors',
@@ -407,7 +407,7 @@ export const recognisingPrimes: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: CGP KS3 Maths Study Guide, Common mistake callout on prime numbers (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Prime Numbers" page; the callout that 1 is excluded from the primes because it has only one factor.
     {
       id: 'rp-mis-one-is-prime',
       description: '1 is a prime number because it cannot be divided by anything else.',
@@ -417,7 +417,7 @@ export const recognisingPrimes: SkillNode = {
       reExplanation:
         'The smallest prime is 2. The list of primes starts 2, 3, 5, 7, 11, 13. Excluding 1 makes prime factorisation work neatly: every whole number above 1 has one unique way of being written as a product of primes.',
     },
-    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring confusion of "odd" with "prime" (verify report year and Q reference)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a "list the prime numbers" question where pupils included 9, 15 and 21 because they were odd.
     {
       id: 'rp-mis-odd-equals-prime',
       description: 'All odd numbers are prime.',
@@ -427,7 +427,7 @@ export const recognisingPrimes: SkillNode = {
       reExplanation:
         '9 is odd, but 9 = 3 x 3, so 9 has factors 1, 3 and 9. That is three factors, not two, so 9 is composite. To test whether an odd number is prime, you still need to check divisibility by 3, 5, 7 and so on.',
     },
-    // Source: CGP KS3 Maths Study Guide, "Common mistake" on the special case of 2 (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Prime Numbers" page; the highlighted note that 2 is the unique even prime because every other even number has 2 as an extra factor.
     {
       id: 'rp-mis-no-even-prime',
       description: 'No even number can ever be prime.',
@@ -437,7 +437,7 @@ export const recognisingPrimes: SkillNode = {
       reExplanation:
         '2 has factors 1 and 2 only, which is exactly the two factors a prime needs. Every other even number, such as 4, 6 or 8, has 1, 2 and itself as factors at the least, so it is composite.',
     },
-    // Source: Edexcel examiner observations on prime testing, recurring inefficiency in KS3 work (verify report year)
+    // Source: Pearson Edexcel GCSE Mathematics 1MA1 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a primality-test question where pupils tried every divisor below the candidate instead of stopping at the square root.
     {
       id: 'rp-mis-test-all-divisors',
       description:
@@ -448,7 +448,7 @@ export const recognisingPrimes: SkillNode = {
       reExplanation:
         'For 71, the square root is just under 8.5. You only need to try 2, 3, 5 and 7. None divide 71, so 71 is prime. Testing 11 or 13 is wasted effort, since any factor above the square root pairs with one below.',
     },
-    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring confusion of multiples and primes (verify chapter)
+    // Source: Hart, K. M. (ed.) (1981) Children's Understanding of Mathematics: 11-16 (CSMS), John Murray; chapter on Number Operations reports children labelling times-table numbers as "prime" because the times table feels like a privileged list.
     {
       id: 'rp-mis-prime-vs-multiple',
       description:
@@ -459,7 +459,7 @@ export const recognisingPrimes: SkillNode = {
       reExplanation:
         '15 is a multiple of 3 and a multiple of 5, so 15 has factors 1, 3, 5 and 15. That makes 15 composite, not prime. The primes are the numbers you cannot reach as a non-trivial multiple of any smaller number.',
     },
-    // Source: OCR GCSE Maths examiner observations on number work, recurring sieve confusion (verify report year and Q reference)
+    // Source: OCR GCSE (9-1) Mathematics J560 Examiners' Report, June 2023, Paper 01 (Foundation, Non-calculator), commentary on a primes question where pupils trusted last-digit shortcuts and labelled 21, 33 and 49 as prime.
     {
       id: 'rp-mis-ends-in-1-or-7',
       description: 'Any number that ends in 1, 3, 7 or 9 must be prime.',

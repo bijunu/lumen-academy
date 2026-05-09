@@ -26,7 +26,7 @@ export const sequencesRules: SkillNode = {
       title: 'Growing Dot Stacks',
       type: 'diagram',
       instructions:
-        'Click each pile in turn and watch the dots add on, then read off the term-to-term rule that links one pile to the next.',
+        'Look at how each sequence builds from one pile to the next. Sequence A goes 1, 3, 5, 7 by adding 2 each time. Sequence B goes 2, 4, 8, 16 by multiplying by 2. Sequence C goes 20, 17, 14, 11 by subtracting 3. The pattern of change between piles is the term-to-term rule.',
       data: {
         rows: [
           {
@@ -68,7 +68,7 @@ export const sequencesRules: SkillNode = {
       title: 'The Position Slider',
       type: 'simulation',
       instructions:
-        'Drag the slider to change the position number, and watch the matching term value pop out of the rule on the right.',
+        'See how the rule term = 3n + 2 turns each position number n into the matching term value. Position 1 gives 3 x 1 + 2 = 5, position 2 gives 3 x 2 + 2 = 8, position 10 gives 3 x 10 + 2 = 32, and position 12 gives 3 x 12 + 2 = 38. The same rule jumps you straight to any term you want.',
       data: {
         slider: { min: 1, max: 12, step: 1, label: 'position n' },
         rule: 'term = 3n + 2',
@@ -88,7 +88,7 @@ export const sequencesRules: SkillNode = {
       title: 'Two Rules, Same Sequence',
       type: 'diagram',
       instructions:
-        'Click each row to see the same sequence written two ways, once as a term-to-term rule and once as a position-to-term rule.',
+        'Look at the same sequence 5, 8, 11, 14, 17, 20 written two different ways. The term-to-term rule says start at 5 and add 3 each time. The position-to-term rule says term = 3n + 2, which lets you jump straight to any term given its position. Both rules describe the same sequence and answer different questions.',
       data: {
         sequence: [5, 8, 11, 14, 17, 20],
         termToTerm: { startValue: 5, step: 'add 3' },

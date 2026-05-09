@@ -26,7 +26,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       title: 'Factor Pair Finder',
       type: 'simulation',
       instructions:
-        'Drag the slider to set a target number, then click the boxes that pair up to make it. Watch how the pairs walk in from the outside.',
+        'See how the factor pairs of a target number walk in from the outside. For 24 the pairs are 1 and 24, then 2 and 12, then 3 and 8, then 4 and 6, with the smaller factor climbing while the larger factor shrinks until they meet in the middle. Pairing this way guarantees you do not miss any factors.',
       data: {
         startNumber: 24,
         minNumber: 6,
@@ -44,7 +44,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       title: 'Multiples on the Number Line',
       type: 'number-line',
       instructions:
-        'Click any number to highlight every multiple of it up to 60. Notice how the dots are evenly spaced.',
+        'Look at how the multiples of any whole number land on the line. The multiples of 4 from 0 to 60 are 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, all evenly spaced. The same step pattern works for any times table: a step of n every time gives the multiples of n.',
       data: {
         range: [0, 60],
         choices: [2, 3, 4, 5, 6, 7],
@@ -56,7 +56,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       title: 'Factor or Multiple?',
       type: 'diagram',
       instructions:
-        'Click each number on the left and read the sentence on the right. The same pair tells two stories at once.',
+        'Read each number pair from both directions and notice that the same fact tells two stories at once. For 3 and 12, you can say 3 is a factor of 12 because 3 divides 12 exactly, and you can also say 12 is a multiple of 3 because 12 is in the 3 times table. Factor and multiple are mirror words for the same relationship.',
       data: {
         pairs: [
           {
@@ -422,7 +422,7 @@ export const findingFactorsAndMultiples: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: CGP KS3 Maths Study Guide, Common mistake on listing factors (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Multiples and Factors" page; the "warning" callout that 1 and the number itself must always appear in a factor list.
     {
       id: 'fm-mis-skip-one-and-self',
       description:
@@ -433,7 +433,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       reExplanation:
         'Factors are numbers that divide a number with no remainder. 1 divides every whole number, and every whole number divides itself, so 1 and the number always belong in the list. The factors of 12 are 1, 2, 3, 4, 6 and 12, all six of them.',
     },
-    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring KS2 to KS3 vocabulary error (verify exact year and Q reference)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on Q3 where pupils confused "factor" with "multiple"; the same swap is logged in NCETM "Misconceptions with the Key Objectives" (Number / Multiples and factors).
     {
       id: 'fm-mis-multiple-vs-factor',
       description:
@@ -444,7 +444,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       reExplanation:
         'Multiples of 6 are 6, 12, 18, 24, 30 and so on, marching upwards. Factors of 6 are 1, 2, 3 and 6, all sitting at or below 6. The two words point in opposite directions.',
     },
-    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring directional confusion in factor and multiple language (verify chapter)
+    // Source: Hart, K. M. (ed.) (1981) Children's Understanding of Mathematics: 11-16 (CSMS), John Murray; chapter on "Place Value and Decimals" / "Number Operations" reports children reversing the directional language of factor and multiple.
     {
       id: 'fm-mis-language-direction',
       description:
@@ -455,7 +455,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       reExplanation:
         'If A divides B with no remainder, then A is a factor of B and B is a multiple of A. 9 divides 45, so 9 is a factor of 45 and 45 is a multiple of 9. Saying 45 is a factor of 9 would mean 45 divides 9, which it does not.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on multiples and lowest common multiple (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Multiples and Factors / LCM and HCF" page; the "watch out" callout that adding two numbers does not give a common multiple.
     {
       id: 'fm-mis-add-instead-of-times',
       description:
@@ -466,7 +466,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       reExplanation:
         'Multiples of 4 are 4, 8, 12, 16, 20, 24. Multiples of 6 are 6, 12, 18, 24, 30. The numbers in both lists, 12 and 24 so far, are the common multiples. The smallest one, 12, is the lowest common multiple.',
     },
-    // Source: Edexcel GCSE Maths examiner observations on factor counting for square numbers (verify report year and Q reference)
+    // Source: Pearson Edexcel GCSE Mathematics 1MA1 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on the factor-listing question where pupils double-count the repeated factor in a square pair such as 6 x 6 = 36.
     {
       id: 'fm-mis-square-double-count',
       description:
@@ -477,7 +477,7 @@ export const findingFactorsAndMultiples: SkillNode = {
       reExplanation:
         '36 = 1 x 36, 2 x 18, 3 x 12, 4 x 9, 6 x 6. Reading the pairs from the outside in gives 1, 2, 3, 4, 6, 9, 12, 18, 36. That is nine factors, not ten. Square numbers always have an odd number of factors for this reason.',
     },
-    // Source: OCR GCSE Maths examiner observations on multiples lists (verify report year and Q reference)
+    // Source: OCR GCSE (9-1) Mathematics J560 Examiners' Report, June 2023, Paper 01 (Foundation, Non-calculator), commentary on a "first four multiples" question where pupils started the list at 0; KS3 and GCSE convention treats the first multiple as the number itself.
     {
       id: 'fm-mis-include-zero',
       description:

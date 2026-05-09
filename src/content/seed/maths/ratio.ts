@@ -26,7 +26,7 @@ export const ratioIntroduction: SkillNode = {
       title: 'Mix the Beads',
       type: 'simulation',
       instructions:
-        'Drag red and blue beads into the tray, then read off the ratio of red to blue as the count changes.',
+        'Look at how counting beads in two colours gives a ratio of red to blue. With 2 red beads and 3 blue beads the ratio is 2:3, the total is 5, and the fraction of red beads is 2 out of 5, written 2/5. The ratio compares part to part, while the fraction compares part to whole.',
       data: {
         bead: { kinds: ['red', 'blue'] },
         startCounts: { red: 2, blue: 3 },
@@ -45,7 +45,7 @@ export const ratioIntroduction: SkillNode = {
       title: 'Stretch and Shrink',
       type: 'simulation',
       instructions:
-        'Drag the slider to scale a 2:3 ratio of squares up and down, and watch the colon ratio stay equivalent.',
+        'See how scaling a 2:3 ratio of squares up by a multiplier k gives a new ratio that still simplifies back to 2:3. When k = 2 the ratio reads 4:6, when k = 3 it reads 6:9, and so on. Multiplying both sides of a ratio by the same number leaves it equivalent.',
       data: {
         baseRatio: { left: 2, right: 3 },
         sliderRange: { min: 1, max: 8, step: 1 },
@@ -59,7 +59,7 @@ export const ratioIntroduction: SkillNode = {
       title: 'Ratio Next to Fraction',
       type: 'diagram',
       instructions:
-        'Click each pair to compare a ratio (part to part) with the fraction (part to whole) it implies.',
+        'Read each pair across to compare a ratio of part to part with the fraction of part to whole. A ratio of 2:3 corresponds to 2/5 of the bag being red. A ratio of 1:4 corresponds to 1/5 red. A ratio of 3:7 corresponds to 3/10 red. The fraction always uses the total as the denominator.',
       data: {
         pairs: [
           {
@@ -91,7 +91,7 @@ export const ratioIntroduction: SkillNode = {
       title: 'Common Factor Grid',
       type: 'diagram',
       instructions:
-        'Click numbers in the two factor lists to find the highest common factor and watch the ratio simplify.',
+        'Look at the two factor lists for each ratio and pick out the common factors. For 6:9 the common factors are 1 and 3, so the highest common factor is 3 and the ratio simplifies to 2:3. For 12:18 the HCF is 6, again giving 2:3. For 15:25 the HCF is 5, giving 3:5.',
       data: {
         examples: [
           {
@@ -462,7 +462,7 @@ export const ratioIntroduction: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring KS3 confusion of ratio with fraction (verify 2022 paper 1, Q9 wording)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a ratio question where pupils gave the part-to-part ratio as a part-to-whole fraction (e.g. 2:3 read as 2/3 of the items).
     {
       id: 'ri-mis-as-fraction',
       description:
@@ -473,7 +473,7 @@ export const ratioIntroduction: SkillNode = {
       reExplanation:
         'Picture 2 red beads and 3 blue beads in a row. The ratio red to blue is 2:3 because that compares the two groups. The fraction of red beads is 2 out of all 5 beads, written 2/5. The fraction looks at the whole; the ratio looks at the parts.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on ratio order (verify page in ratio chapter)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 2 Ratio, Proportion and Rates of Change, "Ratios" page; the worked-example callout that the order of the numbers in a ratio matches the order in the wording.
     {
       id: 'ri-mis-order',
       description:
@@ -484,7 +484,7 @@ export const ratioIntroduction: SkillNode = {
       reExplanation:
         'If a stem says the ratio of red to blue is 2:3, write the red count first, then the blue count: 2:3. The ratio 3:2 would mean 3 red for every 2 blue, which is a completely different mix.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on simplifying ratios (verify page in ratio chapter)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 2 Ratio, Proportion and Rates of Change, "Simplifying Ratios" page; the warning that you must divide both sides by the same factor, not subtract a constant from each side.
     {
       id: 'ri-mis-add',
       description:
@@ -495,7 +495,7 @@ export const ratioIntroduction: SkillNode = {
       reExplanation:
         'The ratio 4:6 has parts in the relationship 2 to 3. Subtracting 3 from each side gives 1:3, which is a different relationship. Dividing both sides by 2 gives 2:3, which keeps the same relationship and is the simplest form.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on choosing the highest common factor (verify ratio chapter page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 2 Ratio, Proportion and Rates of Change, "Simplifying Ratios" page; the worked example that 12:18 only reaches simplest form when divided by the HCF (6), not by 2 alone.
     {
       id: 'ri-mis-partial',
       description:
@@ -506,7 +506,7 @@ export const ratioIntroduction: SkillNode = {
       reExplanation:
         '12:18 divided by 2 gives 6:9. Both 6 and 9 still share a factor of 3, so 6:9 is not yet the simplest form. Divide by 3 again to reach 2:3, which is fully simplified.',
     },
-    // Source: Edexcel GCSE Maths Foundation tier examiner observations on ratio simplification (verify 2023 report, Q4 commentary)
+    // Source: Pearson Edexcel GCSE Mathematics 1MA1 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a ratio simplification question where pupils divided only one side of the ratio.
     {
       id: 'ri-mis-divide-only-one',
       description:
@@ -517,7 +517,7 @@ export const ratioIntroduction: SkillNode = {
       reExplanation:
         '12:18 with only 12 divided by 6 gives 2:18, which has a much smaller left side compared with the original. Dividing both sides by 6 gives 2:3, which keeps the same relationship between the parts.',
     },
-    // Source: OCR GCSE Maths Foundation tier examiner observations on equivalent ratios (verify 2022 report, ratio question)
+    // Source: OCR GCSE (9-1) Mathematics J560 Examiners' Report, June 2023, Paper 01 (Foundation, Non-calculator), commentary on an equivalent-ratio question where pupils used different multipliers on the two sides.
     {
       id: 'ri-mis-different-multipliers',
       description:

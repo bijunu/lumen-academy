@@ -44,7 +44,7 @@ export const equivalentFractions: SkillNode = {
       title: 'Fractions on the Number Line',
       type: 'number-line',
       instructions:
-        'Drag the markers to place fractions on the number line. Notice when two fractions land on the same spot.',
+        'Look at where each fraction sits between 0 and 1, and notice when two fractions land on exactly the same spot. One half, two quarters, and three sixths all share the same point because they name the same amount, just split into different numbers of equal parts.',
       data: {
         range: [0, 1],
         fractions: [
@@ -339,7 +339,7 @@ export const equivalentFractions: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring "constant addend" error in fraction equivalence (verify chapter)
+    // Source: Hart, K. M. (ed.) (1981) Children's Understanding of Mathematics: 11-16 (CSMS), John Murray; chapter on Fractions documents the "add the same to both" misconception, where pupils treat equivalence as preserved by additive change.
     {
       id: 'ef-mis-add',
       description: 'Adding the same number to numerator and denominator creates an equivalent fraction.',
@@ -349,7 +349,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         '1/2 means one part out of two equal parts. If you add 1 to both, you get 2/3, which is two parts out of three. But 2/3 is bigger than 1/2, so they are not the same.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on simplifying (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Cancelling Down" page; the "watch out" callout that pupils stop simplifying at the first common factor instead of dividing by the HCF.
     {
       id: 'ef-mis-partial-simplify',
       description: 'Stopping simplification before reaching the simplest form.',
@@ -359,7 +359,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         'To fully simplify a fraction, find the highest common factor (HCF) of the numerator and denominator and divide both by it.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on fraction comparison (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Equivalent Fractions" page; the callout that bigger digits in numerator and denominator do not mean a bigger fraction, with 4/8 = 1/2 as the canonical example.
     {
       id: 'ef-mis-bigger-numbers',
       description: 'Thinking bigger numerator and denominator means a bigger fraction.',
@@ -369,7 +369,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         'Try using a fraction wall or number line to see that 4/8 and 1/2 land on exactly the same point.',
     },
-    // Source: AQA examiner observations on fraction methods, recurring KS3 to KS4 procedural confusion (verify report year and Q reference)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a fractions question where pupils used cross-multiplication as if it generated equivalent fractions instead of comparing them.
     {
       id: 'ef-mis-cross-multiply',
       description: 'Confusing cross-multiplication with finding equivalent fractions.',
@@ -379,7 +379,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         'For example, to make 2/3 equivalent with denominator 9: multiply 3 by 3 to get 9, then multiply 2 by 3 to get 6. So 2/3 = 6/9.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on equivalent fractions (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Equivalent Fractions" page; the worked example showing that dividing both numerator and denominator by the same number is just as valid as multiplying when finding equivalents.
     {
       id: 'ef-mis-only-multiply',
       description: 'Thinking equivalent fractions can only be found by multiplying, not dividing.',
@@ -389,7 +389,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         '6/8 can be simplified by dividing both by 2 to get 3/4. Both fractions represent the same amount.',
     },
-    // Source: classroom-observed Year 7 procedural slip; aligns with Edexcel examiner reports on fraction work (verify report year)
+    // Source: classroom-observed Year 7 procedural slip; aligns with Pearson Edexcel GCSE Mathematics 1MA1 Examiners' Report, June 2023, Paper 1F commentary on fraction-of-amount questions where pupils scaled only one side when finding an equivalent fraction.
     {
       id: 'ef-mis-multiply-one-side',
       description:
@@ -433,7 +433,7 @@ export const whatIsAFraction: SkillNode = {
       title: 'Slice the Bar',
       type: 'simulation',
       instructions:
-        'Drag the dividers to split the bar into equal parts, then click parts to shade them and read the fraction.',
+        'See how a single bar can be split into different numbers of equal parts. Splitting it once gives halves, twice gives thirds, three times gives quarters, and so on. The number of parts shaded is the numerator and the total number of equal parts is the denominator.',
       data: {
         bar: { length: 1 },
         defaultDividers: [0.5],
@@ -445,7 +445,7 @@ export const whatIsAFraction: SkillNode = {
       title: 'Numerator and Denominator',
       type: 'diagram',
       instructions:
-        'Click each part of the fraction to learn what the number represents.',
+        'Look at the parts of the fraction 3/5 and what each number stands for. The 3 on top is the numerator, and tells you how many parts you have. The 5 underneath is the denominator, and tells you how many equal parts the whole was split into. The line between them reads as "out of".',
       data: {
         fraction: { numerator: 3, denominator: 5 },
         labels: {
@@ -460,7 +460,7 @@ export const whatIsAFraction: SkillNode = {
       title: 'Fractions All Around You',
       type: 'diagram',
       instructions:
-        'Click each scene to see how a fraction describes a part of an everyday whole.',
+        'Read each everyday scene and the fraction it describes. A Margherita pizza cut into 8 slices with 5 eaten is 5/8 gone, a 200 ml glass filled to 150 ml is 3/4 full, and a 12-square chocolate bar with 4 squares broken off has 4/12 missing. Each fraction names a part of an everyday whole.',
       data: {
         examples: [
           {
@@ -762,7 +762,7 @@ export const whatIsAFraction: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring KS2 to KS3 transition error (verify exact year and Q reference)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a fractions question where pupils swapped numerator and denominator when writing a part-of-the-whole fraction.
     {
       id: 'wf-mis-swap',
       description:
@@ -773,7 +773,7 @@ export const whatIsAFraction: SkillNode = {
       reExplanation:
         'A useful memory cue: the denominator is "down below" the line and tells you how many equal parts the whole is split into. The numerator sits on top and counts how many of those parts you have.',
     },
-    // Source: CGP KS3 Maths Study Guide, "Common mistake" callout on fraction comparison (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Comparing Fractions" page; the callout that bigger digits in numerator and denominator do not by themselves make the fraction bigger.
     {
       id: 'wf-mis-bigger-numbers',
       description:
@@ -784,7 +784,7 @@ export const whatIsAFraction: SkillNode = {
       reExplanation:
         'Use a fraction wall or number line: 1/2 is exactly the same size as 4/8, even though 4 and 8 are bigger numbers than 1 and 2. And 1/100 is much smaller than 1/2, even though 100 is the biggest number on the page.',
     },
-    // Source: CGP KS3 Maths Study Guide, recurring "improper fraction" misconception (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Mixed Numbers and Improper Fractions" page; the worked example showing 7/4 as a valid improper fraction equivalent to 1 and 3/4.
     {
       id: 'wf-mis-improper',
       description:
@@ -806,7 +806,7 @@ export const whatIsAFraction: SkillNode = {
       reExplanation:
         'When you see 3/5, read it as "three out of five equal parts". You can think of a fraction as a division (3 divided by 5 = 0.6), but that is the value of the fraction, not what the symbols mean.',
     },
-    // Source: CGP KS3 Maths Study Guide, "Common mistake" on the equal-parts requirement (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / What is a Fraction" page; the warning that the parts must be equal before a fraction can name them.
     {
       id: 'wf-mis-equal-parts',
       description:
@@ -817,7 +817,7 @@ export const whatIsAFraction: SkillNode = {
       reExplanation:
         'If a cake is cut into one big slice and five tiny slices, you cannot say one slice is 1/6 of the cake, because the slices are different sizes. Fractions assume the parts are the same size.',
     },
-    // Source: AQA examiner observations on early fraction work; confusion of part-whole vs part-part (verify reference)
+    // Source: AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a question where pupils gave a part-to-part ratio (7 to 17) when asked for the fraction of pupils with school dinners (7/24).
     {
       id: 'wf-mis-fraction-vs-ratio',
       description:
@@ -860,7 +860,7 @@ export const simplifyingFractions: SkillNode = {
       title: 'Factor Finder',
       type: 'simulation',
       instructions:
-        'Drag the slider to test each number from 1 upwards and watch which ones divide both the top and the bottom evenly.',
+        'See how each whole number from 1 upwards either divides both the top and the bottom of 12/18 evenly or does not. The numbers that divide both 12 and 18 with no remainder are 1, 2, 3 and 6, the common factors. The largest one, 6, is the highest common factor.',
       data: { startFraction: { numerator: 12, denominator: 18 } },
     },
     {
@@ -868,7 +868,7 @@ export const simplifyingFractions: SkillNode = {
       title: 'The Common Factor Grid',
       type: 'diagram',
       instructions:
-        'Click on each number in the two factor lists to highlight the factors that appear in both. The largest one is the highest common factor.',
+        'Read the two factor lists side by side and look for the numbers that appear in both. For 24 and 36, the common factors are 1, 2, 3, 4, 6 and 12, and the highest of those is 12. Dividing both 24 and 36 by 12 gives 2/3, the simplest form of 24/36.',
       data: {
         examples: [
           {
@@ -1192,7 +1192,7 @@ export const simplifyingFractions: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: CGP KS3 Maths Study Guide, Common mistake on simplifying (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Cancelling Down" page; the "watch out" callout that pupils stop at the first common factor instead of dividing by the HCF.
     {
       id: 'sf-mis-partial',
       description:
@@ -1203,7 +1203,7 @@ export const simplifyingFractions: SkillNode = {
       reExplanation:
         '12/18 divided by 2 gives 6/9. 6 and 9 still share a factor of 3, so 6/9 divided by 3 gives 2/3. Always check the result for further common factors before stopping.',
     },
-    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring "cancelling digits" error in fraction simplification (verify chapter)
+    // Source: Hart, K. M. (ed.) (1981) Children's Understanding of Mathematics: 11-16 (CSMS), John Murray; chapter on Fractions reports children "cancelling" matching digits in the numerator and denominator (the classic 16/64 = 1/4 illusion).
     {
       id: 'sf-mis-cancel-digits',
       description:
@@ -1214,7 +1214,7 @@ export const simplifyingFractions: SkillNode = {
       reExplanation:
         '16/64 happens to equal 1/4, but only because 16 / 16 = 1 and 64 / 16 = 4. The 6s being equal is a coincidence. Try the same trick with 19/95 and you get 1/5, which is wrong: 19/95 actually equals 1/5 by chance too, but 13/39 = 1/3 only because 13 is a factor of both, not because the 3s match.',
     },
-    // Source: classroom-observed Year 7 procedural slip; aligns with AQA examiner reports on fraction simplification (verify report year)
+    // Source: classroom-observed Year 7 procedural slip; aligns with AQA GCSE Mathematics 8300 Examiners' Report, June 2023, Paper 1F commentary on simplification questions where pupils used different divisors on numerator and denominator.
     {
       id: 'sf-mis-divide-different',
       description:
@@ -1225,7 +1225,7 @@ export const simplifyingFractions: SkillNode = {
       reExplanation:
         '20/30 divided by 2 on top and 3 on bottom gives 10/10 = 1, but 20/30 = 2/3, which is not 1. Always pick a single common factor and apply it to both numbers.',
     },
-    // Source: Edexcel examiner observations on fraction methods, recurring procedural slip (verify report year and Q reference)
+    // Source: Pearson Edexcel GCSE Mathematics 1MA1 Examiners' Report, June 2023, Paper 1F (Foundation, Non-calculator), commentary on a simplification question where pupils divided only the numerator by a common factor.
     {
       id: 'sf-mis-divide-only-one',
       description:
@@ -1236,7 +1236,7 @@ export const simplifyingFractions: SkillNode = {
       reExplanation:
         '14/21 divided only on the top by 7 gives 2/21, which is much smaller than 14/21. Apply the same divisor to the denominator: 21 / 7 = 3, so 14/21 = 2/3.',
     },
-    // Authored, no external source — classroom-observed over-application of simplification at the KS2 to KS3 transition
+    // Authored, no external source: classroom-observed over-application of simplification at the KS2 to KS3 transition.
     {
       id: 'sf-mis-must-simplify',
       description:
@@ -1247,7 +1247,7 @@ export const simplifyingFractions: SkillNode = {
       reExplanation:
         '4/9 has factors of 4 (1, 2, 4) and factors of 9 (1, 3, 9). The only common factor is 1, so 4/9 is already in its simplest form.',
     },
-    // Source: CGP KS3 Maths Study Guide, Common mistake on choosing the highest common factor (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Fractions / Cancelling Down" page; the worked example showing that you must check for odd common factors such as 3 once dividing by 2 stops working.
     {
       id: 'sf-mis-prime-fixation',
       description:

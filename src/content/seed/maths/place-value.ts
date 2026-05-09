@@ -26,7 +26,7 @@ export const wholeNumberPlaceValue: SkillNode = {
       title: 'The Place Value Chart',
       type: 'simulation',
       instructions:
-        'Drag digits into the columns and watch the number rebuild itself with the column names underneath.',
+        'Look at how each digit sits in a named column and reads as a value. The digits 2,407,056 read as two million, four hundred and seven thousand, and fifty-six because the 2 sits in millions, the 4 in hundred thousands, and so on. The grouping commas mark off each three-column block from the right.',
       data: {
         columns: [
           { id: 'B', label: 'Billions', power: 1_000_000_000 },
@@ -64,7 +64,7 @@ export const wholeNumberPlaceValue: SkillNode = {
       title: 'Shift the Digit',
       type: 'simulation',
       instructions:
-        'Move a digit one column to the left or right and see its value multiply by ten or divide by ten.',
+        'See how the value of a digit changes when it sits in a different column. Shifting the 7 in 2700 from the hundreds column one place to the left into the thousands column makes it worth 7000 instead of 700: ten times as much. Shifting one column to the right makes it worth one tenth as much.',
       data: {
         startNumber: 2700,
         movements: [
@@ -90,7 +90,7 @@ export const wholeNumberPlaceValue: SkillNode = {
       title: 'Rounding on the Number Line',
       type: 'number-line',
       instructions:
-        'Drag the marker to a number, then click a rounding column to see which boundary it lands closest to.',
+        'Look at how each number sits between two rounding boundaries on the line. Rounding 4732 to the nearest thousand, the boundaries are 4000 and 5000 with the midpoint at 4500: 4732 is past 4500 and rounds to 5000. 4350 is below 4500 and rounds to 4000. The convention is that exactly half-way values round up.',
       data: {
         examples: [
           {

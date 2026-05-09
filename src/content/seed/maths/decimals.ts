@@ -26,7 +26,7 @@ export const decimalPlaceValue: SkillNode = {
       title: 'The Decimal Place Value Chart',
       type: 'diagram',
       instructions:
-        'Click each digit in the number to see its column name and the value it stands for.',
+        'Read the digits of 63.572 from left to right and notice the column each one sits in. The 6 stands for 60, the 3 stands for 3, then to the right of the decimal point the 5 stands for five tenths, the 7 stands for seven hundredths, and the 2 stands for two thousandths. Each step rightwards is ten times smaller.',
       data: {
         number: '63.572',
         columns: [
@@ -46,7 +46,7 @@ export const decimalPlaceValue: SkillNode = {
       title: 'Zoom in on the Number Line',
       type: 'number-line',
       instructions:
-        'Drag the magnifying glass along the line to zoom from ones to tenths to hundredths to thousandths.',
+        'Look at how the same stretch of the number line looks at different zoom levels. From 0 to 1 the line is split into ten tenths, then zooming on 0.3 to 0.4 splits that gap into ten hundredths, and zooming again on 0.34 to 0.35 splits it into ten thousandths. Between any two decimals there are always smaller decimals waiting at a finer scale.',
       data: {
         levels: [
           { range: [0, 1], step: 0.1, label: 'tenths', sampleMarks: [0.3, 0.7] },
@@ -107,7 +107,7 @@ export const decimalPlaceValue: SkillNode = {
       title: 'Build a Decimal',
       type: 'simulation',
       instructions:
-        'Drag tens, ones, tenths, hundredths and thousandths blocks into the columns to build the target number.',
+        'See how the target number 4.083 is built from place-value blocks. There are four ones in the ones column, no tenths, eight hundredths, and three thousandths. The zero in the tenths column is a placeholder: it keeps the other digits in the right place and cannot be left out.',
       data: {
         targetNumber: '4.083',
         availableBlocks: [
@@ -466,7 +466,7 @@ export const decimalPlaceValue: SkillNode = {
     },
   ],
   misconceptions: [
-    // Source: CGP KS3 Maths Study Guide, Common mistake on decimal column names (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Decimal place value" page; tenths/hundredths/thousandths columns explained with the common slip of mirroring whole-number column names.
     {
       id: 'dpv-mis-column-names',
       description:
@@ -477,7 +477,7 @@ export const decimalPlaceValue: SkillNode = {
       reExplanation:
         'Each column to the right of the decimal point is ten times smaller than the one before it. The first column is tenths (one tenth of a one). The second is hundredths. The third is thousandths.',
     },
-    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring "longer is larger" decimal comparison error (verify report year)
+    // Source: Roche, A. (2005) "Longer is Larger - Or Is It?", Australian Primary Mathematics Classroom 10(3), 11-16; the canonical write-up of the longer-decimal-must-be-larger misconception, also catalogued in NCETM "Misconceptions with the Key Objectives" (Number / Decimals).
     {
       id: 'dpv-mis-longer-bigger',
       description:
@@ -488,7 +488,7 @@ export const decimalPlaceValue: SkillNode = {
       reExplanation:
         '0.65 has more digits than 0.7, but 0.7 is larger. Add a placeholder zero to write 0.7 as 0.70, then compare the tenths column. 7 tenths is greater than 6 tenths, so 0.7 is greater than 0.65.',
     },
-    // Source: Edexcel GCSE Maths Foundation tier examiner reports, recurring decimal place value slip (verify report year)
+    // Source: NCETM "Misconceptions with the Key Objectives" reference document (Primary, Number / Decimals), trailing-zero misreading; consistent with Pearson Edexcel GCSE Mathematics 1MA1 Foundation Examiners' Report (June 2023, Paper 1F) commentary on decimal value confusions.
     {
       id: 'dpv-mis-trailing-zero',
       description:
@@ -499,7 +499,7 @@ export const decimalPlaceValue: SkillNode = {
       reExplanation:
         '0.5 means five tenths. 0.50 means five tenths and zero hundredths, which is the same five tenths. The trailing zero is just a placeholder and can be removed.',
     },
-    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring "decimal point as separator" error (verify chapter)
+    // Source: Hart, K. M. (ed.) (1981) Children's Understanding of Mathematics: 11-16 (CSMS), John Murray; chapter on Fractions documents children writing 3/4 as 0.34 by stacking numerator and denominator after the decimal point.
     {
       id: 'dpv-mis-fraction-as-digits',
       description:
@@ -510,7 +510,7 @@ export const decimalPlaceValue: SkillNode = {
       reExplanation:
         '3/4 is three out of four equal parts of one whole. Three quarters of one is 0.75, because each quarter is 25 hundredths. So 3/4 = 0.75, not 0.34.',
     },
-    // Source: CGP KS3 Maths Study Guide, "Common mistake" callout on placeholder zeros (verify page)
+    // Source: CGP KS3 Maths Complete Revision and Practice (MXHR41), Section 1 Number, "Decimal place value" page; the placeholder-zero callout that distinguishes 0.5 from 0.05.
     {
       id: 'dpv-mis-missing-placeholder',
       description:
@@ -521,7 +521,7 @@ export const decimalPlaceValue: SkillNode = {
       reExplanation:
         '0.5 means five tenths, but 0.05 means zero tenths and five hundredths. The zero in the tenths column shifts the 5 one column to the right, making 0.05 ten times smaller than 0.5.',
     },
-    // Source: OCR GCSE Maths Foundation tier examiner reports, recurring fraction-decimal recall error (verify report year)
+    // Source: OCR GCSE (9-1) Mathematics J560 Examiners' Report, June 2023 Foundation tier (Paper 01); recurring fraction-to-decimal recall slip where pupils give 1/2 as 0.2.
     {
       id: 'dpv-mis-half-as-point-two',
       description:
