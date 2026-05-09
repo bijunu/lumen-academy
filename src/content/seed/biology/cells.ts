@@ -638,11 +638,13 @@ export const animalCell: SkillNode = {
   },
 }
 
-export const cellsZoneNodes: SkillNode[] = [animalCell]
+import { plantCell } from './plant-cell'
+
+export const cellsZoneNodes: SkillNode[] = [animalCell, plantCell]
 
 export const cellsZone: Zone = {
   id: 'biology-cells',
   name: 'Cells',
   realm: 'vitalia',
-  nodeIds: [animalCell.id],
+  nodeIds: [animalCell.id, plantCell.id],
 }
