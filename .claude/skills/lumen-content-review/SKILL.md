@@ -20,7 +20,7 @@ If you cannot meet both conditions, refuse the review and explain why.
 ## Procedure
 
 1. Confirm inputs from the user:
-   - Path to the draft file (e.g. `src/content/seed/maths-decimals.ts`).
+   - Path to the draft file (e.g. `src/content/seed/maths/decimals.ts`, `src/content/seed/biology/cells-animal-cell.ts`).
    - Optional: path to the handoff note (read only after grading).
    If a path is missing, ask.
 

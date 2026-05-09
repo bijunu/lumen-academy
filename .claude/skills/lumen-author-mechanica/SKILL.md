@@ -15,12 +15,12 @@ This skill produces ONE node per invocation. If the user asks for "a zone", conf
 Read these files in order. Do not skip; the rubric is the contract.
 
 1. `docs/00-build-prompt.md` — product scope and curriculum coverage.
-2. `src/types/content.ts` — exact `SkillNode` shape; output must conform. Note the four `InteractiveScene` types currently supported; if you need a force-arrow simulator or circuit-builder scene type, stop and ask the user.
+2. `src/types/content.ts` — exact `SkillNode` shape; output must conform. Five `InteractiveScene` types are supported; the workhorses for physics are `labelled-diagram` (clickable hotspots reveal labels) and `simulation`. The `labelled-image` question type pairs with `labelled-diagram` for assessment. If you need a force-arrow drag-and-balance simulator or a circuit-builder drag-drop scene, stop and ask the user.
 3. `docs/05-reference-shelf.md` — what to take from CGP KS3 Physics, DfE Science programme of study, AQA / Edexcel / OCR GCSE Physics specs and examiner reports, plus product cues.
 4. `docs/06-authoring-playbook.md` — the must-pass rubric.
 5. `docs/04-eval-set.md` — locate the zone section. Confirm `C-...` coverage; satisfy `Q-...` probes. If absent, draft probes alongside the node.
 6. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim.
-7. `src/content/seed/maths-fractions.ts` — structural template only.
+7. `src/content/seed/maths/fractions.ts` — structural template only (study the file shape, not the maths-specific content).
 
 Note: Bond 11+ does not cover physics. Stretch references for Mechanica are CGP KS3, examiner reports, and early KS4 GCSE Physics Foundation tier.
 
@@ -68,7 +68,29 @@ Challenge tier draws from CGP KS3 stretch and early KS4 GCSE Physics Foundation 
 
 ### Scene type guidance
 
-Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `simulation`. For Mechanica, `simulation` covers most needs (force-balance slider, circuit-current slider, planet-orbit play) and `diagram` handles labelled circuit diagrams or force arrows. If you need a circuit-builder drag-drop scene type or a 3D solar-system rotator, flag it; do not improvise. Slider-explore required for force-vs-acceleration, voltage-vs-current, and gravity-vs-distance. Data-extraction required for energy-flow charts and motion graphs. Sketch required where the learner draws force arrows or circuit diagrams.
+Supported scene types: `fraction-wall`, `number-line`, `diagram`, `simulation`, `labelled-diagram`. For Mechanica, **`labelled-diagram` is the workhorse for static visuals** — use it for circuit-diagram identification (cell, switch, bulb, ammeter, voltmeter as hotspots), force-arrow scenes (a falling object with weight + air-resistance hotspots), wave-anatomy diagrams (crest, trough, wavelength, amplitude), planet-and-orbit layouts (Sun, Earth, Moon, axis tilt), and energy-store icons (kinetic, gravitational, chemical store labels on a roller coaster). Pair it with `labelled-image` so the learner places labels onto the same diagram for assessment.
+
+Reach for `simulation` when the topic genuinely needs a continuous slider (force-balance scrub, circuit-current slider, orbital-distance play). Use `diagram` (the unstyled fallback) only when neither labelled-diagram nor simulation fits.
+
+Slider-explore questions are required for force-vs-acceleration, voltage-vs-current, and gravity-vs-distance topics. Data-extraction questions are required for energy-flow charts and motion graphs. Sketch questions can supplement labelled-image where the learner draws force arrows or a basic circuit from memory.
+
+## Worktree boundaries
+
+This skill is designed to run inside a Mechanica-only worktree (e.g. `~/lumen-academy-physics` on branch `content/physics`). Stay in your lane.
+
+**Allowed scope (this worktree):**
+- `src/content/seed/physics/` — your seed files and per-subject `index.ts`
+- `docs/03-curriculum-map.md` — the physics sections only
+- `docs/04-eval-set.md` — the zone section for the node you're drafting
+- `docs/_drafts/<nodeId>.md` — handoff note
+
+**Off-limits without infra-owner approval (route via the main repo session):**
+- `src/types/`, `src/components/{questions,scenes,learn}/`, `src/lib/`, `src/app/`, `scripts/` — schema, renderers, engine, routes, seeders
+- `src/content/seed/index.ts` — top-level aggregator (only edit `src/content/seed/physics/index.ts`)
+- `package.json`, `next.config.mjs`, `CLAUDE.md`
+- Other subjects' seed directories (`src/content/seed/{maths,biology,chemistry}/`)
+
+If you find you need a new scene type, question type, schema field, or shared component to do justice to a Mechanica topic, stop and surface the requirement to the user. Do not extend shared infrastructure from this worktree.
 
 ## Workflow
 
@@ -81,7 +103,7 @@ Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `sim
    - 3+ scenes; at least one interactive
    - 2+ worked examples; second has a missing step
    - 20+ questions, tier mix 6 to 8 / 6 to 8 / 4 to 6
-   - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1+ drag, 1+ missing-step. Slider-explore required for continuous-relationship topics. Data-extraction required for motion-graph or energy-flow topics. Sketch required for force-arrow or circuit-diagram topics.
+   - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1+ drag, 1+ missing-step. **Labelled-image encouraged for circuit-component, force-diagram, and wave-anatomy nodes.** Slider-explore required for continuous-relationship topics. Data-extraction required for motion-graph or energy-flow topics. Sketch optional for force-arrow or circuit-diagram drawing-from-memory.
    - 6+ misconceptions, sourced.
    - Challenge tier includes at least one early KS4 Foundation level item.
 7. Run `npm run eval-content`. Fix every FAIL.
@@ -104,11 +126,11 @@ Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `sim
 - Do not invent awarding-body refs.
 - Do not include content depending on GCSE Higher prior knowledge (kinematic equations beyond v = u + at, AC circuit analysis, quantum effects, special relativity).
 - Do not introduce US units (mph as a quantitative unit, feet, miles, fahrenheit). UK weather contexts can mention "miles per hour" only in qualitative news-style framing; quantitative work is m/s.
-- Do not extend the content schema. Flag the need.
+- Do not extend the content schema, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Flag the need; the infra-owner session handles shared changes.
 - Do not seed Atlas or commit; user runs both after review.
 
 ## Output and handoff
 
-Single TypeScript file `src/content/seed/physics-<zoneId-tail>.ts` plus a one-line re-export in `src/content/seed/index.ts`. Handoff note in chat or at `docs/_drafts/<nodeId>.md`.
+Single TypeScript file `src/content/seed/physics/<zoneId-tail>.ts` plus a one-line re-export in `src/content/seed/physics/index.ts` (the per-subject aggregator; the top-level `src/content/seed/index.ts` re-exports from there and you do not edit it). Handoff note in chat or at `docs/_drafts/<nodeId>.md`.
 
 After writing, run `npm run eval-content` and `npm run typecheck`; report both. Confirm zero FAIL findings before passing to review.

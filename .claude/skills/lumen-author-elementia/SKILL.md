@@ -15,12 +15,12 @@ This skill produces ONE node per invocation. If the user asks for "a zone", conf
 Read these files in order. Do not skip; the rubric is the contract.
 
 1. `docs/00-build-prompt.md` — product scope and curriculum coverage.
-2. `src/types/content.ts` — exact `SkillNode` shape; output must conform. Note the four `InteractiveScene` types currently supported; if you need a particle-model simulator or periodic-table picker scene type, stop and ask the user.
+2. `src/types/content.ts` — exact `SkillNode` shape; output must conform. Five `InteractiveScene` types are supported; the workhorses for chemistry are `labelled-diagram` (clickable hotspots reveal labels) and `simulation`. The `labelled-image` question type pairs with `labelled-diagram` for assessment. If you need a particle-model heat-slider simulator or a periodic-table picker, stop and ask the user.
 3. `docs/05-reference-shelf.md` — what to take from CGP KS3 Chemistry, DfE Science programme of study, AQA / Edexcel / OCR GCSE Chemistry specs and examiner reports, plus product cues.
 4. `docs/06-authoring-playbook.md` — the must-pass rubric.
 5. `docs/04-eval-set.md` — locate the zone section. Confirm `C-...` coverage; satisfy `Q-...` probes. If absent, draft probes alongside the node.
 6. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim.
-7. `src/content/seed/maths-fractions.ts` — structural template only.
+7. `src/content/seed/maths/fractions.ts` — structural template only (study the file shape, not the maths-specific content).
 
 Note: Bond 11+ does not cover chemistry. Stretch references for Elementia are CGP KS3, examiner reports, and early KS4 GCSE Chemistry Foundation tier.
 
@@ -69,7 +69,29 @@ Challenge tier draws from CGP KS3 stretch boxes and early KS4 GCSE Chemistry Fou
 
 ### Scene type guidance
 
-Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `simulation`. For Elementia, `simulation` is ideal for particle-model topics (heat slider showing state change) and `diagram` for periodic table or apparatus. Slider-explore questions required where the topic is continuous (pH scale, temperature in state-change). Data-extraction required for any node involving reading mass-of-product or volume tables. Sketch required where the learner draws particle arrangements.
+Supported scene types: `fraction-wall`, `number-line`, `diagram`, `simulation`, `labelled-diagram`. For Elementia, **`labelled-diagram` is the workhorse** — use it for laboratory apparatus (Bunsen burner parts, distillation set-up, filter funnel and conical flask), simple molecule structures (water, methane, oxygen, carbon dioxide as ball-and-stick), particle-arrangement diagrams (solid / liquid / gas particle layouts as snapshots), and the periodic-table layout (group / period hotspots). Pair it with `labelled-image` so the learner places labels onto the same diagram for assessment.
+
+Reach for `simulation` only when the topic genuinely needs a continuous slider (heat-driven state-change, pH-scale slider). Use `diagram` (the unstyled fallback) only when neither labelled-diagram nor simulation fits.
+
+Slider-explore questions are required where the topic is continuous (pH scale, temperature in state-change). Data-extraction questions are required for any node involving reading mass-of-product or volume tables. Sketch questions can supplement for particle-arrangement drawing-from-memory.
+
+## Worktree boundaries
+
+This skill is designed to run inside an Elementia-only worktree (e.g. `~/lumen-academy-chemistry` on branch `content/chemistry`). Stay in your lane.
+
+**Allowed scope (this worktree):**
+- `src/content/seed/chemistry/` — your seed files and per-subject `index.ts`
+- `docs/03-curriculum-map.md` — the chemistry sections only
+- `docs/04-eval-set.md` — the zone section for the node you're drafting
+- `docs/_drafts/<nodeId>.md` — handoff note
+
+**Off-limits without infra-owner approval (route via the main repo session):**
+- `src/types/`, `src/components/{questions,scenes,learn}/`, `src/lib/`, `src/app/`, `scripts/` — schema, renderers, engine, routes, seeders
+- `src/content/seed/index.ts` — top-level aggregator (only edit `src/content/seed/chemistry/index.ts`)
+- `package.json`, `next.config.mjs`, `CLAUDE.md`
+- Other subjects' seed directories (`src/content/seed/{maths,biology,physics}/`)
+
+If you find you need a new scene type, question type, schema field, or shared component to do justice to an Elementia topic, stop and surface the requirement to the user. Do not extend shared infrastructure from this worktree.
 
 ## Workflow
 
@@ -82,7 +104,7 @@ Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `sim
    - 3+ scenes; at least one interactive
    - 2+ worked examples; second has a missing step
    - 20+ questions, tier mix 6 to 8 / 6 to 8 / 4 to 6
-   - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1+ drag, 1+ missing-step. Slider-explore required for pH and state-change topics. Data-extraction required for any reading-from-table topic. Sketch required for particle drawings.
+   - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1+ drag, 1+ missing-step. **Labelled-image encouraged for molecule structure, periodic-table-region, and apparatus identification nodes.** Slider-explore required for pH and state-change topics. Data-extraction required for any reading-from-table topic. Sketch optional for particle-arrangement drawings.
    - 6+ misconceptions, sourced.
    - Challenge tier includes at least one early KS4 Foundation level item.
 7. Run `npm run eval-content`. Fix every FAIL.
@@ -105,11 +127,11 @@ Currently supported scene types: `fraction-wall`, `number-line`, `diagram`, `sim
 - Do not invent awarding-body refs.
 - Do not include content depending on GCSE Higher prior knowledge (electron configuration beyond shells, mole calculations, redox).
 - Do not introduce US units (Fahrenheit, gallons) or US chemistry names ("baking soda" is acceptable; "a quarter-cup of vinegar" is not — use millilitres).
-- Do not extend the content schema. Flag the need.
+- Do not extend the content schema, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Flag the need; the infra-owner session handles shared changes.
 - Do not seed Atlas or commit; user runs both after review.
 
 ## Output and handoff
 
-Single TypeScript file `src/content/seed/chemistry-<zoneId-tail>.ts` plus a one-line re-export in `src/content/seed/index.ts`. Handoff note in chat or at `docs/_drafts/<nodeId>.md`.
+Single TypeScript file `src/content/seed/chemistry/<zoneId-tail>.ts` plus a one-line re-export in `src/content/seed/chemistry/index.ts` (the per-subject aggregator; the top-level `src/content/seed/index.ts` re-exports from there and you do not edit it). Handoff note in chat or at `docs/_drafts/<nodeId>.md`.
 
 After writing, run `npm run eval-content` and `npm run typecheck`; report both. Confirm zero FAIL findings before passing to review.

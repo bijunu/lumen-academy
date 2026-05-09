@@ -15,12 +15,12 @@ This skill produces ONE node per invocation. If the user asks for "a zone", conf
 Read these files in order. Do not skip; the rubric is the contract.
 
 1. `docs/00-build-prompt.md` — product scope and curriculum coverage.
-2. `src/types/content.ts` — the exact `SkillNode` shape; your output must conform. Note the four `InteractiveScene` types and ten `Question` types currently supported. If you need a new scene type, stop and ask the user; schema changes are a separate step.
+2. `src/types/content.ts` — the exact `SkillNode` shape; your output must conform. Note the five `InteractiveScene` types and eleven `Question` types currently supported (see `docs/02-content-schema.md` for the data shapes). If you need a new scene type, stop and ask the user; schema changes are a separate step.
 3. `docs/05-reference-shelf.md` — what to take from Bond 11+, CGP KS3 Maths, DfE programme of study, AQA, Edexcel, OCR, plus product cues from Brilliant, Seneca, Tassomai, Khan, Sparx, DragonBox.
 4. `docs/06-authoring-playbook.md` — the must-pass rubric. This is the bar.
 5. `docs/04-eval-set.md` — locate the zone section. Confirm coverage of every Content probe (`C-...`); satisfy every Question shape probe (`Q-...`) with at least one question. If the zone section does not exist yet, draft probes for it alongside the node.
 6. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim from there or from the DfE programme of study.
-7. `src/content/seed/maths-fractions.ts` — structural template only. The fractions seed predates the new rubric; copy the file shape, not its quality bar.
+7. `src/content/seed/maths/fractions.ts` — structural template only. The fractions seed predates the new rubric; copy the file shape, not its quality bar.
 
 ## Numerica realm guidance
 
@@ -80,7 +80,25 @@ Use the exact zoneId and zoneName below.
 
 ### Scene type guidance
 
-Currently supported scene types in `src/types/content.ts`: `fraction-wall`, `number-line`, `diagram`, `simulation`. For most maths nodes, `simulation` (slider-driven) and `diagram` cover the cases. Topics like coordinates, sequences, and graphs may want a sketch-style scene; flag the schema addition rather than improvising. Slider-explore questions are required for continuous-relationship topics (ratio, percentages, probability). Data-extraction questions are required for charts and graphs.
+Supported scene types in `src/types/content.ts`: `fraction-wall`, `number-line`, `diagram`, `simulation`, `labelled-diagram`. For most maths nodes, `simulation` (slider-driven) and `diagram` cover the cases. `labelled-diagram` is the workhorse for sciences but is also useful in maths for labelled coordinate planes, parts of a number line, and parts of a fraction (numerator, denominator, fraction bar). Topics like coordinates, sequences, and graphs may want a sketch-style scene; flag the schema addition rather than improvising. Slider-explore questions are required for continuous-relationship topics (ratio, percentages, probability). Data-extraction questions are required for charts and graphs.
+
+## Worktree boundaries
+
+This skill is designed to run inside a Numerica-only worktree (e.g. `~/lumen-academy-maths` on branch `content/maths`). Stay in your lane.
+
+**Allowed scope (this worktree):**
+- `src/content/seed/maths/` — your seed files and per-subject `index.ts`
+- `docs/03-curriculum-map.md` — the maths sections only
+- `docs/04-eval-set.md` — the zone section for the node you're drafting
+- `docs/_drafts/<nodeId>.md` — handoff note
+
+**Off-limits without infra-owner approval (route via the main repo session):**
+- `src/types/`, `src/components/{questions,scenes,learn}/`, `src/lib/`, `src/app/`, `scripts/` — schema, renderers, engine, routes, seeders
+- `src/content/seed/index.ts` — top-level aggregator (only edit `src/content/seed/maths/index.ts`)
+- `package.json`, `next.config.mjs`, `CLAUDE.md`
+- Other subjects' seed directories (`src/content/seed/{biology,chemistry,physics}/`)
+
+If you need a new scene type, question type, schema field, or shared component to do justice to your topic, stop and surface the requirement to the user. Do not extend shared infrastructure from this worktree.
 
 ## Workflow
 
@@ -119,12 +137,12 @@ Currently supported scene types in `src/types/content.ts`: `fraction-wall`, `num
 - Do not paraphrase the KS3 objective.
 - Do not invent awarding-body refs; if a board lacks a clear ref, omit that body and cite the other two.
 - Do not add a misconception without a source citation, except up to 1 marked `// Authored, no external source`.
-- Do not extend `InteractiveScene` or `Question` type unions, or change any other content schema field. Flag the need; user approves the schema change as a separate step.
+- Do not extend `InteractiveScene` or `Question` type unions, or change any other content schema field, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Flag the need; user approves the schema change as a separate step in the infra-owner session.
 - Do not seed Atlas or commit. The user runs `npm run seed` after review and `git commit` themselves.
 - Do not write a US dollar sign, a US unit (feet, miles, gallons, fahrenheit), an em dash, or a "all of the above" option anywhere.
 
 ## Output and handoff
 
-A single TypeScript file at `src/content/seed/maths-<zoneId-tail>.ts` exporting the new node, plus a one-line addition to `src/content/seed/index.ts` re-exporting it. The new node's id and zoneId match the table above. The handoff note can be a short markdown block in chat, or a temporary file at `docs/_drafts/<nodeId>.md` if the user prefers a paper trail.
+A single TypeScript file at `src/content/seed/maths/<zoneId-tail>.ts` exporting the new node, plus a one-line addition to `src/content/seed/maths/index.ts` re-exporting it (the top-level `src/content/seed/index.ts` re-exports from there; do not edit the top-level index). The new node's id and zoneId match the table above. The handoff note can be a short markdown block in chat, or a temporary file at `docs/_drafts/<nodeId>.md` if the user prefers a paper trail.
 
-After writing, run `npm run eval-content` and `npm run typecheck` and report both results in the handoff. Confirm zero FAIL findings before declaring the draft ready for the review skill (Phase 10d).
+After writing, run `npm run eval-content` and `npm run typecheck` and report both results in the handoff. Confirm zero FAIL findings before declaring the draft ready for the `lumen-content-review` skill.
