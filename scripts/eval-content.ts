@@ -11,15 +11,12 @@
  *   npm run eval-content
  *   npm run eval-content -- --strict
  */
-import { fractionsZoneNodes } from '../src/content/seed'
+import { allSeededNodes } from '../src/content/seed'
 import { evaluateNodes } from '../src/lib/contentEval/rubric'
-import type { SkillNode } from '../src/types/content'
-
-const allNodes: SkillNode[] = [...fractionsZoneNodes]
 
 function main(): void {
   const strict = process.argv.includes('--strict')
-  const { reports, summary } = evaluateNodes(allNodes)
+  const { reports, summary } = evaluateNodes(allSeededNodes)
 
   console.info('=== Lumen Academy Content Eval ===')
   console.info('')
