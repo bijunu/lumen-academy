@@ -6,6 +6,8 @@ UK KS3 learning web app for a Year 7 grammar school student. Desktop primary.
 - docs/00-build-prompt.md is the source of truth for product scope
 - docs/01-tutor-system-prompt.md is the AI tutor system prompt, do not modify without asking
 - docs/02-content-schema.md defines the data shape for skill nodes
+- docs/05-reference-shelf.md lists the curriculum and product sources Lumen benchmarks against, with what to take and leave from each
+- docs/06-authoring-playbook.md is the rubric every skill node must pass before it ships
 
 ## Hard rules
 - Stack: Next.js 14 App Router, TypeScript, Tailwind, shadcn/ui, MongoDB Atlas
@@ -31,6 +33,7 @@ UK KS3 learning web app for a Year 7 grammar school student. Desktop primary.
 - After any change, run typecheck and tests, fix what breaks
 - Never invent curriculum content, always pull from docs/03-curriculum-map.md
 - Never modify docs/01-tutor-system-prompt.md without explicit instruction
+- When authoring or editing a skill node, follow docs/06-authoring-playbook.md and grade against the rubric before shipping
 
 ## What not to do
 - Do not add features not in docs/00-build-prompt.md
