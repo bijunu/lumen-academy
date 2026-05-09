@@ -10,6 +10,9 @@ import { SpotMisconception } from './SpotMisconception'
 import { MissingStep } from './MissingStep'
 import { FreeText } from './FreeText'
 import { SliderExplore } from './SliderExplore'
+import { Sketch } from './Sketch'
+import { DragDropBuilder } from './DragDropBuilder'
+import { DataExtraction } from './DataExtraction'
 import { QuestionFeedback } from './QuestionFeedback'
 import { Badge } from '@/components/ui/badge'
 
@@ -117,6 +120,30 @@ export function QuestionShell({
 
       {question.type === 'slider-explore' && (
         <SliderExplore
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'sketch' && (
+        <Sketch
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'drag-drop-builder' && (
+        <DragDropBuilder
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'data-extraction' && (
+        <DataExtraction
           question={question}
           disabled={isAnswered}
           onSubmit={result => submit(result)}
