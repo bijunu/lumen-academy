@@ -550,6 +550,14 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
   - Required handling: misconception entry; at least one question whose distractors include large permanent vacuole on an animal cell.
 - C-CELL-7: Learner believes all cells in the body are about the same size, so cell size cannot be used to compare cell types.
   - Required handling: misconception entry; at least one spot-misconception or Challenge tier question that surfaces cell-size variation between cell types.
+- C-CELL-8: Learner believes a red blood cell has a nucleus like every other animal cell.
+  - Required handling: misconception entry on the specialised-cells node; at least one MCQ or spot-misconception that surfaces the missing-nucleus adaptation and links it to haemoglobin.
+- C-CELL-9: Learner attributes the energy that powers a sperm cell's swim to its tail rather than to the mitochondria packed in its midpiece.
+  - Required handling: misconception entry on the specialised-cells node; at least one spot-misconception or MCQ that pairs the tail (motion) against the midpiece mitochondria (energy release).
+- C-CELL-10: Learner believes root hair cells contain chloroplasts because they are plant cells, missing that no light reaches them in the soil.
+  - Required handling: misconception entry on the specialised-cells node; at least one MCQ that asks the learner to spot the chloroplast error on a root cell drawing.
+- C-CELL-11: Learner believes airway cilia trap dust and bacteria themselves, rather than wafting mucus that traps the particles.
+  - Required handling: misconception entry on the specialised-cells node; at least one Challenge tier MCQ that links damaged cilia to chest infection risk via the mucus-escalator model.
 
 ### Question shape probes
 
@@ -560,6 +568,10 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
 - Q-CELL-5: At least one spot-misconception question presents a "mitochondria make energy" or "animal cells have a cell wall" argument and asks whether the reasoning is sound.
 - Q-CELL-6: At least one numeric-entry question asks the learner to count which of a listed set of structures are found in animal cells, distinguishing animal-cell from plant-only features.
 - Q-CELL-7: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (specialised cell adaptation, sperm cell mitochondria density, nerve cell length) to stretch the learner beyond the bare KS3 list.
+- Q-CELL-8: At least one labelled-image question on the specialised-cells node places six specialised cell labels (red blood cell, sperm cell, root hair cell, ciliated epithelial cell, nerve cell, palisade leaf cell) onto hotspots on a single overview diagram, with at least one off-topic label in the pool.
+- Q-CELL-9: At least one drag-drop-builder question on the specialised-cells node requires building a sperm cell from a parts pool that mixes correct features (head, midpiece mitochondria, tail) with plant-only distractors (cell wall, chloroplasts).
+- Q-CELL-10: At least one Challenge tier numeric-entry on the specialised-cells node requires reading a UK clinical or class-microscope context (red-cell count per cubic millimetre, nerve cell length in metres versus red blood cell in micrometres) and computing through at least one inferred unit step.
+- Q-CELL-11: At least one data-extraction question on the specialised-cells node uses a small surface-area-to-volume ratio table and asks which cell best matches a job demanding a large surface for taking in dissolved substances.
 
 ### Tutor probes
 
@@ -568,19 +580,59 @@ Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-s
 - T-CELL-3: Given "Mitochondria make energy from nothing, right?", the tutor walks the learner through a respiration analogy (glucose plus oxygen, energy transferred), not a definition dump.
 - T-CELL-4: Given an off-topic input (for example a question about US biology textbook diagrams or AP Biology mitochondria), the tutor steers back to UK KS3 cell language politely.
 - T-CELL-5: Given a request for an inline definition (tap on "cytoplasm" or "mitochondrion"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-CELL-6: Given "A sperm cell's tail makes the energy that powers it, right?", the tutor's first reply is a Socratic prompt that separates motion (tail) from energy release (mitochondria), not a direct correction.
+- T-CELL-7: Given a wrong answer matching the red-blood-cell-has-nucleus trigger, the tutor cites the relevant misconception's `reExplanation` (mature red cells lose the nucleus to make room for haemoglobin) rather than producing a fresh hint.
 
 ## Zone: Vitalia > Microscopy
 
 Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-MICRO-1: Learner believes the eyepiece lens does all the magnifying on a compound light microscope.
+  - Required handling: misconception entry on the light-microscope node; at least one MCQ or spot-misconception that distinguishes objective and eyepiece magnification, with at least one Confident tier item that pairs them.
+- C-MICRO-2: Learner believes the mirror or built-in light at the base magnifies the cell, rather than just providing illumination.
+  - Required handling: misconception entry on the light-microscope node; at least one MCQ that pairs the mirror's job with the lens system's job.
+- C-MICRO-3: Learner starts on the highest power objective and cannot find the specimen.
+  - Required handling: misconception entry on the light-microscope node; at least one Core MCQ on which objective to use first.
+- C-MICRO-4: Learner uses the coarse focus knob on the highest power objective and risks driving the lens through the slide.
+  - Required handling: misconception entry on the light-microscope node; at least one Confident tier MCQ or data-extraction that links coarse-knob misuse at high power to slide damage.
+- C-MICRO-5: Learner believes higher magnification shows a wider area of the slide, rather than a smaller patch in greater detail.
+  - Required handling: misconception entry on the light-microscope node; at least one spot-misconception or Challenge tier numeric that quantifies the field-of-view trade-off.
+- C-MICRO-6: Learner places the coverslip flat onto the specimen and traps air bubbles, or places it before adding water and specimen.
+  - Required handling: misconception entry on the light-microscope node; at least one drag-order or Challenge tier MCQ that surfaces the coverslip-from-an-edge step.
+- C-MICRO-7: Learner writes magnification with units (for example "x400 mm") rather than as a unit-less ratio.
+  - Required handling: misconception entry on the magnification node; at least one MCQ that flags the units error and reinforces magnification as a ratio.
+- C-MICRO-8: Learner reports the objective magnification as the total magnification, ignoring the eyepiece.
+  - Required handling: misconception entry on the magnification node; at least one spot-misconception or MCQ that requires multiplying the two stages.
+- C-MICRO-9: Learner divides image size by actual size (or vice versa) without converting to a common unit first.
+  - Required handling: misconception entry on the magnification node; at least one Confident or Challenge tier numeric that requires a mm-to-µm conversion before the division.
+- C-MICRO-10: Learner multiplies image size by magnification to find the actual cell size, instead of dividing.
+  - Required handling: misconception entry on the magnification node; at least one MCQ that flags the wrong direction of the formula.
+- C-MICRO-11: Learner treats a scale bar as if it is the magnification, rather than a labelled real distance from which the magnification is computed.
+  - Required handling: misconception entry on the magnification node; at least one Challenge tier numeric that asks the learner to derive magnification from a scale bar.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-MICRO-1: At least one labelled-image question on the light-microscope node places eyepiece, objective, stage, coarse focus, fine focus, and mirror or built-in light onto hotspots on a microscope diagram, with at least one off-microscope distractor in the pool.
+- Q-MICRO-2: At least one drag-order question on the light-microscope node places the steps of slide setup (slide on bench, water drop, specimen, coverslip, stage, focus) in order.
+- Q-MICRO-3: At least one drag-drop-builder question on the light-microscope node requires building a working slide from a parts pool that mixes correct items (slide, water, specimen, coverslip) with off-slide distractors (mirror, lens, pencil).
+- Q-MICRO-4: At least one Challenge tier numeric on the light-microscope node requires reasoning about field-of-view shrinkage or class-time arithmetic in a UK school context.
+- Q-MICRO-5: At least one Challenge tier MCQ uses an early KS4 GCSE Foundation tier framing (image inversion, slide-direction reasoning, error diagnosis) to stretch the learner beyond the bare KS3 list.
+- Q-MICRO-6: At least one numeric-entry on the magnification node asks the learner to compute total magnification from eyepiece x objective, with at least one Confident-tier item using a non-standard eyepiece (for example x15) to test whether the learner reads both numbers.
+- Q-MICRO-7: At least one numeric-entry on the magnification node uses the rearranged formula A = I / M with image size in mm and asks for the actual size in micrometres, requiring the learner to convert units in the final step.
+- Q-MICRO-8: At least one Challenge tier numeric on the magnification node requires deriving the magnification from a scale bar (image distance plus labelled real distance), with at least one mm-to-µm conversion in the working.
+- Q-MICRO-9: At least one drag-order question on the magnification node sequences the steps from picture to actual size (read image, find total magnification, divide, convert units).
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-MICRO-1: Given "I can just start at x40 and find the cells anyway, right?", the tutor's first reply is a Socratic prompt about the field of view at high power, not a direct correction.
+- T-MICRO-2: Given a wrong answer matching the mirror-magnifies trigger, the tutor cites the relevant misconception's `reExplanation` (mirror provides light, lenses magnify) rather than producing a fresh hint.
+- T-MICRO-3: Given "Why can I not use the coarse knob at x40?", the tutor walks the learner through the close lens-to-slide distance at high power, not a definition dump.
+- T-MICRO-4: Given an off-topic input (for example a question about US lab microscopes or electron microscopes beyond KS3), the tutor steers back to UK KS3 light-microscope language politely.
+- T-MICRO-5: Given a request for an inline definition (tap on "objective" or "coverslip"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-MICRO-6: Given "Why does my magnification answer have x400 mm at the end?", the tutor's first reply is a Socratic prompt about the units in the formula, not a direct correction.
+- T-MICRO-7: Given a wrong answer matching the multiply-not-divide trigger on actual cell size, the tutor cites the relevant misconception's `reExplanation` (the magnification triangle) rather than producing a fresh hint.
 
 ## Zone: Vitalia > Body Systems
 
