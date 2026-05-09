@@ -239,17 +239,117 @@ export const equivalentFractions: SkillNode = {
       correctIndex: 0,
       xpValue: 20,
     },
+    {
+      id: 'ef-q13',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this worked solution. Find an equivalent fraction of 3/7 with denominator 28.',
+      tier: 'confident',
+      steps: [
+        'We start with 3/7 and want a denominator of 28.',
+        'Ask what we multiply 7 by to reach 28. Since 7 x 4 = 28, the multiplier is 4.',
+        null,
+        'So 3/7 is equivalent to 12/28.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Whatever we do to the denominator, we must do to the numerator. Multiply 3 by 4 to get 12.',
+      xpValue: 20,
+    },
+    {
+      id: 'ef-q14',
+      type: 'multiple-choice',
+      stem: 'A box of 60 sweets contains 2/5 mint chocolates. Which fraction equivalent to 2/5 shows the mints?',
+      tier: 'confident',
+      options: ['12/60', '24/60', '2/60', '14/60'],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'ef-mis-multiply-one-side',
+    },
+    {
+      id: 'ef-q15',
+      type: 'numeric-entry',
+      stem: 'Find the missing numerator: 7/8 = ?/56',
+      tier: 'confident',
+      correctAnswer: 49,
+      xpValue: 15,
+      hint: 'What do you multiply 8 by to get 56?',
+    },
+    {
+      id: 'ef-q16',
+      type: 'multiple-choice',
+      stem: 'To find an equivalent fraction of 3/8 with denominator 24, which method is correct?',
+      tier: 'confident',
+      options: [
+        'Cross-multiply 3 by 24, then divide by 8.',
+        'Multiply both 3 and 8 by 3, because 8 x 3 = 24.',
+        'Add 16 to both 3 and 8.',
+        'Multiply only 8 by 3 and leave 3 as it is.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'ef-mis-cross-multiply',
+    },
+    {
+      id: 'ef-q17',
+      type: 'numeric-entry',
+      stem: 'A Year 7 cricket club has 36 pupils. 5/9 of them are bowlers and the rest are batters. The coach writes the fraction of batters with denominator 36. What is the numerator?',
+      tier: 'challenge',
+      correctAnswer: 16,
+      xpValue: 25,
+      hint: 'First work out how many pupils are bowlers, then how many are batters.',
+    },
+    {
+      id: 'ef-q18',
+      type: 'multiple-choice',
+      stem: 'A pupil tries to write 4/7 as an equivalent fraction with numerator 24. They write 24/7. Why is this wrong?',
+      tier: 'challenge',
+      options: [
+        'The numerator should stay as 4.',
+        '24/7 is already correct as it is.',
+        'You must also multiply the denominator by 6, giving 24/42.',
+        'You should add 20 to both top and bottom instead.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'ef-mis-only-multiply',
+    },
+    {
+      id: 'ef-q19',
+      type: 'numeric-entry',
+      stem: 'A box has 48 sweets. 3/4 of them are toffees and the rest are mints. The shopkeeper writes the fraction of mints as a fraction with denominator 16. What is the numerator?',
+      tier: 'challenge',
+      correctAnswer: 4,
+      xpValue: 25,
+      hint: 'First work out the fraction of the sweets that are mints.',
+    },
+    {
+      id: 'ef-q20',
+      type: 'multiple-choice',
+      stem: 'Aisha is baking with a recipe that needs 6/8 of a cup of sugar. Liam reads a different recipe that needs 9/12. Which statement is true?',
+      tier: 'challenge',
+      options: [
+        'Aisha needs more, because 6 and 8 are smaller numbers.',
+        'Liam needs more, because 9 is bigger than 6.',
+        'They need the same amount, because 6/8 and 9/12 both simplify to 3/4.',
+        'You cannot compare the amounts because the denominators are different.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'ef-mis-bigger-numbers',
+    },
   ],
   misconceptions: [
+    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring "constant addend" error in fraction equivalence (verify chapter)
     {
       id: 'ef-mis-add',
       description: 'Adding the same number to numerator and denominator creates an equivalent fraction.',
       triggerAnswer: 'add',
       correction:
-        'Adding the same number to both parts does not give an equivalent fraction. You must multiply (or divide) both the numerator and denominator by the same number.',
+        'Adding the same number to both parts does not give an equivalent fraction. You must multiply or divide both the numerator and denominator by the same number.',
       reExplanation:
-        'Think of it this way: 1/2 means one part out of two equal parts. If you add 1 to both, you get 2/3, which is two parts out of three. But 2/3 is bigger than 1/2, so they are not the same.',
+        '1/2 means one part out of two equal parts. If you add 1 to both, you get 2/3, which is two parts out of three. But 2/3 is bigger than 1/2, so they are not the same.',
     },
+    // Source: CGP KS3 Maths Study Guide, Common mistake on simplifying (verify page)
     {
       id: 'ef-mis-partial-simplify',
       description: 'Stopping simplification before reaching the simplest form.',
@@ -259,6 +359,7 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         'To fully simplify a fraction, find the highest common factor (HCF) of the numerator and denominator and divide both by it.',
     },
+    // Source: CGP KS3 Maths Study Guide, Common mistake on fraction comparison (verify page)
     {
       id: 'ef-mis-bigger-numbers',
       description: 'Thinking bigger numerator and denominator means a bigger fraction.',
@@ -268,23 +369,36 @@ export const equivalentFractions: SkillNode = {
       reExplanation:
         'Try using a fraction wall or number line to see that 4/8 and 1/2 land on exactly the same point.',
     },
+    // Source: AQA examiner observations on fraction methods, recurring KS3 to KS4 procedural confusion (verify report year and Q reference)
     {
       id: 'ef-mis-cross-multiply',
       description: 'Confusing cross-multiplication with finding equivalent fractions.',
       triggerAnswer: 'cross',
       correction:
-        'Cross-multiplication is used to compare fractions or solve equations, not to create equivalent fractions. To make an equivalent fraction, multiply (or divide) both the numerator and denominator by the same number.',
+        'Cross-multiplication is used to compare fractions or solve equations, not to create equivalent fractions. To make an equivalent fraction, multiply or divide both the numerator and denominator by the same number.',
       reExplanation:
         'For example, to make 2/3 equivalent with denominator 9: multiply 3 by 3 to get 9, then multiply 2 by 3 to get 6. So 2/3 = 6/9.',
     },
+    // Source: CGP KS3 Maths Study Guide, Common mistake on equivalent fractions (verify page)
     {
       id: 'ef-mis-only-multiply',
       description: 'Thinking equivalent fractions can only be found by multiplying, not dividing.',
       triggerAnswer: 'multiply-only',
       correction:
-        'You can also divide both the numerator and denominator by the same number to find an equivalent (simpler) fraction. This is called simplifying.',
+        'You can also divide both the numerator and denominator by the same number to find an equivalent fraction in simpler form. This is called simplifying.',
       reExplanation:
         '6/8 can be simplified by dividing both by 2 to get 3/4. Both fractions represent the same amount.',
+    },
+    // Source: classroom-observed Year 7 procedural slip; aligns with Edexcel examiner reports on fraction work (verify report year)
+    {
+      id: 'ef-mis-multiply-one-side',
+      description:
+        'Scaling only the numerator or only the denominator when finding an equivalent fraction.',
+      triggerAnswer: 'one-side',
+      correction:
+        'To make an equivalent fraction, the same multiplier must be applied to both the numerator and the denominator. Scaling just one of them changes the value of the fraction.',
+      reExplanation:
+        'Picture 2/5 of a 60-sweet box. The whole has been split into 60 sweets, so the multiplier on 5 is 12. The numerator must also be multiplied by 12, giving 24/60. If you only scale one side, you no longer have an equivalent fraction.',
     },
   ],
   masteryRule: {
