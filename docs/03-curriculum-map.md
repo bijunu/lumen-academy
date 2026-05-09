@@ -20,6 +20,14 @@
 - **Edexcel**: N3 Simplifying fractions
 - **OCR**: 2.01b Simplifying fractions
 
+## Maths: Four Operations Zone
+
+### Adding and Subtracting Negative Numbers (Core, `maths-four-operations-negative-numbers-add-subtract`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative
+- **AQA**: N2 Apply the four operations, including formal written methods, to integers (positive and negative)
+- **Edexcel**: N2 The four operations applied to integers, both positive and negative
+- **OCR**: 1.02a Apply the four operations to directed numbers
+
 ---
 
 > **Note on placeholders below.** The science zone outlines that follow are skeletons drafted from the build-prompt subject lists. Every `_KS3: fill verbatim ..._` and `_<board>: GCSE ... ref_` line MUST be replaced before the corresponding `SkillNode` ships. The Vitalia / Elementia / Mechanica author skills are responsible for sourcing the verbatim KS3 wording from the DfE Science programme of study and for citing the awarding-body GCSE refs from each board's specification document. Authors may add or split nodes within a zone; the IDs below are starting suggestions, not a fixed list.
