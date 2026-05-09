@@ -14,7 +14,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "seed": "tsx --env-file=.env.local scripts/seed-content.ts",
-    "ensure-indexes": "tsx --env-file=.env.local scripts/ensure-indexes.ts"
+    "ensure-indexes": "tsx --env-file=.env.local scripts/ensure-indexes.ts",
+    "eval-content": "tsx scripts/eval-content.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.95.1",

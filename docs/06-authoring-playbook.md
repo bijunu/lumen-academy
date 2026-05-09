@@ -192,6 +192,14 @@ When an author finishes a draft node, they hand it off as:
 
 The reviewer grades only against this playbook and the schema. The reviewer does not see the author's working notes during grading; the handoff note is read only after the grade is set, to resolve disagreements.
 
+## Running the validator
+
+`npm run eval-content` grades every `SkillNode` in `src/content/seed` against this playbook and prints a per-node report. The script exits 0 by default so it can be run informationally during 10e re-grading; pass `--strict` to exit non-zero on any `fail` finding (`npm run eval-content -- --strict`). Wire `--strict` into a pre-ship check once content reaches the bar.
+
+The validator is a screen, not a substitute for human review. It checks counts, tier mix, type quotas, awarding-body coverage, misconception cross-links, unique ids, and banned-pattern regex. It does not assess pedagogy, distractor quality, or whether a Challenge tier item is genuinely Bond-style. Those judgements belong to the review skill (Phase 10d).
+
+The eval set in `docs/04-eval-set.md` complements the validator: per-zone Content, Question shape, and Tutor probes that the validator cannot detect from structure alone.
+
 ## Updating the playbook
 
 This playbook is the quality contract for Lumen Academy. Changes to the rubric require an explicit decision and a note in the relevant phase plan. Loosening a rule mid-Phase 10 means we authored content under a weaker bar; tightening it mid-Phase 10 means we re-grade everything authored before. Both are expensive. Get the rubric right at 10a; expect to leave it alone through 10e and beyond.
