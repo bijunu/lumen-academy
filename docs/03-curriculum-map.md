@@ -1,32 +1,120 @@
 # Curriculum Map: Year 7
 
-## Maths: Fractions Zone
+## Maths (Numerica)
 
-### What is a Fraction (Core)
-- **KS3**: Express one quantity as a fraction of another
+### Zone: Place Value (`maths-place-value`)
+
+#### Place Value of Whole Numbers (Core, `maths-place-value-whole-numbers`)
+- **KS3**: Understand and use place value for decimals, measures and integers of any size.
+- **AQA**: N1.1 Place value, ordering and rounding
+- **Edexcel**: N2 Order positive and negative integers, decimals and fractions; use the symbols =, not equal, less than, greater than, less than or equal to, greater than or equal to
+- **OCR**: 2.01a Order positive and negative integers, decimals and fractions
+
+### Zone: Decimals (`maths-decimals`)
+
+#### Decimal Place Value (Core, `maths-decimals-place-value`)
+- **KS3**: Understand and use place value for decimals, measures and integers of any size.
+- **AQA**: N2.1 Place value in decimals
+- **Edexcel**: N2 Place value and ordering of decimals
+- **OCR**: 1.01a Place value, including decimals
+
+### Zone: Fractions (`maths-fractions`)
+
+#### What is a Fraction? (Core, `maths-fractions-what-is`)
+- **KS3**: Express one quantity as a fraction of another, where the fraction is less than 1 and greater than 1.
 - **AQA**: N1.1 Understanding fractions
 - **Edexcel**: N3 Fractions
 - **OCR**: 2.01a Fractions
 
-### Equivalent Fractions (Core)
-- **KS3**: Use common factors to simplify fractions; use common multiples to express fractions in the same denomination
+#### Equivalent Fractions (Core, `maths-fractions-equivalent`)
+- **KS3**: Use common factors to simplify fractions; use common multiples to express fractions in the same denomination.
 - **AQA**: N1.3 Equivalent fractions
 - **Edexcel**: N3 Ordering fractions
 - **OCR**: 2.01a Equivalent fractions
 
-### Simplifying Fractions (Core)
-- **KS3**: Use common factors to simplify fractions
+#### Simplifying Fractions (Core, `maths-fractions-simplify`)
+- **KS3**: Use common factors to simplify fractions.
 - **AQA**: N1.4 Simplifying fractions
 - **Edexcel**: N3 Simplifying fractions
 - **OCR**: 2.01b Simplifying fractions
 
-## Maths: Four Operations Zone
+### Zone: Percentages (`maths-percentages`)
 
-### Adding and Subtracting Negative Numbers (Core, `maths-four-operations-negative-numbers-add-subtract`)
-- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative
+#### Percentages, Decimals, and Fractions (Core, `maths-percentages-as-decimals-fractions`)
+- **KS3**: Define percentage as 'number of parts per hundred', interpret percentages and percentage changes as a fraction or a decimal, interpret these multiplicatively, express one quantity as a percentage of another, compare two quantities using percentages, and work with percentages greater than 100%.
+- **AQA**: N2.4 Convert between fractions, decimals and percentages
+- **Edexcel**: N10 Equivalence between fractions, decimals and percentages
+- **OCR**: 2.02a Equivalence of fractions, decimals and percentages
+
+### Zone: Ratio and Proportion (`maths-ratio`)
+
+#### Introducing Ratio (Core, `maths-ratio-introduction`)
+- **KS3**: Use ratio notation, including reduction to simplest form.
+- **AQA**: R1 Introduction to ratios
+- **Edexcel**: R5 Ratio notation
+- **OCR**: 6.01a Ratio notation and equivalent ratios
+
+### Zone: Four Operations (`maths-four-operations`)
+
+#### Adding and Subtracting Negative Numbers (Core, `maths-four-operations-negative-numbers-add-subtract`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
 - **AQA**: N2 Apply the four operations, including formal written methods, to integers (positive and negative)
 - **Edexcel**: N2 The four operations applied to integers, both positive and negative
 - **OCR**: 1.02a Apply the four operations to directed numbers
+
+#### Multiplying and Dividing Negative Numbers (Core, `maths-four-operations-multiply-divide-negatives`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N2 Apply the four operations, including formal written methods, to integers (positive and negative)
+- **Edexcel**: N2 The four operations applied to integers, both positive and negative
+- **OCR**: 1.02a Apply the four operations to directed numbers
+
+### Zone: Factors and Multiples (`maths-factors-multiples`)
+
+#### Finding Factors and Multiples (Core, `maths-factors-multiples-finding-factors`)
+- **KS3**: Use the concepts and vocabulary of prime numbers, factors (or divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation.
+- **AQA**: N4 Use the concepts and vocabulary of factors and multiples
+- **Edexcel**: N4 Factors, multiples and primes
+- **OCR**: 2.02a Factors, multiples and primes
+
+### Zone: Primes (`maths-primes`)
+
+#### Recognising Prime Numbers (Core, `maths-primes-recognising-primes`)
+- **KS3**: Use the concepts and vocabulary of prime numbers, factors (or divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation, including using product notation and the unique factorisation property.
+- **AQA**: N1.5 Prime numbers, factors and multiples
+- **Edexcel**: N4 Prime numbers, factors and multiples
+- **OCR**: 2.01c Prime numbers
+
+### Zone: BIDMAS (`maths-bidmas`)
+
+#### Order of Operations (BIDMAS) (Core, `maths-bidmas-order-of-operations`)
+- **KS3**: Use conventional notation for the priority of operations, including brackets, powers, roots and reciprocals.
+- **AQA**: N2.1 Apply the four operations, including formal written methods, to integers, decimals and simple fractions; use conventional notation for priority of operations
+- **Edexcel**: N2 Apply the four operations to integers, decimals and simple fractions, including order of operations
+- **OCR**: 2.02a Order of operations including brackets and powers
+
+### Zone: Basic Algebra (`maths-algebra`)
+
+#### Introduction to Algebra (Core, `maths-algebra-introduction`)
+- **KS3**: Use and interpret algebraic notation, including: ab in place of a x b; 3y in place of y + y + y and 3 x y; a^2 in place of a x a, a^3 in place of a x a x a; a/b in place of a divided by b; coefficients written as fractions rather than as decimals; brackets. Substitute numerical values into formulae and expressions, including scientific formulae. Simplify and manipulate algebraic expressions to maintain equivalence by collecting like terms.
+- **AQA**: A1 The basics of algebra; A4 Simplifying expressions and collecting like terms
+- **Edexcel**: A1 Use and interpret algebraic notation; A4 Simplify and manipulate algebraic expressions
+- **OCR**: 6.01a Algebraic notation; 6.02a Collecting like terms and substitution
+
+### Zone: Sequences (`maths-sequences`)
+
+#### Term-to-Term and Position-to-Term Rules (Core, `maths-sequences-rules`)
+- **KS3**: Generate terms of a sequence from either a term-to-term or a position-to-term rule, recognise arithmetic sequences and find the nth term, and recognise geometric sequences and appreciate other sequences that arise.
+- **AQA**: A23 Generate terms of a sequence from a term-to-term or position-to-term rule
+- **Edexcel**: A23 Generate terms of a sequence from either a term-to-term or a position-to-term rule
+- **OCR**: 6.01a Sequences: term-to-term and position-to-term rules
+
+### Zone: Coordinates (`maths-coordinates`)
+
+#### Coordinates on a Grid (Core, `maths-coordinates-grid`)
+- **KS3**: Work with coordinates in all four quadrants.
+- **AQA**: G11 Coordinates in all four quadrants
+- **Edexcel**: A8 Work with coordinates in all four quadrants
+- **OCR**: 7.02a Coordinates in all four quadrants
 
 ---
 
