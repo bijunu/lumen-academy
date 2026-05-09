@@ -9,8 +9,10 @@
 import { MongoClient } from 'mongodb'
 import {
   allSeededNodes,
+  decimalsZoneNodes,
   factorsMultiplesZoneNodes,
   fractionsZoneNodes,
+  placeValueZoneNodes,
   primesZoneNodes,
 } from '../src/content/seed'
 import {
@@ -42,6 +44,18 @@ const allZones: Zone[] = [
     name: 'Primes',
     realm: 'numerica',
     nodeIds: primesZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-decimals',
+    name: 'Decimals',
+    realm: 'numerica',
+    nodeIds: decimalsZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-place-value',
+    name: 'Place Value',
+    realm: 'numerica',
+    nodeIds: placeValueZoneNodes.map(n => n.id),
   },
 ]
 

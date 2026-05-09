@@ -11,6 +11,8 @@ import {
   factorsMultiplesZoneNodes,
 } from './maths-factors-multiples'
 import { recognisingPrimes, primesZoneNodes } from './maths-primes'
+import { decimalPlaceValue, decimalsZoneNodes } from './maths-decimals'
+import { wholeNumberPlaceValue, placeValueZoneNodes } from './maths-place-value'
 
 export {
   whatIsAFraction,
@@ -21,10 +23,16 @@ export {
   factorsMultiplesZoneNodes,
   recognisingPrimes,
   primesZoneNodes,
+  decimalPlaceValue,
+  decimalsZoneNodes,
+  wholeNumberPlaceValue,
+  placeValueZoneNodes,
 }
 
 export const allSeededNodes: SkillNode[] = [
   ...fractionsZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...primesZoneNodes,
+  ...decimalsZoneNodes,
+  ...placeValueZoneNodes,
 ]
