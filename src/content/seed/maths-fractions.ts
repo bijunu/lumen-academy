@@ -297,7 +297,7 @@ export const whatIsAFraction: SkillNode = {
   id: 'maths-fractions-what-is',
   title: 'What is a Fraction?',
   description:
-    'Understand that a fraction represents a part of a whole, learn the terms numerator and denominator, and recognise fractions in everyday contexts.',
+    'Understand that a fraction describes a part of a whole, recognise the numerator and denominator, read fractions in everyday UK contexts, and recognise that the numerator can be greater than or equal to the denominator.',
   subject: 'maths',
   realm: 'numerica',
   zoneId: 'maths-fractions',
@@ -305,7 +305,8 @@ export const whatIsAFraction: SkillNode = {
   tier: 'core',
   prerequisites: [],
   curriculum: {
-    ks3Objective: 'Express one quantity as a fraction of another.',
+    ks3Objective:
+      'Express one quantity as a fraction of another, where the fraction is less than 1 and greater than 1.',
     awardingBodies: {
       aqa: 'N1.1 Understanding fractions',
       edexcel: 'N3 Fractions',
@@ -314,30 +315,110 @@ export const whatIsAFraction: SkillNode = {
   },
   scenes: [
     {
-      id: 'wf-scene-1',
-      title: 'Parts of a Whole',
+      id: 'wf-scene-slice-bar',
+      title: 'Slice the Bar',
+      type: 'simulation',
+      instructions:
+        'Drag the dividers to split the bar into equal parts, then click parts to shade them and read the fraction.',
+      data: {
+        bar: { length: 1 },
+        defaultDividers: [0.5],
+        maxDividers: 11,
+      },
+    },
+    {
+      id: 'wf-scene-numerator-denominator',
+      title: 'Numerator and Denominator',
       type: 'diagram',
-      instructions: 'Shade parts of different shapes to see how fractions work.',
-      data: { shapes: ['circle', 'rectangle', 'hexagon'] },
+      instructions:
+        'Click each part of the fraction to learn what the number represents.',
+      data: {
+        fraction: { numerator: 3, denominator: 5 },
+        labels: {
+          numerator: 'How many parts you have',
+          denominator: 'How many equal parts the whole is split into',
+          line: 'The "out of" line',
+        },
+      },
+    },
+    {
+      id: 'wf-scene-everyday',
+      title: 'Fractions All Around You',
+      type: 'diagram',
+      instructions:
+        'Click each scene to see how a fraction describes a part of an everyday whole.',
+      data: {
+        examples: [
+          {
+            label:
+              'A Margherita pizza cut into 8 equal slices, with 5 eaten.',
+            fraction: { numerator: 5, denominator: 8 },
+          },
+          {
+            label: 'A 200 ml glass of squash filled to the 150 ml mark.',
+            fraction: { numerator: 3, denominator: 4 },
+          },
+          {
+            label:
+              'A chocolate bar with 12 equal squares, with 4 broken off.',
+            fraction: { numerator: 4, denominator: 12 },
+          },
+        ],
+      },
     },
   ],
   workedExamples: [
     {
       id: 'wf-worked-1',
-      title: 'Reading a fraction',
+      title: 'Reading the fraction 3/5',
       steps: [
         {
           explanation:
-            'A fraction has two parts: the numerator (top number) tells us how many parts we have.',
+            'A fraction has two numbers separated by a line. The line means "out of".',
+          maths: '3/5',
         },
         {
           explanation:
-            'The denominator (bottom number) tells us how many equal parts the whole is divided into.',
-          maths: 'numerator / denominator',
+            'The bottom number is the denominator. It tells us the whole has been split into 5 equal parts.',
+          maths: 'denominator = 5',
         },
         {
-          explanation: 'So 3/4 means 3 parts out of 4 equal parts.',
-          maths: '3/4',
+          explanation:
+            'The top number is the numerator. It tells us we are looking at 3 of those equal parts.',
+          maths: 'numerator = 3',
+        },
+        {
+          explanation: 'So 3/5 means 3 parts out of 5 equal parts.',
+          maths: '3/5 = 3 out of 5',
+        },
+      ],
+    },
+    {
+      id: 'wf-worked-2',
+      title: 'Writing a fraction from a picture',
+      steps: [
+        {
+          explanation:
+            'A pizza is cut into 8 equal slices, and 5 slices have been eaten.',
+        },
+        {
+          explanation:
+            'We want to write the fraction of the pizza that has been eaten.',
+          maths: '?/?',
+        },
+        {
+          explanation:
+            'The denominator is the total number of equal parts the whole has been split into. So the denominator is 8.',
+          maths: 'denominator = 8',
+        },
+        {
+          explanation:
+            'The numerator is the number of parts we are looking at. 5 slices have been eaten, so the numerator is 5.',
+          maths: 'numerator = 5',
+        },
+        {
+          explanation: 'The fraction of the pizza eaten is 5/8.',
+          maths: '5/8',
         },
       ],
     },
@@ -351,31 +432,292 @@ export const whatIsAFraction: SkillNode = {
       options: ['5', '8', '3', '13'],
       correctIndex: 1,
       xpValue: 10,
+      misconceptionId: 'wf-mis-swap',
     },
     {
       id: 'wf-q2',
       type: 'multiple-choice',
       stem: 'A pizza is cut into 6 equal slices and you eat 2. What fraction have you eaten?',
       tier: 'core',
-      options: ['6/2', '2/6', '2/4', '4/6'],
+      options: ['6/2', '4/6', '2/6', '2/4'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'wf-mis-swap',
+    },
+    {
+      id: 'wf-q3',
+      type: 'multiple-choice',
+      stem: 'In a fraction, what does the numerator (the top number) tell you?',
+      tier: 'core',
+      options: [
+        'How many equal parts the whole is split into',
+        'The "out of" line',
+        'The total number of objects',
+        'How many of those parts you have',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+    },
+    {
+      id: 'wf-q4',
+      type: 'multiple-choice',
+      stem: 'A square is split into 4 equal triangles, and 3 are shaded. Which fraction is shaded?',
+      tier: 'core',
+      options: ['3/1', '3/4', '1/4', '4/3'],
       correctIndex: 1,
       xpValue: 10,
+      misconceptionId: 'wf-mis-swap',
+    },
+    {
+      id: 'wf-q5',
+      type: 'numeric-entry',
+      stem: 'In the fraction 7/12, what is the numerator?',
+      tier: 'core',
+      correctAnswer: 7,
+      xpValue: 10,
+      hint: 'The numerator is the top number.',
+    },
+    {
+      id: 'wf-q6',
+      type: 'numeric-entry',
+      stem: 'A bar of chocolate has 10 equal squares. You give 3 squares to a friend. What is the denominator of the fraction given away?',
+      tier: 'core',
+      correctAnswer: 10,
+      xpValue: 10,
+      hint: 'The denominator counts the total number of equal parts.',
+    },
+    {
+      id: 'wf-q7',
+      type: 'drag-order',
+      stem: 'Place these fractions in order from smallest to largest, using the meaning of "X out of Y equal parts".',
+      tier: 'core',
+      items: ['1/4', '1/3', '1/2', '3/4'],
+      correctOrder: [0, 1, 2, 3],
+      xpValue: 15,
+      misconceptionId: 'wf-mis-bigger-numbers',
+    },
+    {
+      id: 'wf-q8',
+      type: 'spot-misconception',
+      stem: 'Maya says: "The fraction 2/3 means two ones added to three ones, which is 5." Is she correct?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'Maya is correct because 2 and 3 are both small numbers.',
+          isMisconception: true,
+        },
+        {
+          text: '2/3 means 2 parts out of 3 equal parts. The line means "out of", not addition.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'wf-mis-line-meaning',
+    },
+    {
+      id: 'wf-q9',
+      type: 'multiple-choice',
+      stem: 'When a whole is split into equal parts, which fraction shows the largest single part?',
+      tier: 'confident',
+      options: ['1/2', '1/3', '1/4', '1/5'],
+      correctIndex: 0,
+      xpValue: 15,
+      misconceptionId: 'wf-mis-bigger-numbers',
+    },
+    {
+      id: 'wf-q10',
+      type: 'multiple-choice',
+      stem: 'In a Year 7 form of 24 pupils, 7 have a school dinner today. What fraction have a school dinner?',
+      tier: 'confident',
+      options: ['7/24', '24/7', '17/24', '7/17'],
+      correctIndex: 0,
+      xpValue: 15,
+      misconceptionId: 'wf-mis-fraction-vs-ratio',
+    },
+    {
+      id: 'wf-q11',
+      type: 'numeric-entry',
+      stem: 'Sevenoaks library has 200 books on the maths shelf. 45 of them are about geometry. What is the numerator of the fraction of geometry books?',
+      tier: 'confident',
+      correctAnswer: 45,
+      xpValue: 15,
+    },
+    {
+      id: 'wf-q12',
+      type: 'numeric-entry',
+      stem: 'I poured 3/8 of a litre of orange juice. What is the denominator of that fraction?',
+      tier: 'confident',
+      correctAnswer: 8,
+      xpValue: 15,
+    },
+    {
+      id: 'wf-q13',
+      type: 'multiple-choice',
+      stem: 'Which of these is NOT another way to write the fraction "three quarters"?',
+      tier: 'confident',
+      options: ['7/4', '3/4', '0.75', '75%'],
+      correctIndex: 0,
+      xpValue: 15,
+      misconceptionId: 'wf-mis-improper',
+    },
+    {
+      id: 'wf-q14',
+      type: 'numeric-entry',
+      stem: 'A football team plays 30 matches in a season. 12 are home matches. What is the numerator of the fraction of home matches?',
+      tier: 'confident',
+      correctAnswer: 12,
+      xpValue: 15,
+    },
+    {
+      id: 'wf-q15',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this worked solution. A pizza is cut into 8 equal slices and 5 slices have been eaten. What fraction has been eaten?',
+      tier: 'confident',
+      steps: [
+        'The denominator counts the total number of equal parts.',
+        'There are 8 equal slices in the whole pizza.',
+        null,
+        'So the fraction eaten is 5/8.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'The numerator counts the number of parts we are looking at. 5 slices have been eaten, so the numerator is 5.',
+      xpValue: 20,
+    },
+    {
+      id: 'wf-q16',
+      type: 'spot-misconception',
+      stem: 'Joe writes the fraction 3/2 and says it cannot be a fraction because the top number is bigger than the bottom number. Is Joe right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Joe is right because in a fraction the top must always be smaller.',
+          isMisconception: true,
+        },
+        {
+          text: '3/2 is a valid fraction. It means 3 halves, which is one whole and a half more.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 20,
+      misconceptionId: 'wf-mis-improper',
+    },
+    {
+      id: 'wf-q17',
+      type: 'multiple-choice',
+      stem: 'A box of 30 sweets contains 6 lemon, 9 strawberry, and 15 toffee. What fraction of the sweets are toffee?',
+      tier: 'challenge',
+      options: ['6/30', '15/30', '30/15', '9/30'],
+      correctIndex: 1,
+      xpValue: 20,
+      misconceptionId: 'wf-mis-swap',
+    },
+    {
+      id: 'wf-q18',
+      type: 'numeric-entry',
+      stem: 'A Year 7 trip has 28 pupils. 4 chose the museum, three times as many chose the planetarium, and the rest chose the cathedral. What is the numerator of the fraction of pupils who chose the cathedral?',
+      tier: 'challenge',
+      correctAnswer: 12,
+      xpValue: 25,
+      hint: 'First work out how many chose the planetarium, then subtract from 28.',
+    },
+    {
+      id: 'wf-q19',
+      type: 'multiple-choice',
+      stem: 'Liam says he ate 7/4 of a pizza on Saturday. Aisha thinks fractions cannot have a numerator larger than the denominator. Which statement is correct?',
+      tier: 'challenge',
+      options: [
+        '7/4 is not a real fraction; the numerator must always be smaller.',
+        '7/4 is the same as 4/7 written the other way.',
+        '7/4 means 7 parts out of 4, which is more than one whole pizza.',
+        '7/4 should be rewritten as 1/4 because 7 is larger than 4.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'wf-mis-improper',
+    },
+    {
+      id: 'wf-q20',
+      type: 'multiple-choice',
+      stem: 'Which of these fractions represents a quantity larger than one whole?',
+      tier: 'challenge',
+      options: ['3/4', '5/6', '9/8', '7/8'],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'wf-mis-improper',
     },
   ],
   misconceptions: [
+    // Source: AQA GCSE Maths Foundation tier examiner reports, recurring KS2 to KS3 transition error (verify exact year and Q reference)
     {
       id: 'wf-mis-swap',
-      description: 'Swapping the numerator and denominator.',
+      description:
+        'Swapping the numerator and denominator when reading or writing a fraction.',
       triggerAnswer: 'swap',
       correction:
         'The numerator (top) counts the parts you have. The denominator (bottom) counts the total equal parts.',
       reExplanation:
-        'Remember: the denominator is "down" below the line. It tells you how many parts the whole is divided into.',
+        'A useful memory cue: the denominator is "down below" the line and tells you how many equal parts the whole is split into. The numerator sits on top and counts how many of those parts you have.',
+    },
+    // Source: CGP KS3 Maths Study Guide, "Common mistake" callout on fraction comparison (verify page)
+    {
+      id: 'wf-mis-bigger-numbers',
+      description:
+        'Believing that bigger numerator and denominator numbers always mean a bigger fraction.',
+      triggerAnswer: 'bigger',
+      correction:
+        'The size of a fraction depends on the relationship between numerator and denominator, not on the size of the numbers themselves.',
+      reExplanation:
+        'Use a fraction wall or number line: 1/2 is exactly the same size as 4/8, even though 4 and 8 are bigger numbers than 1 and 2. And 1/100 is much smaller than 1/2, even though 100 is the biggest number on the page.',
+    },
+    // Source: CGP KS3 Maths Study Guide, recurring "improper fraction" misconception (verify page)
+    {
+      id: 'wf-mis-improper',
+      description:
+        'Believing a fraction cannot have a numerator larger than its denominator.',
+      triggerAnswer: 'improper',
+      correction:
+        'A fraction with a larger top than bottom is called an improper fraction. It is still a valid fraction; it represents a quantity greater than one whole.',
+      reExplanation:
+        '7/4 means 7 quarters, which is one whole (4/4) plus three more quarters. You can write it as 1 and 3/4 (a mixed number) or leave it as 7/4. Both are correct.',
+    },
+    // Source: classroom-observed Year 7 reading error; aligns with DfE KS2 to KS3 transition guidance
+    {
+      id: 'wf-mis-line-meaning',
+      description:
+        'Reading the line in a fraction as a minus sign, addition sign, or division calculation rather than "out of".',
+      triggerAnswer: 'line',
+      correction:
+        'The line in a fraction means "out of". It is not subtraction or addition of the two numbers.',
+      reExplanation:
+        'When you see 3/5, read it as "three out of five equal parts". You can think of a fraction as a division (3 divided by 5 = 0.6), but that is the value of the fraction, not what the symbols mean.',
+    },
+    // Source: CGP KS3 Maths Study Guide, "Common mistake" on the equal-parts requirement (verify page)
+    {
+      id: 'wf-mis-equal-parts',
+      description:
+        'Treating unequal pieces as if they could be counted as a fraction of the whole.',
+      triggerAnswer: 'unequal',
+      correction:
+        'A fraction only works when the whole is split into equal parts. Unequal pieces cannot be written as a simple fraction.',
+      reExplanation:
+        'If a cake is cut into one big slice and five tiny slices, you cannot say one slice is 1/6 of the cake, because the slices are different sizes. Fractions assume the parts are the same size.',
+    },
+    // Source: AQA examiner observations on early fraction work; confusion of part-whole vs part-part (verify reference)
+    {
+      id: 'wf-mis-fraction-vs-ratio',
+      description:
+        'Confusing a fraction (part of a whole) with a ratio (part to part).',
+      triggerAnswer: 'ratio',
+      correction:
+        'A fraction tells you a part out of a whole. A ratio compares two separate quantities to each other.',
+      reExplanation:
+        'If 7 of 24 pupils have school dinners, the fraction with school dinners is 7/24 of the form. The ratio of school dinners to packed lunches would be 7 to 17, because there are 24 minus 7 = 17 with packed lunches.',
     },
   ],
   masteryRule: {
-    streak: 3,
-    spacedReviewDays: [1, 3, 7],
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
   },
 }
 

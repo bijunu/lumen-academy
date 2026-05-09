@@ -67,6 +67,10 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
   - Required handling: misconception entry on the introductory node; clear scene labelling of "top" and "bottom".
 - C-FRAC-6: Learner reads a fraction as a ratio of two separate quantities rather than a part of a whole.
   - Required handling: a scene or worked example that frames the same number as a fraction and as a ratio side by side.
+- C-FRAC-7: Learner believes a fraction cannot have a numerator larger than its denominator (rejects improper fractions).
+  - Required handling: misconception entry; at least one Challenge tier question that explicitly tests improper fraction recognition (for example, identifying which option among given fractions is greater than one whole).
+- C-FRAC-8: Learner reads the line in a fraction as a subtraction or addition sign rather than "out of".
+  - Required handling: misconception entry; a scene or worked example that explicitly labels the line as "out of".
 
 ### Question shape probes
 
@@ -76,6 +80,7 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - Q-FRAC-4: At least one spot-misconception question presents a learner's reasoning and asks whether the method is sound.
 - Q-FRAC-5: At least one drag-order question places fractions in size order using a mix of simple and equivalent forms.
 - Q-FRAC-6: At least one numeric entry asks the learner to simplify a fraction whose simplest form is not visually obvious (for example 24/36 to 2/3).
+- Q-FRAC-7: At least one Challenge tier MCQ tests recognising fractions greater than one whole (improper fractions), with distractors that include valid proper fractions.
 
 ### Tutor probes
 
