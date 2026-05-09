@@ -355,16 +355,16 @@
 ### Zone: Forces (`physics-forces`)
 
 #### Identifying Forces (Core, `physics-forces-types`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces as pushes or pulls, arising from the interaction between two objects; non-contact forces: gravity forces acting at a distance on Earth and in space, forces between magnets, and forces due to static electricity.
+- **AQA**: 4.5.1.1 Forces and their interactions; contact and non-contact forces (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.18-1.20 Contact and non-contact forces (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces, contact and non-contact forces (GCSE Physics J259 Gateway)
 
 #### Balanced and Unbalanced Forces (Core, `physics-forces-balanced`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces.
+- **AQA**: 4.5.1.4 Resultant forces; 4.5.6.1 Newton's First Law (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.21-1.23 Resultant forces and Newton's First Law (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws, balanced and unbalanced forces (GCSE Physics J259 Gateway)
 
 #### Friction and Drag (Confident, `physics-forces-friction`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
@@ -421,10 +421,10 @@
 - **OCR**: _GCSE Physics spec ref_
 
 #### Voltage, Current, Resistance (Confident, `physics-electricity-current-voltage`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Electricity and electromagnetism)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Potential difference, measured in volts, battery and bulb ratings; resistance, measured in ohms, as the ratio of potential difference (p.d.) to current.
+- **AQA**: 4.2.1.3 Current, potential difference and resistance (GCSE Physics 8463)
+- **Edexcel**: 10.7 Potential difference and resistance, V = I x R (GCSE Physics 1PH0)
+- **OCR**: P4.2 Resistance and Ohm's law (GCSE Physics J259 Gateway)
 
 ### Zone: Waves (`physics-waves`)
 
