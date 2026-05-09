@@ -313,10 +313,10 @@
 ### Zone: Electricity and Circuits (`physics-electricity-circuits`)
 
 #### Circuit Symbols (Core, `physics-electricity-circuit-symbols`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Electricity and electromagnetism)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Electric current, measured in amperes, in circuits, series and parallel circuits, currents add where branches meet and current as flow of charge.
+- **AQA**: 4.2.1.1 Standard circuit diagram symbols (GCSE Physics 8463)
+- **Edexcel**: Topic 2.2 Electrical circuits, circuit diagrams (GCSE Physics 1PH0)
+- **OCR**: P4.1 Static and charge / P4.2 Circuit symbols (GCSE Physics J259 Gateway)
 
 #### Series and Parallel Circuits (Core, `physics-electricity-series-parallel`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Electricity and electromagnetism)_

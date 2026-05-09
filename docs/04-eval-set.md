@@ -702,13 +702,39 @@ Covers `physics-energy-stores`, `physics-energy-transfers`, `physics-energy-effi
 Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parallel`, `physics-electricity-current-voltage`.
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+
+- C-EC-1: Learner draws the voltmeter in series with a component, believing voltage flows through it the way current does.
+  - Required handling: misconception entry; at least one question with `misconceptionId` linking to this misconception, and at least one scene that shows correct ammeter and voltmeter placement side by side.
+- C-EC-2: Learner confuses the ammeter symbol (A in a circle) with the voltmeter symbol (V in a circle) when sketching or reading a circuit diagram.
+  - Required handling: misconception entry; at least one question that pairs the two symbols as distractors, ideally a labelled-image or a multiple-choice on a UK domestic circuit.
+- C-EC-3: Learner uses single cell and battery interchangeably, drawing one cell and labelling it as a 6 V battery.
+  - Required handling: misconception entry; at least one question that requires counting cells from a battery symbol or computing battery voltage from cell count.
+- C-EC-4: Learner cannot tell an open switch from a closed switch in a diagram, leading to circuit predictions where a lamp is shown lit even though the switch is open.
+  - Required handling: misconception entry; at least one question that contrasts open and closed switch symbols on the same circuit shape.
+- C-EC-5: Learner draws the filament lamp as a plain circle (no cross), which is then easy to confuse with an ammeter or voltmeter symbol.
+  - Required handling: misconception entry; at least one question whose distractors include plain circle vs circle-with-cross variants.
+- C-EC-6: Learner thinks current flows out of both terminals of the cell and meets at the lamp, rather than around a single closed loop.
+  - Required handling: misconception entry; a scene or worked example that walks the loop from positive terminal back to negative terminal.
+- C-EC-7: Learner treats every straight line in a diagram as a component, calling the connecting wire a "resistor" or a "conductor box".
+  - Required handling: misconception entry; at least one question that requires distinguishing the wire from drawn components.
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+
+- Q-EC-1: At least one labelled-image question asks the learner to place names on a simple series circuit (cell, switch, lamp), with a label pool no larger than twice the hotspot count.
+- Q-EC-2: At least one Challenge tier labelled-image or multiple-choice question requires placing both an ammeter (in series) and a voltmeter (in parallel across a component) on the same diagram.
+- Q-EC-3: At least one numeric-entry question asks the learner to count the cells in a drawn battery symbol.
+- Q-EC-4: At least one numeric-entry question asks the learner to compute battery voltage from cell count using a 1.5 V cell.
+- Q-EC-5: At least one Challenge tier word problem maps a UK context (torch, bedside lamp, smoke alarm, cycling helmet light) onto the number of 1.5 V cells needed for a stated battery voltage and the matching circuit symbol.
+- Q-EC-6: At least one spot-misconception question presents the voltmeter-in-series argument and asks whether the method is sound.
+- Q-EC-7: At least one drag-order or missing-step question walks the learner around a series-circuit loop, naming each symbol in turn.
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+
+- T-EC-1: Given "I think the voltmeter goes in series with the lamp because then the voltage flows through it", the tutor's first reply is a Socratic prompt about what a voltmeter measures across, not a direct correction.
+- T-EC-2: Given a wrong answer matching the ammeter-vs-voltmeter trigger (for example "A circle with V means ammeter"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-EC-3: Given "Why does my torch need 4 cells when I want 6 V?", the tutor walks the learner through dividing 6 by 1.5 with a concrete counting example, not a definition.
+- T-EC-4: Given an off-topic input (for example a question about US 110 V wall sockets), the tutor steers back to UK 230 V mains and KS3 circuit symbols politely.
+- T-EC-5: Given a request for an inline definition (tap on "ammeter" or "voltmeter"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Waves
 
