@@ -839,7 +839,7 @@ export const simplifyingFractions: SkillNode = {
   id: 'maths-fractions-simplify',
   title: 'Simplifying Fractions',
   description:
-    'Reduce fractions to their simplest form by dividing the numerator and denominator by their highest common factor.',
+    'Reduce a fraction to its simplest form by dividing the numerator and denominator by their highest common factor.',
   subject: 'maths',
   realm: 'numerica',
   zoneId: 'maths-fractions',
@@ -860,30 +860,101 @@ export const simplifyingFractions: SkillNode = {
       title: 'Factor Finder',
       type: 'simulation',
       instructions:
-        'Use the slider to explore which numbers divide evenly into both the numerator and denominator.',
+        'Drag the slider to test each number from 1 upwards and watch which ones divide both the top and the bottom evenly.',
       data: { startFraction: { numerator: 12, denominator: 18 } },
+    },
+    {
+      id: 'sf-scene-hcf-grid',
+      title: 'The Common Factor Grid',
+      type: 'diagram',
+      instructions:
+        'Click on each number in the two factor lists to highlight the factors that appear in both. The largest one is the highest common factor.',
+      data: {
+        examples: [
+          {
+            top: 24,
+            bottom: 36,
+            factorsTop: [1, 2, 3, 4, 6, 8, 12, 24],
+            factorsBottom: [1, 2, 3, 4, 6, 9, 12, 18, 36],
+            commonFactors: [1, 2, 3, 4, 6, 12],
+            hcf: 12,
+          },
+          {
+            top: 18,
+            bottom: 30,
+            factorsTop: [1, 2, 3, 6, 9, 18],
+            factorsBottom: [1, 2, 3, 5, 6, 10, 15, 30],
+            commonFactors: [1, 2, 3, 6],
+            hcf: 6,
+          },
+        ],
+      },
+    },
+    {
+      id: 'sf-scene-before-after',
+      title: 'Same Length, Smaller Numbers',
+      type: 'fraction-wall',
+      instructions:
+        'Click each bar to see how 12/18 and 2/3 cover exactly the same length of the wall. Simplifying changes the numbers, not the value.',
+      data: {
+        rows: [
+          { denominator: 3, colour: '#22C55E' },
+          { denominator: 6, colour: '#A855F7' },
+          { denominator: 9, colour: '#F59E0B' },
+          { denominator: 18, colour: '#EC4899' },
+        ],
+        highlightPairs: [
+          { simple: { numerator: 2, denominator: 3 }, original: { numerator: 12, denominator: 18 } },
+        ],
+      },
     },
   ],
   workedExamples: [
     {
       id: 'sf-worked-1',
-      title: 'Simplify 12/18',
+      title: 'Simplify 12/18 using the HCF',
       steps: [
         {
-          explanation: 'Find the highest common factor (HCF) of 12 and 18.',
+          explanation: 'List the factors of 12 and the factors of 18.',
           maths: 'Factors of 12: 1, 2, 3, 4, 6, 12\nFactors of 18: 1, 2, 3, 6, 9, 18',
         },
         {
-          explanation: 'The HCF is 6.',
+          explanation: 'Find the largest factor that appears in both lists.',
           maths: 'HCF(12, 18) = 6',
         },
         {
-          explanation: 'Divide both by 6.',
-          maths: '12/6 = 2, 18/6 = 3',
+          explanation: 'Divide the numerator by 6 and the denominator by 6.',
+          maths: '12 / 6 = 2, 18 / 6 = 3',
         },
         {
-          explanation: 'The simplest form is 2/3.',
+          explanation: 'The simplest form of 12/18 is 2/3.',
           maths: '12/18 = 2/3',
+        },
+      ],
+    },
+    {
+      id: 'sf-worked-2',
+      title: 'Simplify 24/36 in stages',
+      steps: [
+        {
+          explanation: 'We have 24/36 and want to write it in its simplest form.',
+          maths: '24/36 = ?/?',
+        },
+        {
+          explanation: 'Divide the numerator and denominator by a common factor of 2.',
+          maths: '24 / 2 = 12, 36 / 2 = 18',
+        },
+        {
+          explanation: 'Check the new fraction. 12 and 18 still share a common factor of 6.',
+          maths: '12/18',
+        },
+        {
+          explanation: 'Divide the numerator and denominator by 6.',
+          maths: '12 / 6 = 2, 18 / 6 = 3',
+        },
+        {
+          explanation: 'The simplest form of 24/36 is 2/3. Doing it in stages reaches the same answer as dividing by the HCF of 12 in one step.',
+          maths: '24/36 = 2/3',
         },
       ],
     },
@@ -906,21 +977,291 @@ export const simplifyingFractions: SkillNode = {
       correctAnswer: 4,
       xpValue: 10,
     },
+    {
+      id: 'sf-q3',
+      type: 'spot-misconception',
+      stem: 'Liam writes 16/64 = 1/4 because he says he can cross out the 6 on the top and the 6 on the bottom. The answer is right, but is the method sound?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'The method is sound. You can always cross out matching digits to simplify.',
+          isMisconception: true,
+        },
+        {
+          text: 'The answer is right by coincidence. To simplify, you must divide the whole numerator and denominator by a common factor, not cross out single digits.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'sf-mis-cancel-digits',
+    },
+    {
+      id: 'sf-q4',
+      type: 'multiple-choice',
+      stem: 'What is 12/18 in its simplest form?',
+      tier: 'core',
+      options: ['6/9', '2/3', '4/6', '3/4'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'sf-mis-partial',
+    },
+    {
+      id: 'sf-q5',
+      type: 'multiple-choice',
+      stem: 'Which of these fractions is already in its simplest form?',
+      tier: 'core',
+      options: ['4/9', '6/8', '10/15', '12/18'],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'sf-mis-must-simplify',
+    },
+    {
+      id: 'sf-q6',
+      type: 'numeric-entry',
+      stem: 'Simplify 9/12. What is the denominator in simplest form?',
+      tier: 'core',
+      correctAnswer: 4,
+      xpValue: 10,
+      hint: 'Find the highest common factor of 9 and 12.',
+    },
+    {
+      id: 'sf-q7',
+      type: 'multiple-choice',
+      stem: 'What is 8/12 in its simplest form?',
+      tier: 'core',
+      options: ['4/6', '2/3', '1/2', '8/3'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'sf-mis-partial',
+    },
+    {
+      id: 'sf-q8',
+      type: 'numeric-entry',
+      stem: 'Simplify 24/36. What is the numerator in simplest form?',
+      tier: 'confident',
+      correctAnswer: 2,
+      xpValue: 15,
+      hint: 'The HCF of 24 and 36 is bigger than 2. Try a value that divides both 24 and 36 cleanly.',
+    },
+    {
+      id: 'sf-q9',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this worked solution. Simplify 45/60 to its simplest form.',
+      tier: 'confident',
+      steps: [
+        'List the factors of 45: 1, 3, 5, 9, 15, 45.',
+        'List the factors of 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60.',
+        null,
+        'Divide both by 15. 45 / 15 = 3 and 60 / 15 = 4.',
+        'So 45/60 = 3/4 in its simplest form.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'The largest factor that appears in both lists is 15, so the highest common factor is 15.',
+      xpValue: 20,
+    },
+    {
+      id: 'sf-q10',
+      type: 'numeric-entry',
+      stem: 'Simplify 18/30. What is the numerator in simplest form?',
+      tier: 'confident',
+      correctAnswer: 3,
+      xpValue: 15,
+    },
+    {
+      id: 'sf-q11',
+      type: 'multiple-choice',
+      stem: 'A pupil simplifies 48/72 by dividing both numbers by 2 over and over. After three divisions, they have 6/9. They say this is the simplest form. What has gone wrong?',
+      tier: 'confident',
+      options: [
+        'Nothing. 6/9 is the simplest form because they only used the prime factor 2.',
+        'They should have used 2 once more, ignoring the fact that 9 is odd.',
+        'They have stopped too early. 6 and 9 still share a factor of 3, so the simplest form is 2/3.',
+        'They should have started with 3 instead of 2.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'sf-mis-prime-fixation',
+    },
+    {
+      id: 'sf-q12',
+      type: 'spot-misconception',
+      stem: 'Aisha tries to simplify 20/30 by dividing the top by 2 and the bottom by 3. She writes 10/10 = 1. Is her method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. You can divide top and bottom by different numbers as long as both are factors.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. To simplify, the numerator and denominator must be divided by the same common factor. Dividing 20 and 30 by 10 each gives the correct simplest form, 2/3.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'sf-mis-divide-different',
+    },
+    {
+      id: 'sf-q13',
+      type: 'drag-order',
+      stem: 'Place these fractions in order from smallest to largest. Some are written in simplest form, others are not.',
+      tier: 'confident',
+      items: ['2/4', '1/3', '5/8', '3/4'],
+      correctOrder: [1, 0, 2, 3],
+      xpValue: 20,
+    },
+    {
+      id: 'sf-q14',
+      type: 'multiple-choice',
+      stem: 'A pupil tries to simplify 14/21 by dividing only the top by 7. They write 2/21. Why is this wrong?',
+      tier: 'confident',
+      options: [
+        'They should have divided only the bottom by 7 instead.',
+        'They must divide the bottom by 7 as well, giving 2/3.',
+        'They should have divided the top by 14, giving 1/21.',
+        '14/21 is already in simplest form, so no division is needed.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'sf-mis-divide-only-one',
+    },
+    {
+      id: 'sf-q15',
+      type: 'numeric-entry',
+      stem: 'Simplify 36/48. What is the denominator in simplest form?',
+      tier: 'confident',
+      correctAnswer: 4,
+      xpValue: 15,
+      hint: 'The highest common factor of 36 and 48 is 12.',
+    },
+    {
+      id: 'sf-q16',
+      type: 'numeric-entry',
+      stem: 'A Year 7 form has 32 pupils. 24 of them walk to school and the rest come by bus. Write the fraction of pupils who walk to school in its simplest form. What is the numerator?',
+      tier: 'challenge',
+      correctAnswer: 3,
+      xpValue: 25,
+      hint: 'First write the fraction of pupils who walk, then simplify it.',
+    },
+    {
+      id: 'sf-q17',
+      type: 'multiple-choice',
+      stem: 'A pupil writes 45/60 = 9/12 = 3/4 and stops there. Their teacher says one of those three fractions is not in simplest form. Which one, and why?',
+      tier: 'challenge',
+      options: [
+        '45/60, because the pupil should have started with the HCF.',
+        '9/12, because 9 and 12 still share a common factor of 3.',
+        '3/4, because every fraction can be simplified further.',
+        'None of them. All three are in simplest form.',
+      ],
+      correctIndex: 1,
+      xpValue: 20,
+      misconceptionId: 'sf-mis-partial',
+    },
+    {
+      id: 'sf-q18',
+      type: 'numeric-entry',
+      stem: 'A bag holds 60 marbles. 25 are blue, 15 are red, and the rest are green. Write the fraction of green marbles in its simplest form. What is the denominator?',
+      tier: 'challenge',
+      correctAnswer: 3,
+      xpValue: 25,
+      hint: 'First find how many marbles are green, then write the fraction and simplify.',
+    },
+    {
+      id: 'sf-q19',
+      type: 'multiple-choice',
+      stem: 'In a Year 7 maths club of 28 pupils, 21 enter the regional puzzle competition. Which fraction shows the proportion entering, written in its simplest form?',
+      tier: 'challenge',
+      options: ['21/28', '7/4', '3/4', '6/8'],
+      correctIndex: 2,
+      xpValue: 20,
+    },
+    {
+      id: 'sf-q20',
+      type: 'multiple-choice',
+      stem: 'Two pupils compare their scores. Maya scored 18 out of 24 on a test. Tom scored 21 out of 28. Which statement is true once both fractions are written in simplest form?',
+      tier: 'challenge',
+      options: [
+        'Maya scored higher because 18 is less than 21 but her denominator is also smaller.',
+        'Tom scored higher because 21 and 28 are the bigger numbers.',
+        'They scored the same proportion. Both 18/24 and 21/28 simplify to 3/4.',
+        'You cannot compare the scores because the totals are different.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+    },
   ],
   misconceptions: [
+    // Source: CGP KS3 Maths Study Guide, Common mistake on simplifying (verify page)
     {
       id: 'sf-mis-partial',
-      description: 'Not fully simplifying (using a common factor but not the HCF).',
+      description:
+        'I have divided the top and bottom by a common factor, so the fraction is now in its simplest form.',
       triggerAnswer: 'partial',
       correction:
-        'You divided by a common factor, but not the highest one. Check if the result can be simplified further.',
+        'You divided by a common factor, but not the highest one. The numerator and denominator can still share a factor, so keep dividing until the only common factor left is 1.',
       reExplanation:
-        'Always check: do the numerator and denominator still share a common factor? If yes, keep dividing.',
+        '12/18 divided by 2 gives 6/9. 6 and 9 still share a factor of 3, so 6/9 divided by 3 gives 2/3. Always check the result for further common factors before stopping.',
+    },
+    // Source: Hart, Children's Understanding of Mathematics 11-16 (CSMS), recurring "cancelling digits" error in fraction simplification (verify chapter)
+    {
+      id: 'sf-mis-cancel-digits',
+      description:
+        'I can simplify a fraction by crossing out matching digits in the numerator and denominator.',
+      triggerAnswer: 'cancel-digits',
+      correction:
+        'Crossing out matching digits is not how simplification works. To simplify, you divide the whole numerator and the whole denominator by the same common factor.',
+      reExplanation:
+        '16/64 happens to equal 1/4, but only because 16 / 16 = 1 and 64 / 16 = 4. The 6s being equal is a coincidence. Try the same trick with 19/95 and you get 1/5, which is wrong: 19/95 actually equals 1/5 by chance too, but 13/39 = 1/3 only because 13 is a factor of both, not because the 3s match.',
+    },
+    // Source: classroom-observed Year 7 procedural slip; aligns with AQA examiner reports on fraction simplification (verify report year)
+    {
+      id: 'sf-mis-divide-different',
+      description:
+        'I can divide the top by one number and the bottom by a different number, as long as each one divides cleanly.',
+      triggerAnswer: 'divide-different',
+      correction:
+        'To simplify a fraction you must divide the numerator and the denominator by the same common factor. Using different divisors changes the value of the fraction.',
+      reExplanation:
+        '20/30 divided by 2 on top and 3 on bottom gives 10/10 = 1, but 20/30 = 2/3, which is not 1. Always pick a single common factor and apply it to both numbers.',
+    },
+    // Source: Edexcel examiner observations on fraction methods, recurring procedural slip (verify report year and Q reference)
+    {
+      id: 'sf-mis-divide-only-one',
+      description:
+        'I can simplify a fraction by dividing only the numerator (or only the denominator) by a common factor.',
+      triggerAnswer: 'divide-only-one',
+      correction:
+        'Dividing only one part of a fraction changes its value. To simplify, you must divide both the numerator and the denominator by the same common factor.',
+      reExplanation:
+        '14/21 divided only on the top by 7 gives 2/21, which is much smaller than 14/21. Apply the same divisor to the denominator: 21 / 7 = 3, so 14/21 = 2/3.',
+    },
+    // Authored, no external source — classroom-observed over-application of simplification at the KS2 to KS3 transition
+    {
+      id: 'sf-mis-must-simplify',
+      description:
+        'Every fraction can be simplified, so if I cannot find a common factor I must have missed one.',
+      triggerAnswer: 'must-simplify',
+      correction:
+        'Some fractions are already in simplest form. If the only common factor of the numerator and denominator is 1, the fraction cannot be simplified further.',
+      reExplanation:
+        '4/9 has factors of 4 (1, 2, 4) and factors of 9 (1, 3, 9). The only common factor is 1, so 4/9 is already in its simplest form.',
+    },
+    // Source: CGP KS3 Maths Study Guide, Common mistake on choosing the highest common factor (verify page)
+    {
+      id: 'sf-mis-prime-fixation',
+      description:
+        'I should keep dividing by 2 (or by primes) until I cannot any more, and then I am done.',
+      triggerAnswer: 'prime-fixation',
+      correction:
+        'Dividing by 2 repeatedly is fine, but you must also check for other common factors such as 3, 5, or 7 once the numbers stop being even.',
+      reExplanation:
+        '48/72 divided by 2 three times gives 6/9. Both 6 and 9 are odd, but they still share a factor of 3. Dividing by 3 gives 2/3, which is the true simplest form.',
     },
   ],
   masteryRule: {
     streak: 5,
-    spacedReviewDays: [1, 3, 7, 14],
+    spacedReviewDays: [1, 3, 7, 14, 30],
   },
 }
 
