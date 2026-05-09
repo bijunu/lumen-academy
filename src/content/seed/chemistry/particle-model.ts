@@ -606,5 +606,8 @@ export const particleModelZone: Zone = {
   id: 'chemistry-particle-model',
   name: 'Particle Model',
   realm: 'elementia',
-  nodeIds: ['chemistry-particle-model-states'],
+  nodeIds: [
+    'chemistry-particle-model-states',
+    'chemistry-particle-model-state-changes',
+  ],
 }
