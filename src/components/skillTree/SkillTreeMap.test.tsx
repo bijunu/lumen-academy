@@ -15,7 +15,7 @@ describe('SkillTreeMap', () => {
     const { getByTestId, getByText } = render(
       <SkillTreeMap
         nodes={[]}
-        layout={{ positions: new Map(), edges: [] }}
+        layout={{ positions: new Map(), edges: [], bands: [] }}
         lockStates={new Map()}
         realmLabel="Numerica"
       />

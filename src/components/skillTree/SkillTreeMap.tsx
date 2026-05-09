@@ -209,6 +209,35 @@ export function SkillTreeMap({
         <g
           transform={`translate(${transform.tx} ${transform.ty}) scale(${transform.scale})`}
         >
+          {layout.bands.map((band, i) => {
+            const top =
+              PADDING + band.y0 * ROW_SPACING - ROW_SPACING / 2
+            const bottom =
+              PADDING + band.y1 * ROW_SPACING + ROW_SPACING / 2
+            return (
+              <g
+                key={`band-${band.zoneId}`}
+                data-band-zone={band.zoneId}
+                aria-hidden="true"
+              >
+                <rect
+                  x={0}
+                  y={top}
+                  width={width}
+                  height={bottom - top}
+                  fill="hsl(var(--muted))"
+                  opacity={i % 2 === 0 ? 0.4 : 0.15}
+                />
+                <text
+                  x={16}
+                  y={top + 18}
+                  className="fill-muted-foreground text-xs font-semibold uppercase tracking-wide"
+                >
+                  {band.zoneName}
+                </text>
+              </g>
+            )
+          })}
           {layout.edges.map(edge => (
             <line
               key={`${edge.from}->${edge.to}`}
