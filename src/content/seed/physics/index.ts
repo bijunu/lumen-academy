@@ -2,10 +2,15 @@ import type { SkillNode, Zone } from '@/types/content'
 
 import {
   electricityCircuitSymbols,
+  electricitySeriesParallel,
   electricityCircuitsZoneNodes,
 } from './electricity-circuits'
 
-export { electricityCircuitSymbols, electricityCircuitsZoneNodes }
+export {
+  electricityCircuitSymbols,
+  electricitySeriesParallel,
+  electricityCircuitsZoneNodes,
+}
 
 export const physicsNodes: SkillNode[] = [...electricityCircuitsZoneNodes]
 

@@ -811,6 +811,16 @@ Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parall
   - Required handling: misconception entry; a scene or worked example that walks the loop from positive terminal back to negative terminal.
 - C-EC-7: Learner treats every straight line in a diagram as a component, calling the connecting wire a "resistor" or a "conductor box".
   - Required handling: misconception entry; at least one question that requires distinguishing the wire from drawn components.
+- C-EC-8: Learner believes each bulb in a series circuit uses up some of the current, so bulbs further round the loop are dimmer because there is less current left. (Covers `physics-electricity-series-parallel`.)
+  - Required handling: misconception entry; at least one numeric-entry question that asks for the ammeter reading at a second point on a series loop and credits only the same value as the first reading.
+- C-EC-9: Learner thinks adding a second bulb in parallel makes both bulbs dimmer, because the bulbs must "share" the cell's energy. (Covers `physics-electricity-series-parallel`.)
+  - Required handling: misconception entry; at least one spot-misconception question presenting the dimming argument.
+- C-EC-10: Learner believes that if one bulb breaks in a series circuit, only that bulb goes out while the others stay lit. (Covers `physics-electricity-series-parallel`.)
+  - Required handling: misconception entry; at least one question (multiple-choice or word problem) that contrasts the broken-bulb outcome in series with the broken-bulb outcome in parallel, plus a scene that shows both side by side.
+- C-EC-11: Learner predicts that current always splits equally at a parallel junction, regardless of the components on each branch. (Covers `physics-electricity-series-parallel`.)
+  - Required handling: misconception entry; at least one numeric-entry question where the two branch currents are unequal and add to the main current.
+- C-EC-12: Learner believes potential differences across parallel branches add up to the cell voltage, the way they do across components in series. (Covers `physics-electricity-series-parallel`.)
+  - Required handling: misconception entry; at least one Challenge tier spot-misconception question that presents the parallel-voltages-add argument.
 
 ### Question shape probes
 
@@ -821,6 +831,10 @@ Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parall
 - Q-EC-5: At least one Challenge tier word problem maps a UK context (torch, bedside lamp, smoke alarm, cycling helmet light) onto the number of 1.5 V cells needed for a stated battery voltage and the matching circuit symbol.
 - Q-EC-6: At least one spot-misconception question presents the voltmeter-in-series argument and asks whether the method is sound.
 - Q-EC-7: At least one drag-order or missing-step question walks the learner around a series-circuit loop, naming each symbol in turn.
+- Q-EC-8: At least one numeric-entry question on the series-parallel node asks for the ammeter reading at a point on a series loop, with the rubric that the answer equals the reading anywhere else on the same loop. (Covers `physics-electricity-series-parallel`.)
+- Q-EC-9: At least three numeric-entry questions on the series-parallel node apply the junction rule (branch currents add up to the main current), spread across Core, Confident, and Challenge tiers, with at least one three-branch instance. (Covers `physics-electricity-series-parallel`.)
+- Q-EC-10: At least one Challenge tier multi-step word problem on the series-parallel node frames a UK context (Christmas fairy lights, kitchen and lounge lighting, school hall lights, cycling helmet light) and requires the learner to infer per-branch current before answering. (Covers `physics-electricity-series-parallel`.)
+- Q-EC-11: At least one labelled-image question on the series-parallel node has the learner place names ("Cell", "Junction", "Lamp", "Branch") on a parallel circuit. (Covers `physics-electricity-series-parallel`.)
 
 ### Tutor probes
 
