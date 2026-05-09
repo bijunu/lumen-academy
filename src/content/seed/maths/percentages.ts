@@ -26,7 +26,7 @@ export const percentagesAsDecimalsFractions: SkillNode = {
       title: 'The Hundred Grid',
       type: 'diagram',
       instructions:
-        'Click squares on the 10 by 10 grid to shade them, and watch the percentage, decimal, and fraction update together.',
+        'Look at how shading on a 10 by 10 grid lines up with a percentage, a decimal, and a fraction. Twenty-five squares shaded means 25%, 0.25, and 1/4. Half the grid is 50%, 0.5, and 1/2. A single square is 1%, 0.01, and 1/100. Per cent means out of one hundred.',
       data: {
         rows: 10,
         columns: 10,
@@ -46,7 +46,7 @@ export const percentagesAsDecimalsFractions: SkillNode = {
       title: 'The Percent Bar',
       type: 'simulation',
       instructions:
-        'Drag the slider along the 0% to 100% bar and read the matching decimal and simplest fraction at every stop.',
+        'See how positions along the 0% to 100% bar match equivalent decimals and simplest fractions. 5% sits at 0.05 or 1/20, 10% at 0.1 or 1/10, 25% at 0.25 or 1/4, half-way at 0.5 or 1/2, and the full bar at 1 whole. Each percentage is just a different name for the same amount.',
       data: {
         bar: { min: 0, max: 100, step: 1, units: '%' },
         markers: [
@@ -66,7 +66,7 @@ export const percentagesAsDecimalsFractions: SkillNode = {
       title: 'Match the Triples',
       type: 'diagram',
       instructions:
-        'Drag each card so that the percentage, decimal, and fraction that name the same amount sit in the same row.',
+        'Read each row across to see how a percentage, a decimal, and a simplest fraction can name the same amount. 50% is 0.5 is 1/2; 25% is 0.25 is 1/4; 12.5% is 0.125 is 1/8. Recognising these triples by sight is faster than re-deriving them every time.',
       data: {
         triples: [
           { percent: '50%', decimal: '0.5', fraction: '1/2' },

@@ -26,7 +26,7 @@ export const algebraIntroduction: SkillNode = {
       title: 'Tile Groups',
       type: 'diagram',
       instructions:
-        'Drag like tiles into the same tray to see how 3a + 2a collects into 5a, while 3a + 2b stays as two separate groups.',
+        'Look at how like tiles gather into the same tray. Three a-tiles and two more a-tiles sit together as 5a, while a-tiles and b-tiles stay in their own groups because they stand for different unknowns.',
       data: {
         tiles: [
           { kind: 'a', count: 3, colour: 'blue' },
@@ -48,7 +48,7 @@ export const algebraIntroduction: SkillNode = {
       title: 'Substitution Slider',
       type: 'simulation',
       instructions:
-        'Drag the slider to set the value of x, and watch the expression 2x + 3 recompute step by step.',
+        'See how the expression 2x + 3 changes as x takes different values. When x is 0 the value is 3, when x is 4 the value is 11, and when x is -2 the value is -1, because each time we double x first and then add 3.',
       data: {
         slider: { min: -5, max: 10, step: 1, default: 4, label: 'x' },
         expression: '2x + 3',
@@ -68,7 +68,7 @@ export const algebraIntroduction: SkillNode = {
       title: 'Write an Expression',
       type: 'diagram',
       instructions:
-        'Click each worded phrase to reveal the matching algebraic expression in compact form.',
+        'Read each worded phrase alongside its matching algebraic expression in compact form. Notice how the times sign disappears between a number and a letter, so 4 times n becomes 4n, and how brackets keep a sum together when it is multiplied as a whole.',
       data: {
         cards: [
           { phrase: 'a number n added to 5', expression: 'n + 5' },

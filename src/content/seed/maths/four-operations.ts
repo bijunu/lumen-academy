@@ -26,7 +26,7 @@ export const negativeNumbersAddSubtract: SkillNode = {
       title: 'Walk the Number Line',
       type: 'number-line',
       instructions:
-        'Drag the marker along the line and watch how adding moves it right and subtracting moves it left.',
+        'Look at how each calculation lays out as a walk along the line. Starting at -3 and adding 5 sends the marker five places to the right and lands on 2. Starting at 2 and subtracting 7 sends it seven places to the left and lands on -5. Subtracting a negative reverses direction once more, so -5 - (-4) lands on -1.',
       data: {
         range: [-10, 10],
         step: 1,
@@ -64,7 +64,7 @@ export const negativeNumbersAddSubtract: SkillNode = {
       title: 'Temperature in Tunbridge Wells',
       type: 'simulation',
       instructions:
-        'Drag the slider to read the temperature for each time of day, then track the change as the hours pass.',
+        'See how the garden temperature in Tunbridge Wells crosses zero through the day. At 6am it sits at -3 with frost on the lawn, climbs to 1 by 9am, peaks at 8 around noon, falls to 4 by 6pm, and dips back to -1 by 11pm. Crossing zero on the thermometer obeys the same rules as crossing zero on a number line.',
       data: {
         contextLabel: 'Overnight to midday in a Tunbridge Wells back garden',
         unit: 'degrees Celsius',
@@ -86,7 +86,7 @@ export const negativeNumbersAddSubtract: SkillNode = {
       title: 'Counter Pairs',
       type: 'diagram',
       instructions:
-        'Click each pair of one positive and one negative counter to see them cancel out, then read the answer from whatever is left.',
+        'Look at how a positive counter and a negative counter cancel out as a pair, leaving zero behind. For 5 + (-3), three pairs cancel and two positives remain, giving 2. For 6 + (-8), six pairs cancel and two negatives are left over, giving -2. The answer is whatever the surviving colour says.',
       data: {
         positiveColour: '#22C55E',
         negativeColour: '#EF4444',

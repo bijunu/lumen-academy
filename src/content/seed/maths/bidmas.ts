@@ -26,7 +26,7 @@ export const bidmasOrderOfOperations: SkillNode = {
       title: 'Build the Calculation',
       type: 'simulation',
       instructions:
-        'Drag the operator tiles into the queue and watch the running total change as you reorder them.',
+        'See how the running total changes when the operator tiles sit in different orders. Reading 6, then + 4, then x 3, then - 2 strictly left to right gives 28, but BIDMAS does the multiply first and lands on 16. The order in which the operations happen really does change the answer.',
       data: {
         startingNumber: 6,
         operatorTiles: [
@@ -57,7 +57,7 @@ export const bidmasOrderOfOperations: SkillNode = {
       title: 'The BIDMAS Ladder',
       type: 'diagram',
       instructions:
-        'Click each rung of the ladder to see which operations belong on that level.',
+        'Read down the rungs of the BIDMAS ladder to see which operations belong on each level. Brackets sit at the top, then indices, then division and multiplication share a rung, and addition and subtraction share the bottom rung. Operations on the same rung are worked left to right in the order they appear.',
       data: {
         rungs: [
           {

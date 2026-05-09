@@ -25,7 +25,7 @@ export const coordinatesGrid: SkillNode = {
       title: 'The First Quadrant Grid',
       type: 'diagram',
       instructions:
-        'Click any point on the grid to read its coordinates as an (x, y) pair, with x along the bottom and y up the side.',
+        'Read each marked point as an (x, y) pair, with x measured along the bottom and y measured up the side. The origin sits at (0, 0), point B at (3, 0) lies on the x axis, and point C at (0, 4) lies on the y axis. Always count from the origin and write x first.',
       data: {
         gridConfig: { xMin: 0, xMax: 6, yMin: 0, yMax: 6, step: 1 },
         markedPoints: [
@@ -44,7 +44,7 @@ export const coordinatesGrid: SkillNode = {
       title: 'Plot a Point with Sliders',
       type: 'simulation',
       instructions:
-        'Drag the x slider and the y slider, and watch the marker move on the grid as the coordinate updates.',
+        'See how the marker sits on the grid as the x and y values change. A negative x value places the marker left of the y axis, and a negative y value places it below the x axis. The point (3, 2) sits in the top-right quadrant, while (-3, -1) sits in the bottom-left.',
       data: {
         gridConfig: { xMin: -5, xMax: 5, yMin: -5, yMax: 5, step: 1 },
         sliders: [
@@ -53,10 +53,10 @@ export const coordinatesGrid: SkillNode = {
         ],
         readouts: ['coordinatePair', 'quadrantName'],
         targetPositions: [
-          { label: 'Move to (3, 2)', x: 3, y: 2 },
-          { label: 'Move to (-2, 4)', x: -2, y: 4 },
-          { label: 'Move to (-3, -1)', x: -3, y: -1 },
-          { label: 'Move to (4, -2)', x: 4, y: -2 },
+          { label: 'Reach (3, 2)', x: 3, y: 2 },
+          { label: 'Reach (-2, 4)', x: -2, y: 4 },
+          { label: 'Reach (-3, -1)', x: -3, y: -1 },
+          { label: 'Reach (4, -2)', x: 4, y: -2 },
         ],
         callout:
           'A negative x value moves the marker left of the y axis. A negative y value moves it below the x axis. The origin (0, 0) is where both axes meet.',
@@ -67,7 +67,7 @@ export const coordinatesGrid: SkillNode = {
       title: 'The Four Quadrants',
       type: 'diagram',
       instructions:
-        'Click each quadrant to highlight it and see which signs of x and y belong there.',
+        'Look at how the four quadrants are arranged around the origin. Quadrant 1 sits top right with both x and y positive, then the numbering goes anticlockwise: Quadrant 2 top left, Quadrant 3 bottom left, Quadrant 4 bottom right. The signs of x and y flip as you cross each axis.',
       data: {
         gridConfig: { xMin: -5, xMax: 5, yMin: -5, yMax: 5, step: 1 },
         quadrants: [
