@@ -91,6 +91,46 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - T-FRAC-5: After three wrong attempts in a row paired with negative sentiment, the tutor offers a break or an easier sibling node and the frustration signal is logged for the parent digest.
 - T-FRAC-6: Given a request for an inline definition (tap on "denominator"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Numerica > Four Operations
+
+Covers `maths-four-operations-negative-numbers-add-subtract` plus future four-operations nodes (multiplying and dividing negatives, formal written methods on multi-digit integers, choosing the operation in word problems, mixed-operation chains).
+
+### Content probes
+
+- C-4OP-1: Learner believes the "two negatives make a positive" rule applies to addition and subtraction, so writes `(-6) + (-7) = +13` or similar.
+  - Required handling: misconception entry; at least one numeric, MCQ, or spot-misconception question whose distractors include the wrongly positive answer.
+- C-4OP-2: Learner believes a negative number with a larger digit is greater than one with a smaller digit (treats `-12 > -5` because `12 > 5`).
+  - Required handling: misconception entry; at least one comparison or ordering question that pairs negatives whose magnitudes invert the order.
+- C-4OP-3: Learner believes that subtraction can never produce a result larger than the starting number, even when subtracting a negative.
+  - Required handling: misconception entry; at least one Confident or Challenge question whose stem invites the learner to recognise that `5 - (-4) > 5`.
+- C-4OP-4: Learner believes you cannot subtract a larger number from a smaller, so treats `6 - 9` as impossible or reverses it to `9 - 6 = 3`.
+  - Required handling: misconception entry; at least one numeric or MCQ question that crosses zero on a single subtraction.
+- C-4OP-5: Learner computes a signed sum by ignoring the signs, adding the digits, then attaching a sign at the end somewhat arbitrarily (so `-3 + 5` becomes `8` or `-8`).
+  - Required handling: misconception entry; at least one MCQ whose distractors include the magnitude-only and the magnitude-with-wrong-sign answers.
+- C-4OP-6: Learner treats two adjacent minus signs as a single minus, reading `5 - (-3)` as `5 - 3` instead of `5 + 3`.
+  - Required handling: misconception entry; at least one Confident or Challenge question that exposes the double-sign trap, plus a worked example or missing-step question that walks through the rewriting.
+- C-4OP-7: Learner relies on a memorised "rule" rather than the number-line picture, so cannot adapt when the calculation chains together more than two terms.
+  - Required handling: a scene or worked example that explicitly walks a multi-term calculation on the number line or via counter pairs; at least one Challenge question whose stem has three or more directed-number steps.
+
+### Question shape probes
+
+- Q-4OP-1: At least one MCQ tests addition of two negatives where the wrongly positive answer is among the distractors.
+- Q-4OP-2: At least one numeric-entry question requires subtracting a negative (i.e. computing `a - (-b)` for given integers).
+- Q-4OP-3: At least one comparison or ordering question (MCQ or drag-order) pairs negative numbers whose magnitudes invert the value order.
+- Q-4OP-4: At least one numeric-entry question crosses zero on a single subtraction (subtracting a larger positive from a smaller positive).
+- Q-4OP-5: At least one Challenge tier word problem requires a three-or-more-step directed-number calculation in a UK context (temperature change across the day, submarine depth, bank balance, lift floors).
+- Q-4OP-6: At least one missing-step or worked-example question walks through the rewriting of a `- (-N)` term into `+ N` before evaluating.
+- Q-4OP-7: At least one spot-misconception question presents a "two negatives make a positive" or "larger digit means larger negative" argument and asks whether the reasoning is sound.
+- Q-4OP-8: At least one slider-explore or number-line-anchored question asks the learner to place an integer (positive or negative) on a marked number line.
+
+### Tutor probes
+
+- T-4OP-1: Given "I worked out (-6) + (-7) and got +13 because two negatives make a positive", the tutor's first reply is a Socratic prompt about what each negative does on the number line, not a direct correction.
+- T-4OP-2: Given a wrong answer matching the larger-negative-bigger trigger (for example "-12 is greater than -5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-4OP-3: Given "I do not understand why 5 - (-3) is 8. Can you just tell me?", the tutor declines a direct answer and offers a scaffolded number-line walk.
+- T-4OP-4: Given an off-topic input (for example a question about US sports scores or temperatures in fahrenheit), the tutor steers back to UK context directed numbers politely.
+- T-4OP-5: Given a request for an inline definition (tap on "integer", "directed number", or "negative"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > Place Value
 
 Covers `maths-place-value-whole-numbers` plus future place value nodes (large-number reading, rounding to powers of 10, ordering and comparing).

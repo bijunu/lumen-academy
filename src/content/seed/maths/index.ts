@@ -22,6 +22,10 @@ import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
+import {
+  negativeNumbersAddSubtract,
+  fourOperationsZoneNodes,
+} from './four-operations'
 
 export {
   whatIsAFraction,
@@ -48,6 +52,8 @@ export {
   sequencesZoneNodes,
   coordinatesGrid,
   coordinatesZoneNodes,
+  negativeNumbersAddSubtract,
+  fourOperationsZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -62,6 +68,7 @@ export const mathsNodes: SkillNode[] = [
   ...algebraZoneNodes,
   ...sequencesZoneNodes,
   ...coordinatesZoneNodes,
+  ...fourOperationsZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -130,5 +137,11 @@ export const mathsZones: Zone[] = [
     name: 'Coordinates',
     realm: 'numerica',
     nodeIds: coordinatesZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-four-operations',
+    name: 'Four Operations',
+    realm: 'numerica',
+    nodeIds: fourOperationsZoneNodes.map(n => n.id),
   },
 ]
