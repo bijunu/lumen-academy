@@ -667,6 +667,14 @@ Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-change
   - Required handling: misconception entry; at least one numeric-entry question that requires conservation of mass through melting, freezing or boiling.
 - C-PM-7: Learner confuses melting with dissolving, describing sugar as having "melted" in tea.
   - Required handling: misconception entry on a sibling node (state changes or solutions) once that node is authored. Not blocking for `chemistry-particle-model-states`.
+- C-PM-8: Learner believes diffusion only happens when a liquid is stirred or a draught moves the air. Without a push the particles stay still.
+  - Required handling: misconception entry on `chemistry-particle-model-diffusion`; at least one MCQ or spot-misconception whose distractors include the needs-stirring answer; at least one example of dye spreading in still water or a smell crossing a still room.
+- C-PM-9: Learner believes a heavy gas (such as bromine) sinks and never mixes upward into the lighter air above it.
+  - Required handling: misconception entry on `chemistry-particle-model-diffusion`; at least one question on the bromine demonstration whose distractors include the gas-stays-down answer.
+- C-PM-10: Learner believes the rate of diffusion is independent of temperature, or explains a faster rate at higher temperature by saying particles "get bigger" rather than "move faster".
+  - Required handling: misconception entry on `chemistry-particle-model-diffusion`; at least one Challenge tier question whose distractors include the bigger-particles or temperature-no-effect answer.
+- C-PM-11: Learner believes diffusion happens at the same rate in solids, liquids and gases.
+  - Required handling: misconception entry on `chemistry-particle-model-diffusion`; at least one MCQ that asks the learner to compare diffusion rates across the three states.
 
 ### Question shape probes
 
@@ -679,6 +687,10 @@ Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-change
 - Q-PM-7: At least one Challenge tier MCQ approaches early KS4 territory by linking faster particle motion in a sealed container to an increase in gas pressure.
 - Q-PM-8: At least one missing-step worked example hides the "particles spread out and fill the available space" or "particles break away from each other" step in a diffusion or boiling explanation.
 - Q-PM-9: At least one spot-misconception question presents the bigger-particles or gas-falls-because-of-gravity argument and asks whether the reasoning is sound.
+- Q-PM-10: At least one MCQ on `chemistry-particle-model-diffusion` defines diffusion as net random movement from high to low concentration, with a "needs stirring" or "carried by a current" distractor.
+- Q-PM-11: At least one drag-order or comparison question on `chemistry-particle-model-diffusion` ranks scenes by rate (cold liquid, room-temperature liquid, warm gas) so the learner has to apply both state and temperature effects.
+- Q-PM-12: At least one Challenge tier word problem on `chemistry-particle-model-diffusion` involves a UK domestic or laboratory context (kitchen, fume cupboard, garden centre, school lab) and requires reasoning about why temperature changes the rate.
+- Q-PM-13: At least one missing-step question on `chemistry-particle-model-diffusion` hides the "net movement from high to low concentration" or "faster particles collide more often" step in a diffusion explanation.
 
 ### Tutor probes
 
@@ -687,6 +699,8 @@ Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-change
 - T-PM-3: Given "If 30 g of ice melts, how much water do I get?", the tutor scaffolds the learner toward conservation of mass without simply stating "30 g".
 - T-PM-4: Given an off-topic input (for example a question about Fahrenheit temperatures or US weather), the tutor steers back to UK KS3 particle model language and Celsius politely.
 - T-PM-5: Given a request for an inline definition (tap on "particle" or "state of matter"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PM-6: Given "the perfume only spreads because there is a draught in the room", the tutor's first reply is a Socratic prompt about whether particles can move on their own, not a flat correction.
+- T-PM-7: Given "the dye spreads faster in hot water because the particles get bigger", the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 
 ## Zone: Elementia > Separating Mixtures
 

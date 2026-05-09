@@ -253,10 +253,10 @@
 - **OCR**: _GCSE Chemistry spec ref_
 
 #### Diffusion (Confident, `chemistry-particle-model-diffusion`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The particulate nature of matter)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: Diffusion in terms of the particle model (the random movement of particles from a region of high concentration to a region of low concentration).
+- **AQA**: 4.2.2.2 Diffusion (8462)
+- **Edexcel**: Topic 1.13 Diffusion in terms of the particle model (1CH0)
+- **OCR**: C1.1d Diffusion and the particle model (J248 Gateway Chemistry)
 
 ### Zone: Separating Mixtures (`chemistry-separating-mixtures`)
 
