@@ -13,6 +13,7 @@ import { SliderExplore } from './SliderExplore'
 import { Sketch } from './Sketch'
 import { DragDropBuilder } from './DragDropBuilder'
 import { DataExtraction } from './DataExtraction'
+import { LabelledImage } from './LabelledImage'
 import { QuestionFeedback } from './QuestionFeedback'
 import { Badge } from '@/components/ui/badge'
 
@@ -144,6 +145,14 @@ export function QuestionShell({
 
       {question.type === 'data-extraction' && (
         <DataExtraction
+          question={question}
+          disabled={isAnswered}
+          onSubmit={result => submit(result)}
+        />
+      )}
+
+      {question.type === 'labelled-image' && (
+        <LabelledImage
           question={question}
           disabled={isAnswered}
           onSubmit={result => submit(result)}

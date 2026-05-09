@@ -19,9 +19,29 @@ export interface MasteryRule {
 export interface InteractiveScene {
   id: string
   title: string
-  type: 'fraction-wall' | 'number-line' | 'diagram' | 'simulation'
+  type:
+    | 'fraction-wall'
+    | 'number-line'
+    | 'diagram'
+    | 'simulation'
+    | 'labelled-diagram'
   instructions: string
   data: Record<string, unknown>
+}
+
+export interface LabelledDiagramHotspot {
+  id: string
+  x: number
+  y: number
+  label: string
+  description?: string
+}
+
+export interface LabelledDiagramSceneData {
+  svg?: string
+  image?: string
+  viewBox?: string
+  hotspots: LabelledDiagramHotspot[]
 }
 
 export interface WorkedExample {
@@ -119,6 +139,22 @@ export interface SketchQuestion extends QuestionBase {
   correctPoints: [number, number][]
 }
 
+export interface LabelledImageHotspot {
+  id: string
+  x: number
+  y: number
+  correctLabel: string
+}
+
+export interface LabelledImageQuestion extends QuestionBase {
+  type: 'labelled-image'
+  svg?: string
+  image?: string
+  viewBox?: string
+  hotspots: LabelledImageHotspot[]
+  labels: string[]
+}
+
 export type Question =
   | MultipleChoiceQuestion
   | NumericEntryQuestion
@@ -130,6 +166,7 @@ export type Question =
   | MissingStepQuestion
   | DataExtractionQuestion
   | SketchQuestion
+  | LabelledImageQuestion
 
 export interface SkillNode {
   id: string
@@ -180,4 +217,8 @@ export function isDragOrder(q: Question): q is DragOrderQuestion {
 
 export function isSpotMisconception(q: Question): q is SpotMisconceptionQuestion {
   return q.type === 'spot-misconception'
+}
+
+export function isLabelledImage(q: Question): q is LabelledImageQuestion {
+  return q.type === 'labelled-image'
 }

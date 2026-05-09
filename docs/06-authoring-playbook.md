@@ -70,8 +70,9 @@ A scene is the first thing a learner meets on a node. It must run before any sym
 
 - At least one scene per node is interactive in a non-trivial way: drag-sort, slider scrub, sketch, click to explore, or rotate. A static diagram is not enough on its own.
 - Scene `instructions` are a single sentence in the imperative ("Drag the markers ...", "Click on the bars ...").
-- Scene data conforms to the typed shape for that scene type (see `src/types/content.ts`).
+- Scene data conforms to the typed shape for that scene type (see `src/types/content.ts` and `docs/02-content-schema.md`).
 - A learner who completes the scenes but reads nothing else should leave with the right intuition for the concept.
+- For Vitalia, Elementia, and Mechanica nodes: at least one scene per node should be `labelled-diagram` (the workhorse science scene type). Use it for cell anatomy, body system overviews, molecule structures, particle diagrams, circuit layouts, and force diagrams. Author hotspots with concrete labels; reserve `description` for a single-sentence note on what the part does.
 
 ### Worked examples
 
@@ -92,6 +93,7 @@ Quotas per node, by type:
 - Slider-explore: required where the topic is a continuous relationship (ratio, percentage of, gravity, current and voltage, pH); optional otherwise
 - Data-extraction: 1 or more where the KS3 objective involves charts, tables, or graph reading
 - Sketch: required for coordinate-geometry and graph nodes
+- Labelled-image: required for biology body-system and cell-anatomy nodes; encouraged for chemistry molecule structure and physics circuit identification. Pool size at most twice the hotspot count (more distractors than that drift into trivia)
 - Free-text: optional, encouraged for science "explain why" questions
 - At least one Challenge tier word problem in numeric-entry or multiple-choice format
 

@@ -5,6 +5,7 @@ import { useSession } from 'next-auth/react'
 import type { SkillNode } from '@/types/content'
 import type { HintLevel } from '@/types/tutor'
 import { FractionWall } from '@/components/scenes/FractionWall'
+import { LabelledDiagram } from '@/components/scenes/LabelledDiagram'
 import { WorkedExample } from './WorkedExample'
 import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
@@ -151,6 +152,8 @@ export function NodeLearningFlow({
         </header>
         {scene.type === 'fraction-wall' ? (
           <FractionWall scene={scene} onComplete={advanceScene} />
+        ) : scene.type === 'labelled-diagram' ? (
+          <LabelledDiagram scene={scene} onComplete={advanceScene} />
         ) : (
           <div className="space-y-3 rounded-lg border p-4">
             <p className="text-sm">{scene.instructions}</p>

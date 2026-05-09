@@ -397,6 +397,17 @@ function pushQuestionText(q: Question, out: TextField[]) {
         text: q.dataSource,
       })
       break
+    case 'labelled-image':
+      q.labels.forEach((label, i) =>
+        out.push({ source: `question[${q.id}].labels[${i}]`, text: label })
+      )
+      q.hotspots.forEach((h, i) =>
+        out.push({
+          source: `question[${q.id}].hotspots[${i}].correctLabel`,
+          text: h.correctLabel,
+        })
+      )
+      break
     default:
       break
   }
