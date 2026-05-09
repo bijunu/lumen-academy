@@ -72,11 +72,19 @@ export default async function ParentPage() {
 
   return (
     <div className="space-y-6">
-      <p className="text-sm text-muted-foreground">
-        Signed in as <strong>{session.user.email}</strong>. Last 7 days,{' '}
-        {weeklyTime.dailyMinutes[0].day} to{' '}
-        {weeklyTime.dailyMinutes[WEEKLY_TIME_DAYS - 1].day}.
-      </p>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="text-sm text-muted-foreground">
+          Signed in as <strong>{session.user.email}</strong>. Last 7 days,{' '}
+          {weeklyTime.dailyMinutes[0].day} to{' '}
+          {weeklyTime.dailyMinutes[WEEKLY_TIME_DAYS - 1].day}.
+        </p>
+        <Link
+          href="/parent/digest"
+          className="text-sm font-medium text-primary hover:underline"
+        >
+          Preview weekly digest
+        </Link>
+      </div>
 
       <Card>
         <CardHeader>
