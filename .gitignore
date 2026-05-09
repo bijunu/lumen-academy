@@ -79,3 +79,6 @@ public/worker-*.js
 *.local
 .cache/
 .turbo/
+
+# ---- Slice protocol session state (per-worktree, see docs/07-slice-protocol.md) ----
+.claude/slice-state.json

@@ -15,12 +15,14 @@ This skill produces ONE node per invocation. If the user asks for "a zone", conf
 Read these files in order. Do not skip; the rubric is the contract.
 
 1. `docs/00-build-prompt.md` — product scope and curriculum coverage.
-2. `src/types/content.ts` — exact `SkillNode` shape; output must conform. Five `InteractiveScene` types are supported; the workhorses for chemistry are `labelled-diagram` (clickable hotspots reveal labels) and `simulation`. The `labelled-image` question type pairs with `labelled-diagram` for assessment. If you need a particle-model heat-slider simulator or a periodic-table picker, stop and ask the user.
-3. `docs/05-reference-shelf.md` — what to take from CGP KS3 Chemistry, DfE Science programme of study, AQA / Edexcel / OCR GCSE Chemistry specs and examiner reports, plus product cues.
-4. `docs/06-authoring-playbook.md` — the must-pass rubric.
-5. `docs/04-eval-set.md` — locate the zone section. Confirm `C-...` coverage; satisfy `Q-...` probes. If absent, draft probes alongside the node.
-6. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim.
-7. `src/content/seed/maths/fractions.ts` — structural template only (study the file shape, not the maths-specific content).
+2. `src/types/content.ts` — exact `SkillNode` shape; output must conform.
+3. `docs/02-content-schema.md` — the data shape AND the "Renderer support matrix" at the bottom. You MUST consult the matrix before writing any scene `instructions`. For Elementia the workhorse is `labelled-diagram` (interactive hotspots) paired with `labelled-image` (drag-label questions). Promising "click" or "drag" on a non-interactive scene type is a hard blocker (caught by pre-commit linter rule R4).
+4. `docs/07-slice-protocol.md` — the slice loop, the `.claude/slice-state.json` contract, and the script reference. Run `scripts/slice-init.sh chemistry <nodeId>` BEFORE drafting (see Workflow below).
+5. `docs/05-reference-shelf.md` — what to take from CGP KS3 Chemistry, DfE Science programme of study, AQA / Edexcel / OCR GCSE Chemistry specs and examiner reports, plus product cues.
+6. `docs/06-authoring-playbook.md` — the must-pass rubric.
+7. `docs/04-eval-set.md` — locate the zone section. Confirm `C-...` coverage; satisfy `Q-...` probes. If absent, draft probes alongside the node.
+8. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim.
+9. An existing chemistry seed file (e.g. `src/content/seed/chemistry/particle-model.ts`) — structural template only.
 
 Note: Bond 11+ does not cover chemistry. Stretch references for Elementia are CGP KS3, examiner reports, and early KS4 GCSE Chemistry Foundation tier.
 
@@ -69,11 +71,13 @@ Challenge tier draws from CGP KS3 stretch boxes and early KS4 GCSE Chemistry Fou
 
 ### Scene type guidance
 
-Supported scene types: `fraction-wall`, `number-line`, `diagram`, `simulation`, `labelled-diagram`. For Elementia, **`labelled-diagram` is the workhorse** — use it for laboratory apparatus (Bunsen burner parts, distillation set-up, filter funnel and conical flask), simple molecule structures (water, methane, oxygen, carbon dioxide as ball-and-stick), particle-arrangement diagrams (solid / liquid / gas particle layouts as snapshots), and the periodic-table layout (group / period hotspots). Pair it with `labelled-image` so the learner places labels onto the same diagram for assessment.
+Read the **"Renderer support matrix"** in `docs/02-content-schema.md` first. Today only `fraction-wall` and `labelled-diagram` are interactive renderers; `number-line`, `diagram`, and `simulation` render to a static "Continue" card.
 
-Reach for `simulation` only when the topic genuinely needs a continuous slider (heat-driven state-change, pH-scale slider). Use `diagram` (the unstyled fallback) only when neither labelled-diagram nor simulation fits.
+For Elementia, **`labelled-diagram` is the workhorse** — use it for laboratory apparatus (Bunsen burner parts, distillation set-up, filter funnel and conical flask), simple molecule structures (water, methane, oxygen, carbon dioxide as ball-and-stick), particle-arrangement diagrams (solid / liquid / gas particle layouts as snapshots), and the periodic-table layout (group / period hotspots). Action verbs ("click each marker", "click to reveal") are allowed and expected on `labelled-diagram`. Pair it with `labelled-image` so the learner places labels onto the same diagram for assessment.
 
-Slider-explore questions are required where the topic is continuous (pH scale, temperature in state-change). Data-extraction questions are required for any node involving reading mass-of-product or volume tables. Sketch questions can supplement for particle-arrangement drawing-from-memory.
+If a topic genuinely needs a continuous slider (heat-driven state-change, pH-scale slider), surface a renderer request via `handoffNotes` in `.claude/slice-state.json`. If you ship a `simulation` or `diagram` scene anyway, write `instructions` as readable narrative — no "click", "drag", "tap", "move", or "drop".
+
+Slider-explore questions (different from `simulation` scenes — questions render interactively) are required where the topic is continuous (pH scale, temperature in state-change). Data-extraction questions are required for any node involving reading mass-of-product or volume tables. Sketch questions can supplement for particle-arrangement drawing-from-memory.
 
 ## Worktree boundaries
 
@@ -95,21 +99,29 @@ If you find you need a new scene type, question type, schema field, or shared co
 
 ## Workflow
 
+0. **Slice init.** From the chemistry worktree (`~/lumen-academy-chemistry`), run `scripts/slice-init.sh chemistry <nodeId>` (e.g. `scripts/slice-init.sh chemistry chemistry-particle-model-diffusion`). This resets the branch to `origin/main` and writes `.claude/slice-state.json` with `status="drafting"`. Update `nodeTitle` and `tier` in the file once you know them.
 1. Confirm topic (zone + node concept), proposed node id (e.g. `chemistry-particle-model-states`), tier.
 2. Read all required docs.
 3. Locate KS3 objective in DfE Science programme of study; copy verbatim.
 4. Source 2+ GCSE Chemistry spec refs from AQA, Edexcel, OCR.
-5. For each misconception, source from CGP KS3 Chemistry, examiner report, or DfE exemplar. Cite in a code comment. At most 1 unsourced entry per node.
+5. For each misconception, source from CGP KS3 Chemistry, examiner report, or DfE exemplar. Cite in a code comment. At most 1 unsourced entry per node. The pre-commit linter rule R2 blocks any `(verify ...)` placeholder; pin sources before committing.
 6. Draft the `SkillNode`:
-   - 3+ scenes; at least one interactive
-   - 2+ worked examples; second has a missing step
-   - 20+ questions, tier mix 6 to 8 / 6 to 8 / 4 to 6
+   - 3+ scenes; consult the renderer matrix in `docs/02-content-schema.md` for `instructions` voice.
+   - 2+ worked examples; second has a missing step.
+   - 20+ questions, tier mix 6 to 8 / 6 to 8 / 4 to 6.
    - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1+ drag, 1+ missing-step. **Labelled-image encouraged for molecule structure, periodic-table-region, and apparatus identification nodes.** Slider-explore required for pH and state-change topics. Data-extraction required for any reading-from-table topic. Sketch optional for particle-arrangement drawings.
    - 6+ misconceptions, sourced.
    - Challenge tier includes at least one early KS4 Foundation level item.
-7. Run `npm run eval-content`. Fix every FAIL.
-8. Write handoff note (under 200 words).
-9. Stop. Hand off to the user.
+   - MCQ correctIndex distribution: rotate across A/B/C/D so no single position dominates. Linter rule R5 blocks any single position holding more than 50% of correctIndex values when MCQ count >= 6.
+7. Pre-checks (run all four; fix every failure):
+   - `npm run lint:content` (em dashes, source placeholders, US spellings, scene-instruction match, MCQ position distribution)
+   - `npm run eval-content` (rubric validator)
+   - `npm run typecheck`
+   - `npm run lint`
+8. Add the curriculum-map row to `docs/03-curriculum-map.md` (your zone's section) and any new `C-...` / `Q-...` probes to `docs/04-eval-set.md`.
+9. Write handoff note (under 200 words). Place it in the `handoffNotes` array in `.claude/slice-state.json`.
+10. **Commit (do NOT push).** `git add` the scoped files (your seed file, `src/content/seed/chemistry/index.ts`, the curriculum-map row, the eval-set probes) and commit. The pre-commit hook will run the content linter automatically.
+11. **Update `.claude/slice-state.json`**: `status="ready-for-review"`. Then report ready to the infra-owner. Do not push or open a PR — the infra-owner runs `scripts/slice-finish.sh chemistry` after review.
 
 ## Rubric reminder
 
@@ -127,8 +139,9 @@ If you find you need a new scene type, question type, schema field, or shared co
 - Do not invent awarding-body refs.
 - Do not include content depending on GCSE Higher prior knowledge (electron configuration beyond shells, mole calculations, redox).
 - Do not introduce US units (Fahrenheit, gallons) or US chemistry names ("baking soda" is acceptable; "a quarter-cup of vinegar" is not — use millilitres).
-- Do not extend the content schema, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Flag the need; the infra-owner session handles shared changes.
-- Do not seed Atlas or commit; user runs both after review.
+- Do not extend the content schema, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Surface the need via `handoffNotes` in `.claude/slice-state.json`; the infra-owner session handles shared changes.
+- Do not push or open a PR. Commit, but stop short of `git push` and `gh pr create` — the infra-owner runs `scripts/slice-finish.sh chemistry` after review.
+- Do not seed Atlas. The infra-owner runs `npm run seed -- --subject=chemistry` after merge.
 
 ## Output and handoff
 

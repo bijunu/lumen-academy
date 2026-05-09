@@ -92,3 +92,39 @@ Groups of related SkillNodes within a realm, with an optional boss node.
 ## Realm
 
 One of the four subject areas, containing multiple zones.
+
+## Renderer support matrix
+
+Single source of truth for which scene and question types are interactive vs static today. Author skills MUST consult this matrix before writing scene `instructions` text. Authors MUST NOT promise interactions the renderer cannot deliver — the slice-2 review cycle blocked four nodes for this exact failure.
+
+### Scene types
+
+| Scene `type` | Renderer | Author guidance for `instructions` |
+|---|---|---|
+| `fraction-wall` | Interactive (click to highlight bars) | Action verbs OK: "Click each bar to highlight it." |
+| `labelled-diagram` | Interactive (SVG with click-to-reveal hotspots) | Action verbs OK: "Click each marker to reveal..." |
+| `number-line` | Static (renders to a generic Continue card) | Narrative only: "Look at how each calculation is laid out as jumps on the line. Three jumps of -4 land on -12..." NO "drag", "click", "tap". |
+| `diagram` | Static (renders to a generic Continue card) | Narrative only. Treat as a labelled illustration the learner reads, not a thing they manipulate. |
+| `simulation` | Static (renders to a generic Continue card unless the node ships its own bespoke renderer) | Narrative only. If a node truly needs a bespoke simulation renderer, surface that as an infra request to the main checkout — do not write action-promising copy hoping a future renderer fills the gap. |
+
+### Question types
+
+| Question `type` | Renderer status |
+|---|---|
+| `multiple-choice` | Interactive (numbered keyboard selection 1-9) |
+| `numeric-entry` | Interactive (text field with optional unit + tolerance) |
+| `drag-order` | Interactive (drag to reorder list items) |
+| `spot-misconception` | Interactive (click the unsound statement) |
+| `slider-explore` | Interactive (drag a slider to a target value) |
+| `free-text` | Interactive (free-text with keyword matching) |
+| `drag-drop-builder` | Interactive (drag tokens onto a build target) |
+| `missing-step` | Interactive (fill the hidden step in a worked example) |
+| `data-extraction` | Interactive (read values off a chart or paragraph) |
+| `sketch` | Interactive (sketch on a coordinate grid) |
+| `labelled-image` | Interactive (drag labels onto SVG hotspots) |
+
+All eleven question types render interactively today. The matrix exists primarily for **scenes**, where the gap between authored intent and renderer reality has been the dominant failure mode.
+
+### When the matrix changes
+
+Adding a new interactive scene type (e.g. shipping a real `number-line` renderer) is an infra change owned by the main checkout. Update this matrix in the same PR. Author skills key off this matrix; they should not lag the renderer.

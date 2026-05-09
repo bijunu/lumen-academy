@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Lumen Academy pre-commit hook.
+# Activated by `npm install`'s prepare script which runs `git config core.hooksPath .githooks`.
+# See docs/07-slice-protocol.md for what this enforces and how to keep it honest.
+
+set -euo pipefail
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+# Run the content linter against staged seed files.
+# Linter exits 0 if zero blockers, 1 otherwise.
+node "$REPO_ROOT/scripts/lint-content.mjs" --staged

@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/bijunu/lumen-academy/.slice-state.schema.json",
+  "title": "Lumen Academy slice state",
+  "description": "Per-worktree session state for the parallel-authoring slice loop. Lives at .claude/slice-state.json (gitignored). See docs/07-slice-protocol.md for the workflow.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "subject",
+    "nodeId",
+    "nodeTitle",
+    "zoneId",
+    "tier",
+    "seedFilePath",
+    "status",
+    "startedAt"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer",
+      "const": 1,
+      "description": "Schema version. Bump when the shape changes incompatibly."
+    },
+    "subject": {
+      "type": "string",
+      "enum": ["maths", "biology", "chemistry", "physics"]
+    },
+    "nodeId": {
+      "type": "string",
+      "pattern": "^(maths|biology|chemistry|physics)-[a-z0-9-]+$",
+      "description": "Stable node id, matches the SkillNode.id in the seed file."
+    },
+    "nodeTitle": {
+      "type": "string",
+      "minLength": 3
+    },
+    "zoneId": {
+      "type": "string",
+      "pattern": "^(maths|biology|chemistry|physics)-[a-z0-9-]+$"
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["core", "confident", "challenge"]
+    },
+    "seedFilePath": {
+      "type": "string",
+      "pattern": "^src/content/seed/(maths|biology|chemistry|physics)/[a-z0-9-]+\\.ts$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "drafting",
+        "ready-for-review",
+        "reviewed-pass",
+        "reviewed-revise",
+        "reviewed-reject",
+        "shipped"
+      ]
+    },
+    "startedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastReviewVerdict": {
+      "type": ["string", "null"],
+      "enum": ["pass", "revise", "reject", null]
+    },
+    "lastReviewFindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["severity", "rule", "message"],
+        "properties": {
+          "severity": {
+            "type": "string",
+            "enum": ["blocker", "major", "minor", "info"]
+          },
+          "rule": {
+            "type": "string",
+            "description": "Identifier for the rule or pillar that flagged the finding."
+          },
+          "message": {
+            "type": "string"
+          },
+          "fileLine": {
+            "type": "string",
+            "description": "Optional file:line reference for navigation."
+          },
+          "suggestedFix": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "lastReviewSummary": {
+      "type": ["string", "null"]
+    },
+    "handoffNotes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Free-form notes from the author session to the infra-owner: requested infra changes, schema gaps, renderer asks, etc."
+    },
+    "shippedPr": {
+      "type": ["integer", "null"],
+      "minimum": 1
+    },
+    "shippedCommit": {
+      "type": ["string", "null"],
+      "pattern": "^[0-9a-f]{7,40}$"
+    }
+  }
+}

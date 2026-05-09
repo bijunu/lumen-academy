@@ -5,9 +5,10 @@ UK KS3 learning web app for a Year 7 grammar school student. Desktop primary.
 ## Read these first
 - docs/00-build-prompt.md is the source of truth for product scope
 - docs/01-tutor-system-prompt.md is the AI tutor system prompt, do not modify without asking
-- docs/02-content-schema.md defines the data shape for skill nodes
+- docs/02-content-schema.md defines the data shape for skill nodes (and the renderer support matrix all author skills key off)
 - docs/05-reference-shelf.md lists the curriculum and product sources Lumen benchmarks against, with what to take and leave from each
 - docs/06-authoring-playbook.md is the rubric every skill node must pass before it ships
+- docs/07-slice-protocol.md is the slice loop spec for parallel-authoring sessions (`.claude/slice-state.json` contract, scripts, boundaries)
 
 ## Hard rules
 - Stack: Next.js 14 App Router, TypeScript, Tailwind, shadcn/ui, MongoDB Atlas

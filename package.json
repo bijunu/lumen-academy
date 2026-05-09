@@ -10,12 +10,14 @@
     "build": "next build && cp -r .next/static .next/standalone/.next/static",
     "start": "HOSTNAME=0.0.0.0 node .next/standalone/server.js",
     "lint": "next lint",
+    "lint:content": "node scripts/lint-content.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "seed": "tsx --env-file=.env.local scripts/seed-content.ts",
     "ensure-indexes": "tsx --env-file=.env.local scripts/ensure-indexes.ts",
-    "eval-content": "tsx scripts/eval-content.ts"
+    "eval-content": "tsx scripts/eval-content.ts",
+    "prepare": "git config core.hooksPath .githooks 2>/dev/null || true"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.95.1",

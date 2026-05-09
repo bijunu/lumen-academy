@@ -19,47 +19,58 @@ If you cannot meet both conditions, refuse the review and explain why.
 
 ## Procedure
 
-1. Confirm inputs from the user:
-   - Path to the draft file (e.g. `src/content/seed/maths/decimals.ts`, `src/content/seed/biology/cells-animal-cell.ts`).
-   - Optional: path to the handoff note (read only after grading).
-   If a path is missing, ask.
+1. Read the slice-state file to learn what's under review:
+   - Read `.claude/slice-state.json` from the worktree (root). It declares `nodeId`, `nodeTitle`, `zoneId`, `tier`, and `seedFilePath`. This is the contract — do not ask the user for these.
+   - Verify `status == "ready-for-review"`. If not, refuse the review and explain (`status="drafting"` means the author is still working; `status="reviewed-pass"` means it's already been reviewed; `status="shipped"` means it's already on main).
+   - Read the schema at `.slice-state.schema.json` if you need to interpret a field.
 
-2. Read these files in order. Do not skip:
+2. Verify the draft is committed:
+   - Run `git status --porcelain`. If the worktree has any modifications to `src/content/seed/<subject>/**/*.ts`, refuse the review and tell the author to commit the draft first. You review committed work, not unstaged work — this is what bit slice 2.
+   - Run `git log -1 --stat` to confirm HEAD touches `seedFilePath` from slice-state.
+
+3. Read the docs in order. Do not skip:
    - `src/types/content.ts` — the SkillNode schema.
+   - `docs/02-content-schema.md` — including the **"Renderer support matrix"**. Pillar 1 cross-checks every scene `instructions` against the matrix.
    - `docs/06-authoring-playbook.md` — the rubric.
    - `docs/05-reference-shelf.md` — lift signals expected per source.
    - `docs/04-eval-set.md` — locate the zone section for the draft's `zoneId`. If no section exists, the author should have drafted one alongside the node; flag absence under Pillar 3.
-   - The draft file at the supplied path.
+   - The draft file at `seedFilePath` from slice-state.
 
-3. Run the pre-checks:
-   - `npm run eval-content` and capture output. Filter to findings whose node id matches the draft.
+4. Run the pre-checks:
+   - `npm run lint:content` — capture output. Any blocker output (R1-R5) is at minimum a Revise.
+   - `npm run eval-content` — capture output. Filter to findings whose node id matches the draft.
    - `npm run typecheck`.
    - `npm run lint`.
    Any pre-check failure is at minimum a Revise (Reject if the file does not parse or the schema is broken).
 
-4. Grade against three pillars (see below). Cite specific question ids, misconception ids, scene ids, or line numbers in the draft for every finding.
+5. Grade against three pillars (see below). Cite specific question ids, misconception ids, scene ids, or line numbers in the draft for every finding.
 
-5. Set a grade: Pass, Revise, or Reject.
+6. Set a grade: Pass, Revise, or Reject.
 
-6. Write the report in the output format below.
+7. Write the report in the output format below.
 
-7. ONLY now, if a handoff note path was supplied, read it. For any rubric line the author flagged as deliberately not met, accept or reject the rationale and add an addendum to the report.
+8. Write the verdict back to `.claude/slice-state.json`:
+   - `status` → `reviewed-pass` (Pass), `reviewed-revise` (Revise), or `reviewed-reject` (Reject).
+   - `lastReviewVerdict` → `pass`, `revise`, or `reject`.
+   - `lastReviewFindings` → array of `{severity, rule, message, fileLine?, suggestedFix?}`.
+   - `lastReviewSummary` → 1-2 sentence summary, used by `scripts/slice-finish.sh` as PR body content.
+
+9. ONLY now, if `handoffNotes` is non-empty in `.claude/slice-state.json`, read it. For any rubric line the author flagged as deliberately not met, accept or reject the rationale and add an addendum to the report.
 
 ## Three-pillar review
 
 ### Pillar 1: Rubric (`docs/06-authoring-playbook.md`)
 
-The validator catches the countable items. You add the qualitative checks the validator cannot:
+The pre-commit linter (`scripts/lint-content.mjs`) catches em dashes, source placeholders, US spellings, scene-instruction-vs-renderer mismatches, and dominant MCQ position. The eval-content validator catches the countable rubric items. You add the qualitative checks neither can:
 
 - KS3 objective is verbatim from the DfE programme of study, not paraphrased.
-- All misconceptions cite a source in a `// Source:` code comment above the entry; at most one is `// Authored, no external source`.
 - Misconception `description` reads from the learner's point of view ("Adding the same number to top and bottom gives an equivalent fraction"), not the teacher's diagnosis.
 - Distractors in MCQs are pedagogically motivated; each wrong option corresponds to a specific misstep, not a random number.
 - Reading age is 12 or younger across all stems and explanations.
-- UK English throughout (colour, metre, learnt). No em dashes anywhere.
 - At least one Challenge tier question matches Bond 11+ stem shape (2 to 3 sentences, 1 to 2 unstated steps) for maths, or early KS4 GCSE Foundation tier shape for sciences.
-- Anti-grind: no two consecutive questions in the bank test the same procedure on different numbers (the validator cannot detect this).
-- The first scene is a manipulation, not a static diagram, especially for abstract topics (algebra, ratio, BIDMAS).
+- Anti-grind: no two consecutive questions in the bank test the same procedure on different numbers (the linter cannot detect this).
+- The first scene is a manipulation (`fraction-wall` or `labelled-diagram`), not a narrative-only `diagram`/`number-line`/`simulation`, especially for abstract topics (algebra, ratio, BIDMAS).
+- Source citations are pinned to specific pages, report years, or article URLs — not generic ("CGP KS3"). The linter blocks `(verify ...)` placeholders but cannot judge whether a citation is meaningfully specific.
 
 ### Pillar 2: Lift signals (`docs/05-reference-shelf.md`)
 
@@ -103,6 +114,7 @@ Produce one markdown report. Use this template literally:
 **Grade**: <Pass | Revise | Reject>
 
 ## Pre-checks
+- npm run lint:content: <pass | fail with summary of blocker findings>
 - npm run eval-content: <pass | fail with summary of FAIL findings for this node>
 - npm run typecheck: <pass | fail>
 - npm run lint: <pass | fail>
@@ -130,9 +142,9 @@ Produce one markdown report. Use this template literally:
 
 Findings must cite specific ids or line numbers. Vague findings ("some questions are weak", "could be better") are not acceptable; rewrite them with citations or drop them.
 
-## After grading: reading the handoff note
+## After grading: reading the handoff notes
 
-Once the grade is written, read the author's handoff note if supplied. For any rubric line the author flagged as deliberately not met:
+Once the grade is written, read the `handoffNotes` array in `.claude/slice-state.json` if it has entries. For any rubric line the author flagged as deliberately not met:
 
 - Accept the rationale if it reasonably applies to this node (for example: "topic does not have a continuous relationship, so slider-explore is omitted" is a fair claim for a primes node).
 - Reject the rationale if it loosens the rubric inappropriately ("I could not find a Bond-style word problem so I skipped it" is not a fair claim).
@@ -142,10 +154,11 @@ Add a short "Addendum" section to the report covering acceptance or rejection of
 ## What not to do
 
 - Do not produce a grade without reading the rubric, shelf, eval set, and draft file.
-- Do not read the handoff note before grading.
-- Do not Pass a node that fails any pre-check.
+- Do not read the handoff notes before grading.
+- Do not Pass a node that fails any pre-check (`lint:content`, `eval-content`, `typecheck`, `lint`).
 - Do not write or edit the draft file. Your job is grading, not drafting.
-- Do not seed Atlas or commit. The user runs both after the author has revised.
+- Do not push, open a PR, or seed Atlas. The infra-owner runs `scripts/slice-finish.sh <subject>` after a Pass verdict, then seeds.
 - Do not skip Pillar 3 if the zone has an eval section.
 - Do not produce findings without citations to ids or line numbers.
 - Do not mark a node Pass on the strength of one strong pillar; all three must be green.
+- Do not review unstaged work. If `git status` shows seed file modifications, refuse the review and ask the author to commit.

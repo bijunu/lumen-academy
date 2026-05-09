@@ -15,12 +15,14 @@ This skill produces ONE node per invocation. If the user asks for "a zone", conf
 Read these files in order. Do not skip; the rubric is the contract.
 
 1. `docs/00-build-prompt.md` — product scope and curriculum coverage.
-2. `src/types/content.ts` — the exact `SkillNode` shape; your output must conform. Note the five `InteractiveScene` types and eleven `Question` types currently supported (see `docs/02-content-schema.md` for the data shapes). If you need a new scene type, stop and ask the user; schema changes are a separate step.
-3. `docs/05-reference-shelf.md` — what to take from Bond 11+, CGP KS3 Maths, DfE programme of study, AQA, Edexcel, OCR, plus product cues from Brilliant, Seneca, Tassomai, Khan, Sparx, DragonBox.
-4. `docs/06-authoring-playbook.md` — the must-pass rubric. This is the bar.
-5. `docs/04-eval-set.md` — locate the zone section. Confirm coverage of every Content probe (`C-...`); satisfy every Question shape probe (`Q-...`) with at least one question. If the zone section does not exist yet, draft probes for it alongside the node.
-6. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim from there or from the DfE programme of study.
-7. `src/content/seed/maths/fractions.ts` — structural template only. The fractions seed predates the new rubric; copy the file shape, not its quality bar.
+2. `src/types/content.ts` — the exact `SkillNode` shape; your output must conform.
+3. `docs/02-content-schema.md` — the data shape AND the "Renderer support matrix" at the bottom. You MUST consult the matrix before writing any scene `instructions`. Promising "click" or "drag" on a non-interactive scene type is a hard blocker (caught by the pre-commit linter rule R4). If you need a renderer that doesn't exist, stop and surface it as a handoff note; do not improvise action-promising copy.
+4. `docs/07-slice-protocol.md` — the slice loop, the `.claude/slice-state.json` contract, and the script reference. Run `scripts/slice-init.sh maths <nodeId>` BEFORE drafting (see Workflow below).
+5. `docs/05-reference-shelf.md` — what to take from Bond 11+, CGP KS3 Maths, DfE programme of study, AQA, Edexcel, OCR, plus product cues from Brilliant, Seneca, Tassomai, Khan, Sparx, DragonBox.
+6. `docs/06-authoring-playbook.md` — the must-pass rubric. This is the bar.
+7. `docs/04-eval-set.md` — locate the zone section. Confirm coverage of every Content probe (`C-...`); satisfy every Question shape probe (`Q-...`) with at least one question. If the zone section does not exist yet, draft probes for it alongside the node.
+8. `docs/03-curriculum-map.md` — find the topic. Copy the KS3 objective verbatim from there or from the DfE programme of study.
+9. `src/content/seed/maths/fractions.ts` — structural template only. The fractions seed predates the new rubric; copy the file shape, not its quality bar.
 
 ## Numerica realm guidance
 
@@ -80,7 +82,14 @@ Use the exact zoneId and zoneName below.
 
 ### Scene type guidance
 
-Supported scene types in `src/types/content.ts`: `fraction-wall`, `number-line`, `diagram`, `simulation`, `labelled-diagram`. For most maths nodes, `simulation` (slider-driven) and `diagram` cover the cases. `labelled-diagram` is the workhorse for sciences but is also useful in maths for labelled coordinate planes, parts of a number line, and parts of a fraction (numerator, denominator, fraction bar). Topics like coordinates, sequences, and graphs may want a sketch-style scene; flag the schema addition rather than improvising. Slider-explore questions are required for continuous-relationship topics (ratio, percentages, probability). Data-extraction questions are required for charts and graphs.
+Read the **"Renderer support matrix"** in `docs/02-content-schema.md` first. Today only `fraction-wall` and `labelled-diagram` are interactive renderers; `number-line`, `diagram`, and `simulation` render to a static "Continue" card. For maths:
+
+- Use `labelled-diagram` for any scene where the learner should pick out parts (number line landmarks, fraction parts, coordinate quadrants, place-value columns). Action verbs ("click each marker") are allowed and expected here.
+- Use `number-line`, `diagram`, or `simulation` only for narrative reveals — write `instructions` as readable narrative ("Read how each calculation lays out as jumps on the line. Three jumps of -4 land on -12..."). Do NOT write "drag", "click", "tap", "move", or "drop".
+
+Slider-explore questions (different from `simulation` scenes — questions render interactively) are required for continuous-relationship topics (ratio, percentages, probability). Data-extraction questions are required for charts and graphs.
+
+If a topic genuinely needs a renderer that doesn't exist (real `number-line` interaction, sketch scene, dynamic simulation), surface it via `handoffNotes` in `.claude/slice-state.json`. Do not improvise action-promising copy.
 
 ## Worktree boundaries
 
@@ -102,25 +111,30 @@ If you need a new scene type, question type, schema field, or shared component t
 
 ## Workflow
 
+0. **Slice init.** From the maths worktree (`~/lumen-academy-maths`), run `scripts/slice-init.sh maths <nodeId>` (e.g. `scripts/slice-init.sh maths maths-decimals-rounding`). This resets the branch to `origin/main` and writes `.claude/slice-state.json` with `status="drafting"`. Update `nodeTitle` and `tier` in the file once you know them.
 1. Confirm the topic (zone + specific node concept), proposed node id (e.g. `maths-decimals-place-value`), and tier (`core` / `confident` / `challenge`).
 2. Read all required docs above.
 3. Locate the KS3 objective in the DfE programme of study; copy verbatim into `curriculum.ks3Objective`.
 4. Source 2 or more GCSE spec refs from AQA, Edexcel, OCR for `curriculum.awardingBodies`.
-5. For each misconception, source from CGP KS3 Maths, AQA / Edexcel / OCR examiner report, or DfE exemplar. Cite in a code comment above the entry, e.g. `// Source: CGP KS3 Maths Study Guide p.42 Common mistake box` or `// Source: AQA GCSE Maths examiner report 2023, Q5`. At most 1 entry per node may be `// Authored, no external source`.
+5. For each misconception, source from CGP KS3 Maths, AQA / Edexcel / OCR examiner report, or DfE exemplar. Cite in a code comment above the entry, e.g. `// Source: CGP KS3 Maths Study Guide p.42 Common mistake box` or `// Source: AQA GCSE Maths examiner report 2023, Q5`. At most 1 entry per node may be `// Authored, no external source`. The pre-commit linter rule R2 blocks any `(verify ...)` placeholder; pin sources before committing.
 6. Draft the `SkillNode`:
-   - 3 or more scenes; at least one is interactive (drag-sort, slider scrub, sketch, click to explore)
-   - 2 or more worked examples; the second has at least one missing step the engine can hide
-   - 20 or more questions in tier mix 6 to 8 Core / 6 to 8 Confident / 4 to 6 Challenge
+   - 3 or more scenes; consult the renderer matrix in `docs/02-content-schema.md` for `instructions` voice (readable narrative on non-interactive scenes; action verbs only on `fraction-wall` / `labelled-diagram`).
+   - 2 or more worked examples; the second has at least one missing step the engine can hide.
+   - 20 or more questions in tier mix 6 to 8 Core / 6 to 8 Confident / 4 to 6 Challenge.
    - Type quotas: 6 to 10 multiple-choice, 4 to 7 numeric-entry, 1 to 2 spot-misconception, 1 or more drag (drag-order or drag-drop-builder), 1 or more missing-step. Slider-explore required for continuous-relationship topics. Data-extraction required for chart and graph topics.
    - 6 or more misconceptions; every entry sourced (with allowance for 1 unsourced).
    - At least one Challenge tier word problem in Bond 11+ shape (2 to 3 sentences, 1 to 2 unstated steps).
    - Anti-grind: no two consecutive questions test the same procedure on different numbers.
-7. Run `npm run eval-content` against the new node. Fix every FAIL finding. WARN findings are review judgement calls; address or note in handoff.
-8. Write the handoff note for review (under 200 words):
-   - Lift signals included, with source per signal (Bond, CGP, examiner report, DfE).
-   - Any rubric line not met, with reason.
-   - Open questions for review.
-9. Stop. Hand off to the user. Do not seed Atlas, commit, or push; the user runs `npm run seed` and `git commit` themselves after review.
+   - MCQ correctIndex distribution: rotate across A/B/C/D so no single position dominates. The pre-commit linter rule R5 blocks any single position holding more than 50% of correctIndex values when MCQ count >= 6.
+7. Pre-checks (run all four; fix every failure):
+   - `npm run lint:content` (the new content linter — em dashes, source placeholders, US spellings, scene-instruction match, MCQ position distribution)
+   - `npm run eval-content` (the rubric validator)
+   - `npm run typecheck`
+   - `npm run lint`
+8. Add the curriculum-map row to `docs/03-curriculum-map.md` (your zone's section) and any new `C-...` / `Q-...` probes to `docs/04-eval-set.md`.
+9. Write the handoff note for review (under 200 words): lift signals with sources, rubric lines unmet (with reason), open questions. Place it in the `handoffNotes` array in `.claude/slice-state.json`.
+10. **Commit (do NOT push).** `git add` the scoped files (your seed file, `src/content/seed/maths/index.ts`, the curriculum-map row, the eval-set probes) and commit with a meaningful message. The pre-commit hook will run the content linter automatically.
+11. **Update `.claude/slice-state.json`**: `status="ready-for-review"`. Then report ready to the infra-owner. Do not push or open a PR — the infra-owner runs `scripts/slice-finish.sh maths` after review.
 
 ## Rubric reminder
 
@@ -137,9 +151,10 @@ If you need a new scene type, question type, schema field, or shared component t
 - Do not paraphrase the KS3 objective.
 - Do not invent awarding-body refs; if a board lacks a clear ref, omit that body and cite the other two.
 - Do not add a misconception without a source citation, except up to 1 marked `// Authored, no external source`.
-- Do not extend `InteractiveScene` or `Question` type unions, or change any other content schema field, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Flag the need; user approves the schema change as a separate step in the infra-owner session.
-- Do not seed Atlas or commit. The user runs `npm run seed` after review and `git commit` themselves.
-- Do not write a US dollar sign, a US unit (feet, miles, gallons, fahrenheit), an em dash, or a "all of the above" option anywhere.
+- Do not extend `InteractiveScene` or `Question` type unions, or change any other content schema field, or touch any path under `src/types/`, `src/components/`, `src/lib/`, `src/app/`, or `scripts/`. Surface the need via `handoffNotes` in `.claude/slice-state.json`; the infra-owner session approves schema changes.
+- Do not push or open a PR. Commit, but stop short of `git push` and `gh pr create` — the infra-owner runs `scripts/slice-finish.sh maths` after review.
+- Do not seed Atlas. The infra-owner runs `npm run seed -- --subject=maths` after merge.
+- Do not write a US dollar sign, a US unit (feet, miles, gallons, fahrenheit), an em dash, or a "all of the above" option anywhere. The pre-commit linter blocks em dashes (R1) and US spellings (R3).
 
 ## Output and handoff
 
