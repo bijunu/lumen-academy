@@ -9,11 +9,14 @@
 import { MongoClient } from 'mongodb'
 import {
   allSeededNodes,
+  bidmasZoneNodes,
   decimalsZoneNodes,
   factorsMultiplesZoneNodes,
   fractionsZoneNodes,
+  percentagesZoneNodes,
   placeValueZoneNodes,
   primesZoneNodes,
+  ratioZoneNodes,
 } from '../src/content/seed'
 import {
   CONTENT_NODES_COLLECTION,
@@ -56,6 +59,24 @@ const allZones: Zone[] = [
     name: 'Place Value',
     realm: 'numerica',
     nodeIds: placeValueZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-percentages',
+    name: 'Percentages',
+    realm: 'numerica',
+    nodeIds: percentagesZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-ratio',
+    name: 'Ratio and Proportion',
+    realm: 'numerica',
+    nodeIds: ratioZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-bidmas',
+    name: 'BIDMAS',
+    realm: 'numerica',
+    nodeIds: bidmasZoneNodes.map(n => n.id),
   },
 ]
 

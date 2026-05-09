@@ -240,15 +240,125 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
 - T-DEC-4: Given an off-topic input (for example a question about US dollar prices to two decimal places), the tutor steers back to UK pence and decimal place value politely.
 - T-DEC-5: Given a request for an inline definition (tap on "thousandths"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Numerica > Percentages
+
+Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (percentage of an amount, percentage change, reverse percentages).
+
+### Content probes
+
+- C-PCT-1: Learner reads "30%" as the number 30 (or 30 of something countable) rather than as 30 per hundred.
+  - Required handling: misconception entry; at least one question that asks the learner to interpret the per-cent meaning.
+- C-PCT-2: Learner shifts a percentage by one decimal place rather than two when converting to a decimal (writes 35% as 3.5 instead of 0.35).
+  - Required handling: misconception entry; at least one question whose distractors include the off-by-a-factor-of-10 trap.
+- C-PCT-3: Learner converts a fraction to a percentage by stacking the digits (writes 3/4 as 34%).
+  - Required handling: misconception entry; at least one question whose distractors include the stacked-digits answer.
+- C-PCT-4: Learner uses the wrong denominator when writing a percentage as a fraction (writes 25% as 25/10 or 25/1000 instead of 25/100).
+  - Required handling: misconception entry; at least one question whose distractors include a mis-placed denominator.
+- C-PCT-5: Learner believes a value with the bigger number is the bigger percentage when comparing across forms (says 65% > 3/5 just because the printed number is 65).
+  - Required handling: misconception entry; at least one Challenge tier question that compares mixed forms.
+- C-PCT-6: Learner orders fractions, decimals, and percentages by surface form rather than by numerical value.
+  - Required handling: misconception entry; at least one ordering question on a mix of three or more forms.
+- C-PCT-7: Learner believes percentages cannot exceed 100%.
+  - Required handling: misconception entry; at least one Challenge tier question that recognises a percentage above 100% as valid.
+
+### Question shape probes
+
+- Q-PCT-1: At least one question asks the learner to convert a common percentage (50%, 25%, 75%, 10%, 20%, 1%, 5%, 12.5%, 33⅓%) to a decimal or simplest-form fraction in numeric or MCQ form.
+- Q-PCT-2: At least one question asks the learner to convert a fraction with denominator 100 to a percentage by direct reading.
+- Q-PCT-3: At least one question requires converting a fraction with a non-100 denominator (eighths, fifths, twentieths) to a percentage via equivalent fractions over 100.
+- Q-PCT-4: At least one Challenge tier word problem requires comparing or ordering across mixed forms (percent vs fraction vs decimal) in a UK context (test scores, retail discounts, sports stats).
+- Q-PCT-5: At least one MCQ on fraction-to-percent conversion includes the stacked-digits answer as a distractor.
+- Q-PCT-6: At least one spot-misconception question presents the per-cent-as-number or stacked-digits argument and asks whether the reasoning is sound.
+- Q-PCT-7: At least one Challenge tier question recognises a percentage greater than 100% as valid (for example, an exam score reported above 100% on a re-scaled mark scheme, or a doubled quantity expressed as 200%).
+
+### Tutor probes
+
+- T-PCT-1: Given "Why is 50% bigger than 1/4? They both have small numbers", the tutor's first reply is a Socratic prompt about converting both to the same form, not a direct correction.
+- T-PCT-2: Given a wrong answer matching the decimal-shift trigger (for example "35% = 3.5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-PCT-3: Given an off-topic input (for example a question about US sales tax percentages), the tutor steers back to UK percentage forms politely.
+- T-PCT-4: Given a request for an inline definition (tap on "per cent"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+## Zone: Numerica > Ratio and Proportion
+
+Covers `maths-ratio-introduction` plus future ratio nodes (sharing in a ratio, scaling recipes, direct and inverse proportion).
+
+### Content probes
+
+- C-RP-1: Learner treats a ratio as a fraction in disguise (says the ratio of red to blue beads being 2:3 means 2/3 of the beads are red).
+  - Required handling: misconception entry; at least one question that contrasts part-to-part ratio with part-to-whole fraction on the same scenario.
+- C-RP-2: Learner reverses the order of a ratio relative to the worded statement (for red:blue = 2:3 writes 3:2).
+  - Required handling: misconception entry; at least one question that pairs the correct order with its reverse as a distractor.
+- C-RP-3: Learner adds (or subtracts) the same number to both sides of a ratio to find an equivalent ratio (says 2:5 and 4:7 are equivalent because both went up by 2).
+  - Required handling: misconception entry; at least one question whose distractors include the additive trap.
+- C-RP-4: Learner stops simplifying a ratio at a non-HCF common factor (simplifies 12:18 to 6:9 instead of 2:3).
+  - Required handling: misconception entry; at least one question that exposes the partial-simplification answer as a distractor.
+- C-RP-5: Learner divides only one side of a ratio by a common factor, leaving the other side unchanged.
+  - Required handling: misconception entry; at least one question whose distractors include the divide-only-one trap.
+- C-RP-6: Learner scales the two sides of a ratio by different multipliers (writes an "equivalent" ratio of 2:5 as 6:10 by multiplying the first part by 3 and the second part by 2).
+  - Required handling: misconception entry; at least one question that surfaces the different-multiplier slip.
+- C-RP-7: Learner believes ratios with the same difference between the two sides are equivalent (says 4:6 simplifies to 1:1 because the difference is 2).
+  - Required handling: misconception entry; at least one Challenge tier spot-misconception question that exposes the difference-not-factor argument.
+
+### Question shape probes
+
+- Q-RP-1: At least one numeric or MCQ question asks the learner to write a ratio in colon notation from a worded part-to-part description.
+- Q-RP-2: At least one question asks the learner to simplify a 2-part ratio to its simplest form using the HCF.
+- Q-RP-3: At least one question asks the learner to recognise an equivalent ratio from a list, with each distractor mapping to a specific misstep (additive, reversed, or different-multiplier).
+- Q-RP-4: At least one Challenge tier word problem requires recognising a ratio inside a multi-step UK context (cricket club splits, school form composition, recipe scaling).
+- Q-RP-5: At least one drag-order question places ratios into matching simplest-form columns or into ascending order by simplest form.
+- Q-RP-6: At least one slider-explore question models the continuous relationship between the parts of a fixed-ratio mixture, asking the learner to land in a target range (the playbook lists ratio explicitly as a continuous-relationship topic where slider-explore is required).
+- Q-RP-7: At least one spot-misconception question presents an additive-simplification or constant-difference argument and asks whether the reasoning is sound.
+
+### Tutor probes
+
+- T-RP-1: Given "Isn't 2:3 the same as 2/3?", the tutor's first reply is a Socratic prompt about whether the second number is "the rest" or "a different group", not a direct correction.
+- T-RP-2: Given a wrong answer matching the additive trigger (for example "2:5 is equivalent to 4:7"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-RP-3: Given an off-topic input (for example a question about US sports team rosters using ratios), the tutor steers back to UK KS3 ratio language politely.
+- T-RP-4: Given a request for an inline definition (tap on "ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+## Zone: Numerica > BIDMAS
+
+Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes (negative-number arithmetic with BIDMAS, algebraic substitution under BIDMAS).
+
+### Content probes
+
+- C-BID-1: Learner evaluates strictly left to right, ignoring operator precedence (says 6 + 4 × 3 = 30 because they did 6 + 4 first).
+  - Required handling: misconception entry; at least one question whose distractors include the strict-left-to-right answer.
+- C-BID-2: Learner treats the D in BIDMAS as strictly preceding the M (always divides before multiplying, even when the multiplication appears to the left).
+  - Required handling: misconception entry; at least one question on a `÷` and `×` expression where the multiplication appears first.
+- C-BID-3: Learner treats the A in BIDMAS as strictly preceding the S (always adds before subtracting, even when the subtraction appears to the left).
+  - Required handling: misconception entry; at least one question on a `+` and `-` expression where the subtraction appears first.
+- C-BID-4: Learner applies the exponent to the sum (or to the wrong base), so reads 2 × 3² as (2 × 3)² = 36 rather than 2 × 9 = 18.
+  - Required handling: misconception entry; at least one question whose distractors include the wrong-base power answer.
+- C-BID-5: Learner ignores brackets that appear in the middle of an expression, evaluating left to right around them (says 5 + (4 + 2) × 3 = (5 + 4 + 2) × 3 = 33).
+  - Required handling: misconception entry; at least one question whose distractors include the brackets-ignored answer.
+- C-BID-6: Learner reads an index as repeated multiplication of the wrong factors (says 3² = 6 because 3 × 2 = 6, instead of 3 × 3 = 9).
+  - Required handling: misconception entry; at least one question that exposes the index-as-multiply slip.
+
+### Question shape probes
+
+- Q-BID-1: At least one MCQ asks the learner to evaluate a two-operation expression `a + b × c` or `a − b × c`, with the strict-left-to-right answer present as a distractor.
+- Q-BID-2: At least one numeric-entry question asks the learner to evaluate a two-operation expression where the conventionally lower-precedence operation appears to the left.
+- Q-BID-3: At least one question asks the learner to evaluate an expression with brackets where the brackets change the result.
+- Q-BID-4: At least one question asks the learner to evaluate an expression with one index (square or cube) where the index applies to a single factor inside a product.
+- Q-BID-5: At least one drag-order question asks the learner to put the BIDMAS evaluation steps for a mixed expression into the correct order.
+- Q-BID-6: At least one missing-step question hides one BIDMAS step in a worked solution and asks the learner to fill it in.
+- Q-BID-7: At least one Challenge tier word problem asks the learner to construct a BIDMAS expression from a UK context (transport fares, tuck shop totals, sports scoring) and then evaluate it.
+- Q-BID-8: At least one spot-misconception question presents a strict-left-to-right or wrong-base-exponent argument and asks whether the reasoning is sound.
+
+### Tutor probes
+
+- T-BID-1: Given "Why doesn't BIDMAS just mean go in that exact order — divide before multiply?", the tutor's first reply explains that division and multiplication share a tier and run left to right, not a definition dump.
+- T-BID-2: Given a wrong answer matching the strict-left-to-right trigger (for example "6 + 4 × 3 = 30"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-BID-3: Given an off-topic input (for example a question about US calculator brand BIDMAS settings), the tutor steers back to UK KS3 order-of-operations conventions politely.
+- T-BID-4: Given a request for an inline definition (tap on "indices"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Pending zones
 
 The following zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
 
 ### Numerica
 - Four operations
-- Percentages
-- Ratio and proportion
-- BIDMAS
 - Basic algebra
 - Sequences
 - Coordinates

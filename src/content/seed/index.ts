@@ -13,6 +13,12 @@ import {
 import { recognisingPrimes, primesZoneNodes } from './maths-primes'
 import { decimalPlaceValue, decimalsZoneNodes } from './maths-decimals'
 import { wholeNumberPlaceValue, placeValueZoneNodes } from './maths-place-value'
+import {
+  percentagesAsDecimalsFractions,
+  percentagesZoneNodes,
+} from './maths-percentages'
+import { ratioIntroduction, ratioZoneNodes } from './maths-ratio'
+import { bidmasOrderOfOperations, bidmasZoneNodes } from './maths-bidmas'
 
 export {
   whatIsAFraction,
@@ -27,6 +33,12 @@ export {
   decimalsZoneNodes,
   wholeNumberPlaceValue,
   placeValueZoneNodes,
+  percentagesAsDecimalsFractions,
+  percentagesZoneNodes,
+  ratioIntroduction,
+  ratioZoneNodes,
+  bidmasOrderOfOperations,
+  bidmasZoneNodes,
 }
 
 export const allSeededNodes: SkillNode[] = [
@@ -35,4 +47,7 @@ export const allSeededNodes: SkillNode[] = [
   ...primesZoneNodes,
   ...decimalsZoneNodes,
   ...placeValueZoneNodes,
+  ...percentagesZoneNodes,
+  ...ratioZoneNodes,
+  ...bidmasZoneNodes,
 ]
