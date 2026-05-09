@@ -353,15 +353,135 @@ Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes 
 - T-BID-3: Given an off-topic input (for example a question about US calculator brand BIDMAS settings), the tutor steers back to UK KS3 order-of-operations conventions politely.
 - T-BID-4: Given a request for an inline definition (tap on "indices"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Numerica > Basic Algebra
+
+Covers `maths-algebra-introduction` plus future algebra nodes (solving one-step equations, expanding brackets, factorising linear expressions).
+
+### Content probes
+
+- C-ALG-1: Learner treats a letter as an object (says 3a + 2b is "5 things" or "3 apples and 2 bananas").
+  - Required handling: misconception entry; at least one question whose distractors include the combine-letters trap.
+- C-ALG-2: Learner conjoins an unlike pair, writing 3a + 4 as 7a because they think every line must end with one term.
+  - Required handling: misconception entry; at least one question whose correct answer is "cannot be simplified" or equivalent.
+- C-ALG-3: Learner squares the letter on collection, writing 3a + 2a as 5a squared.
+  - Required handling: misconception entry; at least one question that pairs 5a with 5a squared as distractors.
+- C-ALG-4: Learner uses fruit-salad notation, treating b in 2b as "boy" rather than "number of boys".
+  - Required handling: misconception entry; at least one Challenge tier word problem where the count interpretation is the trap.
+- C-ALG-5: Learner believes a letter has a fixed value tied to its position in the alphabet (n is always 14).
+  - Required handling: misconception entry; at least one question or free-text prompt that surfaces the alphabet-position slip.
+- C-ALG-6: Learner drops or mishandles the sign when substituting a negative value (writes 2x with x = -3 as 6, not -6).
+  - Required handling: misconception entry; at least one numeric-entry question with a negative substitution value.
+- C-ALG-7: Learner reads 4n as the digits 4 and n side by side, so 4n with n = 3 becomes 43 instead of 12.
+  - Required handling: misconception entry; at least one question that exposes the digits-side-by-side answer.
+
+### Question shape probes
+
+- Q-ALG-1: At least one MCQ asks the learner to translate a worded phrase ("a number n times 4", "twice a number, then add 1") into compact algebraic form.
+- Q-ALG-2: At least one numeric-entry question asks the learner to substitute a single positive value into a one-step expression.
+- Q-ALG-3: At least one numeric-entry question asks the learner to substitute two values into a two-letter expression (for example 3a - 4b with a = 5, b = 2).
+- Q-ALG-4: At least one numeric-entry question asks the learner to substitute a negative value into a one- or two-step expression.
+- Q-ALG-5: At least one drag-order question places the steps for collecting like terms into the correct order.
+- Q-ALG-6: At least one missing-step question hides one step in a worked solution for collecting like terms or substitution and asks the learner to fill it in.
+- Q-ALG-7: At least one Challenge tier word problem in a UK context (school trip, bus fare, maths club, recipe) requires writing an expression and then substituting to evaluate it.
+- Q-ALG-8: At least one spot-misconception question presents a conjoining or letter-as-object argument and asks whether the reasoning is sound.
+- Q-ALG-9: At least one free-text question asks the learner to explain in their own words why an unlike-terms simplification is wrong, or why a letter is not pinned to its alphabet position.
+
+### Tutor probes
+
+- T-ALG-1: Given "Why isn't 3a + 4 just 7a?", the tutor's first reply is a Socratic prompt about whether the two terms share the same letter, not a direct correction.
+- T-ALG-2: Given a wrong answer matching the letter-as-object trigger (for example "3a + 2b = 5ab"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-ALG-3: Given "Does the letter n always equal 14 because that is its place in the alphabet?", the tutor explains with a concrete substitution example, not a definition.
+- T-ALG-4: Given an off-topic input (for example a question about US algebra textbook variable conventions), the tutor steers back to UK KS3 algebraic notation politely.
+- T-ALG-5: Given a request for an inline definition (tap on "coefficient" or "term"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+## Zone: Numerica > Sequences
+
+Covers `maths-sequences-rules` plus future sequence nodes (nth-term derivation by differences, geometric sequences, special sequences such as triangular and Fibonacci).
+
+### Content probes
+
+- C-SEQ-1: Learner assumes every sequence rule must add the same amount each time, missing multiplicative or quadratic rules.
+  - Required handling: misconception entry; at least one question that exposes the constant-difference default as a distractor or wrong answer.
+- C-SEQ-2: Learner mixes up the position number with the term value, treating the third term as having value 3 in 5, 8, 11, 14, ... .
+  - Required handling: misconception entry; at least one question that contrasts position with term value, ideally in a worked example or table.
+- C-SEQ-3: Learner reads "+3 each time, first term 5" and says term 10 is 8, applying the rule once instead of nine times from term 1.
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the apply-once trap.
+- C-SEQ-4: Learner spots the term-to-term rule "+3" and writes the position-to-term rule as 3n without checking term 1.
+  - Required handling: misconception entry; at least one Confident MCQ whose distractors include 3n alongside the correct 3n + 2.
+- C-SEQ-5: Learner extends a non-arithmetic pattern arithmetically, computing gaps for 1, 2, 4, 8, ... and predicting the next term from the gap series.
+  - Required handling: misconception entry; at least one numeric-entry question that surfaces the multiplicative rule.
+- C-SEQ-6: Learner ignores the direction of a decreasing sequence and writes "add 3" for 20, 17, 14, 11, ... instead of "subtract 3".
+  - Required handling: misconception entry; at least one Core question on a decreasing sequence with both add and subtract distractors.
+- C-SEQ-7: Learner substitutes the term value into the position-to-term rule instead of the position number.
+  - Required handling: misconception entry; at least one Challenge question whose distractors include the term-as-input answer.
+
+### Question shape probes
+
+- Q-SEQ-1: At least one Core MCQ asks the learner to identify the term-to-term rule of a 4-term arithmetic sequence, with each distractor tied to a specific misstep (sign error, doubled difference, wrong operation).
+- Q-SEQ-2: At least one numeric-entry question asks the learner to find the next term of a decreasing arithmetic sequence.
+- Q-SEQ-3: At least one numeric-entry question asks the learner to substitute n into a position-to-term rule of the form an + b.
+- Q-SEQ-4: At least one Confident MCQ asks the learner to choose the correct position-to-term rule from a list, with 3n and n + 3 as distractors against the correct 3n + 2 (or equivalent shape).
+- Q-SEQ-5: At least one drag-order or numeric-entry question places terms generated by a non-linear position-to-term rule (such as n squared) into ascending order or asks for the kth term.
+- Q-SEQ-6: At least one missing-step question hides a BIDMAS evaluation step inside a substitution into a position-to-term rule.
+- Q-SEQ-7: At least one Challenge tier word problem maps a UK context (transport hire, library fees, canteen totals) onto a position-to-term rule of the form a + bn or bn + a, requiring substitution.
+- Q-SEQ-8: At least one spot-misconception question presents the apply-once or doubled-difference argument and asks whether the reasoning is sound.
+- Q-SEQ-9: At least one slider-explore question lets the learner adjust the position to land on a target term, modelling the position-to-term mapping continuously.
+
+### Tutor probes
+
+- T-SEQ-1: Given "The rule is +3, so the 10th term of 5, 8, 11, 14, ... must be 8", the tutor's first reply is a Socratic prompt about how many times the rule applies between term 1 and term 10, not a direct correction.
+- T-SEQ-2: Given a wrong answer matching the constant-difference trigger (for example, predicting 11 as the next term of 1, 2, 4, 8), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SEQ-3: Given "Why is the rule 3n + 2 and not just 3n?", the tutor walks the learner through testing at n = 1 with a small worked check, not a definition.
+- T-SEQ-4: Given an off-topic input (for example a question about US baseball jersey number sequences), the tutor steers back to UK KS3 sequence language politely.
+- T-SEQ-5: Given a request for an inline definition (tap on "term-to-term rule" or "position-to-term rule"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+## Zone: Numerica > Coordinates
+
+Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear graphs from a rule, midpoints, transformations on a coordinate grid).
+
+### Content probes
+
+- C-COORD-1: Learner swaps x and y when reading or writing a coordinate (writes (3, 5) for a point that is 5 across and 3 up).
+  - Required handling: misconception entry; at least one MCQ and one spot-misconception question that pair the swapped pair with the correct pair as distractors.
+- C-COORD-2: Learner reads a negative x value as "count from the right hand end" rather than as left of the y axis, or assumes negative on the x axis means down.
+  - Required handling: misconception entry; at least one Confident question on a quadrant 2 or quadrant 3 point and one spot-misconception question that surfaces the right-end argument.
+- C-COORD-3: Learner counts the origin as 1 instead of 0, shifting every coordinate by one square along each axis.
+  - Required handling: misconception entry; at least one numeric-entry question whose off-by-one answer maps to this slip.
+- C-COORD-4: Learner counts squares from the origin instead of reading the printed labels on an axis ruled in steps of 2 or steps of 5.
+  - Required handling: misconception entry; at least one Challenge tier MCQ on a step-of-2 or step-of-5 grid where the count-of-squares answer is a distractor.
+- C-COORD-5: Learner drops the minus sign on the x value when a point sits in quadrant 2, writing both numbers as positive.
+  - Required handling: misconception entry; at least one Confident or Challenge question that surfaces a quadrant 2 point.
+- C-COORD-6: Learner writes a coordinate pair as (3.5) with a decimal point rather than (3, 5) with a comma.
+  - Required handling: misconception entry; at least one MCQ where the comma-as-decimal slip is a distractor.
+- C-COORD-7: Learner believes the origin has coordinates (1, 1), or writes the origin as a single number.
+  - Required handling: misconception entry; at least one Core question whose distractors include (1, 1) and (1, 0) or (0, 1).
+
+### Question shape probes
+
+- Q-COORD-1: At least one numeric-entry question asks the learner to read off the x value or the y value of a named coordinate pair.
+- Q-COORD-2: At least one MCQ asks the learner to identify the coordinates of a point described in worded form (so many across, so many up, with at least one negative direction).
+- Q-COORD-3: At least one sketch question asks the learner to plot a single given point on a first-quadrant grid.
+- Q-COORD-4: At least one missing-step question hides one of the steps in plotting a point with at least one negative coordinate.
+- Q-COORD-5: At least one drag-order question places coordinate pairs in order by x value or by y value.
+- Q-COORD-6: At least one Challenge tier MCQ recovers the fourth corner of a rectangle from three given corner coordinates (Bond 11+ shape).
+- Q-COORD-7: At least one Challenge tier numeric or MCQ requires reading or computing on a grid whose axis is labelled in steps of 2 (or 5), where the count-of-squares answer is a distractor.
+- Q-COORD-8: At least one slider-explore question asks the learner to land on a target negative x value or negative y value on a number line.
+- Q-COORD-9: At least one spot-misconception question presents a swap-xy or negative-as-right-end argument and asks whether the reasoning is sound.
+
+### Tutor probes
+
+- T-COORD-1: Given "I read (3, 5) as 3 up and 5 across because the order does not matter", the tutor's first reply is a Socratic prompt about which axis comes first, not a direct correction.
+- T-COORD-2: Given a wrong answer matching the swap-xy trigger (for example a point at "5 across, 3 up" written as (3, 5)), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-COORD-3: Given "Why is the origin (0, 0) and not (1, 1)?", the tutor explains by anchoring the axes to a number line with zero at the meeting point, not a definition dump.
+- T-COORD-4: Given an off-topic input (for example a question about US street grid coordinates or zip codes), the tutor steers back to UK KS3 coordinate language politely.
+- T-COORD-5: Given a request for an inline definition (tap on "quadrant"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Pending zones
 
 The following zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
 
 ### Numerica
 - Four operations
-- Basic algebra
-- Sequences
-- Coordinates
 - Angle rules
 - 2D and 3D shapes
 - Perimeter, area, volume

@@ -19,6 +19,9 @@ import {
 } from './maths-percentages'
 import { ratioIntroduction, ratioZoneNodes } from './maths-ratio'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './maths-bidmas'
+import { algebraIntroduction, algebraZoneNodes } from './maths-algebra'
+import { sequencesRules, sequencesZoneNodes } from './maths-sequences'
+import { coordinatesGrid, coordinatesZoneNodes } from './maths-coordinates'
 
 export {
   whatIsAFraction,
@@ -39,6 +42,12 @@ export {
   ratioZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
+  algebraIntroduction,
+  algebraZoneNodes,
+  sequencesRules,
+  sequencesZoneNodes,
+  coordinatesGrid,
+  coordinatesZoneNodes,
 }
 
 export const allSeededNodes: SkillNode[] = [
@@ -50,4 +59,7 @@ export const allSeededNodes: SkillNode[] = [
   ...percentagesZoneNodes,
   ...ratioZoneNodes,
   ...bidmasZoneNodes,
+  ...algebraZoneNodes,
+  ...sequencesZoneNodes,
+  ...coordinatesZoneNodes,
 ]

@@ -8,8 +8,10 @@
  */
 import { MongoClient } from 'mongodb'
 import {
+  algebraZoneNodes,
   allSeededNodes,
   bidmasZoneNodes,
+  coordinatesZoneNodes,
   decimalsZoneNodes,
   factorsMultiplesZoneNodes,
   fractionsZoneNodes,
@@ -17,6 +19,7 @@ import {
   placeValueZoneNodes,
   primesZoneNodes,
   ratioZoneNodes,
+  sequencesZoneNodes,
 } from '../src/content/seed'
 import {
   CONTENT_NODES_COLLECTION,
@@ -77,6 +80,24 @@ const allZones: Zone[] = [
     name: 'BIDMAS',
     realm: 'numerica',
     nodeIds: bidmasZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-algebra',
+    name: 'Basic Algebra',
+    realm: 'numerica',
+    nodeIds: algebraZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-sequences',
+    name: 'Sequences',
+    realm: 'numerica',
+    nodeIds: sequencesZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-coordinates',
+    name: 'Coordinates',
+    realm: 'numerica',
+    nodeIds: coordinatesZoneNodes.map(n => n.id),
   },
 ]
 
