@@ -51,6 +51,18 @@ import {
 } from './area-rectangles'
 import { perimeter, perimeterZoneNodes } from './perimeter'
 import { volumeCuboids, volumeCuboidsZoneNodes } from './volume-cuboids'
+import {
+  probabilityScale,
+  probabilityScaleZoneNodes,
+} from './probability-scale'
+import {
+  probabilityListingOutcomes,
+  probabilityListingOutcomesZoneNodes,
+} from './probability-listing'
+import {
+  probabilityExperimental,
+  probabilityExperimentalZoneNodes,
+} from './probability-experimental'
 
 export {
   whatIsAFraction,
@@ -98,6 +110,12 @@ export {
   perimeterZoneNodes,
   volumeCuboids,
   volumeCuboidsZoneNodes,
+  probabilityScale,
+  probabilityScaleZoneNodes,
+  probabilityListingOutcomes,
+  probabilityListingOutcomesZoneNodes,
+  probabilityExperimental,
+  probabilityExperimentalZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -122,6 +140,9 @@ export const mathsNodes: SkillNode[] = [
   ...areaRectanglesZoneNodes,
   ...perimeterZoneNodes,
   ...volumeCuboidsZoneNodes,
+  ...probabilityScaleZoneNodes,
+  ...probabilityListingOutcomesZoneNodes,
+  ...probabilityExperimentalZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -223,6 +244,16 @@ export const mathsZones: Zone[] = [
       ...areaRectanglesZoneNodes.map(n => n.id),
       ...perimeterZoneNodes.map(n => n.id),
       ...volumeCuboidsZoneNodes.map(n => n.id),
+    ],
+  },
+  {
+    id: 'maths-probability',
+    name: 'Probability',
+    realm: 'numerica',
+    nodeIds: [
+      ...probabilityScaleZoneNodes.map(n => n.id),
+      ...probabilityListingOutcomesZoneNodes.map(n => n.id),
+      ...probabilityExperimentalZoneNodes.map(n => n.id),
     ],
   },
 ]
