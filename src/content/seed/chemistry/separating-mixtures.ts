@@ -1488,7 +1488,8 @@ export const chromatography: SkillNode = {
           maths: 'solvent rises past the baseline and on up the paper',
         },
         {
-          explanation: '', // missing step: what they look for
+          explanation:
+            'Step 3: wait while the solvent rises up the paper. Each ink spot stretches up the strip and splits into a pattern of coloured spots above the baseline. That pattern is unique to each pen.',
         },
         {
           explanation:

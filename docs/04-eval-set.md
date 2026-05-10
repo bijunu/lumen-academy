@@ -1062,9 +1062,9 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - C-SM-14: Learner believes a pure single-colour substance should still split into several spots on a chromatogram if the experiment is done correctly, treating a one-spot result as a failed test.
   - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one Confident spot-misconception whose distractors include the "one spot means it failed" reading.
 - C-SM-15: Learner believes the height a dye climbs on a chromatogram is decided by the mass of the dye particles (lighter goes higher, heavier stays low).
-  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one Confident MCQ whose options pair "lighter dye climbs higher" against "dye that dissolves better in the solvent climbs higher".
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one Core or Confident MCQ whose options pair "lighter dye climbs higher" against "dye that dissolves better in the solvent climbs higher".
 - C-SM-16: Learner believes paper chromatography can separate any mixture, including colourless ones (sugar in water), in a Year 7 lab without any developing technique.
-  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ or spot-misconception whose distractors include the colourless-mixture answer.
+  - Required handling: misconception entry on `chemistry-separating-chromatography` referenced by `misconceptionId` from at least one question whose framing tests when paper chromatography is and is not the right method.
 - C-SM-17: Learner believes dye direction on the paper is fixed by which way up the paper is placed, missing that the solvent is what carries the dye in the direction it travels.
   - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ that explores what direction the dye spots travel.
 
