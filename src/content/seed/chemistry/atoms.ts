@@ -35,7 +35,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
           {
             id: 'aec-h-atom-whole',
             x: 50,
-            y: 50,
+            y: 18,
             label: 'The whole atom',
             description:
               'An atom is the smallest particle of a substance that still keeps the properties of that substance.',
@@ -120,7 +120,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
         'Click each marker to compare a compound with a mixture and see why a compound is a brand new substance, but a mixture is not.',
       data: {
         viewBox: '0 0 320 200',
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="40" width="120" height="120" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="80" y="32" text-anchor="middle" font-size="9" fill="#1E3A8A" font-weight="600">COMPOUND: WATER (H2O)</text><g><circle cx="55" cy="80" r="11" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><circle cx="42" cy="68" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><circle cx="68" cy="68" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><line x1="55" y1="80" x2="42" y2="68" stroke="#475569" stroke-width="1"/><line x1="55" y1="80" x2="68" y2="68" stroke="#475569" stroke-width="1"/></g><g><circle cx="105" cy="125" r="11" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><circle cx="92" cy="113" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><circle cx="118" cy="113" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><line x1="105" y1="125" x2="92" y2="113" stroke="#475569" stroke-width="1"/><line x1="105" y1="125" x2="118" y2="113" stroke="#475569" stroke-width="1"/></g><text x="80" y="153" text-anchor="middle" font-size="7" fill="#7F1D1D">red = oxygen, white = hydrogen</text></g><g><rect x="180" y="40" width="120" height="120" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="240" y="32" text-anchor="middle" font-size="9" fill="#1E3A8A" font-weight="600">MIXTURE: AIR</text><g><circle cx="200" cy="65" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><circle cx="212" cy="65" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><line x1="206" y1="65" x2="206" y2="65" stroke="#1E3A8A" stroke-width="0.8"/><line x1="200" y1="65" x2="212" y2="65" stroke="#1E3A8A" stroke-width="1"/></g><g><circle cx="240" cy="80" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><circle cx="252" cy="80" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><line x1="240" y1="80" x2="252" y2="80" stroke="#14532D" stroke-width="1"/></g><g><circle cx="270" cy="120" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><circle cx="282" cy="120" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><line x1="270" y1="120" x2="282" y2="120" stroke="#1E3A8A" stroke-width="1"/></g><g><circle cx="200" cy="135" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><circle cx="212" cy="135" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><line x1="200" y1="135" x2="212" y2="135" stroke="#14532D" stroke-width="1"/></g><g><circle cx="225" cy="115" r="5" fill="#A855F7" stroke="#581C87" stroke-width="0.6" opacity="0.85"/></g><text x="240" y="153" text-anchor="middle" font-size="7" fill="#1E3A8A">blue = nitrogen, green = oxygen</text></g></svg>',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="40" width="120" height="120" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="80" y="32" text-anchor="middle" font-size="9" fill="#1E3A8A" font-weight="600">COMPOUND: WATER (H<tspan baseline-shift="sub" font-size="0.65em">2</tspan>O)</text><g><circle cx="55" cy="80" r="11" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><circle cx="42" cy="68" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><circle cx="68" cy="68" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><line x1="55" y1="80" x2="42" y2="68" stroke="#475569" stroke-width="1"/><line x1="55" y1="80" x2="68" y2="68" stroke="#475569" stroke-width="1"/></g><g><circle cx="105" cy="125" r="11" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><circle cx="92" cy="113" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><circle cx="118" cy="113" r="5" fill="#FFFFFF" stroke="#475569" stroke-width="0.6"/><line x1="105" y1="125" x2="92" y2="113" stroke="#475569" stroke-width="1"/><line x1="105" y1="125" x2="118" y2="113" stroke="#475569" stroke-width="1"/></g><text x="80" y="153" text-anchor="middle" font-size="7" fill="#7F1D1D">red = oxygen, white = hydrogen</text></g><g><rect x="180" y="40" width="120" height="120" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="240" y="32" text-anchor="middle" font-size="9" fill="#1E3A8A" font-weight="600">MIXTURE: AIR</text><g><circle cx="200" cy="65" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><circle cx="212" cy="65" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><line x1="206" y1="65" x2="206" y2="65" stroke="#1E3A8A" stroke-width="0.8"/><line x1="200" y1="65" x2="212" y2="65" stroke="#1E3A8A" stroke-width="1"/></g><g><circle cx="240" cy="80" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><circle cx="252" cy="80" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><line x1="240" y1="80" x2="252" y2="80" stroke="#14532D" stroke-width="1"/></g><g><circle cx="270" cy="120" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><circle cx="282" cy="120" r="6" fill="#3B82F6" stroke="#1E3A8A" stroke-width="0.6"/><line x1="270" y1="120" x2="282" y2="120" stroke="#1E3A8A" stroke-width="1"/></g><g><circle cx="200" cy="135" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><circle cx="212" cy="135" r="6" fill="#22C55E" stroke="#14532D" stroke-width="0.6"/><line x1="200" y1="135" x2="212" y2="135" stroke="#14532D" stroke-width="1"/></g><g><circle cx="225" cy="115" r="5" fill="#A855F7" stroke="#581C87" stroke-width="0.6" opacity="0.85"/></g><text x="240" y="153" text-anchor="middle" font-size="7" fill="#1E3A8A">blue = nitrogen, green = oxygen</text></g></svg>',
         hotspots: [
           {
             id: 'aec-h-cm-water',
@@ -353,7 +353,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
     {
       id: 'aec-q8',
       type: 'drag-order',
-      stem: 'Place these four substances in order of how many different kinds of atom they hold, from fewest to most.',
+      stem: 'Place these three substances in order of how many different kinds of atom they hold, from fewest to most.',
       tier: 'core',
       items: [
         'Air (a mixture of nitrogen, oxygen, argon and others)',
@@ -557,7 +557,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
       correction:
         'In fact every water particle is two hydrogen atoms chemically bonded to one oxygen atom, so water is a compound built from two different elements.',
       reExplanation:
-        'Looking at a glass of water cannot tell us how many kinds of atom are inside, because atoms are far too small to see. Chemists know water is a compound because they can split it back into hydrogen gas and oxygen gas using a chemical method called electrolysis. The recipe for water is always the same: two hydrogens bonded to one oxygen, written H2O. Two different kinds of atom bonded together makes it a compound, not an element.',
+        'Looking at a glass of water cannot tell us how many kinds of atom are inside, because atoms are far too small to see. Chemists know water is a compound because they can split it back into hydrogen gas and oxygen gas using a chemical method called electrolysis. The recipe for water is always the same: two hydrogens bonded to one oxygen, written H₂O. Two different kinds of atom bonded together makes it a compound, not an element.',
     },
     // Source: AQA GCSE Chemistry examiner report June 2018 (8462/1F), Q03 on the difference between elements, compounds and mixtures: candidates "wrote that a sample of pure iron contained both iron and oxygen atoms, mistaking the metallic appearance for a compound." Reinforced by CGP KS3 Chemistry common-mistake callouts on the element definition.
     {
@@ -614,7 +614,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
   id: 'chemistry-atoms-symbols-formulae',
   title: 'Symbols and Simple Formulae',
   description:
-    'Read chemical symbols off the periodic table and use them to write or read simple formulae such as H2O, CO2, NaCl and CH4. Use subscript numbers to count atoms in a formula. No balancing of equations.',
+    'Read chemical symbols off the periodic table and use them to write or read simple formulae such as H₂O, CO₂, NaCl and CH₄. Use subscript numbers to count atoms in a formula. No balancing of equations.',
   subject: 'chemistry',
   realm: 'elementia',
   zoneId: 'chemistry-atoms-elements-compounds',
@@ -711,13 +711,13 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     },
     {
       id: 'sym-scene-formula',
-      title: 'Reading a Formula: H2O',
+      title: 'Reading a Formula: H₂O',
       type: 'labelled-diagram',
       instructions:
-        'Click each marker on the formula H2O to see how the symbol and the small number tell you which atoms are bonded together and how many of each.',
+        'Click each marker on the formula H₂O to see how the symbol and the small number tell you which atoms are bonded together and how many of each.',
       data: {
         viewBox: '0 0 320 180',
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180"><rect x="0" y="0" width="320" height="180" fill="#FEF3C7"/><text x="120" y="80" font-size="58" font-weight="700" fill="#1E3A8A">H</text><text x="160" y="95" font-size="28" font-weight="700" fill="#1E3A8A">2</text><text x="190" y="80" font-size="58" font-weight="700" fill="#1E3A8A">O</text><g><circle cx="60" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="80" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="115" cy="140" r="20" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><line x1="74" y1="140" x2="100" y2="140" stroke="#475569" stroke-width="1"/></g><text x="100" y="165" text-anchor="middle" font-size="8" fill="#1E3A8A">2 hydrogen atoms + 1 oxygen atom = one water particle</text></svg>',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180"><rect x="0" y="0" width="320" height="180" fill="#FEF3C7"/><text x="120" y="80" font-size="58" font-weight="700" fill="#1E3A8A">H<tspan baseline-shift="sub" font-size="0.65em">2</tspan>O</text><g><circle cx="60" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="80" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="115" cy="140" r="20" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><line x1="74" y1="140" x2="100" y2="140" stroke="#475569" stroke-width="1"/></g><text x="100" y="165" text-anchor="middle" font-size="8" fill="#1E3A8A">2 hydrogen atoms + 1 oxygen atom = one water particle</text></svg>',
         hotspots: [
           {
             id: 'sym-h-h2o-h',
@@ -741,7 +741,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
             y: 38,
             label: 'O is the symbol for oxygen',
             description:
-              'After the H2 comes O. There is no small number after it, so there is just one oxygen atom in the particle.',
+              'After the H₂ comes O. There is no small number after it, so there is just one oxygen atom in the particle.',
           },
           {
             id: 'sym-h-h2o-default',
@@ -762,13 +762,13 @@ export const symbolsAndSimpleFormulae: SkillNode = {
         'Click each marker to read four common compound formulae you will meet in Year 7.',
       data: {
         viewBox: '0 0 320 200',
-        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">H2O</text><text x="80" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">water</text></g><g><rect x="160" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CO2</text><text x="220" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">carbon dioxide</text></g><g><rect x="20" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">NaCl</text><text x="80" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">sodium chloride (table salt)</text></g><g><rect x="160" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CH4</text><text x="220" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">methane (natural gas)</text></g></svg>',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">H<tspan baseline-shift="sub" font-size="0.65em">2</tspan>O</text><text x="80" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">water</text></g><g><rect x="160" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CO<tspan baseline-shift="sub" font-size="0.65em">2</tspan></text><text x="220" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">carbon dioxide</text></g><g><rect x="20" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">NaCl</text><text x="80" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">sodium chloride (table salt)</text></g><g><rect x="160" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CH<tspan baseline-shift="sub" font-size="0.65em">4</tspan></text><text x="220" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">methane (natural gas)</text></g></svg>',
         hotspots: [
           {
             id: 'sym-h-gal-h2o',
             x: 25,
             y: 30,
-            label: 'H2O: water (3 atoms)',
+            label: 'H₂O: water (3 atoms)',
             description:
               'Two hydrogen atoms bonded to one oxygen atom. The compound that comes out of every UK kitchen tap.',
           },
@@ -776,7 +776,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
             id: 'sym-h-gal-co2',
             x: 70,
             y: 30,
-            label: 'CO2: carbon dioxide (3 atoms)',
+            label: 'CO₂: carbon dioxide (3 atoms)',
             description:
               'One carbon atom bonded to two oxygen atoms. The gas you breathe out, and the gas that fizzes out of a bottle of cola.',
           },
@@ -792,7 +792,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
             id: 'sym-h-gal-ch4',
             x: 70,
             y: 70,
-            label: 'CH4: methane (5 atoms)',
+            label: 'CH₄: methane (5 atoms)',
             description:
               'One carbon atom bonded to four hydrogen atoms. The main gas burnt by a domestic gas hob across the UK.',
           },
@@ -803,11 +803,11 @@ export const symbolsAndSimpleFormulae: SkillNode = {
   workedExamples: [
     {
       id: 'sym-worked-1',
-      title: 'Counting atoms in CO2',
+      title: 'Counting atoms in CO₂',
       steps: [
         {
           explanation:
-            'Question: how many atoms in total are in one particle of carbon dioxide, CO2?',
+            'Question: how many atoms in total are in one particle of carbon dioxide, CO₂?',
         },
         {
           explanation:
@@ -817,7 +817,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
         {
           explanation:
             'Step 2: the next symbol is O. The small 2 just after it tells us there are two oxygen atoms.',
-          maths: 'O2 means 2 oxygen atoms',
+          maths: 'O₂ means 2 oxygen atoms',
         },
         {
           explanation: 'Step 3: add up. 1 carbon + 2 oxygens = 3 atoms in total.',
@@ -830,11 +830,11 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     },
     {
       id: 'sym-worked-2',
-      title: 'Counting atoms in CH4 (methane)',
+      title: 'Counting atoms in CH₄ (methane)',
       steps: [
         {
           explanation:
-            'Question: a UK gas hob burns methane, formula CH4. How many atoms in total are in one particle of methane, and how many are hydrogen?',
+            'Question: a UK gas hob burns methane, formula CH₄. How many atoms in total are in one particle of methane, and how many are hydrogen?',
         },
         {
           explanation:
@@ -844,7 +844,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
         {
           explanation:
             'Step 2: the next symbol is H. The small 4 just after it tells us there are four hydrogen atoms in one particle.',
-          maths: 'H4 means 4 hydrogen atoms',
+          maths: 'H₄ means 4 hydrogen atoms',
         },
         {
           explanation:
@@ -909,10 +909,10 @@ export const symbolsAndSimpleFormulae: SkillNode = {
       stem: 'A pupil writes "CO" for carbon dioxide. What is the problem with the formula?',
       tier: 'core',
       options: [
-        'CO is the formula for carbon monoxide, with one oxygen atom. Carbon dioxide has two oxygen atoms, so the correct formula is CO2.',
+        'CO is the formula for carbon monoxide, with one oxygen atom. Carbon dioxide has two oxygen atoms, so the correct formula is CO₂.',
         'CO is the formula for cobalt, an element, not a compound.',
         'CO is the formula for carbon, the element on its own.',
-        'There is no problem; CO and CO2 mean the same thing.',
+        'There is no problem; CO and CO₂ mean the same thing.',
       ],
       correctIndex: 0,
       xpValue: 10,
@@ -921,7 +921,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q5',
       type: 'numeric-entry',
-      stem: 'How many atoms in total are in one particle of water, H2O?',
+      stem: 'How many atoms in total are in one particle of water, H₂O?',
       tier: 'core',
       correctAnswer: 3,
       xpValue: 10,
@@ -930,7 +930,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q6',
       type: 'numeric-entry',
-      stem: 'How many oxygen atoms are in one particle of carbon dioxide, CO2?',
+      stem: 'How many oxygen atoms are in one particle of carbon dioxide, CO₂?',
       tier: 'core',
       correctAnswer: 2,
       xpValue: 10,
@@ -939,9 +939,9 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q7',
       type: 'drag-order',
-      stem: 'Place these four formulae in order of how many atoms they hold in one particle, from fewest to most.',
+      stem: 'Place these three formulae in order of how many atoms they hold in one particle, from fewest to most.',
       tier: 'core',
-      items: ['CH4 (methane)', 'NaCl (sodium chloride)', 'H2O (water)'],
+      items: ['CH₄ (methane)', 'NaCl (sodium chloride)', 'H₂O (water)'],
       correctOrder: [1, 2, 0],
       xpValue: 15,
     },
@@ -967,10 +967,10 @@ export const symbolsAndSimpleFormulae: SkillNode = {
       stem: 'Which formula matches the description "one nitrogen atom bonded to three hydrogen atoms"? This compound is ammonia, used in some household cleaners.',
       tier: 'confident',
       options: [
-        'N3H',
+        'N₃H',
         'NH',
-        'NH3',
-        'N2H',
+        'NH₃',
+        'N₂H',
       ],
       correctIndex: 2,
       xpValue: 15,
@@ -979,7 +979,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q10',
       type: 'numeric-entry',
-      stem: 'How many atoms in total are in one particle of methane, CH4?',
+      stem: 'How many atoms in total are in one particle of methane, CH₄?',
       tier: 'confident',
       correctAnswer: 5,
       xpValue: 15,
@@ -988,7 +988,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q11',
       type: 'multiple-choice',
-      stem: 'A formula reads CaCO3. This is the main compound in chalk and in the limescale that builds up inside a Sevenoaks kettle. How many of each kind of atom are in one CaCO3 unit?',
+      stem: 'A formula reads CaCO₃. This is the main compound in chalk and in the limescale that builds up inside a Sevenoaks kettle. How many of each kind of atom are in one CaCO₃ unit?',
       tier: 'confident',
       options: [
         '1 calcium, 1 carbon, 3 oxygens',
@@ -1024,7 +1024,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
       tier: 'confident',
       options: [
         'O',
-        'O2',
+        'O₂',
         '2O',
         'OO',
       ],
@@ -1035,7 +1035,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q14',
       type: 'missing-step',
-      stem: 'Fill in the missing step. Question: A pupil reads the formula CH4 and is asked how many atoms in total are in one particle of methane.',
+      stem: 'Fill in the missing step. Question: A pupil reads the formula CH₄ and is asked how many atoms in total are in one particle of methane.',
       tier: 'confident',
       steps: [
         'Read the formula left to right. The first symbol is C with no small number after it, so count one carbon atom.',
@@ -1051,10 +1051,10 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q15',
       type: 'data-extraction',
-      stem: 'A pupil records four common compounds in a small table:\n- water: H2O\n- carbon dioxide: CO2\n- ammonia: NH3\n- methane: CH4\n\nWhich compound holds the most atoms in one particle?',
+      stem: 'A pupil records four common compounds in a small table:\n- water: H₂O\n- carbon dioxide: CO₂\n- ammonia: NH₃\n- methane: CH₄\n\nWhich compound holds the most atoms in one particle?',
       tier: 'confident',
       dataSource:
-        'water: H2O (3 atoms); carbon dioxide: CO2 (3 atoms); ammonia: NH3 (4 atoms); methane: CH4 (5 atoms).',
+        'water: H₂O (3 atoms); carbon dioxide: CO₂ (3 atoms); ammonia: NH₃ (4 atoms); methane: CH₄ (5 atoms).',
       correctAnswer: 'methane',
       xpValue: 15,
       hint: 'Add the atom counts for each compound, then pick the largest.',
@@ -1062,7 +1062,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q16',
       type: 'numeric-entry',
-      stem: 'A bottle of household ammonia cleaner has the active compound ammonia, formula NH3. How many hydrogen atoms are in one particle of ammonia?',
+      stem: 'A bottle of household ammonia cleaner has the active compound ammonia, formula NH₃. How many hydrogen atoms are in one particle of ammonia?',
       tier: 'confident',
       correctAnswer: 3,
       xpValue: 15,
@@ -1074,10 +1074,10 @@ export const symbolsAndSimpleFormulae: SkillNode = {
       stem: 'Aisha is writing a list of formulae. She wants to write "two carbon dioxide particles". Which of these is the standard chemistry way to write that?',
       tier: 'challenge',
       options: [
-        'CO4',
-        'C2O4',
-        '2CO2',
-        'CO22',
+        'CO₄',
+        'C₂O₄',
+        '2CO₂',
+        'CO₂₂',
       ],
       correctIndex: 2,
       xpValue: 25,
@@ -1086,7 +1086,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q18',
       type: 'numeric-entry',
-      stem: 'A teacher in Tunbridge Wells writes the formula for calcium hydroxide as Ca(OH)2 on the board. The brackets mean that everything inside is repeated by the small 2 outside. How many oxygen atoms are in one Ca(OH)2 unit?',
+      stem: 'A teacher in Tunbridge Wells writes the formula for calcium hydroxide as Ca(OH)₂ on the board. The brackets mean that everything inside is repeated by the small 2 outside. How many oxygen atoms are in one Ca(OH)₂ unit?',
       tier: 'challenge',
       correctAnswer: 2,
       xpValue: 25,
@@ -1095,7 +1095,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q19',
       type: 'multiple-choice',
-      stem: 'Liam reads a formula for glucose, C6H12O6, on a school nutrition poster. Which line gives the correct atom counts in one particle of glucose?',
+      stem: 'Liam reads a formula for glucose, C₆H₁₂O₆, on a school nutrition poster. Which line gives the correct atom counts in one particle of glucose?',
       tier: 'challenge',
       options: [
         '6 sets of CHO, with no other atoms',
@@ -1109,7 +1109,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q20',
       type: 'spot-misconception',
-      stem: 'Sophie says: "The formula 2H2O means two hydrogen atoms and 2 oxygen atoms in one particle." Is she right?',
+      stem: 'Sophie says: "The formula 2H₂O means two hydrogen atoms and 2 oxygen atoms in one particle." Is she right?',
       tier: 'challenge',
       statements: [
         {
@@ -1117,7 +1117,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
           isMisconception: true,
         },
         {
-          text: 'Sophie is wrong. The big 2 in front means two whole H2O particles. So 2H2O means 4 hydrogen atoms and 2 oxygen atoms across two particles.',
+          text: 'Sophie is wrong. The big 2 in front means two whole H₂O particles. So 2H₂O means 4 hydrogen atoms and 2 oxygen atoms across two particles.',
           isMisconception: false,
         },
       ],
@@ -1127,11 +1127,11 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q21',
       type: 'numeric-entry',
-      stem: 'A pupil writes 3CO2 to mean three particles of carbon dioxide. How many oxygen atoms are there in 3CO2 in total?',
+      stem: 'A pupil writes 3CO₂ to mean three particles of carbon dioxide. How many oxygen atoms are there in 3CO₂ in total?',
       tier: 'challenge',
       correctAnswer: 6,
       xpValue: 25,
-      hint: 'One CO2 particle has 2 oxygen atoms. Three particles means 3 times that.',
+      hint: 'One CO₂ particle has 2 oxygen atoms. Three particles means 3 times that.',
       misconceptionId: 'sym-mis-big-vs-small-number',
     },
   ],
@@ -1151,36 +1151,36 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-mis-subscript-optional',
       description:
-        'Subscript numbers in a formula are optional decoration. CO and CO2 mean the same thing, and HO and H2O mean the same thing.',
+        'Subscript numbers in a formula are optional decoration. CO and CO₂ mean the same thing, and HO and H₂O mean the same thing.',
       triggerAnswer: 'subscript-optional',
       correction:
-        'In fact the subscript number tells you exactly how many of the atom just before it are in the particle. CO and CO2 are different compounds: CO is carbon monoxide and CO2 is carbon dioxide.',
+        'In fact the subscript number tells you exactly how many of the atom just before it are in the particle. CO and CO₂ are different compounds: CO is carbon monoxide and CO₂ is carbon dioxide.',
       reExplanation:
-        'Think of the subscript as a count. H2O means two hydrogen atoms bonded to one oxygen atom; remove the small 2 and HO would mean one of each, which is a different compound (and a very rare one). Carbon monoxide (CO) and carbon dioxide (CO2) behave very differently: CO is the deadly gas that smoke alarms detect, while CO2 is the gas you breathe out. So the small numbers always matter; never drop one to make a formula shorter.',
+        'Think of the subscript as a count. H₂O means two hydrogen atoms bonded to one oxygen atom; remove the small 2 and HO would mean one of each, which is a different compound (and a very rare one). Carbon monoxide (CO) and carbon dioxide (CO₂) behave very differently: CO is the deadly gas that smoke alarms detect, while CO₂ is the gas you breathe out. So the small numbers always matter; never drop one to make a formula shorter.',
     },
     // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q02 on writing formulae from particle pictures: candidates "wrote subscripts in front of symbols, e.g. 3H rather than H3, mixing the meaning of a multiplier with the meaning of a subscript." Reinforced by CGP KS3 Chemistry on the order of letters and numbers in a formula.
     {
       id: 'sym-mis-subscript-position',
       description:
-        'A small number in a formula belongs in front of the symbol, so 3H and H3 mean the same thing.',
+        'A small number in a formula belongs in front of the symbol, so 3H and H₃ mean the same thing.',
       triggerAnswer: 'subscript-position',
       correction:
         'In fact the position of the number changes its meaning. A small number after a symbol counts atoms inside one particle, while a bigger number in front of the formula counts whole particles.',
       reExplanation:
-        'Read NH3 as "one nitrogen bonded to three hydrogens", with the 3 sitting just after H. Compare with 3NH3, which means "three particles of NH3", so 3 nitrogen atoms and 9 hydrogen atoms in total. The two numbers answer different questions: the small one says how many atoms inside one particle, and the big one says how many particles.',
+        'Read NH₃ as "one nitrogen bonded to three hydrogens", with the 3 sitting just after H. Compare with 3NH₃, which means "three particles of NH₃", so 3 nitrogen atoms and 9 hydrogen atoms in total. The two numbers answer different questions: the small one says how many atoms inside one particle, and the big one says how many particles.',
     },
-    // Source: Vanessa Kind, "Beyond Appearances: Students' ideas about the particulate nature of matter", RSC Education: documents the persistent learner habit of writing element gases as single atoms (e.g. O for oxygen gas) rather than as bonded pairs. Reinforced by Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q03: "candidates wrote O for oxygen gas, missing that oxygen exists as O2 molecules."
+    // Source: Vanessa Kind, "Beyond Appearances: Students' ideas about the particulate nature of matter", RSC Education: documents the persistent learner habit of writing element gases as single atoms (e.g. O for oxygen gas) rather than as bonded pairs. Reinforced by Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q03: "candidates wrote O for oxygen gas, missing that oxygen exists as O₂ molecules."
     {
       id: 'sym-mis-element-formula',
       description:
         'Every element is written as a single symbol on its own. So oxygen gas is O, hydrogen gas is H and nitrogen gas is N.',
       triggerAnswer: 'element-formula',
       correction:
-        'In fact several common gas elements exist as bonded pairs of atoms (called diatomic molecules). Oxygen gas is O2, hydrogen gas is H2, nitrogen gas is N2 and chlorine gas is Cl2.',
+        'In fact several common gas elements exist as bonded pairs of atoms (called diatomic molecules). Oxygen gas is O₂, hydrogen gas is H₂, nitrogen gas is N₂ and chlorine gas is Cl₂.',
       reExplanation:
-        'Look closely at the air you breathe. About a fifth of it is oxygen, and oxygen atoms in the air come in pairs that are bonded together. So a particle of oxygen gas is two oxygen atoms stuck side by side, written O2. Hydrogen, nitrogen and chlorine behave the same way: they exist as pairs in their gas form. The noble gases (helium He, neon Ne, argon Ar) are an exception because they sit happily as single atoms.',
+        'Look closely at the air you breathe. About a fifth of it is oxygen, and oxygen atoms in the air come in pairs that are bonded together. So a particle of oxygen gas is two oxygen atoms stuck side by side, written O₂. Hydrogen, nitrogen and chlorine behave the same way: they exist as pairs in their gas form. The noble gases (helium He, neon Ne, argon Ar) are an exception because they sit happily as single atoms.',
     },
-    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q03 on counting atoms in formulae with multipliers: candidates "wrote that 2H2O contains 2 hydrogen atoms and 2 oxygen atoms, missing that the leading 2 multiplies the whole formula." Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic on multipliers in formulae.
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q03 on counting atoms in formulae with multipliers: candidates "wrote that 2H₂O contains 2 hydrogen atoms and 2 oxygen atoms, missing that the leading 2 multiplies the whole formula." Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic on multipliers in formulae.
     {
       id: 'sym-mis-big-vs-small-number',
       description:
@@ -1189,7 +1189,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
       correction:
         'In fact the big number in front multiplies the whole formula, while the small number after a symbol only counts the atoms just before it.',
       reExplanation:
-        'Take 2H2O. The small 2 inside the formula belongs to H, so each particle has 2 hydrogens and 1 oxygen. The big 2 in front multiplies everything in the formula by 2, so 2H2O means two whole particles of water: 4 hydrogens and 2 oxygens in total. The big number is for counting whole particles, the small number is for counting atoms inside one particle. Mix them up and your atom count will always be wrong.',
+        'Take 2H₂O. The small 2 inside the formula belongs to H, so each particle has 2 hydrogens and 1 oxygen. The big 2 in front multiplies everything in the formula by 2, so 2H₂O means two whole particles of water: 4 hydrogens and 2 oxygens in total. The big number is for counting whole particles, the small number is for counting atoms inside one particle. Mix them up and your atom count will always be wrong.',
     },
     // Source: David Paterson, "Teaching elements, compounds and mixtures at Key Stage 3", RSC Education CPD article (2021-04-13): a recurring Year 7 confusion is to read the symbol of a multi-letter element with two capital letters (e.g. CO read as carbon and oxygen rather than as cobalt). Reinforced by AQA GCSE Chemistry examiner report June 2019 (8462/1F), Q01: "candidates wrote that CO meant 'carbon and oxygen' rather than the compound carbon monoxide or the element cobalt depending on capitalisation."
     {
