@@ -1769,15 +1769,21 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 
 ## Zone: Mechanica > Magnetism
 
-Zone id: `physics-magnetism`. Covers `physics-magnetism-fields`.
+Zone id: `physics-magnetism`. Covers `physics-magnetism-fields`, `physics-magnetism-electromagnets`.
 
 ### Content probes
-- C-MAG-1: Learner believes every metal is magnetic, often because magnets stick to "metal" fridge doors and tools. (Covers `physics-magnetism-fields`.)
+- C-MAG-1: Learner believes every metal is magnetic, often because magnets stick to "metal" fridge doors and tools. (Covers `physics-magnetism-fields`, `physics-magnetism-electromagnets`.)
 - C-MAG-2: Learner mixes up the like-poles rule, saying two strong N poles will snap together or that "stronger poles always attract". (Covers `physics-magnetism-fields`.)
 - C-MAG-3: Learner draws magnetic field lines pointing from S to N outside the magnet, or as straight rays rather than as loops. (Covers `physics-magnetism-fields`.)
 - C-MAG-4: Learner believes the magnetic field round a bar magnet is the same strength everywhere or strongest in the middle, missing that field strength is highest at the poles. (Covers `physics-magnetism-fields`.)
 - C-MAG-5: Learner explains the compass with non-magnetic causes (gravity, the Sun, wind, a heavier N end), missing that Earth's magnetic field is what lines the needle up. (Covers `physics-magnetism-fields`.)
 - C-MAG-6: Learner confuses magnetic attraction with gravity, saying things like "a magnet pulls a paper clip because of gravity" or "all heavy objects are magnetic". (Covers `physics-magnetism-fields`.)
+- C-MAG-7: Learner names strength as the key advantage of an electromagnet over a permanent magnet, missing that the on-off switching ability is what determines design choices. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-8: Learner believes the iron core stays magnetised after the current is switched off, treating the coil as a way to "make" a permanent magnet. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-9: Learner believes more turns of wire makes an electromagnet weaker (often by reasoning about resistance), or that there is a small Year 7 limit beyond which extra turns stop helping. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-10: Learner calls an electromagnet a "permanent magnet while the current is on", missing that the word "permanent" means "stays magnetic after the source is removed". (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-11: Learner believes any metal core works in an electromagnet (e.g. a copper or aluminium rod), missing that only iron and other magnetic metals boost the field. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-12: Learner blurs the motor effect and electromagnet ideas, treating "current makes a force on a wire in a magnetic field" as the same as "a coil with current is a magnet". (Covers `physics-magnetism-electromagnets`.)
 
 ### Question shape probes
 - Q-MAG-1: At least one Core MCQ on the magnetism-fields node asks "what happens when N faces N" with the like-poles-repel rule, with at least one distractor that uses the "they attract" misstep. (Covers `physics-magnetism-fields`.)
@@ -1788,12 +1794,22 @@ Zone id: `physics-magnetism`. Covers `physics-magnetism-fields`.
 - Q-MAG-6: At least one item on the magnetism-fields node uses a UK context (fridge magnet, school lab tray, Lake District compass walk, iron-filing practical, 2p coin) without quoting a numeric field strength in tesla. (Covers `physics-magnetism-fields`.)
 - Q-MAG-7: At least one Confident or Challenge spot-misconception on the magnetism-fields node confronts either the "all metals are magnetic" or the "two N poles snap together" claim. (Covers `physics-magnetism-fields`.)
 - Q-MAG-8: No question on the magnetism-fields node uses Faraday's law of induction, magnetic flux density (B in tesla), or the motor effect. KS3 stays qualitative; those topics are GCSE Higher / A-Level. (Covers `physics-magnetism-fields`.)
+- Q-MAG-9: At least one Core MCQ on the electromagnets node asks "what is the key advantage of an electromagnet?" with the on-off answer correct and at least one distractor that names strength. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-10: At least one item on the electromagnets node uses the scrapyard crane UK context (lifting then dropping a car by switching the current). (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-11: At least one item on the electromagnets node tests "more turns = stronger" with a distractor that says more turns weakens the coil or that there is a small Year 7 limit. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-12: At least one Confident or Challenge spot-misconception on the electromagnets node confronts the "iron core stays magnetised after the switch is opened" claim. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-13: At least one item on the electromagnets node uses a UK MRI scanner, electric bell, or scrapyard crane context to ground the on-off advantage. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-14: No question on the electromagnets node uses Faraday's law of induction, Lenz's law, or the motor-effect right-hand rule. KS3 stays at "coil + current + iron core, switchable"; the rest is GCSE Higher / A-Level. (Covers `physics-magnetism-electromagnets`.)
 
 ### Tutor probes
 - T-MAG-1: Given the prompt "Why doesn't a magnet stick to my Coke can?", the tutor escalates from a nudge ("which metals are actually magnetic?") to the iron/steel/nickel/cobalt rule, and notes that aluminium and copper are common metals that do not stick.
 - T-MAG-2: Given the prompt "What does a field line mean?", the tutor explains it as the direction the N pole of a tiny test compass would point, and describes the loop shape (N round to S outside).
 - T-MAG-3: Given a question that uses motor-effect derivation or flux density in tesla, the tutor steers back to the KS3-qualitative framing politely and notes that those calculations are GCSE+ territory.
 - T-MAG-4: Given a request for an inline definition (tap on "field line", "pole", or "compass"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-MAG-5: Given the prompt "Why does a scrapyard crane use an electromagnet?", the tutor nudges toward the on-off ability ("could a permanent magnet drop the car?") and only later names "switchable" as the key advantage.
+- T-MAG-6: Given the prompt "What happens to the iron core when I switch off?", the tutor explains that soft iron loses its magnetism almost straight away and that this is why the electromagnet is useful, without naming "soft" vs "hard" magnetic materials unless the learner asks.
+- T-MAG-7: Given a question that asks for Faraday's law of induction, Lenz's law, or the right-hand-rule motor formula, the tutor politely defers to GCSE Higher / A-Level and offers a Year 7 alternative on switching, turns, or core material.
+- T-MAG-8: Given a request for an inline definition (tap on "solenoid", "core", or "switch"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Numerica > Geometry and Measure
 

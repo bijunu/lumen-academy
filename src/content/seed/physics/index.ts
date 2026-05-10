@@ -40,6 +40,7 @@ import {
 } from './space'
 import {
   magnetismFields,
+  magnetismElectromagnets,
   magnetismZoneNodes,
   magnetismZone,
 } from './magnetism'
@@ -72,6 +73,7 @@ export {
   spaceZoneNodes,
   spaceZone,
   magnetismFields,
+  magnetismElectromagnets,
   magnetismZoneNodes,
   magnetismZone,
 }

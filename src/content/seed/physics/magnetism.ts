@@ -134,6 +134,148 @@ const EARTH_COMPASS_SVG = `
   </g>
 `
 
+const SOLENOID_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Electromagnet: a coil of wire round an iron core, switched on by a battery</text>
+
+    <!-- Iron core (rectangular bar) -->
+    <rect x="200" y="180" width="400" height="40" />
+    <text x="400" y="205" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">iron core (inside the coil)</text>
+
+    <!-- Coil loops drawn as alternating top/bottom arcs -->
+    <path d="M 220 180 A 12 18 0 0 1 220 220" />
+    <path d="M 250 180 A 12 18 0 0 1 250 220" />
+    <path d="M 280 180 A 12 18 0 0 1 280 220" />
+    <path d="M 310 180 A 12 18 0 0 1 310 220" />
+    <path d="M 340 180 A 12 18 0 0 1 340 220" />
+    <path d="M 370 180 A 12 18 0 0 1 370 220" />
+    <path d="M 400 180 A 12 18 0 0 1 400 220" />
+    <path d="M 430 180 A 12 18 0 0 1 430 220" />
+    <path d="M 460 180 A 12 18 0 0 1 460 220" />
+    <path d="M 490 180 A 12 18 0 0 1 490 220" />
+    <path d="M 520 180 A 12 18 0 0 1 520 220" />
+    <path d="M 550 180 A 12 18 0 0 1 550 220" />
+    <path d="M 580 180 A 12 18 0 0 1 580 220" />
+
+    <!-- Wires going out left and right to a battery and switch -->
+    <line x1="220" y1="180" x2="220" y2="120" />
+    <line x1="220" y1="120" x2="120" y2="120" />
+    <line x1="580" y1="180" x2="580" y2="120" />
+    <line x1="580" y1="120" x2="680" y2="120" />
+
+    <!-- Battery cell on the left -->
+    <line x1="120" y1="100" x2="120" y2="140" stroke-width="3" />
+    <line x1="110" y1="105" x2="110" y2="135" />
+    <text x="100" y="130" text-anchor="end" font-size="11" stroke="none" fill="currentColor">battery</text>
+    <line x1="110" y1="120" x2="80" y2="120" />
+    <line x1="80" y1="120" x2="80" y2="280" />
+    <line x1="80" y1="280" x2="680" y2="280" />
+    <line x1="680" y1="280" x2="680" y2="190" />
+
+    <!-- Switch on the right (open or closed) -->
+    <circle cx="680" cy="160" r="3" fill="currentColor" />
+    <circle cx="680" cy="190" r="3" fill="currentColor" />
+    <line x1="680" y1="160" x2="660" y2="135" stroke-width="2.5" />
+    <text x="700" y="170" text-anchor="start" font-size="11" stroke="none" fill="currentColor">switch</text>
+    <text x="700" y="186" text-anchor="start" font-size="10" stroke="none" fill="currentColor">(closed = on)</text>
+
+    <text x="400" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Current flows round the coil; the iron core becomes magnetic.</text>
+    <text x="400" y="320" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Open the switch (no current): the iron core stops being a magnet.</text>
+    <text x="400" y="338" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="currentColor">Switchable. That is the key advantage over a permanent magnet.</text>
+  </g>
+`
+
+const ELECTROMAGNET_STRENGTH_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">What makes an electromagnet stronger?</text>
+
+    <!-- Three rows: more turns, more current, iron core -->
+
+    <!-- Row 1: more turns -->
+    <text x="80" y="100" text-anchor="start" font-size="13" font-weight="700" stroke="none" fill="currentColor">1. More turns of wire</text>
+    <rect x="280" y="90" width="160" height="20" />
+    <path d="M 290 90 A 6 10 0 0 1 290 110" />
+    <path d="M 310 90 A 6 10 0 0 1 310 110" />
+    <path d="M 330 90 A 6 10 0 0 1 330 110" />
+    <text x="360" y="105" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">few turns: weaker</text>
+    <rect x="500" y="90" width="220" height="20" />
+    <path d="M 510 90 A 5 10 0 0 1 510 110" />
+    <path d="M 525 90 A 5 10 0 0 1 525 110" />
+    <path d="M 540 90 A 5 10 0 0 1 540 110" />
+    <path d="M 555 90 A 5 10 0 0 1 555 110" />
+    <path d="M 570 90 A 5 10 0 0 1 570 110" />
+    <path d="M 585 90 A 5 10 0 0 1 585 110" />
+    <path d="M 600 90 A 5 10 0 0 1 600 110" />
+    <path d="M 615 90 A 5 10 0 0 1 615 110" />
+    <text x="660" y="105" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="currentColor">more turns: stronger</text>
+
+    <!-- Row 2: more current -->
+    <text x="80" y="180" text-anchor="start" font-size="13" font-weight="700" stroke="none" fill="currentColor">2. Bigger current</text>
+    <text x="280" y="180" text-anchor="start" font-size="11" stroke="none" fill="currentColor">small battery: weaker</text>
+    <text x="500" y="180" text-anchor="start" font-size="11" font-weight="700" stroke="none" fill="currentColor">bigger battery (more current): stronger</text>
+
+    <!-- Row 3: iron core -->
+    <text x="80" y="240" text-anchor="start" font-size="13" font-weight="700" stroke="none" fill="currentColor">3. Add an iron core</text>
+    <text x="280" y="240" text-anchor="start" font-size="11" stroke="none" fill="currentColor">no core: weaker</text>
+    <text x="500" y="240" text-anchor="start" font-size="11" font-weight="700" stroke="none" fill="currentColor">iron core in the coil: stronger</text>
+
+    <!-- Switch off note -->
+    <line x1="60" y1="290" x2="740" y2="290" stroke-dasharray="4,4" stroke-width="1" />
+    <text x="400" y="320" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Switch the current off and the magnet stops working straight away.</text>
+    <text x="400" y="340" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">A permanent magnet stays magnetic; an electromagnet is on only when current flows.</text>
+  </g>
+`
+
+const SCRAPYARD_CRANE_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">UK contexts: scrapyard crane and electric bell</text>
+
+    <!-- Crane on the left -->
+    <rect x="40" y="80" width="300" height="240" fill="none" />
+    <text x="190" y="105" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Scrapyard crane</text>
+
+    <!-- Crane arm -->
+    <line x1="80" y1="130" x2="80" y2="220" stroke-width="3" />
+    <line x1="80" y1="130" x2="280" y2="130" stroke-width="3" />
+    <line x1="280" y1="130" x2="280" y2="180" stroke-width="2" />
+
+    <!-- Electromagnet block (a disc on a chain) -->
+    <rect x="240" y="180" width="80" height="30" fill="currentColor" opacity="0.4" />
+    <text x="280" y="200" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="white">EM</text>
+
+    <!-- Cars below -->
+    <rect x="220" y="240" width="50" height="20" />
+    <circle cx="232" cy="262" r="4" />
+    <circle cx="258" cy="262" r="4" />
+    <rect x="285" y="240" width="50" height="20" />
+    <circle cx="297" cy="262" r="4" />
+    <circle cx="323" cy="262" r="4" />
+
+    <text x="190" y="296" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Switch ON: lifts a car.</text>
+    <text x="190" y="312" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Switch OFF: drops it.</text>
+
+    <!-- Electric bell on the right -->
+    <rect x="440" y="80" width="300" height="240" fill="none" />
+    <text x="590" y="105" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Electric bell</text>
+
+    <!-- Bell dome -->
+    <path d="M 540 200 Q 590 130 640 200" stroke-width="2.5" />
+    <line x1="540" y1="200" x2="640" y2="200" stroke-width="2.5" />
+    <line x1="590" y1="200" x2="590" y2="220" stroke-width="2" />
+    <circle cx="590" cy="225" r="6" fill="currentColor" />
+
+    <!-- Coil + striker arm -->
+    <rect x="500" y="240" width="180" height="20" />
+    <line x1="490" y1="250" x2="500" y2="250" stroke-width="2" />
+    <line x1="680" y1="250" x2="690" y2="250" stroke-width="2" />
+    <text x="590" y="254" text-anchor="middle" font-size="10" font-weight="700" stroke="none" fill="white">coil</text>
+
+    <line x1="540" y1="290" x2="640" y2="290" stroke-width="1.5" />
+    <text x="590" y="310" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">A coil pulls a striker</text>
+    <text x="590" y="324" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">to ring the bell, then releases.</text>
+  </g>
+`
+
 export const magnetismFields: SkillNode = {
   id: 'physics-magnetism-fields',
   title: 'Magnets and Magnetic Fields',
@@ -749,7 +891,581 @@ export const magnetismFields: SkillNode = {
   },
 }
 
-export const magnetismZoneNodes = [magnetismFields]
+export const magnetismElectromagnets: SkillNode = {
+  id: 'physics-magnetism-electromagnets',
+  title: 'Electromagnets',
+  description:
+    'An electromagnet is a coil of wire (a solenoid) with an electric current flowing through it. The current makes the coil act like a magnet. Adding an iron core inside the coil makes the magnet much stronger. The key advantage of an electromagnet over a permanent bar magnet is that it can be switched on and off: open the switch, the current stops, and the iron core stops being a magnet straight away. Electromagnets are made stronger by adding more turns of wire and by using a bigger current. UK contexts include the giant electromagnet on a scrapyard crane that lifts and drops cars by switching the current, the small coil inside an electric bell, and the very large superconducting electromagnets in an MRI scanner at a UK hospital. Year 7 keeps it qualitative; the motor effect, Faraday\'s law of induction, and Lenz\'s law are GCSE Higher and A-Level territory.',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-magnetism',
+  zoneName: 'Magnetism',
+  tier: 'confident',
+  prerequisites: ['physics-magnetism-fields'],
+  curriculum: {
+    ks3Objective:
+      'The magnetic effect of a current, electromagnets, D.C. motors (principles only).',
+    awardingBodies: {
+      aqa: '4.7.2 The motor effect; electromagnetism (GCSE Physics 8463; KS3 stops short of induction)',
+      edexcel: 'Topic 7 Magnetism and the motor effect, 7.5-7.13 electromagnets and the motor effect (GCSE Physics 1PH0)',
+      ocr: 'P6.2 The motor effect; electromagnets and solenoids (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'em-scene-build',
+      title: 'How an Electromagnet is Built: Coil, Core, Current',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see the parts of an electromagnet and what happens when the current is switched off.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: SOLENOID_SVG,
+        hotspots: [
+          {
+            id: 'em-b-coil',
+            x: 50,
+            y: 50,
+            label: 'Coil of wire (a solenoid)',
+            description:
+              'A long wire is wound into many loops, called a coil or a solenoid. When current flows along the wire, each loop adds its own small magnetic field; together the loops give the coil two magnetic poles, an N at one end and an S at the other.',
+          },
+          {
+            id: 'em-b-core',
+            x: 50,
+            y: 65,
+            label: 'Iron core inside the coil',
+            description:
+              'A bar of iron pushed inside the coil greatly boosts the magnetic field. The iron itself becomes magnetic while the coil is on. This is why most school electromagnets and the big crane magnets all have an iron core.',
+          },
+          {
+            id: 'em-b-battery',
+            x: 15,
+            y: 30,
+            label: 'Battery and switch',
+            description:
+              'A battery pushes current round the circuit; a switch breaks or completes the circuit. The whole loop is what makes the coil work as a magnet.',
+          },
+          {
+            id: 'em-b-switch',
+            x: 87,
+            y: 50,
+            label: 'Switch off and the magnet stops',
+            description:
+              'Open the switch, the current stops, and the iron core stops being a magnet straight away. A permanent bar magnet would still be magnetic; the electromagnet is on only while current flows. That is the key advantage.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'em-scene-stronger',
+      title: 'What Makes an Electromagnet Stronger',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see the three ways to make an electromagnet stronger.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: ELECTROMAGNET_STRENGTH_SVG,
+        hotspots: [
+          {
+            id: 'em-s-turns',
+            x: 50,
+            y: 25,
+            label: 'More turns of wire',
+            description:
+              'Wind the wire into more loops round the iron core. Each loop adds its own magnetic field. A coil with 20 turns is stronger than the same wire with 5 turns, all else being equal.',
+          },
+          {
+            id: 'em-s-current',
+            x: 50,
+            y: 45,
+            label: 'Bigger current',
+            description:
+              'Use a battery that pushes a bigger current through the same coil and the magnetic field grows. School circuits keep this safe by limiting current; do not short-circuit the battery.',
+          },
+          {
+            id: 'em-s-core',
+            x: 50,
+            y: 60,
+            label: 'Add an iron core',
+            description:
+              'Slide a soft iron rod inside the coil. The iron itself becomes magnetic while the coil is on, and it adds a great deal of pull. Without the iron, the coil is much weaker.',
+          },
+          {
+            id: 'em-s-switch',
+            x: 50,
+            y: 85,
+            label: 'Switching is the key advantage',
+            description:
+              'Whatever you do to make it stronger, the electromagnet is still on only while current flows. That is why electromagnets are chosen wherever you want to be able to "let go" of magnetic objects on demand.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'em-scene-uk',
+      title: 'UK Uses: Scrapyard Crane and Electric Bell',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see how UK industry and household items use the on-off advantage of an electromagnet.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: SCRAPYARD_CRANE_SVG,
+        hotspots: [
+          {
+            id: 'em-u-crane',
+            x: 24,
+            y: 55,
+            label: 'Scrapyard crane',
+            description:
+              'A scrapyard near Sheffield uses a large electromagnet on a crane to lift cars and dump them in a press. The driver switches the current on to grab a car, lifts it across the yard, and switches the current off to drop it. A permanent magnet could not let go.',
+          },
+          {
+            id: 'em-u-bell',
+            x: 74,
+            y: 55,
+            label: 'Electric bell at a UK door',
+            description:
+              'An old-style electric door bell has a small coil that pulls a metal striker into a bell to make it ring. The striker breaks its own circuit as it moves, the magnet switches off, and a spring pulls it back; the cycle repeats so the bell rings continuously while the button is held.',
+          },
+          {
+            id: 'em-u-mri',
+            x: 50,
+            y: 90,
+            label: 'MRI scanner at a UK hospital',
+            description:
+              'A medical MRI machine in NHS hospitals uses very powerful electromagnets to image inside the body. The big advantage is the same: switch off the current and the field is gone, which is essential for safety and maintenance. Year 7 only needs the on-off idea.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'em-worked-1',
+      title: 'Why a scrapyard crane uses an electromagnet, not a permanent magnet',
+      steps: [
+        {
+          explanation:
+            'Set the scene. A scrapyard near Sheffield needs a way to lift a scrap car off the ground, swing it across the yard, and drop it into a press.',
+        },
+        {
+          explanation:
+            'Try a permanent magnet. A very strong permanent bar magnet could lift the car. But the magnet is always magnetic, so it could never let go. The car would stay stuck to the magnet.',
+        },
+        {
+          explanation:
+            'Switch to an electromagnet. A large coil of wire with an iron core, fed by a thick cable from a power supply, becomes magnetic only while current flows.',
+          maths: 'switch on → magnetic; switch off → not magnetic',
+        },
+        {
+          explanation:
+            'Use the switch. The crane driver closes the switch, the magnet picks up the car. They drive across the yard. They open the switch over the press, and the car drops because the iron core stops being a magnet straight away.',
+        },
+        {
+          explanation:
+            'State the key advantage. The electromagnet works because it can be switched off. That is the property a permanent magnet does not have, and it is why every scrapyard crane uses an electromagnet.',
+        },
+      ],
+    },
+    {
+      id: 'em-worked-2',
+      title: 'Three ways to make a school electromagnet stronger',
+      steps: [
+        {
+          explanation:
+            'Set the scene. A Year 7 in a Manchester lab builds a small electromagnet from a battery, a length of insulated wire, and a 6 cm iron nail. They wind 10 turns and find it picks up 3 paper clips.',
+        },
+        {
+          explanation:
+            'Idea 1: more turns of wire. They unwind, and rewind the wire as 30 turns of the same wire round the same nail. Each turn adds its own field. The new electromagnet picks up about 8 paper clips.',
+          maths: '10 turns → ~3 clips; 30 turns → ~8 clips',
+        },
+        {
+          explanation:
+            'Idea 2: bigger current. They swap one battery for two in series (still respecting the lab safety limit). The bigger current makes the same coil and core stronger; the new electromagnet picks up more clips again.',
+        },
+        {
+          explanation:
+            'Idea 3: keep the iron core. They try the same coil round a plastic ruler (no iron core). The coil is much weaker; the iron makes a real difference.',
+          maths: 'no iron core → much weaker',
+        },
+        {
+          explanation:
+            'State the result. More turns, bigger current, and an iron core all make an electromagnet stronger. All three are tested in the same way: count the paper clips, then change one variable, then count again.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'em-q1',
+      type: 'multiple-choice',
+      stem: 'What is the key advantage of an electromagnet over a permanent bar magnet?',
+      tier: 'core',
+      options: [
+        'It can be made bigger.',
+        'It is always cheaper.',
+        'It can be switched on and off; the magnet stops working when the current is off.',
+        'It is always stronger.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'em-mis-key-advantage',
+      hint: 'Think about why a scrapyard crane uses an electromagnet instead of a strong bar magnet.',
+    },
+    {
+      id: 'em-q2',
+      type: 'multiple-choice',
+      stem: 'What are the three main parts of a typical school electromagnet?',
+      tier: 'core',
+      options: [
+        'A coil of wire, an iron core, and a battery (with a switch).',
+        'A bar magnet, a compass, and a torch.',
+        'A coil of wire, an aluminium core, and a battery.',
+        'A copper plate, a fridge magnet, and a switch.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Coil + core + current source.',
+    },
+    {
+      id: 'em-q3',
+      type: 'multiple-choice',
+      stem: 'What is the role of the iron core inside an electromagnet?',
+      tier: 'core',
+      options: [
+        'It carries the current along the coil.',
+        'It makes the magnet much stronger while the coil is on.',
+        'It stores the magnetism after the current is switched off.',
+        'It blocks the magnetic field.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'em-mis-core-keeps',
+      hint: 'It is not just the coil; the iron itself becomes magnetic while the current is on.',
+    },
+    {
+      id: 'em-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil winds an electromagnet with 10 turns of wire and finds it picks up 3 paper clips. They keep the same wire and battery but rewind it as 30 turns. What happens?',
+      tier: 'core',
+      options: [
+        'It picks up fewer paper clips, because more turns weakens the coil.',
+        'It picks up the same number, because the wire is the same.',
+        'It picks up more paper clips, because more turns make the magnet stronger.',
+        'The wire melts.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'em-mis-fewer-turns',
+      hint: 'More turns = more loops adding their fields.',
+    },
+    {
+      id: 'em-q5',
+      type: 'multiple-choice',
+      stem: 'A Year 7 swaps one battery for two batteries in series in their electromagnet circuit (still respecting the lab safety limit). How does the magnet change?',
+      tier: 'core',
+      options: [
+        'It gets stronger, because the bigger current means a stronger field.',
+        'It gets weaker, because two batteries fight each other.',
+        'It stays the same, because the coil decides the strength alone.',
+        'It stops working, because the wire blocks the second battery.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Bigger current in the same coil = stronger field.',
+    },
+    {
+      id: 'em-q6',
+      type: 'multiple-choice',
+      stem: 'A scrapyard near Sheffield needs to pick up a car, swing it across the yard, and drop it into a crusher. Why is an electromagnet the right tool?',
+      tier: 'core',
+      options: [
+        'A permanent magnet would never lift a car.',
+        'An electromagnet can be switched off to drop the car; a permanent magnet would never let go.',
+        'Permanent magnets do not work outdoors.',
+        'Electromagnets are always smaller and cheaper.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'em-mis-key-advantage',
+      hint: 'Think about the moment the driver wants to release the car.',
+    },
+    {
+      id: 'em-q7',
+      type: 'spot-misconception',
+      stem: 'Aisha writes, "Once you switch the current on through the coil, the iron core becomes a permanent magnet. You can take it out and use it as a bar magnet, even after switching off." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Aisha is right. The current magnetises the iron core for ever.',
+          isMisconception: true,
+        },
+        {
+          text: 'Aisha is not right. Soft iron loses almost all its magnetism the moment the current stops. That is exactly why electromagnets are useful: switch off, and the magnet is gone.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'em-mis-permanent-when-on',
+    },
+    {
+      id: 'em-q8',
+      type: 'spot-misconception',
+      stem: 'Theo writes, "An electromagnet is better than a permanent magnet because it is always stronger." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Theo is right. Strength is the main reason to choose an electromagnet.',
+          isMisconception: true,
+        },
+        {
+          text: 'Theo is not right. The main reason to choose an electromagnet is that you can switch it on and off. A small coil can be much weaker than a strong bar magnet; a big crane coil can be much stronger. Strength is not the key idea.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'em-mis-key-advantage',
+    },
+    {
+      id: 'em-q9',
+      type: 'drag-order',
+      stem: 'Order these steps for a scrapyard crane to move a scrap car, from earliest to latest.',
+      tier: 'confident',
+      items: [
+        'The driver swings the crane across to the press.',
+        'The driver lowers the electromagnet over the car.',
+        'The driver opens the switch; the current stops; the car drops into the press.',
+        'The driver closes the switch; current flows; the electromagnet picks up the car.',
+      ],
+      correctOrder: [1, 3, 0, 2],
+      xpValue: 15,
+      hint: 'You lower the magnet first, then turn it on, then move, then turn it off to release.',
+    },
+    {
+      id: 'em-q10',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is explaining why a scrapyard crane uses an electromagnet rather than a strong bar magnet.',
+      tier: 'confident',
+      steps: [
+        'A scrap car must be picked up, swung across the yard, and dropped into a press.',
+        'A strong bar magnet could pick up the car, but it would never let go on its own.',
+        null,
+        'When the driver wants to drop the car, they open the switch; the current stops, the iron core stops being a magnet, and the car drops.',
+        'State the result: the crane uses an electromagnet because it can be switched off; that is what a permanent magnet cannot do.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'An electromagnet is only magnetic while current flows. The driver closes the switch to pick the car up and the coil + iron core become a strong magnet.',
+      xpValue: 15,
+      misconceptionId: 'em-mis-key-advantage',
+    },
+    {
+      id: 'em-q12',
+      type: 'numeric-entry',
+      stem: 'A Year 7 builds an electromagnet with 20 turns of wire and one battery and lifts 4 paper clips. Their teacher says doubling the number of turns roughly doubles the lifting power. To the nearest whole number, how many paper clips might they expect to lift with 40 turns?',
+      tier: 'confident',
+      correctAnswer: 8,
+      unit: 'paper clips',
+      tolerance: 1,
+      xpValue: 15,
+      hint: 'Roughly double of 4.',
+    },
+    {
+      id: 'em-q13',
+      type: 'numeric-entry',
+      stem: 'A school electromagnet needs at least 0.5 A of current to pick up a paper clip. A pupil reads on a meter that the actual current is 1.5 A. By how many amps does the actual current exceed the minimum?',
+      tier: 'confident',
+      correctAnswer: 1,
+      unit: 'amps',
+      tolerance: 0.05,
+      xpValue: 15,
+      hint: '1.5 - 0.5.',
+    },
+    {
+      id: 'em-q14',
+      type: 'data-extraction',
+      stem: 'A school lab table has the heading "turns of wire: paper clips lifted" and lists: "10 turns: 3; 20 turns: 6; 30 turns: 9; 40 turns: 12." How many paper clips does the 30-turn coil lift?',
+      tier: 'confident',
+      dataSource:
+        '10 turns: 3 paper clips. 20 turns: 6 paper clips. 30 turns: 9 paper clips. 40 turns: 12 paper clips.',
+      correctAnswer: '9',
+      xpValue: 15,
+      hint: 'Read the row for 30 turns.',
+    },
+    {
+      id: 'em-q15',
+      type: 'multiple-choice',
+      stem: 'Which sentence about the iron core in a school electromagnet is correct at Year 7 level?',
+      tier: 'confident',
+      options: [
+        'The iron core stores the magnetism so the magnet keeps working after the switch is opened.',
+        'The iron core has no role; only the coil matters.',
+        'The iron core itself becomes magnetic while current flows in the coil, making the electromagnet much stronger; it stops being magnetic when the current stops.',
+        'The iron core only works if it is heated first.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'em-mis-core-keeps',
+      hint: 'Soft iron magnetises while the coil is on, and demagnetises when the coil is off.',
+    },
+    {
+      id: 'em-q16',
+      type: 'numeric-entry',
+      stem: 'A Year 7 builds three coils round the same nail: 5 turns lifts 1 paper clip, 15 turns lifts 3 paper clips, 25 turns lifts 5 paper clips. The pattern is that paper clips lifted is one-fifth of the number of turns. To the nearest whole number, how many paper clips would 50 turns lift?',
+      tier: 'challenge',
+      correctAnswer: 10,
+      unit: 'paper clips',
+      tolerance: 1,
+      xpValue: 20,
+      hint: '50 ÷ 5 = the answer.',
+    },
+    {
+      id: 'em-q17',
+      type: 'multiple-choice',
+      stem: 'A UK hospital MRI scanner uses a very powerful electromagnet. Why is "switchable" still the key advantage in this setting?',
+      tier: 'challenge',
+      options: [
+        'A permanent magnet would never be strong enough.',
+        'Permanent magnets cost more to install.',
+        'Permanent magnets do not work in hospitals.',
+        'A permanent magnet that strong could not be switched off; an electromagnet can, which is essential for safety, fitting patients, and maintenance.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'em-mis-key-advantage',
+      hint: 'Strength is one factor; the on-off ability is the key one.',
+    },
+    {
+      id: 'em-q18',
+      type: 'multiple-choice',
+      stem: 'A pupil claims, "An electromagnet works on a copper rod inside the coil just as well as on an iron rod, because copper is a metal." Is the claim right?',
+      tier: 'challenge',
+      options: [
+        'Yes; any metal core works equally well.',
+        'Yes; copper is better than iron.',
+        'No; copper rods explode in coils.',
+        'No; copper is a metal, but copper is not magnetic. The coil round a copper rod is much weaker than the same coil round an iron rod, because the iron itself becomes magnetic while the coil is on.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'em-mis-any-core',
+      hint: 'The "all metals are magnetic" trap from the previous node also applies inside the coil.',
+    },
+    {
+      id: 'em-q19',
+      type: 'free-text',
+      stem: 'A pupil designs a Year 7 fair test to find out whether more turns make a stronger electromagnet. In two or three sentences, describe the test, the variable they should change, and what they keep the same.',
+      tier: 'challenge',
+      sampleAnswer:
+        'They build an electromagnet from an iron nail, a battery, and a length of wire, and count how many paper clips it lifts with 10 turns. They then unwind and rewind the same wire as 20 turns and 30 turns round the same nail, with the same battery, and count again. The variable they change is the number of turns; everything else (battery, wire length, iron nail, and the way they count clips) stays the same.',
+      keywords: ['turns', 'paper clips', 'same battery', 'same nail', 'fair test'],
+      xpValue: 20,
+      hint: 'Change one thing (turns), keep the rest the same.',
+    },
+    {
+      id: 'em-q20',
+      type: 'multiple-choice',
+      stem: 'Which two facts together best explain why an electric door bell rings continuously while the button is held?',
+      tier: 'challenge',
+      options: [
+        'The button glows; the bell is heavy.',
+        'A coil pulls a striker into the bell when current flows; the moving striker breaks the circuit, the coil switches off, a spring pulls the striker back, and the cycle repeats.',
+        'The bell rings because the air pressure changes.',
+        'A permanent magnet inside the bell vibrates when you press the button.',
+      ],
+      correctIndex: 1,
+      xpValue: 20,
+      misconceptionId: 'em-mis-motor-effect',
+      hint: 'The bell uses the on-off-on-off pattern of an electromagnet to make a continuous ring; this is electromagnet switching, not the motor effect.',
+    },
+    {
+      id: 'em-q21',
+      type: 'numeric-entry',
+      stem: 'A scrapyard crane lifts 8 cars per hour, taking 2 minutes per car (1 minute to position and lift, 1 minute to swing across and drop). The driver counts a 6-hour shift. How many cars does the crane move in the shift?',
+      tier: 'challenge',
+      correctAnswer: 48,
+      unit: 'cars',
+      xpValue: 20,
+      hint: '8 cars per hour × 6 hours.',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 2F, candidates citing strength as the main advantage of electromagnets
+    {
+      id: 'em-mis-key-advantage',
+      description:
+        'Believing the key advantage of an electromagnet is its strength, missing that the on-off switch is the property that matters in design choices.',
+      triggerAnswer: 'key-advantage',
+      correction:
+        'The key advantage of an electromagnet is that it can be switched on and off. A small coil may be weaker than a strong bar magnet, but only the coil can be switched off to release a load.',
+      reExplanation:
+        'A useful test: ask "could a permanent magnet do this job?" A scrapyard crane needs to lift a car AND let go of it. Only an electromagnet can let go. An MRI scanner needs to be safely shut down for maintenance. Only an electromagnet can be turned off.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on soft iron cores after the current stops
+    {
+      id: 'em-mis-core-keeps',
+      description:
+        'Believing the iron core stays magnetised after the current is switched off, like a permanent magnet that the coil "made".',
+      triggerAnswer: 'core-keeps',
+      correction:
+        'A soft iron core loses almost all of its magnetism the moment the current stops. That is exactly why electromagnets are switchable; if the core stayed magnetic, you would have built a one-shot permanent magnet.',
+      reExplanation:
+        'Two technical words: "soft" and "hard". Soft iron magnetises easily and demagnetises just as easily; that is what is used in school and crane electromagnets. "Hard" magnetic materials, like steel, can hold their magnetism, which is how permanent bar magnets are made.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2019, Paper 1PH0/1F, candidates believing more turns weakens the coil
+    {
+      id: 'em-mis-fewer-turns',
+      description:
+        'Believing more turns of wire makes an electromagnet weaker, often by reasoning that "more wire means more resistance, so less effect".',
+      triggerAnswer: 'fewer-turns',
+      correction:
+        'For typical Year 7 coils, more turns of wire round the same iron core makes the electromagnet stronger. Each turn adds its own field to the total.',
+      reExplanation:
+        'A useful experiment: build a 10-turn coil round a nail, count the paper clips. Rewind to 30 turns of the same wire round the same nail, with the same battery, and count again. The 30-turn coil lifts more clips. Resistance does limit very large coils, but that is far beyond KS3.',
+    },
+    // Source: IOPSpark "Electromagnetism" guidance on permanent vs temporary magnetism
+    {
+      id: 'em-mis-permanent-when-on',
+      description:
+        'Calling an electromagnet a permanent magnet while the current is on, missing that "permanent" means "stays magnetic after the source is removed".',
+      triggerAnswer: 'permanent-when-on',
+      correction:
+        'A permanent magnet stays magnetic on its own. An electromagnet is only magnetic while the current is on; the moment you switch off, it is no longer a magnet, even if it was very strong a second before.',
+      reExplanation:
+        'The key word is "permanent". A bar magnet sitting on a desk is magnetic with no battery, no wires, no heat: that is permanent. An electromagnet needs a circuit to do its job. The two are different categories of magnet.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 2F, candidates assuming any metal core works in an electromagnet
+    {
+      id: 'em-mis-any-core',
+      description:
+        'Believing any metal core works in an electromagnet (e.g. a copper or aluminium rod), missing that only iron, steel, nickel, or cobalt becomes magnetic.',
+      triggerAnswer: 'any-core',
+      correction:
+        'A core has to be a magnetic material to boost the field. Iron is the standard choice. Copper and aluminium are metals, but neither becomes magnetic, so a copper or aluminium core barely helps.',
+      reExplanation:
+        'This is the same trap as in the magnets-and-fields node: not all metals are magnetic. The coil itself still works without an iron core (it has a small field of its own), but the dramatic boost comes from a magnetic core, and iron is the cheap reliable choice.',
+    },
+    // Source: CGP KS3 Physics Workbook Common Mistake box on the motor effect being part of "electromagnets"
+    {
+      id: 'em-mis-motor-effect',
+      description:
+        'Treating the motor effect (a current-carrying wire in a magnetic field experiences a force) as the same idea as an electromagnet, blurring the two concepts.',
+      triggerAnswer: 'motor-effect',
+      correction:
+        'An electromagnet uses a current to make a magnetic field. The motor effect uses a separate magnetic field acting on a current-carrying wire to make a force. KS3 covers electromagnets only; the motor effect, induction, and Lenz\'s law are GCSE+.',
+      reExplanation:
+        'A simple way to keep them apart: an electromagnet is the magnet itself, made by current. The motor effect is what happens when you put a wire (carrying its own current) into someone else\'s magnet. Year 7 sticks to building and switching electromagnets.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const magnetismZoneNodes = [magnetismFields, magnetismElectromagnets]
 
 export const magnetismZone: Zone = {
   id: 'physics-magnetism',
