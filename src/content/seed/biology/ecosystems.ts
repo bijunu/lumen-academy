@@ -691,14 +691,746 @@ export const foodChains: SkillNode = {
 }
 
 // ---------------------------------------------------------------------------
+// Node 2 SVGs (Food Webs)
+// ---------------------------------------------------------------------------
+
+const oakTreeWebSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="24" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">An oak-tree food web</text>
+  <rect x="240" y="40" width="120" height="50" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="300" y="64" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Oak leaf</text>
+  <text x="300" y="80" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(producer)</text>
+  <rect x="60" y="150" width="110" height="50" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="115" y="180" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Caterpillar</text>
+  <rect x="245" y="150" width="110" height="50" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="300" y="180" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Wood mouse</text>
+  <rect x="430" y="150" width="110" height="50" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="485" y="180" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Squirrel</text>
+  <rect x="100" y="270" width="110" height="50" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="155" y="300" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Blue tit</text>
+  <rect x="395" y="270" width="110" height="50" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="450" y="300" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Tawny owl</text>
+  <rect x="245" y="350" width="110" height="40" rx="10" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <text x="300" y="376" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Sparrowhawk</text>
+  <line x1="280" y1="92" x2="135" y2="148" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="300" y1="92" x2="300" y2="148" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="320" y1="92" x2="465" y2="148" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="135" y1="202" x2="155" y2="268" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="280" y1="202" x2="170" y2="268" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="320" y1="202" x2="440" y2="268" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="465" y1="202" x2="450" y2="268" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="200" y1="320" x2="290" y2="350" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <line x1="410" y1="320" x2="320" y2="350" stroke="#1F2937" stroke-width="2" marker-end="url(#wb-arrow)" />
+  <defs>
+    <marker id="wb-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2937" />
+    </marker>
+  </defs>
+</svg>
+`.trim()
+
+const gardenPondWebSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="22" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">A garden-pond food web</text>
+  <rect x="80" y="44" width="100" height="44" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="130" y="70" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Pondweed</text>
+  <rect x="420" y="44" width="100" height="44" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="470" y="70" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Algae</text>
+  <rect x="60" y="160" width="110" height="44" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="115" y="186" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Water flea</text>
+  <rect x="245" y="160" width="110" height="44" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="300" y="186" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Tadpole</text>
+  <rect x="430" y="160" width="110" height="44" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="485" y="186" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Pond snail</text>
+  <rect x="100" y="260" width="110" height="44" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="155" y="286" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Stickleback</text>
+  <rect x="395" y="260" width="110" height="44" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="450" y="286" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Frog</text>
+  <rect x="245" y="350" width="110" height="42" rx="10" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <text x="300" y="376" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Heron</text>
+  <line x1="125" y1="90" x2="120" y2="158" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="155" y1="90" x2="295" y2="158" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="465" y1="90" x2="305" y2="158" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="475" y1="90" x2="485" y2="158" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="135" y1="206" x2="150" y2="258" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="320" y1="206" x2="430" y2="258" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="475" y1="206" x2="465" y2="258" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="160" y1="306" x2="280" y2="350" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <line x1="445" y1="306" x2="320" y2="350" stroke="#1F2937" stroke-width="2" marker-end="url(#wb2-arrow)" />
+  <defs>
+    <marker id="wb2-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2937" />
+    </marker>
+  </defs>
+</svg>
+`.trim()
+
+const removeSpeciesSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="26" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">If foxes disappear: a Kentish farmland cascade</text>
+  <rect x="20" y="60" width="180" height="320" rx="10" fill="#FEE2E2" stroke="#7F1D1D" stroke-width="3" />
+  <text x="110" y="86" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Step 1: foxes gone</text>
+  <text x="110" y="110" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Top predator removed.</text>
+  <text x="110" y="126" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Nothing hunts</text>
+  <text x="110" y="142" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">the rabbits.</text>
+  <text x="110" y="180" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Step 2: rabbits</text>
+  <text x="110" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">numbers RISE</text>
+  <text x="110" y="220" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">More rabbits survive</text>
+  <text x="110" y="236" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">to feed and breed.</text>
+  <text x="110" y="280" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Step 3: grass</text>
+  <text x="110" y="300" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">cover FALLS</text>
+  <text x="110" y="320" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">More rabbits eat</text>
+  <text x="110" y="336" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">more grass.</text>
+  <rect x="220" y="60" width="360" height="320" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="3" />
+  <text x="400" y="86" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Why we say RISE / FALL only</text>
+  <text x="400" y="116" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">At Year 7 we describe DIRECTION:</text>
+  <text x="400" y="136" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">numbers rise, fall, or stay the same.</text>
+  <text x="400" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">We do NOT predict numbers like</text>
+  <text x="400" y="190" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">"rabbits rise by 30%" because</text>
+  <text x="400" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">real ecosystems have many</text>
+  <text x="400" y="230" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">other variables: weather, disease,</text>
+  <text x="400" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">other predators, food supply.</text>
+  <text x="400" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Numerical predictions belong to</text>
+  <text x="400" y="310" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">later year groups.</text>
+  <text x="400" y="350" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Stick to: rises / falls / no change.</text>
+</svg>
+`.trim()
+
+// ---------------------------------------------------------------------------
+// Node 2: Food Webs (Confident)
+// ---------------------------------------------------------------------------
+
+export const foodWebs: SkillNode = {
+  id: 'biology-ecosystems-food-webs',
+  title: 'Food Webs',
+  description:
+    'Read a food web as several food chains sharing species. Trace which species sit on more than one chain. Predict the qualitative effect of removing a species (numbers rise, fall, or stay the same) on a Kentish farmland or oak-tree web. Year 7 scope: directions only, no numerical predictions.',
+  subject: 'biology',
+  realm: 'vitalia',
+  zoneId: 'biology-ecosystems',
+  zoneName: 'Ecosystems',
+  tier: 'confident',
+  prerequisites: ['biology-ecosystems-food-chains'],
+  curriculum: {
+    ks3Objective:
+      'The interdependence of organisms in an ecosystem, including food webs and insect pollinated crops; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials.',
+    awardingBodies: {
+      aqa: '4.7.2.1 Levels of organisation; food webs; effects of removing or adding species (GCSE Biology 8461).',
+      edexcel: 'SB9c Food webs and changes in feeding relationships (GCSE Biology 1BI0, Topic 9).',
+      ocr: 'B6.1d Interdependence; the effect of changing the population of one species on others in the food web (GCSE Biology A J247).',
+    },
+  },
+  scenes: [
+    {
+      id: 'fwb-scene-oak',
+      title: 'An Oak-Tree Web',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each animal in the oak-tree web to read which chains it sits on.',
+      data: {
+        svg: oakTreeWebSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'fwb-hs-oak',
+            x: 50,
+            y: 16,
+            label: 'Oak leaf (producer)',
+            description:
+              'The producer at the base of the web. Three different primary consumers feed on the oak: caterpillar, wood mouse, and squirrel.',
+          },
+          {
+            id: 'fwb-hs-caterpillar',
+            x: 19,
+            y: 44,
+            label: 'Caterpillar',
+            description:
+              'Sits on TWO chains: oak to caterpillar to blue tit to sparrowhawk, AND oak to caterpillar to tawny owl.',
+          },
+          {
+            id: 'fwb-hs-mouse',
+            x: 50,
+            y: 44,
+            label: 'Wood mouse',
+            description:
+              'Eats oak leaves and acorns; eaten by both the blue tit (when small) and the tawny owl. Sits on more than one chain.',
+          },
+          {
+            id: 'fwb-hs-squirrel',
+            x: 81,
+            y: 44,
+            label: 'Squirrel',
+            description:
+              'Eats oak leaves and acorns; eaten by the tawny owl. Sits on its own short chain into the owl.',
+          },
+          {
+            id: 'fwb-hs-bluetit',
+            x: 26,
+            y: 74,
+            label: 'Blue tit',
+            description:
+              'Eats caterpillars and small wood mice. Eaten by the sparrowhawk.',
+          },
+          {
+            id: 'fwb-hs-owl',
+            x: 75,
+            y: 74,
+            label: 'Tawny owl',
+            description:
+              'Eats wood mice, squirrels, and caterpillars. Eaten by the sparrowhawk too.',
+          },
+          {
+            id: 'fwb-hs-hawk',
+            x: 50,
+            y: 92,
+            label: 'Sparrowhawk',
+            description:
+              'Top predator. Hunts blue tits and tawny owls. Sits at the top of multiple chains in the same web.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fwb-scene-pond',
+      title: 'A Garden-Pond Web',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each organism in the garden-pond web to see how multiple chains share species.',
+      data: {
+        svg: gardenPondWebSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'fwb-hs-pondweed',
+            x: 22,
+            y: 16,
+            label: 'Pondweed (producer)',
+            description:
+              'Eaten by water fleas and tadpoles. Two primary consumers branch from the same producer.',
+          },
+          {
+            id: 'fwb-hs-algae',
+            x: 78,
+            y: 16,
+            label: 'Algae (producer)',
+            description:
+              'Eaten by tadpoles and pond snails. The web has two producers; not all chains start at pondweed.',
+          },
+          {
+            id: 'fwb-hs-tadpole',
+            x: 50,
+            y: 46,
+            label: 'Tadpole',
+            description:
+              'Sits on TWO chains: pondweed to tadpole to frog, AND algae to tadpole to frog. The frog draws food from both producers via the tadpole.',
+          },
+          {
+            id: 'fwb-hs-snail',
+            x: 81,
+            y: 46,
+            label: 'Pond snail',
+            description:
+              'Eats algae; eaten by the frog. A single-line route into the frog.',
+          },
+          {
+            id: 'fwb-hs-frog',
+            x: 75,
+            y: 71,
+            label: 'Frog',
+            description:
+              'Eats tadpoles and pond snails. Eaten by the heron. Sits on multiple chains.',
+          },
+          {
+            id: 'fwb-hs-heron',
+            x: 50,
+            y: 92,
+            label: 'Heron (top)',
+            description:
+              'Top predator. Hunts the stickleback and the frog. Like the sparrowhawk in the oak web, it draws on more than one chain.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fwb-scene-remove',
+      title: 'Removing a Species: Direction Only',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each side to see what happens when foxes disappear from a Kentish farmland web, and why we describe direction only at Year 7.',
+      data: {
+        svg: removeSpeciesSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'fwb-hs-cascade',
+            x: 18,
+            y: 50,
+            label: 'A three-step cascade',
+            description:
+              'Remove the fox: rabbits rise (no predator). Then grass cover falls (more rabbits eat more grass). Effects ripple beyond the level immediately below.',
+          },
+          {
+            id: 'fwb-hs-direction',
+            x: 67,
+            y: 50,
+            label: 'Direction only',
+            description:
+              'At Year 7 we say "rises", "falls", or "no immediate change". We do NOT predict numbers like "30%". Real ecosystems have weather, disease, and other variables we cannot quantify here.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'fwb-worked-1',
+      title: 'Counting how many chains share a species',
+      steps: [
+        {
+          explanation:
+            'Look at the oak-tree web. The blue tit eats caterpillars and small wood mice. Tracing every chain that ends in the sparrowhawk via the blue tit gives:',
+        },
+        {
+          explanation:
+            'Chain A: oak leaf to caterpillar to blue tit to sparrowhawk.',
+        },
+        {
+          explanation:
+            'Chain B: oak leaf to wood mouse to blue tit to sparrowhawk.',
+        },
+        {
+          explanation:
+            'So the blue tit sits on at least 2 chains in the web. The same exercise on the tawny owl turns up 3 chains: via caterpillar, via wood mouse, via squirrel.',
+        },
+        {
+          explanation:
+            'Result: the more arrows pointing in and out of an organism, the more chains it sits on. Webs are made of many chains sharing species.',
+        },
+      ],
+    },
+    {
+      id: 'fwb-worked-2',
+      title: 'Predicting a "remove the fox" cascade',
+      steps: [
+        {
+          explanation:
+            'A Kentish farmland web has grass at the base, rabbits as primary consumers, and foxes as top predators. The farmer reports the foxes have moved away. Predict the qualitative effects.',
+        },
+        {
+          explanation:
+            'Step 1: Foxes gone. Rabbits no longer have a predator in this web. So rabbit numbers RISE.',
+        },
+        // Missing step (filled by the worked example)
+        {
+          explanation:
+            'Step 2: More rabbits feed on more grass. So grass cover FALLS.',
+        },
+        {
+          explanation:
+            'Step 3: Anything else that needs grass cover (other herbivores, ground-nesting birds) is harder hit. We can say their numbers tend to FALL too. We do NOT put a number on it.',
+        },
+        {
+          explanation:
+            'Important Y7 scope rule: stop at directions. "Rabbits rise, grass falls" is the answer. "Rabbits rise by 30%" is not Y7 work; that needs maths beyond this stage.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'fwb-q1',
+      type: 'multiple-choice',
+      stem: 'Which best describes a food web?',
+      tier: 'core',
+      options: [
+        'A single very long food chain.',
+        'Several food chains that share species, drawn together.',
+        'A list of producers only.',
+        'A circle of arrows that point in both directions.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'fwb-mis-web-as-single-chain',
+      hint: 'A web is what you get when one species sits on more than one chain.',
+    },
+    {
+      id: 'fwb-q2',
+      type: 'multiple-choice',
+      stem: 'In the oak-tree web, which arrows point INTO the blue tit?',
+      tier: 'core',
+      options: [
+        'arrows from caterpillar and wood mouse',
+        'arrows from sparrowhawk only',
+        'arrows from oak leaf only',
+        'arrows from tawny owl',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'fwb-mis-arrow-direction-web',
+      hint: 'An arrow into the blue tit means "is eaten by the blue tit".',
+    },
+    {
+      id: 'fwb-q3',
+      type: 'multiple-choice',
+      stem: 'In the garden-pond web, which producer feeds the tadpole?',
+      tier: 'core',
+      options: [
+        'pondweed only',
+        'algae only',
+        'both pondweed and algae',
+        'neither; the tadpole eats only animals',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'Look at every arrow that points into the tadpole.',
+    },
+    {
+      id: 'fwb-q4',
+      type: 'multiple-choice',
+      stem: 'In a Kentish farmland web (grass, rabbit, fox), the farmer removes the foxes. What happens FIRST to the rabbit population?',
+      tier: 'core',
+      options: [
+        'rabbits become producers',
+        'rabbit numbers fall sharply',
+        'rabbits leave the web',
+        'rabbit numbers rise',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'fwb-mis-numerical-prediction',
+      hint: 'No predator means more rabbits survive long enough to breed.',
+    },
+    {
+      id: 'fwb-q5',
+      type: 'multiple-choice',
+      stem: 'After the foxes leave the Kentish farmland web, what happens to grass cover (over weeks)?',
+      tier: 'core',
+      options: [
+        'grass becomes a consumer',
+        'grass cover stays exactly the same',
+        'grass cover falls because more rabbits eat more grass',
+        'grass cover rises because there are more rabbits',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'fwb-mis-only-immediate-level',
+      hint: 'The cascade reaches past rabbits, down to what they eat.',
+    },
+    {
+      id: 'fwb-q6',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "if foxes disappear from a Kentish farm, rabbit numbers will rise by 50%." Is this method sound for Year 7?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'The method is sound. If foxes go, the rabbits double, so the increase is around 50%.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. At Year 7 we say "rabbit numbers rise"; predicting an exact number needs maths beyond this stage and ignores other variables (weather, disease, food).',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'fwb-mis-numerical-prediction',
+    },
+    {
+      id: 'fwb-q7',
+      type: 'numeric-entry',
+      stem: 'In the oak-tree web, count the producers shown.',
+      tier: 'core',
+      correctAnswer: 1,
+      xpValue: 10,
+      hint: 'Look at the green box at the top of the diagram.',
+    },
+    {
+      id: 'fwb-q8',
+      type: 'numeric-entry',
+      stem: 'In the garden-pond web, count the producers shown.',
+      tier: 'core',
+      correctAnswer: 2,
+      xpValue: 10,
+      hint: 'Some webs have more than one producer.',
+    },
+    {
+      id: 'fwb-q9',
+      type: 'numeric-entry',
+      stem: 'In the oak-tree web, count the chains that pass through the tawny owl on the way to the sparrowhawk: oak leaf to caterpillar to tawny owl to sparrowhawk; oak leaf to wood mouse to tawny owl to sparrowhawk; oak leaf to squirrel to tawny owl to sparrowhawk. Total chains?',
+      tier: 'confident',
+      correctAnswer: 3,
+      xpValue: 15,
+      hint: 'Each different starting primary consumer gives a different chain.',
+    },
+    {
+      id: 'fwb-q10',
+      type: 'multiple-choice',
+      stem: 'In the garden-pond web, the heron is removed. What happens to the frog and the stickleback in the short term?',
+      tier: 'confident',
+      options: [
+        'frog and stickleback numbers BOTH rise (no longer hunted)',
+        'frog and stickleback numbers BOTH fall',
+        'frog rises, stickleback stays the same',
+        'they both leave the web',
+      ],
+      correctIndex: 0,
+      xpValue: 15,
+      misconceptionId: 'fwb-mis-only-immediate-level',
+      hint: 'Both species are hunted by the heron. Lose the heron, both rise.',
+    },
+    {
+      id: 'fwb-q11',
+      type: 'free-text',
+      stem: 'A pupil claims that "removing pondweed from the garden-pond web has no major effect because the animals can find other food." Explain in two sentences why the pupil is wrong, using qualitative direction-only reasoning.',
+      tier: 'challenge',
+      sampleAnswer:
+        'Pondweed is a producer; removing it cuts the food source for water fleas and tadpoles, so their numbers fall. Sticklebacks, frogs, and the heron then have less food too, so their numbers fall, even if some animals briefly switch to algae. Producers underpin the web.',
+      keywords: ['producer', 'fall', 'food source', 'pondweed', 'underpin'],
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-remove-producer-no-effect',
+    },
+    {
+      id: 'fwb-q12',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "in the oak-tree web, if the sparrowhawk leaves, only the blue tit and tawny owl are affected; nothing further down changes." Is the reasoning sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The reasoning is sound. Only the level just below the top predator is affected.',
+          isMisconception: true,
+        },
+        {
+          text: 'The reasoning is not sound. With no sparrowhawk, blue tit and tawny owl numbers rise, so caterpillars, wood mice, and squirrels are eaten more, and the oak leaf shows more damage. Effects ripple down through the web.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 20,
+      misconceptionId: 'fwb-mis-only-immediate-level',
+    },
+    {
+      id: 'fwb-q13',
+      type: 'multiple-choice',
+      stem: 'In the oak-tree web, which TWO animals share oak leaves as a food source AND therefore compete?',
+      tier: 'challenge',
+      options: [
+        'sparrowhawk and tawny owl',
+        'wood mouse and squirrel',
+        'caterpillar and sparrowhawk',
+        'blue tit and oak leaf',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-same-level-always-compete',
+      hint: 'Sharing a food source is what creates competition. Trace each pair back to the producer.',
+    },
+    {
+      id: 'fwb-q14',
+      type: 'numeric-entry',
+      stem: 'In the oak-tree web, how many primary consumers (animals that eat the oak leaf directly) are shown?',
+      tier: 'confident',
+      correctAnswer: 3,
+      xpValue: 15,
+      hint: 'Count the boxes on the second row.',
+    },
+    {
+      id: 'fwb-q15',
+      type: 'data-extraction',
+      stem: 'Look at the oak-tree web. How many DIFFERENT chains can you trace from oak leaf to sparrowhawk via either the blue tit or the tawny owl? List the chains, then give the count.',
+      tier: 'confident',
+      dataSource:
+        'Oak-tree web. Producer: oak leaf. Primary consumers: caterpillar, wood mouse, squirrel. Secondary consumers: blue tit (eats caterpillar, wood mouse), tawny owl (eats caterpillar, wood mouse, squirrel). Top predator: sparrowhawk (eats blue tit and tawny owl).',
+      correctAnswer: '5',
+      xpValue: 20,
+      hint: 'Via blue tit: oak to caterpillar to blue tit to sparrowhawk; oak to wood mouse to blue tit to sparrowhawk. Via tawny owl: caterpillar, wood mouse, or squirrel route. Count them all.',
+    },
+    {
+      id: 'fwb-q16',
+      type: 'drag-order',
+      stem: 'Place these qualitative effects in the order they happen after foxes are removed from the Kentish farmland web.',
+      tier: 'confident',
+      items: [
+        'Grass cover falls because more rabbits eat more grass.',
+        'Foxes are no longer present in the web.',
+        'Rabbit numbers rise because no predator hunts them.',
+        'Other herbivores that depend on grass cover are squeezed.',
+      ],
+      correctOrder: [1, 2, 0, 3],
+      xpValue: 20,
+      misconceptionId: 'fwb-mis-only-immediate-level',
+    },
+    {
+      id: 'fwb-q17',
+      type: 'drag-drop-builder',
+      stem: 'Build a list of all the species in the garden-pond web that the FROG eats directly. Drag each one in.',
+      tier: 'confident',
+      parts: [
+        'pondweed',
+        'tadpole',
+        'algae',
+        'pond snail',
+        'water flea',
+        'heron',
+      ],
+      correctArrangement: ['tadpole', 'pond snail'],
+      xpValue: 20,
+      hint: 'Look for arrows pointing INTO the frog. The frog eats animals, not producers.',
+    },
+    {
+      id: 'fwb-q18',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of removing the heron from the garden-pond web.',
+      tier: 'confident',
+      steps: [
+        'The heron is removed; the top predator is gone.',
+        'Frog and stickleback numbers rise because nothing hunts them.',
+        null,
+        'Pondweed and algae are eaten more (water flea, tadpole, snail rise too) so producer cover falls.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Water fleas, tadpoles, and pond snails are eaten more by the rising frog and stickleback numbers, so primary consumer numbers fall.',
+      xpValue: 20,
+    },
+    {
+      id: 'fwb-q19',
+      type: 'multiple-choice',
+      stem: 'A Sevenoaks Y7 pupil claims that in any web, two consumers at the same level always compete. In the garden-pond web, do the stickleback and the frog compete?',
+      tier: 'challenge',
+      options: [
+        'Yes, because they are at the same level.',
+        'Yes, because they both live in water.',
+        'No, because no two species ever compete.',
+        'Not in this web. The stickleback eats water fleas; the frog eats tadpoles and snails. They share no food source here, so they do not compete in this web.',
+      ],
+      correctIndex: 3,
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-same-level-always-compete',
+      hint: 'Competition needs a shared food source. Trace each animal back to what it eats.',
+    },
+    {
+      id: 'fwb-q20',
+      type: 'free-text',
+      stem: 'Explain in two sentences, qualitatively only, what happens to the oak-tree web if all the caterpillars are wiped out by a parasite.',
+      tier: 'challenge',
+      sampleAnswer:
+        'The blue tit and tawny owl lose one of their food sources, so their numbers fall, and the sparrowhawk has fewer prey too. The oak leaf is eaten less by caterpillars, so leaf damage falls and the wood mouse and squirrel face more competition for the leaves they share with caterpillar-fed routes.',
+      keywords: ['blue tit', 'tawny owl', 'fall', 'sparrowhawk', 'oak'],
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-only-immediate-level',
+    },
+    {
+      id: 'fwb-q21',
+      type: 'multiple-choice',
+      stem: 'In a Kentish farmland web (grass, rabbit, hedgehog, fox, blackbird, earthworm), a pupil writes that "the hedgehog and the blackbird both eat earthworms, so they compete." This claim is:',
+      tier: 'challenge',
+      options: [
+        'Wrong; same-level animals never compete.',
+        'Right; sharing earthworms as food is exactly what defines competition between them.',
+        'Wrong; competition only happens between predator and prey.',
+        'Right; but only in winter.',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-same-level-always-compete',
+    },
+    {
+      id: 'fwb-q22',
+      type: 'multiple-choice',
+      stem: 'A Year 7 pupil predicts: "If we remove the fox from a Kentish farm, rabbit numbers will rise by 30% within a month." Which is the most appropriate Y7 mark?',
+      tier: 'challenge',
+      options: [
+        'Full marks; a good numerical prediction.',
+        'No marks; rabbit numbers fall when foxes leave.',
+        'Partial credit only; "rabbit numbers rise" is the qualitative Y7 answer, but the 30%/month claim is beyond Y7 scope.',
+        'Full marks; ecosystems are easy to predict numerically.',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'fwb-mis-numerical-prediction',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Biology Foundation tier (8461/2F) Report on the Examination, June 2019, Question 5 (food webs): "Many candidates lost marks by attempting to give percentage changes after removal of a species, when the question explicitly asked for direction of change only." https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-84612F-WRE-2019.PDF
+    {
+      id: 'fwb-mis-numerical-prediction',
+      description:
+        'Removing a species lets you predict the percentage rise or fall in another species.',
+      triggerAnswer: 'numerical-prediction',
+      correction:
+        'In fact, at Year 7 we predict direction only: numbers rise, fall, or stay the same. Numerical predictions need data, models, and other variables (weather, disease, other predators).',
+      reExplanation:
+        'Imagine being asked "if we remove foxes, how many rabbits will there be in a month?" To answer with a number you would need rabbit birth rate, food supply, weather, disease, other predators. None of those are in a Y7 web. The safe and correct answer is "rabbit numbers rise"; the size of the rise is not a Y7 question.',
+    },
+    // Source: Edexcel GCSE Biology (1BI0) Topic 9 (SB9) "Ecosystems and material cycles" examiner report 2019, comments on Question 4 (food webs): "Several candidates only described the effect on the level immediately below the removed species, missing the cascade onto producers and lower levels." https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html
+    {
+      id: 'fwb-mis-only-immediate-level',
+      description:
+        'Removing a species only affects the level immediately below it; further levels stay the same.',
+      triggerAnswer: 'immediate-level-only',
+      correction:
+        'Actually, effects cascade through the web. Remove the top predator: prey rise, what the prey eats falls, and so on down to the producer. The cascade can reach two or three levels below.',
+      reExplanation:
+        'Picture removing the fox in a Kentish farm. Step 1, foxes gone. Step 2, rabbits rise. Step 3, grass cover falls. Step 4, ground-nesting birds and other herbivores that need grass cover are squeezed. The change at the top tugs a thread that runs all the way down.',
+    },
+    // Source: BBC Bitesize KS3 Biology, "Interdependence and food webs" topic page (Ecosystems sub-section), Common Misconception block: "Pupils sometimes assume two animals at the same trophic level always compete, missing that competition requires a shared food source or shared resource." https://www.bbc.co.uk/bitesize/topics/zxhhvcw
+    {
+      id: 'fwb-mis-same-level-always-compete',
+      description:
+        'Two animals at the same level in a web automatically compete with each other.',
+      triggerAnswer: 'same-level-compete',
+      correction:
+        'In fact, competition needs a shared food source. Two consumers at the same level can sit on different chains and never overlap.',
+      reExplanation:
+        'In the garden-pond web, the stickleback eats water fleas and the frog eats tadpoles and snails. They share no food source, so in this web they do not compete. Add a chain where both eat water fleas and competition appears. Always trace the food source before saying two animals compete.',
+    },
+    // Source: CGP KS3 Science Complete Study and Practice (Higher), 2014 edition, p.198 Common mistake: "Students sometimes treat a food web as a single very long food chain by reading only one path, missing that webs branch and reconverge." https://www.cgpbooks.co.uk/secondary-books/ks3/science/sht43-ks3-science-complete-study-practice
+    {
+      id: 'fwb-mis-web-as-single-chain',
+      description:
+        'A food web is just one very long food chain drawn in a different way.',
+      triggerAnswer: 'web-as-chain',
+      correction:
+        'Actually, a web is many chains sharing species. One organism can sit on several chains because more than one arrow points in or out.',
+      reExplanation:
+        'Look at the oak-tree web. The blue tit eats caterpillars AND wood mice. That is two chains that share the blue tit, not one. Trace each chain separately and the web breaks down into the chains that built it.',
+    },
+    // Source: AQA GCSE Biology specification 8461, section 4.7.2 Organisation of an ecosystem: at GCSE Foundation tier the reverse cascade (remove a producer) is the workhorse question. KS3 pupils sometimes assume removing a producer just means "the animals find other food", missing the trophic chain failure. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification
+    {
+      id: 'fwb-mis-remove-producer-no-effect',
+      description:
+        'Removing a producer from a web has no major effect because animals can find other food.',
+      triggerAnswer: 'remove-producer-no-effect',
+      correction:
+        'In fact, removing a producer collapses every chain that starts at that producer. Animals fed by it lose their food source first, then everything that ate them.',
+      reExplanation:
+        'Take pondweed out of the garden-pond web. Water flea and tadpole numbers fall (they ate pondweed). Stickleback and frog numbers fall (less of their food). Heron numbers fall too. Producers underpin the entire web, so removing one is the most damaging move you can make.',
+    },
+    // Source: CGP KS3 Science Complete Study and Practice (Higher), 2014 edition, p.199 Common mistake: "Pupils confuse 'predator' arrows with 'eats arrows' in a web, drawing arrows from each consumer to its prey rather than from food to eater." https://www.cgpbooks.co.uk/secondary-books/ks3/science/sht43-ks3-science-complete-study-practice
+    {
+      id: 'fwb-mis-arrow-direction-web',
+      description:
+        'In a food web, arrows point from each predator to its prey.',
+      triggerAnswer: 'arrow-predator-to-prey',
+      correction:
+        'In fact, the arrow rule is the same as in a chain: from food to eater. So the arrow points from the prey to the predator, showing energy flowing up the web.',
+      reExplanation:
+        'Read every arrow as "is eaten by". In the oak web, oak leaf to caterpillar reads as "oak leaf is eaten by caterpillar". Caterpillar to blue tit reads as "caterpillar is eaten by blue tit". The pattern carries straight over from chains; webs do not invent a new arrow rule.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+// ---------------------------------------------------------------------------
 // Zone wiring
 // ---------------------------------------------------------------------------
 
-export const ecosystemsZoneNodes: SkillNode[] = [foodChains]
+export const ecosystemsZoneNodes: SkillNode[] = [foodChains, foodWebs]
 
 export const ecosystemsZone: Zone = {
   id: 'biology-ecosystems',
   name: 'Ecosystems',
   realm: 'vitalia',
-  nodeIds: [foodChains.id],
+  nodeIds: [foodChains.id, foodWebs.id],
 }

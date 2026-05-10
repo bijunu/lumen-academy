@@ -48,6 +48,7 @@ export {
 } from './photosynthesis'
 export {
   foodChains,
+  foodWebs,
   ecosystemsZone,
   ecosystemsZoneNodes,
 } from './ecosystems'
