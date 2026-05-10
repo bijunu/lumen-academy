@@ -42,6 +42,7 @@ function StreakStrip({ days }: { days: boolean[] }) {
       {days.map((active, i) => (
         <div
           key={i}
+          role="img"
           className={`h-3 w-3 rounded-full ${active ? 'bg-primary' : 'bg-muted'}`}
           aria-label={active ? 'Active day' : 'Inactive day'}
         />

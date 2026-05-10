@@ -50,10 +50,13 @@ export function LearnPageClient({ node }: LearnPageClientProps) {
   )
 
   return (
-    <NodeLearningFlow
-      node={node}
-      onRequestHint={handleHintRequest}
-      lookupHintLevel={lookupHintLevel}
-    />
+    <div className="space-y-4">
+      <h1 className="text-2xl font-bold tracking-tight">{node.title}</h1>
+      <NodeLearningFlow
+        node={node}
+        onRequestHint={handleHintRequest}
+        lookupHintLevel={lookupHintLevel}
+      />
+    </div>
   )
 }

@@ -85,3 +85,4 @@ public/worker-*.js
 
 # ---- Local-only authoring scratch ----
 docs/_drafts/
+audit-reports/
