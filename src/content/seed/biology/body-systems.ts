@@ -1193,7 +1193,6 @@ export const circulatorySystem: SkillNode = {
         'Stomach',
         'Liver',
         'Brain',
-        'Kidney',
       ],
       xpValue: 20,
     },
@@ -1434,7 +1433,7 @@ const respiratoryOverviewSvg = `
   <line x1="240" y1="180" x2="220" y2="210" stroke="#F87171" stroke-width="4" />
   <line x1="240" y1="180" x2="260" y2="210" stroke="#F87171" stroke-width="4" />
   <line x1="360" y1="180" x2="340" y2="210" stroke="#F87171" stroke-width="4" />
-  <line x1="360" y1="180" x2="380" y2="210" stroke="#F87171" stroke-with="4" stroke-width="4" />
+  <line x1="360" y1="180" x2="380" y2="210" stroke="#F87171" stroke-width="4" />
   <line x1="220" y1="210" x2="200" y2="230" stroke="#F87171" stroke-width="2" />
   <line x1="220" y1="210" x2="220" y2="240" stroke="#F87171" stroke-width="2" />
   <line x1="260" y1="210" x2="270" y2="240" stroke="#F87171" stroke-width="2" />
@@ -1935,12 +1934,12 @@ export const respiratorySystem: SkillNode = {
     {
       id: 'rs-q16',
       type: 'numeric-entry',
-      stem: 'A pupil takes 16 breaths a minute at rest and 40 breaths a minute after running. By how many breaths per minute has the breathing rate risen?',
+      stem: 'At rest, a pupil counts 8 breaths across 30 seconds. What is the resting breathing rate in breaths per minute?',
       tier: 'confident',
-      correctAnswer: 24,
+      correctAnswer: 16,
       unit: 'breaths/min',
       xpValue: 15,
-      hint: 'Subtract the resting rate from the active rate.',
+      hint: 'A 30 second count is half of a full minute. Double it to scale up.',
     },
     {
       id: 'rs-q17',
