@@ -357,7 +357,7 @@ export const ratioSharing: SkillNode = {
       type: 'drag-order',
       stem: 'A Tunbridge Wells choir splits 240 song books between four sections in the ratio 1:2:3:6. Drag these section sizes into order from smallest to largest.',
       tier: 'challenge',
-      items: ['80 books', '40 books', '60 books', '20 books'],
+      items: ['120 books', '40 books', '60 books', '20 books'],
       correctOrder: [3, 1, 2, 0],
       xpValue: 25,
       hint: 'Total parts = 1 + 2 + 3 + 6 = 12. One part = 240 / 12 = 20. Multiply by each ratio number.',

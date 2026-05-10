@@ -448,7 +448,7 @@ export const sequencesNthTerm: SkillNode = {
     {
       id: 'seqn-q20',
       type: 'multiple-choice',
-      stem: 'A Sevenoaks scout group lays out chairs for a council meeting. Row 1 has 7 chairs, row 2 has 11, row 3 has 15, row 4 has 19. The pattern continues to row 9. Which row first reaches at least 40 chairs?',
+      stem: 'A Sevenoaks scout group lays out chairs for a council meeting. Row 1 has 7 chairs, row 2 has 11, row 3 has 15, row 4 has 19. The pattern continues for many more rows. Which row first reaches at least 40 chairs?',
       tier: 'challenge',
       options: ['Row 8', 'Row 9', 'Row 10', 'Row 11'],
       correctIndex: 2,

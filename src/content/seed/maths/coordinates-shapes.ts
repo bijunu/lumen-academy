@@ -42,7 +42,7 @@ export const coordinatesShapes: SkillNode = {
           { from: 'D', to: 'A', length: 4 },
         ],
         callout:
-          'The vertices alternate quadrants as you trace the perimeter. Side lengths come from the gap between the x or y values of the two endpoints.',
+          'Watch the vertex order. The list ABCD here goes anticlockwise around the square, so joining A to B to C to D to A traces the perimeter cleanly. If a question listed the same four points in the order A(-2,-2), C(2,2), B(2,-2), D(-2,2) and you joined them in that listed order, you would draw a bow-tie with two crossing lines, not a square. Always plot every point first, then join them in perimeter order. Side lengths come from the gap between the x or y values of the two endpoints.',
       },
     },
     {
