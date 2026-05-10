@@ -1,13 +1,12 @@
 import NextAuth, { type NextAuthConfig } from 'next-auth'
 import Nodemailer from 'next-auth/providers/nodemailer'
 import { MongoDBAdapter } from '@auth/mongodb-adapter'
-import { createTransport } from 'nodemailer'
 
 import { getMongoClient } from '@/lib/db/mongoClient'
 import { logger } from '@/lib/logger'
 
 const DEFAULT_DB_NAME = 'lumen-academy'
-const DEFAULT_FROM = 'Welldrum Academy <welldrumacademy@gmail.com>'
+const DEFAULT_FROM = 'Welldrum Academy <onboarding@resend.dev>'
 
 function buildEmailHtml(url: string): string {
   return `<!DOCTYPE html>
@@ -56,36 +55,35 @@ function buildEmailText(url: string): string {
   ].join('\n')
 }
 
-async function sendViaSmtp({
-  host,
-  port,
-  user,
-  pass,
+async function sendViaResend({
+  apiKey,
   from,
   to,
   url,
 }: {
-  host: string
-  port: number
-  user: string
-  pass: string
+  apiKey: string
   from: string
   to: string
   url: string
 }): Promise<void> {
-  const transport = createTransport({
-    host,
-    port,
-    secure: port === 465,
-    auth: { user, pass },
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to,
+      subject: 'Your sign-in link for Welldrum Academy',
+      html: buildEmailHtml(url),
+      text: buildEmailText(url),
+    }),
   })
-  await transport.sendMail({
-    from,
-    to,
-    subject: 'Your sign-in link for Welldrum Academy',
-    html: buildEmailHtml(url),
-    text: buildEmailText(url),
-  })
+  if (!res.ok) {
+    const body = await res.text().catch(() => '')
+    throw new Error(`Resend send failed (${res.status}): ${body}`)
+  }
 }
 
 export const authConfig: NextAuthConfig = {
@@ -101,16 +99,11 @@ export const authConfig: NextAuthConfig = {
       server: process.env.EMAIL_SERVER ?? 'smtp://localhost:25',
       from: process.env.EMAIL_FROM ?? DEFAULT_FROM,
       sendVerificationRequest: async ({ identifier, url, expires }) => {
-        const smtpHost = process.env.SMTP_HOST
-        const smtpUser = process.env.SMTP_USER
-        const smtpPass = process.env.SMTP_PASSWORD
-        if (smtpHost && smtpUser && smtpPass) {
+        const apiKey = process.env.RESEND_API_KEY
+        if (apiKey) {
           try {
-            await sendViaSmtp({
-              host: smtpHost,
-              port: Number(process.env.SMTP_PORT ?? 587),
-              user: smtpUser,
-              pass: smtpPass,
+            await sendViaResend({
+              apiKey,
               from: process.env.EMAIL_FROM ?? DEFAULT_FROM,
               to: identifier,
               url,
