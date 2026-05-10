@@ -294,11 +294,11 @@ export const coordinatesShapes: SkillNode = {
       type: 'multiple-choice',
       stem: 'A triangle has vertices T1(-2, 1), T2(2, 1) and T3(0, 4). Translate the triangle by 3 right and 2 down. Where does T3 end up?',
       tier: 'confident',
-      options: ['(3, 6)', '(3, 2)', '(-3, 6)', '(2, 0)'],
+      options: ['(3, 6)', '(3, 2)', '(-3, 6)', '(-2, 7)'],
       correctIndex: 1,
       xpValue: 15,
       misconceptionId: 'cs-mis-vector-component-swap',
-      hint: 'Add 3 to the x value and -2 to the y value of (0, 4). The x component changes the x value, the y component changes the y value.',
+      hint: 'Add 3 to the x value and -2 to the y value of (0, 4). The x component changes the x value, the y component changes the y value. The "(-2, 7)" answer comes from swapping the components, treating "3 right and 2 down" as "3 up and 2 left".',
     },
     // Confident 4
     {
