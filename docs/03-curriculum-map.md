@@ -281,10 +281,10 @@
 ### Zone: Atoms, Elements, Compounds (`chemistry-atoms-elements-compounds`)
 
 #### Atoms, Elements, Compounds, Mixtures (Core, `chemistry-atoms-elements-compounds-basics`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Atoms, elements and compounds)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: A simple (Dalton) atomic model; differences between atoms, elements and compounds; chemical symbols and formulae for elements and compounds; conservation of mass changes of state and chemical reactions.
+- **AQA**: 4.1.1.1 Atoms, elements and compounds; 4.1.1.2 Mixtures (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.1 Atoms, elements and compounds; 1.41 Pure substances and mixtures (GCSE Chemistry 1CH0)
+- **OCR**: C1.1a Atoms, elements and compounds; C2.1a Pure and impure substances (GCSE Chemistry A J248 Gateway)
 
 #### Symbols and Simple Formulae (Confident, `chemistry-atoms-symbols-formulae`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Atoms, elements and compounds)_

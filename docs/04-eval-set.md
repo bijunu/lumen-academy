@@ -811,13 +811,36 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-formulae`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-AT-1: Learner believes water (or air) is an element because it looks like a single uniform substance with no parts you can see.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ or spot-misconception whose distractors include the water-as-element answer.
+- C-AT-2: Learner believes that any sample with more than one substance is a compound, missing the bonded vs simply mixed distinction.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ pairing brass, sea water or muddy water against a true compound.
+- C-AT-3: Learner believes a pure element can hold more than one kind of atom as long as it shares a single appearance.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ that asks how many kinds of atom a sample of a named element contains.
+- C-AT-4: Learner believes that when a substance dissolves, the solute and solvent bond chemically into a new compound.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Confident MCQ or spot-misconception covering sugar in tea or salt in water as a mixture.
+- C-AT-5: Learner believes two substances that are touching, sticking or otherwise stuck together are bonded into a compound.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Challenge spot-misconception or MCQ presenting iron filings on a magnet as a compound.
+- C-AT-6: Learner believes alloys (brass, steel) are compounds because two metals have been combined.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Confident MCQ on brass or steel that pairs alloy-as-mixture against alloy-as-compound.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-AT-1: At least one labelled-image question on `chemistry-atoms-elements-compounds-basics` requires the learner to drag the labels Element, Compound and Mixture onto the matching particle picture, with a label pool no larger than twice the hotspot count.
+- Q-AT-2: At least one numeric-entry question on `chemistry-atoms-elements-compounds-basics` asks the learner to count the total number of atoms in a small molecule (water, carbon dioxide, methane).
+- Q-AT-3: At least one numeric-entry question on `chemistry-atoms-elements-compounds-basics` asks the learner to count the number of different kinds of atom in a particle picture.
+- Q-AT-4: At least one drag-order question on `chemistry-atoms-elements-compounds-basics` ranks named substances by how many kinds of atom they hold (element, compound, mixture).
+- Q-AT-5: At least one Challenge tier word problem on `chemistry-atoms-elements-compounds-basics` uses a UK domestic or laboratory context (1p coin, brass band trumpet, sea water in the English Channel, a green-crusted church roof) and requires the learner to choose between element, compound and mixture.
+- Q-AT-6: At least one missing-step question on `chemistry-atoms-elements-compounds-basics` hides the "the substances are not chemically bonded, only mixed together" step in a mixture-or-compound explanation.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-AT-1: Given "Water has to be an element because it is a single clear liquid", the tutor's first reply is a Socratic prompt about how many kinds of atom are in each water particle, not a flat correction.
+- T-AT-2: Given a wrong answer matching the alloy-as-compound trigger (for example "Brass is a compound of copper and zinc"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-AT-3: Given "If sugar dissolves in tea, the sugar bonds with the water and the tea is a compound", the tutor scaffolds the learner toward the test of recovering the sugar by evaporation, without flatly stating the answer.
+- T-AT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 atoms, elements and compounds language and metric units politely.
+- T-AT-5: Given a request for an inline definition (tap on "atom", "element", "compound" or "mixture"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Periodic Table
 
