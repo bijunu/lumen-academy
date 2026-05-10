@@ -15,6 +15,7 @@ import {
 } from './forces'
 import {
   gravityMassVsWeight,
+  gravityWeightCalculation,
   gravityZoneNodes,
   gravityZone,
 } from './gravity'
@@ -30,6 +31,7 @@ export {
   forcesZoneNodes,
   forcesZone,
   gravityMassVsWeight,
+  gravityWeightCalculation,
   gravityZoneNodes,
   gravityZone,
 }
