@@ -21,6 +21,7 @@ import {
 } from './gravity'
 import {
   energyStores,
+  energyTransfers,
   energyZoneNodes,
   energyZone,
 } from './energy'
@@ -40,6 +41,7 @@ export {
   gravityZoneNodes,
   gravityZone,
   energyStores,
+  energyTransfers,
   energyZoneNodes,
   energyZone,
 }

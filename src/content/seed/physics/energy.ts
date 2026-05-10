@@ -726,7 +726,779 @@ export const energyStores: SkillNode = {
   },
 }
 
-export const energyZoneNodes = [energyStores]
+const TRANSFERS_GALLERY_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Four ways energy moves between stores</text>
+
+    <!-- Mechanical: hand pushing a box -->
+    <text x="100" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Mechanical</text>
+    <text x="100" y="98" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">force x distance</text>
+    <rect x="80" y="120" width="60" height="40" fill="currentColor" />
+    <line x1="40" y1="140" x2="75" y2="140" />
+    <polygon points="67,133 80,140 67,147" fill="currentColor" stroke="none" />
+    <text x="100" y="180" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">push a box</text>
+
+    <!-- Electrical: cell driving a bulb -->
+    <text x="300" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Electrical</text>
+    <text x="300" y="98" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">current x voltage</text>
+    <rect x="260" y="120" width="20" height="35" fill="currentColor" />
+    <line x1="260" y1="138" x2="240" y2="138" />
+    <line x1="280" y1="138" x2="320" y2="138" />
+    <circle cx="335" cy="138" r="14" />
+    <line x1="349" y1="138" x2="360" y2="138" />
+    <text x="300" y="180" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">torch lights</text>
+
+    <!-- Heating: flame under a kettle -->
+    <text x="500" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Heating</text>
+    <text x="500" y="98" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">temp difference</text>
+    <rect x="470" y="120" width="60" height="35" fill="currentColor" />
+    <path d="M 485 165 Q 490 175 495 165 Q 500 175 505 165 Q 510 175 515 165" />
+    <text x="500" y="195" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">flame heats kettle</text>
+
+    <!-- Radiation: sun and panel -->
+    <text x="700" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Radiation</text>
+    <text x="700" y="98" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">light, sound, infrared</text>
+    <circle cx="680" cy="130" r="14" fill="currentColor" />
+    <line x1="694" y1="130" x2="715" y2="130" />
+    <line x1="690" y1="120" x2="710" y2="115" />
+    <line x1="690" y1="140" x2="710" y2="145" />
+    <text x="700" y="180" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">sun warms panel</text>
+
+    <!-- Chains row -->
+    <text x="400" y="240" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">Each transfer moves energy from one store to another</text>
+    <text x="100" y="280" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">chemical (food)</text>
+    <text x="100" y="298" text-anchor="middle" font-size="14" stroke="none" fill="currentColor">→</text>
+    <text x="100" y="318" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">kinetic (cyclist)</text>
+    <text x="300" y="280" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">chemical (cell)</text>
+    <text x="300" y="298" text-anchor="middle" font-size="14" stroke="none" fill="currentColor">→</text>
+    <text x="300" y="318" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal (bulb)</text>
+    <text x="500" y="280" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal (flame)</text>
+    <text x="500" y="298" text-anchor="middle" font-size="14" stroke="none" fill="currentColor">→</text>
+    <text x="500" y="318" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal (water)</text>
+    <text x="700" y="280" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal (sun)</text>
+    <text x="700" y="298" text-anchor="middle" font-size="14" stroke="none" fill="currentColor">→</text>
+    <text x="700" y="318" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal (panel)</text>
+  </g>
+`
+
+const FALLING_BRICK_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Falling brick: gravitational store falls, others grow</text>
+    <!-- Brick at top -->
+    <text x="120" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Step 1: held high</text>
+    <rect x="100" y="100" width="40" height="20" fill="currentColor" />
+    <line x1="120" y1="120" x2="120" y2="320" stroke-dasharray="4 4" />
+    <text x="160" y="220" font-size="12" stroke="none" fill="currentColor">gravitational store full</text>
+    <text x="160" y="238" font-size="12" stroke="none" fill="currentColor">kinetic store small</text>
+
+    <!-- Brick mid-fall -->
+    <text x="400" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Step 2: half-way down</text>
+    <rect x="380" y="200" width="40" height="20" fill="currentColor" />
+    <line x1="400" y1="120" x2="400" y2="200" stroke-dasharray="4 4" />
+    <text x="440" y="180" font-size="12" stroke="none" fill="currentColor">grav store half-full</text>
+    <text x="440" y="198" font-size="12" stroke="none" fill="currentColor">kinetic store growing</text>
+    <line x1="400" y1="225" x2="400" y2="260" />
+    <polygon points="392,250 400,265 408,250" fill="currentColor" stroke="none" />
+
+    <!-- Brick at ground -->
+    <text x="660" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Step 3: just hit the ground</text>
+    <rect x="640" y="300" width="40" height="20" fill="currentColor" />
+    <line x1="600" y1="320" x2="720" y2="320" />
+    <text x="710" y="290" font-size="12" stroke="none" fill="currentColor">kinetic store</text>
+    <text x="710" y="308" font-size="12" stroke="none" fill="currentColor">→ thermal store</text>
+    <text x="710" y="326" font-size="12" stroke="none" fill="currentColor">+ sound (radiation)</text>
+  </g>
+`
+
+const CAR_TRANSFER_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">A car moving on the M25</text>
+    <!-- Tank label -->
+    <text x="120" y="100" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Petrol tank</text>
+    <rect x="80" y="120" width="80" height="60" fill="currentColor" />
+    <text x="120" y="200" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">chemical store</text>
+    <!-- Arrow to engine -->
+    <line x1="170" y1="150" x2="240" y2="150" />
+    <polygon points="232,143 245,150 232,157" fill="currentColor" stroke="none" />
+    <text x="205" y="140" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">mechanical</text>
+    <!-- Wheels -->
+    <text x="320" y="100" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Wheels and car</text>
+    <rect x="270" y="120" width="100" height="60" fill="currentColor" />
+    <text x="320" y="200" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">kinetic store grows</text>
+    <!-- Arrow out to surroundings -->
+    <line x1="380" y1="150" x2="450" y2="150" />
+    <polygon points="442,143 455,150 442,157" fill="currentColor" stroke="none" />
+    <text x="415" y="140" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">heating</text>
+    <!-- Surroundings -->
+    <text x="520" y="100" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Tyres and road</text>
+    <rect x="475" y="120" width="90" height="60" />
+    <text x="520" y="200" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">thermal store of</text>
+    <text x="520" y="218" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">surroundings grows</text>
+    <text x="400" y="290" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">Total energy is the same; it has just shifted between stores</text>
+  </g>
+`
+
+export const energyTransfers: SkillNode = {
+  id: 'physics-energy-transfers',
+  title: 'Energy Transfers',
+  description:
+    'Name the four pathways energy uses to move between stores: mechanically (force times distance, like a hand pushing a box), electrically (current times voltage, like a cell driving a torch bulb), heating (a temperature difference between two objects in contact), and radiation (light, sound, and infrared travelling out from a source). Pair each transfer with a store-to-store change: chemical (in food) to kinetic (in a moving cyclist), gravitational (in a high brick) to kinetic and thermal (in the brick and the ground after the fall).',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-energy-stores-transfers',
+  zoneName: 'Energy Stores and Transfers',
+  tier: 'confident',
+  prerequisites: ['physics-energy-stores'],
+  curriculum: {
+    ks3Objective:
+      'Energy as a quantity that can be transferred between objects or between stores by mechanical work, electrical work, heating, or radiation; using physical processes and mechanisms, rather than energy itself, to explain the intermediate steps that bring about such changes.',
+    awardingBodies: {
+      aqa: '4.1.1.2 Changes in energy; 4.1.2 Conservation and dissipation of energy (GCSE Physics 8463)',
+      edexcel: 'Topic 4 Energy, 4.4-4.6 Energy transfers and pathways (GCSE Physics 1PH0)',
+      ocr: 'P1.1 Conservation of energy; pathways for energy transfer (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'et-scene-pathways',
+      title: 'The Four Transfer Pathways',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the name of one pathway and the everyday situation in which it moves energy between stores.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: TRANSFERS_GALLERY_SVG,
+        hotspots: [
+          {
+            id: 'et-h-mech',
+            x: 13,
+            y: 25,
+            label: 'Mechanical (force x distance)',
+            description:
+              'A hand or a rope pushes or pulls an object through a distance. Each metre the object moves under the force, more energy is transferred mechanically.',
+          },
+          {
+            id: 'et-h-elec',
+            x: 38,
+            y: 25,
+            label: 'Electrical (current x voltage)',
+            description:
+              'A cell drives electrons through a wire. Each second a current flows, more energy is transferred electrically into a bulb, motor, or heater.',
+          },
+          {
+            id: 'et-h-heat',
+            x: 63,
+            y: 25,
+            label: 'Heating (temperature difference)',
+            description:
+              'Two objects in contact at different temperatures: energy moves from the hotter one to the cooler one until they are at the same temperature. A flame heats a kettle this way.',
+          },
+          {
+            id: 'et-h-rad',
+            x: 87,
+            y: 25,
+            label: 'Radiation (light, sound, infrared)',
+            description:
+              'A source sends out light, sound, or invisible infrared. The energy travels through the gap and is absorbed by something else, growing its store. The Sun warms a solar panel by radiation.',
+          },
+          {
+            id: 'et-h-chain1',
+            x: 13,
+            y: 75,
+            label: 'chemical → kinetic',
+            description:
+              'A cyclist eats a banana (chemical store full), then pedals (mechanical transfer through the legs), and the bicycle speeds up (kinetic store grows).',
+          },
+          {
+            id: 'et-h-chain2',
+            x: 38,
+            y: 75,
+            label: 'chemical → thermal',
+            description:
+              'A torch cell drives the bulb (electrical transfer through the wires), and the bulb gets warm (thermal store grows). Light leaves the bulb as a radiation transfer.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'et-scene-brick',
+      title: 'A Falling Brick: Stores and Pathways',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to follow how a falling brick shifts energy from its gravitational store to its kinetic store and then to the thermal store of the ground.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: FALLING_BRICK_SVG,
+        hotspots: [
+          {
+            id: 'et-b-1',
+            x: 22,
+            y: 60,
+            label: 'Step 1: brick held high',
+            description:
+              'Gravitational store full (because the brick is high above the ground). Kinetic store small (because the brick is not moving yet).',
+          },
+          {
+            id: 'et-b-2',
+            x: 55,
+            y: 60,
+            label: 'Step 2: brick half-way down',
+            description:
+              'Gravitational store has fallen by about half. Kinetic store has grown by about the same amount (energy has shifted from one store to the other). The pathway is mechanical, through the force of gravity over the distance fallen.',
+          },
+          {
+            id: 'et-b-3',
+            x: 85,
+            y: 60,
+            label: 'Step 3: brick hits the ground',
+            description:
+              'Kinetic store falls suddenly to zero. The thermal store of the ground (and the brick) grows, by heating, and a small radiation transfer leaves as sound. Energy has gone from gravitational to kinetic to thermal in three steps.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'et-scene-car',
+      title: 'A Moving Car: Chemical to Kinetic, with Heat as Waste',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read how a car moves energy from the chemical store of its petrol to the kinetic store of the wheels, and to the thermal store of the surroundings.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: CAR_TRANSFER_SVG,
+        hotspots: [
+          {
+            id: 'et-c-tank',
+            x: 15,
+            y: 50,
+            label: 'Chemical store of the petrol',
+            description:
+              'The petrol in the tank holds a large chemical store. The engine breaks bonds in the petrol when it burns, and the chemical store falls.',
+          },
+          {
+            id: 'et-c-mech',
+            x: 26,
+            y: 38,
+            label: 'Mechanical transfer to the wheels',
+            description:
+              'The engine pushes the wheels through a force over a distance. This is a mechanical transfer. The kinetic store of the car grows.',
+          },
+          {
+            id: 'et-c-wheels',
+            x: 40,
+            y: 50,
+            label: 'Kinetic store of the car',
+            description:
+              'The whole car moves faster. Its kinetic store grows. This is what the driver wants.',
+          },
+          {
+            id: 'et-c-heat',
+            x: 52,
+            y: 38,
+            label: 'Heating transfer to the surroundings',
+            description:
+              'Friction in the engine and tyres is hotter than the air. Energy moves out by heating. This is wasted from the car’s point of view, but the total is conserved.',
+          },
+          {
+            id: 'et-c-surroundings',
+            x: 65,
+            y: 50,
+            label: 'Thermal store of the road and air',
+            description:
+              'The road, tyres, and air gain a thermal store. Total energy is the same as before; it has just shifted between stores.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'et-worked-1',
+      title: 'A torch bulb lit by a battery: chemical to thermal, with radiation',
+      steps: [
+        {
+          explanation:
+            'Pick the system. A 1.5 V AA cell sits inside a torch in a Sevenoaks shed. The switch is on. The bulb is glowing.',
+        },
+        {
+          explanation:
+            'Name the starting store. The cell holds energy in its chemical store, in the bonds inside it.',
+          maths: 'starting store = chemical (in the cell)',
+        },
+        {
+          explanation:
+            'Name the pathway. Inside the wires, electrons flow as a current driven by the cell’s voltage. This is an electrical transfer.',
+          maths: 'pathway 1 = electrical',
+        },
+        {
+          explanation:
+            'Name the second store. The bulb’s filament gets hot. The thermal store of the bulb grows.',
+          maths: 'second store = thermal (in the bulb)',
+        },
+        {
+          explanation:
+            'Name the second pathway. Light leaves the bulb in all directions, travelling out through the gap to anything around. This is a radiation transfer.',
+          maths: 'pathway 2 = radiation (light)',
+        },
+        {
+          explanation:
+            'State the change. The chemical store of the cell falls. The thermal store of the bulb grows, and a radiation transfer takes some energy out as light. The total energy is the same; it has just shifted to other stores or moved to the surroundings.',
+        },
+      ],
+    },
+    {
+      id: 'et-worked-2',
+      title: 'A cyclist on a flat A-road: chemical to kinetic, with friction as heating',
+      steps: [
+        {
+          explanation:
+            'Pick the system. A cyclist on a flat A-road in the Lake District has just eaten a banana. They start to pedal from rest and speed up.',
+        },
+        {
+          explanation:
+            'Name the starting store. The chemical store of the food (and of the body’s reserves) is full.',
+          maths: 'starting store = chemical (in the body)',
+        },
+        {
+          explanation:
+            'Name the pathway from food to kinetic. Each push of the pedals is a force times distance. This is a mechanical transfer.',
+          maths: 'pathway 1 = mechanical',
+        },
+        {
+          explanation:
+            'Name the second store. The bike and rider speed up. Their kinetic store grows.',
+          maths: 'second store = kinetic (of bike and rider)',
+        },
+        {
+          explanation:
+            'Name the wasted pathway. Friction in the chain and tyres makes them hotter than the air. Energy leaves to the air by heating. The cyclist’s body also warms up.',
+          maths: 'wasted pathway = heating (to the surroundings)',
+        },
+        {
+          explanation:
+            'State the change. The chemical store falls. The kinetic store grows. A smaller share leaves as a heating transfer to the surroundings. Total energy is conserved.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'et-q1',
+      type: 'multiple-choice',
+      stem: 'Which list names the four pathways through which energy moves between stores in Year 7 physics?',
+      tier: 'core',
+      options: [
+        'Mechanical, electrical, heating, radiation.',
+        'Heat, light, sound, electricity.',
+        'Push, pull, fire, light.',
+        'Kinetic, gravitational, chemical, thermal.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'et-mis-only-two-pathways',
+      hint: 'Stores are where energy is held. Pathways are how it moves. Pick the four ways energy moves.',
+    },
+    {
+      id: 'et-q2',
+      type: 'multiple-choice',
+      stem: 'A pupil pushes a trolley across the floor of a Manchester supermarket. Which pathway moves energy from the pupil to the trolley?',
+      tier: 'core',
+      options: [
+        'Heating, because pushing makes the trolley hot.',
+        'Electrical, because the pupil is charged.',
+        'Mechanical (force over a distance).',
+        'Radiation, because light reflects off the trolley.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'A force acts on the trolley, and the trolley moves through a distance. Which pathway is that?',
+    },
+    {
+      id: 'et-q3',
+      type: 'multiple-choice',
+      stem: 'A torch is switched on. Energy moves from the chemical store of the cell to the thermal store of the bulb. Which pathway carries it?',
+      tier: 'confident',
+      options: [
+        'Mechanical, because the wires bend a little.',
+        'Electrical (current driven by voltage).',
+        'Heating, because the cell is warm.',
+        'Radiation, because the cell glows.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'et-mis-store-vs-transfer',
+      hint: 'A current flows through the wires, driven by the voltage of the cell. Which pathway is that?',
+    },
+    {
+      id: 'et-q4',
+      type: 'multiple-choice',
+      stem: 'A radiator under a window heats the air in a chilly Sevenoaks bedroom. Which pathway moves energy from the radiator to the air?',
+      tier: 'core',
+      options: [
+        'Heating (the radiator is hotter than the air).',
+        'Electrical, because radiators are wired up.',
+        'Mechanical, because the air pushes back on the radiator.',
+        'Radiation, because the radiator gives off light.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Two objects in contact at different temperatures: which pathway is that?',
+    },
+    {
+      id: 'et-q5',
+      type: 'multiple-choice',
+      stem: 'On a sunny morning in Brighton, a solar panel on a roof gets warm. The Sun is far above the panel; nothing in between is warmer than the panel. Which pathway moves the energy from the Sun to the panel?',
+      tier: 'core',
+      options: [
+        'Heating, because the air in between is warm.',
+        'Mechanical, because the Sun pushes light at the panel.',
+        'Electrical, because solar panels make electricity.',
+        'Radiation (the Sun sends out light and infrared).',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'et-mis-light-as-store',
+      hint: 'Light from the Sun is a transfer, not a store. Which of the four pathways is light part of?',
+    },
+    {
+      id: 'et-q6',
+      type: 'numeric-entry',
+      stem: 'How many transfer pathways are named in the Year 7 framing (mechanical, electrical, heating, radiation)?',
+      tier: 'core',
+      correctAnswer: 4,
+      xpValue: 10,
+      misconceptionId: 'et-mis-only-two-pathways',
+      hint: 'Count the pathways listed in the question stem.',
+    },
+    {
+      id: 'et-q7',
+      type: 'numeric-entry',
+      stem: 'A toaster takes 60 000 J of energy from the mains by an electrical transfer over one minute. By how many joules does the chemical store of the bread that is toasting change in that minute, if all the energy goes into the bread by heating? Note: at Year 7 this is a thought experiment to show conservation.',
+      tier: 'core',
+      correctAnswer: 0,
+      unit: 'J',
+      xpValue: 10,
+      hint: 'Toasting is a heating transfer to the bread. The chemical store of the bread is not what is growing; the thermal store is. So the chemical store change is zero.',
+    },
+    {
+      id: 'et-q8',
+      type: 'multiple-choice',
+      stem: 'A pupil drops a 1 kg brick onto a soft mat from a height of 2 m. As the brick falls, which two stores change first?',
+      tier: 'core',
+      options: [
+        'Gravitational store falls; kinetic store grows.',
+        'Chemical store falls; thermal store grows.',
+        'Elastic store falls; magnetic store grows.',
+        'Nuclear store falls; electrical store grows.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'The brick was high; now it is moving. Which store fell, and which grew?',
+    },
+    {
+      id: 'et-q9',
+      type: 'labelled-image',
+      stem: 'Place the four transfer pathway names onto the gallery diagram. Each marker takes one label.',
+      tier: 'confident',
+      viewBox: '0 0 800 400',
+      svg: TRANSFERS_GALLERY_SVG,
+      hotspots: [
+        {
+          id: 'et-q9-h1',
+          x: 13,
+          y: 25,
+          correctLabel: 'Mechanical (force x distance)',
+        },
+        {
+          id: 'et-q9-h2',
+          x: 38,
+          y: 25,
+          correctLabel: 'Electrical (current x voltage)',
+        },
+        {
+          id: 'et-q9-h3',
+          x: 63,
+          y: 25,
+          correctLabel: 'Heating (temperature difference)',
+        },
+        {
+          id: 'et-q9-h4',
+          x: 87,
+          y: 25,
+          correctLabel: 'Radiation (light, sound, infrared)',
+        },
+      ],
+      labels: [
+        'Mechanical (force x distance)',
+        'Electrical (current x voltage)',
+        'Heating (temperature difference)',
+        'Radiation (light, sound, infrared)',
+        'Kinetic store',
+        'Chemical store',
+      ],
+      xpValue: 15,
+      hint: 'Match each picture to the correct pathway. Stores are not pathways; skip those labels.',
+    },
+    {
+      id: 'et-q10',
+      type: 'spot-misconception',
+      stem: 'Lila says, "When the kettle boils, the chemical store of the water grows because the water is being filled with heat energy." What is the most accurate way to describe what is happening?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Lila is right. The water gains a chemical store and heat energy is one of the stores that grows.',
+          isMisconception: true,
+        },
+        {
+          text: 'Lila is not right. The thermal store of the water grows, by a heating transfer from the kettle’s element. "Heat energy" is not a store; heating is the pathway.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'et-mis-store-vs-transfer',
+    },
+    {
+      id: 'et-q11',
+      type: 'spot-misconception',
+      stem: 'Aisha says, "A loudspeaker holds sound energy inside it; that is one of the stores it carries, alongside the chemical store of its battery." What is the most accurate way to describe the sound from a speaker?',
+      tier: 'challenge',
+      statements: [
+        {
+          text: 'Aisha is right. Sound energy is one of the eight stores; the speaker holds it inside.',
+          isMisconception: true,
+        },
+        {
+          text: 'Aisha is not right. Sound is not a store; it is a radiation transfer leaving the speaker. The speaker is fed by an electrical transfer; the cone’s mechanical movement pushes the air, sending sound out as radiation. The thermal store of the air around the speaker also grows a little.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 20,
+      misconceptionId: 'et-mis-sound-as-store',
+    },
+    {
+      id: 'et-q12',
+      type: 'drag-order',
+      stem: 'A pupil is asked to follow the energy in a moving car from the petrol tank to the surroundings. Place the four steps in the right order.',
+      tier: 'confident',
+      items: [
+        'Chemical store of the petrol falls as the engine burns it.',
+        'Mechanical transfer turns the wheels.',
+        'Kinetic store of the car grows.',
+        'Heating transfer warms the tyres, road, and air.',
+      ],
+      correctOrder: [0, 1, 2, 3],
+      xpValue: 15,
+      hint: 'Start with the store that falls, then name the pathway out, then the store that grows, then the wasted pathway.',
+    },
+    {
+      id: 'et-q13',
+      type: 'multiple-choice',
+      stem: 'A pupil dips a cold spoon into a hot mug of tea and waits one minute. Which sentence describes the heating transfer best?',
+      tier: 'confident',
+      options: [
+        'Energy moves from the cold spoon to the hot tea, because the spoon needs warming.',
+        'Energy moves from the hot tea to the cold spoon, because heating goes from hotter to cooler.',
+        'No energy moves, because they are in contact.',
+        'Energy moves both ways equally, so neither object changes.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'et-mis-heating-direction',
+      hint: 'Heating moves energy from the hotter object to the cooler one, never the other way.',
+    },
+    {
+      id: 'et-q14',
+      type: 'numeric-entry',
+      stem: 'A wind-up torch holds 30 J in its elastic store. The torch is switched on and runs until the spring is relaxed. After it has run, the elastic store of the spring holds 0 J. By how many joules has the elastic store fallen?',
+      tier: 'core',
+      correctAnswer: 30,
+      unit: 'J',
+      xpValue: 10,
+      hint: 'Subtract the final value from the starting value.',
+    },
+    {
+      id: 'et-q15',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is following the energy from a sunbeam onto a Brighton garden bench in summer.',
+      tier: 'confident',
+      steps: [
+        'Pick the system: the Sun and a wooden garden bench in Brighton on a sunny day.',
+        'Name the starting store: the thermal store of the Sun is huge.',
+        'Name the pathway out of the Sun: light and infrared travel through space.',
+        null,
+        'Name the second store: the thermal store of the wooden bench grows; the bench warms up.',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'Name the pathway in this step as radiation (light and infrared); the air in between is not warmer than the bench, so heating is not the route.',
+      xpValue: 15,
+    },
+    {
+      id: 'et-q16',
+      type: 'multiple-choice',
+      stem: 'A cyclist eats a 100 g banana, then pedals off down a flat road. Which sentence best names the two main store changes and the pathway?',
+      tier: 'confident',
+      options: [
+        'The kinetic store of the banana falls; mechanical transfer to the cyclist.',
+        'The chemical store of the food (and the body) falls; mechanical transfer through the legs and pedals; kinetic store of the cyclist grows.',
+        'The thermal store of the banana grows; heating transfer to the cyclist.',
+        'The electrical store of the body falls; electrical transfer to the wheels.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'et-mis-food-no-pathway',
+      hint: 'Where is the energy held in the banana, and how does the cyclist push it through the bike?',
+    },
+    {
+      id: 'et-q17',
+      type: 'numeric-entry',
+      stem: 'A small electric kettle takes 90 000 J from the mains by an electrical transfer. The thermal store of the water grows by 84 000 J. The rest leaves by heating to the surroundings. How many joules leave the kettle to the surroundings?',
+      tier: 'confident',
+      correctAnswer: 6000,
+      unit: 'J',
+      xpValue: 15,
+      misconceptionId: 'et-mis-energy-can-be-lost',
+      hint: 'Total in equals total out, by conservation. Subtract what stayed in the water from what came in.',
+    },
+    {
+      id: 'et-q18',
+      type: 'multiple-choice',
+      stem: 'A pupil in a Lake District tent uses a wind-up torch in the dark. Which list names the stores and pathways correctly, in order?',
+      tier: 'challenge',
+      options: [
+        'Elastic store falls; electrical transfer; chemical store of the bulb grows; sound transfer.',
+        'Elastic store of the spring falls; mechanical transfer to the small generator; electrical transfer through the wires; thermal store of the bulb grows; radiation transfer of light to the tent.',
+        'Chemical store falls; heating transfer to the bulb; nuclear store grows.',
+        'Magnetic store falls; mechanical transfer; gravitational store of the tent grows; sound transfer.',
+      ],
+      correctIndex: 1,
+      xpValue: 20,
+      hint: 'Start with the wound spring, follow it through the tiny generator, the wires, the bulb, then out as light.',
+    },
+    {
+      id: 'et-q19',
+      type: 'numeric-entry',
+      stem: 'A car burns enough petrol to release 4000 J from its chemical store. The kinetic store of the car grows by 1200 J. The rest leaves by heating to the engine, the tyres, and the air. How many joules leave to the surroundings as a heating transfer?',
+      tier: 'challenge',
+      correctAnswer: 2800,
+      unit: 'J',
+      xpValue: 20,
+      misconceptionId: 'et-mis-energy-can-be-lost',
+      hint: 'Total in equals total out. Subtract the kinetic share from the chemical share.',
+    },
+    {
+      id: 'et-q20',
+      type: 'free-text',
+      stem: 'A 50 kg pupil walks up two flights of stairs from the ground floor to the science lab on a winter morning. In two or three sentences, name the starting store, the pathway used, and the second store that grows. Mention one wasted transfer to the surroundings.',
+      tier: 'challenge',
+      sampleAnswer:
+        'The starting store is the chemical store of the pupil’s breakfast and body. The pathway is mechanical, through the legs pushing on each step. The gravitational store of the pupil grows because they are now higher up. A heating transfer also goes to the surroundings, because the pupil’s muscles warm up while they climb.',
+      keywords: ['chemical store', 'mechanical', 'gravitational store', 'heating', 'surroundings'],
+      xpValue: 20,
+    },
+    {
+      id: 'et-q21',
+      type: 'multiple-choice',
+      stem: 'A toaster takes 60 000 J from the mains by an electrical transfer. After the slice has popped up, all 60 000 J have gone somewhere. Which sentence is correct?',
+      tier: 'challenge',
+      options: [
+        'Some of the 60 000 J was lost; only the rest went to the bread.',
+        'The full 60 000 J was destroyed in the toaster.',
+        'All 60 000 J went somewhere: most to the thermal store of the bread, the rest by heating to the kitchen air. Total energy is conserved.',
+        'The 60 000 J became sound energy and disappeared.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      misconceptionId: 'et-mis-energy-can-be-lost',
+      hint: 'Energy is never destroyed. Trace where it all ended up: the bread, plus the kitchen air.',
+    },
+  ],
+  misconceptions: [
+    // Source: IOPSpark "Energy: stores and pathways" classroom guidance, used by AQA/Edexcel/OCR for KS3 Energy. Pupils learn only "kinetic to electrical" or "fuel to motion" pairings and miss heating and radiation.
+    {
+      id: 'et-mis-only-two-pathways',
+      description:
+        'Naming only mechanical and electrical as transfer pathways, missing heating (temperature difference) and radiation (light, sound, infrared).',
+      triggerAnswer: 'only-two-pathways',
+      correction:
+        'There are four pathways: mechanical (force x distance), electrical (current x voltage), heating (a temperature difference), and radiation (light, sound, infrared). All four show up in everyday situations.',
+      reExplanation:
+        'Think of a kettle on a hob. The flame heats the kettle (heating, because the flame is hotter than the kettle). The kettle then heats the water (heating again). At the same time the flame gives out light and the kettle whistles when boiling (both radiation). The mains-powered kettle uses electrical instead of the flame. So in one breakfast you may use all four pathways.',
+    },
+    // Source: CGP KS3 Physics Study Guide, "stores not types" pages. Pupils use "store" and "transfer" as if they were the same thing.
+    {
+      id: 'et-mis-store-vs-transfer',
+      description:
+        'Using "stored" and "transferred" as if they meant the same thing, so saying that the kettle "stores heat energy in the water".',
+      triggerAnswer: 'store-vs-transfer',
+      correction:
+        'Energy sits in a store (kinetic, gravitational, elastic, thermal, chemical, nuclear, magnetic, electrostatic). It moves between stores along a pathway (mechanical, electrical, heating, radiation). The two words name different things.',
+      reExplanation:
+        'A kettle of just-boiled water has a thermal store (it is hot). The kettle did not "store heat energy"; it transferred energy from its element to the water by heating, and the thermal store of the water grew. Naming the store and the pathway separately keeps the picture clear and lines up with how GCSE later treats energy.',
+    },
+    // Source: IOPSpark guidance and AQA GCSE Physics examiner report June 2023, candidates label the light from a torch as "light energy" being held inside the bulb.
+    {
+      id: 'et-mis-light-as-store',
+      description:
+        'Treating light as a store inside an object (light energy in the bulb) rather than as a radiation transfer leaving the object.',
+      triggerAnswer: 'light-as-store',
+      correction:
+        'Light is not a store. Light is part of the radiation pathway: it carries energy from the source to whatever absorbs it. The thermal store of the source falls; the radiation transfer moves energy out.',
+      reExplanation:
+        'A torch bulb has a thermal store while it glows. Light leaves the bulb as a radiation transfer in all directions. Anything the light hits (your eye, a wall, the floor) gains energy in its thermal store as the light is absorbed. Once the bulb is off, the bulb has no "light store" left over; only its (slowly cooling) thermal store remains.',
+    },
+    // Source: OCR GCSE Physics examiner report June 2022, J259/02. Candidates skip the chemical store of food in dietary energy questions, treating food as a transfer rather than a stored quantity.
+    {
+      id: 'et-mis-food-no-pathway',
+      description:
+        'Skipping the chemical store of food and the mechanical pathway through the body when explaining how a person gets a kinetic store.',
+      triggerAnswer: 'food-no-pathway',
+      correction:
+        'Food holds energy in its chemical store. Eating it lets the body break the bonds and transfer the energy. The pathway from body to bicycle (or to a flight of stairs) is mechanical, through the legs.',
+      reExplanation:
+        'A cyclist eats a banana. The chemical store of the banana (and the cyclist’s reserves) is what the legs draw on. Each pedal stroke pushes through a distance: a mechanical transfer. The kinetic store of the bike grows. Heating to the surroundings (warm body, warm tyres) is the wasted pathway. Naming the store and the pathway makes the change traceable.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 1F. Candidates write that energy is "lost" when an appliance heats the surroundings, missing the conservation rule.
+    {
+      id: 'et-mis-energy-can-be-lost',
+      description:
+        'Saying that some of the energy from an appliance is "lost" or "destroyed" when the appliance gets hot, missing that the energy has been transferred to the surroundings.',
+      triggerAnswer: 'energy-can-be-lost',
+      correction:
+        'Energy is never lost or destroyed. It moves between stores or to the surroundings. "Wasted" means it has gone somewhere we did not want it to, but the total is the same.',
+      reExplanation:
+        'A toaster takes 60 000 J from the mains by an electrical transfer. Most of this grows the thermal store of the bread (the useful share). Some grows the thermal store of the kitchen air (the wasted share). Add the two and you get 60 000 J back. Nothing was destroyed. The same picture works for a car, a kettle, and a phone charger.',
+    },
+    // Source: CGP KS3 Physics Study Guide, common-mistake box on cooling. Pupils think a hot object can be heated again by a cooler one if you wait long enough.
+    {
+      id: 'et-mis-heating-direction',
+      description:
+        'Believing energy can move from a cooler object to a hotter one by heating if you wait long enough.',
+      triggerAnswer: 'heating-direction',
+      correction:
+        'Heating only moves energy from the hotter object to the cooler one. Once they reach the same temperature, the heating transfer stops.',
+      reExplanation:
+        'Drop an ice cube into a glass of warm squash. Energy moves from the warm squash to the ice (warm to cold), so the ice melts. The squash never gets warmer because of the ice; the ice cools the squash. After both reach the same temperature, no more heating happens. The direction is set by the temperature difference, not by which object you would like to grow.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 1F. Candidates name "sound energy" as a store coming out of a loudspeaker.
+    {
+      id: 'et-mis-sound-as-store',
+      description:
+        'Treating sound as a store inside a speaker, rather than as a radiation transfer leaving the speaker.',
+      triggerAnswer: 'sound-as-store',
+      correction:
+        'Sound is not a store. Sound is part of the radiation pathway: vibrations travel out from the source through the air or another material.',
+      reExplanation:
+        'A loudspeaker is fed by an electrical transfer from an amplifier. Inside, a coil pushes a cone back and forth (a mechanical transfer). The cone pushes the air, sending out sound waves (a radiation transfer). The thermal store of the air grows a little along the way. None of this needs a "sound store" inside the speaker.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const energyZoneNodes = [energyStores, energyTransfers]
 
 export const energyZone: Zone = {
   id: 'physics-energy-stores-transfers',
