@@ -1274,13 +1274,50 @@ Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation
 Covers `chemistry-ph-scale`, `chemistry-ph-strong-weak`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-PH-1: Learner reverses the universal-indicator colour code, marking acid as blue or purple and alkali as red.
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one MCQ or spot-misconception whose distractors include the colour-reversed reading.
+- C-PH-2: Learner believes a low pH number means a small amount of acid (so pH 1 holds less acid than pH 4).
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one Confident MCQ that asks the learner to identify a kind of substance from its pH (e.g. pH 11 = weak alkali).
+- C-PH-3: Learner reads pH 0 as the empty end of the scale (no acid present at all), rather than the strong-acid end.
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one Confident spot-misconception that pairs the empty-pH reading against the strong-acid reading.
+- C-PH-4: Learner extends the everyday pH scale below 0 or above 14 in Year 7 work.
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one Confident MCQ on the bounds of the standard 0 to 14 pH scale.
+- C-PH-5: Learner believes that diluting an acid with water makes the acid stronger (lowers the pH further), rather than weaker (raises pH towards 7).
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one question linked to a dilution scenario.
+- C-PH-6: Learner believes universal indicator gives an exact pH number rather than a band.
+  - Required handling: misconception entry on `chemistry-ph-scale`; at least one Confident or Challenge numeric-entry that points the learner to a band edge rather than a single value.
+- C-PH-7: Learner conflates concentration with strength, calling a concentrated weak acid "stronger" than a dilute strong acid.
+  - Required handling: misconception entry on `chemistry-ph-strong-weak`; at least one MCQ or spot-misconception that compares dilute strong HCl against concentrated weak vinegar by pH.
+- C-PH-8: Learner believes a strong acid is one that always burns skin, rather than one that splits up completely in water.
+  - Required handling: misconception entry on `chemistry-ph-strong-weak`; at least one MCQ that pairs the splits-completely definition against the burns-skin definition.
+- C-PH-9: Learner believes that all acids in food are weak and all acids in a school lab are strong, so the food vs lab line decides strong vs weak (the boundary is whether the acid splits up completely, not where it is found).
+  - Required handling: misconception entry on `chemistry-ph-strong-weak`; at least one MCQ pairing concentrated lab citric acid (still weak) against dilute lab HCl (still strong).
+- C-PH-10: Learner believes pH alone tells you whether an acid is strong or weak, missing that a concentrated weak acid can have a lower pH than a dilute strong acid.
+  - Required handling: misconception entry on `chemistry-ph-strong-weak`; at least one Challenge spot-misconception or MCQ that surfaces a concentrated weak acid with a similar pH to a dilute strong acid.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-PH-1: At least one Core MCQ on `chemistry-ph-scale` asks the learner what pH means neutral and pairs colour-reading distractors against the right answer.
+- Q-PH-2: At least one labelled-image question on `chemistry-ph-scale` requires the learner to place "Acidic", "Neutral" and "Alkaline" labels onto the standard 0 to 14 universal-indicator strip.
+- Q-PH-3: At least one numeric-entry question on `chemistry-ph-scale` reads a pH number directly off a stated indicator colour or a UK substance.
+- Q-PH-4: At least one slider-explore question on `chemistry-ph-scale` asks the learner to slide to a real UK substance pH (vinegar, milk, soap) on the 0 to 14 scale, since pH is a continuous variable.
+- Q-PH-5: At least one drag-order question on `chemistry-ph-scale` places UK substances in pH order from most acidic to most alkaline.
+- Q-PH-6: At least one Challenge question on `chemistry-ph-scale` mixes a strong acid and a strong alkali at equal volumes and asks the learner to predict an approximately neutral pH (foreshadowing neutralisation).
+- Q-PH-7: At least one Core MCQ on `chemistry-ph-strong-weak` asks the learner to define "strong acid" using the splits-up-completely-in-water definition.
+- Q-PH-8: At least one Confident MCQ on `chemistry-ph-strong-weak` pins HCl, citric acid, NaOH and ammonia to their strong / weak labels and approximate pH bands.
+- Q-PH-9: At least one Confident or Challenge spot-misconception on `chemistry-ph-strong-weak` presents a "concentrated weak acid is stronger than a dilute strong acid because it has a lower pH" claim and asks the learner to spot the trap.
+- Q-PH-10: At least one numeric-entry question on `chemistry-ph-strong-weak` asks the learner to read approximate pH values for HCl, vinegar, NaOH and ammonia from a labelled chart.
+- Q-PH-11: At least one Challenge MCQ on `chemistry-ph-strong-weak` uses a UK lab context (school technician, A-level open lab) and asks the learner to distinguish strong vs weak from a stem describing the splitting behaviour, not the pH alone.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-PH-1: Given "I think the most alkaline thing is at the bottom of the scale near pH 0", the tutor asks the learner where vinegar sits on the scale, before stating the rule.
+- T-PH-2: Given a wrong answer matching the "low pH means low amount" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-PH-3: Given "If I add water to vinegar, the vinegar gets more acidic because there is more vinegar", the tutor scaffolds the learner toward "diluting an acid raises the pH" without flat correction first.
+- T-PH-4: Given "The pH alone tells you whether an acid is strong or weak", the tutor cites the strong-vs-weak vs concentration-vs-strength `reExplanation` rather than producing a fresh hint.
+- T-PH-5: Given an off-topic input (US grades of bleach, a different subject), the tutor steers back to UK KS3 substances (UK vinegar, UK soap, UK oven cleaner) politely.
+- T-PH-6: Given a request for an inline definition (tap on "pH", "strong acid", "weak acid", "neutral", "alkaline"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Simple Reactions
 
