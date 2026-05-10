@@ -639,6 +639,42 @@ Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear g
 - T-COORD-4: Given an off-topic input (for example a question about US street grid coordinates or zip codes), the tutor steers back to UK KS3 coordinate language politely.
 - T-COORD-5: Given a request for an inline definition (tap on "quadrant"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### Shapes-and-transformations extensions (`maths-coordinates-four-quadrants-shapes`)
+
+#### Content probes
+- C-COORDS-1: Learner reflects in the wrong axis (says reflection in the x axis flips the x value, or reflection in the y axis flips the y value), missing that the axis you reflect in stays fixed.
+  - Required handling: misconception entry; at least one Core MCQ and one spot-misconception that pair flipped-x vs flipped-y as distractors against the correct image.
+- C-COORDS-2: Learner thinks reflection in either axis flips the signs of both coordinates (does the 180-degree rotation about the origin instead of a reflection).
+  - Required handling: misconception entry; at least one Challenge tier spot-misconception question that contrasts a reflection with a rotation.
+- C-COORDS-3: Learner adds the y component of a column vector instead of subtracting when the wording says "down" (reads "3 right and 2 down" as +2 to y instead of -2).
+  - Required handling: misconception entry; at least one Core MCQ whose distractors include the wrong-direction translation answer.
+- C-COORDS-4: Learner translates only the labelled vertex and leaves the others where they were, producing a distorted image rather than a translated shape.
+  - Required handling: misconception entry; at least one Confident drag-order question that places the "every vertex moves" step explicitly in the workflow.
+- C-COORDS-5: Learner names a quadrilateral with two distinct side lengths (a non-square rectangle) as a square, ignoring the side-length check.
+  - Required handling: misconception entry; at least one Confident MCQ whose distractors include the square answer for a true rectangle.
+- C-COORDS-6: Learner swaps the x and y components of a column vector, reading (3, -2) as 3 up and 2 left.
+  - Required handling: misconception entry; at least one Confident question whose distractors include the swapped-component image.
+- C-COORDS-7: Learner joins listed vertices in the order they appear on the page rather than in the order around the perimeter, ending up with a self-crossing figure.
+  - Required handling: misconception entry; at least one scene or worked example that explicitly addresses the perimeter-order rule (no question required, since the renderer is static).
+
+#### Question shape probes
+- Q-COORDS-1: At least one Core MCQ asks the learner to identify the image of a point under reflection in the x or y axis, with the wrong-axis distractor present.
+- Q-COORDS-2: At least one Core question asks the learner to translate a single point by a worded vector ("3 right and 1 down").
+- Q-COORDS-3: At least one Confident MCQ asks the learner to identify the image of a named vertex of a triangle or rectangle under a translation by a column vector.
+- Q-COORDS-4: At least one Confident MCQ asks the learner to name a shape (square vs rectangle vs parallelogram) from a list of four vertices spanning multiple quadrants.
+- Q-COORDS-5: At least one missing-step question hides the flip-the-coordinate step inside a reflection worked solution.
+- Q-COORDS-6: At least one drag-order question places the steps for translating a shape by a column vector into the correct order.
+- Q-COORDS-7: At least one Challenge tier MCQ recovers the fourth corner of a rectangle from three given corner coordinates spanning multiple quadrants (Bond 11+ shape).
+- Q-COORDS-8: At least one Challenge tier multi-step question asks the learner to apply two transformations in sequence (translate then reflect, or reflect then translate) and identify the final image of a vertex.
+- Q-COORDS-9: At least one spot-misconception question presents the both-signs-flipped or wrong-axis argument and asks whether the reasoning is sound.
+
+#### Tutor probes
+- T-COORDS-1: Given "I reflected (3, 2) in the x axis and got (-3, 2)", the tutor's first reply is a Socratic prompt about which axis is the mirror line and which coordinate flips, not a direct correction.
+- T-COORDS-2: Given a wrong answer matching the both-signs-flipped trigger (for example "(4, 3) reflected in the x axis is (-4, -3)"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-COORDS-3: Given "Why does only one coordinate flip?", the tutor walks through a small worked check by measuring distance to the axis on both sides, not a definition.
+- T-COORDS-4: Given an off-topic input (for example a question about US street grid translations), the tutor steers back to UK KS3 transformation language politely.
+- T-COORDS-5: Given a request for an inline definition (tap on "translation" or "reflection"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Vitalia > Cells
 
 Covers `biology-cells-animal-cell`, `biology-cells-plant-cell`, `biology-cells-specialised-cells`.

@@ -37,6 +37,10 @@ import {
 } from './sequences-nth-term'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
 import {
+  coordinatesShapes,
+  coordinatesShapesZoneNodes,
+} from './coordinates-shapes'
+import {
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
@@ -77,6 +81,8 @@ export {
   sequencesNthTermZoneNodes,
   coordinatesGrid,
   coordinatesZoneNodes,
+  coordinatesShapes,
+  coordinatesShapesZoneNodes,
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
@@ -99,6 +105,7 @@ export const mathsNodes: SkillNode[] = [
   ...sequencesZoneNodes,
   ...sequencesNthTermZoneNodes,
   ...coordinatesZoneNodes,
+  ...coordinatesShapesZoneNodes,
   ...fourOperationsZoneNodes,
 ]
 
@@ -182,7 +189,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-coordinates',
     name: 'Coordinates',
     realm: 'numerica',
-    nodeIds: coordinatesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...coordinatesZoneNodes.map(n => n.id),
+      ...coordinatesShapesZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-four-operations',

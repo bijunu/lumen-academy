@@ -146,6 +146,12 @@
 - **Edexcel**: A8 Work with coordinates in all four quadrants
 - **OCR**: 7.02a Coordinates in all four quadrants
 
+#### Shapes and Transformations Across Four Quadrants (Confident, `maths-coordinates-four-quadrants-shapes`)
+- **KS3**: Identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement (including fractional scale factors).
+- **AQA**: G7 Identify, describe and construct congruent and similar shapes by considering rotation, reflection, translation and enlargement (GCSE Mathematics 8300)
+- **Edexcel**: G7 Identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement (GCSE Mathematics 1MA1)
+- **OCR**: 7.05a Identify, describe and construct congruent shapes, including on coordinate axes, using translation and reflection (GCSE Mathematics J560)
+
 ---
 
 > **Note on placeholders below.** The science zone outlines that follow are skeletons drafted from the build-prompt subject lists. Every `_KS3: fill verbatim ..._` and `_<board>: GCSE ... ref_` line MUST be replaced before the corresponding `SkillNode` ships. The Vitalia / Elementia / Mechanica author skills are responsible for sourcing the verbatim KS3 wording from the DfE Science programme of study and for citing the awarding-body GCSE refs from each board's specification document. Authors may add or split nodes within a zone; the IDs below are starting suggestions, not a fixed list.
