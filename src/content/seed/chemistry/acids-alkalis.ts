@@ -578,7 +578,7 @@ export const acidsAlkalisNeutralisation: SkillNode = {
       title: 'The Neutralisation Rule',
       type: 'labelled-diagram',
       instructions:
-        'Click each marker to see the basic neutralisation rule and watch a green colour appear when the indicator settles.',
+        'Click each marker to see the basic neutralisation rule, including the green of a neutral mixture.',
       data: {
         viewBox: '0 0 360 220',
         svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220"><rect x="0" y="0" width="360" height="220" fill="#FEF3C7"/><text x="180" y="22" text-anchor="middle" font-size="10" font-weight="700" fill="#1E3A8A">ACID + ALKALI → SALT + WATER</text><g><rect x="20" y="60" width="80" height="100" rx="4" fill="#FEE2E2" stroke="#7F1D1D" stroke-width="1.4"/><text x="60" y="90" text-anchor="middle" font-size="11" fill="#7F1D1D" font-weight="700">ACID</text><text x="60" y="120" text-anchor="middle" font-size="8" fill="#1E3A8A">red on indicator</text><text x="60" y="135" text-anchor="middle" font-size="9" fill="#7F1D1D">e.g. HCl</text></g><text x="115" y="115" text-anchor="middle" font-size="14" fill="#1E3A8A" font-weight="700">+</text><g><rect x="130" y="60" width="80" height="100" rx="4" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1.4"/><text x="170" y="90" text-anchor="middle" font-size="11" fill="#1E3A8A" font-weight="700">ALKALI</text><text x="170" y="120" text-anchor="middle" font-size="8" fill="#1E3A8A">blue on indicator</text><text x="170" y="135" text-anchor="middle" font-size="9" fill="#1E3A8A">e.g. NaOH</text></g><text x="225" y="115" text-anchor="middle" font-size="14" fill="#1E3A8A" font-weight="700">→</text><g><rect x="240" y="60" width="100" height="100" rx="4" fill="#DCFCE7" stroke="#064E3B" stroke-width="1.4"/><text x="290" y="88" text-anchor="middle" font-size="10" fill="#064E3B" font-weight="700">SALT + WATER</text><text x="290" y="115" text-anchor="middle" font-size="8" fill="#1E3A8A">green on indicator</text><text x="290" y="130" text-anchor="middle" font-size="9" fill="#1E3A8A">e.g. NaCl + H₂O</text><text x="290" y="145" text-anchor="middle" font-size="7" fill="#064E3B">(neutral)</text></g><text x="180" y="200" text-anchor="middle" font-size="9" fill="#1E3A8A">When the colours red and blue cancel out, you get the green of neutral.</text></svg>',
@@ -833,8 +833,8 @@ export const acidsAlkalisNeutralisation: SkillNode = {
       type: 'multiple-choice',
       stem: 'A learner pours a few drops of vinegar onto a small heap of bicarbonate of soda in a kitchen bowl. What gas is given off in the fizz?',
       tier: 'core',
-      options: ['Hydrogen', 'Oxygen', 'Carbon dioxide', 'Nitrogen'],
-      correctIndex: 2,
+      options: ['Hydrogen', 'Carbon dioxide', 'Oxygen', 'Nitrogen'],
+      correctIndex: 1,
       xpValue: 10,
     },
     {
@@ -882,11 +882,11 @@ export const acidsAlkalisNeutralisation: SkillNode = {
     {
       id: 'aan-q10',
       type: 'numeric-entry',
-      stem: 'A pupil writes the equation: hydrochloric acid + sodium hydroxide → sodium chloride + water. How many words appear on the LEFT of the arrow (the reactants)? Give your answer as a single number.',
+      stem: 'A pupil writes the equation: hydrochloric acid + sodium hydroxide → sodium chloride + water. How many products are made in this reaction? Give your answer as a single number.',
       tier: 'core',
-      correctAnswer: 4,
+      correctAnswer: 2,
       xpValue: 10,
-      hint: 'Count the joined names on the left: hydrochloric acid (2 words) + sodium hydroxide (2 words) = 4 words.',
+      hint: 'The products sit on the right-hand side of the arrow. Count the named substances after the arrow.',
     },
     {
       id: 'aan-q11',
