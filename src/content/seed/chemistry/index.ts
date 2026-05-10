@@ -5,6 +5,7 @@ import {
   separatingMixturesZone,
   filtrationEvaporation,
   distillation,
+  chromatography,
 } from './separating-mixtures'
 import {
   atomsZone,
@@ -28,6 +29,7 @@ export {
   separatingMixturesZone,
   filtrationEvaporation,
   distillation,
+  chromatography,
 } from './separating-mixtures'
 export {
   atomsZone,
@@ -51,6 +53,7 @@ export const chemistryNodes: SkillNode[] = [
   diffusion,
   filtrationEvaporation,
   distillation,
+  chromatography,
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
   periodicTableLayout,

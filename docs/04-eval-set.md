@@ -1055,6 +1055,18 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
   - Required handling: misconception entry on `chemistry-separating-distillation`; at least one question about the role of cold water flow through the condenser.
 - C-SM-11: Learner believes the fractionating column is decorative and the apparatus would work the same without it.
   - Required handling: misconception entry on `chemistry-separating-distillation`; at least one question whose distractors include the column-redundant answer.
+- C-SM-12: Learner draws the chromatography baseline in pen rather than pencil, missing that pen ink is a mixture of dyes that would itself dissolve and travel up the paper.
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ or spot-misconception whose distractors include the pen-baseline answer.
+- C-SM-13: Learner sets the solvent level in the beaker above the baseline, missing that the dye spots would dissolve straight into the bulk solvent rather than rising up the paper.
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ whose distractors include the above-baseline solvent level.
+- C-SM-14: Learner believes a pure single-colour substance should still split into several spots on a chromatogram if the experiment is done correctly, treating a one-spot result as a failed test.
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one Confident spot-misconception whose distractors include the "one spot means it failed" reading.
+- C-SM-15: Learner believes the height a dye climbs on a chromatogram is decided by the mass of the dye particles (lighter goes higher, heavier stays low).
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one Confident MCQ whose options pair "lighter dye climbs higher" against "dye that dissolves better in the solvent climbs higher".
+- C-SM-16: Learner believes paper chromatography can separate any mixture, including colourless ones (sugar in water), in a Year 7 lab without any developing technique.
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ or spot-misconception whose distractors include the colourless-mixture answer.
+- C-SM-17: Learner believes dye direction on the paper is fixed by which way up the paper is placed, missing that the solvent is what carries the dye in the direction it travels.
+  - Required handling: misconception entry on `chemistry-separating-chromatography`; at least one MCQ that explores what direction the dye spots travel.
 
 ### Question shape probes
 
@@ -1069,6 +1081,12 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - Q-SM-9: At least one data-extraction question on `chemistry-separating-distillation` reads the boiling point of a fraction off a temperature-against-time table during a fractional distillation.
 - Q-SM-10: At least one Challenge tier question on `chemistry-separating-distillation` distinguishes simple from fractional distillation by reference to a 50:50 ethanol and water mixture and the role of the column.
 - Q-SM-11: At least one numeric-entry question on `chemistry-separating-distillation` applies conservation of mass through a distillation, including a Challenge tier item that combines what is left in the flask with what is collected in the beaker.
+- Q-SM-12: At least one Core MCQ on `chemistry-separating-chromatography` asks the learner why the baseline is drawn in pencil and not in pen, with the misconception of "any pen will do" surfaced as a distractor.
+- Q-SM-13: At least one labelled-image question on `chemistry-separating-chromatography` requires the learner to identify the parts of the chromatography apparatus (baseline, solvent front, solvent, pencil line / lid).
+- Q-SM-14: At least one drag-order question on `chemistry-separating-chromatography` places the steps of running a chromatogram in the correct order from drawing the baseline to lifting the paper out and marking the solvent front.
+- Q-SM-15: At least one Confident MCQ on `chemistry-separating-chromatography` links a UK forensics or food-checking context (suspect ink match, red sweet shell, leaf pigment) to a real outcome of the chromatogram.
+- Q-SM-16: At least one Challenge MCQ on `chemistry-separating-chromatography` covers the limit of the technique at Year 7 (qualitative outcome, no formula determination, multiple solvents needed for some dyes).
+- Q-SM-17: At least one spot-misconception question on `chemistry-separating-chromatography` presents either the pen-baseline plan or the "one spot is a failed run" reading.
 
 ### Tutor probes
 
@@ -1078,6 +1096,8 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 - T-SM-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 separating-mixtures language and metric units politely.
 - T-SM-5: Given "if I distil a 50:50 ethanol and water mixture I will get pure ethanol in the beaker", the tutor's first reply is a Socratic prompt about whether a column is in use, not a flat correction.
 - T-SM-6: Given a wrong answer matching the "salt evaporates with the water during distillation" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SM-7: Given "the dye that travels highest must be the lightest", the tutor cites the chromatography mass-misconception `reExplanation` rather than a fresh hint and steers the learner to the dissolves-vs-sticks rule.
+- T-SM-8: Given "I will mark my baseline in red biro to make it stand out", the tutor's first reply is a Socratic prompt about what pen ink is made of, not a flat correction.
 
 ## Zone: Elementia > Atoms, Elements, Compounds
 
