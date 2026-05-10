@@ -32,6 +32,11 @@ import {
   wavesZoneNodes,
   wavesZone,
 } from './waves'
+import {
+  spaceSolarSystem,
+  spaceZoneNodes,
+  spaceZone,
+} from './space'
 
 export {
   electricityCircuitSymbols,
@@ -56,6 +61,9 @@ export {
   wavesSoundLight,
   wavesZoneNodes,
   wavesZone,
+  spaceSolarSystem,
+  spaceZoneNodes,
+  spaceZone,
 }
 
 export const physicsNodes: SkillNode[] = [
@@ -64,6 +72,7 @@ export const physicsNodes: SkillNode[] = [
   ...gravityZoneNodes,
   ...energyZoneNodes,
   ...wavesZoneNodes,
+  ...spaceZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
@@ -77,4 +86,5 @@ export const physicsZones: Zone[] = [
   gravityZone,
   energyZone,
   wavesZone,
+  spaceZone,
 ]
