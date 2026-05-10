@@ -18,6 +18,12 @@
 - **Edexcel**: N2 Place value and ordering of decimals
 - **OCR**: 1.01a Place value, including decimals
 
+#### Rounding Decimals (Confident, `maths-decimals-rounding`)
+- **KS3**: Round numbers and measures to an appropriate degree of accuracy (e.g. to a number of decimal places or significant figures).
+- **AQA**: N15 Round numbers and measures to an appropriate degree of accuracy (decimal places and significant figures)
+- **Edexcel**: N15 Round numbers and measures to an appropriate degree of accuracy (decimal places and significant figures)
+- **OCR**: 1.04a Rounding to a given number of decimal places or significant figures
+
 ### Zone: Fractions (`maths-fractions`)
 
 #### What is a Fraction? (Core, `maths-fractions-what-is`)

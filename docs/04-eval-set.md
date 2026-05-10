@@ -258,7 +258,7 @@ Covers `maths-primes-recognising-primes` plus future prime nodes (prime factoris
 
 ## Zone: Numerica > Decimals
 
-Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmetic, decimal-fraction-percentage equivalence, ordering and rounding decimals).
+Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future decimal nodes (decimal arithmetic, decimal-fraction-percentage equivalence).
 
 ### Content probes
 
@@ -276,6 +276,18 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
   - Required handling: misconception entry; at least one numeric-entry question that requires writing a decimal with a placeholder zero from a worded form.
 - C-DEC-7: Learner reads "0.005" as "five thousands" rather than "five thousandths", or otherwise confuses the magnitude descriptor.
   - Required handling: misconception entry; a scene or worked example that explicitly contrasts thousands with thousandths.
+- C-DR-1: Learner picks the wrong digit as the rounding decider, choosing one beyond or before the digit immediately to the right of the kept part. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one MCQ that names the decider digit explicitly and at least one MCQ whose distractors come from picking the wrong one.
+- C-DR-2: Learner truncates rather than rounds (chops digits without checking the decider). (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one spot-misconception question that contrasts truncation with rounding for a value where the decider is 5 or more.
+- C-DR-3: Learner believes a decider of exactly 5 stays put rather than rounding up. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one Confident question where the kept-and-decider sequence ends in 5 and the correct answer rounds up.
+- C-DR-4: Learner fails to carry into the next column when adding 1 to a 9 in the kept part during rounding. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one Confident or Challenge numeric-entry where the kept part ends in 9 (or several 9s) and rounding propagates a carry.
+- C-DR-5: Learner counts leading zeros after a decimal point as significant figures. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one MCQ that asks for the first significant figure of a number with leading zeros.
+- C-DR-6: Learner mixes up "decimal places" with "significant figures", giving the wrong answer when the question target changes between them. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry or worked-example callout that contrasts the two on the same number.
 
 ### Question shape probes
 
@@ -285,6 +297,10 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
 - Q-DEC-4: At least one MCQ on fraction-to-decimal conversion includes the stacked-digits answer as a distractor.
 - Q-DEC-5: At least one Challenge tier word problem requires comparing or ordering decimals in a UK context (race times, ribbon lengths, money to pence).
 - Q-DEC-6: At least one spot-misconception question presents a longer-bigger or trailing-zero argument and asks whether the reasoning is sound.
+- Q-DR-1: At least one MCQ on the rounding node names the decider digit for a specified target (1, 2, or 3 decimal places). (Covers `maths-decimals-rounding`.)
+- Q-DR-2: At least one numeric-entry on the rounding node has a kept part ending in 9, requiring a carry into the next column. (Covers `maths-decimals-rounding`.)
+- Q-DR-3: At least one Challenge tier word problem on the rounding node requires rounding to the nearest penny in a UK money context (till receipt, train fare, sale price). (Covers `maths-decimals-rounding`.)
+- Q-DR-4: At least one numeric-entry or MCQ on the rounding node requires rounding to a number of significant figures with at least one leading zero present. (Covers `maths-decimals-rounding`.)
 
 ### Tutor probes
 
@@ -293,6 +309,8 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
 - T-DEC-3: Given "Why is 0.5 the same as 0.50?", the tutor explains using a fraction-wall analogy, not a definition.
 - T-DEC-4: Given an off-topic input (for example a question about US dollar prices to two decimal places), the tutor steers back to UK pence and decimal place value politely.
 - T-DEC-5: Given a request for an inline definition (tap on "thousandths"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-DR-1: Given "I rounded 6.45 to 1 decimal place and got 6.4 because I treat 5 as a tie", the tutor's first reply is a Socratic prompt about the school convention for rounding ties up, not a direct correction. (Covers `maths-decimals-rounding`.)
+- T-DR-2: Given a wrong answer matching the truncation trigger (for example "8.972 to 1 dp = 8.9"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-decimals-rounding`.)
 
 ## Zone: Numerica > Percentages
 

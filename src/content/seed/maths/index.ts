@@ -12,6 +12,7 @@ import {
 } from './factors-multiples'
 import { recognisingPrimes, primesZoneNodes } from './primes'
 import { decimalPlaceValue, decimalsZoneNodes } from './decimals'
+import { decimalsRounding, decimalsRoundingZoneNodes } from './decimals-rounding'
 import { wholeNumberPlaceValue, placeValueZoneNodes } from './place-value'
 import {
   percentagesAsDecimalsFractions,
@@ -39,6 +40,8 @@ export {
   primesZoneNodes,
   decimalPlaceValue,
   decimalsZoneNodes,
+  decimalsRounding,
+  decimalsRoundingZoneNodes,
   wholeNumberPlaceValue,
   placeValueZoneNodes,
   percentagesAsDecimalsFractions,
@@ -63,6 +66,7 @@ export const mathsNodes: SkillNode[] = [
   ...factorsMultiplesZoneNodes,
   ...primesZoneNodes,
   ...decimalsZoneNodes,
+  ...decimalsRoundingZoneNodes,
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
   ...ratioZoneNodes,
@@ -96,7 +100,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-decimals',
     name: 'Decimals',
     realm: 'numerica',
-    nodeIds: decimalsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...decimalsZoneNodes.map(n => n.id),
+      ...decimalsRoundingZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-place-value',
