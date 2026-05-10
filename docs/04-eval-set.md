@@ -746,13 +746,57 @@ Covers `biology-body-systems-digestive`, `biology-body-systems-circulatory`, `bi
 Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overview`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-REPRO-1: Learner conflates pollination with fertilisation, treating the bee landing on a flower as the moment of fertilisation.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ that defines pollination, at least one that defines fertilisation, and at least one drag-order or spot-misconception that places the two in sequence.
+- C-REPRO-2: Learner swaps the male anther and the female stigma, naming the stigma as the pollen-maker.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ on which part makes pollen and at least one MCQ on which part receives it.
+- C-REPRO-3: Learner believes that bright petals and nectar are signs of wind pollination.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ or spot-misconception that contrasts insect-pollinated and wind-pollinated flower features.
+- C-REPRO-4: Learner believes any seed from a tall tree must be wind-dispersed (so acorns and conkers must blow away).
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ that names the correct dispersal method for a UK animal-dispersed seed.
+- C-REPRO-5: Learner conflates pollination and seed dispersal, treating them as the same event.
+  - Required handling: misconception entry on the flowering-plant node; at least one Challenge-tier item that distinguishes the two and uses a UK example where the methods differ (e.g. silver birch wind-pollinated, wind-dispersed; bramble insect-pollinated, animal-dispersed).
+- C-REPRO-6: Learner believes seeds do not need to be dispersed because the parent plant grows new seeds each year, missing the competition-for-resources reason.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ on why dispersal helps survival.
+- C-REPRO-7: Learner believes the period is the egg leaving the body, rather than the lining of the uterus.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ or spot-misconception that names the lining (not the egg) as the substance shed during a period.
+- C-REPRO-8: Learner names the uterus as the site of fertilisation rather than the oviduct.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks where fertilisation happens; at least one Confident or Challenge spot-misconception or missing-step that places fertilisation in the oviduct followed by implantation in the uterus.
+- C-REPRO-9: Learner believes the uterus produces the egg cells (largest organ on the diagram bias).
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks which organ releases the egg.
+- C-REPRO-10: Learner places ovulation on day 1 of the cycle, when the period starts.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks for the day of ovulation in an average 28-day cycle.
+- C-REPRO-11: Learner believes the placenta pumps blood from the parent into the foetus.
+  - Required handling: misconception entry on the human-overview node; at least one Confident-tier MCQ that asks the role of the placenta and includes "pumps blood" as an explicit distractor.
+- C-REPRO-12: Learner uses "embryo" and "foetus" interchangeably from day 1 of pregnancy.
+  - Required handling: misconception entry on the human-overview node; at least one MCQ on which name applies at a given week of pregnancy.
+- C-REPRO-13: Learner believes the placenta blocks all harmful substances, missing the NHS warning about smoking, alcohol and medicines.
+  - Required handling: misconception entry on the human-overview node; at least one Challenge-tier MCQ that maps an NHS lifestyle warning to the placenta-as-barrier mental model.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-REPRO-1: At least one labelled-image question on the flowering-plant node places stigma, anther, ovary, and petal onto hotspots on a flower diagram, with off-flower distractors (root / leaf) in the pool.
+- Q-REPRO-2: At least one drag-order question on the flowering-plant node sequences the four steps pollination, fertilisation, seed and fruit formation, seed dispersal, in that order.
+- Q-REPRO-3: At least one Challenge-tier numeric on the flowering-plant node uses a UK orchard, hedgerow, or playing-field context (Sevenoaks, Manchester, Lake District, Tunbridge Wells) and requires at least one inferred multiplication or fraction step.
+- Q-REPRO-4: At least one Confident-tier data-extraction on the flowering-plant node compares average dispersal distances of three named UK seeds in a class investigation.
+- Q-REPRO-5: At least one labelled-image question on the human-overview node places ovary, oviduct, uterus, and vagina onto hotspots on the female system diagram, with at least one male-system label as a distractor.
+- Q-REPRO-6: At least one labelled-image question on the human-overview node places testes, sperm tube, and penis onto hotspots on the male system diagram, with at least one female-system label as a distractor.
+- Q-REPRO-7: At least one drag-order question on the human-overview node sequences fertilisation, implantation, embryo, foetus, birth in that order.
+- Q-REPRO-8: At least one drag-drop-builder on the human-overview node restricts the build to the in-order journey of a sperm cell from testes through to oviduct, rejecting non-reproductive organs (stomach, bladder, lungs).
+- Q-REPRO-9: At least one Confident-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
+- Q-REPRO-10: At least one Challenge-tier MCQ on the human-overview node uses an NHS-sourced public-health framing (smoking and pregnancy) and asks the learner to map the warning onto the placenta mechanism.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-REPRO-1: Given "Pollination is the same as fertilisation, right?", the tutor's first reply is a Socratic prompt about how the pollen actually reaches the ovule, not a direct correction.
+- T-REPRO-2: Given a wrong answer matching the anther/stigma swap, the tutor cites the relevant misconception's `reExplanation` (the A-for-ammo, S-for-sticky memory trick) rather than producing a fresh hint.
+- T-REPRO-3: Given "All flowers must be pollinated by bees", the tutor steers the learner to compare an oak catkin with an apple blossom, not a definition dump.
+- T-REPRO-4: Given an off-topic input on the human-overview node (for example a US health-class question on insurance or AP Biology hormones), the tutor steers back to UK KS3 reproductive system language politely.
+- T-REPRO-5: Given "Doesn't the period mean the egg comes out?", the tutor's first reply is a Socratic prompt about the size of an egg cell vs the visible blood, not a direct correction.
+- T-REPRO-6: Given a wrong answer matching the uterus-makes-eggs trigger on hro-q1, the tutor cites the relevant misconception's `reExplanation` (two ovaries, two roles) rather than producing a fresh hint.
+- T-REPRO-7: Given a request for an inline definition (tap on "ovulation" or "placenta"), the glossary returns a UK English age-12 NHS-style definition under 2 seconds.
+- T-REPRO-8: Given "Why does the NHS say not to smoke during pregnancy?", the tutor walks the learner through "the placenta passes small molecules across, including harmful ones; smoke molecules are small", not a moral framing or a definition of smoking.
 
 ## Zone: Vitalia > Variation and Classification
 
