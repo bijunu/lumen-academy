@@ -82,3 +82,6 @@ public/worker-*.js
 
 # ---- Slice protocol session state (per-worktree, see docs/07-slice-protocol.md) ----
 .claude/slice-state.json
+
+# ---- Local-only authoring scratch ----
+docs/_drafts/
