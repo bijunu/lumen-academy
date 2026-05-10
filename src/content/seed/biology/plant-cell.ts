@@ -610,11 +610,11 @@ export const plantCell: SkillNode = {
       tier: 'challenge',
       options: [
         'Oxygen rises and carbon dioxide falls inside the box.',
-        'Oxygen falls and carbon dioxide rises inside the box.',
         'Both gases stay exactly the same because the plant has stopped working.',
         'Both gases rise because the plant respires twice as fast in the dark.',
+        'Oxygen falls and carbon dioxide rises inside the box.',
       ],
-      correctIndex: 1,
+      correctIndex: 3,
       xpValue: 20,
       misconceptionId: 'plant-mis-no-respiration',
     },

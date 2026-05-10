@@ -310,8 +310,8 @@ export const animalCell: SkillNode = {
       type: 'multiple-choice',
       stem: 'Where is the genetic information of an animal cell stored?',
       tier: 'core',
-      options: ['Cytoplasm', 'Mitochondrion', 'Nucleus', 'Cell membrane'],
-      correctIndex: 2,
+      options: ['Cytoplasm', 'Mitochondrion', 'Cell membrane', 'Nucleus'],
+      correctIndex: 3,
       xpValue: 10,
     },
     {
