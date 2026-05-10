@@ -485,27 +485,43 @@
 ### Zone: Waves (`physics-waves`)
 
 #### Wave Anatomy (Core, `physics-waves-anatomy`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Waves)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Frequencies of sound waves, measured in hertz (Hz); echoes, reflection and absorption of sound. Sound needs a medium to travel, the speed of sound in air, in water, in solids. Sound produced by vibrations of objects, in loud speakers, detected by their effects on microphone diaphragm and the ear drum; sound waves are longitudinal.
+- **AQA**: 4.6.1.1 Transverse and longitudinal waves; amplitude, wavelength, frequency and period of a wave (GCSE Physics 8463)
+- **Edexcel**: Topic 4.1 Waves and the electromagnetic spectrum, transverse and longitudinal waves; amplitude, wavelength, frequency and period (GCSE Physics 1PH0)
+- **OCR**: P5.1 Wave behaviour; amplitude, wavelength, frequency, period and the wave equation (GCSE Physics J259 Gateway)
 
 #### Sound and Light Waves (Confident, `physics-waves-sound-light`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Waves)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Sound needs a medium to travel, the speed of sound in air, in water, in solids. Sound produced by vibrations of objects, in loud speakers, detected by their effects on microphone diaphragm and the ear drum; sound waves are longitudinal. Light waves travelling through a vacuum; speed of light. The transmission of light through materials: absorption, diffuse scattering and specular reflection at a surface.
+- **AQA**: 4.6.2.1 Reflection of waves; 4.6.2.3 Sound waves (longitudinal, require a medium); 4.6.1.4 Properties of waves including speed of light in vacuum (GCSE Physics 8463)
+- **Edexcel**: Topic 5 Light and the electromagnetic spectrum, 5.1-5.4 reflection, refraction; Topic 4.1 sound as a longitudinal wave (GCSE Physics 1PH0)
+- **OCR**: P5.2 Sound and ultrasound; P5.3 Light, including reflection, refraction, and the wave speed in a vacuum (GCSE Physics J259 Gateway)
 
 ### Zone: Space (`physics-space`)
 
 #### The Solar System (Core, `physics-space-solar-system`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Space physics)_
+- **KS3**: Our sun as a star, other stars in our galaxy, other galaxies. Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg, different on other planets and stars; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only). The light year as a unit of astronomical distance.
+- **AQA**: 4.8.1.1 Our solar system; the life cycle of a star (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.1-8.3 the solar system, planets, dwarf planets and moons (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; structure and scale of our solar system (GCSE Physics J259 Gateway)
+
+#### Day, Night, Seasons (Confident, `physics-space-day-night-seasons`)
+- **KS3**: The seasons and the Earth's tilt, day length at different times of year, in different hemispheres.
 - **AQA**: _GCSE Physics spec ref_
 - **Edexcel**: _GCSE Physics spec ref_
 - **OCR**: _GCSE Physics spec ref_
 
-#### Day, Night, Seasons (Confident, `physics-space-day-night-seasons`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Space physics)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+### Zone: Magnetism (`physics-magnetism`)
+
+#### Magnetic Fields (Core, `physics-magnetism-fields`)
+- **KS3**: Magnetic poles, attraction and repulsion. Magnetic fields by plotting with compass, representation by field lines. Earth's magnetism, compass and navigation.
+- **AQA**: 4.7.1 Permanent and induced magnetism, magnetic forces and fields (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.1-7.4 permanent and induced magnets, magnetic fields (GCSE Physics 1PH0)
+- **OCR**: P6.1 Magnets and magnetic fields (GCSE Physics J259 Gateway)
+- _to be drafted_
+
+#### Electromagnets (Confident, `physics-magnetism-electromagnets`)
+- **KS3**: The magnetic effect of a current, electromagnets, D.C. motors (principles only).
+- **AQA**: 4.7.2 The motor effect; electromagnetism; 4.7.3 Electromagnetic induction (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.5-7.13 electromagnets and the motor effect (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; electromagnets and solenoids (GCSE Physics J259 Gateway)
+- _to be drafted_
