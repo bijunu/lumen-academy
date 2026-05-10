@@ -1512,19 +1512,6 @@ const USEFUL_VS_UNWANTED_SVG = `
   </g>
 `
 
-const Q_FRICTION_DIAGRAM_SVG = `
-  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
-    <line x1="60" y1="220" x2="540" y2="220" />
-    <rect x="240" y="160" width="120" height="60" fill="currentColor" />
-    <line x1="180" y1="190" x2="235" y2="190" />
-    <polygon points="227,183 240,190 227,197" fill="currentColor" stroke="none" />
-    <text x="200" y="180" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Pull 14 N</text>
-    <line x1="240" y1="240" x2="195" y2="240" />
-    <polygon points="205,233 190,240 205,247" fill="currentColor" stroke="none" />
-    <text x="220" y="260" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Friction 5 N</text>
-  </g>
-`
-
 export const forcesFriction: SkillNode = {
   id: 'physics-forces-friction',
   title: 'Friction and Drag',
@@ -1787,8 +1774,8 @@ export const forcesFriction: SkillNode = {
     {
       id: 'fr-q3',
       type: 'multiple-choice',
-      stem: 'For most pairs of surfaces, how does the size of sliding friction compare to the largest static friction on the same pair?',
-      tier: 'core',
+      stem: 'A heavy crate is harder to start sliding across a workshop floor than it is to keep sliding once it is already moving. Which statement explains why, in terms of the two friction types?',
+      tier: 'confident',
       options: [
         'Sliding friction is usually larger than the largest static friction.',
         'Sliding friction is usually smaller than the largest static friction.',
@@ -1796,9 +1783,9 @@ export const forcesFriction: SkillNode = {
         'Sliding friction is zero on most surfaces.',
       ],
       correctIndex: 1,
-      xpValue: 10,
+      xpValue: 15,
       misconceptionId: 'fr-mis-static-and-sliding-equal',
-      hint: 'A heavy crate is harder to start sliding than to keep sliding. Which kind of friction is bigger?',
+      hint: 'Compare the largest pull needed before the crate breaks away with the steady pull needed once it is sliding. Which kind of friction is bigger?',
     },
     {
       id: 'fr-q4',
@@ -1921,7 +1908,7 @@ export const forcesFriction: SkillNode = {
       id: 'fr-q12',
       type: 'multiple-choice',
       stem: 'Same skydiver, a few seconds later. They have slowed enough that air resistance now equals their weight. What happens next?',
-      tier: 'confident',
+      tier: 'core',
       options: [
         'They slow down further until they stop in mid-air.',
         'They speed up again, because the parachute drag drops once they slow.',
@@ -1929,7 +1916,7 @@ export const forcesFriction: SkillNode = {
         'They start to move sideways instead of down.',
       ],
       correctIndex: 2,
-      xpValue: 15,
+      xpValue: 10,
       misconceptionId: 'fr-mis-balanced-stops-fall',
       hint: 'Equal and opposite forces leave the motion as it was. They keep falling, but how fast?',
     },
@@ -2006,7 +1993,7 @@ export const forcesFriction: SkillNode = {
     {
       id: 'fr-q19',
       type: 'multiple-choice',
-      stem: 'A book is pulled along a desk in the school library with a forwards pull of 14 N. Sliding friction acts on it with 5 N (see the diagram). What does the book do, and what is the net force on it?',
+      stem: 'A book is pulled along a desk in the school library with a forwards pull of 14 N. Sliding friction acts on it with 5 N. What does the book do, and what is the net force on it?',
       tier: 'challenge',
       options: [
         'The book slides at the same speed; net force = 19 N forwards.',
