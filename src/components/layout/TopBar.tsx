@@ -1,6 +1,9 @@
 'use client'
 
-import { Moon, Sun, Eye, Type } from 'lucide-react'
+import Link from 'next/link'
+import { LogIn, LogOut, Moon, Sun, Eye, Type } from 'lucide-react'
+import { signOut, useSession } from 'next-auth/react'
+
 import { Button } from '@/components/ui/button'
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 import { useTheme } from '@/components/providers/ThemeProvider'
@@ -9,6 +12,7 @@ import { ScholarStatusPill } from './ScholarStatusPill'
 export function TopBar() {
   const { mode, setMode, highContrast, toggleHighContrast, dyslexicFont, toggleDyslexicFont } =
     useTheme()
+  const { status } = useSession()
 
   return (
     <header className="flex h-14 items-center justify-between border-b px-4" data-testid="topbar">
@@ -20,6 +24,33 @@ export function TopBar() {
 
       <div className="flex items-center gap-3">
         <ScholarStatusPill />
+
+        {status === 'unauthenticated' && (
+          <Button asChild size="sm" className="gap-1.5">
+            <Link href="/api/auth/signin">
+              <LogIn className="h-4 w-4" aria-hidden />
+              Sign in
+            </Link>
+          </Button>
+        )}
+
+        {status === 'authenticated' && (
+          <Tooltip>
+            <TooltipProvider delayDuration={300}>
+              <TooltipTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => signOut({ callbackUrl: '/' })}
+                  aria-label="Sign out"
+                >
+                  <LogOut className="h-4 w-4" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>Sign out</TooltipContent>
+            </TooltipProvider>
+          </Tooltip>
+        )}
 
         <TooltipProvider delayDuration={300}>
           <div className="flex items-center gap-1">

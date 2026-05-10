@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, ChevronRight } from 'lucide-react'
+import { ArrowRight, ChevronRight, LogIn } from 'lucide-react'
 
 import { CompanionCreature } from '@/components/companion/CompanionCreature'
 import { REALMS, type RealmId } from '@/lib/constants/realms'
@@ -98,6 +98,13 @@ export function HomeHero({ state }: HomeHeroProps) {
         <p className="mt-2 text-base text-muted-foreground">
           Sign in to start your first mission and unlock the realms.
         </p>
+        <Link
+          href="/api/auth/signin"
+          className="mt-4 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          <LogIn className="h-4 w-4" aria-hidden />
+          Sign in with email
+        </Link>
       </HeroFrame>
     )
   }
