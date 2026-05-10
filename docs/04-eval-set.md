@@ -1023,13 +1023,34 @@ Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
 Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-AA-1: Learner reverses the universal indicator colour code, saying acids are blue or purple and alkalis are red. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry on `chemistry-acids-alkalis-common`; at least one Core MCQ on each end of the colour scale, plus a labelled-image question that places the band labels onto the strip.
+- C-AA-2: Learner believes pure distilled water is a weak acid. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry; at least one Core MCQ on the indicator colour for pure water.
+- C-AA-3: Learner believes acids burn skin but alkalis are safe to touch with bare hands. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry; at least one Confident spot-misconception that names the safety claim, plus at least one Challenge MCQ on a sodium hydroxide household-cleaner safety label.
+- C-AA-4: Learner names citric acid (the lemon acid) as the acid in the human stomach, missing that the stomach makes hydrochloric acid. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry; at least one Challenge MCQ asking which acid the human stomach makes.
+- C-AA-5: Learner believes every acid is dangerous and would burn skin, missing that food acids in juice and vinegar are weak and safe at the amounts present. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry; at least one Core MCQ on vinegar as a food acid plus at least one Challenge MCQ on weak food acids in juice.
+- C-AA-6: Learner thinks sodium chloride (table salt) is an alkali because it contains sodium, swapping it with sodium hydroxide. (Covers `chemistry-acids-alkalis-common`.)
+  - Required handling: misconception entry; at least one Challenge free-text or MCQ that contrasts sodium chloride (neutral salt, green) with baking soda or sodium hydroxide (alkali).
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-AA-1: At least one labelled-image question on `chemistry-acids-alkalis-common` requires the learner to drag the band labels (Strong acid, Weak acid, Neutral, Weak alkali, Strong alkali) onto a universal indicator colour strip, with a label pool no larger than twice the hotspot count.
+- Q-AA-2: At least four Core multiple-choice questions on `chemistry-acids-alkalis-common` cover (a) the formula of HCl, (b) the formula of H₂SO₄, (c) one everyday acid, and (d) one everyday alkali.
+- Q-AA-3: At least three numeric-entry questions on `chemistry-acids-alkalis-common` ask the learner to count atoms in an acid or alkali formula (H₂SO₄, NH₃) or count solutions of a stated kind from a small set of indicator-colour observations.
+- Q-AA-4: At least one drag-order question on `chemistry-acids-alkalis-common` orders three solutions from most acidic at the top to most alkaline at the bottom.
+- Q-AA-5: At least one Challenge tier word problem on `chemistry-acids-alkalis-common` uses a UK domestic context (Sevenoaks kitchen baking soda vs table salt; a Tunbridge Wells supplier of unlabelled bottles; a Dover sodium hydroxide cleaner label) and requires the learner to apply the indicator-colour rule.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-AA-1: Given "Acids turn universal indicator dark blue", the tutor asks the learner to recall what colour a lemon turns the indicator (orange or yellow), before naming the rule.
+- T-AA-3: Given "Pure water is a weak acid", the tutor asks the learner what colour pure water turns universal indicator, before stating the neutral rule.
+- T-AA-4: Given an off-topic input (for example a question about US grades of bleach or a different subject), the tutor steers back to UK KS3 examples (UK kitchen vinegar, UK pharmacy antacid tablet, UK garden lime, UK school lab sodium hydroxide).
+- T-AA-5: Given a request for an inline definition (tap on "acid", "alkali", "neutral" or "indicator"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > pH
 

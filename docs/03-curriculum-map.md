@@ -327,10 +327,10 @@
 ### Zone: Acids and Alkalis (`chemistry-acids-alkalis`)
 
 #### Common Acids and Alkalis (Core, `chemistry-acids-alkalis-common`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: acids and alkalis)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The properties of acids and alkalis (including neutralisation); the use of indicators to identify acids and alkalis; the chemistry of acids; reactions with metals (qualitative observations).
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.2 Strong and weak acids; properties of acids and alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.5 Acids and alkalis; 3.6 Indicators and the pH scale (GCSE Chemistry 1CH0)
+- **OCR**: C3.1a Acids and alkalis; C3.1b Indicators (GCSE Chemistry A J248 Gateway)
 
 #### Neutralisation (Confident, `chemistry-acids-alkalis-neutralisation`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: acids and alkalis)_
