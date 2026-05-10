@@ -361,12 +361,12 @@ export const energyStores: SkillNode = {
       stem: 'A book is lifted from the floor and placed on a high shelf. Which store of the book has grown?',
       tier: 'core',
       options: [
-        'Kinetic store, because the book had to be moved.',
         'Gravitational store, because the book is now higher up.',
+        'Kinetic store, because the book had to be moved.',
         'Elastic store, because the shelf bends a little under the book.',
         'Thermal store, because lifting heated the book.',
       ],
-      correctIndex: 1,
+      correctIndex: 0,
       xpValue: 10,
       hint: 'Lifted up against gravity. Which store grows when an object is raised?',
     },
@@ -567,10 +567,10 @@ export const energyStores: SkillNode = {
       options: [
         'It only has a thermal store, because it is hot.',
         'It only has a gravitational store, because it is high up.',
-        'It has both a thermal store (hot) and a gravitational store (lifted up). The tea also still has a small chemical store.',
         'It only has a kinetic store, because the steam is moving.',
+        'It has both a thermal store (hot) and a gravitational store (lifted up). The tea also still has a small chemical store.',
       ],
-      correctIndex: 2,
+      correctIndex: 3,
       xpValue: 15,
       misconceptionId: 'es-mis-only-one-store',
       hint: 'An object can hold energy in more than one store at the same time.',
@@ -1498,7 +1498,669 @@ export const energyTransfers: SkillNode = {
   },
 }
 
-export const energyZoneNodes = [energyStores, energyTransfers]
+const SANKEY_BULB_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Sankey diagram for an old filament bulb</text>
+    <!-- Input arrow -->
+    <text x="80" y="170" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Input</text>
+    <text x="80" y="190" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">100 J electrical</text>
+    <rect x="140" y="120" width="200" height="100" fill="currentColor" />
+    <text x="240" y="178" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="white">Bulb</text>
+    <!-- Useful output: light arrow (small) -->
+    <rect x="340" y="155" width="180" height="20" fill="currentColor" />
+    <text x="600" y="170" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">Useful: 10 J light</text>
+    <!-- Wasted output: heat arrow (large) -->
+    <rect x="340" y="180" width="180" height="80" fill="currentColor" opacity="0.6" />
+    <text x="600" y="225" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">Wasted: 90 J heat</text>
+    <text x="400" y="290" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">Total in (100 J) = total out (10 J + 90 J = 100 J). Energy is conserved.</text>
+  </g>
+`
+
+const SANKEY_LED_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Sankey diagram for a modern LED bulb</text>
+    <!-- Input arrow -->
+    <text x="80" y="170" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Input</text>
+    <text x="80" y="190" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">100 J electrical</text>
+    <rect x="140" y="120" width="200" height="100" fill="currentColor" />
+    <text x="240" y="178" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="white">LED</text>
+    <!-- Useful output: light arrow (large) -->
+    <rect x="340" y="120" width="180" height="80" fill="currentColor" />
+    <text x="600" y="165" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">Useful: 80 J light</text>
+    <!-- Wasted output: heat arrow (small) -->
+    <rect x="340" y="200" width="180" height="20" fill="currentColor" opacity="0.6" />
+    <text x="600" y="215" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">Wasted: 20 J heat</text>
+    <text x="400" y="290" text-anchor="middle" font-size="13" stroke="none" fill="currentColor">Total in (100 J) = total out (80 J + 20 J = 100 J). LED wastes much less than the filament bulb.</text>
+  </g>
+`
+
+const CONSERVATION_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Energy is never lost; it is only transferred</text>
+    <!-- Before -->
+    <text x="200" y="80" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">Before: 50 J in chemical store of cell</text>
+    <rect x="160" y="110" width="80" height="80" fill="currentColor" />
+    <text x="200" y="155" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="white">50 J</text>
+    <!-- Arrow to after -->
+    <line x1="260" y1="150" x2="380" y2="150" />
+    <polygon points="372,142 388,150 372,158" fill="currentColor" stroke="none" />
+    <!-- After -->
+    <text x="600" y="80" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">After: 50 J spread across stores</text>
+    <rect x="450" y="110" width="50" height="40" fill="currentColor" />
+    <text x="475" y="135" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="white">15 J</text>
+    <text x="475" y="170" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">light (out)</text>
+    <rect x="510" y="110" width="50" height="40" fill="currentColor" />
+    <text x="535" y="135" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="white">35 J</text>
+    <text x="535" y="170" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">thermal (bulb</text>
+    <text x="535" y="186" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">+ surroundings)</text>
+    <text x="400" y="280" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">15 J + 35 J = 50 J. The total is the same.</text>
+  </g>
+`
+
+export const energyEfficiency: SkillNode = {
+  id: 'physics-energy-efficiency',
+  title: 'Useful and Wasted Energy',
+  description:
+    'Sort the energy out of an everyday appliance into useful and wasted shares without using percentages. Read a simple Sankey diagram to see the input on the left and the useful and wasted branches on the right. Apply the conservation rule: the total energy in equals the total energy out, so wasted energy is never lost or destroyed; it has only moved to the surroundings, usually by heating. Year 7 keeps this qualitative; the percentage efficiency calculation comes at GCSE.',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-energy-stores-transfers',
+  zoneName: 'Energy Stores and Transfers',
+  tier: 'confident',
+  prerequisites: ['physics-energy-transfers'],
+  curriculum: {
+    ks3Objective:
+      'Conservation of energy in a closed system; the total energy stored before and after a transfer is the same; useful energy stored at the end of a transfer and energy dissipated to the surroundings (qualitative only at KS3); using a Sankey diagram to show how the input energy is shared between useful and wasted output stores.',
+    awardingBodies: {
+      aqa: '4.1.2.1 Energy transfers in a system; 4.1.2.2 Efficiency (qualitative at KS3) (GCSE Physics 8463)',
+      edexcel: 'Topic 4 Energy, 4.7-4.10 Conservation of energy; useful and wasted energy; Sankey diagrams (GCSE Physics 1PH0)',
+      ocr: 'P1.2 Energy transfers; useful and wasted energy; Sankey diagrams (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'ee-scene-bulb',
+      title: 'A Sankey Diagram for an Old Filament Bulb',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the input, the useful share, and the wasted share for an old filament bulb in a Sevenoaks lamp.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: SANKEY_BULB_SVG,
+        hotspots: [
+          {
+            id: 'ee-b-input',
+            x: 12,
+            y: 50,
+            label: 'Input: 100 J electrical',
+            description:
+              'The lamp draws 100 J each second from the mains, by an electrical transfer. This is the input arrow on the left of the Sankey.',
+          },
+          {
+            id: 'ee-b-useful',
+            x: 78,
+            y: 42,
+            label: 'Useful: 10 J of light',
+            description:
+              'Only 10 J of the input leaves as useful light. The narrow arrow on the right shows this small share.',
+          },
+          {
+            id: 'ee-b-wasted',
+            x: 78,
+            y: 60,
+            label: 'Wasted: 90 J of heating',
+            description:
+              'The other 90 J leaves by heating to the lampshade and the air around. This is wasted, because the lamp is meant to give light, not warm the room. The thicker arrow shows the bigger share.',
+          },
+          {
+            id: 'ee-b-total',
+            x: 50,
+            y: 75,
+            label: 'Total in = total out',
+            description:
+              '10 J (useful) plus 90 J (wasted) gives 100 J back. Energy is conserved. None has been lost or destroyed; it has only moved to other stores.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'ee-scene-led',
+      title: 'A Sankey Diagram for a Modern LED Bulb',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to compare the LED bulb with the filament bulb above. Same input; very different useful and wasted shares.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: SANKEY_LED_SVG,
+        hotspots: [
+          {
+            id: 'ee-l-input',
+            x: 12,
+            y: 50,
+            label: 'Input: 100 J electrical',
+            description:
+              'The LED also draws 100 J each second from the mains. The input arrow looks the same as the filament bulb above.',
+          },
+          {
+            id: 'ee-l-useful',
+            x: 78,
+            y: 42,
+            label: 'Useful: 80 J of light',
+            description:
+              '80 J of the input leaves as useful light. The arrow is now thick on the useful side.',
+          },
+          {
+            id: 'ee-l-wasted',
+            x: 78,
+            y: 56,
+            label: 'Wasted: 20 J of heating',
+            description:
+              'Only 20 J leaves by heating. The wasted arrow is now thinner. The LED wastes far less of its input than the filament bulb.',
+          },
+          {
+            id: 'ee-l-total',
+            x: 50,
+            y: 75,
+            label: 'Total in = total out (still 100 J)',
+            description:
+              '80 J (useful) plus 20 J (wasted) gives 100 J back. Conservation still holds for the LED, just as for the filament bulb. Year 7 stops here; at GCSE you would take the useful share over the input as a percentage efficiency.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'ee-scene-conservation',
+      title: 'Energy Is Never Lost: Before and After',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read how a torch cell starts with 50 J and ends with 50 J spread between light leaving the bulb and the warmer bulb and surroundings.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: CONSERVATION_SVG,
+        hotspots: [
+          {
+            id: 'ee-c-before',
+            x: 25,
+            y: 50,
+            label: 'Before: 50 J in chemical store of the cell',
+            description:
+              'A small torch cell holds 50 J in its chemical store, ready to release.',
+          },
+          {
+            id: 'ee-c-after-light',
+            x: 60,
+            y: 35,
+            label: 'After: 15 J of light leaves the bulb',
+            description:
+              'Once the torch is on, 15 J leaves the bulb as light: a radiation transfer to the surroundings.',
+          },
+          {
+            id: 'ee-c-after-thermal',
+            x: 70,
+            y: 55,
+            label: 'After: 35 J in thermal stores of the bulb and air',
+            description:
+              'The other 35 J grows the thermal store of the bulb and the air around it: a heating transfer to the surroundings.',
+          },
+          {
+            id: 'ee-c-total',
+            x: 50,
+            y: 75,
+            label: '15 J + 35 J = 50 J',
+            description:
+              'Add the two and you get the original 50 J back. The energy did not vanish. It only spread between two stores in the surroundings.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'ee-worked-1',
+      title: 'A kettle on the kitchen counter',
+      steps: [
+        {
+          explanation:
+            'Pick the appliance. A 100 W electric kettle in a Sevenoaks kitchen takes 90 000 J from the mains during one boil, by an electrical transfer.',
+        },
+        {
+          explanation:
+            'Name the useful share. The job of the kettle is to heat the water. So the useful output is the energy that grows the thermal store of the water. Suppose this is 84 000 J.',
+          maths: 'useful = 84 000 J (thermal store of water)',
+        },
+        {
+          explanation:
+            'Name the wasted share. Some energy leaves to the kettle wall, the air around the kettle, and the counter. This is wasted because it does not heat the water. Apply conservation: total in equals total out, so wasted = 90 000 minus 84 000 = 6000 J.',
+          maths: 'wasted = 90 000 − 84 000 = 6000 J',
+        },
+        {
+          explanation:
+            'Check conservation. 84 000 + 6000 = 90 000 J. Total in equals total out. No energy has been lost or destroyed; the wasted share has only moved to the surroundings.',
+          maths: '84 000 + 6000 = 90 000 J',
+        },
+        {
+          explanation:
+            'State the result in words. Most of the input is useful (heating the water). A smaller share is wasted (heating the kitchen). At Year 7 this is as far as we go; at GCSE you would write efficiency as 84 000 over 90 000, then express it as a percentage.',
+        },
+      ],
+    },
+    {
+      id: 'ee-worked-2',
+      title: 'A simple electric motor lifting a load',
+      steps: [
+        {
+          explanation:
+            'Pick the appliance. A small electric motor in a school lab takes 200 J from a battery by an electrical transfer. It lifts a 1 kg mass on a string up onto a shelf.',
+        },
+        {
+          explanation:
+            'Name the useful share. The job of the motor is to lift the mass. So the useful output is the energy that grows the gravitational store of the mass. Suppose this is 60 J.',
+          maths: 'useful = 60 J (gravitational store of the mass)',
+        },
+        {
+          explanation:
+            'Name the wasted share. Friction in the motor and bearings makes them warm. Apply conservation: 200 J in must equal the total out. So wasted = 200 minus 60 = 140 J, mostly to the thermal store of the motor and the surroundings, with a small radiation transfer of sound from the motor.',
+          maths: 'wasted = 200 − 60 = 140 J',
+        },
+        {
+          explanation:
+            'Check conservation. 60 + 140 = 200 J. Total in equals total out.',
+          maths: '60 + 140 = 200 J',
+        },
+        {
+          explanation:
+            'State the result in words. The useful share grew the gravitational store of the mass. The wasted share grew the thermal store of the motor and the air, with some sound. None of the 200 J was lost or destroyed.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'ee-q1',
+      type: 'multiple-choice',
+      stem: 'A pupil hears that a torch bulb "wastes most of its input energy as heat". What is the most accurate way to describe what wasted energy is?',
+      tier: 'core',
+      options: [
+        'Wasted energy is destroyed inside the bulb.',
+        'Wasted energy disappears.',
+        'Wasted energy is the share that leaves to the surroundings rather than doing the useful job.',
+        'Wasted energy turns back into chemical energy in the cell.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'ee-mis-wasted-disappears',
+      hint: 'Energy is never destroyed. Where does the wasted share go?',
+    },
+    {
+      id: 'ee-q2',
+      type: 'numeric-entry',
+      stem: 'A toaster takes 60 000 J from the mains by an electrical transfer. The thermal store of the bread grows by 48 000 J. By how many joules does the wasted share leave to the surroundings?',
+      tier: 'core',
+      correctAnswer: 12000,
+      unit: 'J',
+      xpValue: 10,
+      hint: 'Total in equals total out, by conservation. Subtract the useful share from the input.',
+    },
+    {
+      id: 'ee-q3',
+      type: 'multiple-choice',
+      stem: 'A pupil reads a Sankey diagram for a kettle. The thick input arrow on the left is labelled 90 000 J. Two output arrows on the right are 84 000 J (useful) and 6000 J (wasted). What does this confirm?',
+      tier: 'core',
+      options: [
+        'The input is bigger than the total output, so some energy is lost.',
+        'Only the useful arrow counts; the wasted one can be ignored.',
+        'The Sankey is wrong; energy must increase from input to output.',
+        'The total in (90 000 J) equals the total out (84 000 + 6000 = 90 000 J), so energy is conserved.',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'ee-mis-input-out-mismatch',
+      hint: 'Add the useful and wasted arrows on the right. Compare with the input arrow on the left.',
+    },
+    {
+      id: 'ee-q4',
+      type: 'numeric-entry',
+      stem: 'A small motor in a school lab takes 200 J from a battery by an electrical transfer. The useful share grows the gravitational store of a load by 60 J. How many joules are wasted to the surroundings?',
+      tier: 'core',
+      correctAnswer: 140,
+      unit: 'J',
+      xpValue: 10,
+      hint: 'Total in equals total out. Subtract the useful share from the input.',
+    },
+    {
+      id: 'ee-q5',
+      type: 'multiple-choice',
+      stem: 'A pupil compares an old filament bulb (10 J light from 100 J input) with a modern LED (80 J light from the same 100 J input). Which sentence is the most accurate?',
+      tier: 'core',
+      options: [
+        'The filament bulb gives more useful light per joule of input.',
+        'The LED wastes a smaller share of its input as heating.',
+        'Both bulbs waste the same amount, because both glow.',
+        'Neither bulb wastes any energy; only old appliances waste.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      hint: 'Compare the light arrow widths. Which bulb has a thinner wasted arrow?',
+    },
+    {
+      id: 'ee-q6',
+      type: 'numeric-entry',
+      stem: 'A Sankey diagram for an electric motor shows an input of 500 J on the left, a useful arrow of 350 J on the right, and a wasted arrow of W joules on the right. What is W?',
+      tier: 'core',
+      correctAnswer: 150,
+      unit: 'J',
+      xpValue: 10,
+      hint: 'Useful + wasted = input. Subtract the useful share from the input.',
+    },
+    {
+      id: 'ee-q7',
+      type: 'multiple-choice',
+      stem: 'A torch is left on until the cell is flat. A pupil says, "Some of the energy from the cell was lost during the night." What is the most accurate way to put this?',
+      tier: 'core',
+      options: [
+        'They are right; energy was destroyed inside the bulb.',
+        'They are right; the wasted share vanished from the universe.',
+        'The chemical store of the cell fell to zero. Useful light went out into the room. Wasted heating went into the bulb and the air. Nothing was lost; the energy spread between stores.',
+        'They are right; energy turns into nothing in old torches.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'ee-mis-wasted-disappears',
+      hint: '"Lost" is not the right word. Where did the energy actually end up?',
+    },
+    {
+      id: 'ee-q8',
+      type: 'multiple-choice',
+      stem: 'A pupil sees a Sankey diagram with the input drawn on the right of the page and two output arrows pointing left. They read off the wasted arrow as the input. What has gone wrong?',
+      tier: 'core',
+      options: [
+        'They have read the diagram backwards. By convention the input is on the left and outputs branch off to the right; reading the other way gives the wrong arrow as the input.',
+        'Nothing; Sankey diagrams can be read in any direction.',
+        'They have used the wrong unit.',
+        'Sankey diagrams cannot show wasted energy.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'ee-mis-sankey-direction',
+      hint: 'There is a standard way to read a Sankey: input on the left, outputs on the right.',
+    },
+    {
+      id: 'ee-q9',
+      type: 'labelled-image',
+      stem: 'Place the labels onto the Sankey diagram of the old filament bulb. Each marker takes one label.',
+      tier: 'confident',
+      viewBox: '0 0 800 400',
+      svg: SANKEY_BULB_SVG,
+      hotspots: [
+        { id: 'ee-q9-h1', x: 12, y: 50, correctLabel: 'Input: 100 J electrical' },
+        { id: 'ee-q9-h2', x: 78, y: 42, correctLabel: 'Useful: 10 J of light' },
+        { id: 'ee-q9-h3', x: 78, y: 60, correctLabel: 'Wasted: 90 J of heating' },
+      ],
+      labels: [
+        'Input: 100 J electrical',
+        'Useful: 10 J of light',
+        'Wasted: 90 J of heating',
+        'Useful: 90 J of heating',
+        'Input: 50 J chemical',
+        'Wasted: 10 J of light',
+      ],
+      xpValue: 15,
+      hint: 'The wider arrow is the bigger share. Light is the useful job of a bulb; heating is wasted.',
+    },
+    {
+      id: 'ee-q10',
+      type: 'data-extraction',
+      stem: 'Read the Sankey diagram described in the dataSource. Which output share is the largest, in joules?',
+      tier: 'confident',
+      dataSource:
+        'Sankey diagram for a kitchen kettle. Input arrow on the left labelled 90 000 J electrical. Two output arrows branch to the right: a thick arrow labelled 84 000 J useful (thermal store of the water), and a thin arrow labelled 6000 J wasted (heating to the kitchen air, kettle wall, and counter). The two output arrows together add up to the input.',
+      correctAnswer: '84 000 J',
+      xpValue: 15,
+      hint: 'Look at the thicker output arrow. The thicker arrow is the bigger share.',
+    },
+    {
+      id: 'ee-q11',
+      type: 'spot-misconception',
+      stem: 'Lila says, "Once the wasted heat leaves the kettle, it disappears. It is gone forever." What is the most accurate way to describe wasted energy?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Lila is right. Wasted energy is destroyed.',
+          isMisconception: true,
+        },
+        {
+          text: 'Lila is not right. The wasted share has not disappeared; it has grown the thermal store of the kitchen air, the counter, and the kettle wall. The total before and after is the same, by conservation.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'ee-mis-wasted-disappears',
+    },
+    {
+      id: 'ee-q12',
+      type: 'drag-order',
+      stem: 'A pupil follows the energy through a torch bulb. Place the four steps in the right order.',
+      tier: 'confident',
+      items: [
+        'The cell holds energy in its chemical store, ready to release.',
+        'Electrical transfer drives the bulb when the switch is closed.',
+        'Thermal store of the bulb grows; useful light leaves by radiation.',
+        'Wasted energy from the hot bulb leaves to the air by heating.',
+      ],
+      correctOrder: [0, 1, 2, 3],
+      xpValue: 15,
+      hint: 'Start at the cell, then the wires, then the bulb, then the air.',
+    },
+    {
+      id: 'ee-q13',
+      type: 'numeric-entry',
+      stem: 'A speaker takes 40 J of electrical input. The useful share leaving as sound is 4 J. The rest is wasted as heating. By how many joules is the thermal store of the speaker and the air around it grown by this transfer?',
+      tier: 'confident',
+      correctAnswer: 36,
+      unit: 'J',
+      xpValue: 15,
+      hint: 'Wasted = input minus useful. Subtract.',
+    },
+    {
+      id: 'ee-q14',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is using conservation to find the wasted share of an electric scooter battery.',
+      tier: 'confident',
+      steps: [
+        'The scooter takes 1000 J from its battery by an electrical transfer.',
+        'The useful share grows the kinetic store of the scooter and rider by 800 J.',
+        'Wasted energy leaves to the surroundings as a heating transfer (warm motor, warm tyres, warm road).',
+        null,
+        'Check the total: 800 + 200 = 1000 J. Total out equals total in, so conservation holds.',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'Apply conservation: useful (800 J) plus wasted (?) equals input (1000 J), so wasted = 1000 − 800 = 200 J.',
+      xpValue: 15,
+    },
+    {
+      id: 'ee-q15',
+      type: 'multiple-choice',
+      stem: 'Two pupils argue about which appliance is the better choice in a UK home: an old filament bulb (10 J of light from 100 J input) or a modern LED (80 J of light from 100 J input). Which sentence is the most accurate?',
+      tier: 'challenge',
+      options: [
+        'The filament bulb wastes a smaller share, because old technology is more reliable.',
+        'Both bulbs waste the same amount; the difference is just the colour of light.',
+        'Wasted energy means the LED actually has less energy in total; conservation does not apply to LEDs.',
+        'The LED wastes a smaller share of its input on heating; for the same useful light, it draws less energy from the mains.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'ee-mis-useful-vs-wasted',
+      hint: 'Compare the wasted-arrow widths in the two Sankey diagrams. Smaller wasted share means more useful light per joule of input.',
+    },
+    {
+      id: 'ee-q16',
+      type: 'spot-misconception',
+      stem: 'Theo says, "If I leave the kitchen door open, the wasted heat from the kettle will come back into the kettle once the kitchen has cooled. So no energy is wasted in the long run." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Theo is right. Wasted energy comes back to the kettle once the room cools.',
+          isMisconception: true,
+        },
+        {
+          text: 'Theo is not right. Heating only moves energy from a hotter object to a cooler one. Once the kitchen and the kettle are at the same temperature, no heating moves between them. The wasted share has spread out and cannot be gathered back.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'ee-mis-wasted-recovered',
+    },
+    {
+      id: 'ee-q17',
+      type: 'numeric-entry',
+      stem: 'A small fan heater takes 600 J from the mains by an electrical transfer. The thermal store of the room grows by 580 J (useful, since the heater is meant to heat the room). The rest leaves as a small fan motor sound and a small light from the indicator bulb. By how many joules is the wasted share?',
+      tier: 'confident',
+      correctAnswer: 20,
+      unit: 'J',
+      xpValue: 15,
+      hint: 'Subtract the useful share from the input.',
+    },
+    {
+      id: 'ee-q18',
+      type: 'multiple-choice',
+      stem: 'A pupil reads about an electric scooter that takes 1000 J from its battery. 800 J grows the kinetic store of the scooter; 200 J leaves as heating to the motor, tyres, and road. Which sentence is the most accurate?',
+      tier: 'challenge',
+      options: [
+        'The 200 J of wasted energy was lost in the motor and is gone for good.',
+        'The 200 J of wasted energy grew the thermal store of the scooter parts and the surroundings; the total of useful (800 J) and wasted (200 J) gives back the 1000 J input.',
+        'The 200 J wasted energy will come back to the battery later as the scooter cools.',
+        'Conservation does not apply to electric vehicles; only kettles obey conservation.',
+      ],
+      correctIndex: 1,
+      xpValue: 20,
+      misconceptionId: 'ee-mis-wasted-disappears',
+      hint: 'Trace where the wasted share went; check that useful + wasted = input.',
+    },
+    {
+      id: 'ee-q19',
+      type: 'numeric-entry',
+      stem: 'A Sankey diagram for an electric kettle shows an input of 90 000 J and a useful arrow of 84 000 J. A second kettle, used the same way, shows an input of 90 000 J and a useful arrow of 88 000 J. By how many joules is the second kettle’s wasted share smaller than the first kettle’s wasted share?',
+      tier: 'challenge',
+      correctAnswer: 4000,
+      unit: 'J',
+      xpValue: 20,
+      hint: 'Find the wasted share for each kettle (input minus useful), then subtract.',
+    },
+    {
+      id: 'ee-q20',
+      type: 'free-text',
+      stem: 'A 2000 J slice of pizza is eaten by a pupil who then walks home from a Sevenoaks bus stop. The walk grows their gravitational store and kinetic store by about 800 J. The rest leaves to the surroundings, mostly as a heating transfer. In two or three sentences, name the useful share, the wasted share (as a number), and explain in store-and-pathway language what conservation tells us about the total.',
+      tier: 'challenge',
+      sampleAnswer:
+        'The useful share is 800 J, growing the gravitational and kinetic stores of the pupil. The wasted share is 1200 J, leaving by a heating transfer to the surroundings (warm body, warm air around). Conservation tells us 800 + 1200 = 2000 J, so the total before (chemical store of the pizza) equals the total after (kinetic + gravitational stores plus thermal store of the surroundings). No energy was destroyed.',
+      keywords: ['useful', '800 J', 'wasted', '1200 J', 'heating', 'conservation', 'thermal store'],
+      xpValue: 20,
+    },
+    {
+      id: 'ee-q21',
+      type: 'multiple-choice',
+      stem: 'A pupil compares two kettles in a Manchester showroom. Old kettle: 90 000 J in, 78 000 J useful (thermal store of water). New kettle: 90 000 J in, 87 000 J useful. Which sentence is the most accurate at Year 7?',
+      tier: 'challenge',
+      options: [
+        'The new kettle wastes a smaller share of its input as heating; for the same job (boiling the water), it leaves less heat in the kitchen. We can say this without using percentages at Year 7.',
+        'The new kettle is more efficient, with an efficiency of 87 over 90 as a percentage.',
+        'Both kettles waste the same amount; old equals new.',
+        'Conservation does not apply to kettles; only bulbs follow conservation.',
+      ],
+      correctIndex: 0,
+      xpValue: 20,
+      misconceptionId: 'ee-mis-percent-efficiency',
+      hint: 'At Year 7 we say more useful and less wasted; the percentage calculation comes at GCSE.',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 1F. Candidates write that wasted energy "disappears" or is "lost", missing the conservation rule.
+    {
+      id: 'ee-mis-wasted-disappears',
+      description:
+        'Believing that wasted energy is destroyed or disappears, so the input is bigger than the total output.',
+      triggerAnswer: 'wasted-disappears',
+      correction:
+        'Energy is never destroyed. Wasted energy has only moved to the surroundings, usually as a heating transfer. The total before equals the total after.',
+      reExplanation:
+        'A torch bulb takes 50 J from a cell and gives out 15 J as useful light. The other 35 J grows the thermal store of the bulb and the air around it. Add: 15 + 35 = 50. None of the input has gone missing. The wasted share is harder to use again, because it has spread out, but it has not disappeared.',
+    },
+    // Source: IOPSpark "Energy: stores and pathways" guidance. Pupils think a Sankey diagram can be read in any direction or use the wasted branch as the input.
+    {
+      id: 'ee-mis-sankey-direction',
+      description:
+        'Reading a Sankey diagram with the input on the right or top, mistaking a wasted output branch for the input.',
+      triggerAnswer: 'sankey-direction',
+      correction:
+        'A Sankey diagram is read from left to right by convention. The input arrow comes in from the left; the useful and wasted arrows branch out to the right. The thicker the arrow, the bigger the share.',
+      reExplanation:
+        'Look at any Sankey for a kettle, a bulb, or a motor. The arrow with the unbroken edge on the left side of the page is the input. After the appliance box in the middle, the arrows on the right are the outputs: a thick useful arrow and a thinner wasted arrow (or the other way around for an old bulb). Reading right to left would name a wasted output as the input.',
+    },
+    // Source: CGP KS3 Physics Study Guide, conservation common-mistake box. Pupils think wasted energy can flow back to the source if you wait.
+    {
+      id: 'ee-mis-wasted-recovered',
+      description:
+        'Believing wasted energy can be recovered later, for example that wasted heat from a kettle will return to the kettle once the room cools.',
+      triggerAnswer: 'wasted-recovered',
+      correction:
+        'Wasted energy spreads out into the surroundings and cannot be gathered back. Heating only moves energy from a hotter object to a cooler one; once they are at the same temperature, no heating happens.',
+      reExplanation:
+        'A kettle leaves its kitchen 6000 J warmer than before. The kitchen will eventually cool down to its earlier temperature by losing energy to outside (open windows, walls). That cooling does not return any energy to the kettle. The kettle has long since cooled too. The wasted 6000 J has spread out into the wider surroundings and is essentially unrecoverable.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 1F. Candidates write the input arrow as smaller than the sum of outputs, breaking conservation in their answer.
+    {
+      id: 'ee-mis-input-out-mismatch',
+      description:
+        'Writing or accepting a Sankey diagram where the input arrow is bigger or smaller than the sum of the output arrows, missing the conservation check.',
+      triggerAnswer: 'input-out-mismatch',
+      correction:
+        'In a Sankey diagram, the input on the left always equals the sum of the useful and wasted outputs on the right. If they do not match, the diagram is wrong or the numbers are wrong.',
+      reExplanation:
+        'Sankey arrows are drawn so the width is in proportion to the energy in joules. If you measure or read 100 J coming in on the left, the useful and wasted arrows on the right must add to 100 J. A Sankey that shows 100 J in and 110 J out, or 100 J in and 90 J out without explaining the missing 10 J, breaks conservation. Check your sums before you draw the arrows.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2022, 1PH0. Candidates use percentage efficiency calculations on KS3 work where the syllabus is qualitative only.
+    {
+      id: 'ee-mis-percent-efficiency',
+      description:
+        'Trying to use a percentage efficiency calculation at Year 7, treating efficiency as a single number rather than a qualitative useful-vs-wasted comparison.',
+      triggerAnswer: 'percent-efficiency',
+      correction:
+        'At Year 7 we compare the useful and wasted shares in joules and decide which appliance wastes the smaller share. The percentage calculation (useful divided by input, expressed as a percentage) comes at GCSE.',
+      reExplanation:
+        'A new kettle takes 90 000 J and uses 87 000 J on the water; an old one uses 78 000 J. At Year 7 we say the new kettle wastes 3000 J and the old wastes 12 000 J, so the new one is more efficient. The percentage step (87 over 90 versus 78 over 90, written as a percent) comes at GCSE. Pulling that into Year 7 muddles the useful-vs-wasted picture.',
+    },
+    // Source: CGP KS3 Physics Study Guide, common-mistake box. Pupils mix up "useful" and "wasted" outputs, calling the heat from a bulb useful because the bulb is on.
+    {
+      id: 'ee-mis-useful-vs-wasted',
+      description:
+        'Calling every output of an appliance useful, missing that "useful" depends on the job the appliance is meant to do.',
+      triggerAnswer: 'useful-vs-wasted',
+      correction:
+        '"Useful" means matching the job of the appliance. For a bulb, light is useful and heating the room is wasted. For a heater, heating the room is useful and any sound from the fan is wasted.',
+      reExplanation:
+        'A filament bulb gives 10 J of light and 90 J of heating from a 100 J input. As a bulb, the light is useful and the heating is wasted. The same 90 J of heating would be useful in an electric heater, where the job is to heat the room. The label depends on the job, not on the kind of output.',
+    },
+    // Source: IOPSpark "Energy in stores" guidance. Pupils think appliances "create" energy, missing that an appliance only transfers energy from one store to another.
+    {
+      id: 'ee-mis-appliance-creates-energy',
+      description:
+        'Believing that an appliance creates energy when switched on, rather than transferring energy from one store to another along a pathway.',
+      triggerAnswer: 'appliance-creates-energy',
+      correction:
+        'No appliance creates energy. An appliance takes energy from a store (the mains, a battery, the petrol tank) and transfers it to other stores along one of the four pathways.',
+      reExplanation:
+        'A kettle does not create the energy that boils the water; it transfers energy from the mains (electrical pathway) to the thermal store of the water (and a smaller share to the surroundings). Switch the kettle off and the transfer stops, but the energy already in the water and the kitchen is still there. Conservation rules out any appliance that pretends to create energy from nothing.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const energyZoneNodes = [energyStores, energyTransfers, energyEfficiency]
 
 export const energyZone: Zone = {
   id: 'physics-energy-stores-transfers',

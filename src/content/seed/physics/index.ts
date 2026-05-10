@@ -22,6 +22,7 @@ import {
 import {
   energyStores,
   energyTransfers,
+  energyEfficiency,
   energyZoneNodes,
   energyZone,
 } from './energy'
@@ -42,6 +43,7 @@ export {
   gravityZone,
   energyStores,
   energyTransfers,
+  energyEfficiency,
   energyZoneNodes,
   energyZone,
 }
