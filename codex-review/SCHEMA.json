@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lumen-academy.local/codex-review/review.schema.json",
+  "title": "Lumen Academy Codex review output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["snapshot", "systemMap", "findings", "notExamined"],
+  "properties": {
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "branch", "reviewedAt"],
+      "properties": {
+        "commit": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{7,40}$",
+          "description": "Git SHA the review is pinned to. Must match SNAPSHOT.md."
+        },
+        "branch": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "ISO 8601 UTC timestamp when the review completed."
+        }
+      }
+    },
+    "systemMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "completeness"],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 40,
+          "maxLength": 1200,
+          "description": "Two to three sentence prose summary of the system as understood."
+        },
+        "completeness": {
+          "type": "string",
+          "enum": ["full", "partial"],
+          "description": "Did the reviewer answer all six system-map bullets from PROMPT.md?"
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/finding" }
+    },
+    "notExamined": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 3 },
+      "description": "Honest list of files, directories, or behaviours not assessed."
+    }
+  },
+  "$defs": {
+    "finding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "area",
+        "severity",
+        "file",
+        "line",
+        "problem",
+        "recommendation",
+        "effort",
+        "confidence"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^LA-[0-9]{3}$",
+          "description": "Stable id of the form LA-001, LA-002, ..."
+        },
+        "area": {
+          "type": "string",
+          "enum": [
+            "auth",
+            "data",
+            "api",
+            "content",
+            "learning-loop",
+            "gamification",
+            "ui",
+            "build",
+            "tests",
+            "security",
+            "accessibility",
+            "performance",
+            "observability",
+            "docs",
+            "other"
+          ]
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["H", "M", "L"],
+          "description": "H = breaks learning or leaks data. M = blocks shipping more content. L = matters at scale only."
+        },
+        "file": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Repo-relative path to the most representative file."
+        },
+        "line": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "1-based line number. Use 0 if the finding is not bound to a specific line."
+        },
+        "problem": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 1500
+        },
+        "recommendation": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 1500,
+          "description": "Smallest change that resolves the problem. No rewrites."
+        },
+        "effort": {
+          "type": "string",
+          "enum": ["S", "M", "L"],
+          "description": "S = under an hour. M = half a day. L = multi-day."
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "relatedFiles": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional. Other files involved when the finding spans more than one location."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Optional free-form tags so the author can group findings."
+        }
+      }
+    }
+  }
+}
