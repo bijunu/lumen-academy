@@ -237,10 +237,10 @@
 - **OCR**: B6.2.1 Variation (GCSE Biology A J247)
 
 #### Classification: Five Kingdoms (Confident, `biology-classification-five-kingdoms`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Inheritance, chromosomes, DNA and genes)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The variation between species and between individuals of the same species meaning some organisms compete more successfully, which can drive natural selection.
+- **AQA**: 4.6.4.4 Classification of living organisms (GCSE Biology 8461)
+- **Edexcel**: SB4d Classification within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
+- **OCR**: B6.2.2 Classification (GCSE Biology A J247)
 
 ### Zone: Ecosystems and Food Webs (`biology-ecosystems-food-webs`)
 

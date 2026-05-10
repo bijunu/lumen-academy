@@ -940,6 +940,44 @@ Covers `biology-variation-continuous-discontinuous`, `biology-classification-fiv
 - T-VAR-4: Given a request for an inline definition (tap on "continuous" or "histogram"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-VAR-5: Given an off-topic input on the variation node (for example a question about alleles or genetic causes), the tutor flags that cause-of-variation depth comes later in Year 8 / 9 and steers back to "is the data on a scale or in categories?".
 
+### Content probes (classification)
+
+- C-CLASS-1: Learner places fungi in the plant kingdom because mushrooms grow rooted to the ground.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on the kingdom of a button mushroom; at least one Confident-tier spot-misconception that surfaces the photosynthesis-and-cellulose-vs-chitin sort line.
+- C-CLASS-2: Learner believes animal cells have a cell wall.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on what is true of every animal cell, with the cell-wall distractor as the dominant trap.
+- C-CLASS-3: Learner believes the fungal cell wall is made of cellulose like the plant cell wall.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on the make-up of the fungal cell wall (chitin); at least one Confident-tier MCQ that uses cellulose-plus-photosynthesis as the diagnostic for the plant kingdom.
+- C-CLASS-4: Learner labels every single-celled organism as a bacterium.
+  - Required handling: misconception entry on the classification node; at least one Confident-tier spot-misconception that surfaces the eukaryote-protist (Amoeba) case; at least one Challenge-tier MCQ that uses "single cell with a nucleus" to diagnose protists.
+- C-CLASS-5: Learner believes bacteria have a nucleus, like other living cells.
+  - Required handling: misconception entry on the classification node; at least one Confident-tier MCQ on which kingdom contains organisms with no nucleus (prokaryotes); at least one Challenge-tier MCQ contrasting bacterial and protist cells on the nucleus feature.
+- C-CLASS-6: Learner believes baker's yeast is a kind of bacteria.
+  - Required handling: misconception entry on the classification node; the Challenge-tier missing-step question on yeast checks the chitin-vs-cellulose and eukaryote-vs-prokaryote tests in sequence.
+- C-CLASS-7: Learner uses smaller categories like "insects" as kingdoms.
+  - Required handling: misconception entry on the classification node, framed against the five-kingdom-only KS3 scope; smaller categories called out explicitly as inside-the-animal-kingdom subsets.
+
+### Question shape probes (classification)
+
+- Q-CLASS-1: At least one Core MCQ on the classification node asks for the kingdom of each of: a robin (animal), an oak (plant), a button mushroom (fungi), Lactobacillus (prokaryote), and an Amoeba (protist), so all five kingdoms are surfaced as correct answers across the question pool.
+- Q-CLASS-2: At least one Core MCQ on the classification node asks for the make-up of the fungal cell wall (chitin) with cellulose, glucose, and chlorophyll as distractors.
+- Q-CLASS-3: At least one Core numeric on the classification node asks "how many kingdoms are there in the classic five-kingdom system?".
+- Q-CLASS-4: At least one Confident-tier data-extraction on the classification node uses an unknown-organism feature table (cell type, cell wall material, photosynthesis, body) and asks for the kingdom.
+- Q-CLASS-5: At least one drag-drop-builder on the classification node asks the learner to pick all UK animals from a pool that mixes animals, a plant, a fungus, a bacterium, and a protist.
+- Q-CLASS-6: At least one Confident-tier numeric on the classification node asks the learner to count organisms in a specific kingdom from a fixed list of eight UK organisms.
+- Q-CLASS-7: At least one Challenge-tier missing-step question on the classification node fills in the chitin-vs-cellulose check inside an account of why baker's yeast is a fungus, not a bacterium.
+- Q-CLASS-8: At least one Challenge-tier MCQ on the classification node uses a single-celled-with-nucleus-and-cilia clue to direct the learner to the protist kingdom.
+- Q-CLASS-9: All UK examples on the classification node use UK-grounded organisms (oak, robin, fox, hedgehog, holly, daisy, button mushroom, bread mould, Lactobacillus); no US wildlife.
+- Q-CLASS-10: All chemical and biological terms in stems, options, and explanations on the classification node use UK English (colour, behaviour, etc.) and the SkillNode reading-age cap of 12 or younger.
+
+### Tutor probes (classification)
+
+- T-CLASS-1: Given "Mushrooms are plants, right?", the tutor's first reply is a Socratic prompt about whether the mushroom photosynthesises, not a direct correction.
+- T-CLASS-2: Given a wrong answer matching the fungi-cellulose-wall trigger on cls-q7, the tutor cites the relevant misconception's `reExplanation` (the wall-material-by-kingdom trio) rather than producing a fresh hint.
+- T-CLASS-3: Given "An Amoeba is just a small bacterium", the tutor steers the learner to the nucleus check, not a definition dump on prokaryotes.
+- T-CLASS-4: Given a request for an inline definition (tap on "eukaryote", "prokaryote", or "chitin"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-CLASS-5: Given an off-topic input on the classification node (for example a US AP Biology three-domains reference, or "what about Archaea?"), the tutor flags that the three-domain system is GCSE+ depth and steers back to the five-kingdom system.
+
 ## Zone: Vitalia > Ecosystems and Food Webs
 
 Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`.

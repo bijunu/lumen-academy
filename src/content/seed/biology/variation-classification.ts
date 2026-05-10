@@ -694,13 +694,739 @@ export const continuousDiscontinuousVariation: SkillNode = {
   },
 }
 
+// ---------------------------------------------------------------------------
+// Node 2 SVGs
+// ---------------------------------------------------------------------------
+
+const fiveKingdomsOverviewSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">The five kingdoms of living things</text>
+  <rect x="20" y="60" width="170" height="130" rx="10" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <text x="105" y="90" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Animals</text>
+  <text x="105" y="116" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Many cells, no cell wall.</text>
+  <text x="105" y="138" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eat other organisms.</text>
+  <text x="105" y="160" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Examples: dog, robin,</text>
+  <text x="105" y="178" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">badger, hedgehog.</text>
+  <rect x="210" y="60" width="170" height="130" rx="10" fill="#BBF7D0" stroke="#15803D" stroke-width="2" />
+  <text x="295" y="90" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Plants</text>
+  <text x="295" y="116" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Many cells, cell wall</text>
+  <text x="295" y="134" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">made of cellulose.</text>
+  <text x="295" y="156" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Make own food by</text>
+  <text x="295" y="174" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">photosynthesis.</text>
+  <rect x="400" y="60" width="170" height="130" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="485" y="90" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Fungi</text>
+  <text x="485" y="116" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Cell wall made of</text>
+  <text x="485" y="134" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">chitin, not cellulose.</text>
+  <text x="485" y="156" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Feed by absorbing</text>
+  <text x="485" y="174" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">decaying matter.</text>
+  <rect x="115" y="210" width="170" height="130" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2" />
+  <text x="200" y="240" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Protists</text>
+  <text x="200" y="266" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Single cell, with</text>
+  <text x="200" y="284" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">a nucleus (eukaryote).</text>
+  <text x="200" y="306" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Examples: Amoeba,</text>
+  <text x="200" y="324" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Paramecium.</text>
+  <rect x="305" y="210" width="170" height="130" rx="10" fill="#E9D5FF" stroke="#5B21B6" stroke-width="2" />
+  <text x="390" y="240" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Prokaryotes</text>
+  <text x="390" y="258" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(bacteria)</text>
+  <text x="390" y="282" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Single cell, no nucleus.</text>
+  <text x="390" y="304" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Examples: E. coli,</text>
+  <text x="390" y="322" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Lactobacillus.</text>
+  <text x="300" y="378" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Five kingdoms, sorted by cell type, cell wall, and feeding mode.</text>
+</svg>
+`.trim()
+
+const cellFeatureCompareSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Three features that sort the kingdoms</text>
+  <line x1="40" y1="55" x2="560" y2="55" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="40" y1="380" x2="560" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="40" y1="55" x2="40" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="170" y1="55" x2="170" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="300" y1="55" x2="300" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="430" y1="55" x2="430" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="560" y1="55" x2="560" y2="380" stroke="#1F2937" stroke-width="1.5" />
+  <line x1="40" y1="100" x2="560" y2="100" stroke="#1F2937" stroke-width="1.5" />
+  <text x="105" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Kingdom</text>
+  <text x="235" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Cell type</text>
+  <text x="365" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Cell wall?</text>
+  <text x="495" y="84" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Feeding</text>
+  <text x="105" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Animals</text>
+  <text x="235" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eukaryote</text>
+  <text x="365" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">No</text>
+  <text x="495" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Heterotroph</text>
+  <text x="105" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Plants</text>
+  <text x="235" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eukaryote</text>
+  <text x="365" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Yes (cellulose)</text>
+  <text x="495" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Autotroph</text>
+  <text x="105" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Fungi</text>
+  <text x="235" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eukaryote</text>
+  <text x="365" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Yes (chitin)</text>
+  <text x="495" y="210" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Heterotroph</text>
+  <text x="105" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Protists</text>
+  <text x="235" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eukaryote</text>
+  <text x="365" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Some yes,</text>
+  <text x="365" y="266" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">some no</text>
+  <text x="495" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Mixed</text>
+  <text x="105" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Prokaryotes</text>
+  <text x="105" y="306" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(bacteria)</text>
+  <text x="235" y="298" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Prokaryote</text>
+  <text x="365" y="298" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Yes (not</text>
+  <text x="365" y="314" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">cellulose)</text>
+  <text x="495" y="298" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Mixed</text>
+  <text x="300" y="345" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Eukaryote = cell with a nucleus. Prokaryote = cell without one.</text>
+  <text x="300" y="362" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Autotroph = makes own food. Heterotroph = takes food from elsewhere.</text>
+</svg>
+`.trim()
+
+const ukOrganismGallerySvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">UK organisms across the five kingdoms</text>
+  <rect x="20" y="60" width="170" height="120" rx="10" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <text x="105" y="86" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Animal kingdom</text>
+  <text x="105" y="112" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">A red fox in a</text>
+  <text x="105" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Sevenoaks garden.</text>
+  <text x="105" y="156" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Many cells, no cell wall,</text>
+  <text x="105" y="172" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">eats other animals.</text>
+  <rect x="210" y="60" width="170" height="120" rx="10" fill="#BBF7D0" stroke="#15803D" stroke-width="2" />
+  <text x="295" y="86" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Plant kingdom</text>
+  <text x="295" y="112" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">An oak tree in a</text>
+  <text x="295" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Kentish woodland.</text>
+  <text x="295" y="156" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Cellulose cell wall,</text>
+  <text x="295" y="172" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">photosynthesises.</text>
+  <rect x="400" y="60" width="170" height="120" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="485" y="86" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Fungi kingdom</text>
+  <text x="485" y="112" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">A button mushroom</text>
+  <text x="485" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">on the kitchen table.</text>
+  <text x="485" y="156" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Chitin cell wall,</text>
+  <text x="485" y="172" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">absorbs nutrients.</text>
+  <rect x="115" y="200" width="170" height="120" rx="10" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2" />
+  <text x="200" y="226" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Protist kingdom</text>
+  <text x="200" y="252" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">An Amoeba seen</text>
+  <text x="200" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">in a pond sample.</text>
+  <text x="200" y="296" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Single cell with a</text>
+  <text x="200" y="312" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">nucleus.</text>
+  <rect x="305" y="200" width="170" height="120" rx="10" fill="#E9D5FF" stroke="#5B21B6" stroke-width="2" />
+  <text x="390" y="226" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Prokaryote kingdom</text>
+  <text x="390" y="252" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Lactobacillus that</text>
+  <text x="390" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">turns milk into yoghurt.</text>
+  <text x="390" y="296" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">Single cell, no nucleus,</text>
+  <text x="390" y="312" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">cell wall.</text>
+  <text x="300" y="378" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">UK examples for every kingdom: from a Kentish wood to the kitchen fridge.</text>
+</svg>
+`.trim()
+
+// ---------------------------------------------------------------------------
+// Node 2: Classification, Five Kingdoms (Confident)
+// ---------------------------------------------------------------------------
+
+export const fiveKingdomsClassification: SkillNode = {
+  id: 'biology-classification-five-kingdoms',
+  title: 'Classification: Five Kingdoms',
+  description:
+    'Sort UK living things into the five kingdoms (animals, plants, fungi, protists, prokaryotes) using three key features: cell type, cell wall, and feeding mode. Decide which kingdom an oak tree, a fox, a button mushroom, an Amoeba, and the Lactobacillus in yoghurt belong to.',
+  subject: 'biology',
+  realm: 'vitalia',
+  zoneId: 'biology-variation-classification',
+  zoneName: 'Variation and Classification',
+  tier: 'confident',
+  prerequisites: ['biology-variation-continuous-discontinuous', 'biology-cells-plant-cell'],
+  curriculum: {
+    ks3Objective:
+      'The variation between species and between individuals of the same species meaning some organisms compete more successfully, which can drive natural selection.',
+    awardingBodies: {
+      aqa: '4.6.4.4 Classification of living organisms (GCSE Biology 8461). Five kingdoms grouping by cell features and nutrition.',
+      edexcel: 'SB4d Classification (GCSE Biology 1BI0, Topic 4). The five-kingdom system as a Year 7 stepping stone before three-domains at GCSE.',
+      ocr: 'B6.2.2 Classification (GCSE Biology A J247). Group organisms by shared cell-level features.',
+    },
+  },
+  scenes: [
+    {
+      id: 'cls-scene-overview',
+      title: 'The Five Kingdoms',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each kingdom card to read what defines it and a UK example you might already know.',
+      data: {
+        svg: fiveKingdomsOverviewSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'cls-hs-animal',
+            x: 18,
+            y: 30,
+            label: 'Animals',
+            description:
+              'Many-celled, no cell wall, eat other organisms (heterotroph). UK examples: dog, robin, badger, hedgehog.',
+          },
+          {
+            id: 'cls-hs-plant',
+            x: 50,
+            y: 30,
+            label: 'Plants',
+            description:
+              'Many-celled, cellulose cell wall, make their own food by photosynthesis (autotroph). UK examples: oak, sycamore, daisy, holly.',
+          },
+          {
+            id: 'cls-hs-fungi',
+            x: 81,
+            y: 30,
+            label: 'Fungi',
+            description:
+              'Cell wall made of chitin (not cellulose), feed by absorbing nutrients from decaying matter. UK examples: button mushroom, bread mould, baker\'s yeast.',
+          },
+          {
+            id: 'cls-hs-protist',
+            x: 33,
+            y: 70,
+            label: 'Protists',
+            description:
+              'Mostly single-celled, with a nucleus (eukaryote). UK examples: Amoeba and Paramecium found in pond water.',
+          },
+          {
+            id: 'cls-hs-prokaryote',
+            x: 65,
+            y: 70,
+            label: 'Prokaryotes (bacteria)',
+            description:
+              'Single-celled, no nucleus (prokaryote), small cell wall. UK examples: E. coli, Lactobacillus that turns milk into yoghurt.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'cls-scene-features',
+      title: 'Three Features Sort the Kingdoms',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each row of the table to see how the three features work for that kingdom.',
+      data: {
+        svg: cellFeatureCompareSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'cls-hs-row-animal',
+            x: 50,
+            y: 33,
+            label: 'Animals row',
+            description:
+              'Eukaryote cell, no cell wall, heterotroph. The "no cell wall" row is the only one in the table; that is what marks the animal kingdom out.',
+          },
+          {
+            id: 'cls-hs-row-plant',
+            x: 50,
+            y: 43,
+            label: 'Plants row',
+            description:
+              'Eukaryote cell, cellulose cell wall, autotroph. Plants are the only multicellular kingdom that makes its own food by photosynthesis.',
+          },
+          {
+            id: 'cls-hs-row-fungi',
+            x: 50,
+            y: 53,
+            label: 'Fungi row',
+            description:
+              'Eukaryote cell, chitin cell wall, heterotroph. Fungi do have a cell wall, but it is made of chitin, not cellulose. They do not photosynthesise.',
+          },
+          {
+            id: 'cls-hs-row-prokaryote',
+            x: 50,
+            y: 75,
+            label: 'Prokaryotes row',
+            description:
+              'Prokaryote cell (no nucleus), cell wall, mixed feeding modes. The "no nucleus" feature is the headline difference. Bacteria sit in this kingdom.',
+          },
+          {
+            id: 'cls-hs-key',
+            x: 50,
+            y: 90,
+            label: 'Key terms',
+            description:
+              'Eukaryote: cell with a nucleus. Prokaryote: cell without one. Autotroph: makes own food. Heterotroph: takes food from somewhere else.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'cls-scene-uk-gallery',
+      title: 'UK Organisms in Each Kingdom',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each card to read a UK example you can probably point to in real life.',
+      data: {
+        svg: ukOrganismGallerySvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'cls-hs-uk-fox',
+            x: 18,
+            y: 30,
+            label: 'Red fox (Animalia)',
+            description:
+              'A common UK mammal often seen in Sevenoaks gardens at dusk. Many cells, no cell wall, hunts and scavenges other animals.',
+          },
+          {
+            id: 'cls-hs-uk-oak',
+            x: 50,
+            y: 30,
+            label: 'Oak tree (Plantae)',
+            description:
+              'A native UK woodland tree. Cellulose cell wall, large permanent vacuole, photosynthesises in its leaves to make glucose.',
+          },
+          {
+            id: 'cls-hs-uk-mushroom',
+            x: 81,
+            y: 30,
+            label: 'Button mushroom (Fungi)',
+            description:
+              'A UK kitchen staple. The mushroom is a fruiting body of a fungus. Chitin cell wall, feeds by absorbing nutrients from compost.',
+          },
+          {
+            id: 'cls-hs-uk-amoeba',
+            x: 33,
+            y: 65,
+            label: 'Amoeba (Protista)',
+            description:
+              'A single-celled organism with a nucleus, found in pond water. It moves and engulfs food using flexible projections of its cell.',
+          },
+          {
+            id: 'cls-hs-uk-yoghurt',
+            x: 65,
+            y: 65,
+            label: 'Lactobacillus (Prokaryote)',
+            description:
+              'A bacterium added to milk to make yoghurt. Single cell, no nucleus, ferments lactose into lactic acid.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'cls-worked-1',
+      title: 'Sorting six UK organisms into kingdoms',
+      steps: [
+        {
+          explanation:
+            'Step 1: Ask "is the cell a eukaryote (with a nucleus) or a prokaryote (no nucleus)?" Prokaryote means bacteria.',
+        },
+        {
+          explanation:
+            'Step 2 for eukaryotes: ask "is there a cell wall?" No wall means animal. Cellulose wall plus photosynthesis means plant. Chitin wall means fungi. Single-celled with a nucleus often means protist.',
+        },
+        {
+          explanation:
+            'A robin in a garden: many cells, no cell wall, eats worms. So it is in the animal kingdom.',
+        },
+        {
+          explanation:
+            'A holly bush: many cells, cellulose cell wall, photosynthesises. So it is in the plant kingdom.',
+        },
+        {
+          explanation:
+            'Bread mould: cell wall of chitin, absorbs nutrients from the bread. So it is in the fungi kingdom.',
+        },
+        {
+          explanation:
+            'A Paramecium from a school pond: a single cell with a nucleus, swims using tiny hairs. So it is in the protist kingdom.',
+        },
+        {
+          explanation:
+            'E. coli in the gut: a single cell with no nucleus. So it is in the prokaryote (bacteria) kingdom.',
+        },
+        {
+          explanation:
+            'A spider on a kitchen wall: many cells, no cell wall, eats flies. So it is in the animal kingdom too.',
+        },
+      ],
+    },
+    {
+      id: 'cls-worked-2',
+      title: 'Why baker\'s yeast belongs to the fungi kingdom (with a missing step)',
+      steps: [
+        {
+          explanation:
+            'A pupil sees a packet of baker\'s yeast in the kitchen and thinks it is a kind of bacteria. They check the three features.',
+        },
+        {
+          explanation:
+            'Feature 1: cell type. Yeast cells have a clear nucleus. So they are eukaryote, not prokaryote. That rules out bacteria.',
+        },
+        {
+          explanation:
+            'Feature 2: cell wall. Yeast cells have a cell wall, so they are not animals.',
+        },
+        // Missing step (filled in by the worked example)
+        {
+          explanation:
+            'Feature 3: what is the cell wall made of? Yeast cell walls are made of chitin (with some other sugars), not cellulose. Yeast does not photosynthesise either.',
+        },
+        {
+          explanation:
+            'So baker\'s yeast is a single-celled fungus, not a bacterium. It is in the fungi kingdom, alongside the button mushroom and bread mould.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'cls-q1',
+      type: 'multiple-choice',
+      stem: 'Which kingdom does a robin belong to?',
+      tier: 'core',
+      options: ['Plants', 'Animals', 'Fungi', 'Protists'],
+      correctIndex: 1,
+      xpValue: 10,
+    },
+    {
+      id: 'cls-q2',
+      type: 'multiple-choice',
+      stem: 'Which kingdom does an oak tree belong to?',
+      tier: 'core',
+      options: ['Plants', 'Animals', 'Fungi', 'Prokaryotes'],
+      correctIndex: 0,
+      xpValue: 10,
+    },
+    {
+      id: 'cls-q3',
+      type: 'multiple-choice',
+      stem: 'Which kingdom does a button mushroom belong to?',
+      tier: 'core',
+      options: ['Plants', 'Animals', 'Fungi', 'Protists'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'cls-mis-mushroom-is-plant',
+    },
+    {
+      id: 'cls-q4',
+      type: 'multiple-choice',
+      stem: 'Which kingdom does Lactobacillus, the bacterium that turns milk into yoghurt, belong to?',
+      tier: 'core',
+      options: ['Plants', 'Fungi', 'Protists', 'Prokaryotes'],
+      correctIndex: 3,
+      xpValue: 10,
+    },
+    {
+      id: 'cls-q5',
+      type: 'multiple-choice',
+      stem: 'Which kingdom does an Amoeba seen in a pond sample belong to?',
+      tier: 'core',
+      options: ['Plants', 'Animals', 'Protists', 'Prokaryotes'],
+      correctIndex: 2,
+      xpValue: 10,
+    },
+    {
+      id: 'cls-q6',
+      type: 'multiple-choice',
+      stem: 'Which feature is true of every cell in the animal kingdom?',
+      tier: 'core',
+      options: [
+        'They have no cell wall.',
+        'They have a cell wall made of cellulose.',
+        'They have no nucleus.',
+        'They make their own food by photosynthesis.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'cls-mis-animals-have-cell-wall',
+    },
+    {
+      id: 'cls-q7',
+      type: 'multiple-choice',
+      stem: 'What is the cell wall of a fungus made of?',
+      tier: 'core',
+      options: ['Cellulose', 'Chitin', 'Glucose', 'Chlorophyll'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'cls-mis-fungi-cellulose-wall',
+    },
+    {
+      id: 'cls-q8',
+      type: 'numeric-entry',
+      stem: 'How many kingdoms are there in the classic five-kingdom system used at KS3?',
+      tier: 'core',
+      correctAnswer: 5,
+      xpValue: 10,
+      hint: 'The kingdoms are animals, plants, fungi, protists, and prokaryotes.',
+    },
+    {
+      id: 'cls-q9',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "fungi are in the plant kingdom because they grow out of the ground." Is this method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. Anything that grows from the ground and does not move is a plant.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Fungi do not photosynthesise and their cell wall is chitin, not cellulose. So they have their own kingdom, separate from plants.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'cls-mis-mushroom-is-plant',
+    },
+    {
+      id: 'cls-q10',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "all single-celled organisms are bacteria." Is this method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. If a cell is on its own, it must be a bacterium.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Some single-celled organisms (like Amoeba) have a nucleus, so they are protists. Bacteria are the single-celled organisms that have no nucleus.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'cls-mis-single-cell-equals-bacteria',
+    },
+    {
+      id: 'cls-q11',
+      type: 'numeric-entry',
+      stem: 'A pupil lists six microorganisms seen on slides: Amoeba, Paramecium, E. coli, Lactobacillus, baker\'s yeast, and bread mould. How many of them belong to the prokaryote (bacteria) kingdom?',
+      tier: 'confident',
+      correctAnswer: 2,
+      xpValue: 15,
+      hint: 'Prokaryotes are single-celled with no nucleus. The famous gut bacterium and the yoghurt bacterium both qualify.',
+    },
+    {
+      id: 'cls-q12',
+      type: 'multiple-choice',
+      stem: 'Which kingdom contains organisms with no nucleus inside their cells?',
+      tier: 'challenge',
+      options: ['Animals', 'Plants', 'Fungi', 'Prokaryotes'],
+      correctIndex: 3,
+      xpValue: 25,
+      misconceptionId: 'cls-mis-bacteria-have-nucleus',
+    },
+    {
+      id: 'cls-q13',
+      type: 'data-extraction',
+      stem: 'A pupil records four cell features for an unknown organism. Which kingdom does it belong to? Cell type: eukaryote. Cell wall: yes, made of cellulose. Photosynthesises: yes. Body: many cells.',
+      tier: 'confident',
+      dataSource:
+        'Unknown organism table. Cell type: eukaryote. Cell wall: yes, made of cellulose. Photosynthesises: yes. Body: many cells.',
+      correctAnswer: 'plants',
+      xpValue: 15,
+      hint: 'Cellulose cell wall plus photosynthesis points to one kingdom only.',
+    },
+    {
+      id: 'cls-q14',
+      type: 'data-extraction',
+      stem: 'A second unknown organism has these features. Which kingdom is it? Cell type: eukaryote. Cell wall: yes, made of chitin. Photosynthesises: no. Feeds by absorbing decaying matter.',
+      tier: 'challenge',
+      dataSource:
+        'Unknown organism table. Cell type: eukaryote. Cell wall: yes, made of chitin. Photosynthesises: no. Feeding mode: absorbs decaying matter.',
+      correctAnswer: 'fungi',
+      xpValue: 25,
+    },
+    {
+      id: 'cls-q15',
+      type: 'drag-order',
+      stem: 'Place these classification questions in the order you should ask them when sorting an organism.',
+      tier: 'confident',
+      items: [
+        'Does the cell have a wall, and if so what is it made of?',
+        'Does the organism have a nucleus inside its cells?',
+        'Does the organism photosynthesise or take its food from somewhere else?',
+      ],
+      correctOrder: [1, 0, 2],
+      xpValue: 15,
+    },
+    {
+      id: 'cls-q16',
+      type: 'drag-drop-builder',
+      stem: 'Build a list of UK organisms that all belong to the animal kingdom. Drag in only the animals from the pool. Leave the rest behind.',
+      tier: 'confident',
+      parts: [
+        'Red fox',
+        'Common frog',
+        'Robin',
+        'Hedgehog',
+        'Oak tree',
+        'Button mushroom',
+        'Lactobacillus',
+        'Amoeba',
+      ],
+      correctArrangement: ['Red fox', 'Common frog', 'Robin', 'Hedgehog'],
+      xpValue: 20,
+    },
+    {
+      id: 'cls-q17',
+      type: 'numeric-entry',
+      stem: 'A pupil sorts these eight UK organisms into kingdoms: oak, dog, button mushroom, robin, daisy, Paramecium, Lactobacillus, and bread mould. How many of them belong to the plant kingdom?',
+      tier: 'confident',
+      correctAnswer: 2,
+      xpValue: 15,
+      hint: 'Look for organisms that photosynthesise and have a cellulose cell wall.',
+    },
+    {
+      id: 'cls-q18',
+      type: 'numeric-entry',
+      stem: 'In the same list (oak, dog, button mushroom, robin, daisy, Paramecium, Lactobacillus, bread mould), how many of them belong to the fungi kingdom?',
+      tier: 'confident',
+      correctAnswer: 2,
+      xpValue: 15,
+      hint: 'Fungi have a chitin cell wall and feed by absorbing nutrients.',
+    },
+    {
+      id: 'cls-q19',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of how a pupil decides whether baker\'s yeast is a fungus or a bacterium.',
+      tier: 'challenge',
+      steps: [
+        'Look up whether yeast cells have a nucleus. They do, so the cell is a eukaryote.',
+        'Eukaryotic cells are not bacteria, so yeast cannot be in the prokaryote kingdom.',
+        null,
+        'So baker\'s yeast is in the fungi kingdom, alongside the button mushroom.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Check the cell wall. Yeast cell walls are made of chitin, not cellulose, and yeast does not photosynthesise. That rules out plants and fits the fungi kingdom.',
+      xpValue: 20,
+    },
+    {
+      id: 'cls-q20',
+      type: 'free-text',
+      stem: 'Explain in one or two sentences why a button mushroom is in the fungi kingdom and not in the plant kingdom.',
+      tier: 'challenge',
+      sampleAnswer:
+        'A button mushroom does not photosynthesise. It feeds by absorbing nutrients from the soil or compost. Its cell wall is made of chitin, not cellulose, so it does not match the plant kingdom features.',
+      keywords: ['photosynthesise', 'cellulose', 'chitin', 'fungi', 'absorb'],
+      xpValue: 25,
+      misconceptionId: 'cls-mis-mushroom-is-plant',
+    },
+    {
+      id: 'cls-q21',
+      type: 'multiple-choice',
+      stem: 'A scientist finds a microscopic single-celled organism. Under the microscope she sees a clear nucleus and tiny hairs that the cell uses to swim. Which kingdom is the most likely match?',
+      tier: 'challenge',
+      options: [
+        'Prokaryote, because it is single-celled.',
+        'Protist, because it is single-celled with a nucleus.',
+        'Fungi, because it has tiny hairs.',
+        'Plant, because it can move.',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'cls-mis-single-cell-equals-bacteria',
+    },
+    {
+      id: 'cls-q22',
+      type: 'multiple-choice',
+      stem: 'Why are bacteria placed in their own kingdom and not lumped in with protists?',
+      tier: 'challenge',
+      options: [
+        'Bacteria are smaller, but otherwise the same.',
+        'Bacteria are decomposers and protists are not.',
+        'Bacterial cells have no nucleus (prokaryote), while protist cells do (eukaryote).',
+        'Bacteria have a cell wall and protists never do.',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'cls-mis-bacteria-have-nucleus',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Biology Foundation tier (8461/2F) Report on the Examination, June 2017, Question 2 (kingdoms): "Pupils frequently placed mushrooms and toadstools into the plant kingdom because they grow rooted to the ground." https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2017/june/AQA-84612F-WRE-2017.PDF
+    {
+      id: 'cls-mis-mushroom-is-plant',
+      description:
+        'Fungi (mushrooms, moulds) belong to the plant kingdom because they grow out of the ground.',
+      triggerAnswer: 'mushroom-is-plant',
+      correction:
+        'Actually, fungi do not photosynthesise and their cell wall is made of chitin, not cellulose. They have their own kingdom, separate from plants.',
+      reExplanation:
+        'Plants build glucose from sunlight, CO₂, and water using chloroplasts. A button mushroom has no chloroplasts and never makes its own food. It absorbs nutrients from compost or wood instead. The "rooted in the ground" cue is misleading.',
+    },
+    // Source: CGP KS3 Science Complete Study and Practice (Higher), 2014 edition, p.184 Common mistake: students assume animal cells must have a cell wall because they hear "wall" in everyday language; the cell-wall-vs-cell-membrane mix-up echoes the cells-zone misconception. https://www.cgpbooks.co.uk/secondary-books/ks3/science/sht43-ks3-science-complete-study-practice
+    {
+      id: 'cls-mis-animals-have-cell-wall',
+      description:
+        'Animal cells have a cell wall.',
+      triggerAnswer: 'animals-have-wall',
+      correction:
+        'In fact, animal cells have a cell membrane but no cell wall. Cell walls belong to plants (cellulose), fungi (chitin), and most prokaryotes.',
+      reExplanation:
+        'No-wall vs wall is the key sort line. A robin\'s cell has a soft membrane and changes shape easily. An oak leaf cell sits stiff inside a cellulose wall, which is why a tree stands up against gravity. The animal kingdom is the only multicellular kingdom with no cell wall.',
+    },
+    // Source: BBC Bitesize KS3 Biology, "Variation, classification and inheritance" topic page, Common Misconception block: "Some learners say fungi have a cellulose cell wall like plants; the wall is actually made of chitin." https://www.bbc.co.uk/bitesize/topics/zwbtsbk
+    {
+      id: 'cls-mis-fungi-cellulose-wall',
+      description:
+        'Fungi have a cellulose cell wall, just like plants.',
+      triggerAnswer: 'fungi-cellulose',
+      correction:
+        'Actually, fungal cell walls are made of chitin, not cellulose. Cellulose walls are unique to plants in the five-kingdom system.',
+      reExplanation:
+        'Different walls, different kingdoms. Cellulose: plants (oak, daisy, holly). Chitin: fungi (mushroom, mould, yeast). Bacteria use a third kind of wall (peptidoglycan, but you only need "cell wall, not cellulose" at KS3). So "cell wall present" is not enough; the material matters.',
+    },
+    // Source: Edexcel GCSE Biology (1BI0) Topic 4 Foundation tier examiner report 2019, comments on a classification question: "A common error grouped Amoeba with bacteria simply because it is single-celled, missing the eukaryote nucleus." https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html
+    {
+      id: 'cls-mis-single-cell-equals-bacteria',
+      description:
+        'Every single-celled organism is a bacterium.',
+      triggerAnswer: 'single-cell-bacteria',
+      correction:
+        'In fact, an Amoeba is single-celled but it has a nucleus, so it is a protist, not a bacterium. Bacteria are the single-celled organisms that have no nucleus.',
+      reExplanation:
+        'Two questions, not one. Question A: is the cell on its own, or in a body? Question B: does the cell have a nucleus? Bacteria are "alone, no nucleus". Protists are "often alone, but with a nucleus". Both can be tiny, but only one is a bacterium.',
+    },
+    // Source: AQA GCSE Biology specification 8461, section 4.1.1.1 Eukaryotes and prokaryotes: bacteria are explicitly defined as cells without a nucleus, with genetic material in a single loop. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification
+    {
+      id: 'cls-mis-bacteria-have-nucleus',
+      description:
+        'Bacteria have a nucleus, like other living cells.',
+      triggerAnswer: 'bacteria-nucleus',
+      correction:
+        'Actually, bacteria have no nucleus. Their genetic material sits in a single loop in the cytoplasm. That is why they are called prokaryotes ("before nucleus").',
+      reExplanation:
+        'Two cell plans run across the kingdoms. Eukaryote cells (animals, plants, fungi, protists) keep their genetic material inside a nucleus. Prokaryote cells (bacteria) do not. The presence or absence of a nucleus is the headline split in the five-kingdom system.',
+    },
+    // Source: BBC Bitesize KS3 Biology, "Cells" topic page Common Misconception block: "Some learners assume yeast is a bacterium, missing that yeast cells have a clear nucleus and chitin cell wall." https://www.bbc.co.uk/bitesize/topics/zpxnyrd
+    {
+      id: 'cls-mis-yeast-is-bacteria',
+      description:
+        'Baker\'s yeast is a kind of bacteria.',
+      triggerAnswer: 'yeast-bacteria',
+      correction:
+        'In fact, yeast is a single-celled fungus. It has a nucleus, so it is a eukaryote, not a prokaryote. The fungus cell wall is made of chitin.',
+      reExplanation:
+        'Yeast is single-celled, which is why pupils often guess "bacteria". But under a microscope its nucleus is clear, and its cell wall behaves like a fungus, not a bacterium. Yeast sits alongside the button mushroom in the fungi kingdom.',
+    },
+    // Source: OCR GCSE Biology A (J247) Foundation tier sample assessment commentary 2018: "Candidates frequently merged kingdoms with categories of organisms, e.g. classifying 'insects' as a kingdom." https://www.ocr.org.uk/qualifications/gcse/gateway-science-suite-biology-a-j247-from-2016/
+    {
+      id: 'cls-mis-insects-as-kingdom',
+      description:
+        'Insects are their own kingdom.',
+      triggerAnswer: 'insects-kingdom',
+      correction:
+        'Actually, insects are not a kingdom. They are a smaller group inside the animal kingdom. The five kingdoms at KS3 are animals, plants, fungi, protists, and prokaryotes.',
+      reExplanation:
+        'Kingdoms sit at the very top of classification. Inside the animal kingdom there are smaller groups: vertebrates, invertebrates, mammals, birds, insects, and so on. A bee is an insect, an invertebrate, and an animal, but the kingdom label is "animals".',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
 export const variationClassificationZoneNodes: SkillNode[] = [
   continuousDiscontinuousVariation,
+  fiveKingdomsClassification,
 ]
 
 export const variationClassificationZone: Zone = {
   id: 'biology-variation-classification',
   name: 'Variation and Classification',
   realm: 'vitalia',
-  nodeIds: [continuousDiscontinuousVariation.id],
+  nodeIds: [
+    continuousDiscontinuousVariation.id,
+    fiveKingdomsClassification.id,
+  ],
 }
