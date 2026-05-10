@@ -510,7 +510,7 @@ export const photosynthesisOverview: SkillNode = {
     {
       id: 'po-q15',
       type: 'drag-drop-builder',
-      stem: 'Build the word equation for photosynthesis. Drag in only the four substances that appear, and place them in the correct order: reactants on the left, products on the right.',
+      stem: 'Assemble the word equation for photosynthesis. Drag in only the four substances that appear, and place them in the correct order: reactants on the left, products on the right.',
       tier: 'confident',
       parts: [
         'Carbon dioxide',

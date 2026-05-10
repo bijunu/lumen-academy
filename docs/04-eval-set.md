@@ -886,7 +886,7 @@ Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overv
 - Q-REPRO-6: At least one labelled-image question on the human-overview node places testes, sperm tube, and penis onto hotspots on the male system diagram, with at least one female-system label as a distractor.
 - Q-REPRO-7: At least one drag-order question on the human-overview node sequences fertilisation, implantation, embryo, foetus, birth in that order.
 - Q-REPRO-8: At least one drag-drop-builder on the human-overview node restricts the build to the in-order journey of a sperm cell from testes through to oviduct, rejecting non-reproductive organs (stomach, bladder, lungs).
-- Q-REPRO-9: At least one Confident-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
+- Q-REPRO-9: At least one Challenge-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
 - Q-REPRO-10: At least one Challenge-tier MCQ on the human-overview node uses an NHS-sourced public-health framing (smoking and pregnancy) and asks the learner to map the warning onto the placenta mechanism.
 
 ### Tutor probes

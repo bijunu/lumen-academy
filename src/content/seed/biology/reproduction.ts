@@ -209,15 +209,15 @@ export const floweringPlantReproduction: SkillNode = {
           },
           {
             id: 'fpr-hs-anther',
-            x: 60,
-            y: 38,
+            x: 57,
+            y: 37,
             label: 'Anther',
             description:
               'Male part that makes pollen.',
           },
           {
             id: 'fpr-hs-filament',
-            x: 56,
+            x: 50,
             y: 45,
             label: 'Filament',
             description:
@@ -719,7 +719,7 @@ export const floweringPlantReproduction: SkillNode = {
       reExplanation:
         'Use a memory trick: anther starts with A like "ammo", so it is loaded with pollen. Stigma starts with S like "sticky", so it catches pollen. The anther is held up by the filament; the stigma sits on top of the style.',
     },
-    // Source: Edexcel GCSE Biology (1BI0) Topic 7 "Animal coordination, control and homeostasis / plant reproduction" examiner report 2019, comments on plant reproduction question: students often labelled wind-pollinated grass as "insect-pollinated" because they expected all flowers to need bees. https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html
+    // Source: Edexcel GCSE Biology (1BI0) Topic 7 sub-block SB7a "Sexual reproduction in plants" examiner report 2019, comments on plant reproduction question: students often labelled wind-pollinated grass as "insect-pollinated" because they expected all flowers to need bees. https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html
     {
       id: 'fpr-mis-bright-equals-wind',
       description:
