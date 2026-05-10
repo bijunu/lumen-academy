@@ -61,7 +61,7 @@ const continuousVsDiscontinuousSvg = `
 
 const shoeSizeHistogramSvg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
-  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Shoe size in a Sevenoaks Y7 class (n = 30)</text>
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Shoe size in a Sevenoaks Y7 class (n = 24)</text>
   <line x1="60" y1="320" x2="560" y2="320" stroke="#1F2937" stroke-width="2" />
   <line x1="60" y1="60" x2="60" y2="320" stroke="#1F2937" stroke-width="2" />
   <text x="310" y="356" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">UK shoe size</text>
@@ -445,10 +445,10 @@ export const continuousDiscontinuousVariation: SkillNode = {
     {
       id: 'vcd-q10',
       type: 'data-extraction',
-      stem: 'Look at the shoe-size histogram for a Sevenoaks Y7 class of 30 pupils. Which UK shoe size is the most common?',
+      stem: 'Look at the shoe-size histogram for a Sevenoaks Y7 class of 24 pupils. Which UK shoe size is the most common?',
       tier: 'confident',
       dataSource:
-        'Histogram of shoe size in a Sevenoaks Y7 class (n = 30). Counts: size 3 = 1, size 4 = 2, size 5 = 3, size 6 = 4, size 7 = 5, size 8 = 4, size 9 = 3, size 10 = 2.',
+        'Histogram of shoe size in a Sevenoaks Y7 class (n = 24). Counts: size 3 = 1, size 4 = 2, size 5 = 3, size 6 = 4, size 7 = 5, size 8 = 4, size 9 = 3, size 10 = 2.',
       correctAnswer: '7',
       xpValue: 15,
       hint: 'Find the bar with the largest count.',
@@ -475,7 +475,7 @@ export const continuousDiscontinuousVariation: SkillNode = {
       ],
       correctIndex: 1,
       xpValue: 15,
-      misconceptionId: 'vcd-mis-bar-vs-histogram',
+      misconceptionId: 'vcd-mis-touching-bars-on-categories',
     },
     {
       id: 'vcd-q13',
@@ -498,7 +498,7 @@ export const continuousDiscontinuousVariation: SkillNode = {
     {
       id: 'vcd-q14',
       type: 'drag-drop-builder',
-      stem: 'Build a sorted list of continuous traits only. Drag in just the traits that take any value on a measuring scale, in any order. Leave discontinuous traits in the pool.',
+      stem: 'Build a sorted list of continuous traits only. Drag in the four continuous traits in the order they appear in the pool, top to bottom. Leave discontinuous traits in the pool.',
       tier: 'confident',
       parts: [
         'Height in cm',
