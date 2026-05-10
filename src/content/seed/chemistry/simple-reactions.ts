@@ -1168,3 +1168,584 @@ export const acidMetal: SkillNode = {
     spacedReviewDays: [1, 3, 7, 14, 30],
   },
 }
+
+export const rusting: SkillNode = {
+  id: 'chemistry-simple-reactions-rusting',
+  title: 'Rusting: Iron, Oxygen, Water',
+  description:
+    'Rusting is a slow chemical reaction that turns iron into a flaky orange-brown solid called rust (iron oxide). The word equation is: iron + oxygen + water → iron oxide. BOTH oxygen AND water must be there for rust to form. The classic UK school three-test-tube experiment proves this: a tube with air and water rusts; a tube with dry air alone does not rust; a tube with boiled water under oil (no oxygen) does not rust either. Prevention: paint, oil, galvanising. UK contexts include garden gates, the Forth Bridge in Scotland, and bicycle chains.',
+  subject: 'chemistry',
+  realm: 'elementia',
+  zoneId: 'chemistry-simple-reactions',
+  zoneName: 'Simple Reactions',
+  tier: 'confident',
+  prerequisites: ['chemistry-simple-reactions-combustion'],
+  curriculum: {
+    ks3Objective:
+      'Combustion, thermal decomposition, oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.',
+    awardingBodies: {
+      aqa: '4.10.1.1 Corrosion and its prevention; rusting of iron requires oxygen and water (GCSE Chemistry 8462)',
+      edexcel:
+        'Topic 4 Extracting metals; CC10 Reversible reactions; Topic 8 Reactivity of metals (rusting; barrier methods, sacrificial protection) (GCSE Chemistry 1CH0)',
+      ocr: 'C5.1d Corrosion; rusting of iron and steel; conditions needed; barrier and sacrificial methods of protection (GCSE Chemistry A J248 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'rust-scene-equation',
+      title: 'The Word Equation: Iron plus Oxygen plus Water',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each label to read the word equation for rusting and see where each ingredient comes from.',
+      data: {
+        viewBox: '0 0 320 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220"><rect x="0" y="0" width="320" height="220" fill="#FEF3C7"/><rect x="15" y="60" width="50" height="40" rx="3" fill="#E5E7EB" stroke="#475569" stroke-width="1"/><text x="40" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#1F2937">iron</text><text x="40" y="92" text-anchor="middle" font-size="8" fill="#1F2937">Fe (metal)</text><text x="73" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">+</text><rect x="83" y="60" width="50" height="40" rx="3" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1"/><text x="108" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">oxygen</text><text x="108" y="92" text-anchor="middle" font-size="8" fill="#1E3A8A">O₂ (air)</text><text x="141" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">+</text><rect x="151" y="60" width="50" height="40" rx="3" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="1"/><text x="176" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">water</text><text x="176" y="92" text-anchor="middle" font-size="8" fill="#1E3A8A">H₂O</text><text x="210" y="84" text-anchor="middle" font-size="16" font-weight="700" fill="#7C2D12">→</text><rect x="220" y="60" width="80" height="40" rx="3" fill="#FED7AA" stroke="#9A3412" stroke-width="1"/><text x="260" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#9A3412">iron oxide</text><text x="260" y="92" text-anchor="middle" font-size="8" fill="#9A3412">(RUST, flaky orange)</text><text x="160" y="135" text-anchor="middle" font-size="11" font-weight="600" fill="#7C2D12">iron + oxygen + water → iron oxide</text><text x="160" y="158" text-anchor="middle" font-size="9" fill="#7C2D12">All three are needed.</text><text x="160" y="172" text-anchor="middle" font-size="9" fill="#7C2D12">Take any one away and rusting stops.</text><g><circle cx="80" cy="195" r="6" fill="#FB923C"/><text x="80" y="197" text-anchor="middle" font-size="6" fill="#7C2D12" font-weight="600">rust</text><text x="160" y="197" text-anchor="middle" font-size="9" fill="#7C2D12">A rusty UK garden gate</text></g></svg>',
+        hotspots: [
+          {
+            id: 'rust-h-iron',
+            x: 12,
+            y: 36,
+            label: 'Iron (Fe)',
+            description:
+              'Iron is the metal that rusts. Steel is mostly iron with a small amount of carbon, so steel rusts too. Garden gates, car bodies and bicycle frames in the UK are mostly steel.',
+          },
+          {
+            id: 'rust-h-oxygen',
+            x: 33,
+            y: 36,
+            label: 'Oxygen (from the air)',
+            description:
+              'About a fifth of the air is oxygen. Rusting is a slow form of oxidation: iron atoms join with oxygen atoms to form iron oxide.',
+          },
+          {
+            id: 'rust-h-water',
+            x: 55,
+            y: 36,
+            label: 'Water (rain, damp air, puddles)',
+            description:
+              'Liquid water or damp air provides the third ingredient. UK weather is often wet, so iron objects left outdoors rust faster than the same objects in a dry shed.',
+          },
+          {
+            id: 'rust-h-rust',
+            x: 81,
+            y: 36,
+            label: 'Iron oxide (rust)',
+            description:
+              'Rust is iron oxide: a flaky orange-brown solid that crumbles off the metal. As rust falls away, fresh iron underneath is exposed and the rusting goes deeper. Over years, an unprotected iron gate can rust right through.',
+          },
+          {
+            id: 'rust-h-rule',
+            x: 50,
+            y: 71,
+            label: 'Both oxygen AND water',
+            description:
+              'Rusting is one of the few Year 7 reactions that needs three reactants. Removing any one of iron, oxygen or water stops rusting. This is the pedigree of the school three-test-tube experiment.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'rust-scene-three-tubes',
+      title: 'The Three-Test-Tube Experiment',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each tube to read what is inside, what happens, and why.',
+      data: {
+        viewBox: '0 0 320 240',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240"><rect x="0" y="0" width="320" height="240" fill="#FEF3C7"/><g><rect x="15" y="40" width="60" height="160" rx="2" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="1.2"/><rect x="33" y="120" width="6" height="20" fill="#9A3412"/><rect x="45" y="120" width="6" height="20" fill="#9A3412"/><rect x="55" y="120" width="6" height="20" fill="#9A3412"/><text x="45" y="60" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">TUBE A</text><text x="45" y="74" text-anchor="middle" font-size="8" fill="#1E3A8A">tap water + air</text><text x="45" y="160" text-anchor="middle" font-size="8" fill="#9A3412">RUSTS</text><text x="45" y="174" text-anchor="middle" font-size="7" fill="#9A3412">orange flakes</text><text x="45" y="188" text-anchor="middle" font-size="7" fill="#9A3412">on the nails</text></g><g><rect x="120" y="40" width="60" height="160" rx="2" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><rect x="138" y="120" width="6" height="20" fill="#475569"/><rect x="150" y="120" width="6" height="20" fill="#475569"/><rect x="160" y="120" width="6" height="20" fill="#475569"/><text x="150" y="60" text-anchor="middle" font-size="9" font-weight="600" fill="#475569">TUBE B</text><text x="150" y="74" text-anchor="middle" font-size="8" fill="#475569">DRY air only</text><text x="150" y="86" text-anchor="middle" font-size="7" fill="#475569">(silica gel)</text><text x="150" y="160" text-anchor="middle" font-size="8" fill="#1F2937">NO RUST</text><text x="150" y="174" text-anchor="middle" font-size="7" fill="#1F2937">no water</text></g><g><rect x="225" y="40" width="60" height="160" rx="2" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="1.2"/><rect x="225" y="40" width="60" height="20" fill="#FBBF24" stroke="#7C2D12" stroke-width="0.8"/><rect x="243" y="120" width="6" height="20" fill="#475569"/><rect x="255" y="120" width="6" height="20" fill="#475569"/><rect x="265" y="120" width="6" height="20" fill="#475569"/><text x="255" y="80" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">TUBE C</text><text x="255" y="94" text-anchor="middle" font-size="8" fill="#1E3A8A">boiled water</text><text x="255" y="106" text-anchor="middle" font-size="7" fill="#7C2D12">+ oil layer (no air)</text><text x="255" y="160" text-anchor="middle" font-size="8" fill="#1F2937">NO RUST</text><text x="255" y="174" text-anchor="middle" font-size="7" fill="#1F2937">no oxygen</text></g><text x="160" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">Only the tube with BOTH water AND oxygen rusts.</text></svg>',
+        hotspots: [
+          {
+            id: 'rust-h-a',
+            x: 14,
+            y: 50,
+            label: 'Tube A: tap water and fresh air → RUSTS',
+            description:
+              'Iron nails sit in tap water with the top of the tube open to the air. Water and oxygen are both present. After a few days the nails go orange-brown and rust flakes drop into the water.',
+          },
+          {
+            id: 'rust-h-b',
+            x: 47,
+            y: 50,
+            label: 'Tube B: dry air only → NO RUST',
+            description:
+              'Iron nails sit in dry air with a sachet of silica gel (a drying agent) inside. The tube is sealed. There is plenty of oxygen but no water. The nails stay shiny.',
+          },
+          {
+            id: 'rust-h-c',
+            x: 80,
+            y: 50,
+            label: 'Tube C: boiled water under oil → NO RUST',
+            description:
+              'Iron nails sit in water that has been boiled (to drive out dissolved oxygen) with a layer of cooking oil sealed on top (to keep new air out). There is plenty of water but no oxygen. The nails stay shiny.',
+          },
+          {
+            id: 'rust-h-conclusion',
+            x: 50,
+            y: 92,
+            label: 'Conclusion: BOTH are needed',
+            description:
+              'Tube A rusts but tubes B and C do not. The only difference is that A has both water and oxygen, while B has no water and C has no oxygen. So rusting needs both.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'rust-scene-prevention',
+      title: 'Three Ways to Stop Rust on UK Iron',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each panel to see a UK example of a way to stop iron from rusting.',
+      data: {
+        viewBox: '0 0 320 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220"><rect x="0" y="0" width="320" height="220" fill="#FEF3C7"/><g><rect x="15" y="20" width="90" height="180" rx="4" fill="#FFFFFF" stroke="#7C2D12" stroke-width="1"/><text x="60" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">PAINT</text><text x="60" y="56" text-anchor="middle" font-size="8" fill="#7C2D12">Forth Bridge,</text><text x="60" y="68" text-anchor="middle" font-size="8" fill="#7C2D12">Scotland</text><rect x="30" y="90" width="60" height="20" fill="#94A3B8"/><rect x="30" y="85" width="60" height="6" fill="#DC2626"/><text x="60" y="135" text-anchor="middle" font-size="8" fill="#7C2D12">a paint layer</text><text x="60" y="148" text-anchor="middle" font-size="8" fill="#7C2D12">keeps water + oxygen</text><text x="60" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">off the iron</text><text x="60" y="184" text-anchor="middle" font-size="8" font-style="italic" fill="#7C2D12">re-painted continuously</text></g><g><rect x="115" y="20" width="90" height="180" rx="4" fill="#FFFFFF" stroke="#1E3A8A" stroke-width="1"/><text x="160" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">OIL / GREASE</text><text x="160" y="56" text-anchor="middle" font-size="8" fill="#1E3A8A">bicycle chain</text><rect x="130" y="90" width="60" height="20" fill="#94A3B8"/><rect x="130" y="85" width="60" height="6" fill="#FACC15"/><text x="160" y="135" text-anchor="middle" font-size="8" fill="#1E3A8A">a thin oil film keeps</text><text x="160" y="148" text-anchor="middle" font-size="8" fill="#1E3A8A">water off the steel</text><text x="160" y="160" text-anchor="middle" font-size="8" fill="#1E3A8A">links</text></g><g><rect x="215" y="20" width="90" height="180" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="1"/><text x="260" y="40" text-anchor="middle" font-size="10" font-weight="600" fill="#475569">GALVANISING</text><text x="260" y="56" text-anchor="middle" font-size="8" fill="#475569">UK farm gate</text><rect x="230" y="90" width="60" height="20" fill="#94A3B8"/><rect x="230" y="85" width="60" height="6" fill="#94A3B8"/><text x="260" y="135" text-anchor="middle" font-size="8" fill="#475569">a thin zinc layer</text><text x="260" y="148" text-anchor="middle" font-size="8" fill="#475569">covers the iron</text><text x="260" y="160" text-anchor="middle" font-size="8" fill="#475569">underneath</text></g></svg>',
+        hotspots: [
+          {
+            id: 'rust-h-paint',
+            x: 19,
+            y: 50,
+            label: 'Paint: the Forth Bridge',
+            description:
+              'The Forth Bridge in Scotland is a famous iron rail bridge. To stop the iron from rusting, paint teams work along the bridge applying fresh paint year after year. The paint barrier keeps water and oxygen off the iron underneath.',
+          },
+          {
+            id: 'rust-h-oil',
+            x: 50,
+            y: 50,
+            label: 'Oil or grease: bicycle chain',
+            description:
+              'A UK bicycle chain is steel and rusts easily after a wet ride. A thin film of chain oil keeps water off the steel links. Without it, the chain seizes up after a winter.',
+          },
+          {
+            id: 'rust-h-galv',
+            x: 81,
+            y: 50,
+            label: 'Galvanising: farm gate',
+            description:
+              'A galvanised farm gate has a thin coat of zinc bonded onto the iron. The zinc layer keeps water and oxygen off the iron, and slowly corrodes itself in place of the iron underneath. Used widely on UK farm gates and crash barriers.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'rust-worked-1',
+      title: 'Writing the word equation for rusting',
+      steps: [
+        {
+          explanation:
+            'Question: An iron garden gate in Manchester is left out through a wet winter and goes orange-brown and flaky. Write the word equation for the reaction.',
+        },
+        {
+          explanation:
+            'Step 1: name the metal. Iron is the metal that rusts. Steel rusts too, because steel is mostly iron.',
+        },
+        {
+          explanation:
+            'Step 2: name the other reactants. Rusting needs both oxygen (from the air) and water (rain). Both are reactants.',
+          maths: 'iron + oxygen + water →',
+        },
+        {
+          explanation:
+            'Step 3: name the product. Rust is iron oxide: a flaky orange-brown solid.',
+        },
+        {
+          explanation: 'Step 4: write the full word equation.',
+          maths: 'iron + oxygen + water → iron oxide',
+        },
+        {
+          explanation:
+            'So the answer is: iron + oxygen + water → iron oxide. Note three reactants on the left, not two; rusting is unusual in needing both oxygen AND water.',
+        },
+      ],
+    },
+    {
+      id: 'rust-worked-2',
+      title: 'Working out which test tube rusts',
+      steps: [
+        {
+          explanation:
+            'Question: A teacher sets up three sealed test tubes in a UK school lab. Tube A: iron nails in tap water. Tube B: iron nails with silica gel (dry air, no water). Tube C: iron nails in boiled water with a layer of oil sealing the top (no oxygen). Predict which tube rusts and explain why.',
+        },
+        {
+          explanation:
+            'Step 1: write down what rusting needs. iron + oxygen + water → iron oxide. All three must be there.',
+        },
+        {
+          explanation:
+            'Step 2: check tube A. Has iron nails (yes). Has air on top of the water, so oxygen is there (yes). Has water (yes). All three present, so rust forms.',
+          maths: 'tube A: iron + oxygen + water all present → rusts',
+        },
+        {
+          explanation: '',
+        },
+        {
+          explanation:
+            'Step 4: check tube C. Has iron and water but the boiled water has lost its dissolved oxygen and the oil layer keeps fresh air out. No oxygen. Rusting blocked.',
+        },
+        {
+          explanation:
+            'Step 5: state the answer. Only tube A rusts. The experiment proves rusting needs BOTH oxygen and water; remove either one and rusting stops.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'rust-q1',
+      type: 'multiple-choice',
+      stem: 'What is the word equation for rusting?',
+      tier: 'core',
+      options: [
+        'iron + oxygen → iron oxide',
+        'iron + water → iron hydroxide',
+        'iron + oxygen + water → iron oxide',
+        'iron + carbon dioxide → iron carbonate',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'rust-mis-only-oxygen',
+    },
+    {
+      id: 'rust-q2',
+      type: 'multiple-choice',
+      stem: 'What is rust, in chemistry terms?',
+      tier: 'core',
+      options: [
+        'A new metal',
+        'Iron oxide, a flaky orange-brown solid',
+        'A type of paint',
+        'Pure carbon',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+    },
+    {
+      id: 'rust-q3',
+      type: 'multiple-choice',
+      stem: 'In the classic UK three-test-tube experiment, which tube RUSTS?',
+      tier: 'core',
+      options: [
+        'The tube with dry air only (silica gel)',
+        'The tube with boiled water under oil (no fresh air)',
+        'The tube with iron nails in tap water with air on top',
+        'No tubes rust because rusting is too slow to see',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+    },
+    {
+      id: 'rust-q4',
+      type: 'multiple-choice',
+      stem: 'In the three-test-tube experiment, why does the tube with DRY air NOT rust?',
+      tier: 'core',
+      options: [
+        'There is no iron in it',
+        'There is plenty of oxygen but no water',
+        'There is plenty of water but no oxygen',
+        'It is too cold',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'rust-mis-only-oxygen',
+    },
+    {
+      id: 'rust-q5',
+      type: 'multiple-choice',
+      stem: 'In the three-test-tube experiment, why does the tube with BOILED WATER under a layer of OIL not rust?',
+      tier: 'confident',
+      options: [
+        'There is plenty of water but no oxygen',
+        'The oil reacts with the iron',
+        'Boiled water cannot dissolve iron',
+        'The cap is too tight',
+      ],
+      correctIndex: 0,
+      xpValue: 15,
+      misconceptionId: 'rust-mis-only-water',
+    },
+    {
+      id: 'rust-q7',
+      type: 'multiple-choice',
+      stem: 'Which of these is a way to STOP an iron object from rusting?',
+      tier: 'core',
+      options: [
+        'Leave it outside in the rain',
+        'Paint it, oil it, or galvanise it',
+        'Heat it red-hot',
+        'Wash it in salty water',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+    },
+    {
+      id: 'rust-q8',
+      type: 'multiple-choice',
+      stem: 'The Forth Bridge in Scotland is a famous iron rail bridge. Why is it CONTINUOUSLY repainted?',
+      tier: 'confident',
+      options: [
+        'For decoration only',
+        'Because the paint glows in the dark',
+        'To attract trains',
+        'To stop iron from rusting; the paint layer keeps water and oxygen off the iron',
+      ],
+      correctIndex: 3,
+      xpValue: 15,
+    },
+    {
+      id: 'rust-q9',
+      type: 'multiple-choice',
+      stem: 'A pupil leaves a steel bicycle chain on a wet front lawn for a week. They notice rust on the chain. Which combination of conditions allowed rusting?',
+      tier: 'challenge',
+      options: [
+        'Iron only; oxygen and water do not matter',
+        'Water only; oxygen does not matter',
+        'Steel (mostly iron) plus oxygen from the air plus water from the wet lawn; all three were there',
+        'The lawn turned the steel into iron, and that started rusting',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+    },
+    {
+      id: 'rust-q10',
+      type: 'multiple-choice',
+      stem: 'A school technician in Norwich sets up an extra tube as a check: iron nails in salty seawater. The nails rust FASTER than the same nails in tap water. What can you fairly conclude at Year 7?',
+      tier: 'challenge',
+      options: [
+        'Salt is the only ingredient that matters; oxygen and water are not needed',
+        'Rusting still needs iron, oxygen and water; salt speeds the rusting up',
+        'Salt stops rust forming, so this is impossible',
+        'Salt is now the metal that rusts',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'rust-mis-salt-replaces',
+    },
+    {
+      id: 'rust-q11',
+      type: 'numeric-entry',
+      stem: 'How many ingredients (reactants) does rusting need? Type the whole number.',
+      tier: 'core',
+      correctAnswer: 3,
+      xpValue: 10,
+      hint: 'Iron, oxygen and one more thing.',
+    },
+    {
+      id: 'rust-q12',
+      type: 'numeric-entry',
+      stem: 'In a UK school lab, a 4 g iron nail is left in damp air. After eight weeks, all the nail has gone orange-brown rust, and the dry rust now weighs 5.7 g. What is the increase in mass, in grams (to one decimal place)?',
+      tier: 'confident',
+      correctAnswer: 1.7,
+      unit: 'g',
+      tolerance: 0.05,
+      xpValue: 15,
+      hint: 'Subtract the starting mass of iron from the final mass of rust.',
+      misconceptionId: 'rust-mis-rust-stuck-on',
+    },
+    {
+      id: 'rust-q13',
+      type: 'numeric-entry',
+      stem: 'In the experiment from the previous question, the extra mass came from oxygen atoms (and a small amount from water atoms) joining the iron. How many oxygen atoms are in one oxygen molecule of the gas in air?',
+      tier: 'confident',
+      correctAnswer: 2,
+      xpValue: 15,
+      hint: 'Oxygen as a gas in air comes as O₂ molecules: two atoms per molecule.',
+    },
+    {
+      id: 'rust-q14',
+      type: 'numeric-entry',
+      stem: 'A UK garden gate weighs 12 kg of iron when new. After ten years of weather, the gate has rusted heavily; the rust now weighs 14.5 kg in total (the iron has reacted with oxygen and water and so weighs more). How much oxygen and water in total has joined the iron, in kg (to one decimal place)?',
+      tier: 'challenge',
+      correctAnswer: 2.5,
+      unit: 'kg',
+      tolerance: 0.05,
+      xpValue: 25,
+    },
+    {
+      id: 'rust-q15',
+      type: 'drag-order',
+      stem: 'A pupil writes a wobbly account of rusting. Drag these phrases into the correct order to read as the standard word equation, left to right.',
+      tier: 'core',
+      items: [
+        'iron oxide',
+        'iron',
+        '+ water',
+        '→',
+        '+ oxygen',
+      ],
+      correctOrder: [1, 4, 2, 3, 0],
+      xpValue: 20,
+    },
+    {
+      id: 'rust-q16',
+      type: 'spot-misconception',
+      stem: 'Aisha says: "Rusting only needs iron and oxygen. Water has nothing to do with it." Is Aisha right?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'Aisha is right. Rusting is just iron + oxygen → iron oxide. Water is not part of the reaction.',
+          isMisconception: true,
+        },
+        {
+          text: 'Aisha is wrong. Rusting needs iron, oxygen AND water. The three-test-tube experiment shows it: dry-air iron does not rust even though oxygen is there. Both ingredients are needed.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'rust-mis-only-oxygen',
+    },
+    {
+      id: 'rust-q17',
+      type: 'spot-misconception',
+      stem: 'Ben argues: "Painting an iron gate just hides the rust under a layer of paint. The iron is still rusting, you just cannot see it." Is Ben right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Ben is right. Paint is only decoration; the iron carries on rusting underneath.',
+          isMisconception: true,
+        },
+        {
+          text: 'Ben is wrong. A paint layer keeps water and oxygen OFF the iron, so the rusting reaction has no reactants. As long as the paint is intact, the iron underneath is protected and is not rusting.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'rust-mis-paint-hides',
+    },
+    {
+      id: 'rust-q18',
+      type: 'free-text',
+      stem: 'In 2 to 3 sentences, explain how the UK three-test-tube experiment proves that rusting needs BOTH oxygen and water. Refer to at least two of the tubes.',
+      tier: 'confident',
+      sampleAnswer:
+        'In tube A, iron nails in tap water are exposed to both oxygen and water; they rust. In tube B, iron nails with silica gel have oxygen but no water; they do not rust. In tube C, iron nails in boiled water under oil have water but no oxygen; they also do not rust. Only the tube with both oxygen and water rusts, so both are needed.',
+      keywords: ['oxygen', 'water', 'tube', 'rust'],
+      xpValue: 20,
+    },
+    {
+      id: 'rust-q19',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of the three-test-tube experiment.',
+      tier: 'confident',
+      steps: [
+        'A pupil sets up three tubes A, B, C with iron nails inside',
+        'Tube A holds tap water with the top open to the air',
+        'Tube B holds dry air with silica gel as a drying agent',
+        null,
+        'After two weeks, only tube A shows orange-brown rust on the nails',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'Tube C holds water that has been boiled to drive out dissolved oxygen, with a layer of oil floating on top to keep new air out',
+      xpValue: 20,
+    },
+    {
+      id: 'rust-q20',
+      type: 'labelled-image',
+      stem: 'Drag each label onto the correct tube of the three-test-tube experiment.',
+      tier: 'confident',
+      viewBox: '0 0 320 200',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#F8FAFC"/><rect x="20" y="40" width="60" height="120" rx="2" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="1.2"/><rect x="120" y="40" width="60" height="120" rx="2" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><rect x="220" y="40" width="60" height="120" rx="2" fill="#BFDBFE" stroke="#1E3A8A" stroke-width="1.2"/><rect x="220" y="40" width="60" height="14" fill="#FBBF24" stroke="#7C2D12" stroke-width="0.6"/><text x="50" y="34" text-anchor="middle" font-size="9" font-weight="600" fill="#1F2937">A</text><text x="150" y="34" text-anchor="middle" font-size="9" font-weight="600" fill="#1F2937">B</text><text x="250" y="34" text-anchor="middle" font-size="9" font-weight="600" fill="#1F2937">C</text></svg>',
+      hotspots: [
+        { id: 'rust-q20-h1', x: 16, y: 50, correctLabel: 'tap water + air → rusts' },
+        { id: 'rust-q20-h2', x: 47, y: 50, correctLabel: 'dry air only → no rust' },
+        { id: 'rust-q20-h3', x: 78, y: 50, correctLabel: 'boiled water + oil → no rust' },
+      ],
+      labels: [
+        'tap water + air → rusts',
+        'dry air only → no rust',
+        'boiled water + oil → no rust',
+        'salty water → no rust',
+        'hot air only → rusts',
+      ],
+      xpValue: 20,
+    },
+    {
+      id: 'rust-q21',
+      type: 'multiple-choice',
+      stem: 'A school caretaker in Sheffield wants to stop a steel handrail from rusting through the winter. They have three options: leave it bare, give it a thin coat of oil each month, or paint it once with weatherproof paint and re-paint every two years. Which option is BEST for stopping rust over five UK winters?',
+      tier: 'challenge',
+      options: [
+        'Leave it bare; rust will form a useful protective layer',
+        'Oil only, because oil is thicker than paint',
+        'Paint and re-paint every two years; the paint barrier keeps water and oxygen off the steel for years at a time',
+        'Pour salt water on it weekly to stop water reaching it',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'rust-mis-rust-protects',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q07 on rusting: candidates "wrote that rust forms when iron meets oxygen alone, missing the role of water". Reinforced by CGP KS3 Chemistry Study Book p.51 Common Mistake box on rusting and the three-test-tube experiment.
+    {
+      id: 'rust-mis-only-oxygen',
+      description:
+        'Rusting only needs iron and oxygen; water has nothing to do with it.',
+      triggerAnswer: 'only-oxygen',
+      correction:
+        'In fact rusting needs iron, oxygen AND water. Iron in dry air does not rust; the three-test-tube experiment proves it.',
+      reExplanation:
+        'In the dry-air tube of the school experiment, iron nails sit in oxygen with a drying agent. Even after weeks, the nails stay shiny. Once water is added, rust forms within days. Both oxygen and water must be on the metal surface for rusting to happen. This is why iron in a dry shed lasts much longer than iron left out in UK rain.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q06 on rusting: candidates "wrote that rust forms when iron meets water, ignoring the oxygen". Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on rusting.
+    {
+      id: 'rust-mis-only-water',
+      description:
+        'Rusting only needs iron and water; the role of oxygen is not important.',
+      triggerAnswer: 'only-water',
+      correction:
+        'In fact rusting needs iron, water AND oxygen. Iron under boiled water with no fresh air does not rust; the three-test-tube experiment proves it.',
+      reExplanation:
+        'In the boiled-water-with-oil tube of the school experiment, iron nails sit in water with no oxygen (boiled out, then sealed under oil). The nails stay shiny for weeks. Add air and rust starts. Both water and oxygen must be on the iron surface; one alone is not enough.',
+    },
+    // Source: CGP KS3 Chemistry Study Book p.51 Common Mistake box on corrosion prevention: "Some students think paint just hides rust, missing that paint blocks water and air from reaching the metal". Reinforced by RSC Education article "Misconceptions in chemistry: corrosion" (rsc.org/education, accessed 2026-05-10).
+    {
+      id: 'rust-mis-paint-hides',
+      description:
+        'Painting iron only hides rust visually; the iron underneath carries on rusting just the same.',
+      triggerAnswer: 'paint-hides',
+      correction:
+        'In fact paint blocks water and oxygen from reaching the iron, so the rusting reaction is starved of two of its reactants and stops. While the paint stays intact, the iron underneath is protected.',
+      reExplanation:
+        'Rusting needs iron + oxygen + water. A paint layer is a thin barrier that keeps water and oxygen off the iron surface. With no oxygen and no water reaching the metal, the reaction has no reactants and cannot run. This is why the Forth Bridge is repainted continuously: the moment paint cracks or wears, oxygen and water can reach the iron and rust resumes underneath.',
+    },
+    // Source: AQA GCSE Combined Science examiner report June 2021 (8464/C/1F), Q08 on corrosion prevention: candidates "wrote that a layer of rust protects the iron underneath, confusing iron with aluminium". Reinforced by CGP KS3 Chemistry Study Book p.51 chapter on corrosion.
+    {
+      id: 'rust-mis-rust-protects',
+      description:
+        'A layer of rust protects the iron underneath, the way the metal under aluminium oxide is protected.',
+      triggerAnswer: 'rust-protects',
+      correction:
+        'In fact rust does not protect iron. Rust is flaky and crumbles off, exposing fresh iron underneath, which then rusts in turn. Iron objects rust right through over the years.',
+      reExplanation:
+        'Aluminium oxide is dense and clings to the metal surface, so it stops fresh oxygen and water reaching the metal. Iron oxide (rust) is the opposite: it forms loose flakes that drop away. So an unprotected iron gate keeps rusting deeper and deeper until it is paper-thin. That is why iron gates need painting; aluminium gates do not.',
+    },
+    // Source: Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on rusting and salt: a recurring Year 7 expectation is that "salt is the rusting agent, not oxygen and water". Reinforced by RSC Education classroom resource on corrosion in seawater.
+    {
+      id: 'rust-mis-salt-replaces',
+      description:
+        'Salt is the real cause of rusting; sea air is special because the salt rusts metal directly.',
+      triggerAnswer: 'salt-replaces',
+      correction:
+        'In fact salt is not a reactant in rusting; rusting still needs iron, oxygen and water. Salt makes rusting faster but does not replace any of the three ingredients.',
+      reExplanation:
+        'A nail in pure tap water rusts; a nail in salty seawater also rusts, only faster. A nail in dry salt powder with no water does not rust. So salt is a speed-up, not a reactant. The actual reaction is still iron + oxygen + water → iron oxide. This is why bridges by the sea, and cars driven on UK roads gritted with rock salt in winter, rust faster than ones inland.',
+    },
+    // Source: Vanessa Kind, "Beyond Appearances: Students' ideas about the particulate nature of matter", RSC Education (2004 update). Year 7 learners often think rust is a separate substance "stuck on" iron rather than iron itself transformed. Reinforced by CGP KS3 Chemistry Study Book p.51 chapter on the chemistry of rust.
+    {
+      id: 'rust-mis-rust-stuck-on',
+      description:
+        'Rust is a layer of dust or dirt that lands on iron from the air, not iron itself transformed into a new substance.',
+      triggerAnswer: 'rust-stuck-on',
+      correction:
+        'In fact rust IS the iron itself, joined with oxygen and water atoms. Rust is iron oxide; the orange-brown flakes ARE the iron, chemically changed.',
+      reExplanation:
+        'Pick up a rusty bolt and weigh it. The bolt is heavier than it was when shiny because the iron has joined with oxygen and water to make iron oxide; the new mass has come from the air and the rain. Scrape rust off and underneath is less iron than there was, not the same amount with a layer added on top. So the iron has chemically changed, not just gathered dirt.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}

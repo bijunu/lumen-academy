@@ -405,10 +405,10 @@
 - **OCR**: C3.2 Reactions of acids; C5.1 The reactivity series (GCSE Chemistry A J248 Gateway)
 
 #### Rusting (Confident, `chemistry-simple-reactions-rusting`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: Combustion, thermal decomposition, oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.10.1.1 Corrosion and its prevention; rusting of iron requires oxygen and water (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; CC10 Reversible reactions; Topic 8 Reactivity of metals (rusting; barrier methods, sacrificial protection) (GCSE Chemistry 1CH0)
+- **OCR**: C5.1d Corrosion; rusting of iron and steel; conditions needed; barrier and sacrificial methods of protection (GCSE Chemistry A J248 Gateway)
 
 ---
 

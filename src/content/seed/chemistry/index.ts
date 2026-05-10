@@ -23,7 +23,7 @@ import {
   acidsAlkalisNeutralisation,
 } from './acids-alkalis'
 import { phZone, phScale, phStrongWeak } from './ph'
-import { simpleReactionsZone, combustion, acidMetal } from './simple-reactions'
+import { simpleReactionsZone, combustion, acidMetal, rusting } from './simple-reactions'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -49,7 +49,7 @@ export {
   acidsAlkalisNeutralisation,
 } from './acids-alkalis'
 export { phZone, phScale, phStrongWeak } from './ph'
-export { simpleReactionsZone, combustion, acidMetal } from './simple-reactions'
+export { simpleReactionsZone, combustion, acidMetal, rusting } from './simple-reactions'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -68,6 +68,7 @@ export const chemistryNodes: SkillNode[] = [
   phStrongWeak,
   combustion,
   acidMetal,
+  rusting,
 ]
 
 export const chemistryZones: Zone[] = [

@@ -1454,6 +1454,18 @@ Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid
   - Required handling: misconception entry; at least one Confident or Core MCQ that asks which of Mg, Zn, Fe fizzes fastest in the same dilute HCl.
 - C-SR-12: Learner thinks water is a product of metal + acid, confusing it with metal-oxide + acid neutralisation. (Covers `chemistry-simple-reactions-acid-metal`.)
   - Required handling: misconception entry; at least one MCQ that holds the general equation `metal + acid → salt + hydrogen` against decoys with `+ water`.
+- C-SR-13: Learner thinks rusting only needs iron and oxygen, missing the role of water. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Core spot-misconception or MCQ that contrasts dry-air iron (no rust) with damp iron (rusts).
+- C-SR-14: Learner thinks rusting only needs iron and water, missing the role of oxygen. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Confident MCQ that explains why the boiled-water-with-oil tube does not rust.
+- C-SR-15: Learner thinks paint only hides rust visually, missing that paint blocks water and oxygen from reaching the metal. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception or MCQ on UK paint contexts (Forth Bridge, garden gates).
+- C-SR-16: Learner thinks rust forms a protective layer like aluminium oxide, missing that rust is flaky and exposes fresh iron. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Challenge MCQ that asks the learner to choose paint or galvanising over leaving the metal bare.
+- C-SR-17: Learner thinks salt is the rusting agent rather than oxygen and water, missing that salt only speeds up rusting. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Challenge MCQ that compares rusting in tap water vs salty water and isolates the role of salt as a speed-up.
+- C-SR-18: Learner thinks rust is dust or dirt that lands on iron from the air, missing that rust IS the iron itself, chemically transformed. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one numeric-entry that asks for the increase in mass when iron rusts (proving extra mass came from oxygen and water).
 
 ### Question shape probes
 
@@ -1472,6 +1484,15 @@ Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid
 - Q-SR-13: At least one Confident or Challenge spot-misconception on `chemistry-simple-reactions-acid-metal` pairs concentration with speed and holds products fixed.
 - Q-SR-14: At least one drag-order question on `chemistry-simple-reactions-acid-metal` assembles `zinc + hydrochloric acid → zinc chloride + hydrogen` from shuffled phrases.
 - Q-SR-15: All acid-metal questions stay at word-equation depth: no ionic equations, no half-equations, reactivity-series ranking limited to Mg, Zn, Fe.
+- Q-SR-16: At least one Core MCQ on `chemistry-simple-reactions-rusting` states the word equation `iron + oxygen + water → iron oxide`, with `iron + oxygen → iron oxide` as a named distractor.
+- Q-SR-17: At least one Core MCQ on `chemistry-simple-reactions-rusting` asks the learner to identify which test tube in the three-tube experiment rusts (the one with both water and oxygen).
+- Q-SR-18: At least one Confident MCQ on `chemistry-simple-reactions-rusting` explains why the boiled-water-with-oil tube does not rust (no oxygen).
+- Q-SR-19: At least one Core MCQ on `chemistry-simple-reactions-rusting` lists three UK rust-prevention methods (paint, oil, galvanising).
+- Q-SR-20: At least one MCQ on `chemistry-simple-reactions-rusting` uses the Forth Bridge in Scotland or another famous UK iron context.
+- Q-SR-21: At least one numeric-entry on `chemistry-simple-reactions-rusting` asks for the increase in mass when iron rusts (extra mass from oxygen + water atoms).
+- Q-SR-22: At least one drag-order question on `chemistry-simple-reactions-rusting` assembles `iron + oxygen + water → iron oxide` from shuffled phrases.
+- Q-SR-23: At least one Challenge MCQ on `chemistry-simple-reactions-rusting` compares rusting in tap water vs salty seawater and isolates salt as a speed-up.
+- Q-SR-24: All rusting questions stay at word-equation depth: no sacrificial-anode mechanism depth, no redox half-equations.
 
 ### Tutor probes
 
@@ -1483,6 +1504,11 @@ Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid
 - T-SR-6: Given "the bubbles from zinc and acid are oxygen", the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint, and references the squeaky-pop test.
 - T-SR-7: Given "iron + sulfuric acid gives iron chloride and hydrogen", the tutor scaffolds toward the salt-naming rule (sulfuric → sulfate, hydrochloric → chloride) without flat correction first.
 - T-SR-8: Given a request for an inline definition (tap on "salt", "hydrogen", "squeaky-pop test", "reactivity"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SR-9: Given "rusting only needs iron and oxygen", the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint, and references the dry-air tube of the three-test-tube experiment.
+- T-SR-10: Given "paint just hides rust", the tutor scaffolds the learner toward "paint is a barrier against water and oxygen" without flat correction first.
+- T-SR-11: Given "the salt in seawater is what causes rust", the tutor scaffolds the learner toward "salt speeds up rusting; iron, oxygen and water still do the reaction" without flat correction first.
+- T-SR-12: Given "rust is just dust on the iron, the iron itself has not changed", the tutor scaffolds toward "weigh a rusty bolt to see it is heavier than when shiny" without flat correction first.
+- T-SR-13: Given a request for an inline definition (tap on "rust", "iron oxide", "galvanising", "Forth Bridge"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Forces
 
