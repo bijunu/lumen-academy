@@ -172,6 +172,32 @@
 - **Edexcel**: G7 Identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement (GCSE Mathematics 1MA1)
 - **OCR**: 7.05a Identify, describe and construct congruent shapes, including on coordinate axes, using translation and reflection (GCSE Mathematics J560)
 
+### Zone: Probability (`maths-probability`)
+
+DfE KS3 Mathematics programme of study, "Probability" subsection (verbatim):
+
+- Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes, using appropriate language and the 0-1 probability scale.
+- Understand that the probabilities of all possible outcomes sum to 1.
+- Enumerate sets and unions/intersections of sets systematically, using tables, grids and Venn diagrams.
+- Generate theoretical sample spaces for single and combined events with equally likely, mutually exclusive outcomes and use these to calculate theoretical probabilities.
+
+Year 7 scope: the first three bullets, restricted to single events and two-event sample spaces. Tree diagrams and conditional probability are KS4.
+
+#### The Probability Scale from 0 to 1 (Core, `maths-probability-scale`)
+- **KS3**: Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes, using appropriate language and the 0-1 probability scale.
+- **AQA**: P1 Record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees; P3 Relate relative expected frequencies to theoretical probability, using appropriate language and the 0 to 1 probability scale (GCSE Mathematics 8300)
+- **Edexcel**: P1 Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes, using appropriate language and the 0-1 probability scale (GCSE Mathematics 1MA1)
+
+#### Listing Outcomes and Sample Spaces (Core, `maths-probability-listing-outcomes`)
+- **KS3**: Generate theoretical sample spaces for single and combined events with equally likely, mutually exclusive outcomes and use these to calculate theoretical probabilities.
+- **AQA**: P6 Enumerate sets and combinations of sets systematically, using tables, grids, Venn diagrams; P7 Construct theoretical possibility spaces for single and combined experiments with equally likely outcomes and use these to calculate theoretical probabilities (GCSE Mathematics 8300)
+- **Edexcel**: P6 Enumerate sets and unions/intersections of sets systematically, using tables, grids and Venn diagrams; P7 Construct theoretical possibility spaces for single and combined experiments with equally likely outcomes and use these to calculate theoretical probabilities (GCSE Mathematics 1MA1)
+
+#### Experimental Probability and Relative Frequency (Confident, `maths-probability-experimental`)
+- **KS3**: Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes, using appropriate language and the 0-1 probability scale.
+- **AQA**: P1 Record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees; P5 Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size (GCSE Mathematics 8300)
+- **Edexcel**: P5 Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size (GCSE Mathematics 1MA1)
+
 ---
 
 > **Note on placeholders below.** The science zone outlines that follow are skeletons drafted from the build-prompt subject lists. Every `_KS3: fill verbatim ..._` and `_<board>: GCSE ... ref_` line MUST be replaced before the corresponding `SkillNode` ships. The Vitalia / Elementia / Mechanica author skills are responsible for sourcing the verbatim KS3 wording from the DfE Science programme of study and for citing the awarding-body GCSE refs from each board's specification document. Authors may add or split nodes within a zone; the IDs below are starting suggestions, not a fixed list.

@@ -1814,6 +1814,65 @@ Covers `maths-geometry-measure-area-rectangles`, `maths-geometry-measure-perimet
 - T-GEO-3: Given an off-topic input (for example a question about US-style "square feet" or "gallons"), the tutor steers back to UK KS3 metric units (cm squared, m squared, cm cubed, m cubed, ml, L) politely.
 - T-GEO-4: Given a request for an inline definition (tap on "composite shape"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Numerica > Probability
+
+Covers `maths-probability-scale`, `maths-probability-listing-outcomes`, `maths-probability-experimental`.
+
+### Content probes
+
+#### Probability scale 0 to 1 (`maths-probability-scale`)
+- C-PROB-1: Learner gives a probability bigger than 1 (or less than 0), for example claiming "the probability is 1.2" after a run of favourable outcomes, or writing 120 percent for a single event.
+  - Required handling: misconception entry; at least one MCQ in which a value outside [0, 1] appears as a distractor and one spot-misconception question that surfaces the "more than certain" claim.
+- C-PROB-2: Learner conflates "impossible" with "unlikely", labelling small positive probabilities (1/50) as 0.
+  - Required handling: misconception entry; at least one Core question that pins the wording (impossible / unlikely / even chance / likely / certain) to the corresponding region of the 0 to 1 line.
+- C-PROB-3: Learner counts category labels rather than items in the bag, so a bag with 3 red, 4 blue and 1 green gives P(red) = 1/3 instead of 3/8.
+  - Required handling: misconception entry; at least one Confident question that exposes the categories-not-items denominator slip.
+- C-PROB-4: Learner does not use P(event) + P(not event) = 1 and works the complement from scratch, often producing a complement that does not sum to 1 with the original probability.
+  - Required handling: misconception entry; at least one Challenge tier question that requires using the complement rule explicitly.
+
+#### Listing outcomes and sample spaces (`maths-probability-listing-outcomes`)
+- C-PROB-5: Learner forgets that two coins (or two dice) give an ordered sample space, treating HT and TH as the same outcome and listing only three outcomes for two coins instead of four.
+  - Required handling: misconception entry; at least one Confident question that asks the learner to list HH, HT, TH, TT and to explain why HT and TH are different outcomes.
+- C-PROB-6: Learner counts favourable outcomes from a two-event sample space without listing it first, for example claiming P(at least one head on two coins) = 1/2 because "the coin lands heads about half the time".
+  - Required handling: misconception entry; at least one Confident question that requires a sample-space table or a list of all outcomes before computing the probability.
+- C-PROB-7: Learner double-counts shared outcomes in a "favourable" tally (for example treating HH twice when listing P(at least one head)).
+  - Required handling: misconception entry; at least one Confident question whose distractors include the double-count answer.
+- C-PROB-8: Learner forgets that a UK 52-card deck has 4 suits of 13 cards (so P(heart) = 13/52 = 1/4, not 1/13 or 13/13).
+  - Required handling: misconception entry; at least one Confident question on a UK 52-card deck.
+
+#### Experimental probability and relative frequency (`maths-probability-experimental`)
+- C-PROB-9: Learner concludes a coin is biased after a small run of imbalanced results (for example 8 heads out of 10 tosses).
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception question that puts the Bond 11+ classic "8 out of 10 heads, is the coin biased?" claim to the learner and asks if 10 trials is enough.
+- C-PROB-10: Learner treats theoretical and experimental probability as the same quantity in all situations, expecting the experimental count to match the theoretical exactly even on small samples.
+  - Required handling: misconception entry; at least one Confident question that contrasts theoretical (expected) and experimental (observed) counts after a small experiment.
+- C-PROB-11: Learner does not understand the qualitative law of large numbers, so they expect more trials to produce a result further from the theoretical probability rather than closer.
+  - Required handling: misconception entry; at least one Confident question that asks the learner to predict whether 60 die rolls or 600 die rolls give a relative frequency closer to 1/6.
+- C-PROB-12: Learner divides the wrong way round when computing relative frequency, dividing total trials by favourable count rather than favourable count by total trials.
+  - Required handling: misconception entry; at least one numeric-entry question on relative frequency that surfaces the division order.
+
+### Question shape probes
+
+- Q-PROB-1: At least one Core MCQ on the probability scale presents a value outside [0, 1] (such as 1.2 or 1.5) and asks the learner to identify it as not a probability.
+- Q-PROB-2: At least one Core question links each of the words impossible, unlikely, even chance, likely and certain to a numeric value or range on the 0 to 1 line.
+- Q-PROB-3: At least one Confident drag-order question orders three to five events from least likely to most likely.
+- Q-PROB-4: At least one Confident MCQ on a single bag of counters presents the count-categories-not-items distractor.
+- Q-PROB-5: At least one Challenge tier question on a complement event requires using P(event) + P(not event) = 1 to find P(not event).
+- Q-PROB-6: At least one Confident question lists the four outcomes of two coins (HH, HT, TH, TT) explicitly and asks for P(at least one head).
+- Q-PROB-7: At least one Confident question presents a sample-space table for two events (for example two dice or a coin and a die) and asks the learner to count favourable outcomes from it.
+- Q-PROB-8: At least one Core numeric-entry question on a fair 6-sided die computes a single-event probability such as P(rolling a 6) = 1/6.
+- Q-PROB-9: At least one Confident question uses a UK 52-card deck and asks for the probability of pulling a card from a suit, with the 1/4 answer present and the 1/13 distractor included.
+- Q-PROB-10: At least one Confident or Challenge spot-misconception question presents the Bond 11+ classic "8 heads out of 10 tosses, is the coin biased?" claim and asks the learner to judge whether the trial count is enough.
+- Q-PROB-11: At least one Confident question contrasts the theoretical count (60 / 6 = 10 sixes in 60 die rolls) with an experimental count from a small sample (for example 7 sixes in 60 rolls) and asks why the two values differ.
+- Q-PROB-12: At least one Challenge tier question on relative frequency requires the learner to compute the experimental probability from a frequency table, then compare it to the theoretical probability and explain the gap qualitatively.
+- Q-PROB-13: At least one Confident missing-step question places the calculation of a single-event probability (count favourable / count total / write as fraction or decimal) in the right order.
+
+### Tutor probes
+
+- T-PROB-1: Given "I rolled five 6s in a row, the probability of the next 6 is 1.2", the tutor's first reply is a Socratic prompt about whether a probability can sit outside the 0 to 1 scale, not a direct correction.
+- T-PROB-2: Given "the coin landed heads 8 out of 10 times so it must be biased", the tutor cites the relevant misconception's `reExplanation` (small samples vary) rather than producing a fresh hint.
+- T-PROB-3: Given a request for an inline definition (tap on "sample space"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PROB-4: Given an off-topic input (for example a question about US lottery odds), the tutor steers back to UK KS3 examples (school raffle, fair die, coin, UK 52-card deck) politely.
+
 ## Pending zones
 
 The following Numerica zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
@@ -1823,5 +1882,4 @@ The following Numerica zones are scheduled for authoring during Phase 10e+. Thei
 - Angle rules
 - 2D and 3D shapes
 - Averages and range
-- Probability basics
 - Charts and graphs
