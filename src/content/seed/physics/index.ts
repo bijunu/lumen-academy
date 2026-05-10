@@ -9,9 +9,16 @@ import {
 import {
   forcesTypes,
   forcesBalanced,
+  forcesFriction,
   forcesZoneNodes,
   forcesZone,
 } from './forces'
+import {
+  gravityMassVsWeight,
+  gravityWeightCalculation,
+  gravityZoneNodes,
+  gravityZone,
+} from './gravity'
 
 export {
   electricityCircuitSymbols,
@@ -20,13 +27,19 @@ export {
   electricityCircuitsZoneNodes,
   forcesTypes,
   forcesBalanced,
+  forcesFriction,
   forcesZoneNodes,
   forcesZone,
+  gravityMassVsWeight,
+  gravityWeightCalculation,
+  gravityZoneNodes,
+  gravityZone,
 }
 
 export const physicsNodes: SkillNode[] = [
   ...electricityCircuitsZoneNodes,
   ...forcesZoneNodes,
+  ...gravityZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
@@ -37,4 +50,5 @@ export const physicsZones: Zone[] = [
     nodeIds: electricityCircuitsZoneNodes.map(n => n.id),
   },
   forcesZone,
+  gravityZone,
 ]

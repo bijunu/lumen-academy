@@ -385,24 +385,24 @@
 - **OCR**: P2.2 Newton's laws, balanced and unbalanced forces (GCSE Physics J259 Gateway)
 
 #### Friction and Drag (Confident, `physics-forces-friction`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); friction between solid surfaces; resistance to motion of air and water.
+- **AQA**: 4.5.6 Forces and motion: friction; 4.5.6.2.4 Resistive forces and terminal velocity (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.27-1.30 Resistive forces, drag and terminal velocity (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws and forces; resistive forces, friction and air resistance (GCSE Physics J259 Gateway)
 
-### Zone: Gravity, Weight, Mass (`physics-gravity-mass`)
+### Zone: Gravity, Weight, Mass (`physics-gravity`)
 
-#### Mass vs Weight (Core, `physics-gravity-mass-vs-weight`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+#### Mass and Weight (Core, `physics-gravity-mass-vs-weight`)
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg, different on other planets and stars; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only).
+- **AQA**: 4.5.1.2 Mass and weight, weight = mass x gravitational field strength, W = m g (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Mass and weight; weight as the gravitational force on an object (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; mass and weight, gravitational field strength (GCSE Physics J259 Gateway)
 
 #### Calculating Weight (Confident, `physics-gravity-weight-calculation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg, different on other planets and stars; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only).
+- **AQA**: 4.5.1.2 Weight, mass and gravitational field strength; W = m g (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight = mass x gravitational field strength (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; weight calculations using gravitational field strength (GCSE Physics J259 Gateway)
 
 ### Zone: Energy Stores and Transfers (`physics-energy-stores-transfers`)
 

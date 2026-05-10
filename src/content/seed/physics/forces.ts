@@ -1440,7 +1440,696 @@ export const forcesBalanced: SkillNode = {
   },
 }
 
-export const forcesZoneNodes = [forcesTypes, forcesBalanced]
+const STATIC_VS_SLIDING_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="200" y="40" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Box not yet moving: static friction</text>
+    <line x1="60" y1="180" x2="340" y2="180" />
+    <rect x="170" y="120" width="80" height="60" fill="currentColor" />
+    <line x1="120" y1="150" x2="165" y2="150" />
+    <polygon points="157,143 170,150 157,157" fill="currentColor" stroke="none" />
+    <text x="142" y="140" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Pull 8 N</text>
+    <line x1="170" y1="200" x2="125" y2="200" />
+    <polygon points="135,193 120,200 135,207" fill="currentColor" stroke="none" />
+    <text x="148" y="220" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Static friction 8 N</text>
+    <text x="200" y="255" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">Pull and friction balance. Box stays still.</text>
+
+    <text x="600" y="40" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Same box now sliding: sliding friction</text>
+    <line x1="460" y1="180" x2="740" y2="180" />
+    <rect x="570" y="120" width="80" height="60" fill="currentColor" />
+    <line x1="500" y1="150" x2="565" y2="150" />
+    <polygon points="557,143 570,150 557,157" fill="currentColor" stroke="none" />
+    <text x="525" y="140" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Pull 12 N</text>
+    <line x1="570" y1="200" x2="525" y2="200" />
+    <polygon points="535,193 520,200 535,207" fill="currentColor" stroke="none" />
+    <text x="555" y="220" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">Sliding friction 6 N</text>
+    <text x="600" y="255" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">Pull beats friction. Box speeds up.</text>
+  </g>
+`
+
+const AIR_RESISTANCE_FALL_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="400" y="40" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Skydiver falling with a parachute open</text>
+    <path d="M 340 110 Q 400 70 460 110" />
+    <line x1="340" y1="110" x2="400" y2="170" />
+    <line x1="460" y1="110" x2="400" y2="170" />
+    <circle cx="400" cy="190" r="14" fill="currentColor" />
+    <line x1="400" y1="204" x2="400" y2="240" />
+    <line x1="380" y1="220" x2="420" y2="220" />
+    <line x1="400" y1="240" x2="385" y2="270" />
+    <line x1="400" y1="240" x2="415" y2="270" />
+    <line x1="400" y1="280" x2="400" y2="335" />
+    <polygon points="392,323 400,340 408,323" fill="currentColor" stroke="none" />
+    <text x="430" y="310" font-size="14" font-weight="700" stroke="none" fill="currentColor">Weight 700 N down</text>
+    <line x1="400" y1="170" x2="400" y2="80" />
+    <polygon points="392,92 400,75 408,92" fill="currentColor" stroke="none" />
+    <text x="430" y="95" font-size="14" font-weight="700" stroke="none" fill="currentColor">Air resistance 700 N up</text>
+    <text x="400" y="375" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">Forces balance at the new slow steady speed (terminal speed).</text>
+  </g>
+`
+
+const USEFUL_VS_UNWANTED_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
+    <text x="200" y="40" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Useful friction: bike brakes</text>
+    <circle cx="200" cy="160" r="55" />
+    <circle cx="200" cy="160" r="6" fill="currentColor" />
+    <line x1="200" y1="105" x2="200" y2="215" stroke-width="2" />
+    <line x1="145" y1="160" x2="255" y2="160" stroke-width="2" />
+    <rect x="180" y="105" width="40" height="14" fill="currentColor" />
+    <line x1="200" y1="119" x2="200" y2="125" stroke-width="5" />
+    <text x="200" y="265" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">Brake pads grip the wheel. Friction</text>
+    <text x="200" y="282" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">slows the bike. Useful here.</text>
+
+    <text x="600" y="40" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Unwanted friction: car engine wear</text>
+    <rect x="540" y="120" width="120" height="40" fill="currentColor" />
+    <circle cx="555" cy="170" r="10" fill="currentColor" />
+    <circle cx="645" cy="170" r="10" fill="currentColor" />
+    <line x1="500" y1="180" x2="700" y2="180" />
+    <text x="675" y="135" text-anchor="middle" font-size="14" font-weight="700" stroke="none" fill="currentColor">heat</text>
+    <line x1="660" y1="125" x2="675" y2="115" />
+    <line x1="650" y1="125" x2="660" y2="115" />
+    <text x="600" y="265" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">Friction inside the engine wastes</text>
+    <text x="600" y="282" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">energy as heat and wears parts.</text>
+  </g>
+`
+
+export const forcesFriction: SkillNode = {
+  id: 'physics-forces-friction',
+  title: 'Friction and Drag',
+  description:
+    'Tell static friction (the grip that stops a still object from starting to slide) apart from sliding friction (the smaller drag on something already sliding). Treat air resistance and water resistance as friction-with-a-fluid (drag). Decide when friction is useful (bike brakes, walking, gripping a pencil) and when it is unwanted (engine wear, machinery heat). Predict in qualitative terms what raising or lowering friction does to motion.',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-forces',
+  zoneName: 'Forces',
+  tier: 'confident',
+  prerequisites: ['physics-forces-types', 'physics-forces-balanced'],
+  curriculum: {
+    ks3Objective:
+      'Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); friction between solid surfaces; resistance to motion of air and water.',
+    awardingBodies: {
+      aqa: '4.5.6 Forces and motion: friction; 4.5.6.2.4 Resistive forces and terminal velocity (GCSE Physics 8463)',
+      edexcel: 'Topic 1 Motion and forces, 1.27-1.30 Resistive forces, drag and terminal velocity (GCSE Physics 1PH0)',
+      ocr: 'P2.2 Newton’s laws and forces; resistive forces, friction and air resistance (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'fr-scene-static-vs-sliding',
+      title: 'Static and Sliding Friction',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to compare friction on a still box and on the same box once it is sliding.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: STATIC_VS_SLIDING_SVG,
+        hotspots: [
+          {
+            id: 'fr-ss-static-pull',
+            x: 18,
+            y: 38,
+            label: 'Static pull 8 N',
+            description:
+              'You pull the still box with 8 N. The box does not move yet.',
+          },
+          {
+            id: 'fr-ss-static-friction',
+            x: 18,
+            y: 56,
+            label: 'Static friction 8 N',
+            description:
+              'Static friction grows to match the pull, up to a limit. Here it grips back with 8 N, exactly cancelling the pull, so the box stays still.',
+          },
+          {
+            id: 'fr-ss-sliding-pull',
+            x: 65,
+            y: 38,
+            label: 'Sliding pull 12 N',
+            description:
+              'Pull harder, with 12 N. The grip breaks and the box slides.',
+          },
+          {
+            id: 'fr-ss-sliding-friction',
+            x: 65,
+            y: 56,
+            label: 'Sliding friction 6 N',
+            description:
+              'Once sliding, friction drops to a smaller, fairly steady value. Here it is 6 N. The 12 N pull beats the 6 N friction, so the net force is 6 N forwards and the box speeds up.',
+          },
+          {
+            id: 'fr-ss-rule',
+            x: 50,
+            y: 70,
+            label: 'Rule for static and sliding',
+            description:
+              'Static friction can match a small pull but only up to a limit. Once the object is sliding, friction is smaller and roughly steady.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fr-scene-air-resistance',
+      title: 'Air Resistance is Friction with a Fluid',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the two arrows on the falling skydiver and see how drag balances weight.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: AIR_RESISTANCE_FALL_SVG,
+        hotspots: [
+          {
+            id: 'fr-ar-weight',
+            x: 50,
+            y: 80,
+            label: 'Weight 700 N down',
+            description:
+              'Gravity pulls the skydiver down with about 700 N. Their weight does not change as they fall.',
+          },
+          {
+            id: 'fr-ar-drag',
+            x: 50,
+            y: 22,
+            label: 'Air resistance 700 N up',
+            description:
+              'Air pushes back on the parachute as it falls. The faster the fall, the bigger the air resistance, until it grows to 700 N and matches the weight.',
+          },
+          {
+            id: 'fr-ar-fluid',
+            x: 50,
+            y: 50,
+            label: 'A fluid is anything that flows',
+            description:
+              'Air and water are both fluids. Friction with a fluid is called drag. The same idea works for water resistance on a swimmer.',
+          },
+          {
+            id: 'fr-ar-terminal',
+            x: 50,
+            y: 92,
+            label: 'Forces balance at terminal speed',
+            description:
+              'Once the two arrows are equal, the net force is zero. The skydiver keeps falling, but now at a steady, slower speed.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'fr-scene-useful-vs-unwanted',
+      title: 'Useful and Unwanted Friction',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to sort friction into the helpful and the harmful camps.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: USEFUL_VS_UNWANTED_SVG,
+        hotspots: [
+          {
+            id: 'fr-uu-brakes',
+            x: 25,
+            y: 40,
+            label: 'Bike brakes (useful)',
+            description:
+              'Brake pads grip the wheel rim. Friction slows the bike. Without it the bike would not stop, so this friction is useful.',
+          },
+          {
+            id: 'fr-uu-walking',
+            x: 25,
+            y: 70,
+            label: 'Walking (useful)',
+            description:
+              'Friction between shoe and pavement lets you push off without slipping. On icy ground friction drops and people slide.',
+          },
+          {
+            id: 'fr-uu-engine',
+            x: 75,
+            y: 40,
+            label: 'Engine wear (unwanted)',
+            description:
+              'Moving parts inside a car engine rub. Friction makes heat (a wasted energy transfer) and slowly wears the metal away.',
+          },
+          {
+            id: 'fr-uu-fix',
+            x: 75,
+            y: 70,
+            label: 'Lower friction with oil',
+            description:
+              'Engineers add oil between rubbing surfaces. The oil acts as a slippery layer, reducing friction so less energy is wasted as heat.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'fr-worked-1',
+      title: 'A heavy crate that will not budge: static friction',
+      steps: [
+        {
+          explanation:
+            'Pick the object. The object is a crate sat on a warehouse floor. Two horizontal forces will matter: the pull along the floor and the friction.',
+        },
+        {
+          explanation:
+            'Apply a small pull. A worker pulls with 20 N. The crate does not move. So the friction must be matching the pull.',
+          maths: 'Static friction = 20 N back',
+        },
+        {
+          explanation:
+            'Pull harder. The worker now pulls with 50 N. The crate still does not move, so friction has grown to 50 N.',
+          maths: 'Static friction = 50 N back',
+        },
+        {
+          explanation:
+            'Reach the limit. Static friction can match the pull only up to a maximum value. Above that, the crate breaks free and starts to slide.',
+        },
+        {
+          explanation:
+            'Pull at 80 N. The crate now slides. Sliding friction takes over and is smaller, say 60 N. The net horizontal force is 80 minus 60, which is 20 N forwards.',
+          maths: 'Net force = 80 - 60 = 20 N forwards',
+        },
+        {
+          explanation:
+            'Predict the motion. The pull beats sliding friction, so the net force is forwards. The crate speeds up while the worker keeps pulling at 80 N.',
+        },
+      ],
+    },
+    {
+      id: 'fr-worked-2',
+      title: 'A skydiver opens a parachute: drag balances weight',
+      steps: [
+        {
+          explanation:
+            'Pick the object. The object is the skydiver plus their open parachute. Two vertical forces will matter: weight and air resistance (drag).',
+        },
+        {
+          explanation:
+            'Find the weight. The skydiver weighs 700 N. This is the pull of gravity, which does not change as they fall.',
+          maths: 'Weight = 700 N down',
+        },
+        {
+          explanation:
+            'Find the air resistance. Just after the chute opens, the air pushes up on the parachute. Call this drag. Its size depends on speed.',
+        },
+        {
+          explanation:
+            'Air resistance grows with speed. Just after the chute opens, the skydiver is going fast, so drag is bigger than weight. The net force is upwards, so the skydiver slows down.',
+        },
+        {
+          explanation:
+            'As they slow, the air resistance drops, until it equals the 700 N weight. Now the two arrows balance.',
+          maths: 'Drag = 700 N up; Net force = 0 N',
+        },
+        {
+          explanation:
+            'Predict the motion. With balanced forces the skydiver keeps falling but at a steady, slow speed. This steady speed has a name: terminal speed (or terminal velocity).',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'fr-q1',
+      type: 'multiple-choice',
+      stem: 'A pencil case sits still on a desk. A pupil pulls it sideways with a small force. The pencil case does not move. What is the name of the friction acting back on the pencil case?',
+      tier: 'core',
+      options: ['Sliding friction', 'Static friction', 'Air resistance', 'Upthrust'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'fr-mis-friction-only-when-moving',
+      hint: 'The pencil case is not moving yet. Friction that grips a still object has its own name.',
+    },
+    {
+      id: 'fr-q2',
+      type: 'multiple-choice',
+      stem: 'A crate is already sliding across a smooth shop floor. The worker keeps pulling with the same force. What is the name of the friction now acting back on the crate?',
+      tier: 'core',
+      options: [
+        'Static friction, because the worker is pulling with the same force.',
+        'Sliding friction, because the crate is moving across the floor.',
+        'Air resistance, because the crate is moving.',
+        'Tension, because the crate is being pulled.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      hint: 'Friction on something already moving has its own name.',
+    },
+    {
+      id: 'fr-q3',
+      type: 'multiple-choice',
+      stem: 'A heavy crate is harder to start sliding across a workshop floor than it is to keep sliding once it is already moving. Which statement explains why, in terms of the two friction types?',
+      tier: 'confident',
+      options: [
+        'Sliding friction is usually larger than the largest static friction.',
+        'Sliding friction is usually smaller than the largest static friction.',
+        'Sliding friction is exactly equal to static friction.',
+        'Sliding friction is zero on most surfaces.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'fr-mis-static-and-sliding-equal',
+      hint: 'Compare the largest pull needed before the crate breaks away with the steady pull needed once it is sliding. Which kind of friction is bigger?',
+    },
+    {
+      id: 'fr-q4',
+      type: 'multiple-choice',
+      stem: 'A cyclist rides down a flat road in still air at a steady speed. Air pushes back against them. What is the name of this force?',
+      tier: 'core',
+      options: ['Static friction', 'Tension', 'Air resistance (drag)', 'Upthrust'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'fr-mis-air-only-falls-friction',
+      hint: 'A fluid pushing back on a moving object has a name in KS3. Two answers will do.',
+    },
+    {
+      id: 'fr-q5',
+      type: 'numeric-entry',
+      stem: 'A box is pulled along a kitchen floor with a force of 20 N. Sliding friction drags back with 8 N. What is the size, in newtons, of the net horizontal force on the box?',
+      tier: 'core',
+      correctAnswer: 12,
+      unit: 'N',
+      xpValue: 10,
+      misconceptionId: 'fr-mis-add-pull-and-friction',
+      hint: 'The two forces act in opposite directions. Subtract the smaller from the larger.',
+    },
+    {
+      id: 'fr-q6',
+      type: 'multiple-choice',
+      stem: 'A swimmer pushes off the wall and glides through a 25 m pool. The water pushes back on them as they move forwards. Which named force is this?',
+      tier: 'core',
+      options: [
+        'Air resistance, because the air around the pool pushes back.',
+        'Water resistance (drag), because a fluid pushes back on the moving swimmer.',
+        'Upthrust, because the water lifts the swimmer up.',
+        'Tension, because the swimmer’s arms are stretched.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'fr-mis-drag-only-air',
+      hint: 'Water is also a fluid. Friction with a fluid has a name.',
+    },
+    {
+      id: 'fr-q7',
+      type: 'multiple-choice',
+      stem: 'A child rubs their hands together fast on a cold morning. The hands feel warmer. Which sentence best explains this?',
+      tier: 'core',
+      options: [
+        'Friction between the hands transfers energy by heating, so the hands warm up.',
+        'There is no friction between skin and skin, so the warmth must come from the cold air.',
+        'Static friction makes electricity that warms the hands.',
+        'Air resistance between the hands warms them up.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Two surfaces rub. Friction transfers energy from movement into heat.',
+    },
+    {
+      id: 'fr-q8',
+      type: 'numeric-entry',
+      stem: 'A girl pulls a sledge along flat snow with a forwards force of 30 N. Sliding friction with the snow drags backwards with 22 N. What is the size, in newtons, of the net forwards force on the sledge?',
+      tier: 'core',
+      correctAnswer: 8,
+      unit: 'N',
+      xpValue: 10,
+      hint: 'Subtract the friction from the pull.',
+    },
+    {
+      id: 'fr-q9',
+      type: 'spot-misconception',
+      stem: 'Theo says, "Friction only acts on things that are moving. A still box on the floor has no friction acting on it, even when I push on it gently." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Theo is right. Until the box starts to move, no friction acts on it.',
+          isMisconception: true,
+        },
+        {
+          text: 'Theo is not right. Static friction grows to match a gentle push on a still box, up to a limit. The box stays still because friction balances the push.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'fr-mis-friction-only-when-moving',
+    },
+    {
+      id: 'fr-q10',
+      type: 'labelled-image',
+      stem: 'Place the names on the two free-body diagrams below. Each marker takes one label.',
+      tier: 'confident',
+      viewBox: '0 0 800 400',
+      svg: STATIC_VS_SLIDING_SVG,
+      hotspots: [
+        { id: 'fr-q10-h1', x: 18, y: 38, correctLabel: 'Pull 8 N' },
+        { id: 'fr-q10-h2', x: 18, y: 56, correctLabel: 'Static friction 8 N' },
+        { id: 'fr-q10-h3', x: 65, y: 38, correctLabel: 'Pull 12 N' },
+        { id: 'fr-q10-h4', x: 65, y: 56, correctLabel: 'Sliding friction 6 N' },
+      ],
+      labels: [
+        'Pull 8 N',
+        'Static friction 8 N',
+        'Pull 12 N',
+        'Sliding friction 6 N',
+        'Air resistance 8 N',
+        'Tension 12 N',
+      ],
+      xpValue: 15,
+      hint: 'Static friction grows to match a small pull. Sliding friction is smaller and steady.',
+    },
+    {
+      id: 'fr-q11',
+      type: 'data-extraction',
+      stem: 'A pupil has plotted a falling skydiver’s downward speed (in metres per second) against time (in seconds). The dataSource below describes the shape of the graph. Use it to read off the skydiver’s terminal speed before the parachute opens.',
+      tier: 'confident',
+      dataSource:
+        'Speed-time graph for a skydiver. Time on the x-axis runs from 0 s to 60 s. Speed on the y-axis runs from 0 m/s to 70 m/s. From 0 s to about 20 s the line curves upwards from 0 m/s and slowly bends towards a flat line. From 20 s to 35 s the line is flat at 55 m/s. At 35 s the skydiver opens the parachute and the line drops sharply, levelling off again at 6 m/s from about 45 s to 60 s.',
+      correctAnswer: '55 m/s',
+      xpValue: 15,
+      misconceptionId: 'fr-mis-drag-fixed-size',
+      hint: 'Terminal speed is shown by the flat (horizontal) part of the line, before the chute opens.',
+    },
+    {
+      id: 'fr-q12',
+      type: 'multiple-choice',
+      stem: 'Same skydiver, a few seconds later. They have slowed enough that air resistance now equals their weight. What happens next?',
+      tier: 'core',
+      options: [
+        'They slow down further until they stop in mid-air.',
+        'They speed up again, because the parachute drag drops once they slow.',
+        'They keep falling at the same steady speed (terminal speed).',
+        'They start to move sideways instead of down.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'fr-mis-balanced-stops-fall',
+      hint: 'Equal and opposite forces leave the motion as it was. They keep falling, but how fast?',
+    },
+    {
+      id: 'fr-q13',
+      type: 'drag-order',
+      stem: 'A heavy box is pulled across a rough warehouse floor. Order the events from when the worker first touches the rope to when the box is sliding at constant speed.',
+      tier: 'confident',
+      items: [
+        'Worker pulls a little. Static friction matches the pull. Box stays still.',
+        'Worker pulls harder. Static friction reaches its limit. The box breaks free.',
+        'The box slides. Sliding friction is smaller and roughly steady.',
+        'Worker eases the pull until it equals sliding friction. Forces balance and the box slides at constant speed.',
+      ],
+      correctOrder: [0, 1, 2, 3],
+      xpValue: 15,
+      hint: 'Start with a small pull on a still box, then build up.',
+    },
+    {
+      id: 'fr-q14',
+      type: 'multiple-choice',
+      stem: 'A cycling helmet workshop in Sheffield runs four maintenance steps on a bike: it oils the chain, fits a new pair of brake pads, pumps the tyres up, and roughens the tread on a worn pair of trainers for the rider. Which step lowers an unwanted friction (rather than raising a useful one)?',
+      tier: 'challenge',
+      options: [
+        'Fitting new brake pads, because brake pads grip the wheel rim.',
+        'Pumping the tyres up, because grippy tyres push the rider along the road.',
+        'Roughening the trainer tread, because the trainer needs to grip the pedal.',
+        'Oiling the chain, because oil acts as a slippery layer between rubbing parts.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'fr-mis-friction-always-bad',
+      hint: 'Three of the steps add useful friction (grip). Only one removes friction that wastes energy.',
+    },
+    {
+      id: 'fr-q16',
+      type: 'numeric-entry',
+      stem: 'A toy car is pushed across a flat carpet with a forwards push of 4 N. Friction with the carpet drags backwards with 3 N. The wheels also rub on their axles, adding another 1 N of friction. What is the size, in newtons, of the net forwards force on the car?',
+      tier: 'confident',
+      correctAnswer: 0,
+      unit: 'N',
+      xpValue: 15,
+      misconceptionId: 'fr-mis-add-pull-and-friction',
+      hint: 'Add the two friction values, then subtract from the pull.',
+    },
+    {
+      id: 'fr-q17',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is explaining why a falling raindrop reaches a terminal speed before it hits the pavement.',
+      tier: 'confident',
+      steps: [
+        'When the raindrop first leaves the cloud, its weight pulls it downwards. Air resistance is small at low speed.',
+        'The raindrop speeds up because the net force is downwards.',
+        null,
+        'When air resistance grows to equal the weight, the two arrows balance. The net force is zero.',
+        'The raindrop keeps falling, but now at a steady speed (terminal speed). It does not speed up any more.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'As the raindrop goes faster, air resistance grows. The faster it falls, the bigger the upward push from the air.',
+      xpValue: 15,
+    },
+    {
+      id: 'fr-q18',
+      type: 'numeric-entry',
+      stem: 'A 70 kg cyclist on a flat road feels a forwards force of 60 N from the pedals. Air resistance and rolling friction together drag back with 60 N. What is the size, in newtons, of the net horizontal force on the cyclist?',
+      tier: 'confident',
+      correctAnswer: 0,
+      unit: 'N',
+      xpValue: 15,
+      misconceptionId: 'fr-mis-balanced-stops-fall',
+      hint: 'Forwards force and backwards drag are the same size. Subtract.',
+    },
+    {
+      id: 'fr-q19',
+      type: 'multiple-choice',
+      stem: 'A book is pulled along a desk in the school library with a forwards pull of 14 N. Sliding friction acts on it with 5 N. What does the book do, and what is the net force on it?',
+      tier: 'challenge',
+      options: [
+        'The book slides at the same speed; net force = 19 N forwards.',
+        'The book stays still; net force = 0 N.',
+        'The book moves backwards; net force = 5 N backwards.',
+        'The book slides faster; net force = 9 N forwards.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'fr-mis-add-pull-and-friction',
+      hint: 'Subtract the friction from the pull. The result tells you size and direction.',
+    },
+    {
+      id: 'fr-q20',
+      type: 'multiple-choice',
+      stem: 'A South Downs cyclist is rolling downhill into a strong headwind. Their forwards push along the slope (from gravity along the road) is 80 N. Air resistance pushes back with 80 N and rolling friction adds another 20 N back. What is the net force on the cyclist?',
+      tier: 'challenge',
+      options: [
+        '20 N down the slope; the cyclist speeds up gently.',
+        '180 N down the slope; the cyclist speeds up sharply.',
+        '20 N up the slope; the cyclist slows down.',
+        '0 N; the cyclist coasts at the same speed.',
+      ],
+      correctIndex: 2,
+      xpValue: 20,
+      hint: 'Add the two backwards forces, then compare with the forwards push.',
+    },
+    {
+      id: 'fr-q21',
+      type: 'free-text',
+      stem: 'A pupil claims, "If we could remove friction from a car engine completely, the car would never wear out and would never need fuel." Use ideas about useful and unwanted friction to give one fair point and one problem with the claim.',
+      tier: 'challenge',
+      sampleAnswer:
+        'A fair point in the claim is that friction inside a car engine is unwanted. It transfers energy from movement into heat and slowly wears the metal parts. Removing that friction would mean less energy wasted as heat and less wear over time, which is partly why oil is added to engines. The problem with the claim is that other friction is useful and could not be removed. Friction between the tyres and the road lets the car push off and steer; friction between the brake pads and the discs lets the car slow down. Without these, the car could not start, stop, or follow a corner safely. So removing all friction would help the engine but make the rest of the car unsafe.',
+      keywords: ['useful', 'unwanted', 'tyres', 'brakes', 'wear', 'heat', 'oil'],
+      xpValue: 20,
+      misconceptionId: 'fr-mis-friction-always-bad',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2022, Paper 1F, candidates write "no friction acts" on a stationary block when a small horizontal pull is applied
+    {
+      id: 'fr-mis-friction-only-when-moving',
+      description:
+        'Believing that friction only acts on a moving object, so a still box being pushed gently has no friction acting on it.',
+      triggerAnswer: 'friction-only-when-moving',
+      correction:
+        'Static friction grows to match a gentle pull on a still object, up to a limit. The box stays still because the friction balances the pull, not because there is no friction.',
+      reExplanation:
+        'Push a heavy crate gently on a school hall floor. The crate does not move, but you can feel the floor "gripping" it back. As you push harder, the friction grows to match. Only when your push beats the limit does the crate break free and start to slide. Static friction is real friction, just on a still object.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on static and sliding friction
+    {
+      id: 'fr-mis-static-and-sliding-equal',
+      description:
+        'Believing that static and sliding friction are the same size, so once an object starts to slide it needs the same force to keep it going as it did to start it.',
+      triggerAnswer: 'static-and-sliding-equal',
+      correction:
+        'For most pairs of surfaces, the largest static friction is bigger than sliding friction. A heavy box is harder to start sliding than to keep sliding once it is moving.',
+      reExplanation:
+        'Try to push a sofa across a carpet. At first nothing happens, then suddenly it slides. Once it is moving, you can keep it sliding with a smaller push than the one that started it. The first big push had to beat static friction; the smaller push only has to beat sliding friction. The two are not the same size.',
+    },
+    // Source: CGP KS3 Physics Workbook Common Mistake box on air resistance and direction of motion
+    {
+      id: 'fr-mis-air-only-falls-friction',
+      description:
+        'Believing that air resistance only acts on falling objects, so a cyclist or runner on a flat road has no air resistance.',
+      triggerAnswer: 'air-only-falls-friction',
+      correction:
+        'Air resistance acts on any object moving through air, in any direction. A cyclist on a flat road feels air pushing back against them, just as a falling raindrop does.',
+      reExplanation:
+        'Hold a hand out of a moving car window (carefully). The faster the car moves, the harder the air pushes back. The same push acts on a runner on a school field, on a cyclist on the South Downs, and on a falling raindrop. Direction does not matter; movement through the air does.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2019, Paper 1PH0/1F, candidates label water resistance as "air resistance" or omit it entirely
+    {
+      id: 'fr-mis-drag-only-air',
+      description:
+        'Believing drag only happens in air, so a swimmer or rowing boat moving through water has no resistive force.',
+      triggerAnswer: 'drag-only-air',
+      correction:
+        'Drag is friction with any fluid. Both air and water are fluids, so a swimmer feels water resistance just as a cyclist feels air resistance.',
+      reExplanation:
+        'Walk through a swimming pool at chest depth. The water pushes back on you as you move; the faster you go, the harder it pushes. The same idea slows a kayak, a rowing boat, or a fish. Air resistance is the special name for drag in air; in water we call it water resistance, but it is the same kind of force.',
+    },
+    // Source: OCR GCSE Physics examiner report June 2022, J259/02, candidates assume drag is fixed
+    {
+      id: 'fr-mis-drag-fixed-size',
+      description:
+        'Believing that air resistance is a fixed size that does not depend on speed, so a falling object never reaches a steady terminal speed.',
+      triggerAnswer: 'drag-fixed-size',
+      correction:
+        'Air resistance grows as a falling object speeds up. Once the drag matches the weight, the forces balance and the object falls at a steady terminal speed.',
+      reExplanation:
+        'A skydiver who has just left a plane is going slowly, so air resistance is small. They speed up, drag grows, and eventually drag matches weight. Net force becomes zero. From then on the skydiver keeps falling at a steady speed (terminal speed) until they open the parachute, which raises drag again and slows them to a new, lower terminal speed.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2022, Paper 1PH0/1F, candidates write "the skydiver stops" when forces balance during a fall
+    {
+      id: 'fr-mis-balanced-stops-fall',
+      description:
+        'Believing that when forces balance on a falling skydiver the skydiver stops, rather than continuing to fall at a steady terminal speed.',
+      triggerAnswer: 'balanced-stops-fall',
+      correction:
+        'Balanced forces leave the motion as it was. A falling skydiver with balanced forces keeps falling, but at a steady speed; the speed does not drop to zero in mid-air.',
+      reExplanation:
+        'A bag of shopping hung from a hook and a skydiver at terminal speed both have a net force of zero on them. The bag was already still, so it stays still. The skydiver was already moving down, so they keep moving down at the same speed. Balanced forces do not start or stop motion; they just stop the motion changing.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 1F, candidates add (rather than subtract) the friction force when finding the net horizontal force
+    {
+      id: 'fr-mis-add-pull-and-friction',
+      description:
+        'Adding the size of a forwards pull and a backwards friction together, instead of subtracting friction from the pull, when finding the net horizontal force.',
+      triggerAnswer: 'add-pull-and-friction',
+      correction:
+        'When the pull and the friction act in opposite directions, take one direction as positive and subtract the smaller from the larger. The result tells you the size and direction of the net force.',
+      reExplanation:
+        'A box pulled with 14 N and held back by 5 N of friction has a net force of 14 minus 5, which is 9 N forwards, not 19 N. Adding the two would only be right if both arrows pointed the same way. Direction matters when adding forces in one dimension.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on useful and unwanted friction
+    {
+      id: 'fr-mis-friction-always-bad',
+      description:
+        'Believing friction is always a bad thing that should be removed, missing that brakes, walking, gripping a pencil, and tyres on a road all rely on friction.',
+      triggerAnswer: 'friction-always-bad',
+      correction:
+        'Friction is useful when we need an object to grip, slow down, or stay put (brakes, tyres, shoes, pencil tips). It is unwanted when it wastes energy as heat or wears parts out (engine parts, hinges).',
+      reExplanation:
+        'Imagine a world with no friction at all. You could not stand up without slipping, brakes would not slow a bike, tyres would not push a car along, and a pencil would not write. Engineers reduce friction where it wastes energy (oil in a bike chain, smooth bearings in a wheel) and increase friction where they need grip (rubber tyres, brake pads, shoe soles). Friction is a tool, not always a problem.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const forcesZoneNodes = [forcesTypes, forcesBalanced, forcesFriction]
 
 export const forcesZone: Zone = {
   id: 'physics-forces',
