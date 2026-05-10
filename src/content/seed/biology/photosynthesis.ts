@@ -1066,6 +1066,7 @@ export const photosynthesisRate: SkillNode = {
       ],
       correctIndex: 2,
       xpValue: 10,
+      misconceptionId: 'pr-mis-bubbles-are-respiration',
     },
     {
       id: 'pr-q4',
