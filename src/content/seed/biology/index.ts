@@ -16,6 +16,7 @@ export {
 export {
   digestiveSystem,
   circulatorySystem,
+  respiratorySystem,
   bodySystemsZone,
   bodySystemsZoneNodes,
 } from './body-systems'

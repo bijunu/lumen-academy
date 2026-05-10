@@ -1406,12 +1406,681 @@ export const circulatorySystem: SkillNode = {
   },
 }
 
+// =============================================================================
+// Node 3: Respiratory System (Confident, biology-body-systems-respiratory)
+// =============================================================================
 
-export const bodySystemsZoneNodes: SkillNode[] = [digestiveSystem, circulatorySystem]
+const respiratoryOverviewSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">The respiratory system, nose to alveoli</text>
+  <ellipse cx="300" cy="50" rx="22" ry="14" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <rect x="290" y="64" width="20" height="80" fill="#F87171" stroke="#7F1D1D" stroke-width="2" />
+  <line x1="300" y1="144" x2="240" y2="180" stroke="#F87171" stroke-width="6" />
+  <line x1="300" y1="144" x2="360" y2="180" stroke="#F87171" stroke-width="6" />
+  <line x1="240" y1="180" x2="220" y2="210" stroke="#F87171" stroke-width="4" />
+  <line x1="240" y1="180" x2="260" y2="210" stroke="#F87171" stroke-width="4" />
+  <line x1="360" y1="180" x2="340" y2="210" stroke="#F87171" stroke-width="4" />
+  <line x1="360" y1="180" x2="380" y2="210" stroke="#F87171" stroke-with="4" stroke-width="4" />
+  <line x1="220" y1="210" x2="200" y2="230" stroke="#F87171" stroke-width="2" />
+  <line x1="220" y1="210" x2="220" y2="240" stroke="#F87171" stroke-width="2" />
+  <line x1="260" y1="210" x2="270" y2="240" stroke="#F87171" stroke-width="2" />
+  <line x1="340" y1="210" x2="330" y2="240" stroke="#F87171" stroke-width="2" />
+  <line x1="380" y1="210" x2="380" y2="240" stroke="#F87171" stroke-width="2" />
+  <line x1="380" y1="210" x2="400" y2="230" stroke="#F87171" stroke-width="2" />
+  <ellipse cx="200" cy="240" r="6" fill="#FBBF24" />
+  <ellipse cx="220" cy="248" rx="6" ry="6" fill="#FBBF24" />
+  <ellipse cx="270" cy="246" rx="6" ry="6" fill="#FBBF24" />
+  <ellipse cx="330" cy="246" rx="6" ry="6" fill="#FBBF24" />
+  <ellipse cx="380" cy="248" rx="6" ry="6" fill="#FBBF24" />
+  <ellipse cx="400" cy="240" rx="6" ry="6" fill="#FBBF24" />
+  <ellipse cx="290" cy="280" rx="200" ry="80" fill="none" stroke="#1D4ED8" stroke-width="3" stroke-dasharray="8,4" />
+  <text x="290" y="370" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">The two lungs sit either side of the heart, inside the rib cage.</text>
+</svg>
+`.trim()
+
+const alveoliGasSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Gas exchange at an alveolus</text>
+  <circle cx="180" cy="200" r="100" fill="#FEE2E2" stroke="#7F1D1D" stroke-width="3" />
+  <text x="180" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Air sac</text>
+  <text x="180" y="218" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">(alveolus)</text>
+  <path d="M 280 200 Q 360 100 460 130 Q 470 200 460 270 Q 360 300 280 200 Z" fill="#FCE7F3" stroke="#BE185D" stroke-width="2" />
+  <text x="380" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Capillary around</text>
+  <text x="380" y="218" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">the alveolus</text>
+  <line x1="200" y1="160" x2="320" y2="160" stroke="#1D4ED8" stroke-width="3" />
+  <polygon points="318,154 332,160 318,166" fill="#1D4ED8" />
+  <text x="240" y="146" font-family="sans-serif" font-size="14" fill="#1D4ED8">O2 in</text>
+  <line x1="320" y1="240" x2="200" y2="240" stroke="#7F1D1D" stroke-width="3" />
+  <polygon points="202,234 188,240 202,246" fill="#7F1D1D" />
+  <text x="240" y="260" font-family="sans-serif" font-size="14" fill="#7F1D1D">CO2 out</text>
+  <text x="60" y="370" font-family="sans-serif" font-size="13" fill="#1F2937">The alveolus wall and the capillary wall are both one cell thick.</text>
+</svg>
+`.trim()
+
+const breathHeartSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="30" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">Breathing rate and heart rate work as a pair</text>
+  <rect x="40" y="60" width="240" height="120" rx="8" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2" />
+  <text x="160" y="90" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Resting</text>
+  <text x="160" y="120" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Breathing rate: about 14 / min</text>
+  <text x="160" y="142" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Heart rate: about 70 / min</text>
+  <text x="160" y="166" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Body cells need a steady supply.</text>
+  <rect x="320" y="60" width="240" height="120" rx="8" fill="#FECACA" stroke="#7F1D1D" stroke-width="2" />
+  <text x="440" y="90" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">After exercise</text>
+  <text x="440" y="120" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Breathing rate: 30+ / min</text>
+  <text x="440" y="142" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1F2937">Heart rate: 140+ / min</text>
+  <text x="440" y="166" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Muscles need much more O2.</text>
+  <rect x="40" y="220" width="520" height="160" rx="8" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="300" y="250" text-anchor="middle" font-family="sans-serif" font-size="15" fill="#1F2937">Why both rise together</text>
+  <text x="300" y="282" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">When you run, leg muscles burn glucose with oxygen to release energy.</text>
+  <text x="300" y="302" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">The lungs must take in MORE oxygen, so the breathing rate climbs.</text>
+  <text x="300" y="322" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">The heart must move that oxygen to the muscles FASTER, so the heart rate climbs.</text>
+  <text x="300" y="350" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">More CO2 is also produced; the lungs must blow it out at the same rate.</text>
+</svg>
+`.trim()
+
+export const respiratorySystem: SkillNode = {
+  id: 'biology-body-systems-respiratory',
+  title: 'The Respiratory System',
+  description:
+    'Trace the path of air from the nose down through the trachea, bronchi, and bronchioles to the alveoli. See how oxygen passes from the alveoli into the blood and carbon dioxide passes back. Then link breathing rate to heart rate, the circulatory pair you met in the last node.',
+  subject: 'biology',
+  realm: 'vitalia',
+  zoneId: 'biology-body-systems',
+  zoneName: 'Body Systems',
+  tier: 'confident',
+  prerequisites: ['biology-body-systems-circulatory'],
+  curriculum: {
+    ks3Objective:
+      'The structure and functions of the gas exchange system in humans, including adaptations to function; the mechanism of breathing to move air in and out of the lungs, using a pressure model to explain the movement of gases, including simple measurements of lung volume; the impact of exercise, asthma and smoking on the human gas exchange system; the role of leaf stomata in gas exchange in plants.',
+    awardingBodies: {
+      aqa: '4.2.2.3 Gas exchange in the lungs (GCSE Biology 8461). Cover trachea, bronchi, bronchioles, alveoli, and adaptations of the alveolus for gas exchange.',
+      edexcel: 'CB2d Respiratory system / SB6c Gas exchange (GCSE Biology 1BI0, Topics 2 and 6). Describe the structure of the respiratory system and the role of the alveoli.',
+      ocr: 'B2.1.3 The respiratory system (GCSE Biology A J247). Describe the structure and adaptations of the gas exchange surface in humans.',
+    },
+  },
+  scenes: [
+    {
+      id: 'rs-scene-overview',
+      title: 'The Path of Air',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each part of the breathing path to read its name and where it sits.',
+      data: {
+        svg: respiratoryOverviewSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'rs-hs-nose',
+            x: 50,
+            y: 14,
+            label: 'Nose and mouth',
+            description:
+              'Where air enters the body. The nose warms and filters the air.',
+          },
+          {
+            id: 'rs-hs-trachea',
+            x: 50,
+            y: 28,
+            label: 'Trachea',
+            description:
+              'The windpipe. A muscular tube held open by rings of cartilage.',
+          },
+          {
+            id: 'rs-hs-bronchi',
+            x: 40,
+            y: 45,
+            label: 'Bronchi',
+            description:
+              'Two large tubes, one to each lung. The trachea splits in two to form them.',
+          },
+          {
+            id: 'rs-hs-bronchioles',
+            x: 60,
+            y: 56,
+            label: 'Bronchioles',
+            description:
+              'Smaller branching tubes inside each lung.',
+          },
+          {
+            id: 'rs-hs-alveoli',
+            x: 40,
+            y: 62,
+            label: 'Alveoli',
+            description:
+              'Tiny air sacs at the end of each bronchiole. This is where gas exchange happens.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'rs-scene-gas',
+      title: 'Gas Exchange at the Alveolus',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each arrow or sac to read which gas moves which way and why.',
+      data: {
+        svg: alveoliGasSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'rs-gx-alveolus',
+            x: 30,
+            y: 50,
+            label: 'Air sac (alveolus)',
+            description:
+              'A tiny round sac filled with fresh air. Its wall is just one cell thick.',
+          },
+          {
+            id: 'rs-gx-capillary',
+            x: 65,
+            y: 50,
+            label: 'Capillary',
+            description:
+              'A blood vessel wrapped around the alveolus, also one cell thick. Blood arriving here is low in oxygen.',
+          },
+          {
+            id: 'rs-gx-o2',
+            x: 45,
+            y: 36,
+            label: 'O2 in',
+            description:
+              'Oxygen passes from the air in the alveolus through the two thin walls into the blood.',
+          },
+          {
+            id: 'rs-gx-co2',
+            x: 45,
+            y: 60,
+            label: 'CO2 out',
+            description:
+              'Carbon dioxide passes from the blood into the air in the alveolus, ready to be breathed out.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'rs-scene-pair',
+      title: 'Breathing Rate Meets Heart Rate',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each panel to read how the lungs and the heart work together when you exercise.',
+      data: {
+        svg: breathHeartSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'rs-pair-rest',
+            x: 27,
+            y: 30,
+            label: 'Resting',
+            description:
+              'A Year 7 pupil at rest takes about 14 breaths a minute, with a heart rate near 70.',
+          },
+          {
+            id: 'rs-pair-exercise',
+            x: 73,
+            y: 30,
+            label: 'After exercise',
+            description:
+              'After running across the school field, the pupil may take 30 or more breaths a minute and the heart rate climbs above 140.',
+          },
+          {
+            id: 'rs-pair-why',
+            x: 50,
+            y: 75,
+            label: 'Why both rise',
+            description:
+              'Muscles need more oxygen and produce more carbon dioxide. The lungs must take more air in and the heart must move that oxygen-rich blood to the muscles faster.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'rs-worked-1',
+      title: 'Following one breath of air from the nose to a leg muscle',
+      steps: [
+        {
+          explanation:
+            'A pupil breathes in fresh air through the nose. We follow one breath all the way to a muscle in the leg.',
+        },
+        {
+          explanation:
+            'Step 1: in the nose, the air is warmed and any dust is trapped by tiny hairs and sticky mucus.',
+        },
+        {
+          explanation:
+            'Step 2: the air passes down the trachea, the windpipe held open by rings of cartilage.',
+        },
+        {
+          explanation:
+            'Step 3: the trachea splits into two bronchi, one going to each lung. The air then divides into smaller and smaller bronchioles inside the lungs.',
+        },
+        {
+          explanation:
+            'Step 4: the air reaches a tiny alveolus. Oxygen passes through the alveolus wall and the capillary wall into the blood.',
+        },
+        {
+          explanation:
+            'Step 5: the heart pumps the oxygen-rich blood to a leg muscle. There, oxygen passes from the blood into the muscle cells, where it is used to release energy from glucose.',
+        },
+      ],
+    },
+    {
+      id: 'rs-worked-2',
+      title: 'Working out how breathing rate changes with exercise',
+      steps: [
+        {
+          explanation:
+            'A pupil counts 14 breaths during one full minute at rest. After running once around the school field, they count 24 breaths across a 30 second window.',
+        },
+        {
+          explanation:
+            'Find the breathing rate after exercise in breaths per minute. The window was half a minute, so multiply by 2 to scale up.',
+        },
+        {
+          explanation:
+            'After exercise: 24 breaths across half a minute gives 24 times 2, which is 48 breaths a minute.',
+          maths: '24 x 2 = 48 breaths/min',
+        },
+        {
+          explanation:
+            'Compare with the rest value of 14. The pupil now breathes 48 minus 14, which is 34 more breaths a minute.',
+          maths: '48 - 14 = 34',
+        },
+        {
+          explanation:
+            'Why? The leg muscles need much more oxygen, so the lungs must take in air more often. The heart rate also climbs to deliver that oxygen-rich blood to the muscles faster.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'rs-q1',
+      type: 'multiple-choice',
+      stem: 'Which tube does the air pass through straight after the nose?',
+      tier: 'core',
+      options: ['Bronchus', 'Trachea', 'Alveolus', 'Bronchiole'],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'rs-mis-trachea-skip',
+    },
+    {
+      id: 'rs-q2',
+      type: 'multiple-choice',
+      stem: 'Where in the lungs does oxygen pass into the blood?',
+      tier: 'core',
+      options: ['Trachea', 'Bronchi', 'Bronchioles', 'Alveoli'],
+      correctIndex: 3,
+      xpValue: 10,
+    },
+    {
+      id: 'rs-q3',
+      type: 'multiple-choice',
+      stem: 'Which gas passes from the blood into the alveolus?',
+      tier: 'core',
+      options: ['Oxygen', 'Nitrogen', 'Water vapour', 'Carbon dioxide'],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'rs-mis-gas-direction',
+    },
+    {
+      id: 'rs-q4',
+      type: 'multiple-choice',
+      stem: 'Which of these features fits an alveolus best?',
+      tier: 'core',
+      options: [
+        'A wall many cells thick to keep air out.',
+        'A wall made of bone.',
+        'A wall just one cell thick, with a capillary wrapped around it.',
+        'A wall covered in valves to stop air going backwards.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'rs-mis-alveolus-thick',
+    },
+    {
+      id: 'rs-q5',
+      type: 'numeric-entry',
+      stem: 'A pupil counts 18 breaths across a 30 second window. What is their breathing rate in breaths per minute?',
+      tier: 'core',
+      correctAnswer: 36,
+      xpValue: 10,
+      hint: 'Multiply by 2 to get a per minute rate.',
+    },
+    {
+      id: 'rs-q6',
+      type: 'numeric-entry',
+      stem: 'How many bronchi come straight off the trachea, one for each lung?',
+      tier: 'core',
+      correctAnswer: 2,
+      xpValue: 10,
+      hint: 'One per lung.',
+    },
+    {
+      id: 'rs-q7',
+      type: 'multiple-choice',
+      stem: 'A pupil writes that "the lungs make oxygen for the body." What has gone wrong?',
+      tier: 'core',
+      options: [
+        'The lungs do not make oxygen. They take it in from the air, which already contains oxygen.',
+        'Nothing. Lungs make oxygen.',
+        'The lungs only take in carbon dioxide, not oxygen.',
+        'The lungs make oxygen only when you exercise.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'rs-mis-lungs-make-oxygen',
+    },
+    {
+      id: 'rs-q8',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "breathing in is the same as respiration." Is this method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. Breathing and respiration are two names for the same thing.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Breathing moves air in and out of the lungs. Respiration is the chemical reaction in body cells that releases energy from glucose using oxygen.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'rs-mis-breathing-equals-respiration',
+    },
+    {
+      id: 'rs-q9',
+      type: 'multiple-choice',
+      stem: 'Why does the breathing rate climb after a Year 7 pupil runs across the school field?',
+      tier: 'confident',
+      options: [
+        'The lungs shrink during exercise, so more breaths are needed.',
+        'The pupil produces less oxygen during running.',
+        'Leg muscles need more oxygen and produce more carbon dioxide, so the lungs must take in air more often to keep up.',
+        'Breathing rate has nothing to do with exercise.',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'rs-mis-breathing-releases-energy',
+    },
+    {
+      id: 'rs-q10',
+      type: 'drag-order',
+      stem: 'Place these parts of the breathing path in the order air passes through them.',
+      tier: 'confident',
+      items: [
+        'Bronchiole',
+        'Trachea',
+        'Alveolus',
+        'Nose',
+        'Bronchus',
+      ],
+      correctOrder: [3, 1, 4, 0, 2],
+      xpValue: 20,
+      misconceptionId: 'rs-mis-trachea-skip',
+    },
+    {
+      id: 'rs-q11',
+      type: 'labelled-image',
+      stem: 'Drag each label onto the correct part of the respiratory system.',
+      tier: 'confident',
+      svg: respiratoryOverviewSvg,
+      viewBox: '0 0 600 400',
+      hotspots: [
+        { id: 'rs-q11-trachea', x: 50, y: 28, correctLabel: 'Trachea' },
+        { id: 'rs-q11-bronchi', x: 40, y: 45, correctLabel: 'Bronchi' },
+        { id: 'rs-q11-bronchioles', x: 60, y: 56, correctLabel: 'Bronchioles' },
+        { id: 'rs-q11-alveoli', x: 40, y: 62, correctLabel: 'Alveoli' },
+      ],
+      labels: [
+        'Trachea',
+        'Bronchi',
+        'Bronchioles',
+        'Alveoli',
+        'Heart',
+        'Stomach',
+        'Oesophagus',
+        'Capillary',
+      ],
+      xpValue: 20,
+    },
+    {
+      id: 'rs-q12',
+      type: 'drag-drop-builder',
+      stem: 'Build the breathing path. Drag in only the parts air passes through, in any order in the build area.',
+      tier: 'confident',
+      parts: [
+        'Nose',
+        'Trachea',
+        'Bronchus',
+        'Bronchiole',
+        'Alveolus',
+        'Heart',
+        'Stomach',
+        'Capillary',
+      ],
+      correctArrangement: [
+        'Nose',
+        'Trachea',
+        'Bronchus',
+        'Bronchiole',
+        'Alveolus',
+      ],
+      xpValue: 20,
+      misconceptionId: 'rs-mis-trachea-skip',
+    },
+    {
+      id: 'rs-q13',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of gas exchange.',
+      tier: 'confident',
+      steps: [
+        'Air rich in oxygen enters the alveolus when the pupil breathes in.',
+        'The alveolus wall and the capillary wall around it are each only one cell thick.',
+        null,
+        'The blood, now rich in oxygen, returns to the heart and is pumped out to the body cells.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Oxygen passes from the alveolus through the two thin walls into the blood, while carbon dioxide passes the other way and joins the air ready to be breathed out.',
+      xpValue: 20,
+    },
+    {
+      id: 'rs-q14',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "we breathe in oxygen and breathe out carbon dioxide only, with no other gases." Is this method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. Air in is pure oxygen; air out is pure carbon dioxide.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. The air we breathe is mostly nitrogen, with about 21% oxygen and a small amount of carbon dioxide. Breathing out lowers the oxygen and raises the carbon dioxide a little, but neither gas reaches 100%.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'rs-mis-pure-oxygen',
+    },
+    {
+      id: 'rs-q15',
+      type: 'data-extraction',
+      stem: 'Which pupil in the table has the largest rise in breathing rate after exercise?',
+      tier: 'core',
+      dataSource:
+        'A class records breathing rate before and after running once around the school field: A. Aisha 14 to 32 breaths/min. B. Ben 16 to 28 breaths/min. C. Chen 12 to 30 breaths/min. D. Dana 14 to 26 breaths/min.',
+      correctAnswer: 'A',
+      xpValue: 15,
+      hint: 'Subtract the resting value from the after-exercise value for each pupil.',
+    },
+    {
+      id: 'rs-q16',
+      type: 'numeric-entry',
+      stem: 'A pupil takes 16 breaths a minute at rest and 40 breaths a minute after running. By how many breaths per minute has the breathing rate risen?',
+      tier: 'confident',
+      correctAnswer: 24,
+      unit: 'breaths/min',
+      xpValue: 15,
+      hint: 'Subtract the resting rate from the active rate.',
+    },
+    {
+      id: 'rs-q17',
+      type: 'numeric-entry',
+      stem: 'In a Sevenoaks PE lesson, a pupil counts 22 breaths across a 30 second window straight after a sprint. What is the breathing rate in breaths per minute?',
+      tier: 'challenge',
+      correctAnswer: 44,
+      xpValue: 25,
+      hint: 'Scale a 30 second count up to a full minute.',
+    },
+    {
+      id: 'rs-q18',
+      type: 'numeric-entry',
+      stem: 'At rest, a Year 7 pupil takes 15 breaths a minute. Each breath moves about 500 ml of air in and out. How many litres of air pass through the lungs in 4 minutes?',
+      tier: 'challenge',
+      correctAnswer: 30,
+      unit: 'l',
+      xpValue: 25,
+      hint: 'First find the volume in ml per minute, then convert ml to litres.',
+    },
+    {
+      id: 'rs-q19',
+      type: 'multiple-choice',
+      stem: 'A doctor at a Tunbridge Wells hospital tells a patient that smoking has damaged many alveoli, so they cannot do gas exchange. Which problem is most likely?',
+      tier: 'challenge',
+      options: [
+        'The patient cannot eat food properly.',
+        'The patient cannot move their legs.',
+        'The patient must drink less water.',
+        'Less oxygen passes into the blood, so the patient is short of breath even when walking.',
+      ],
+      correctIndex: 3,
+      xpValue: 25,
+    },
+    {
+      id: 'rs-q20',
+      type: 'multiple-choice',
+      stem: 'A pupil sprints across a Manchester school field. Their breathing rate doubles and their heart rate goes up by half. Which best explains why both change at the same time?',
+      tier: 'challenge',
+      options: [
+        'The lungs and the heart act on their own; the matching is by chance.',
+        'The pupil eats more food during the sprint, so both rates rise.',
+        'The leg muscles need more oxygen and produce more carbon dioxide, so the lungs take in more air and the heart pumps the blood faster to deliver oxygen and carry waste away.',
+        'Only the breathing rate matters; the heart rate stays the same.',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'rs-mis-lungs-heart-independent',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Biology Foundation tier (8461/2F) Report on the Examination, June 2022, on the gas exchange question; students often confused breathing (gas movement) with respiration (the chemical reaction in cells). https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-84612F-WRE-2022.PDF
+    {
+      id: 'rs-mis-breathing-equals-respiration',
+      description: 'Breathing and respiration are two names for the same thing.',
+      triggerAnswer: 'breath-equals-resp',
+      correction:
+        'Actually, breathing is the movement of air in and out of the lungs. Respiration is the chemical reaction in body cells that releases energy from glucose using oxygen.',
+      reExplanation:
+        'You can hold your breath for a few seconds, but you cannot pause respiration. Respiration is happening in every body cell every second, releasing the energy you need just to keep your heart beating. Breathing brings the oxygen in and takes the carbon dioxide out, but the energy release itself is a chemical reaction inside the cells.',
+    },
+    // Source: CGP KS3 Biology Study Guide (Year 7-9), Common mistake on the breathing path: students forget the trachea and link the nose straight to the lungs.
+    {
+      id: 'rs-mis-trachea-skip',
+      description: 'Air goes straight from the nose into the lungs, skipping the trachea.',
+      triggerAnswer: 'skip-trachea',
+      correction:
+        'In fact, air passes through the trachea (windpipe) before it splits into the two bronchi that lead into the lungs.',
+      reExplanation:
+        'The trachea is the tube you can feel in your throat. It is held open by rings of cartilage so it does not collapse when you breathe in hard. At the bottom it splits into two bronchi, one going to each lung, then divides again into smaller bronchioles before reaching the alveoli. Without the trachea, air would have nowhere to travel.',
+    },
+    // Source: AQA GCSE Biology specification 8461 section 4.2.2.3, gas exchange: oxygen passes INTO the blood, carbon dioxide passes OUT. Direction confusion flagged in the AQA examiner report on the gas exchange question.
+    {
+      id: 'rs-mis-gas-direction',
+      description: 'Oxygen passes from the blood into the alveolus, and carbon dioxide passes from the alveolus into the blood.',
+      triggerAnswer: 'gas-direction-swap',
+      correction:
+        'Actually, oxygen passes FROM the alveolus INTO the blood, and carbon dioxide passes FROM the blood INTO the alveolus.',
+      reExplanation:
+        'Each gas moves from where there is more of it to where there is less. The fresh air in the alveolus is rich in oxygen, so oxygen passes into the blood. The blood arriving at the alveolus is rich in carbon dioxide from the body cells, so carbon dioxide passes out into the air. The two gases swap places across the thin walls.',
+    },
+    // Source: CGP KS3 Biology Study Guide, Common mistake: students think the lungs MAKE the oxygen rather than take it in from the air around them.
+    {
+      id: 'rs-mis-lungs-make-oxygen',
+      description: 'The lungs make oxygen for the body.',
+      triggerAnswer: 'lungs-make-o2',
+      correction:
+        'In fact, the lungs do not make oxygen. They take in air, which already contains about 21% oxygen, and pass that oxygen into the blood.',
+      reExplanation:
+        'Plants make oxygen during photosynthesis. Animals do not. The lungs are like a sponge for swapping gases: oxygen from the air gets into the blood, and carbon dioxide from the blood gets into the air. If oxygen vanished from the air, the lungs would have nothing to take in, no matter how hard you breathed.',
+    },
+    // Source: Edexcel GCSE Biology specification 1BI0, Topic 2 / 6, on adaptations of the alveolus: thin wall (one cell thick), large surface area, moist lining, rich blood supply. Common Year 7 slip is to picture the alveolus wall as thick.
+    {
+      id: 'rs-mis-alveolus-thick',
+      description: 'An alveolus has a thick wall to keep air in.',
+      triggerAnswer: 'alveolus-thick',
+      correction:
+        'Actually, the alveolus wall is just one cell thick. The thinness lets oxygen and carbon dioxide pass through easily.',
+      reExplanation:
+        'A thick wall would block the gases from crossing. The alveolus is built to do the opposite: its single-cell wall, the single-cell capillary wall, and a moist surface together let oxygen and carbon dioxide swap with little resistance. Each lung has hundreds of millions of these tiny sacs, giving a huge total surface for gas exchange.',
+    },
+    // Source: AQA GCSE Biology specification 8461, on the composition of inhaled and exhaled air; common Year 7 mistake is treating breathed air as pure oxygen and exhaled air as pure carbon dioxide.
+    {
+      id: 'rs-mis-pure-oxygen',
+      description:
+        'The air we breathe in is pure oxygen, and the air we breathe out is pure carbon dioxide.',
+      triggerAnswer: 'pure-gases',
+      correction:
+        'In fact, the air we breathe is mostly nitrogen, with about 21% oxygen and a tiny amount of carbon dioxide. Breathing in and out shifts those amounts a little, not from 0 to 100.',
+      reExplanation:
+        'Air is a mixture: about 78% nitrogen, 21% oxygen, around 0.04% carbon dioxide, plus argon and water vapour. Breathed-in air is roughly that mixture. Breathed-out air has less oxygen (about 16%) and more carbon dioxide (about 4%) than breathed-in air, but it is still mostly nitrogen. Nitrogen passes in and out without being used.',
+    },
+    // Source: OCR GCSE Biology A J247 specification, B2.1.3 The respiratory system, on the role of breathing rate after exercise; CGP KS3 also flags the common idea that "breathing" releases the energy.
+    {
+      id: 'rs-mis-breathing-releases-energy',
+      description:
+        'Breathing in air releases energy directly for the body to use.',
+      triggerAnswer: 'breathing-releases-energy',
+      correction:
+        'Actually, breathing only moves air in and out. Energy is released in the body cells, where oxygen reacts with glucose during respiration.',
+      reExplanation:
+        'Think of two stages. First, breathing brings oxygen from the air into the blood at the alveoli. Second, that oxygen reaches the body cells, where it joins glucose in a chemical reaction (respiration) that releases energy. The lungs do the moving; the cells do the energy release. Both stages must happen for muscles to work.',
+    },
+    // Source: CGP KS3 Biology Study Guide, Common mistake on heart and lungs working as a pair: students treat them as independent rather than coupled.
+    {
+      id: 'rs-mis-lungs-heart-independent',
+      description:
+        'The breathing rate and the heart rate are not connected.',
+      triggerAnswer: 'lungs-heart-separate',
+      correction:
+        'In fact, breathing rate and heart rate work as a pair. When one rises, so does the other, because oxygen has to be taken in (lungs) and then carried (heart) to the muscles.',
+      reExplanation:
+        'Imagine a relay race. The lungs hand oxygen to the blood, then the heart races that blood to the muscles. If the muscles want more oxygen, both runners must speed up. So breathing rate climbs to take in more oxygen, and heart rate climbs to deliver that oxygen-rich blood faster. Carbon dioxide is also carried back to the lungs faster for blowing out.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const bodySystemsZoneNodes: SkillNode[] = [
+  digestiveSystem,
+  circulatorySystem,
+  respiratorySystem,
+]
 
 export const bodySystemsZone: Zone = {
   id: 'biology-body-systems',
   name: 'Body Systems',
   realm: 'vitalia',
-  nodeIds: [digestiveSystem.id, circulatorySystem.id],
+  nodeIds: [
+    digestiveSystem.id,
+    circulatorySystem.id,
+    respiratorySystem.id,
+  ],
 }

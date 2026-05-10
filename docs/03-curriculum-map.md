@@ -173,10 +173,10 @@
 - **OCR**: B2.1.2 Transport in animals (GCSE Biology A J247)
 
 #### Respiratory System (Confident, `biology-body-systems-respiratory`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Structure and function of body systems)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The structure and functions of the gas exchange system in humans, including adaptations to function; the mechanism of breathing to move air in and out of the lungs, using a pressure model to explain the movement of gases, including simple measurements of lung volume; the impact of exercise, asthma and smoking on the human gas exchange system; the role of leaf stomata in gas exchange in plants
+- **AQA**: 4.2.2.3 Gas exchange in the lungs (GCSE Biology 8461)
+- **Edexcel**: CB2d Respiratory system / SB6c Gas exchange (GCSE Biology 1BI0, Topics 2 and 6)
+- **OCR**: B2.1.3 The respiratory system (GCSE Biology A J247)
 
 ### Zone: Reproduction (`biology-reproduction`)
 
