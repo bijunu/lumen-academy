@@ -556,7 +556,7 @@ export const energyStores: SkillNode = {
       ],
       missingStepIndex: 2,
       correctStep:
-        'A stretched spring is squashed or pulled out of shape, the same as a rubber band or a drawn bow.',
+        'A stretched spring is pulled out of shape, the same as a rubber band or a drawn bow.',
       xpValue: 15,
     },
     {
@@ -627,18 +627,18 @@ export const energyStores: SkillNode = {
     {
       id: 'es-q21',
       type: 'multiple-choice',
-      stem: 'A pupil holds a 0.5 kg apple still, 1.5 m above the kitchen floor in Sevenoaks. The apple is at room temperature. Which list of stores best matches the apple at this moment?',
+      stem: 'A pupil holds a 0.5 kg apple still, 1.5 m above the kitchen floor in Sevenoaks. The apple is at room temperature. Which list of the main stores best matches the apple at this moment?',
       tier: 'challenge',
       options: [
         'Only kinetic store.',
-        'Gravitational store (lifted up) plus a small chemical store of the sugars in the apple. Other stores are very small.',
+        'Gravitational store (lifted up), a small chemical store of the sugars in the apple, and a small thermal store at room temperature. Other stores are very small.',
         'Only chemical store.',
         'Only thermal store, because the apple is at room temperature.',
       ],
       correctIndex: 1,
       xpValue: 20,
       misconceptionId: 'es-mis-only-one-store',
-      hint: 'List every store the apple holds. Include the chemical store of the food.',
+      hint: 'List every store the apple holds. Include the chemical store of the food and the thermal store of the apple at room temperature.',
     },
   ],
   misconceptions: [
@@ -1836,11 +1836,12 @@ export const energyEfficiency: SkillNode = {
         'The filament bulb gives more useful light per joule of input.',
         'The LED wastes a smaller share of its input as heating.',
         'Both bulbs waste the same amount, because both glow.',
-        'Neither bulb wastes any energy; only old appliances waste.',
+        'The LED creates extra energy that the filament bulb cannot, which is why it gives more light.',
       ],
       correctIndex: 1,
       xpValue: 10,
-      hint: 'Compare the light arrow widths. Which bulb has a thinner wasted arrow?',
+      misconceptionId: 'ee-mis-appliance-creates-energy',
+      hint: 'Compare the light arrow widths. Which bulb has a thinner wasted arrow? Neither bulb creates new energy.',
     },
     {
       id: 'ee-q6',
