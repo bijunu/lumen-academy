@@ -5,6 +5,10 @@ import { microscopyZone, microscopyZoneNodes } from './microscopy'
 import { bodySystemsZone, bodySystemsZoneNodes } from './body-systems'
 import { reproductionZone, reproductionZoneNodes } from './reproduction'
 import {
+  variationClassificationZone,
+  variationClassificationZoneNodes,
+} from './variation-classification'
+import {
   photosynthesisZone,
   photosynthesisZoneNodes,
 } from './photosynthesis'
@@ -32,6 +36,11 @@ export {
   reproductionZoneNodes,
 } from './reproduction'
 export {
+  continuousDiscontinuousVariation,
+  variationClassificationZone,
+  variationClassificationZoneNodes,
+} from './variation-classification'
+export {
   photosynthesisOverview,
   photosynthesisZone,
   photosynthesisZoneNodes,
@@ -42,6 +51,7 @@ export const biologyNodes: SkillNode[] = [
   ...microscopyZoneNodes,
   ...bodySystemsZoneNodes,
   ...reproductionZoneNodes,
+  ...variationClassificationZoneNodes,
   ...photosynthesisZoneNodes,
 ]
 
@@ -50,5 +60,6 @@ export const biologyZones: Zone[] = [
   microscopyZone,
   bodySystemsZone,
   reproductionZone,
+  variationClassificationZone,
   photosynthesisZone,
 ]

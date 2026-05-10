@@ -886,7 +886,7 @@ Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overv
 - Q-REPRO-6: At least one labelled-image question on the human-overview node places testes, sperm tube, and penis onto hotspots on the male system diagram, with at least one female-system label as a distractor.
 - Q-REPRO-7: At least one drag-order question on the human-overview node sequences fertilisation, implantation, embryo, foetus, birth in that order.
 - Q-REPRO-8: At least one drag-drop-builder on the human-overview node restricts the build to the in-order journey of a sperm cell from testes through to oviduct, rejecting non-reproductive organs (stomach, bladder, lungs).
-- Q-REPRO-9: At least one Confident-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
+- Q-REPRO-9: At least one Challenge-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
 - Q-REPRO-10: At least one Challenge-tier MCQ on the human-overview node uses an NHS-sourced public-health framing (smoking and pregnancy) and asks the learner to map the warning onto the placenta mechanism.
 
 ### Tutor probes
@@ -905,13 +905,78 @@ Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overv
 Covers `biology-variation-continuous-discontinuous`, `biology-classification-five-kingdoms`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-VAR-1: Learner labels categorical traits such as blood group or eye colour as continuous because there are several categories.
+  - Required handling: misconception entry on the variation node; at least one Core MCQ that asks for a discontinuous example with a categorical trait, and at least one Core spot-misconception or MCQ surfacing the four-blood-groups slip.
+- C-VAR-2: Learner believes a trait must show a different value for every pupil to be continuous.
+  - Required handling: misconception entry on the variation node; at least one Challenge-tier MCQ on a measured-data set with repeated values that is still continuous.
+- C-VAR-3: Learner treats bar charts and histograms as interchangeable, missing that touching bars vs gaps carry meaning.
+  - Required handling: misconception entry on the variation node; at least one Core MCQ that asks which chart fits continuous data and one that asks which chart fits discontinuous data.
+- C-VAR-4: Learner judges tongue-rolling as continuous because of perceived "degrees" of ability.
+  - Required handling: misconception entry on the variation node; at least one Confident-tier spot-misconception that surfaces the yes/no recording rule at KS3.
+- C-VAR-5: Learner believes that rounding measurements to whole numbers turns a continuous trait into a discontinuous one.
+  - Required handling: misconception entry on the variation node; at least one Challenge-tier MCQ that surfaces the "rounded values are still continuous" rule.
+- C-VAR-6: Learner picks the kind of variation by the cause of the trait (single cause vs many causes) rather than by the data.
+  - Required handling: misconception entry on the variation node, framed against KS3 scope (cause-of-variation depth is not in scope at Year 7).
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-VAR-1: At least one Core MCQ on the variation node asks for a continuous example, with discrete-category traits as distractors.
+- Q-VAR-2: At least one Core MCQ on the variation node asks for a discontinuous example, with measured-on-a-scale traits as distractors.
+- Q-VAR-3: At least one Core MCQ on the variation node asks which chart (histogram vs bar chart with gaps) fits a given trait, and another asks the opposite case.
+- Q-VAR-4: At least one Confident-tier data-extraction on the variation node uses a UK-context Year 7 class survey histogram (shoe size in a Sevenoaks Y7 class) and asks for the modal value.
+- Q-VAR-5: At least one Confident-tier numeric on the variation node asks the learner to compute a count from a class survey (e.g. "size 7 or larger").
+- Q-VAR-6: At least one drag-drop-builder on the variation node asks the learner to pick all continuous traits and reject the discontinuous distractors.
+- Q-VAR-7: At least one Challenge-tier numeric on the variation node uses a class survey (eye colour or blood group) and requires a percentage calculation.
+- Q-VAR-8: At least one missing-step question on the variation node fills in the "group the measurements into bands" step within a chart-drawing routine.
+- Q-VAR-9: At least one free-text question on the variation node asks the learner to explain why one trait is plotted as a histogram and another as a bar chart.
+- Q-VAR-10: All UK-context survey contexts on the variation node use a Sevenoaks Y7 class (or another named UK school) with neutral observable traits only; no traits tied to ethnicity or race.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-VAR-1: Given "Why is blood group not continuous? It has four groups", the tutor's first reply is a Socratic prompt about whether anything sits between the groups, not a direct correction.
+- T-VAR-2: Given a wrong answer matching the categories-as-continuous trigger on vcd-q1 or vcd-q2, the tutor cites the relevant misconception's `reExplanation` (the "halfway between two values?" test) rather than producing a fresh hint.
+- T-VAR-3: Given "All bar charts are histograms", the tutor steers via "do the bars touch or have a gap?", not a definition dump.
+- T-VAR-4: Given a request for an inline definition (tap on "continuous" or "histogram"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-VAR-5: Given an off-topic input on the variation node (for example a question about alleles or genetic causes), the tutor flags that cause-of-variation depth comes later in Year 8 / 9 and steers back to "is the data on a scale or in categories?".
+
+### Content probes (classification)
+
+- C-CLASS-1: Learner places fungi in the plant kingdom because mushrooms grow rooted to the ground.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on the kingdom of a button mushroom; at least one Confident-tier spot-misconception that surfaces the photosynthesis-and-cellulose-vs-chitin sort line.
+- C-CLASS-2: Learner believes animal cells have a cell wall.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on what is true of every animal cell, with the cell-wall distractor as the dominant trap.
+- C-CLASS-3: Learner believes the fungal cell wall is made of cellulose like the plant cell wall.
+  - Required handling: misconception entry on the classification node; at least one Core MCQ on the make-up of the fungal cell wall (chitin); at least one Confident-tier MCQ that uses cellulose-plus-photosynthesis as the diagnostic for the plant kingdom.
+- C-CLASS-4: Learner labels every single-celled organism as a bacterium.
+  - Required handling: misconception entry on the classification node; at least one Confident-tier spot-misconception that surfaces the eukaryote-protist (Amoeba) case; at least one Challenge-tier MCQ that uses "single cell with a nucleus" to diagnose protists.
+- C-CLASS-5: Learner believes bacteria have a nucleus, like other living cells.
+  - Required handling: misconception entry on the classification node; at least one Confident-tier MCQ on which kingdom contains organisms with no nucleus (prokaryotes); at least one Challenge-tier MCQ contrasting bacterial and protist cells on the nucleus feature.
+- C-CLASS-6: Learner believes baker's yeast is a kind of bacteria.
+  - Required handling: misconception entry on the classification node; the Challenge-tier missing-step question on yeast checks the chitin-vs-cellulose and eukaryote-vs-prokaryote tests in sequence.
+- C-CLASS-7: Learner uses smaller categories like "insects" as kingdoms.
+  - Required handling: misconception entry on the classification node, framed against the five-kingdom-only KS3 scope; smaller categories called out explicitly as inside-the-animal-kingdom subsets.
+
+### Question shape probes (classification)
+
+- Q-CLASS-1: At least one Core MCQ on the classification node asks for the kingdom of each of: a robin (animal), an oak (plant), a button mushroom (fungi), Lactobacillus (prokaryote), and an Amoeba (protist), so all five kingdoms are surfaced as correct answers across the question pool.
+- Q-CLASS-2: At least one Core MCQ on the classification node asks for the make-up of the fungal cell wall (chitin) with cellulose, glucose, and chlorophyll as distractors.
+- Q-CLASS-3: At least one Core numeric on the classification node asks "how many kingdoms are there in the classic five-kingdom system?".
+- Q-CLASS-4: At least one Confident-tier data-extraction on the classification node uses an unknown-organism feature table (cell type, cell wall material, photosynthesis, body) and asks for the kingdom.
+- Q-CLASS-5: At least one drag-drop-builder on the classification node asks the learner to pick all UK animals from a pool that mixes animals, a plant, a fungus, a bacterium, and a protist.
+- Q-CLASS-6: At least one Confident-tier numeric on the classification node asks the learner to count organisms in a specific kingdom from a fixed list of eight UK organisms.
+- Q-CLASS-7: At least one Challenge-tier missing-step question on the classification node fills in the chitin-vs-cellulose check inside an account of why baker's yeast is a fungus, not a bacterium.
+- Q-CLASS-8: At least one Challenge-tier MCQ on the classification node uses a single-celled-with-nucleus-and-cilia clue to direct the learner to the protist kingdom.
+- Q-CLASS-9: All UK examples on the classification node use UK-grounded organisms (oak, robin, fox, hedgehog, holly, daisy, button mushroom, bread mould, Lactobacillus); no US wildlife.
+- Q-CLASS-10: All chemical and biological terms in stems, options, and explanations on the classification node use UK English (colour, behaviour, etc.) and the SkillNode reading-age cap of 12 or younger.
+
+### Tutor probes (classification)
+
+- T-CLASS-1: Given "Mushrooms are plants, right?", the tutor's first reply is a Socratic prompt about whether the mushroom photosynthesises, not a direct correction.
+- T-CLASS-2: Given a wrong answer matching the fungi-cellulose-wall trigger on cls-q7, the tutor cites the relevant misconception's `reExplanation` (the wall-material-by-kingdom trio) rather than producing a fresh hint.
+- T-CLASS-3: Given "An Amoeba is just a small bacterium", the tutor steers the learner to the nucleus check, not a definition dump on prokaryotes.
+- T-CLASS-4: Given a request for an inline definition (tap on "eukaryote", "prokaryote", or "chitin"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-CLASS-5: Given an off-topic input on the classification node (for example a US AP Biology three-domains reference, or "what about Archaea?"), the tutor flags that the three-domain system is GCSE+ depth and steers back to the five-kingdom system.
 
 ## Zone: Vitalia > Ecosystems and Food Webs
 
@@ -971,6 +1036,46 @@ Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
 - T-PHOTO-5: Given a request for an inline definition (tap on "chloroplast" or "chlorophyll"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-PHOTO-6: Given "Why does the pondweed bubble more under a torch?", the tutor walks the learner through "more light, more photosynthesis, more oxygen", not a launch into limiting-factors graphs (those belong to the rate node).
 - T-PHOTO-7: Given an off-topic input (for example a US AP Biology Calvin-cycle reference), the tutor steers back to UK KS3 word-equation language politely.
+
+### Content probes (rate)
+
+- C-PHOTO-9: Learner believes higher temperature always speeds up photosynthesis (no peak, no decline above ~40 °C).
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on why the temperature-rate graph falls above the peak (enzymes denature); at least one Confident-tier spot-misconception that surfaces the warmer-is-always-better slip.
+- C-PHOTO-10: Learner reads a plateau on a rate graph as the plant having stopped photosynthesising.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what a plateau on the rate-vs-light-intensity graph means; at least one Confident-tier MCQ on the same shape for the rate-vs-CO₂ graph.
+- C-PHOTO-11: Learner believes light, CO₂, and temperature are all limiting at the same time.
+  - Required handling: misconception entry on the rate node; at least one Confident-tier spot-misconception that surfaces the only-one-limiting-factor-at-a-time idea.
+- C-PHOTO-12: Learner believes that moving the lamp closer to the pondweed gives less light.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what should happen to bubble count when the lamp distance is reduced.
+- C-PHOTO-13: Learner runs the pondweed experiment changing more than one variable at once.
+  - Required handling: misconception entry on the rate node; at least one drag-drop-builder that asks the learner to pick the variables to keep constant in the pondweed experiment.
+- C-PHOTO-14: Learner believes there is no ceiling to photosynthesis from light alone (just keep adding light).
+  - Required handling: misconception entry on the rate node; at least one Challenge-tier MCQ that surfaces the plateau ceiling and the need to raise CO₂ or temperature too.
+- C-PHOTO-15: Learner reads pondweed bubbles as a sign of respiration.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what each oxygen bubble from the cut stem signals.
+
+### Question shape probes (rate)
+
+- Q-PHOTO-11: At least one Core MCQ on the rate node names a real limiting factor (light intensity / CO₂ / temperature) with non-factors (air pressure, soil age, pot colour) as distractors.
+- Q-PHOTO-12: At least one Core numeric on the rate node converts a 30-second or 20-second bubble count into a per-minute rate.
+- Q-PHOTO-13: At least one Core numeric on the rate node counts the number of named limiting factors covered (= 3).
+- Q-PHOTO-14: At least one Confident-tier data-extraction on the rate node uses a pondweed lamp-distance dataset (Sevenoaks Y7 class) and asks for the distance giving the highest rate.
+- Q-PHOTO-15: At least one Confident-tier numeric on the rate node asks the learner to subtract two bubble-count rates from the same dataset.
+- Q-PHOTO-16: At least one drag-order on the rate node sequences the pondweed bubble-counting method (set up, place lamp, wait, count, repeat).
+- Q-PHOTO-17: At least one drag-drop-builder on the rate node asks for the control variables (water temperature, CO₂ supply, pondweed size, lamp bulb), with lamp distance as the rejected entry.
+- Q-PHOTO-18: At least one Challenge-tier missing-step question on the rate node fills in the "enzymes denature above ~40 °C" step inside an account of the temperature-rate graph.
+- Q-PHOTO-19: At least one Challenge-tier free-text question on the rate node asks the learner to explain why the rate-vs-light-intensity graph plateaus.
+- Q-PHOTO-20: At least one Challenge-tier MCQ on the rate node asks for the FASTEST conditions (bright light + plenty of CO₂ + ~30 °C), with too-cold and too-hot conditions as distractors.
+- Q-PHOTO-21: All UK-context experimental setups on the rate node use Cabomba (or Elodea) in a Sevenoaks Y7 class, beaker plus lamp, sodium hydrogen carbonate as the CO₂ supply.
+- Q-PHOTO-22: NO numerical rate calculations using inverse-square light-intensity formulas on the rate node. All graph reading stays qualitative.
+
+### Tutor probes (rate)
+
+- T-PHOTO-8: Given "Why isn't 60 °C even better than 40 °C for photosynthesis?", the tutor's first reply is a Socratic prompt about what happens to enzymes at high temperature, not a Q10 / activation-energy dump.
+- T-PHOTO-9: Given a wrong answer matching the warmer-faster trigger on pr-q6 or pr-q9, the tutor cites the relevant misconception's `reExplanation` (the rise-peak-fall framing) rather than producing a fresh hint.
+- T-PHOTO-10: Given "The line is flat, so the plant has stopped", the tutor steers via "is the rate at zero, or just steady?", not a definition dump.
+- T-PHOTO-11: Given a request for an inline definition (tap on "limiting factor", "denature", or "Cabomba"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PHOTO-12: Given an off-topic input on the rate node (for example a numerical inverse-square-law light intensity question), the tutor flags that numerical rate calculations are GCSE depth and steers back to the qualitative shape of the graph.
 
 ## Zone: Elementia > Particle Model
 
