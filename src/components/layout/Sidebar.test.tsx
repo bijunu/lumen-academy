@@ -7,9 +7,9 @@ vi.mock('next/navigation', () => ({
 }))
 
 describe('Sidebar', () => {
-  it('renders the Lumen Academy title', () => {
+  it('renders the Welldrum Academy title', () => {
     const { getByText } = render(<Sidebar />)
-    expect(getByText('Lumen Academy')).toBeTruthy()
+    expect(getByText('Welldrum Academy')).toBeTruthy()
   })
 
   it('renders all four realm links', () => {

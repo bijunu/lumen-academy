@@ -66,7 +66,7 @@ const BODY_STYLE =
   'margin:0;padding:0;background:#f5f5f7;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1a1a1a;'
 
 function renderHead(digest: WeeklyDigest): string {
-  const title = `Lumen Academy weekly digest, ${digest.weekStart} to ${digest.weekEnd}`
+  const title = `Welldrum Academy weekly digest, ${digest.weekStart} to ${digest.weekEnd}`
   return `<head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -76,7 +76,7 @@ function renderHead(digest: WeeklyDigest): string {
 
 function renderHeader(digest: WeeklyDigest): string {
   return `<tr><td>
-  <p style="font-size:14px;color:#666;margin:0 0 4px 0;">Lumen Academy</p>
+  <p style="font-size:14px;color:#666;margin:0 0 4px 0;">Welldrum Academy</p>
   <h1 style="font-size:22px;margin:0 0 4px 0;">Weekly digest for ${escape(digest.learnerLabel)}</h1>
   <p style="font-size:14px;color:#666;margin:0 0 24px 0;">${escape(digest.weekStart)} to ${escape(digest.weekEnd)}</p>
 </td></tr>`
@@ -180,7 +180,7 @@ function renderPromptsSection(digest: WeeklyDigest): string {
 function renderFooter(): string {
   return `<tr><td style="padding:24px 0 0 0;border-top:1px solid #eee;">
   <p style="font-size:12px;color:#999;margin:0;">
-    Lumen Academy. UK KS3 mastery learning. No ads, no third party trackers.
+    Welldrum Academy. UK KS3 mastery learning. No ads, no third party trackers.
   </p>
 </td></tr>`
 }

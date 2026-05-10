@@ -1,12 +1,13 @@
 import NextAuth, { type NextAuthConfig } from 'next-auth'
 import Nodemailer from 'next-auth/providers/nodemailer'
 import { MongoDBAdapter } from '@auth/mongodb-adapter'
+import { createTransport } from 'nodemailer'
 
 import { getMongoClient } from '@/lib/db/mongoClient'
 import { logger } from '@/lib/logger'
 
 const DEFAULT_DB_NAME = 'lumen-academy'
-const DEFAULT_FROM = 'Lumen Academy <onboarding@resend.dev>'
+const DEFAULT_FROM = 'Welldrum Academy <welldrumacademy@gmail.com>'
 
 function buildEmailHtml(url: string): string {
   return `<!DOCTYPE html>
@@ -14,13 +15,13 @@ function buildEmailHtml(url: string): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sign in to Lumen Academy</title>
+  <title>Sign in to Welldrum Academy</title>
 </head>
 <body style="margin:0;padding:32px;background:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#0F172A;">
   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="max-width:520px;margin:0 auto;background:#ffffff;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;">
     <tr>
       <td style="padding:28px 32px 8px;">
-        <p style="margin:0;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#FBBF24;">Lumen Academy</p>
+        <p style="margin:0;font-size:12px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:#FBBF24;">Welldrum Academy</p>
         <h1 style="margin:8px 0 0;font-size:22px;line-height:1.3;color:#0F172A;">Your sign-in link</h1>
       </td>
     </tr>
@@ -31,7 +32,7 @@ function buildEmailHtml(url: string): string {
     </tr>
     <tr>
       <td style="padding:24px 32px 8px;">
-        <a href="${url}" style="display:inline-block;background:#0F172A;color:#ffffff;text-decoration:none;padding:13px 24px;border-radius:9999px;font-size:15px;font-weight:600;">Sign in to Lumen Academy →</a>
+        <a href="${url}" style="display:inline-block;background:#0F172A;color:#ffffff;text-decoration:none;padding:13px 24px;border-radius:9999px;font-size:15px;font-weight:600;">Sign in to Welldrum Academy →</a>
       </td>
     </tr>
     <tr>
@@ -46,7 +47,7 @@ function buildEmailHtml(url: string): string {
 
 function buildEmailText(url: string): string {
   return [
-    'Lumen Academy',
+    'Welldrum Academy',
     '',
     'Your sign-in link:',
     url,
@@ -55,35 +56,36 @@ function buildEmailText(url: string): string {
   ].join('\n')
 }
 
-async function sendViaResend({
-  apiKey,
+async function sendViaSmtp({
+  host,
+  port,
+  user,
+  pass,
   from,
   to,
   url,
 }: {
-  apiKey: string
+  host: string
+  port: number
+  user: string
+  pass: string
   from: string
   to: string
   url: string
 }): Promise<void> {
-  const res = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      from,
-      to,
-      subject: 'Your sign-in link for Lumen Academy',
-      html: buildEmailHtml(url),
-      text: buildEmailText(url),
-    }),
+  const transport = createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass },
   })
-  if (!res.ok) {
-    const body = await res.text().catch(() => '')
-    throw new Error(`Resend send failed (${res.status}): ${body}`)
-  }
+  await transport.sendMail({
+    from,
+    to,
+    subject: 'Your sign-in link for Welldrum Academy',
+    html: buildEmailHtml(url),
+    text: buildEmailText(url),
+  })
 }
 
 export const authConfig: NextAuthConfig = {
@@ -99,11 +101,16 @@ export const authConfig: NextAuthConfig = {
       server: process.env.EMAIL_SERVER ?? 'smtp://localhost:25',
       from: process.env.EMAIL_FROM ?? DEFAULT_FROM,
       sendVerificationRequest: async ({ identifier, url, expires }) => {
-        const apiKey = process.env.RESEND_API_KEY
-        if (apiKey) {
+        const smtpHost = process.env.SMTP_HOST
+        const smtpUser = process.env.SMTP_USER
+        const smtpPass = process.env.SMTP_PASSWORD
+        if (smtpHost && smtpUser && smtpPass) {
           try {
-            await sendViaResend({
-              apiKey,
+            await sendViaSmtp({
+              host: smtpHost,
+              port: Number(process.env.SMTP_PORT ?? 587),
+              user: smtpUser,
+              pass: smtpPass,
               from: process.env.EMAIL_FROM ?? DEFAULT_FROM,
               to: identifier,
               url,

@@ -93,7 +93,7 @@ export function HomeHero({ state }: HomeHeroProps) {
     return (
       <HeroFrame>
         <h1 id="home-hero-heading" className="text-2xl font-bold tracking-tight">
-          Welcome to Lumen Academy
+          Welcome to Welldrum Academy
         </h1>
         <p className="mt-2 text-base text-muted-foreground">
           Sign in to start your first mission and unlock the realms.

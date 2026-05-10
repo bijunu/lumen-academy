@@ -85,7 +85,7 @@ export const BADGES: readonly BadgeMeta[] = [
   },
   {
     id: 'lumen-scholar',
-    name: 'Lumen Scholar',
+    name: 'Welldrum Scholar',
     description: 'Reach Scholar Rank ten in every realm.',
     earnable: true,
   },

@@ -23,7 +23,7 @@ export function Sidebar() {
     <aside className="flex h-full w-60 flex-col border-r bg-card" data-testid="sidebar">
       <div className="flex h-14 items-center px-4">
         <Link href="/" className="text-lg font-bold tracking-tight">
-          Lumen Academy
+          Welldrum Academy
         </Link>
       </div>
 

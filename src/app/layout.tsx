@@ -8,7 +8,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Lumen Academy',
+  title: 'Welldrum Academy',
   description: 'UK KS3 mastery learning for Year 7',
 }
 

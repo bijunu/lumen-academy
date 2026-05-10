@@ -38,7 +38,7 @@ export async function callTutor(input: TutorInput): Promise<TutorOutput> {
 }
 
 function buildSystemPrompt(input: TutorInput): string {
-  return `You are a friendly AI tutor for Lumen Academy, helping a Year 7 UK grammar school student (age 11-12). You are currently helping with: ${input.nodeTitle}.
+  return `You are a friendly AI tutor for Welldrum Academy, helping a Year 7 UK grammar school student (age 11-12). You are currently helping with: ${input.nodeTitle}.
 
 Rules:
 - Use UK English throughout (colour, metre, maths)

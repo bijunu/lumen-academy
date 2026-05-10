@@ -55,7 +55,7 @@ export default async function ParentVerifyPage({
         <CardHeader>
           <CardTitle>Verify your child&apos;s account</CardTitle>
           <CardDescription>
-            This page confirms parental consent for a Lumen Academy learner.
+            This page confirms parental consent for a Welldrum Academy learner.
           </CardDescription>
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground">
@@ -77,7 +77,7 @@ export default async function ParentVerifyPage({
         </CardHeader>
         <CardContent className="text-sm">
           The learner&apos;s account is now flagged as parent verified. They can
-          continue using Lumen Academy with progress saved to their profile.
+          continue using Welldrum Academy with progress saved to their profile.
         </CardContent>
       </Card>
     )
