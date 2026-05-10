@@ -393,12 +393,18 @@
 ### Zone: Simple Reactions (`chemistry-simple-reactions`)
 
 #### Combustion (Core, `chemistry-simple-reactions-combustion`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Energetics)_
+- **KS3**: Combustion, thermal decomposition, oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.5.1.1 Exothermic reactions including combustion; 4.9.1.1 Combustion of hydrocarbons (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8 Acids and alkalis / Topic 4 Extracting metals; CC9 Calculations involving masses; combustion of fuels (GCSE Chemistry 1CH0)
+- **OCR**: C5.2 Energetics; C7.2 Combustion of hydrocarbons (GCSE Chemistry A J248 Gateway)
+
+#### Acid plus Metal (Confident, `chemistry-simple-reactions-acid-metal`)
+- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions)_
 - **AQA**: _GCSE Chemistry spec ref_
 - **Edexcel**: _GCSE Chemistry spec ref_
 - **OCR**: _GCSE Chemistry spec ref_
 
-#### Acid plus Metal (Confident, `chemistry-simple-reactions-acid-metal`)
+#### Rusting (Confident, `chemistry-simple-reactions-rusting`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions)_
 - **AQA**: _GCSE Chemistry spec ref_
 - **Edexcel**: _GCSE Chemistry spec ref_

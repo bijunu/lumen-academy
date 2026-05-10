@@ -1426,16 +1426,41 @@ Covers `chemistry-ph-scale`, `chemistry-ph-strong-weak`.
 
 ## Zone: Elementia > Simple Reactions
 
-Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid-metal`.
+Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid-metal`, `chemistry-simple-reactions-rusting`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-SR-1: Learner believes that when a candle or fuel burns, the missing mass has been destroyed. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one spot-misconception or MCQ that contrasts an open candle (mass drops) with a sealed jar (mass stays the same).
+- C-SR-2: Learner ignores oxygen as a reactant when working out combustion product masses, so they predict the mass of products equals the mass of fuel alone. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Challenge MCQ or numeric-entry where the learner must add the mass of oxygen used to the mass of fuel.
+- C-SR-3: Learner conflates burning with evaporation, so they say "no new substance is made when something burns". (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Challenge MCQ or spot-misconception that contrasts evaporation (water → water vapour) with combustion (methane → CO₂ and water).
+- C-SR-4: Learner names the product of burning magnesium ribbon as magnesium hydroxide or magnesium chloride, missing that combustion in air gives the oxide. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one MCQ that asks the learner to choose magnesium oxide from a list including hydroxide, chloride and sulfate.
+- C-SR-5: Learner thinks a fire only needs two sides (fuel and oxygen) and will keep going forever once lit. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception or MCQ that requires all three sides of the fire triangle.
+- C-SR-6: Learner says a fire blanket smothers a fire by removing the fuel, missing that the blanket cuts off oxygen. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Confident MCQ that maps a real UK fire-extinguishing action (fire blanket, glass cup over a tea-light) to the side of the triangle it removes.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-SR-1: At least one Core MCQ on `chemistry-simple-reactions-combustion` asks the learner to name the three things on the fire triangle (fuel, oxygen, heat).
+- Q-SR-2: At least one Core MCQ on `chemistry-simple-reactions-combustion` asks the learner to write the word equation for methane burning on a UK gas hob: methane + oxygen → carbon dioxide + water.
+- Q-SR-3: At least one Confident MCQ on `chemistry-simple-reactions-combustion` names magnesium oxide as the product of burning magnesium ribbon (UK Bonfire Night sparkler context).
+- Q-SR-4: At least one numeric-entry question on `chemistry-simple-reactions-combustion` asks the learner to add the mass of fuel and the mass of oxygen to get the mass of products.
+- Q-SR-5: At least one drag-order question on `chemistry-simple-reactions-combustion` asks the learner to assemble the word equation `methane + oxygen → carbon dioxide + water` from shuffled phrases.
+- Q-SR-6: At least one labelled-image question on `chemistry-simple-reactions-combustion` places "Fuel", "Oxygen" and "Heat" labels on the three corners of the fire triangle.
+- Q-SR-7: At least one Challenge MCQ on `chemistry-simple-reactions-combustion` describes a sealed-jar combustion scenario and tests conservation of mass when gas products are trapped.
+- Q-SR-8: All combustion questions stay at word-equation depth: no balanced symbol equations, no enthalpy values, no percentage yield.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-SR-1: Given "the wax has been destroyed when a candle burns", the tutor scaffolds toward the sealed-jar mental picture before stating the rule (mass conserved when gas products are counted).
+- T-SR-2: Given a wrong answer matching the "magnesium chloride / hydroxide" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SR-3: Given "fuel and oxygen alone are enough to keep a fire going", the tutor reminds the learner of the heat side of the triangle, ideally by reference to a blown-out candle.
+- T-SR-4: Given a request for an inline definition (tap on "combustion", "fire triangle", "fuel", "oxygen", "magnesium oxide"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SR-5: Given "the fire blanket put out the chip-pan fire by removing the fuel", the tutor scaffolds the learner toward "the blanket removed oxygen" without flat correction first.
 
 ## Zone: Mechanica > Forces
 
