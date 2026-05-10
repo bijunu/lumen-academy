@@ -28,6 +28,20 @@ const digestiveOverviewSvg = `
 </svg>
 `.trim()
 
+// Same shapes as digestiveOverviewSvg without the labels. Used by the Q11 labelled-image
+// task so the learner identifies organs by shape and position rather than reading the answer.
+const digestiveOverviewBlankSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="28" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">The digestive system, mouth to anus</text>
+  <ellipse cx="180" cy="74" rx="34" ry="22" fill="#FCA5A5" stroke="#7F1D1D" stroke-width="2" />
+  <rect x="170" y="96" width="20" height="100" fill="#F87171" stroke="#7F1D1D" stroke-width="2" />
+  <path d="M 130 200 Q 180 200 200 220 Q 250 240 230 280 Q 200 320 150 300 Q 110 280 130 200 Z" fill="#FBBF24" stroke="#92400E" stroke-width="2" />
+  <path d="M 230 280 Q 320 270 340 230 Q 380 230 380 270 Q 380 320 340 320 Q 280 340 240 320 Z" fill="#FCD34D" stroke="#92400E" stroke-width="2" />
+  <path d="M 380 270 Q 460 260 480 220 Q 510 220 510 260 Q 510 320 470 320 Q 420 330 380 320 Z" fill="#F59E0B" stroke="#92400E" stroke-width="2" />
+  <rect x="170" y="340" width="40" height="34" fill="#92400E" stroke="#451A03" stroke-width="2" />
+</svg>
+`.trim()
+
 const digestiveJobsSvg = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
   <text x="300" y="30" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#1F2937">What each part does</text>
@@ -476,7 +490,7 @@ export const digestiveSystem: SkillNode = {
       type: 'labelled-image',
       stem: 'Drag each label onto the correct part of the digestive system.',
       tier: 'confident',
-      svg: digestiveOverviewSvg,
+      svg: digestiveOverviewBlankSvg,
       viewBox: '0 0 600 400',
       hotspots: [
         { id: 'ds-q11-mouth', x: 30, y: 18, correctLabel: 'Mouth' },
