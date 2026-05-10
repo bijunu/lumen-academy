@@ -72,6 +72,12 @@
 - **Edexcel**: R5 Ratio notation
 - **OCR**: 6.01a Ratio notation and equivalent ratios
 
+#### Sharing in a Given Ratio (Confident, `maths-ratio-sharing`)
+- **KS3**: Divide a given quantity into two parts in a given part:part or part:whole ratio; express the division of a quantity into two parts as a ratio.
+- **AQA**: R5 Divide a given quantity into two parts in a given part:part or part:whole ratio (GCSE Mathematics 8300)
+- **Edexcel**: R5 Divide a given quantity into two parts in a given part:part or part:whole ratio (GCSE Mathematics 1MA1)
+- **OCR**: 6.01b Share a quantity in a given ratio including three-part ratios (GCSE Mathematics J560)
+
 ### Zone: Four Operations (`maths-four-operations`)
 
 #### Adding and Subtracting Negative Numbers (Core, `maths-four-operations-negative-numbers-add-subtract`)

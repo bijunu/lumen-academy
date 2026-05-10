@@ -413,6 +413,40 @@ Covers `maths-ratio-introduction` plus future ratio nodes (sharing in a ratio, s
 - T-RP-3: Given an off-topic input (for example a question about US sports team rosters using ratios), the tutor steers back to UK KS3 ratio language politely.
 - T-RP-4: Given a request for an inline definition (tap on "ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### Sharing-in-a-ratio extensions (`maths-ratio-sharing`)
+
+#### Content probes
+- C-RAT-1: Learner divides the total by the larger of the two ratio numbers (or just one of them) instead of by the sum of all parts; for example reads "share £40 in ratio 1:3" as £40 / 3 = £13.33 per part.
+  - Required handling: misconception entry; at least one question whose distractors include the divide-by-larger answer.
+- C-RAT-2: Learner multiplies the original total by each ratio number to produce shares (£30 in 1:4 becomes £30 and £120), missing the value-of-one-part step.
+  - Required handling: misconception entry; at least one question whose distractors include the multiply-by-ratio answer.
+- C-RAT-3: Learner gives equal shares when asked to split among three people in a non-1:1:1 ratio, ignoring the ratio numbers entirely.
+  - Required handling: misconception entry; at least one 3-part-ratio question whose distractors include three equal shares.
+- C-RAT-4: Learner reads the ratio 3:5 as the fractions 3/5 and 2/5 of the total instead of 3/8 and 5/8 (denominator is the sum of parts).
+  - Required handling: misconception entry; at least one Challenge tier MCQ contrasting 3/5 and 2/5 against 3/8 and 5/8.
+- C-RAT-5: Learner finds the shares but skips the final check that they add back to the original total, leaving arithmetic slips uncaught (especially in 3-part ratios).
+  - Required handling: misconception entry; at least one missing-step question that surfaces the add-back check explicitly.
+- C-RAT-6: Learner mismatches the order of shares with the order of the people named, for example giving the 3-part share to the first person when the ratio reads 2:3 with names in order.
+  - Required handling: misconception entry; at least one question whose distractors swap which person gets which share.
+- C-RAT-7: Learner treats a 1 in the ratio as meaning the whole original total (rather than one part), so a 5:1 mixture of 600 g muesli/raisins reads as 600 g of raisins.
+  - Required handling: misconception entry; at least one Core question on a ratio that includes a 1.
+
+#### Question shape probes
+- Q-RAT-1: At least one Core numeric-entry question asks the learner to find the total number of parts in a 2-part or 3-part ratio.
+- Q-RAT-2: At least one Core MCQ asks the learner to find the value of one part for a sharing-in-a-ratio question, with the divide-by-larger answer present as a distractor.
+- Q-RAT-3: At least one Confident question asks the learner to share a quantity in a 3-part ratio (such as 2:3:5 or 1:2:3) and identify all three shares.
+- Q-RAT-4: At least one Confident question maps a recipe-scaling context (flour:butter, oats:nuts:raisins) onto sharing in a ratio.
+- Q-RAT-5: At least one Challenge tier word problem requires recovering original counts from a worded sharing scenario, then doing one further step (for example a swap, a top-up, or an unsold remainder).
+- Q-RAT-6: At least one drag-order question places the four shares of a ratio split into ascending order.
+- Q-RAT-7: At least one slider-explore question asks the learner to land on a target volume so that one part of a fixed-ratio mix takes a given value.
+- Q-RAT-8: At least one MCQ presents the ratio-as-direct-fraction argument (3:5 = 3/5 of the total) and asks which row corrects the slip.
+
+#### Tutor probes
+- T-RAT-1: Given "I divided £40 by 3 because the bigger number is 3, so each part is £13.33", the tutor's first reply is a Socratic prompt about how many equal parts the ratio splits the total into, not a direct correction.
+- T-RAT-2: Given a wrong answer matching the multiply-by-ratio trigger (for example "£30 in ratio 1:4 gives shares of £30 and £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-RAT-3: Given an off-topic input (for example a question about US college tuition split by ratio), the tutor steers back to UK KS3 sharing-in-a-ratio language politely.
+- T-RAT-4: Given a request for an inline definition (tap on "share in a ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > BIDMAS
 
 Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes (negative-number arithmetic with BIDMAS, algebraic substitution under BIDMAS).

@@ -27,6 +27,7 @@ import {
   percentagesOfAmountZoneNodes,
 } from './percentages-of-amount'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
+import { ratioSharing, ratioSharingZoneNodes } from './ratio-sharing'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
@@ -60,6 +61,8 @@ export {
   percentagesOfAmountZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
+  ratioSharing,
+  ratioSharingZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
   algebraIntroduction,
@@ -84,6 +87,7 @@ export const mathsNodes: SkillNode[] = [
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
   ...ratioZoneNodes,
+  ...ratioSharingZoneNodes,
   ...bidmasZoneNodes,
   ...algebraZoneNodes,
   ...sequencesZoneNodes,
@@ -141,7 +145,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-ratio',
     name: 'Ratio and Proportion',
     realm: 'numerica',
-    nodeIds: ratioZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...ratioZoneNodes.map(n => n.id),
+      ...ratioSharingZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-bidmas',
