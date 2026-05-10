@@ -1767,6 +1767,34 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 - T-SP-6: Given the prompt "What time is it in Sydney when it is 11 a.m. in London?", the tutor explains the 24-hour spin and the half-turn idea without reaching for time-zone tables or precise UTC offsets, since KS3 stays qualitative on this.
 - T-SP-7: Given a request for an inline definition (tap on "axial tilt" or "perihelion"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+## Zone: Mechanica > Magnetism
+
+Zone id: `physics-magnetism`. Covers `physics-magnetism-fields`.
+
+### Content probes
+- C-MAG-1: Learner believes every metal is magnetic, often because magnets stick to "metal" fridge doors and tools. (Covers `physics-magnetism-fields`.)
+- C-MAG-2: Learner mixes up the like-poles rule, saying two strong N poles will snap together or that "stronger poles always attract". (Covers `physics-magnetism-fields`.)
+- C-MAG-3: Learner draws magnetic field lines pointing from S to N outside the magnet, or as straight rays rather than as loops. (Covers `physics-magnetism-fields`.)
+- C-MAG-4: Learner believes the magnetic field round a bar magnet is the same strength everywhere or strongest in the middle, missing that field strength is highest at the poles. (Covers `physics-magnetism-fields`.)
+- C-MAG-5: Learner explains the compass with non-magnetic causes (gravity, the Sun, wind, a heavier N end), missing that Earth's magnetic field is what lines the needle up. (Covers `physics-magnetism-fields`.)
+- C-MAG-6: Learner confuses magnetic attraction with gravity, saying things like "a magnet pulls a paper clip because of gravity" or "all heavy objects are magnetic". (Covers `physics-magnetism-fields`.)
+
+### Question shape probes
+- Q-MAG-1: At least one Core MCQ on the magnetism-fields node asks "what happens when N faces N" with the like-poles-repel rule, with at least one distractor that uses the "they attract" misstep. (Covers `physics-magnetism-fields`.)
+- Q-MAG-2: At least one Core MCQ on the magnetism-fields node tests "aluminium is a metal but not magnetic" or an equivalent (copper coin, gold ring), with at least one distractor that uses "all metals stick to magnets". (Covers `physics-magnetism-fields`.)
+- Q-MAG-3: At least one labelled-image question on the magnetism-fields node has the learner drag material names onto magnetic vs non-magnetic columns, with a label pool no larger than twice the hotspot count. (Covers `physics-magnetism-fields`.)
+- Q-MAG-4: At least one MCQ or labelled-image item on the magnetism-fields node tests "field lines run N to S outside the magnet" with a distractor that reverses the direction. (Covers `physics-magnetism-fields`.)
+- Q-MAG-5: At least one item on the magnetism-fields node tests "field is strongest at the poles" with a distractor that places the strongest point in the middle of the magnet. (Covers `physics-magnetism-fields`.)
+- Q-MAG-6: At least one item on the magnetism-fields node uses a UK context (fridge magnet, school lab tray, Lake District compass walk, iron-filing practical, 2p coin) without quoting a numeric field strength in tesla. (Covers `physics-magnetism-fields`.)
+- Q-MAG-7: At least one Confident or Challenge spot-misconception on the magnetism-fields node confronts either the "all metals are magnetic" or the "two N poles snap together" claim. (Covers `physics-magnetism-fields`.)
+- Q-MAG-8: No question on the magnetism-fields node uses Faraday's law of induction, magnetic flux density (B in tesla), or the motor effect. KS3 stays qualitative; those topics are GCSE Higher / A-Level. (Covers `physics-magnetism-fields`.)
+
+### Tutor probes
+- T-MAG-1: Given the prompt "Why doesn't a magnet stick to my Coke can?", the tutor escalates from a nudge ("which metals are actually magnetic?") to the iron/steel/nickel/cobalt rule, and notes that aluminium and copper are common metals that do not stick.
+- T-MAG-2: Given the prompt "What does a field line mean?", the tutor explains it as the direction the N pole of a tiny test compass would point, and describes the loop shape (N round to S outside).
+- T-MAG-3: Given a question that uses motor-effect derivation or flux density in tesla, the tutor steers back to the KS3-qualitative framing politely and notes that those calculations are GCSE+ territory.
+- T-MAG-4: Given a request for an inline definition (tap on "field line", "pole", or "compass"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > Geometry and Measure
 
 Covers `maths-geometry-measure-area-rectangles`, `maths-geometry-measure-perimeter`, `maths-geometry-measure-volume-cuboids`.

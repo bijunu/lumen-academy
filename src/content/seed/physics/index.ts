@@ -38,6 +38,11 @@ import {
   spaceZoneNodes,
   spaceZone,
 } from './space'
+import {
+  magnetismFields,
+  magnetismZoneNodes,
+  magnetismZone,
+} from './magnetism'
 
 export {
   electricityCircuitSymbols,
@@ -66,6 +71,9 @@ export {
   spaceDayNightSeasons,
   spaceZoneNodes,
   spaceZone,
+  magnetismFields,
+  magnetismZoneNodes,
+  magnetismZone,
 }
 
 export const physicsNodes: SkillNode[] = [
@@ -75,6 +83,7 @@ export const physicsNodes: SkillNode[] = [
   ...energyZoneNodes,
   ...wavesZoneNodes,
   ...spaceZoneNodes,
+  ...magnetismZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
@@ -89,4 +98,5 @@ export const physicsZones: Zone[] = [
   energyZone,
   wavesZone,
   spaceZone,
+  magnetismZone,
 ]
