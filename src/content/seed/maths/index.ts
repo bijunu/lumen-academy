@@ -7,16 +7,25 @@ import {
   fractionsZoneNodes,
 } from './fractions'
 import {
+  fractionsAddSubtract,
+  fractionsAddSubtractZoneNodes,
+} from './fractions-add-subtract'
+import {
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
 } from './factors-multiples'
 import { recognisingPrimes, primesZoneNodes } from './primes'
 import { decimalPlaceValue, decimalsZoneNodes } from './decimals'
+import { decimalsRounding, decimalsRoundingZoneNodes } from './decimals-rounding'
 import { wholeNumberPlaceValue, placeValueZoneNodes } from './place-value'
 import {
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
 } from './percentages'
+import {
+  percentagesOfAmount,
+  percentagesOfAmountZoneNodes,
+} from './percentages-of-amount'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
@@ -33,16 +42,22 @@ export {
   equivalentFractions,
   simplifyingFractions,
   fractionsZoneNodes,
+  fractionsAddSubtract,
+  fractionsAddSubtractZoneNodes,
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
   recognisingPrimes,
   primesZoneNodes,
   decimalPlaceValue,
   decimalsZoneNodes,
+  decimalsRounding,
+  decimalsRoundingZoneNodes,
   wholeNumberPlaceValue,
   placeValueZoneNodes,
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
+  percentagesOfAmount,
+  percentagesOfAmountZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
   bidmasOrderOfOperations,
@@ -60,11 +75,14 @@ export {
 
 export const mathsNodes: SkillNode[] = [
   ...fractionsZoneNodes,
+  ...fractionsAddSubtractZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...primesZoneNodes,
   ...decimalsZoneNodes,
+  ...decimalsRoundingZoneNodes,
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
+  ...percentagesOfAmountZoneNodes,
   ...ratioZoneNodes,
   ...bidmasZoneNodes,
   ...algebraZoneNodes,
@@ -78,7 +96,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-fractions',
     name: 'Fractions',
     realm: 'numerica',
-    nodeIds: fractionsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...fractionsZoneNodes.map(n => n.id),
+      ...fractionsAddSubtractZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-factors-multiples',
@@ -96,7 +117,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-decimals',
     name: 'Decimals',
     realm: 'numerica',
-    nodeIds: decimalsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...decimalsZoneNodes.map(n => n.id),
+      ...decimalsRoundingZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-place-value',
@@ -108,7 +132,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-percentages',
     name: 'Percentages',
     realm: 'numerica',
-    nodeIds: percentagesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...percentagesZoneNodes.map(n => n.id),
+      ...percentagesOfAmountZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-ratio',

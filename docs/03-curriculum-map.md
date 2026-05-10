@@ -18,6 +18,12 @@
 - **Edexcel**: N2 Place value and ordering of decimals
 - **OCR**: 1.01a Place value, including decimals
 
+#### Rounding Decimals (Confident, `maths-decimals-rounding`)
+- **KS3**: Round numbers and measures to an appropriate degree of accuracy (e.g. to a number of decimal places or significant figures).
+- **AQA**: N15 Round numbers and measures to an appropriate degree of accuracy (decimal places and significant figures)
+- **Edexcel**: N15 Round numbers and measures to an appropriate degree of accuracy (decimal places and significant figures)
+- **OCR**: 1.04a Rounding to a given number of decimal places or significant figures
+
 ### Zone: Fractions (`maths-fractions`)
 
 #### What is a Fraction? (Core, `maths-fractions-what-is`)
@@ -38,6 +44,12 @@
 - **Edexcel**: N3 Simplifying fractions
 - **OCR**: 2.01b Simplifying fractions
 
+#### Adding and Subtracting Fractions (Core, `maths-fractions-add-subtract`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N8 Calculate exactly with fractions
+- **Edexcel**: N8 Calculate exactly with fractions
+- **OCR**: 1.02b Apply the four operations to proper fractions
+
 ### Zone: Percentages (`maths-percentages`)
 
 #### Percentages, Decimals, and Fractions (Core, `maths-percentages-as-decimals-fractions`)
@@ -45,6 +57,12 @@
 - **AQA**: N2.4 Convert between fractions, decimals and percentages
 - **Edexcel**: N10 Equivalence between fractions, decimals and percentages
 - **OCR**: 2.02a Equivalence of fractions, decimals and percentages
+
+#### Percentage of an Amount (Confident, `maths-percentages-of-amount`)
+- **KS3**: Solve problems involving percentage change, including percentage increase and decrease and original value problems, and simple interest including in financial mathematics.
+- **AQA**: R9 Solve problems involving percentage change
+- **Edexcel**: R9 Solve problems involving percentage change, including percentage increase, decrease and original value problems
+- **OCR**: 6.03a Solve problems involving percentages, including percentage of an amount
 
 ### Zone: Ratio and Proportion (`maths-ratio`)
 

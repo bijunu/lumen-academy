@@ -51,7 +51,7 @@ When verifying the tutor:
 
 ## Zone: Numerica > Fractions
 
-Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions-simplify`, plus future fraction-arithmetic nodes.
+Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions-simplify`, `maths-fractions-add-subtract`, plus future fraction-arithmetic nodes (multiplying/dividing fractions, mixed numbers).
 
 ### Content probes
 
@@ -71,6 +71,12 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
   - Required handling: misconception entry; at least one Challenge tier question that explicitly tests improper fraction recognition (for example, identifying which option among given fractions is greater than one whole).
 - C-FRAC-8: Learner reads the line in a fraction as a subtraction or addition sign rather than "out of".
   - Required handling: misconception entry; a scene or worked example that explicitly labels the line as "out of".
+- C-FRAC-9: Learner adds (or subtracts) two fractions by combining the numerators AND the denominators (so 1/2 + 1/3 becomes 2/5, or 2/5 + 1/5 becomes 3/10). (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one spot-misconception question that names the "add tops and bottoms" trap and at least one MCQ whose distractors include the wrongly combined denominator.
+- C-FRAC-10: Learner attempts to add or subtract fractions with different denominators without first finding a common denominator. (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose stem requires the LCM step before combining numerators, plus a worked example or missing-step that walks the rewriting.
+- C-FRAC-11: Learner combines numerators correctly but forgets to simplify, leaving 6/12 instead of 1/2. (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one question whose correct answer is in simplest form but where the unsimplified intermediate appears as a distractor.
 
 ### Question shape probes
 
@@ -81,6 +87,9 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - Q-FRAC-5: At least one drag-order question places fractions in size order using a mix of simple and equivalent forms.
 - Q-FRAC-6: At least one numeric entry asks the learner to simplify a fraction whose simplest form is not visually obvious (for example 24/36 to 2/3).
 - Q-FRAC-7: At least one Challenge tier MCQ tests recognising fractions greater than one whole (improper fractions), with distractors that include valid proper fractions.
+- Q-FRAC-8: At least one numeric-entry on the add-subtract node requires the learner to add or subtract fractions with different denominators (denominators chosen so the LCM is small, e.g. 3 and 4, 4 and 6, 6 and 8). (Covers `maths-fractions-add-subtract`.)
+- Q-FRAC-9: At least one Challenge tier word problem on the add-subtract node frames a UK context (water butt, charity stall, builder's mix) and requires both finding a common denominator and simplifying the result. (Covers `maths-fractions-add-subtract`.)
+- Q-FRAC-10: At least one missing-step question on the add-subtract node walks the LCM rewriting before the numerators are combined. (Covers `maths-fractions-add-subtract`.)
 
 ### Tutor probes
 
@@ -90,6 +99,8 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - T-FRAC-4: Given an off-topic input (for example a question about US dollar prices), the tutor steers back to fractions politely.
 - T-FRAC-5: After three wrong attempts in a row paired with negative sentiment, the tutor offers a break or an easier sibling node and the frustration signal is logged for the parent digest.
 - T-FRAC-6: Given a request for an inline definition (tap on "denominator"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-FRAC-7: Given "I added 1/2 and 1/3 and got 2/5 by adding the tops and bottoms", the tutor's first reply is a Socratic prompt about whether halves and thirds are the same size, not a direct correction. (Covers `maths-fractions-add-subtract`.)
+- T-FRAC-8: Given a wrong answer matching the no-common-denominator trigger (for example "1/2 + 1/4 = 2/6"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-fractions-add-subtract`.)
 
 ## Zone: Numerica > Four Operations
 
@@ -258,7 +269,7 @@ Covers `maths-primes-recognising-primes` plus future prime nodes (prime factoris
 
 ## Zone: Numerica > Decimals
 
-Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmetic, decimal-fraction-percentage equivalence, ordering and rounding decimals).
+Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future decimal nodes (decimal arithmetic, decimal-fraction-percentage equivalence).
 
 ### Content probes
 
@@ -276,6 +287,18 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
   - Required handling: misconception entry; at least one numeric-entry question that requires writing a decimal with a placeholder zero from a worded form.
 - C-DEC-7: Learner reads "0.005" as "five thousands" rather than "five thousandths", or otherwise confuses the magnitude descriptor.
   - Required handling: misconception entry; a scene or worked example that explicitly contrasts thousands with thousandths.
+- C-DR-1: Learner picks the wrong digit as the rounding decider, choosing one beyond or before the digit immediately to the right of the kept part. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one MCQ that names the decider digit explicitly and at least one MCQ whose distractors come from picking the wrong one.
+- C-DR-2: Learner truncates rather than rounds (chops digits without checking the decider). (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one spot-misconception question that contrasts truncation with rounding for a value where the decider is 5 or more.
+- C-DR-3: Learner believes a decider of exactly 5 stays put rather than rounding up. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one Confident question where the kept-and-decider sequence ends in 5 and the correct answer rounds up.
+- C-DR-4: Learner fails to carry into the next column when adding 1 to a 9 in the kept part during rounding. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one Confident or Challenge numeric-entry where the kept part ends in 9 (or several 9s) and rounding propagates a carry.
+- C-DR-5: Learner counts leading zeros after a decimal point as significant figures. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry; at least one MCQ that asks for the first significant figure of a number with leading zeros.
+- C-DR-6: Learner mixes up "decimal places" with "significant figures", giving the wrong answer when the question target changes between them. (Covers `maths-decimals-rounding`.)
+  - Required handling: misconception entry or worked-example callout that contrasts the two on the same number.
 
 ### Question shape probes
 
@@ -285,6 +308,10 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
 - Q-DEC-4: At least one MCQ on fraction-to-decimal conversion includes the stacked-digits answer as a distractor.
 - Q-DEC-5: At least one Challenge tier word problem requires comparing or ordering decimals in a UK context (race times, ribbon lengths, money to pence).
 - Q-DEC-6: At least one spot-misconception question presents a longer-bigger or trailing-zero argument and asks whether the reasoning is sound.
+- Q-DR-1: At least one MCQ on the rounding node names the decider digit for a specified target (1, 2, or 3 decimal places). (Covers `maths-decimals-rounding`.)
+- Q-DR-2: At least one numeric-entry on the rounding node has a kept part ending in 9, requiring a carry into the next column. (Covers `maths-decimals-rounding`.)
+- Q-DR-3: At least one Challenge tier word problem on the rounding node requires rounding to the nearest penny in a UK money context (till receipt, train fare, sale price). (Covers `maths-decimals-rounding`.)
+- Q-DR-4: At least one numeric-entry or MCQ on the rounding node requires rounding to a number of significant figures with at least one leading zero present. (Covers `maths-decimals-rounding`.)
 
 ### Tutor probes
 
@@ -293,10 +320,12 @@ Covers `maths-decimals-place-value` plus future decimal nodes (decimal arithmeti
 - T-DEC-3: Given "Why is 0.5 the same as 0.50?", the tutor explains using a fraction-wall analogy, not a definition.
 - T-DEC-4: Given an off-topic input (for example a question about US dollar prices to two decimal places), the tutor steers back to UK pence and decimal place value politely.
 - T-DEC-5: Given a request for an inline definition (tap on "thousandths"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-DR-1: Given "I rounded 6.45 to 1 decimal place and got 6.4 because I treat 5 as a tie", the tutor's first reply is a Socratic prompt about the school convention for rounding ties up, not a direct correction. (Covers `maths-decimals-rounding`.)
+- T-DR-2: Given a wrong answer matching the truncation trigger (for example "8.972 to 1 dp = 8.9"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-decimals-rounding`.)
 
 ## Zone: Numerica > Percentages
 
-Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (percentage of an amount, percentage change, reverse percentages).
+Covers `maths-percentages-as-decimals-fractions`, `maths-percentages-of-amount`, plus future percentages nodes (percentage change, reverse percentages, simple interest).
 
 ### Content probes
 
@@ -314,6 +343,14 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
   - Required handling: misconception entry; at least one ordering question on a mix of three or more forms.
 - C-PCT-7: Learner believes percentages cannot exceed 100%.
   - Required handling: misconception entry; at least one Challenge tier question that recognises a percentage above 100% as valid.
+- C-PA-1: Learner divides by 100 when finding 10% of an amount (mixing up the rule for 10% with the rule for 1%). (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the divide-by-100 answer for a 10% question, plus a spot-misconception that names the slip.
+- C-PA-2: Learner finds 10% of an amount but multiplies by the percentage value (rather than the number of building blocks) to reach larger percentages, so 30% becomes 30 lots of 10%. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the multiply-by-30 answer.
+- C-PA-3: Learner reports the calculated VAT or discount as the new total price rather than adding it to (or subtracting it from) the original amount. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Challenge tier multi-step question (VAT or sale-price) where the percentage of the amount is a distractor and the new total is the correct answer.
+- C-PA-4: Learner finds 20% VAT by computing 10% only and forgetting to double the result. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the half-VAT (10%-only) answer.
 
 ### Question shape probes
 
@@ -324,6 +361,10 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
 - Q-PCT-5: At least one MCQ on fraction-to-percent conversion includes the stacked-digits answer as a distractor.
 - Q-PCT-6: At least one spot-misconception question presents the per-cent-as-number or stacked-digits argument and asks whether the reasoning is sound.
 - Q-PCT-7: At least one Challenge tier question recognises a percentage greater than 100% as valid (for example, an exam score reported above 100% on a re-scaled mark scheme, or a doubled quantity expressed as 200%).
+- Q-PA-1: At least one Core or Confident numeric-entry on the percentage-of-amount node requires finding a single building-block percentage (50%, 25%, 10%, 5%, or 1%) of a UK money amount. (Covers `maths-percentages-of-amount`.)
+- Q-PA-2: At least one Confident question on the percentage-of-amount node combines two or more building blocks (for example 35% = 25% + 10%, or 65% = 50% + 10% + 5%). (Covers `maths-percentages-of-amount`.)
+- Q-PA-3: At least one Challenge tier word problem on the percentage-of-amount node frames a UK VAT or sale-price scenario where the new total (not the percentage of the amount) is the correct answer. (Covers `maths-percentages-of-amount`.)
+- Q-PA-4: At least one numeric-entry on the percentage-of-amount node requires a decimal percentage (12.5%, 17.5%) found by halving a building block. (Covers `maths-percentages-of-amount`.)
 
 ### Tutor probes
 
@@ -331,6 +372,8 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
 - T-PCT-2: Given a wrong answer matching the decimal-shift trigger (for example "35% = 3.5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 - T-PCT-3: Given an off-topic input (for example a question about US sales tax percentages), the tutor steers back to UK percentage forms politely.
 - T-PCT-4: Given a request for an inline definition (tap on "per cent"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PA-1: Given "How do I find 35% of £80?", the tutor's first reply is a Socratic prompt about which building blocks combine to make 35% (25% + 10%), not a direct multiplication formula. (Covers `maths-percentages-of-amount`.)
+- T-PA-2: Given a wrong answer matching the multiply-by-percent trigger (for example "30% of £40 = £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-percentages-of-amount`.)
 
 ## Zone: Numerica > Ratio and Proportion
 
