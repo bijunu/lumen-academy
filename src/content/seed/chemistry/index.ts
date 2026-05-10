@@ -16,7 +16,11 @@ import {
   periodicTableLayout,
   periodicTableGroup1And7,
 } from './periodic-table'
-import { acidsAlkalisZone, acidsAlkalisCommon } from './acids-alkalis'
+import {
+  acidsAlkalisZone,
+  acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
+} from './acids-alkalis'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -35,7 +39,11 @@ export {
   periodicTableLayout,
   periodicTableGroup1And7,
 } from './periodic-table'
-export { acidsAlkalisZone, acidsAlkalisCommon } from './acids-alkalis'
+export {
+  acidsAlkalisZone,
+  acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
+} from './acids-alkalis'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -48,6 +56,7 @@ export const chemistryNodes: SkillNode[] = [
   periodicTableLayout,
   periodicTableGroup1And7,
   acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
 ]
 
 export const chemistryZones: Zone[] = [

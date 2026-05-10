@@ -1028,7 +1028,7 @@ Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation
   - Required handling: misconception entry on `chemistry-acids-alkalis-common`; at least one Core MCQ on each end of the colour scale, plus a labelled-image question that places the band labels onto the strip.
 - C-AA-2: Learner believes pure distilled water is a weak acid. (Covers `chemistry-acids-alkalis-common`.)
   - Required handling: misconception entry; at least one Core MCQ on the indicator colour for pure water.
-- C-AA-3: Learner believes acids burn skin but alkalis are safe to touch with bare hands. (Covers `chemistry-acids-alkalis-common`.)
+- C-AA-3: Learner believes acids burn skin but alkalis are safe to touch with bare hands. (Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation`.)
   - Required handling: misconception entry; at least one Confident spot-misconception that names the safety claim, plus at least one Challenge MCQ on a sodium hydroxide household-cleaner safety label.
 - C-AA-4: Learner names citric acid (the lemon acid) as the acid in the human stomach, missing that the stomach makes hydrochloric acid. (Covers `chemistry-acids-alkalis-common`.)
   - Required handling: misconception entry; at least one Challenge MCQ asking which acid the human stomach makes.
@@ -1036,6 +1036,18 @@ Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation
   - Required handling: misconception entry; at least one Core MCQ on vinegar as a food acid plus at least one Challenge MCQ on weak food acids in juice.
 - C-AA-6: Learner thinks sodium chloride (table salt) is an alkali because it contains sodium, swapping it with sodium hydroxide. (Covers `chemistry-acids-alkalis-common`.)
   - Required handling: misconception entry; at least one Challenge free-text or MCQ that contrasts sodium chloride (neutral salt, green) with baking soda or sodium hydroxide (alkali).
+- C-AA-7: Learner writes the neutralisation rule as acid + alkali → water + carbon dioxide, missing the salt. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry on `chemistry-acids-alkalis-neutralisation`; at least one Core MCQ asking the learner to complete the rule.
+- C-AA-8: Learner believes the green colour is a final state, so adding more alkali after the green appears keeps the mixture neutral. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry; at least one spot-misconception that names the "green is final" argument plus at least one Challenge MCQ on the antacid-overdose case.
+- C-AA-9: Learner believes pure water can neutralise an acid spill. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry; at least one Core MCQ on what kind of substance neutralises an acid; at least one Challenge MCQ on a UK lab acid spill.
+- C-AA-10: Learner names the salt from acid + alkali after the alkali (HCl + NaOH → sodium hydroxide), missing that the second name comes from the acid. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry; at least two Confident questions on naming a salt from given acid-alkali pairs (HCl + KOH; H₂SO₄ + KOH; HNO₃ + NaOH).
+- C-AA-11: Learner believes only the acid is destroyed in a neutralisation; the alkali survives. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry; at least one spot-misconception that names the asymmetry claim.
+- C-AA-12: Learner believes an antacid tablet turns the stomach into an alkali, missing that the goal is to settle the stomach back near neutral. (Covers `chemistry-acids-alkalis-neutralisation`.)
+  - Required handling: misconception entry; at least one Core MCQ on what an antacid does.
 
 ### Question shape probes
 
@@ -1044,13 +1056,19 @@ Covers `chemistry-acids-alkalis-common`, `chemistry-acids-alkalis-neutralisation
 - Q-AA-3: At least three numeric-entry questions on `chemistry-acids-alkalis-common` ask the learner to count atoms in an acid or alkali formula (H₂SO₄, NH₃) or count solutions of a stated kind from a small set of indicator-colour observations.
 - Q-AA-4: At least one drag-order question on `chemistry-acids-alkalis-common` orders three solutions from most acidic at the top to most alkaline at the bottom.
 - Q-AA-5: At least one Challenge tier word problem on `chemistry-acids-alkalis-common` uses a UK domestic context (Sevenoaks kitchen baking soda vs table salt; a Tunbridge Wells supplier of unlabelled bottles; a Dover sodium hydroxide cleaner label) and requires the learner to apply the indicator-colour rule.
+- Q-AA-6: At least one labelled-image question on `chemistry-acids-alkalis-neutralisation` requires the learner to drag the labels Acid, Alkali, Salt and Water onto a four-box neutralisation equation diagram, with a label pool no larger than twice the hotspot count.
+- Q-AA-7: At least one missing-step question on `chemistry-acids-alkalis-neutralisation` hides the "an alkali added to acidic soil neutralises some of the acid and shifts it towards neutral" step in a Manchester gardening walk-through.
+- Q-AA-8: At least three numeric-entry questions on `chemistry-acids-alkalis-neutralisation` ask the learner to count products in the rule (acid + alkali → salt + water = 2), to count salts produced from a stated set of pairs, or to count colour-change stages in a titration-style colour drift.
+- Q-AA-9: At least one drag-order or free-text question on `chemistry-acids-alkalis-neutralisation` places the four parts of a salt-naming word equation in the right order and surfaces the salt-naming rule (metal from alkali, non-metal from acid).
+- Q-AA-10: At least one Challenge tier MCQ on `chemistry-acids-alkalis-neutralisation` uses a UK school-lab acid-spill safety scenario (Dover technician, dilute sulfuric acid bench spill) and asks the learner to choose between bicarbonate of soda (mild alkali) and pure water.
 
 ### Tutor probes
 
 - T-AA-1: Given "Acids turn universal indicator dark blue", the tutor asks the learner to recall what colour a lemon turns the indicator (orange or yellow), before naming the rule.
-- T-AA-3: Given "Pure water is a weak acid", the tutor asks the learner what colour pure water turns universal indicator, before stating the neutral rule.
+- T-AA-2: Given a wrong answer matching the salt-naming misconception (for example "HCl + NaOH gives sodium hydroxide"), the tutor cites the relevant misconception's `reExplanation` and walks through which half of each name comes from which reactant.
+- T-AA-3: Given "Pure water neutralises an acid spill on the bench", the tutor asks the learner what kind of substance can cancel an acid, before naming bicarbonate of soda as the better choice.
 - T-AA-4: Given an off-topic input (for example a question about US grades of bleach or a different subject), the tutor steers back to UK KS3 examples (UK kitchen vinegar, UK pharmacy antacid tablet, UK garden lime, UK school lab sodium hydroxide).
-- T-AA-5: Given a request for an inline definition (tap on "acid", "alkali", "neutral" or "indicator"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-AA-5: Given a request for an inline definition (tap on "acid", "alkali", "neutral", "salt", "indicator" or "neutralisation"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > pH
 

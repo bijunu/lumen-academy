@@ -333,10 +333,10 @@
 - **OCR**: C3.1a Acids and alkalis; C3.1b Indicators (GCSE Chemistry A J248 Gateway)
 
 #### Neutralisation (Confident, `chemistry-acids-alkalis-neutralisation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: acids and alkalis)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The properties of acids and alkalis, including neutralisation; the reactions of acids with alkalis to produce salts; the use of indicators to identify acids and alkalis.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.3 Reactions of acids with alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.7 Neutralisation reactions; 3.8 Salts produced by neutralisation (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Neutralisation: acid + alkali → salt + water; C3.1d Salts and their uses (GCSE Chemistry A J248 Gateway)
 
 ### Zone: pH (`chemistry-ph`)
 
