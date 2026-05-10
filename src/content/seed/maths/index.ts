@@ -50,6 +50,7 @@ import {
   areaRectanglesZoneNodes,
 } from './area-rectangles'
 import { perimeter, perimeterZoneNodes } from './perimeter'
+import { volumeCuboids, volumeCuboidsZoneNodes } from './volume-cuboids'
 
 export {
   whatIsAFraction,
@@ -95,6 +96,8 @@ export {
   areaRectanglesZoneNodes,
   perimeter,
   perimeterZoneNodes,
+  volumeCuboids,
+  volumeCuboidsZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -118,6 +121,7 @@ export const mathsNodes: SkillNode[] = [
   ...fourOperationsZoneNodes,
   ...areaRectanglesZoneNodes,
   ...perimeterZoneNodes,
+  ...volumeCuboidsZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -218,6 +222,7 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...areaRectanglesZoneNodes.map(n => n.id),
       ...perimeterZoneNodes.map(n => n.id),
+      ...volumeCuboidsZoneNodes.map(n => n.id),
     ],
   },
 ]
