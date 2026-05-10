@@ -167,10 +167,10 @@
 - **OCR**: B2.1.1 The human digestive system (GCSE Biology A J247)
 
 #### Circulatory System (Core, `biology-body-systems-circulatory`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Structure and function of body systems)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The structure and functions of the gas exchange system in humans, including adaptations to function; the structure and functions of the human skeleton, to include support, protection, movement and making blood cells; the consequences of imbalances in the diet; biomechanics; the role of muscles, joints and the heart in transport
+- **AQA**: 4.2.2.2 The heart and blood vessels (GCSE Biology 8461)
+- **Edexcel**: CB2c The circulatory system (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.2 Transport in animals (GCSE Biology A J247)
 
 #### Respiratory System (Confident, `biology-body-systems-respiratory`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Structure and function of body systems)_

@@ -15,6 +15,7 @@ export {
 } from './microscopy'
 export {
   digestiveSystem,
+  circulatorySystem,
   bodySystemsZone,
   bodySystemsZoneNodes,
 } from './body-systems'
