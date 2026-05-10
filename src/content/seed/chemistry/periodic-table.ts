@@ -423,8 +423,8 @@ export const periodicTableLayout: SkillNode = {
     {
       id: 'pt-q12',
       type: 'multiple-choice',
-      stem: 'A pupil in Sevenoaks looks at a balloon shop sign that uses a tube of glowing orange-red gas. Which noble gas is most likely inside the tube?',
-      tier: 'confident',
+      stem: 'The owner of a corner shop in Sevenoaks needs a gas to fill the glass tubes of a new shop sign. The sign should glow bright orange-red when an electric current passes through it. The gas must also barely react, so it does not damage the tube. Which Group 0 element is the right choice?',
+      tier: 'challenge',
       options: [
         'Helium',
         'Argon',
@@ -432,7 +432,7 @@ export const periodicTableLayout: SkillNode = {
         'Neon',
       ],
       correctIndex: 3,
-      xpValue: 15,
+      xpValue: 25,
     },
     {
       id: 'pt-q13',
@@ -525,7 +525,7 @@ export const periodicTableLayout: SkillNode = {
       id: 'pt-q19',
       type: 'multiple-choice',
       stem: 'Look at this set of elements: lithium (Li), sodium (Na), potassium (K). All three are in the first column on the left of the periodic table. Which group are they in, and what would they share?',
-      tier: 'challenge',
+      tier: 'confident',
       options: [
         'Group 7, sharing brittle non-metal properties',
         'Group 0, sharing very low reactivity',
@@ -533,7 +533,7 @@ export const periodicTableLayout: SkillNode = {
         'Group 1, sharing similar reactions with water and a single outer-shell electron',
       ],
       correctIndex: 3,
-      xpValue: 25,
+      xpValue: 15,
     },
     {
       id: 'pt-q20',
