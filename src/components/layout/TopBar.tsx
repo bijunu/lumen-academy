@@ -35,8 +35,8 @@ export function TopBar() {
         )}
 
         {status === 'authenticated' && (
-          <Tooltip>
-            <TooltipProvider delayDuration={300}>
+          <TooltipProvider delayDuration={300}>
+            <Tooltip>
               <TooltipTrigger asChild>
                 <Button
                   variant="ghost"
@@ -48,8 +48,8 @@ export function TopBar() {
                 </Button>
               </TooltipTrigger>
               <TooltipContent>Sign out</TooltipContent>
-            </TooltipProvider>
-          </Tooltip>
+            </Tooltip>
+          </TooltipProvider>
         )}
 
         <TooltipProvider delayDuration={300}>
