@@ -7,6 +7,10 @@ import {
   fractionsZoneNodes,
 } from './fractions'
 import {
+  fractionsAddSubtract,
+  fractionsAddSubtractZoneNodes,
+} from './fractions-add-subtract'
+import {
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
 } from './factors-multiples'
@@ -38,6 +42,8 @@ export {
   equivalentFractions,
   simplifyingFractions,
   fractionsZoneNodes,
+  fractionsAddSubtract,
+  fractionsAddSubtractZoneNodes,
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
   recognisingPrimes,
@@ -69,6 +75,7 @@ export {
 
 export const mathsNodes: SkillNode[] = [
   ...fractionsZoneNodes,
+  ...fractionsAddSubtractZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...primesZoneNodes,
   ...decimalsZoneNodes,
@@ -89,7 +96,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-fractions',
     name: 'Fractions',
     realm: 'numerica',
-    nodeIds: fractionsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...fractionsZoneNodes.map(n => n.id),
+      ...fractionsAddSubtractZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-factors-multiples',

@@ -51,7 +51,7 @@ When verifying the tutor:
 
 ## Zone: Numerica > Fractions
 
-Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions-simplify`, plus future fraction-arithmetic nodes.
+Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions-simplify`, `maths-fractions-add-subtract`, plus future fraction-arithmetic nodes (multiplying/dividing fractions, mixed numbers).
 
 ### Content probes
 
@@ -71,6 +71,12 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
   - Required handling: misconception entry; at least one Challenge tier question that explicitly tests improper fraction recognition (for example, identifying which option among given fractions is greater than one whole).
 - C-FRAC-8: Learner reads the line in a fraction as a subtraction or addition sign rather than "out of".
   - Required handling: misconception entry; a scene or worked example that explicitly labels the line as "out of".
+- C-FRAC-9: Learner adds (or subtracts) two fractions by combining the numerators AND the denominators (so 1/2 + 1/3 becomes 2/5, or 2/5 + 1/5 becomes 3/10). (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one spot-misconception question that names the "add tops and bottoms" trap and at least one MCQ whose distractors include the wrongly combined denominator.
+- C-FRAC-10: Learner attempts to add or subtract fractions with different denominators without first finding a common denominator. (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose stem requires the LCM step before combining numerators, plus a worked example or missing-step that walks the rewriting.
+- C-FRAC-11: Learner combines numerators correctly but forgets to simplify, leaving 6/12 instead of 1/2. (Covers `maths-fractions-add-subtract`.)
+  - Required handling: misconception entry; at least one question whose correct answer is in simplest form but where the unsimplified intermediate appears as a distractor.
 
 ### Question shape probes
 
@@ -81,6 +87,9 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - Q-FRAC-5: At least one drag-order question places fractions in size order using a mix of simple and equivalent forms.
 - Q-FRAC-6: At least one numeric entry asks the learner to simplify a fraction whose simplest form is not visually obvious (for example 24/36 to 2/3).
 - Q-FRAC-7: At least one Challenge tier MCQ tests recognising fractions greater than one whole (improper fractions), with distractors that include valid proper fractions.
+- Q-FRAC-8: At least one numeric-entry on the add-subtract node requires the learner to add or subtract fractions with different denominators (denominators chosen so the LCM is small, e.g. 3 and 4, 4 and 6, 6 and 8). (Covers `maths-fractions-add-subtract`.)
+- Q-FRAC-9: At least one Challenge tier word problem on the add-subtract node frames a UK context (water butt, charity stall, builder's mix) and requires both finding a common denominator and simplifying the result. (Covers `maths-fractions-add-subtract`.)
+- Q-FRAC-10: At least one missing-step question on the add-subtract node walks the LCM rewriting before the numerators are combined. (Covers `maths-fractions-add-subtract`.)
 
 ### Tutor probes
 
@@ -90,6 +99,8 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - T-FRAC-4: Given an off-topic input (for example a question about US dollar prices), the tutor steers back to fractions politely.
 - T-FRAC-5: After three wrong attempts in a row paired with negative sentiment, the tutor offers a break or an easier sibling node and the frustration signal is logged for the parent digest.
 - T-FRAC-6: Given a request for an inline definition (tap on "denominator"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-FRAC-7: Given "I added 1/2 and 1/3 and got 2/5 by adding the tops and bottoms", the tutor's first reply is a Socratic prompt about whether halves and thirds are the same size, not a direct correction. (Covers `maths-fractions-add-subtract`.)
+- T-FRAC-8: Given a wrong answer matching the no-common-denominator trigger (for example "1/2 + 1/4 = 2/6"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-fractions-add-subtract`.)
 
 ## Zone: Numerica > Four Operations
 

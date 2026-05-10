@@ -44,6 +44,12 @@
 - **Edexcel**: N3 Simplifying fractions
 - **OCR**: 2.01b Simplifying fractions
 
+#### Adding and Subtracting Fractions (Core, `maths-fractions-add-subtract`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N8 Calculate exactly with fractions
+- **Edexcel**: N8 Calculate exactly with fractions
+- **OCR**: 1.02b Apply the four operations to proper fractions
+
 ### Zone: Percentages (`maths-percentages`)
 
 #### Percentages, Decimals, and Fractions (Core, `maths-percentages-as-decimals-fractions`)
