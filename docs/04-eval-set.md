@@ -682,13 +682,64 @@ Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`
 Covers `biology-body-systems-digestive`, `biology-body-systems-circulatory`, `biology-body-systems-respiratory`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-BS-1: Learner believes all digestion happens in the stomach in one go.
+  - Required handling: misconception entry on the digestive node; at least one MCQ or spot-misconception that distributes digestion across mouth, stomach, and small intestine.
+- C-BS-2: Learner believes digested food enters the blood from the stomach rather than from the small intestine.
+  - Required handling: misconception entry on the digestive node; at least one Core MCQ that asks where food enters the blood.
+- C-BS-3: Learner skips the oesophagus when sequencing the gut from mouth to anus.
+  - Required handling: misconception entry on the digestive node; at least one drag-order or labelled-image item that includes the oesophagus.
+- C-BS-4: Learner conflates mechanical and chemical digestion (for example, claiming "mechanical uses enzymes and chemical uses teeth").
+  - Required handling: misconception entry on the digestive node; at least one MCQ that defines both kinds correctly and at least one Confident-tier item that distinguishes them.
+- C-BS-5: Learner believes the large intestine does most of the digesting, rather than reclaiming water.
+  - Required handling: misconception entry on the digestive node; at least one MCQ on the role of the large intestine.
+- C-BS-6: Learner believes food passes through non-gut organs (heart, lungs, liver) on its journey through the body.
+  - Required handling: misconception entry on the digestive node; at least one drag-drop-builder or MCQ that excludes non-gut organs from the gut path.
+- C-BS-7: Learner reverses the direction of arteries and veins (for example, claiming "arteries carry blood back to the heart").
+  - Required handling: misconception entry on the circulatory node; at least one Core MCQ that asks which vessel carries blood AWAY from the heart.
+- C-BS-8: Learner conflates red and white blood cells, attributing germ-fighting to red cells or oxygen-carrying to white cells.
+  - Required handling: misconception entry on the circulatory node; at least one MCQ on red blood cell function.
+- C-BS-9: Learner uses single circulation rather than double circulation when tracing a drop of blood.
+  - Required handling: misconception entry on the circulatory node; at least one spot-misconception or numeric (count of heart passes per trip) probing the double-circulation idea.
+- C-BS-10: Learner believes all arteries carry oxygen-rich blood and all veins carry oxygen-low blood, missing the lung-loop exception.
+  - Required handling: misconception entry on the circulatory node; at least one Confident-tier spot-misconception that surfaces the lung-loop exception.
+- C-BS-11: Learner believes the lungs make oxygen rather than taking it from the air.
+  - Required handling: misconception entry on the respiratory node; at least one MCQ that distinguishes "make" from "take in".
+- C-BS-12: Learner conflates breathing with respiration, treating the two as one chemical process.
+  - Required handling: misconception entry on the respiratory node; at least one Confident-tier spot-misconception or MCQ that separates air movement (lungs) from energy release (cells).
+- C-BS-13: Learner reverses the direction of gas exchange at the alveolus (oxygen out, carbon dioxide in).
+  - Required handling: misconception entry on the respiratory node; at least one Core MCQ that asks which gas passes into the alveolus.
+- C-BS-14: Learner believes inhaled air is pure oxygen and exhaled air is pure carbon dioxide, ignoring nitrogen.
+  - Required handling: misconception entry on the respiratory node; at least one Confident-tier spot-misconception that flags the nitrogen majority.
+- C-BS-15: Learner treats breathing rate and heart rate as independent during exercise.
+  - Required handling: misconception entry on the respiratory node; at least one MCQ on the respiratory node that explains why both rise together, with reference back to the circulatory pair.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-BS-1: At least one labelled-image question on the digestive node places mouth, oesophagus, stomach, small intestine, and large intestine onto hotspots on a gut diagram, with at least one off-gut distractor (heart / lung / liver) in the pool.
+- Q-BS-2: At least one drag-order question on the digestive node sequences the gut organs from mouth to anus.
+- Q-BS-3: At least one Challenge tier numeric on the digestive node uses a UK school-meal context (Sunday roast, school lunch portions in grams, vitamin C in mg) for arithmetic that includes a conversion or fraction step.
+- Q-BS-4: At least one Core MCQ on the circulatory node distinguishes arteries from veins by direction relative to the heart, with the distractor "veins carry blood away from the heart" present.
+- Q-BS-5: At least one labelled-image question on the circulatory node places the lungs, heart, and body cells onto the double-circulation diagram, with at least one off-loop distractor (stomach / liver / brain) in the pool.
+- Q-BS-6: At least one Confident tier drag-order on the circulatory node sequences a drop of blood through right heart, lungs, left heart, body cells.
+- Q-BS-7: At least one Challenge tier numeric on the circulatory node uses a heart-rate or blood-volume calculation in a UK school context (PE lesson, Sevenoaks hospital, Manchester sports day).
+- Q-BS-8: At least one labelled-image question on the respiratory node places trachea, bronchi, bronchioles, and alveoli onto the airway diagram, with at least one off-airway distractor in the pool.
+- Q-BS-9: At least one Core MCQ on the respiratory node asks which gas passes from the blood into the alveolus, with carbon dioxide as the correct answer.
+- Q-BS-10: At least one Confident tier numeric on the respiratory node converts a 30-second breathing-rate count into breaths per minute.
+- Q-BS-11: At least one Challenge tier MCQ on the respiratory node explains why breathing rate and heart rate rise together after exercise, linking back to the circulatory node.
+- Q-BS-12: At least one drag-drop-builder on each of the three nodes restricts the build to the correct organs / vessels / airway parts and rejects organs from other body systems.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-BS-1: Given "All digestion happens in the stomach, right?", the tutor's first reply is a Socratic prompt about where the food then goes when it leaves the stomach, not a direct correction.
+- T-BS-2: Given a wrong answer matching the stomach-after-mouth trigger, the tutor cites the relevant misconception's `reExplanation` (the oesophagus link) rather than producing a fresh hint.
+- T-BS-3: Given an off-topic input (for example a US AP Biology food-pyramid analogy), the tutor steers back to UK KS3 gut language politely.
+- T-BS-4: Given "Veins carry blood away from the heart, right?", the tutor's first reply is a Socratic prompt about the meaning of the letters in "AWAY" (Arteries Away), not a direct correction.
+- T-BS-5: Given a wrong answer matching the single-circulation trigger, the tutor cites the relevant misconception's `reExplanation` (lung loop plus body loop) and reinforces the "twice through the heart per trip" framing.
+- T-BS-6: Given a request for an inline definition (tap on "alveolus" or "capillary"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-BS-7: Given "Breathing IS respiration, no?", the tutor's first reply is a Socratic prompt about whether you can hold your breath while still being alive, not a direct correction.
+- T-BS-8: Given a wrong answer matching the gas-direction trigger on the alveolus question, the tutor cites the relevant misconception's `reExplanation` (which gas is more concentrated where) rather than producing a fresh hint.
+- T-BS-9: Given "Why does my heart beat faster when I run?", the tutor walks the learner through the chain "muscles need oxygen, lungs take more in, heart moves it faster", not a definition dump.
 
 ## Zone: Vitalia > Reproduction
 
