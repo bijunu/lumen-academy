@@ -299,24 +299,24 @@
 ### Zone: Atoms, Elements, Compounds (`chemistry-atoms-elements-compounds`)
 
 #### Atoms, Elements, Compounds, Mixtures (Core, `chemistry-atoms-elements-compounds-basics`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Atoms, elements and compounds)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: A simple (Dalton) atomic model; differences between atoms, elements and compounds; chemical symbols and formulae for elements and compounds; conservation of mass changes of state and chemical reactions.
+- **AQA**: 4.1.1.1 Atoms, elements and compounds; 4.1.1.2 Mixtures (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.1 Atoms, elements and compounds; 1.41 Pure substances and mixtures (GCSE Chemistry 1CH0)
+- **OCR**: C1.1a Atoms, elements and compounds; C2.1a Pure and impure substances (GCSE Chemistry A J248 Gateway)
 
 #### Symbols and Simple Formulae (Confident, `chemistry-atoms-symbols-formulae`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Atoms, elements and compounds)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: A simple (Dalton) atomic model; differences between atoms, elements and compounds; chemical symbols and formulae for elements and compounds; conservation of mass changes of state and chemical reactions.
+- **AQA**: 4.1.1.1 Atoms, elements and compounds; chemical symbols and formulae (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.1 Atoms, elements and compounds; 1.2 Chemical formulae of elements and compounds (GCSE Chemistry 1CH0)
+- **OCR**: C1.1a Symbols and formulae of elements and simple compounds (GCSE Chemistry A J248 Gateway)
 
 ### Zone: Periodic Table (`chemistry-periodic-table`)
 
 #### Layout: Groups and Periods (Core, `chemistry-periodic-table-layout`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The periodic table)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The principles underpinning the Mendeleev periodic table; the periodic table: periods and groups; metals and non-metals.
+- **AQA**: 4.1.2.1 The periodic table; 4.1.2.2 Development of the periodic table; 4.1.2.3 Metals and non-metals (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.30 The periodic table; 1.31 Development of the periodic table; 1.32 Groups and periods (GCSE Chemistry 1CH0)
+- **OCR**: C1.2a The periodic table: groups and periods; C1.2b Metals and non-metals (GCSE Chemistry A J248 Gateway)
 
 #### Groups 1 and 7 (Confident, `chemistry-periodic-table-group-1-7`)
 - **KS3**: _fill verbatim from DfE Science KS3 (The periodic table)_

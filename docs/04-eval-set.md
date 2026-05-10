@@ -905,26 +905,95 @@ Covers `chemistry-separating-filtration-evaporation`, `chemistry-separating-dist
 Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-formulae`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-AT-1: Learner believes water (or air) is an element because it looks like a single uniform substance with no parts you can see.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ or spot-misconception whose distractors include the water-as-element answer.
+- C-AT-2: Learner believes that any sample with more than one substance is a compound, missing the bonded vs simply mixed distinction.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ pairing brass, sea water or muddy water against a true compound.
+- C-AT-3: Learner believes a pure element can hold more than one kind of atom as long as it shares a single appearance.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one MCQ that asks how many kinds of atom a sample of a named element contains.
+- C-AT-4: Learner believes that when a substance dissolves, the solute and solvent bond chemically into a new compound.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Confident MCQ or spot-misconception covering sugar in tea or salt in water as a mixture.
+- C-AT-5: Learner believes two substances that are touching, sticking or otherwise stuck together are bonded into a compound.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Challenge spot-misconception or MCQ presenting iron filings on a magnet as a compound.
+- C-AT-6: Learner believes alloys (brass, steel) are compounds because two metals have been combined.
+  - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Confident MCQ on brass or steel that pairs alloy-as-mixture against alloy-as-compound.
+- C-AT-7: Learner believes every chemical symbol is taken from the first one or two letters of the English name (writing Sd for sodium, Po for potassium, Go for gold).
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ or spot-misconception covering the Latin-derived symbols Na, K, Fe, Cu, Au, Pb.
+- C-AT-8: Learner believes subscript numbers in a formula are optional decoration, so CO and CO2 mean the same thing.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ contrasting CO with CO2 or HO with H2O.
+- C-AT-9: Learner writes subscript numbers in front of a symbol (e.g. 3H rather than H3), mixing the meaning of a multiplier with the meaning of a subscript.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ asking the learner to write the formula for ammonia or methane from a description.
+- C-AT-10: Learner writes diatomic gas elements as single atoms (O for oxygen gas, H for hydrogen gas), missing that several gases exist as bonded pairs.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ on the formula of oxygen gas with O, O2, 2O and OO as distractors.
+- C-AT-11: Learner treats the big number in front of a formula and the small subscript number after a symbol as the same thing, so 2H2O is read as 2 hydrogens plus 2 oxygens.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one Challenge spot-misconception or numeric-entry question that asks the learner to count atoms in a multiplied formula such as 2H2O or 3CO2.
+- C-AT-12: Learner treats two capital letters in a row in a chemistry formula as one element, so Co (cobalt) and CO (carbon monoxide) are read as the same thing.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one Core MCQ contrasting Co with CO.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-AT-1: At least one labelled-image question on `chemistry-atoms-elements-compounds-basics` requires the learner to drag the labels Element, Compound and Mixture onto the matching particle picture, with a label pool no larger than twice the hotspot count.
+- Q-AT-2: At least one numeric-entry question on `chemistry-atoms-elements-compounds-basics` asks the learner to count the total number of atoms in a small molecule (water, carbon dioxide, methane).
+- Q-AT-3: At least one numeric-entry question on `chemistry-atoms-elements-compounds-basics` asks the learner to count the number of different kinds of atom in a particle picture.
+- Q-AT-4: At least one drag-order question on `chemistry-atoms-elements-compounds-basics` ranks named substances by how many kinds of atom they hold (element, compound, mixture).
+- Q-AT-5: At least one Challenge tier word problem on `chemistry-atoms-elements-compounds-basics` uses a UK domestic or laboratory context (1p coin, brass band trumpet, sea water in the English Channel, a green-crusted church roof) and requires the learner to choose between element, compound and mixture.
+- Q-AT-6: At least one missing-step question on `chemistry-atoms-elements-compounds-basics` hides the "the substances are not chemically bonded, only mixed together" step in a mixture-or-compound explanation.
+- Q-AT-7: At least one labelled-image question on `chemistry-atoms-symbols-formulae` requires the learner to drag element names (Copper, Gold, Iron, Lead) onto periodic-table tiles showing the Latin-derived symbols (Cu, Au, Fe, Pb), with a label pool no larger than twice the hotspot count.
+- Q-AT-8: At least three numeric-entry questions on `chemistry-atoms-symbols-formulae` ask the learner to count atoms in a formula, spread across Core, Confident, and Challenge tiers (water; methane; calcium hydroxide).
+- Q-AT-9: At least one drag-order question on `chemistry-atoms-symbols-formulae` ranks named formulae (NaCl, H2O, CH4) by the number of atoms in one particle.
+- Q-AT-10: At least one missing-step question on `chemistry-atoms-symbols-formulae` hides the "add the carbon and hydrogen atom counts together" step in a counting-atoms-in-CH4 walk-through.
+- Q-AT-11: At least one data-extraction question on `chemistry-atoms-symbols-formulae` requires the learner to read four common compound formulae from a table and pick the one with the most atoms in one particle.
+- Q-AT-12: At least one Challenge tier item on `chemistry-atoms-symbols-formulae` involves a multiplied formula (2H2O or 3CO2) and asks the learner to count atoms in total.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-AT-1: Given "Water has to be an element because it is a single clear liquid", the tutor's first reply is a Socratic prompt about how many kinds of atom are in each water particle, not a flat correction.
+- T-AT-2: Given a wrong answer matching the alloy-as-compound trigger (for example "Brass is a compound of copper and zinc"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-AT-3: Given "If sugar dissolves in tea, the sugar bonds with the water and the tea is a compound", the tutor scaffolds the learner toward the test of recovering the sugar by evaporation, without flatly stating the answer.
+- T-AT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 atoms, elements and compounds language and metric units politely.
+- T-AT-5: Given a request for an inline definition (tap on "atom", "element", "compound" or "mixture"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-AT-6: Given "The symbol for sodium is Sd because the first two letters of sodium are S and d", the tutor's first reply is a Socratic prompt about which Latin name sodium comes from, not a flat correction.
+- T-AT-7: Given a wrong answer matching the subscript-optional trigger (for example "CO and CO2 are the same"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-AT-8: Given "2H2O means 2 hydrogens and 2 oxygens", the tutor scaffolds the learner toward the multiplier rule by walking through one H2O particle first, without simply stating the right atom counts.
+- T-AT-9: Given a request for an inline definition (tap on "subscript" or "formula"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Periodic Table
 
 Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-PT-1: Learner swaps the words group and period, naming a vertical column as a period and a horizontal row as a group.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Core MCQ asking what a vertical column is called and at least one Core MCQ or spot-misconception asking what a horizontal row is called.
+- C-PT-2: Learner believes metals sit on the right of the periodic table and non-metals on the left.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one MCQ asking where the metals sit relative to the staircase line.
+- C-PT-3: Learner believes elements in the same period (row) share chemical properties, missing that the row crosses from metals on the left to non-metals on the right.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Confident MCQ that gives a list of period-3 elements and asks what they have in common.
+- C-PT-4: Learner believes the noble gases (Group 0) are very reactive, like the alkali metals (Group 1).
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Challenge MCQ that asks the learner to predict the chemistry of a new Group 0 element.
+- C-PT-5: Learner believes there are the same number of groups across the table as periods down it.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one labelled-image or numeric question that requires the learner to identify rows and columns separately.
+- C-PT-6: Learner places the noble gases in Group 8 (the eighth column from the left) rather than Group 0.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Confident free-text or MCQ asking which group holds the noble gases on the UK GCSE periodic table.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-PT-1: At least one labelled-image question on `chemistry-periodic-table-layout` requires the learner to drag the labels Group 1, Group 0, Metals, and Non-metals onto a coloured-region periodic table outline, with a label pool no larger than twice the hotspot count.
+- Q-PT-2: At least three Core multiple-choice questions on `chemistry-periodic-table-layout` cover the meaning of a group, the meaning of a period, and the position of metals.
+- Q-PT-3: At least one numeric-entry question on `chemistry-periodic-table-layout` asks the learner to read the period or group number for a named element such as carbon or sodium.
+- Q-PT-4: At least one drag-order question on `chemistry-periodic-table-layout` orders the noble gases by their position in Group 0 from helium at the top down.
+- Q-PT-5: At least one Challenge tier word problem on `chemistry-periodic-table-layout` uses a UK domestic context (double-glazed windows, neon shop signs, party balloons) and requires the learner to choose a noble gas by reasoning about Group 0 properties.
+- Q-PT-6: At least one missing-step question on `chemistry-periodic-table-layout` hides the "elements in the same group share similar chemical properties" step in a Group 1 reactivity walk-through.
+- Q-PT-7: At least one Challenge tier question on `chemistry-periodic-table-layout` asks the learner to count how many of the first 20 elements fall into a stated category (noble gases, metals).
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-PT-1: Given "I think a period is a vertical column on the periodic table", the tutor's first reply is a Socratic prompt about what shape a row makes versus a column, not a flat correction.
+- T-PT-2: Given a wrong answer matching the noble-gases-are-reactive trigger (for example "Argon must be very reactive because it is a gas"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-PT-3: Given "Most elements are non-metals because the right side of the periodic table looks bigger", the tutor scaffolds the learner toward counting metal vs non-metal positions, without flatly stating the answer.
+- T-PT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 periodic-table language and metric units politely.
+- T-PT-5: Given a request for an inline definition (tap on "group", "period", "noble gas" or "metal"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Acids and Alkalis
 

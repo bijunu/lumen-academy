@@ -6,6 +6,12 @@ import {
   filtrationEvaporation,
   distillation,
 } from './separating-mixtures'
+import {
+  atomsZone,
+  atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
+} from './atoms'
+import { periodicTableZone, periodicTableLayout } from './periodic-table'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -14,6 +20,12 @@ export {
   filtrationEvaporation,
   distillation,
 } from './separating-mixtures'
+export {
+  atomsZone,
+  atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
+} from './atoms'
+export { periodicTableZone, periodicTableLayout } from './periodic-table'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -21,9 +33,14 @@ export const chemistryNodes: SkillNode[] = [
   diffusion,
   filtrationEvaporation,
   distillation,
+  atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
+  periodicTableLayout,
 ]
 
 export const chemistryZones: Zone[] = [
   particleModelZone,
   separatingMixturesZone,
+  atomsZone,
+  periodicTableZone,
 ]
