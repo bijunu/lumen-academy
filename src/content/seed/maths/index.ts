@@ -31,6 +31,10 @@ import { ratioSharing, ratioSharingZoneNodes } from './ratio-sharing'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
+import {
+  sequencesNthTerm,
+  sequencesNthTermZoneNodes,
+} from './sequences-nth-term'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
 import {
   negativeNumbersAddSubtract,
@@ -69,6 +73,8 @@ export {
   algebraZoneNodes,
   sequencesRules,
   sequencesZoneNodes,
+  sequencesNthTerm,
+  sequencesNthTermZoneNodes,
   coordinatesGrid,
   coordinatesZoneNodes,
   negativeNumbersAddSubtract,
@@ -91,6 +97,7 @@ export const mathsNodes: SkillNode[] = [
   ...bidmasZoneNodes,
   ...algebraZoneNodes,
   ...sequencesZoneNodes,
+  ...sequencesNthTermZoneNodes,
   ...coordinatesZoneNodes,
   ...fourOperationsZoneNodes,
 ]
@@ -166,7 +173,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-sequences',
     name: 'Sequences',
     realm: 'numerica',
-    nodeIds: sequencesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...sequencesZoneNodes.map(n => n.id),
+      ...sequencesNthTermZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-coordinates',

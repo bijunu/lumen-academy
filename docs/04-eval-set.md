@@ -566,6 +566,38 @@ Covers `maths-sequences-rules` plus future sequence nodes (nth-term derivation b
 - T-SEQ-4: Given an off-topic input (for example a question about US baseball jersey number sequences), the tutor steers back to UK KS3 sequence language politely.
 - T-SEQ-5: Given a request for an inline definition (tap on "term-to-term rule" or "position-to-term rule"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### nth-term derivation extensions (`maths-sequences-nth-term`)
+
+#### Content probes
+- C-SEQN-1: Learner finds the common difference and writes the rule as an alone, never adjusting by a constant b (writes 3n for a sequence whose term 1 is not 3).
+  - Required handling: misconception entry; at least one Confident MCQ whose distractors include just-an alongside the correct an + b.
+- C-SEQN-2: Learner sees a common difference of 4 and writes the rule as n + 4 instead of 4n + b, treating the difference as an additive constant.
+  - Required handling: misconception entry; at least one Core spot-misconception or MCQ whose distractors include n + difference.
+- C-SEQN-3: Learner refuses to write a negative constant b in the rule, so writes 5n + 3 (or similar) when the correct rule is 5n - 2 because term 1 is smaller than the value of an at n = 1.
+  - Required handling: misconception entry; at least one Confident MCQ whose correct answer has a negative b.
+- C-SEQN-4: Learner writes a rule that matches term 1 and stops, without checking at any other term, missing slips like 5n - 0 for 5, 9, 13, 17, ... .
+  - Required handling: misconception entry; at least one drag-order or missing-step question that explicitly includes the verify-at-second-term step.
+- C-SEQN-5: Learner takes the value of term 1 as the constant b, so writes 3n + 4 instead of 3n + 1 for the sequence 4, 7, 10, 13, ... .
+  - Required handling: misconception entry; at least one Confident question whose distractors include term-1-as-constant.
+- C-SEQN-6: Learner gets confused about which number multiplies n and which is added on, swapping a and b (writes 1n + 3 instead of 3n + 1).
+  - Required handling: misconception entry; at least one MCQ whose distractors include the swapped-a-and-b form.
+
+#### Question shape probes
+- Q-SEQN-1: At least one Core numeric-entry question asks the learner to substitute n into a position-to-term rule of the form an + b with positive a and positive b.
+- Q-SEQN-2: At least one Confident MCQ asks the learner to find the nth term rule for a 4-term arithmetic sequence with positive coefficient and positive constant b, with the just-an form as a distractor.
+- Q-SEQN-3: At least one Confident MCQ or numeric-entry question asks the learner to find the nth term rule for a 4-term arithmetic sequence whose constant b is negative, with positive-b distractors.
+- Q-SEQN-4: At least one missing-step question hides the adjustment step (computing b = term1 - a) inside a worked solution.
+- Q-SEQN-5: At least one drag-order question places the four steps for finding the nth term rule (find difference, write an, adjust by b, verify) into the correct order.
+- Q-SEQN-6: At least one Challenge tier word problem maps a UK context (transport hire, library fees, cumulative bus parking) onto a position-to-term rule of the form an + b and asks the learner to derive a or b.
+- Q-SEQN-7: At least one spot-misconception question presents the rule-as-n-plus-difference or just-an argument and asks whether the reasoning is sound.
+
+#### Tutor probes
+- T-SEQN-1: Given "The gap is 3 so the nth term rule is 3n", the tutor's first reply is a Socratic prompt about what term 1 of 3n would be at n = 1, not a direct correction.
+- T-SEQN-2: Given a wrong answer matching the just-difference trigger (for example writing 3n for 4, 7, 10, 13, ...), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SEQN-3: Given "Why does the nth term rule have to be an + b and not just n + something?", the tutor walks through one worked check at n = 1 and n = 2 to show the difference, not a definition.
+- T-SEQN-4: Given an off-topic input (for example a question about US payroll arithmetic sequences), the tutor steers back to UK KS3 nth-term language politely.
+- T-SEQN-5: Given a request for an inline definition (tap on "nth term" or "common difference"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > Coordinates
 
 Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear graphs from a rule, midpoints, transformations on a coordinate grid).

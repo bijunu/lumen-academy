@@ -132,6 +132,12 @@
 - **Edexcel**: A23 Generate terms of a sequence from either a term-to-term or a position-to-term rule
 - **OCR**: 6.01a Sequences: term-to-term and position-to-term rules
 
+#### Finding the nth Term of an Arithmetic Sequence (Confident, `maths-sequences-nth-term`)
+- **KS3**: Recognise arithmetic sequences and find the nth term.
+- **AQA**: A24 Recognise arithmetic sequences and find the nth term (GCSE Mathematics 8300)
+- **Edexcel**: A24 Deduce expressions to calculate the nth term of linear sequences (GCSE Mathematics 1MA1)
+- **OCR**: 8.02b Recognise arithmetic sequences and find the nth term (GCSE Mathematics J560)
+
 ### Zone: Coordinates (`maths-coordinates`)
 
 #### Coordinates on a Grid (Core, `maths-coordinates-grid`)
