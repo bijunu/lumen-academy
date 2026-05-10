@@ -5,6 +5,7 @@ import {
   useRef,
   useCallback,
   useEffect,
+  type KeyboardEvent,
   type PointerEvent,
 } from 'react'
 import { useRouter } from 'next/navigation'
@@ -157,6 +158,13 @@ export function SkillTreeMap({
     router.push(`/boss/${zoneId}`)
   }
 
+  const onActivateKey = (e: KeyboardEvent<SVGGElement>, fn: () => void) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      fn()
+    }
+  }
+
   const bossMarkers: {
     zoneId: string
     x: number
@@ -267,10 +275,18 @@ export function SkillTreeMap({
                 data-boss-marker={marker.zoneId}
                 data-boss-state={ariaState}
                 className={
-                  interactive ? 'cursor-pointer' : 'cursor-not-allowed'
+                  interactive
+                    ? 'cursor-pointer focus:outline-none focus-visible:[outline:2px_solid_hsl(var(--ring))]'
+                    : 'cursor-not-allowed'
                 }
                 opacity={interactive ? 1 : 0.55}
                 onClick={() => handleBossClick(marker.zoneId, marker.state)}
+                onKeyDown={
+                  interactive
+                    ? e => onActivateKey(e, () => handleBossClick(marker.zoneId, marker.state))
+                    : undefined
+                }
+                tabIndex={interactive ? 0 : undefined}
                 role={interactive ? 'link' : undefined}
                 aria-label={`${marker.zoneName} boss, ${ariaState}`}
               >
@@ -313,7 +329,17 @@ export function SkillTreeMap({
                 data-mastery-stars={stars}
                 opacity={isLocked ? 0.45 : 1}
                 onClick={() => handleNodeClick(node.id, state)}
-                className={isLocked ? 'cursor-not-allowed' : 'cursor-pointer'}
+                onKeyDown={
+                  isLocked
+                    ? undefined
+                    : e => onActivateKey(e, () => handleNodeClick(node.id, state))
+                }
+                tabIndex={isLocked ? undefined : 0}
+                className={
+                  isLocked
+                    ? 'cursor-not-allowed'
+                    : 'cursor-pointer focus:outline-none focus-visible:[outline:2px_solid_hsl(var(--ring))]'
+                }
                 role={isLocked ? undefined : 'link'}
                 aria-label={ariaLabel}
               >

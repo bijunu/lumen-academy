@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
@@ -51,6 +51,7 @@ export function BossClient({ zoneId, zoneName, realmId }: BossClientProps) {
   const router = useRouter()
   const { celebrate } = useRewardCelebration()
   const [state, setState] = useState<FetchState>({ kind: 'loading' })
+  const dialogRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     let cancelled = false
@@ -91,6 +92,25 @@ export function BossClient({ zoneId, zoneName, realmId }: BossClientProps) {
     router.push(`/realm/${realmId}`)
   }, [realmId, router])
 
+  useEffect(() => {
+    const previouslyFocused = document.activeElement as HTMLElement | null
+    dialogRef.current?.focus()
+    return () => {
+      previouslyFocused?.focus?.()
+    }
+  }, [])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.preventDefault()
+        exitToRealm()
+      }
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [exitToRealm])
+
   const handleSubmit = useCallback(
     async (answers: BossAnswer[]): Promise<BossSubmitResult | null> => {
       try {
@@ -120,7 +140,14 @@ export function BossClient({ zoneId, zoneName, realmId }: BossClientProps) {
   )
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-background">
+    <div
+      ref={dialogRef}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${zoneName} boss battle`}
+      tabIndex={-1}
+      className="fixed inset-0 z-50 overflow-y-auto bg-background outline-none"
+    >
       {state.kind === 'loading' && (
         <div className="space-y-4 p-8">
           <Skeleton className="h-8 w-1/3" />

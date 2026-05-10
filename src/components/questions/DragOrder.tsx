@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, useEffect, type KeyboardEvent } from 'react'
 import type { DragOrderQuestion } from '@/types/content'
 import { cn } from '@/lib/utils'
 
@@ -10,9 +10,25 @@ interface DragOrderProps {
   onSubmit: (order: number[]) => void
 }
 
+function moveItem<T>(arr: T[], from: number, to: number): T[] {
+  if (from === to) return arr
+  const next = [...arr]
+  const [moved] = next.splice(from, 1)
+  next.splice(to, 0, moved)
+  return next
+}
+
 export function DragOrder({ question, disabled, onSubmit }: DragOrderProps) {
   const [items, setItems] = useState(() => question.items.map((text, i) => ({ text, originalIndex: i })))
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null)
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const refocusIndexRef = useRef<number | null>(null)
+
+  useEffect(() => {
+    if (refocusIndexRef.current === null) return
+    itemRefs.current[refocusIndexRef.current]?.focus()
+    refocusIndexRef.current = null
+  }, [items])
 
   const handleDragStart = useCallback((index: number) => {
     setDraggedIndex(index)
@@ -21,15 +37,26 @@ export function DragOrder({ question, disabled, onSubmit }: DragOrderProps) {
   const handleDrop = useCallback(
     (targetIndex: number) => {
       if (draggedIndex === null || draggedIndex === targetIndex) return
-      setItems(prev => {
-        const next = [...prev]
-        const [moved] = next.splice(draggedIndex, 1)
-        next.splice(targetIndex, 0, moved)
-        return next
-      })
+      setItems(prev => moveItem(prev, draggedIndex, targetIndex))
       setDraggedIndex(null)
     },
     [draggedIndex]
+  )
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLDivElement>, index: number) => {
+      if (disabled) return
+      let target: number | null = null
+      if (e.key === 'ArrowUp' && index > 0) target = index - 1
+      else if (e.key === 'ArrowDown' && index < items.length - 1) target = index + 1
+      else if (e.key === 'Home' && index !== 0) target = 0
+      else if (e.key === 'End' && index !== items.length - 1) target = items.length - 1
+      if (target === null) return
+      e.preventDefault()
+      refocusIndexRef.current = target
+      setItems(prev => moveItem(prev, index, target))
+    },
+    [disabled, items.length]
   )
 
   const handleSubmit = () => {
@@ -38,20 +65,30 @@ export function DragOrder({ question, disabled, onSubmit }: DragOrderProps) {
 
   return (
     <div className="space-y-3">
+      <p className="text-xs text-muted-foreground">
+        Drag with the mouse, or focus an item and use the arrow keys to reorder.
+      </p>
       <div className="space-y-2" role="list" aria-label="Drag to reorder">
         {items.map((item, i) => (
           <div
             key={item.originalIndex}
+            ref={el => {
+              itemRefs.current[i] = el
+            }}
             draggable={!disabled}
+            tabIndex={disabled ? -1 : 0}
+            role="listitem"
+            aria-label={`Item ${i + 1} of ${items.length}: ${item.text}. Use arrow keys to reorder.`}
+            aria-keyshortcuts="ArrowUp ArrowDown Home End"
             onDragStart={() => handleDragStart(i)}
             onDragOver={e => e.preventDefault()}
             onDrop={() => handleDrop(i)}
+            onKeyDown={e => handleKeyDown(e, i)}
             className={cn(
-              'flex cursor-grab items-center gap-2 rounded-lg border p-3 transition-colors',
+              'flex cursor-grab items-center gap-2 rounded-lg border p-3 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring',
               draggedIndex === i && 'opacity-50',
               disabled && 'cursor-not-allowed'
             )}
-            role="listitem"
           >
             <span className="text-xs text-muted-foreground">{i + 1}.</span>
             <span className="text-sm">{item.text}</span>
