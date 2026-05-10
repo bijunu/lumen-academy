@@ -796,7 +796,9 @@ export const acidMetal: SkillNode = {
           maths: 'salt = magnesium sulfate',
         },
         {
-          explanation: '',
+          explanation:
+            'Step 3: name the gas. Every metal + acid reaction releases hydrogen. The fizzing bubbles are hydrogen gas, which can be confirmed with the squeaky-pop test (a lit splint gives a sharp pop).',
+          maths: 'gas = hydrogen',
         },
         {
           explanation:
