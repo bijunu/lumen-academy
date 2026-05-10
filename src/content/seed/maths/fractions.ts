@@ -684,19 +684,13 @@ export const whatIsAFraction: SkillNode = {
     },
     {
       id: 'wf-q15',
-      type: 'missing-step',
-      stem: 'Fill in the missing step in this worked solution. A pizza is cut into 8 equal slices and 5 slices have been eaten. What fraction has been eaten?',
+      type: 'multiple-choice',
+      stem: 'A pizza is cut into 8 equal slices and 5 slices have been eaten. Which fraction shows the eaten slices?',
       tier: 'confident',
-      steps: [
-        'The denominator counts the total number of equal parts.',
-        'There are 8 equal slices in the whole pizza.',
-        null,
-        'So the fraction eaten is 5/8.',
-      ],
-      missingStepIndex: 2,
-      correctStep:
-        'The numerator counts the number of parts we are looking at. 5 slices have been eaten, so the numerator is 5.',
+      options: ['8/5', '3/8', '5/8', '5/13'],
+      correctIndex: 2,
       xpValue: 20,
+      misconceptionId: 'wf-mis-swap',
     },
     {
       id: 'wf-q16',
