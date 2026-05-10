@@ -1283,12 +1283,12 @@ export const wavesSoundLight: SkillNode = {
     {
       id: 'sl-q18',
       type: 'numeric-entry',
-      stem: 'BBC Radio 4 broadcasts on long wave at 198 kHz, which is 198 000 Hz. Long-wave radio waves travel at the same speed as light in air (3×10⁸ m/s, taken as the speed of light for KS3). How many full radio waves are broadcast each second?',
+      stem: 'A Sevenoaks pupil sees a flash of lightning, then 4.5 s later hears the thunder. Sound travels at 343 m/s in air. At school distances the light from the flash arrives almost at once, so the lag is set by sound. To the nearest metre, how far away was the lightning strike?',
       tier: 'challenge',
-      correctAnswer: 198000,
-      unit: 'waves',
+      correctAnswer: 1544,
+      unit: 'm',
       xpValue: 20,
-      hint: 'A frequency in Hz already counts waves per second.',
+      hint: 'Distance equals speed times time. The lag is set by sound, because the light arrives almost at once.',
     },
     {
       id: 'sl-q19',
