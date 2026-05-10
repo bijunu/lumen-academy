@@ -584,6 +584,7 @@ export const magnetismFields: SkillNode = {
       ],
       xpValue: 15,
       misconceptionId: 'mag-mis-all-metals',
+      hint: 'Aisha\'s claim depends on "all metals are magnetic". Is that actually true for aluminium and copper?',
     },
     {
       id: 'mag-q8',
@@ -602,6 +603,7 @@ export const magnetismFields: SkillNode = {
       ],
       xpValue: 15,
       misconceptionId: 'mag-mis-pole-rule',
+      hint: 'The rule is "like poles ___, unlike poles ___". Strength does not change which way the rule points.',
     },
     {
       id: 'mag-q9',
@@ -703,6 +705,7 @@ export const magnetismFields: SkillNode = {
         'The compass needle lines up with Earth\'s magnetic field, so its N pole points along the local field direction.',
       xpValue: 15,
       misconceptionId: 'mag-mis-compass-cause',
+      hint: 'The compass is a tiny bar magnet. What does any small bar magnet do when placed in another magnet\'s field?',
     },
     {
       id: 'mag-q14',
@@ -763,10 +766,10 @@ export const magnetismFields: SkillNode = {
       type: 'numeric-entry',
       stem: 'A teacher has 8 bar magnets in a tray and a small N-pole sticker on the right end of each. The pupil lays them in a row, all with the sticker on the right. As they push them together end to end, how many of the 7 gaps between adjacent magnets will repel?',
       tier: 'challenge',
-      correctAnswer: 7,
+      correctAnswer: 0,
       unit: 'gaps',
       xpValue: 20,
-      hint: 'Each gap has a left magnet\'s N end facing the next magnet\'s S end? Or N facing N? Draw it out.',
+      hint: 'Each gap has the right end of one magnet (N) facing the left end of the next (S). Like poles, or unlike?',
     },
     {
       id: 'mag-q19',
