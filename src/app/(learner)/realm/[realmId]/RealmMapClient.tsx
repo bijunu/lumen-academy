@@ -6,16 +6,18 @@ import type { MasteryLevel, NodeProgress } from '@/types/progress'
 import { layoutSkillTree } from '@/lib/skillTree/layout'
 import { computeLockState } from '@/lib/skillTree/lockState'
 import {
-  SkillTreeMap,
+  RealmZoneStack,
   type BossMarkerState,
-} from '@/components/skillTree/SkillTreeMap'
+} from '@/components/skillTree/RealmZoneStack'
 import { isBossEligible } from '@/lib/boss/bossEligibility'
+import type { RealmId } from '@/lib/constants/realms'
 
 interface RealmMapClientProps {
   nodes: SkillNode[]
   progressByNodeId: Record<string, NodeProgress>
   defeatedZoneIds: string[]
   realmLabel: string
+  realmId: RealmId
 }
 
 export function RealmMapClient({
@@ -23,6 +25,7 @@ export function RealmMapClient({
   progressByNodeId,
   defeatedZoneIds,
   realmLabel,
+  realmId,
 }: RealmMapClientProps) {
   const layout = useMemo(() => layoutSkillTree(nodes), [nodes])
   const lockStates = useMemo(
@@ -57,13 +60,14 @@ export function RealmMapClient({
   }, [nodes, progressByNodeId, defeatedZoneIds])
 
   return (
-    <SkillTreeMap
+    <RealmZoneStack
       nodes={nodes}
       layout={layout}
       lockStates={lockStates}
       masteryByNodeId={masteryByNodeId}
       bossesByZoneId={bossesByZoneId}
       realmLabel={realmLabel}
+      realmId={realmId}
     />
   )
 }

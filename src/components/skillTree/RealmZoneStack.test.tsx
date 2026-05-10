@@ -1,19 +1,31 @@
 import { describe, it, expect, vi } from 'vitest'
 import { render } from '@testing-library/react'
-import { SkillTreeMap } from './SkillTreeMap'
+
+import { RealmZoneStack } from './RealmZoneStack'
 import { layoutSkillTree } from '@/lib/skillTree/layout'
 import { computeLockState } from '@/lib/skillTree/lockState'
 import { fractionsZoneNodes } from '@/content/seed'
 import type { MasteryLevel } from '@/types/progress'
 
-vi.mock('next/navigation', () => ({
-  useRouter: () => ({ push: vi.fn() }),
+vi.mock('next/link', () => ({
+  default: ({
+    href,
+    children,
+    ...rest
+  }: {
+    href: string
+    children: React.ReactNode
+  } & Record<string, unknown>) => (
+    <a href={href} {...rest}>
+      {children}
+    </a>
+  ),
 }))
 
-describe('SkillTreeMap', () => {
+describe('RealmZoneStack', () => {
   it('renders the empty state when no nodes are provided', () => {
     const { getByTestId, getByText } = render(
-      <SkillTreeMap
+      <RealmZoneStack
         nodes={[]}
         layout={{ positions: new Map(), edges: [], bands: [] }}
         lockStates={new Map()}
@@ -28,7 +40,7 @@ describe('SkillTreeMap', () => {
     const layout = layoutSkillTree(fractionsZoneNodes)
     const lockStates = computeLockState(fractionsZoneNodes, new Map())
     const { getByText, container } = render(
-      <SkillTreeMap
+      <RealmZoneStack
         nodes={fractionsZoneNodes}
         layout={layout}
         lockStates={lockStates}
@@ -49,7 +61,7 @@ describe('SkillTreeMap', () => {
     const layout = layoutSkillTree(fractionsZoneNodes)
     const lockStates = computeLockState(fractionsZoneNodes, new Map())
     const { container } = render(
-      <SkillTreeMap
+      <RealmZoneStack
         nodes={fractionsZoneNodes}
         layout={layout}
         lockStates={lockStates}
@@ -58,7 +70,6 @@ describe('SkillTreeMap', () => {
     )
     const unlocked = container.querySelectorAll('[data-skill-state="unlocked"]')
     const locked = container.querySelectorAll('[data-skill-state="locked"]')
-    // Only "What is a Fraction?" has no prerequisites; the other two are locked.
     expect(unlocked.length).toBe(1)
     expect(locked.length).toBe(2)
   })
@@ -67,11 +78,9 @@ describe('SkillTreeMap', () => {
     const layout = layoutSkillTree(fractionsZoneNodes)
     const lockStates = computeLockState(fractionsZoneNodes, new Map())
     const target = fractionsZoneNodes[0]
-    const masteryByNodeId = new Map<string, MasteryLevel>([
-      [target.id, 'gold'],
-    ])
+    const masteryByNodeId = new Map<string, MasteryLevel>([[target.id, 'gold']])
     const { container } = render(
-      <SkillTreeMap
+      <RealmZoneStack
         nodes={fractionsZoneNodes}
         layout={layout}
         lockStates={lockStates}
@@ -89,7 +98,7 @@ describe('SkillTreeMap', () => {
     const layout = layoutSkillTree(fractionsZoneNodes)
     const lockStates = computeLockState(fractionsZoneNodes, new Map())
     const { container } = render(
-      <SkillTreeMap
+      <RealmZoneStack
         nodes={fractionsZoneNodes}
         layout={layout}
         lockStates={lockStates}
