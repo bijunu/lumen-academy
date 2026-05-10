@@ -19,6 +19,13 @@ import {
   gravityZoneNodes,
   gravityZone,
 } from './gravity'
+import {
+  energyStores,
+  energyTransfers,
+  energyEfficiency,
+  energyZoneNodes,
+  energyZone,
+} from './energy'
 
 export {
   electricityCircuitSymbols,
@@ -34,12 +41,18 @@ export {
   gravityWeightCalculation,
   gravityZoneNodes,
   gravityZone,
+  energyStores,
+  energyTransfers,
+  energyEfficiency,
+  energyZoneNodes,
+  energyZone,
 }
 
 export const physicsNodes: SkillNode[] = [
   ...electricityCircuitsZoneNodes,
   ...forcesZoneNodes,
   ...gravityZoneNodes,
+  ...energyZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
@@ -51,4 +64,5 @@ export const physicsZones: Zone[] = [
   },
   forcesZone,
   gravityZone,
+  energyZone,
 ]

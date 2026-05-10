@@ -425,22 +425,22 @@
 ### Zone: Energy Stores and Transfers (`physics-energy-stores-transfers`)
 
 #### Energy Stores (Core, `physics-energy-stores`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Energy)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Energy as a quantity that can be stored in various ways or transferred between different forms; comparing the starting with the final conditions of a system and describing increases and decreases in the amounts of energy associated with movements, temperatures, chemical and nuclear reactions, by which a system is raised through a height or by which it is stretched.
+- **AQA**: 4.1.1.1 Energy stores and systems (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.1-4.3 Energy stores and energy transfers (GCSE Physics 1PH0)
+- **OCR**: P1.1 Energy stores and systems; conservation of energy (GCSE Physics J259 Gateway)
 
 #### Energy Transfers (Confident, `physics-energy-transfers`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Energy)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Energy as a quantity that can be transferred between objects or between stores by mechanical work, electrical work, heating, or radiation; using physical processes and mechanisms, rather than energy itself, to explain the intermediate steps that bring about such changes.
+- **AQA**: 4.1.1.2 Changes in energy; 4.1.2 Conservation and dissipation of energy (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.4-4.6 Energy transfers and pathways (GCSE Physics 1PH0)
+- **OCR**: P1.1 Conservation of energy; pathways for energy transfer (GCSE Physics J259 Gateway)
 
 #### Useful and Wasted Energy (Confident, `physics-energy-efficiency`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Energy)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Conservation of energy in a closed system; the total energy stored before and after a transfer is the same; useful energy stored at the end of a transfer and energy dissipated to the surroundings (qualitative only at KS3); using a Sankey diagram to show how the input energy is shared between useful and wasted output stores.
+- **AQA**: 4.1.2.1 Energy transfers in a system; 4.1.2.2 Efficiency (qualitative at KS3) (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.7-4.10 Conservation of energy; useful and wasted energy; Sankey diagrams (GCSE Physics 1PH0)
+- **OCR**: P1.2 Energy transfers; useful and wasted energy; Sankey diagrams (GCSE Physics J259 Gateway)
 
 ### Zone: Electricity and Circuits (`physics-electricity-circuits`)
 
