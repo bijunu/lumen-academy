@@ -11,6 +11,7 @@ import { REALMS, type RealmId } from '@/lib/constants/realms'
 import { logger } from '@/lib/logger'
 import { getProgressRepository } from '@/lib/progress/progressRepository'
 import { bossAttemptSchema } from '@/lib/progress/schemas'
+import { InvalidAnswerError, scoreAnswer } from '@/lib/progress/serverScoring'
 import { getScholarRepository } from '@/lib/scholar/scholarRepository'
 import { utcDayKey } from '@/lib/time/utcDay'
 import {
@@ -153,10 +154,72 @@ export async function POST(request: Request, context: RouteContext) {
     }
     const realmId = zoneNodes[0].realm
 
-    const score = parsed.data.answers.filter(a => a.correct).length
+    const bossRepo = getBossRepository()
+    const pending = await bossRepo.getPendingAttempt(userId, zoneId, day)
+    if (!pending) {
+      return NextResponse.json(
+        { error: 'no-pending-attempt' },
+        { status: 404 }
+      )
+    }
+    if (pending.status !== 'pending') {
+      return NextResponse.json(
+        { error: 'already-attempted' },
+        { status: 409 }
+      )
+    }
+
+    const expectedKeys = new Set(
+      pending.questions.map(q => `${q.nodeId}:${q.questionId}`)
+    )
+    const submittedKeys = new Set(
+      parsed.data.answers.map(a => `${a.nodeId}:${a.questionId}`)
+    )
+    const sameSize = submittedKeys.size === expectedKeys.size
+    const sameContents =
+      sameSize && Array.from(submittedKeys).every(k => expectedKeys.has(k))
+    const noDuplicates = parsed.data.answers.length === submittedKeys.size
+    if (
+      parsed.data.answers.length !== pending.questions.length ||
+      !sameContents ||
+      !noDuplicates
+    ) {
+      return NextResponse.json(
+        { error: 'invalid-answer-set' },
+        { status: 400 }
+      )
+    }
+
+    const nodeIndex = new Map(zoneNodes.map(n => [n.id, n]))
+    let score = 0
+    try {
+      for (const submitted of parsed.data.answers) {
+        const node = nodeIndex.get(submitted.nodeId)
+        const question = node?.questions.find(q => q.id === submitted.questionId)
+        if (!node || !question) {
+          return NextResponse.json(
+            { error: 'invalid-answer-set' },
+            { status: 400 }
+          )
+        }
+        const correct = scoreAnswer(question, {
+          answer: submitted.answer,
+          clientCorrect: submitted.clientCorrect,
+        })
+        if (correct) score += 1
+      }
+    } catch (err) {
+      if (err instanceof InvalidAnswerError) {
+        return NextResponse.json(
+          { error: 'invalid-answer', message: err.message },
+          { status: 400 }
+        )
+      }
+      throw err
+    }
+
     const defeated = score >= BOSS_PASS_THRESHOLD
 
-    const bossRepo = getBossRepository()
     const existingDefeat = (await bossRepo.getDefeats(userId)).find(
       d => d.zoneId === zoneId
     )

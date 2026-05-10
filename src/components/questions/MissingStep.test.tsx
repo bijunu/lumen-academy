@@ -24,24 +24,24 @@ describe('MissingStep', () => {
     expect(getByLabelText('Step 2 (missing)')).toBeTruthy()
   })
 
-  it('reports correct when the answer matches after normalisation', () => {
+  it('forwards the raw value to onSubmit', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <MissingStep question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Step 2 (missing)'), { target: { value: '  5A + 4.  ' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('correct')
+    expect(onSubmit).toHaveBeenCalledWith('  5A + 4.  ')
   })
 
-  it('reports incorrect when the answer differs', () => {
+  it('forwards a wrong answer verbatim too', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <MissingStep question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Step 2 (missing)'), { target: { value: '6a + 4' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('incorrect')
+    expect(onSubmit).toHaveBeenCalledWith('6a + 4')
   })
 
   it('disables the input and submit button when disabled', () => {

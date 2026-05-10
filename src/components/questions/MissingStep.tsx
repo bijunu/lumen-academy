@@ -7,14 +7,7 @@ import { cn } from '@/lib/utils'
 interface MissingStepProps {
   question: MissingStepQuestion
   disabled: boolean
-  onSubmit: (result: 'correct' | 'incorrect') => void
-}
-
-function normaliseStep(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/[.!?]+$/, '')
+  onSubmit: (value: string) => void
 }
 
 export function MissingStep({ question, disabled, onSubmit }: MissingStepProps) {
@@ -23,8 +16,7 @@ export function MissingStep({ question, disabled, onSubmit }: MissingStepProps) 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (value.trim() === '') return
-    const isCorrect = normaliseStep(value) === normaliseStep(question.correctStep)
-    onSubmit(isCorrect ? 'correct' : 'incorrect')
+    onSubmit(value)
   }
 
   return (

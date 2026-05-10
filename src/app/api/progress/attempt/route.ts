@@ -7,6 +7,7 @@ import { logger } from '@/lib/logger'
 import { xpForAttempt } from '@/lib/gamification/xpForAttempt'
 import { getProgressRepository } from '@/lib/progress/progressRepository'
 import { attemptWriteSchema } from '@/lib/progress/schemas'
+import { InvalidAnswerError, scoreAnswer } from '@/lib/progress/serverScoring'
 import { getScholarRepository } from '@/lib/scholar/scholarRepository'
 import type { Attempt } from '@/types/progress'
 import type { BadgeId, ScholarCounters } from '@/types/gamification'
@@ -35,74 +36,95 @@ export async function POST(request: Request) {
   }
 
   const answeredAt = new Date()
+  const { nodeId, questionId, attemptCount, hintLevel, answer, clientCorrect } =
+    parsed.data
+
+  const node = await getContentRepository().getNode(nodeId)
+  if (!node) {
+    return NextResponse.json({ error: 'invalid-node' }, { status: 400 })
+  }
+  const question = node.questions.find(q => q.id === questionId)
+  if (!question) {
+    return NextResponse.json({ error: 'invalid-question' }, { status: 400 })
+  }
+
+  let correct: boolean
+  try {
+    correct = scoreAnswer(question, { answer, clientCorrect })
+  } catch (err) {
+    if (err instanceof InvalidAnswerError) {
+      return NextResponse.json(
+        { error: 'invalid-answer', message: err.message },
+        { status: 400 }
+      )
+    }
+    throw err
+  }
+
   const attempt: Attempt = {
-    ...parsed.data,
     userId: session.user.id,
+    nodeId,
+    questionId,
+    correct,
+    attemptCount,
     answeredAt,
+    ...(hintLevel ? { hintLevel } : {}),
   }
 
   try {
     const { progress, previousMastery } =
       await getProgressRepository().upsertAttempt(attempt)
 
-    const node = await getContentRepository().getNode(attempt.nodeId)
-    const question = node?.questions.find(q => q.id === attempt.questionId)
-
     let badgeUnlocks: BadgeId[] = []
 
-    if (node && question) {
-      const xpDelta = attempt.correct
-        ? xpForAttempt({
-            baseXp: question.xpValue,
-            tier: question.tier,
-            firstTry: attempt.attemptCount === 1,
-          })
-        : 0
-      const insightDelta = attempt.correct ? 1 : 0
-      const sparkDelta = progress.mastery !== previousMastery ? 1 : 0
-
-      const counterDeltas: Partial<ScholarCounters> = {}
-      if (attempt.correct && question.tier === 'challenge') {
-        counterDeltas.challengeCorrect = 1
-      }
-      if (attempt.correct && question.type === 'spot-misconception') {
-        counterDeltas.misconceptionCorrect = 1
-      }
-      if (
-        previousMastery !== 'platinum' &&
-        progress.mastery === 'platinum'
-      ) {
-        counterDeltas.platinumCount = 1
-      }
-      if (
-        previousMastery === 'none' &&
-        progress.mastery === 'bronze' &&
-        progress.totalAttempts > progress.totalCorrect
-      ) {
-        counterDeltas.bouncedBackCount = 1
-      }
-      const hasCounterDelta = Object.keys(counterDeltas).length > 0
-
-      const scholarRepo = getScholarRepository()
-      if (xpDelta > 0 || insightDelta > 0 || sparkDelta > 0 || hasCounterDelta) {
-        const profile = await scholarRepo.applyUpdate(session.user.id, {
-          realm: node.realm,
-          xpDelta,
-          insightDelta,
-          sparkDelta,
-          counterDeltas: hasCounterDelta ? counterDeltas : undefined,
-          occurredAt: answeredAt,
+    const xpDelta = attempt.correct
+      ? xpForAttempt({
+          baseXp: question.xpValue,
+          tier: question.tier,
+          firstTry: attempt.attemptCount === 1,
         })
+      : 0
+    const insightDelta = attempt.correct ? 1 : 0
+    const sparkDelta = progress.mastery !== previousMastery ? 1 : 0
 
-        const newlyEarned = evaluateBadges(profile, answeredAt)
-        if (newlyEarned.length > 0) {
-          await scholarRepo.markBadgesEarned(
-            session.user.id,
-            newlyEarned,
-            answeredAt
-          )
-          badgeUnlocks = newlyEarned
-        }
+    const counterDeltas: Partial<ScholarCounters> = {}
+    if (attempt.correct && question.tier === 'challenge') {
+      counterDeltas.challengeCorrect = 1
+    }
+    if (attempt.correct && question.type === 'spot-misconception') {
+      counterDeltas.misconceptionCorrect = 1
+    }
+    if (previousMastery !== 'platinum' && progress.mastery === 'platinum') {
+      counterDeltas.platinumCount = 1
+    }
+    if (
+      previousMastery === 'none' &&
+      progress.mastery === 'bronze' &&
+      progress.totalAttempts > progress.totalCorrect
+    ) {
+      counterDeltas.bouncedBackCount = 1
+    }
+    const hasCounterDelta = Object.keys(counterDeltas).length > 0
+
+    const scholarRepo = getScholarRepository()
+    if (xpDelta > 0 || insightDelta > 0 || sparkDelta > 0 || hasCounterDelta) {
+      const profile = await scholarRepo.applyUpdate(session.user.id, {
+        realm: node.realm,
+        xpDelta,
+        insightDelta,
+        sparkDelta,
+        counterDeltas: hasCounterDelta ? counterDeltas : undefined,
+        occurredAt: answeredAt,
+      })
+
+      const newlyEarned = evaluateBadges(profile, answeredAt)
+      if (newlyEarned.length > 0) {
+        await scholarRepo.markBadgesEarned(
+          session.user.id,
+          newlyEarned,
+          answeredAt
+        )
+        badgeUnlocks = newlyEarned
       }
     }
 

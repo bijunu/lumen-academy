@@ -14,9 +14,10 @@ const MASTERY_LEVELS = [
 export const attemptWriteSchema = z.object({
   nodeId: z.string().min(1),
   questionId: z.string().min(1),
-  correct: z.boolean(),
   attemptCount: z.number().int().positive(),
   hintLevel: z.enum(HINT_LEVELS).optional(),
+  answer: z.unknown().optional(),
+  clientCorrect: z.boolean().optional(),
 })
 
 export type AttemptWriteInput = z.infer<typeof attemptWriteSchema>
@@ -45,7 +46,8 @@ export const sessionRecordWriteSchema = z
 export type SessionRecordWriteInput = z.infer<typeof sessionRecordWriteSchema>
 
 export const dailyChallengeAttemptSchema = z.object({
-  correct: z.boolean(),
+  answer: z.unknown().optional(),
+  clientCorrect: z.boolean().optional(),
 })
 
 export type DailyChallengeAttemptInput = z.infer<
@@ -58,7 +60,8 @@ export const bossAttemptSchema = z.object({
       z.object({
         nodeId: z.string().min(1),
         questionId: z.string().min(1),
-        correct: z.boolean(),
+        answer: z.unknown().optional(),
+        clientCorrect: z.boolean().optional(),
       })
     )
     .min(1),

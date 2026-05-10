@@ -157,7 +157,7 @@ describe('DailyChallengeCard', () => {
     )
     expect(postCall).toBeTruthy()
     expect(JSON.parse((postCall![1] as RequestInit).body as string)).toEqual({
-      correct: true,
+      answer: 1,
     })
 
     await waitFor(() => {

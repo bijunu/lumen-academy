@@ -10,12 +10,22 @@ describe('attemptWriteSchema', () => {
   const valid = {
     nodeId: 'maths-fractions-equivalent',
     questionId: 'q1',
-    correct: true,
     attemptCount: 1,
+    answer: 1,
   }
 
-  it('accepts a minimal valid payload without hintLevel', () => {
+  it('accepts a payload with an answer payload', () => {
     const result = attemptWriteSchema.safeParse(valid)
+    expect(result.success).toBe(true)
+  })
+
+  it('accepts a payload with clientCorrect for renderer-scored types', () => {
+    const result = attemptWriteSchema.safeParse({
+      nodeId: 'n',
+      questionId: 'q',
+      attemptCount: 1,
+      clientCorrect: true,
+    })
     expect(result.success).toBe(true)
   })
 
@@ -95,22 +105,23 @@ describe('sessionRecordWriteSchema', () => {
 })
 
 describe('dailyChallengeAttemptSchema', () => {
-  it('accepts a boolean correct value', () => {
-    expect(dailyChallengeAttemptSchema.safeParse({ correct: true }).success).toBe(
-      true
-    )
+  it('accepts an answer payload', () => {
+    expect(dailyChallengeAttemptSchema.safeParse({ answer: 0 }).success).toBe(true)
+  })
+
+  it('accepts a clientCorrect boolean for renderer-scored types', () => {
     expect(
-      dailyChallengeAttemptSchema.safeParse({ correct: false }).success
+      dailyChallengeAttemptSchema.safeParse({ clientCorrect: true }).success
     ).toBe(true)
   })
 
-  it('rejects when correct is missing', () => {
-    expect(dailyChallengeAttemptSchema.safeParse({}).success).toBe(false)
+  it('accepts an empty payload (server scoring will reject if needed)', () => {
+    expect(dailyChallengeAttemptSchema.safeParse({}).success).toBe(true)
   })
 
-  it('rejects when correct is not a boolean', () => {
+  it('rejects clientCorrect of the wrong type', () => {
     expect(
-      dailyChallengeAttemptSchema.safeParse({ correct: 'yes' }).success
+      dailyChallengeAttemptSchema.safeParse({ clientCorrect: 'yes' }).success
     ).toBe(false)
   })
 })

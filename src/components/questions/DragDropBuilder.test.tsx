@@ -14,7 +14,7 @@ const baseQuestion: DragDropBuilderQuestion = {
 }
 
 describe('DragDropBuilder', () => {
-  it('reports correct when the chosen parts match correctArrangement in order', () => {
+  it('forwards the built arrangement in selection order', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <DragDropBuilder question={baseQuestion} disabled={false} onSubmit={onSubmit} />
@@ -22,10 +22,10 @@ describe('DragDropBuilder', () => {
     fireEvent.click(getByLabelText('Add 2n to answer'))
     fireEvent.click(getByLabelText('Add + 5 to answer'))
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('correct')
+    expect(onSubmit).toHaveBeenCalledWith(['2n', '+ 5'])
   })
 
-  it('reports incorrect when order differs', () => {
+  it('preserves the wrong order verbatim when the learner picks parts in a different sequence', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <DragDropBuilder question={baseQuestion} disabled={false} onSubmit={onSubmit} />
@@ -33,7 +33,7 @@ describe('DragDropBuilder', () => {
     fireEvent.click(getByLabelText('Add + 5 to answer'))
     fireEvent.click(getByLabelText('Add 2n to answer'))
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('incorrect')
+    expect(onSubmit).toHaveBeenCalledWith(['+ 5', '2n'])
   })
 
   it('returns a part to the pool when its build chip is clicked', () => {

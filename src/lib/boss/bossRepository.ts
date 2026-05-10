@@ -47,6 +47,11 @@ export interface BossRepository {
   getOrCreateAttempt(
     args: GetOrCreateAttemptArgs
   ): Promise<BossAttemptRecord | null>
+  getPendingAttempt(
+    userId: string,
+    zoneId: string,
+    utcDay: string
+  ): Promise<BossAttemptRecord | null>
   recordAttemptResult(
     args: RecordAttemptResultArgs
   ): Promise<BossAttemptRecord | null>
@@ -100,6 +105,17 @@ export class MongoBossRepository implements BossRepository {
       }
       throw err
     }
+  }
+
+  async getPendingAttempt(
+    userId: string,
+    zoneId: string,
+    utcDay: string
+  ): Promise<BossAttemptRecord | null> {
+    const db = await this.dbPromise
+    return db
+      .collection<BossAttemptRecord>(BOSS_ATTEMPTS_COLLECTION)
+      .findOne({ userId, zoneId, utcDay }, { projection: PROJECTION })
   }
 
   async recordAttemptResult({

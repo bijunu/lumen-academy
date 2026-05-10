@@ -6,14 +6,7 @@ import type { DataExtractionQuestion } from '@/types/content'
 interface DataExtractionProps {
   question: DataExtractionQuestion
   disabled: boolean
-  onSubmit: (result: 'correct' | 'incorrect') => void
-}
-
-function normaliseAnswer(value: string): string {
-  return value
-    .toLowerCase()
-    .replace(/\s+/g, '')
-    .replace(/[.!?]+$/, '')
+  onSubmit: (value: string) => void
 }
 
 export function DataExtraction({ question, disabled, onSubmit }: DataExtractionProps) {
@@ -22,8 +15,7 @@ export function DataExtraction({ question, disabled, onSubmit }: DataExtractionP
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     if (value.trim() === '') return
-    const isCorrect = normaliseAnswer(value) === normaliseAnswer(question.correctAnswer)
-    onSubmit(isCorrect ? 'correct' : 'incorrect')
+    onSubmit(value)
   }
 
   return (

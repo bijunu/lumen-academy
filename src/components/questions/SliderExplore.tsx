@@ -6,7 +6,7 @@ import type { SliderExploreQuestion } from '@/types/content'
 interface SliderExploreProps {
   question: SliderExploreQuestion
   disabled: boolean
-  onSubmit: (result: 'correct' | 'incorrect') => void
+  onSubmit: (value: number) => void
 }
 
 function midpoint(min: number, max: number, step: number): number {
@@ -19,9 +19,7 @@ export function SliderExplore({ question, disabled, onSubmit }: SliderExplorePro
   const [value, setValue] = useState(() => midpoint(question.min, question.max, question.step))
 
   const handleSubmit = () => {
-    const [lo, hi] = question.correctRange
-    const isCorrect = value >= lo && value <= hi
-    onSubmit(isCorrect ? 'correct' : 'incorrect')
+    onSubmit(value)
   }
 
   return (

@@ -63,8 +63,13 @@ export async function POST(request: Request) {
   let badgeUnlocks: BadgeId[] = []
 
   try {
+    const attemptedNodeIds = await getProgressRepository()
+      .listAttemptedNodeIdsInWindow(userId, record.startedAt, now)
+    const attemptedSet = new Set(attemptedNodeIds)
+    const verifiedNodeIds = record.nodeIds.filter(id => attemptedSet.has(id))
+
     let anyBecameComplete = false
-    for (const nodeId of record.nodeIds) {
+    for (const nodeId of verifiedNodeIds) {
       const result = await questRepo.markTaskComplete({
         userId,
         utcDay: day,
@@ -78,7 +83,7 @@ export async function POST(request: Request) {
       const stamped = await questRepo.markBonusAwarded(userId, day, now)
       if (stamped) {
         questCompleted = true
-        const firstNodeId = record.nodeIds[0]
+        const firstNodeId = verifiedNodeIds[0]
         const node = firstNodeId
           ? await getContentRepository().getNode(firstNodeId)
           : null

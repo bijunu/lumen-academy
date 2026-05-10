@@ -4,6 +4,7 @@ import { useCallback, useMemo, useState } from 'react'
 
 import { Button } from '@/components/ui/button'
 import { QuestionShell } from '@/components/questions/QuestionShell'
+import type { ScoreInput } from '@/lib/progress/serverScoring'
 import {
   BOSS_PASS_THRESHOLD,
   BOSS_QUESTION_COUNT,
@@ -21,7 +22,8 @@ export interface BossQuestionView {
 export interface BossAnswer {
   nodeId: string
   questionId: string
-  correct: boolean
+  answer?: unknown
+  clientCorrect?: boolean
 }
 
 export interface BossSubmitResult {
@@ -53,8 +55,9 @@ export function BossArena({
   const [result, setResult] = useState<BossSubmitResult | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  const correctSoFar = answers.filter(a => a.correct).length
-  const wrongSoFar = answers.length - correctSoFar
+  const [localCorrects, setLocalCorrects] = useState<boolean[]>([])
+  const correctSoFar = localCorrects.filter(Boolean).length
+  const wrongSoFar = localCorrects.length - correctSoFar
   const hpTotal = total
   const hpRemaining = Math.max(0, hpTotal - correctSoFar)
 
@@ -74,15 +77,19 @@ export function BossArena({
   )
 
   const handleQuestionComplete = useCallback(
-    (correct: boolean) => {
+    (correct: boolean, _attemptCount: number, payload: ScoreInput) => {
       const slot = questions[index]
       const next: BossAnswer = {
         nodeId: slot.nodeId,
         questionId: slot.question.id,
-        correct,
+        ...(payload.answer !== undefined ? { answer: payload.answer } : {}),
+        ...(payload.clientCorrect !== undefined
+          ? { clientCorrect: payload.clientCorrect }
+          : {}),
       }
       const updated = [...answers, next]
       setAnswers(updated)
+      setLocalCorrects(prev => [...prev, correct])
       if (index < questions.length - 1) {
         setIndex(prev => prev + 1)
       } else {

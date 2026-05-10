@@ -348,6 +348,34 @@ describe('MongoProgressRepository', () => {
     expect(all.map(r => r.nodeId).sort()).toEqual(['a', 'b'])
   })
 
+  it('listAttemptedNodeIdsInWindow returns distinct nodeIds for this user in [start,end]', async () => {
+    const otherUserId = 'user-2'
+    const inWindow = new Date('2026-05-08T12:00:00Z')
+    const beforeWindow = new Date('2026-04-30T12:00:00Z')
+    const afterWindow = new Date('2026-05-12T12:00:00Z')
+
+    await db.collection<Attempt>(ATTEMPTS_COLLECTION).insertMany([
+      makeAttempt({ nodeId: 'node-a', answeredAt: inWindow, questionId: 'q1' }),
+      makeAttempt({ nodeId: 'node-a', answeredAt: inWindow, questionId: 'q2' }),
+      makeAttempt({ nodeId: 'node-b', answeredAt: inWindow, questionId: 'q3' }),
+      makeAttempt({ nodeId: 'node-old', answeredAt: beforeWindow, questionId: 'q4' }),
+      makeAttempt({ nodeId: 'node-new', answeredAt: afterWindow, questionId: 'q5' }),
+      makeAttempt({
+        userId: otherUserId,
+        nodeId: 'node-other',
+        answeredAt: inWindow,
+        questionId: 'q6',
+      }),
+    ])
+
+    const ids = await repo.listAttemptedNodeIdsInWindow(
+      userId,
+      new Date('2026-05-01T00:00:00Z'),
+      new Date('2026-05-11T00:00:00Z')
+    )
+    expect(ids.sort()).toEqual(['node-a', 'node-b'])
+  })
+
   it('listSessionDays returns distinct UTC days within the window', async () => {
     const otherUserId = 'user-2'
     const records: SessionRecord[] = [

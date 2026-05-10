@@ -81,11 +81,11 @@ describe('BossArena', () => {
 
     expect(onSubmit).toHaveBeenCalledTimes(1)
     const submitted = onSubmit.mock.calls[0][0] as Array<{
-      correct: boolean
+      answer: unknown
       questionId: string
     }>
     expect(submitted).toHaveLength(5)
-    expect(submitted.every(a => a.correct)).toBe(true)
+    expect(submitted.every(a => a.answer === 1)).toBe(true)
     expect(screen.getByText(/boss defeated/)).toBeTruthy()
     expect(screen.getByText(/first defeat bonus/)).toBeTruthy()
   })

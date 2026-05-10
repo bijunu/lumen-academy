@@ -23,6 +23,7 @@ interface RecordAttemptArgs {
 
 export interface DailyChallengeRepository {
   getOrCreate(args: GetOrCreateArgs): Promise<DailyChallengeRecord | null>
+  getRecord(userId: string, utcDay: string): Promise<DailyChallengeRecord | null>
   recordAttempt(args: RecordAttemptArgs): Promise<DailyChallengeRecord | null>
 }
 
@@ -66,6 +67,16 @@ export class MongoDailyChallengeRepository implements DailyChallengeRepository {
       }
       throw err
     }
+  }
+
+  async getRecord(
+    userId: string,
+    utcDay: string
+  ): Promise<DailyChallengeRecord | null> {
+    const db = await this.dbPromise
+    return db
+      .collection<DailyChallengeRecord>(DAILY_CHALLENGES_COLLECTION)
+      .findOne({ userId, utcDay }, { projection: PROJECTION })
   }
 
   async recordAttempt({

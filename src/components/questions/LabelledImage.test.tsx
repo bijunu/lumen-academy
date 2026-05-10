@@ -18,7 +18,7 @@ const baseQuestion: LabelledImageQuestion = {
 }
 
 describe('LabelledImage', () => {
-  it('reports correct when every hotspot has its correct label', () => {
+  it('forwards every hotspot placement', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <LabelledImage question={baseQuestion} disabled={false} onSubmit={onSubmit} />
@@ -28,10 +28,10 @@ describe('LabelledImage', () => {
     fireEvent.click(getByLabelText('Select label Mitochondrion'))
     fireEvent.click(getByLabelText(/Hotspot 2, empty/))
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('correct')
+    expect(onSubmit).toHaveBeenCalledWith({ h1: 'Nucleus', h2: 'Mitochondrion' })
   })
 
-  it('reports incorrect when any hotspot has the wrong label', () => {
+  it('forwards mismatched placements verbatim', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <LabelledImage question={baseQuestion} disabled={false} onSubmit={onSubmit} />
@@ -41,7 +41,7 @@ describe('LabelledImage', () => {
     fireEvent.click(getByLabelText('Select label Nucleus'))
     fireEvent.click(getByLabelText(/Hotspot 2, empty/))
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('incorrect')
+    expect(onSubmit).toHaveBeenCalledWith({ h1: 'Mitochondrion', h2: 'Nucleus' })
   })
 
   it('disables Submit until every hotspot has a label', () => {

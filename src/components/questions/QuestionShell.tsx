@@ -3,6 +3,7 @@
 import { useCallback } from 'react'
 import type { Question, Misconception } from '@/types/content'
 import { useQuestionState } from '@/hooks/useQuestionState'
+import type { ScoreInput } from '@/lib/progress/serverScoring'
 import { MultipleChoice } from './MultipleChoice'
 import { NumericEntry } from './NumericEntry'
 import { DragOrder } from './DragOrder'
@@ -20,7 +21,11 @@ import { Badge } from '@/components/ui/badge'
 interface QuestionShellProps {
   question: Question
   misconceptions: Misconception[]
-  onComplete: (correct: boolean, attemptCount: number) => void
+  onComplete: (
+    correct: boolean,
+    attemptCount: number,
+    payload: ScoreInput
+  ) => void
   onHintRequest?: () => void
   oneShot?: boolean
 }
@@ -32,7 +37,7 @@ export function QuestionShell({
   onHintRequest,
   oneShot = false,
 }: QuestionShellProps) {
-  const { selectedAnswer, status, attemptCount, showFeedback, submit, reset, setSelectedAnswer } =
+  const { payload, status, attemptCount, showFeedback, submit, reset } =
     useQuestionState(question)
 
   const activeMisconception = question.misconceptionId
@@ -41,20 +46,15 @@ export function QuestionShell({
 
   const handleNext = useCallback(() => {
     if (oneShot || status === 'correct') {
-      onComplete(status === 'correct', attemptCount)
+      onComplete(status === 'correct', attemptCount, payload ?? {})
     } else {
       reset()
     }
-  }, [oneShot, status, attemptCount, onComplete, reset])
-
-  const handleSubmitAnswer = useCallback(
-    (answer: string | number) => {
-      submit(answer)
-    },
-    [submit]
-  )
+  }, [oneShot, status, attemptCount, payload, onComplete, reset])
 
   const isAnswered = status !== 'unanswered'
+  const selectedIndex =
+    typeof payload?.answer === 'number' ? payload.answer : null
 
   return (
     <div className="space-y-4">
@@ -68,38 +68,34 @@ export function QuestionShell({
       {question.type === 'multiple-choice' && (
         <MultipleChoice
           question={question}
-          selectedIndex={typeof selectedAnswer === 'number' ? selectedAnswer : null}
+          selectedIndex={selectedIndex}
           disabled={isAnswered}
-          onSelect={handleSubmitAnswer}
+          onSelect={index => submit({ answer: index })}
         />
       )}
 
       {question.type === 'numeric-entry' && (
-        <NumericEntry question={question} disabled={isAnswered} onSubmit={handleSubmitAnswer} />
+        <NumericEntry
+          question={question}
+          disabled={isAnswered}
+          onSubmit={value => submit({ answer: value })}
+        />
       )}
 
       {question.type === 'drag-order' && (
         <DragOrder
           question={question}
           disabled={isAnswered}
-          onSubmit={order => {
-            const isCorrect =
-              JSON.stringify(order) === JSON.stringify(question.correctOrder)
-            submit(isCorrect ? 'correct' : 'incorrect')
-          }}
+          onSubmit={order => submit({ answer: order })}
         />
       )}
 
       {question.type === 'spot-misconception' && (
         <SpotMisconception
           question={question}
-          selectedIndex={typeof selectedAnswer === 'number' ? selectedAnswer : null}
+          selectedIndex={selectedIndex}
           disabled={isAnswered}
-          onSelect={i => {
-            setSelectedAnswer(i)
-            const stmt = question.statements[i]
-            submit(stmt.isMisconception ? 'correct' : 'incorrect')
-          }}
+          onSelect={index => submit({ answer: index })}
         />
       )}
 
@@ -107,7 +103,7 @@ export function QuestionShell({
         <MissingStep
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={value => submit({ answer: value })}
         />
       )}
 
@@ -115,7 +111,7 @@ export function QuestionShell({
         <FreeText
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={result => submit({ clientCorrect: result === 'correct' })}
         />
       )}
 
@@ -123,7 +119,7 @@ export function QuestionShell({
         <SliderExplore
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={value => submit({ answer: value })}
         />
       )}
 
@@ -131,7 +127,7 @@ export function QuestionShell({
         <Sketch
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={result => submit({ clientCorrect: result === 'correct' })}
         />
       )}
 
@@ -139,7 +135,7 @@ export function QuestionShell({
         <DragDropBuilder
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={arrangement => submit({ answer: arrangement })}
         />
       )}
 
@@ -147,7 +143,7 @@ export function QuestionShell({
         <DataExtraction
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={value => submit({ answer: value })}
         />
       )}
 
@@ -155,7 +151,7 @@ export function QuestionShell({
         <LabelledImage
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit(result)}
+          onSubmit={placements => submit({ answer: placements })}
         />
       )}
 

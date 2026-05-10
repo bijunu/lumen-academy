@@ -11,6 +11,7 @@ import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
 import { postAttempt, postSession } from '@/lib/progress/client'
+import type { ScoreInput } from '@/lib/progress/serverScoring'
 import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
 import {
   DAILY_QUEST_BONUS_SPARK,
@@ -59,7 +60,7 @@ export function NodeLearningFlow({
   }, [exampleIndex, node.workedExamples.length])
 
   const handleQuestionComplete = useCallback(
-    (correct: boolean, attemptCount: number) => {
+    (correct: boolean, attemptCount: number, payload: ScoreInput) => {
       const question = node.questions[questionIndex]
       tracker.recordAnswer(correct, question.xpValue, attemptCount, question.tier)
 
@@ -68,9 +69,12 @@ export function NodeLearningFlow({
         postAttempt({
           nodeId: node.id,
           questionId: question.id,
-          correct,
           attemptCount,
           ...(hintLevel ? { hintLevel } : {}),
+          ...(payload.answer !== undefined ? { answer: payload.answer } : {}),
+          ...(payload.clientCorrect !== undefined
+            ? { clientCorrect: payload.clientCorrect }
+            : {}),
         }).then(response => {
           if (!response) return
           if (response.masteryUpgraded) {

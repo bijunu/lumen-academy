@@ -10,6 +10,7 @@ import {
 } from '@/lib/dailyChallenge/pickQuestion'
 import { logger } from '@/lib/logger'
 import { dailyChallengeAttemptSchema } from '@/lib/progress/schemas'
+import { InvalidAnswerError, scoreAnswer } from '@/lib/progress/serverScoring'
 import { getScholarRepository } from '@/lib/scholar/scholarRepository'
 import { utcDayKey } from '@/lib/time/utcDay'
 import { DAILY_CHALLENGE_XP } from '@/types/dailyChallenge'
@@ -94,10 +95,50 @@ export async function POST(request: Request) {
 
   try {
     const repo = getDailyChallengeRepository()
+    const locked = await repo.getRecord(userId, day)
+    if (!locked) {
+      return NextResponse.json({ error: 'no-challenge' }, { status: 404 })
+    }
+    if (locked.status !== 'pending') {
+      return NextResponse.json(
+        { error: 'already-attempted' },
+        { status: 409 }
+      )
+    }
+
+    const contentRepo = getContentRepository()
+    const lockedNode = await contentRepo.getNode(locked.nodeId)
+    const lockedQuestion = lockedNode?.questions.find(
+      q => q.id === locked.questionId
+    )
+    if (!lockedNode || !lockedQuestion) {
+      logger.warn('dailyChallenge.post.missing-content', {
+        nodeId: locked.nodeId,
+        questionId: locked.questionId,
+      })
+      return NextResponse.json({ error: 'no-challenge' }, { status: 404 })
+    }
+
+    let correct: boolean
+    try {
+      correct = scoreAnswer(lockedQuestion, {
+        answer: parsed.data.answer,
+        clientCorrect: parsed.data.clientCorrect,
+      })
+    } catch (err) {
+      if (err instanceof InvalidAnswerError) {
+        return NextResponse.json(
+          { error: 'invalid-answer', message: err.message },
+          { status: 400 }
+        )
+      }
+      throw err
+    }
+
     const updated = await repo.recordAttempt({
       userId,
       utcDay: day,
-      correct: parsed.data.correct,
+      correct,
       xpAwarded: DAILY_CHALLENGE_XP,
       now,
     })
@@ -111,21 +152,18 @@ export async function POST(request: Request) {
 
     let badgeUnlocks: BadgeId[] = []
     if (updated.status === 'correct' && updated.xpAwarded > 0) {
-      const node = await getContentRepository().getNode(updated.nodeId)
-      if (node) {
-        const scholarRepo = getScholarRepository()
-        const profile = await scholarRepo.applyUpdate(userId, {
-          realm: node.realm,
-          xpDelta: updated.xpAwarded,
-          insightDelta: 1,
-          sparkDelta: 0,
-          occurredAt: now,
-        })
-        const newlyEarned = evaluateBadges(profile, now)
-        if (newlyEarned.length > 0) {
-          await scholarRepo.markBadgesEarned(userId, newlyEarned, now)
-          badgeUnlocks = newlyEarned
-        }
+      const scholarRepo = getScholarRepository()
+      const profile = await scholarRepo.applyUpdate(userId, {
+        realm: lockedNode.realm,
+        xpDelta: updated.xpAwarded,
+        insightDelta: 1,
+        sparkDelta: 0,
+        occurredAt: now,
+      })
+      const newlyEarned = evaluateBadges(profile, now)
+      if (newlyEarned.length > 0) {
+        await scholarRepo.markBadgesEarned(userId, newlyEarned, now)
+        badgeUnlocks = newlyEarned
       }
     }
 

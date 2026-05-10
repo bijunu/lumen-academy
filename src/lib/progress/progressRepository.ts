@@ -48,6 +48,11 @@ export interface ProgressRepository {
     start: Date,
     end: Date
   ): Promise<SessionRecord[]>
+  listAttemptedNodeIdsInWindow(
+    userId: string,
+    start: Date,
+    end: Date
+  ): Promise<string[]>
 }
 
 export function freshProgress(userId: string, nodeId: string): NodeProgress {
@@ -219,6 +224,22 @@ export class MongoProgressRepository implements ProgressRepository {
       )
       .sort({ startedAt: 1 })
       .toArray()
+  }
+
+  async listAttemptedNodeIdsInWindow(
+    userId: string,
+    start: Date,
+    end: Date
+  ): Promise<string[]> {
+    const db = await this.dbPromise
+    const rows = await db
+      .collection<Attempt>(ATTEMPTS_COLLECTION)
+      .find(
+        { userId, answeredAt: { $gte: start, $lte: end } },
+        { projection: { _id: 0, nodeId: 1 } }
+      )
+      .toArray()
+    return Array.from(new Set(rows.map(r => r.nodeId)))
   }
 }
 

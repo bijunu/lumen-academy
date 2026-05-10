@@ -6,7 +6,7 @@ import type { DragDropBuilderQuestion } from '@/types/content'
 interface DragDropBuilderProps {
   question: DragDropBuilderQuestion
   disabled: boolean
-  onSubmit: (result: 'correct' | 'incorrect') => void
+  onSubmit: (arrangement: string[]) => void
 }
 
 export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilderProps) {
@@ -25,11 +25,7 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
   }
 
   const handleSubmit = () => {
-    const arrangement = builtIndices.map(i => question.parts[i])
-    const correct = question.correctArrangement
-    const isCorrect =
-      arrangement.length === correct.length && arrangement.every((a, i) => a === correct[i])
-    onSubmit(isCorrect ? 'correct' : 'incorrect')
+    onSubmit(builtIndices.map(i => question.parts[i]))
   }
 
   return (

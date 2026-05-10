@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { QuestionShell } from '@/components/questions/QuestionShell'
+import type { ScoreInput } from '@/lib/progress/serverScoring'
 import type { Misconception, Question } from '@/types/content'
 import type {
   DailyChallengeRecord,
@@ -125,7 +126,7 @@ export function DailyChallengeCard() {
   }, [sessionStatus])
 
   const handleComplete = useCallback(
-    (correct: boolean) => {
+    (correct: boolean, _attemptCount: number, payload: ScoreInput) => {
       if (state.kind !== 'ready') return
       const node = state.node
       const challengeForOptimistic = state.challenge
@@ -136,10 +137,15 @@ export function DailyChallengeCard() {
         node,
       })
 
+      const body: { answer?: unknown; clientCorrect?: boolean } = {}
+      if (payload.answer !== undefined) body.answer = payload.answer
+      if (payload.clientCorrect !== undefined)
+        body.clientCorrect = payload.clientCorrect
+
       fetch('/api/daily-challenge', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ correct }),
+        body: JSON.stringify(body),
       })
         .then(async r => {
           if (!r.ok) return null

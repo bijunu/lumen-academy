@@ -22,24 +22,24 @@ describe('DataExtraction', () => {
     expect(getByText(/Tunbridge Wells library/)).toBeTruthy()
   })
 
-  it('reports correct when the normalised answer matches', () => {
+  it('forwards the raw text answer to onSubmit', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <DataExtraction question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Your answer'), { target: { value: '  12% .' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('correct')
+    expect(onSubmit).toHaveBeenCalledWith('  12% .')
   })
 
-  it('reports incorrect when the answer differs', () => {
+  it('forwards a wrong answer verbatim too', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <DataExtraction question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Your answer'), { target: { value: '88%' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('incorrect')
+    expect(onSubmit).toHaveBeenCalledWith('88%')
   })
 
   it('disables input and submit when disabled', () => {

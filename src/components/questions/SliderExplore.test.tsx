@@ -17,24 +17,24 @@ const baseQuestion: SliderExploreQuestion = {
 }
 
 describe('SliderExplore', () => {
-  it('reports correct when the value lands inside the correct range', () => {
+  it('forwards the slider value when in range', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <SliderExplore question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Squash (ml)'), { target: { value: '45' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('correct')
+    expect(onSubmit).toHaveBeenCalledWith(45)
   })
 
-  it('reports incorrect when the value falls outside the correct range', () => {
+  it('forwards an out-of-range value verbatim', () => {
     const onSubmit = vi.fn()
     const { getByLabelText, getByText } = render(
       <SliderExplore question={baseQuestion} disabled={false} onSubmit={onSubmit} />
     )
     fireEvent.change(getByLabelText('Squash (ml)'), { target: { value: '20' } })
     fireEvent.click(getByText('Submit'))
-    expect(onSubmit).toHaveBeenCalledWith('incorrect')
+    expect(onSubmit).toHaveBeenCalledWith(20)
   })
 
   it('starts at the midpoint of the range', () => {

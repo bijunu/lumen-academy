@@ -6,7 +6,7 @@ import type { LabelledImageQuestion } from '@/types/content'
 interface LabelledImageProps {
   question: LabelledImageQuestion
   disabled: boolean
-  onSubmit: (result: 'correct' | 'incorrect') => void
+  onSubmit: (placements: Record<string, string>) => void
 }
 
 const DEFAULT_VIEWBOX = '0 0 600 400'
@@ -43,10 +43,7 @@ export function LabelledImage({ question, disabled, onSubmit }: LabelledImagePro
   const allFilled = question.hotspots.every(h => placements[h.id])
 
   const handleSubmit = () => {
-    const allCorrect = question.hotspots.every(
-      h => placements[h.id] === h.correctLabel
-    )
-    onSubmit(allCorrect ? 'correct' : 'incorrect')
+    onSubmit(placements)
   }
 
   return (
