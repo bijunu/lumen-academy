@@ -13,6 +13,11 @@ import {
   forcesZoneNodes,
   forcesZone,
 } from './forces'
+import {
+  gravityMassVsWeight,
+  gravityZoneNodes,
+  gravityZone,
+} from './gravity'
 
 export {
   electricityCircuitSymbols,
@@ -24,11 +29,15 @@ export {
   forcesFriction,
   forcesZoneNodes,
   forcesZone,
+  gravityMassVsWeight,
+  gravityZoneNodes,
+  gravityZone,
 }
 
 export const physicsNodes: SkillNode[] = [
   ...electricityCircuitsZoneNodes,
   ...forcesZoneNodes,
+  ...gravityZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
@@ -39,4 +48,5 @@ export const physicsZones: Zone[] = [
     nodeIds: electricityCircuitsZoneNodes.map(n => n.id),
   },
   forcesZone,
+  gravityZone,
 ]

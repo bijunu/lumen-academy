@@ -941,16 +941,49 @@ Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-fricti
 
 ## Zone: Mechanica > Gravity, Weight, Mass
 
-Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.
+Zone id: `physics-gravity`. Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+
+- C-GR-1: Learner uses the units the wrong way round, writing mass in newtons (N) and weight in kilograms (kg). (Covers `physics-gravity-mass-vs-weight`.)
+  - Required handling: misconception entry; at least one Core MCQ that pairs the correct kg / N pairing against a swapped-units distractor; at least one numeric-entry that asks for weight with the unit N stated.
+- C-GR-2: Learner believes mass and weight are the same idea, just different ways of writing it down. (Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry; at least one spot-misconception question presenting the "weight equals mass" claim.
+- C-GR-3: Learner believes the mass of an object changes when the gravity changes, e.g. saying a 1 kg bag of sugar has less mass on the Moon. (Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry; at least one MCQ on a UK domestic object (sugar bag, bathroom scales, suitcase) taken to the Moon or Mars where the mass distractor is "less" or "zero".
+- C-GR-4: Learner believes astronauts on the ISS or in deep space have no mass because they appear to float, treating "weightless" as "massless". (Covers `physics-gravity-mass-vs-weight`.)
+  - Required handling: misconception entry; at least one MCQ that distinguishes free fall (apparent weightlessness) from massless.
+- C-GR-5: Learner believes electronic bathroom scales directly measure mass in kilograms, missing that they sense weight in newtons and divide by g. (Covers `physics-gravity-mass-vs-weight`.)
+  - Required handling: misconception entry; at least one MCQ that contrasts a newton meter, a balance, and bathroom scales as instruments.
+- C-GR-6: Learner believes a balance set of scales (two pans) reads weight in newtons, missing that it compares two masses under the same gravity. (Covers `physics-gravity-mass-vs-weight`.)
+  - Required handling: misconception entry; at least one Confident MCQ asking what a balance reads on the Moon for a 1 kg object; at least one spot-misconception that flags the same idea.
+- C-GR-7: Learner confuses g (gravitational field strength, N/kg) with g (grams), so misuses W = m x g. (Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry; at least one numeric-entry whose hint distinguishes g for grams from g for field strength; carries forward into the calculation node.
+- C-GR-8: Learner believes gravity is the same strength on every planet and moon, so weight does not change between Earth, the Moon and Mars. (Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry; at least one Challenge tier MCQ that requires recomputing weight on a non-Earth planet.
+- C-GR-9: Learner uses W = m x g but forgets to convert the mass into kilograms first when the stem gives the mass in grams. (Covers `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry on the calculation node; at least one numeric-entry question that gives mass in grams to force a conversion step.
+- C-GR-10: Learner divides instead of multiplies (or multiplies instead of divides) when rearranging W = m x g to find a missing mass or a missing g. (Covers `physics-gravity-weight-calculation`.)
+  - Required handling: misconception entry on the calculation node; at least one Challenge tier item that requires rearranging the formula to find m given W and g.
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+
+- Q-GR-1: At least three Core MCQs on the mass-vs-weight node each ask the learner to pick the correct unit, definition, or fixed-vs-changing nature of mass or weight, with one distractor mapping to the units-swapped or mass-changes-with-gravity misconception. (Covers `physics-gravity-mass-vs-weight`.)
+- Q-GR-2: At least one labelled-image question on the mass-vs-weight node has the learner place "Mass on Earth", "Weight on Earth", "Mass on Moon", and "Weight on Moon" labels onto a paired sugar-bag diagram, with a label pool no larger than twice the hotspot count. (Covers `physics-gravity-mass-vs-weight`.)
+- Q-GR-3: At least two numeric-entry questions on the mass-vs-weight node require either a unit conversion (g to kg or kg to g) or a weight calculation using g = 10 N/kg in a UK domestic context. (Covers `physics-gravity-mass-vs-weight`.)
+- Q-GR-4: At least one Confident drag-order or missing-step question walks the learner through the four-step process of getting weight from a mass reading on kitchen scales (read mass, convert units, multiply by g, write the unit). (Covers `physics-gravity-mass-vs-weight`.)
+- Q-GR-5: At least one Challenge tier item compares the same object on Earth and on a different body (Moon or Mars), explicitly stating which property changes and which does not. (Covers `physics-gravity-mass-vs-weight`, `physics-gravity-weight-calculation`.)
+- Q-GR-6: At least three numeric-entry questions on the calculation node use W = m x g with g = 10 N/kg in a UK context (Lake District workshop, supermarket, kitchen, school lab); at least one item also uses a non-Earth value of g (Moon 1.6 N/kg, Mars 3.7 N/kg). (Covers `physics-gravity-weight-calculation`.)
+- Q-GR-7: At least one Challenge tier numeric-entry on the calculation node requires rearranging W = m x g to find a missing mass given the weight and g. (Covers `physics-gravity-weight-calculation`.)
+- Q-GR-8: At least one slider-explore question on the calculation node varies g (or mass) and asks the learner to read off the weight at a target value. (Covers `physics-gravity-weight-calculation`.)
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+
+- T-GR-1: Given "On the Moon I would have less mass", the tutor asks the learner first whether the matter in their body has changed, before stating the rule that mass does not depend on gravity.
+- T-GR-2: Given a wrong answer matching the units-swapped trigger ("The bag weighs 5 kg"), the tutor cites the relevant misconception's `reExplanation` and offers the kitchen-scales / newton-meter contrast.
+- T-GR-3: Given "If I drop the gravity to zero, what happens to my weight and my mass?", the tutor walks through W = m x g qualitatively, showing that weight goes to zero while mass stays unchanged.
+- T-GR-4: Given an off-topic input (for example a question about US pound or ounce units), the tutor politely steers back to UK metric (kg, N) and the KS3 W = m x g framing.
+- T-GR-5: Given a request for an inline definition (tap on "mass", "weight", "newton meter", or "gravitational field strength"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Energy Stores and Transfers
 
