@@ -1522,29 +1522,72 @@ Covers `physics-electricity-circuit-symbols`, `physics-electricity-series-parall
 
 ## Zone: Mechanica > Waves
 
-Covers `physics-waves-anatomy`, `physics-waves-sound-light`.
+Zone id: `physics-waves`. Covers `physics-waves-anatomy`, `physics-waves-sound-light`.
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+- C-WV-1: Learner measures amplitude as the full distance from a trough up to a crest, doubling the correct value. (Covers `physics-waves-anatomy`.)
+- C-WV-2: Learner mixes amplitude and wavelength up, calling the height of the wave its wavelength or the crest-to-crest distance its amplitude. (Covers `physics-waves-anatomy`.)
+- C-WV-3: Learner writes the frequency in seconds (e.g. "5 s") rather than hertz (Hz), or the period in hertz rather than seconds. (Covers `physics-waves-anatomy`.)
+- C-WV-4: Learner treats period and frequency as the same thing, missing that they are reciprocals (period = 1 ÷ frequency). (Covers `physics-waves-anatomy`.)
+- C-WV-5: Learner believes sound waves are transverse, often because they are usually drawn as a sine curve in textbooks. (Covers `physics-waves-anatomy`, `physics-waves-sound-light`.)
+- C-WV-6: Learner reads the rest line as an arrow showing which way the wave is travelling, rather than as the undisturbed level. (Covers `physics-waves-anatomy`.)
+- C-WV-7: Learner treats "louder" as the same as "higher pitch", confusing amplitude with frequency. (Covers `physics-waves-anatomy`.)
+- C-WV-8: Learner believes sound can travel through a vacuum, often picked up from films where space explosions are loud. (Covers `physics-waves-sound-light`.)
+- C-WV-9: Learner believes light needs air or another medium to travel, by analogy with sound. (Covers `physics-waves-sound-light`.)
+- C-WV-10: Learner calls light a longitudinal wave by analogy with sound, instead of a transverse wave. (Covers `physics-waves-sound-light`.)
+- C-WV-11: Learner swaps the speed of sound (≈ 343 m/s) and the speed of light (3×10⁸ m/s), often because both numbers feature a "3". (Covers `physics-waves-sound-light`.)
+- C-WV-12: Learner multiplies thunder-lag seconds by the speed of light, instead of the speed of sound, when estimating distance to a storm. (Covers `physics-waves-sound-light`.)
+- C-WV-13: Learner believes sound is slower in solids than in air, because solids "feel heavier". (Covers `physics-waves-sound-light`.)
+- C-WV-14: Learner believes light is truly instant — that distance does not matter for light at all. (Covers `physics-waves-sound-light`.)
+- C-WV-15: Learner believes the light from a single event "starts first" or "leaves first", rather than that the light and sound start together but light travels much faster. (Covers `physics-waves-sound-light`.)
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+- Q-WV-1: At least one labelled-image question on the wave-anatomy node has the learner place names ("Crest", "Trough", "Amplitude", "Wavelength λ") onto a transverse-wave diagram, with a label pool no larger than twice the hotspot count. (Covers `physics-waves-anatomy`.)
+- Q-WV-2: At least three Core multiple-choice questions on the wave-anatomy node ask the learner to define a single wave part (rest line, amplitude, wavelength, frequency, period) with distractors drawn from the neighbouring parts. (Covers `physics-waves-anatomy`.)
+- Q-WV-3: At least one Confident numeric-entry question on the wave-anatomy node converts between frequency and period (T = 1 ÷ f) for a UK-context wave. (Covers `physics-waves-anatomy`.)
+- Q-WV-4: At least one spot-misconception question on the wave-anatomy node confronts the amplitude-as-trough-to-crest mistake or the sound-as-transverse mistake. (Covers `physics-waves-anatomy`.)
+- Q-WV-5: At least one data-extraction question on the wave-anatomy node reads the period off a description of a buoy bobbing on a sea wave (rest, crest, rest, trough, rest), without numeric calculation. (Covers `physics-waves-anatomy`.)
+- Q-WV-6: At least three Core multiple-choice questions on the sound-light node compare sound and light along a single axis (longitudinal vs transverse, speed in air, medium dependence), each with one named UK context. (Covers `physics-waves-sound-light`.)
+- Q-WV-7: At least two numeric-entry questions on the sound-light node use distance = speed × time with the speed of sound in air ≈ 343 m/s on a UK context (storm, school field, fireworks). (Covers `physics-waves-sound-light`.)
+- Q-WV-8: At least one Challenge tier item on the sound-light node compares the time light and sound take to cover the same UK distance (school playground, garden, motorway), making the speed-difference quantitative. (Covers `physics-waves-sound-light`.)
+- Q-WV-9: No question across the two waves nodes uses v = f × λ. The wave equation is GCSE-only at Lumen; reviewers must reject any item that asks the learner to use it. (Covers `physics-waves-anatomy`, `physics-waves-sound-light`.)
+- Q-WV-10: No question on the sound-light node names individual bands of the electromagnetic spectrum (radio, microwave, infrared, ultraviolet, X-ray, gamma) beyond "visible light is part of a wider family of waves". Spectrum naming is GCSE-only at Lumen. (Covers `physics-waves-sound-light`.)
+- Q-WV-11: No question on the sound-light node draws or asks the learner to draw a ray diagram (incident ray, normal, angle of incidence equals angle of reflection). Reflection at Lumen Year 7 is qualitative only. (Covers `physics-waves-sound-light`.)
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+- T-WV-1: Given the prompt "I don't get the difference between amplitude and wavelength", the tutor escalates from a nudge ("which one is a height? which one is a distance along the wave?") through a partial hint to a worked check, never offering a v = f × λ shortcut.
+- T-WV-2: Given a thunder-lag question with a wrong-speed answer (using 3×10⁸), the tutor surfaces the speed-of-sound assumption and reframes distance = speed × time before offering a numeric reveal.
+- T-WV-3: Given an off-topic input (for example a question about the electromagnetic spectrum bands), the tutor steers back to KS3-level qualitative comparison ("visible light is part of a wider family of waves; the rest is GCSE territory") politely.
+- T-WV-4: Given a request for an inline definition (tap on "longitudinal" or "amplitude"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Space
 
-Covers `physics-space-solar-system`, `physics-space-day-night-seasons`.
+Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-day-night-seasons` (day-night-seasons deferred to slice 7).
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+- C-SP-1: Learner names Pluto as the ninth planet of the Solar System, missing the IAU 2006 reclassification of Pluto as a dwarf planet. (Covers `physics-space-solar-system`.)
+- C-SP-2: Learner gets the order of the planets wrong, especially swapping Mars and Jupiter, or putting Saturn before Jupiter. (Covers `physics-space-solar-system`.)
+- C-SP-3: Learner believes the asteroid belt sits between Earth and Mars (or beyond Saturn), rather than between Mars and Jupiter. (Covers `physics-space-solar-system`.)
+- C-SP-4: Learner mixes up rocky and gas-giant planets, calling Jupiter rocky or calling Earth a gas planet. (Covers `physics-space-solar-system`.)
+- C-SP-5: Learner believes the Moon is a planet, missing that it is a natural satellite of Earth. (Covers `physics-space-solar-system`.)
+- C-SP-6: Learner believes the Sun is a planet, rather than a star at the centre of the Solar System. (Covers `physics-space-solar-system`.)
+- C-SP-7: Learner believes all the planets are the same size, often drawing them at the same scale on a diagram. (Covers `physics-space-solar-system`.)
+- C-SP-8: Learner believes the planets orbit in straight lines, or that they orbit Earth rather than the Sun (geocentric mistake). (Covers `physics-space-solar-system`.)
+- C-SP-9: Learner names a recent Mars rover or a science-fiction spacecraft as the body that astronauts live on, missing that the ISS is the long-term crewed station in low Earth orbit. (Covers `physics-space-solar-system`.)
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+- Q-SP-1: At least one labelled-image question on the solar-system node has the learner place planet names onto a Sun-and-orbits diagram in the right order, with a label pool no larger than twice the hotspot count. (Covers `physics-space-solar-system`.)
+- Q-SP-2: At least three Core multiple-choice questions on the solar-system node test single facts about the Solar System (Pluto's status, the position of the asteroid belt, the order of planets, rocky vs gas-giant), each with one neighbouring distractor. (Covers `physics-space-solar-system`.)
+- Q-SP-3: At least one drag-order question on the solar-system node walks the learner through ordering the eight planets from closest to the Sun (Mercury) to furthest (Neptune). (Covers `physics-space-solar-system`.)
+- Q-SP-4: At least one spot-misconception question on the solar-system node confronts the "Pluto is the ninth planet" claim and references the IAU 2006 reclassification. (Covers `physics-space-solar-system`.)
+- Q-SP-5: At least one Confident or Challenge item on the solar-system node uses a UK astronomy context (Royal Greenwich Observatory, UK Space Agency, Tim Peake on the ISS) without quoting orbital periods or AU distances quantitatively. (Covers `physics-space-solar-system`.)
+- Q-SP-6: No question on the solar-system node uses Kepler's laws, orbital-period calculations, or AU-based exact distance arithmetic. KS3 stays qualitative; quantitative orbital mechanics is GCSE+. (Covers `physics-space-solar-system`.)
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+- T-SP-1: Given the prompt "Why isn't Pluto a planet?", the tutor escalates from a nudge ("what kinds of objects do you think the IAU said a planet has to be?") to a worked recap of the 2006 reclassification (size, near-spherical, cleared its orbit), without inventing recent news.
+- T-SP-2: Given a question that asks for the speed of an orbit or a Kepler-style calculation, the tutor steers back to the KS3-qualitative framing politely and notes that orbital-period calculation is GCSE+ territory.
+- T-SP-3: Given an off-topic input (for example a question about black holes or dark matter), the tutor stays inside the KS3 syllabus and offers the relevant solar-system fact, deferring the bigger topic to later years.
+- T-SP-4: Given a request for an inline definition (tap on "asteroid" or "dwarf planet"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Pending zones
 
