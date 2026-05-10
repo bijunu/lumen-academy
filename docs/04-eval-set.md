@@ -1037,6 +1037,46 @@ Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
 - T-PHOTO-6: Given "Why does the pondweed bubble more under a torch?", the tutor walks the learner through "more light, more photosynthesis, more oxygen", not a launch into limiting-factors graphs (those belong to the rate node).
 - T-PHOTO-7: Given an off-topic input (for example a US AP Biology Calvin-cycle reference), the tutor steers back to UK KS3 word-equation language politely.
 
+### Content probes (rate)
+
+- C-PHOTO-9: Learner believes higher temperature always speeds up photosynthesis (no peak, no decline above ~40 °C).
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on why the temperature-rate graph falls above the peak (enzymes denature); at least one Confident-tier spot-misconception that surfaces the warmer-is-always-better slip.
+- C-PHOTO-10: Learner reads a plateau on a rate graph as the plant having stopped photosynthesising.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what a plateau on the rate-vs-light-intensity graph means; at least one Confident-tier MCQ on the same shape for the rate-vs-CO₂ graph.
+- C-PHOTO-11: Learner believes light, CO₂, and temperature are all limiting at the same time.
+  - Required handling: misconception entry on the rate node; at least one Confident-tier spot-misconception that surfaces the only-one-limiting-factor-at-a-time idea.
+- C-PHOTO-12: Learner believes that moving the lamp closer to the pondweed gives less light.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what should happen to bubble count when the lamp distance is reduced.
+- C-PHOTO-13: Learner runs the pondweed experiment changing more than one variable at once.
+  - Required handling: misconception entry on the rate node; at least one drag-drop-builder that asks the learner to pick the variables to keep constant in the pondweed experiment.
+- C-PHOTO-14: Learner believes there is no ceiling to photosynthesis from light alone (just keep adding light).
+  - Required handling: misconception entry on the rate node; at least one Challenge-tier MCQ that surfaces the plateau ceiling and the need to raise CO₂ or temperature too.
+- C-PHOTO-15: Learner reads pondweed bubbles as a sign of respiration.
+  - Required handling: misconception entry on the rate node; at least one Core MCQ on what each oxygen bubble from the cut stem signals.
+
+### Question shape probes (rate)
+
+- Q-PHOTO-11: At least one Core MCQ on the rate node names a real limiting factor (light intensity / CO₂ / temperature) with non-factors (air pressure, soil age, pot colour) as distractors.
+- Q-PHOTO-12: At least one Core numeric on the rate node converts a 30-second or 20-second bubble count into a per-minute rate.
+- Q-PHOTO-13: At least one Core numeric on the rate node counts the number of named limiting factors covered (= 3).
+- Q-PHOTO-14: At least one Confident-tier data-extraction on the rate node uses a pondweed lamp-distance dataset (Sevenoaks Y7 class) and asks for the distance giving the highest rate.
+- Q-PHOTO-15: At least one Confident-tier numeric on the rate node asks the learner to subtract two bubble-count rates from the same dataset.
+- Q-PHOTO-16: At least one drag-order on the rate node sequences the pondweed bubble-counting method (set up, place lamp, wait, count, repeat).
+- Q-PHOTO-17: At least one drag-drop-builder on the rate node asks for the control variables (water temperature, CO₂ supply, pondweed size, lamp bulb), with lamp distance as the rejected entry.
+- Q-PHOTO-18: At least one Challenge-tier missing-step question on the rate node fills in the "enzymes denature above ~40 °C" step inside an account of the temperature-rate graph.
+- Q-PHOTO-19: At least one Challenge-tier free-text question on the rate node asks the learner to explain why the rate-vs-light-intensity graph plateaus.
+- Q-PHOTO-20: At least one Challenge-tier MCQ on the rate node asks for the FASTEST conditions (bright light + plenty of CO₂ + ~30 °C), with too-cold and too-hot conditions as distractors.
+- Q-PHOTO-21: All UK-context experimental setups on the rate node use Cabomba (or Elodea) in a Sevenoaks Y7 class, beaker plus lamp, sodium hydrogen carbonate as the CO₂ supply.
+- Q-PHOTO-22: NO numerical rate calculations using inverse-square light-intensity formulas on the rate node. All graph reading stays qualitative.
+
+### Tutor probes (rate)
+
+- T-PHOTO-8: Given "Why isn't 60 °C even better than 40 °C for photosynthesis?", the tutor's first reply is a Socratic prompt about what happens to enzymes at high temperature, not a Q10 / activation-energy dump.
+- T-PHOTO-9: Given a wrong answer matching the warmer-faster trigger on pr-q6 or pr-q9, the tutor cites the relevant misconception's `reExplanation` (the rise-peak-fall framing) rather than producing a fresh hint.
+- T-PHOTO-10: Given "The line is flat, so the plant has stopped", the tutor steers via "is the rate at zero, or just steady?", not a definition dump.
+- T-PHOTO-11: Given a request for an inline definition (tap on "limiting factor", "denature", or "Cabomba"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PHOTO-12: Given an off-topic input on the rate node (for example a numerical inverse-square-law light intensity question), the tutor flags that numerical rate calculations are GCSE depth and steers back to the qualitative shape of the graph.
+
 ## Zone: Elementia > Particle Model
 
 Covers `chemistry-particle-model-states`, `chemistry-particle-model-state-changes`, `chemistry-particle-model-diffusion`.
