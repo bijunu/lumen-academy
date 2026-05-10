@@ -1377,11 +1377,14 @@ export const rusting: SkillNode = {
           maths: 'tube A: iron + oxygen + water all present → rusts',
         },
         {
-          explanation: '',
+          explanation:
+            'Step 3: check tube B. Has iron and air, so oxygen is there (yes). The silica gel absorbs moisture, so no water reaches the nails. No water. Rusting blocked.',
+          maths: 'tube B: iron + oxygen present, water missing → no rust',
         },
         {
           explanation:
             'Step 4: check tube C. Has iron and water but the boiled water has lost its dissolved oxygen and the oil layer keeps fresh air out. No oxygen. Rusting blocked.',
+          maths: 'tube C: iron + water present, oxygen missing → no rust',
         },
         {
           explanation:
