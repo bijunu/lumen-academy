@@ -1724,7 +1724,7 @@ Zone id: `physics-waves`. Covers `physics-waves-anatomy`, `physics-waves-sound-l
 
 ## Zone: Mechanica > Space
 
-Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-day-night-seasons` (day-night-seasons deferred to slice 7).
+Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-day-night-seasons`.
 
 ### Content probes
 - C-SP-1: Learner names Pluto as the ninth planet of the Solar System, missing the IAU 2006 reclassification of Pluto as a dwarf planet. (Covers `physics-space-solar-system`.)
@@ -1736,6 +1736,12 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 - C-SP-7: Learner believes all the planets are the same size, often drawing them at the same scale on a diagram. (Covers `physics-space-solar-system`.)
 - C-SP-8: Learner believes the planets orbit in straight lines, or that they orbit Earth rather than the Sun (geocentric mistake). (Covers `physics-space-solar-system`.)
 - C-SP-9: Learner names a recent Mars rover or a science-fiction spacecraft as the body that astronauts live on, missing that the ISS is the long-term crewed station in low Earth orbit. (Covers `physics-space-solar-system`.)
+- C-SP-10: Learner believes the UK has summer because Earth is closer to the Sun in summer than in winter, missing that perihelion (closest distance) is in early January and that axial tilt drives the seasons. (Covers `physics-space-day-night-seasons`.)
+- C-SP-11: Learner believes the Sun moves round Earth once a day, citing sunrise in the east as evidence, rather than Earth spinning on its axis once every 24 hours. (Covers `physics-space-day-night-seasons`.)
+- C-SP-12: Learner believes the whole Earth has the same season at the same time, missing that the southern hemisphere has the opposite season to the UK. (Covers `physics-space-day-night-seasons`.)
+- C-SP-13: Learner believes Earth's orbit is strongly oval and that distance from the Sun drives the seasons, rather than the small (about 3 percent) eccentricity of the actual orbit. (Covers `physics-space-day-night-seasons`.)
+- C-SP-14: Learner believes Earth's axis flips its tilt direction during the year, rather than keeping the same fixed lean as it travels round the Sun. (Covers `physics-space-day-night-seasons`.)
+- C-SP-15: Learner believes Edinburgh and London have similar daylight all year, missing that Edinburgh has roughly 17 hours at midsummer and 7 hours at midwinter (about 10 hours of difference). (Covers `physics-space-day-night-seasons`.)
 
 ### Question shape probes
 - Q-SP-1: At least one labelled-image question on the solar-system node has the learner place planet names onto a Sun-and-orbits diagram in the right order, with a label pool no larger than twice the hotspot count. (Covers `physics-space-solar-system`.)
@@ -1744,12 +1750,22 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 - Q-SP-4: At least one spot-misconception question on the solar-system node confronts the "Pluto is the ninth planet" claim and references the IAU 2006 reclassification. (Covers `physics-space-solar-system`.)
 - Q-SP-5: At least one Confident or Challenge item on the solar-system node uses a UK astronomy context (Royal Greenwich Observatory, UK Space Agency, Tim Peake on the ISS) without quoting orbital periods or AU distances quantitatively. (Covers `physics-space-solar-system`.)
 - Q-SP-6: No question on the solar-system node uses Kepler's laws, orbital-period calculations, or AU-based exact distance arithmetic. KS3 stays qualitative; quantitative orbital mechanics is GCSE+. (Covers `physics-space-solar-system`.)
+- Q-SP-7: At least one Core MCQ on the day-night-seasons node names Earth's axial tilt of about 23.5° as the cause of the seasons, with at least one distractor that uses distance from the Sun. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-8: At least one spot-misconception question on the day-night-seasons node confronts the "closer to the Sun in summer" claim and corrects with the perihelion-in-January fact. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-9: At least one item on the day-night-seasons node uses the Edinburgh midsummer (about 17 hours) versus midwinter (about 7 hours) daylight contrast as a UK context. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-10: At least one spot-misconception or MCQ item on the day-night-seasons node addresses the "Sun moves round Earth" or "Earth fixed in space" picture and corrects with the 24-hour spin. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-11: At least one Confident or Challenge item on the day-night-seasons node uses a comparison between hemispheres (UK winter ↔ Australia/Cape Town summer in December, or similar) to test the opposite-season idea. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-12: At least one Challenge tier multi-step item on the day-night-seasons node combines two ideas (tilt + direct sunlight + longer days) or uses a numeric step (360° ÷ 24 h, hours of daylight subtraction) on a UK context. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-13: No question on the day-night-seasons node uses Coriolis effects, axial precession, or the formal equinox/solstice naming beyond "longest" and "shortest" day. KS3 stays qualitative; those topics are GCSE+ or A-Level. (Covers `physics-space-day-night-seasons`.)
 
 ### Tutor probes
 - T-SP-1: Given the prompt "Why isn't Pluto a planet?", the tutor escalates from a nudge ("what kinds of objects do you think the IAU said a planet has to be?") to a worked recap of the 2006 reclassification (size, near-spherical, cleared its orbit), without inventing recent news.
 - T-SP-2: Given a question that asks for the speed of an orbit or a Kepler-style calculation, the tutor steers back to the KS3-qualitative framing politely and notes that orbital-period calculation is GCSE+ territory.
 - T-SP-3: Given an off-topic input (for example a question about black holes or dark matter), the tutor stays inside the KS3 syllabus and offers the relevant solar-system fact, deferring the bigger topic to later years.
 - T-SP-4: Given a request for an inline definition (tap on "asteroid" or "dwarf planet"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SP-5: Given the prompt "Why does the UK have summer?", the tutor nudges the learner toward axial tilt (rather than distance to the Sun) and surfaces the perihelion-in-January counter-fact if the learner sticks with the distance idea.
+- T-SP-6: Given the prompt "What time is it in Sydney when it is 11 a.m. in London?", the tutor explains the 24-hour spin and the half-turn idea without reaching for time-zone tables or precise UTC offsets, since KS3 stays qualitative on this.
+- T-SP-7: Given a request for an inline definition (tap on "axial tilt" or "perihelion"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Numerica > Geometry and Measure
 

@@ -34,6 +34,7 @@ import {
 } from './waves'
 import {
   spaceSolarSystem,
+  spaceDayNightSeasons,
   spaceZoneNodes,
   spaceZone,
 } from './space'
@@ -62,6 +63,7 @@ export {
   wavesZoneNodes,
   wavesZone,
   spaceSolarSystem,
+  spaceDayNightSeasons,
   spaceZoneNodes,
   spaceZone,
 }

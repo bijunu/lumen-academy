@@ -506,9 +506,9 @@
 
 #### Day, Night, Seasons (Confident, `physics-space-day-night-seasons`)
 - **KS3**: The seasons and the Earth's tilt, day length at different times of year, in different hemispheres.
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **AQA**: 4.8.1.1 Our solar system; orbital motion and the link between day length, seasons and Earth's tilt (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.4 Earth's rotation, day length and the seasons (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; Earth's axial tilt, day, year, seasons (GCSE Physics J259 Gateway)
 
 ### Zone: Magnetism (`physics-magnetism`)
 
@@ -517,11 +517,9 @@
 - **AQA**: 4.7.1 Permanent and induced magnetism, magnetic forces and fields (GCSE Physics 8463)
 - **Edexcel**: Topic 7 Magnetism and the motor effect, 7.1-7.4 permanent and induced magnets, magnetic fields (GCSE Physics 1PH0)
 - **OCR**: P6.1 Magnets and magnetic fields (GCSE Physics J259 Gateway)
-- _to be drafted_
 
 #### Electromagnets (Confident, `physics-magnetism-electromagnets`)
 - **KS3**: The magnetic effect of a current, electromagnets, D.C. motors (principles only).
-- **AQA**: 4.7.2 The motor effect; electromagnetism; 4.7.3 Electromagnetic induction (GCSE Physics 8463)
+- **AQA**: 4.7.2 The motor effect; electromagnetism (GCSE Physics 8463; KS3 stops short of induction)
 - **Edexcel**: Topic 7 Magnetism and the motor effect, 7.5-7.13 electromagnets and the motor effect (GCSE Physics 1PH0)
 - **OCR**: P6.2 The motor effect; electromagnets and solenoids (GCSE Physics J259 Gateway)
-- _to be drafted_
