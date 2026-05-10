@@ -413,6 +413,40 @@ Covers `maths-ratio-introduction` plus future ratio nodes (sharing in a ratio, s
 - T-RP-3: Given an off-topic input (for example a question about US sports team rosters using ratios), the tutor steers back to UK KS3 ratio language politely.
 - T-RP-4: Given a request for an inline definition (tap on "ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### Sharing-in-a-ratio extensions (`maths-ratio-sharing`)
+
+#### Content probes
+- C-RAT-1: Learner divides the total by the larger of the two ratio numbers (or just one of them) instead of by the sum of all parts; for example reads "share £40 in ratio 1:3" as £40 / 3 = £13.33 per part.
+  - Required handling: misconception entry; at least one question whose distractors include the divide-by-larger answer.
+- C-RAT-2: Learner multiplies the original total by each ratio number to produce shares (£30 in 1:4 becomes £30 and £120), missing the value-of-one-part step.
+  - Required handling: misconception entry; at least one question whose distractors include the multiply-by-ratio answer.
+- C-RAT-3: Learner gives equal shares when asked to split among three people in a non-1:1:1 ratio, ignoring the ratio numbers entirely.
+  - Required handling: misconception entry; at least one 3-part-ratio question whose distractors include three equal shares.
+- C-RAT-4: Learner reads the ratio 3:5 as the fractions 3/5 and 2/5 of the total instead of 3/8 and 5/8 (denominator is the sum of parts).
+  - Required handling: misconception entry; at least one Challenge tier MCQ contrasting 3/5 and 2/5 against 3/8 and 5/8.
+- C-RAT-5: Learner finds the shares but skips the final check that they add back to the original total, leaving arithmetic slips uncaught (especially in 3-part ratios).
+  - Required handling: misconception entry; at least one missing-step question that surfaces the add-back check explicitly.
+- C-RAT-6: Learner mismatches the order of shares with the order of the people named, for example giving the 3-part share to the first person when the ratio reads 2:3 with names in order.
+  - Required handling: misconception entry; at least one question whose distractors swap which person gets which share.
+- C-RAT-7: Learner treats a 1 in the ratio as meaning the whole original total (rather than one part), so a 5:1 mixture of 600 g muesli/raisins reads as 600 g of raisins.
+  - Required handling: misconception entry; at least one Core question on a ratio that includes a 1.
+
+#### Question shape probes
+- Q-RAT-1: At least one Core numeric-entry question asks the learner to find the total number of parts in a 2-part or 3-part ratio.
+- Q-RAT-2: At least one Core MCQ asks the learner to find the value of one part for a sharing-in-a-ratio question, with the divide-by-larger answer present as a distractor.
+- Q-RAT-3: At least one Confident question asks the learner to share a quantity in a 3-part ratio (such as 2:3:5 or 1:2:3) and identify all three shares.
+- Q-RAT-4: At least one Confident question maps a recipe-scaling context (flour:butter, oats:nuts:raisins) onto sharing in a ratio.
+- Q-RAT-5: At least one Challenge tier word problem requires recovering original counts from a worded sharing scenario, then doing one further step (for example a swap, a top-up, or an unsold remainder).
+- Q-RAT-6: At least one drag-order question places the four shares of a ratio split into ascending order.
+- Q-RAT-7: At least one slider-explore question asks the learner to land on a target volume so that one part of a fixed-ratio mix takes a given value.
+- Q-RAT-8: At least one MCQ presents the ratio-as-direct-fraction argument (3:5 = 3/5 of the total) and asks which row corrects the slip.
+
+#### Tutor probes
+- T-RAT-1: Given "I divided £40 by 3 because the bigger number is 3, so each part is £13.33", the tutor's first reply is a Socratic prompt about how many equal parts the ratio splits the total into, not a direct correction.
+- T-RAT-2: Given a wrong answer matching the multiply-by-ratio trigger (for example "£30 in ratio 1:4 gives shares of £30 and £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-RAT-3: Given an off-topic input (for example a question about US college tuition split by ratio), the tutor steers back to UK KS3 sharing-in-a-ratio language politely.
+- T-RAT-4: Given a request for an inline definition (tap on "share in a ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > BIDMAS
 
 Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes (negative-number arithmetic with BIDMAS, algebraic substitution under BIDMAS).
@@ -532,6 +566,38 @@ Covers `maths-sequences-rules` plus future sequence nodes (nth-term derivation b
 - T-SEQ-4: Given an off-topic input (for example a question about US baseball jersey number sequences), the tutor steers back to UK KS3 sequence language politely.
 - T-SEQ-5: Given a request for an inline definition (tap on "term-to-term rule" or "position-to-term rule"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### nth-term derivation extensions (`maths-sequences-nth-term`)
+
+#### Content probes
+- C-SEQN-1: Learner finds the common difference and writes the rule as an alone, never adjusting by a constant b (writes 3n for a sequence whose term 1 is not 3).
+  - Required handling: misconception entry; at least one Confident MCQ whose distractors include just-an alongside the correct an + b.
+- C-SEQN-2: Learner sees a common difference of 4 and writes the rule as n + 4 instead of 4n + b, treating the difference as an additive constant.
+  - Required handling: misconception entry; at least one Core spot-misconception or MCQ whose distractors include n + difference.
+- C-SEQN-3: Learner refuses to write a negative constant b in the rule, so writes 5n + 3 (or similar) when the correct rule is 5n - 2 because term 1 is smaller than the value of an at n = 1.
+  - Required handling: misconception entry; at least one Confident MCQ whose correct answer has a negative b.
+- C-SEQN-4: Learner writes a rule that matches term 1 and stops, without checking at any other term, missing slips like 5n - 0 for 5, 9, 13, 17, ... .
+  - Required handling: misconception entry; at least one drag-order or missing-step question that explicitly includes the verify-at-second-term step.
+- C-SEQN-5: Learner takes the value of term 1 as the constant b, so writes 3n + 4 instead of 3n + 1 for the sequence 4, 7, 10, 13, ... .
+  - Required handling: misconception entry; at least one Confident question whose distractors include term-1-as-constant.
+- C-SEQN-6: Learner gets confused about which number multiplies n and which is added on, swapping a and b (writes 1n + 3 instead of 3n + 1).
+  - Required handling: misconception entry; at least one MCQ whose distractors include the swapped-a-and-b form.
+
+#### Question shape probes
+- Q-SEQN-1: At least one Core numeric-entry question asks the learner to substitute n into a position-to-term rule of the form an + b with positive a and positive b.
+- Q-SEQN-2: At least one Confident MCQ asks the learner to find the nth term rule for a 4-term arithmetic sequence with positive coefficient and positive constant b, with the just-an form as a distractor.
+- Q-SEQN-3: At least one Confident MCQ or numeric-entry question asks the learner to find the nth term rule for a 4-term arithmetic sequence whose constant b is negative, with positive-b distractors.
+- Q-SEQN-4: At least one missing-step question hides the adjustment step (computing b = term1 - a) inside a worked solution.
+- Q-SEQN-5: At least one drag-order question places the four steps for finding the nth term rule (find difference, write an, adjust by b, verify) into the correct order.
+- Q-SEQN-6: At least one Challenge tier word problem maps a UK context (transport hire, library fees, cumulative bus parking) onto a position-to-term rule of the form an + b and asks the learner to derive a or b.
+- Q-SEQN-7: At least one spot-misconception question presents the rule-as-n-plus-difference or just-an argument and asks whether the reasoning is sound.
+
+#### Tutor probes
+- T-SEQN-1: Given "The gap is 3 so the nth term rule is 3n", the tutor's first reply is a Socratic prompt about what term 1 of 3n would be at n = 1, not a direct correction.
+- T-SEQN-2: Given a wrong answer matching the just-difference trigger (for example writing 3n for 4, 7, 10, 13, ...), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SEQN-3: Given "Why does the nth term rule have to be an + b and not just n + something?", the tutor walks through one worked check at n = 1 and n = 2 to show the difference, not a definition.
+- T-SEQN-4: Given an off-topic input (for example a question about US payroll arithmetic sequences), the tutor steers back to UK KS3 nth-term language politely.
+- T-SEQN-5: Given a request for an inline definition (tap on "nth term" or "common difference"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Zone: Numerica > Coordinates
 
 Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear graphs from a rule, midpoints, transformations on a coordinate grid).
@@ -572,6 +638,42 @@ Covers `maths-coordinates-grid` plus future coordinates nodes (plotting linear g
 - T-COORD-3: Given "Why is the origin (0, 0) and not (1, 1)?", the tutor explains by anchoring the axes to a number line with zero at the meeting point, not a definition dump.
 - T-COORD-4: Given an off-topic input (for example a question about US street grid coordinates or zip codes), the tutor steers back to UK KS3 coordinate language politely.
 - T-COORD-5: Given a request for an inline definition (tap on "quadrant"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+### Shapes-and-transformations extensions (`maths-coordinates-four-quadrants-shapes`)
+
+#### Content probes
+- C-COORDS-1: Learner reflects in the wrong axis (says reflection in the x axis flips the x value, or reflection in the y axis flips the y value), missing that the axis you reflect in stays fixed.
+  - Required handling: misconception entry; at least one Core MCQ and one spot-misconception that pair flipped-x vs flipped-y as distractors against the correct image.
+- C-COORDS-2: Learner thinks reflection in either axis flips the signs of both coordinates (does the 180-degree rotation about the origin instead of a reflection).
+  - Required handling: misconception entry; at least one Challenge tier spot-misconception question that contrasts a reflection with a rotation.
+- C-COORDS-3: Learner adds the y component of a column vector instead of subtracting when the wording says "down" (reads "3 right and 2 down" as +2 to y instead of -2).
+  - Required handling: misconception entry; at least one Core MCQ whose distractors include the wrong-direction translation answer.
+- C-COORDS-4: Learner translates only the labelled vertex and leaves the others where they were, producing a distorted image rather than a translated shape.
+  - Required handling: misconception entry; at least one Confident drag-order question that places the "every vertex moves" step explicitly in the workflow.
+- C-COORDS-5: Learner names a quadrilateral with two distinct side lengths (a non-square rectangle) as a square, ignoring the side-length check.
+  - Required handling: misconception entry; at least one Confident MCQ whose distractors include the square answer for a true rectangle.
+- C-COORDS-6: Learner swaps the x and y components of a column vector, reading (3, -2) as 3 up and 2 left.
+  - Required handling: misconception entry; at least one Confident question whose distractors include the swapped-component image.
+- C-COORDS-7: Learner joins listed vertices in the order they appear on the page rather than in the order around the perimeter, ending up with a self-crossing figure.
+  - Required handling: misconception entry; at least one scene or worked example that explicitly addresses the perimeter-order rule (no question required, since the renderer is static).
+
+#### Question shape probes
+- Q-COORDS-1: At least one Core MCQ asks the learner to identify the image of a point under reflection in the x or y axis, with the wrong-axis distractor present.
+- Q-COORDS-2: At least one Core question asks the learner to translate a single point by a worded vector ("3 right and 1 down").
+- Q-COORDS-3: At least one Confident MCQ asks the learner to identify the image of a named vertex of a triangle or rectangle under a translation by a column vector.
+- Q-COORDS-4: At least one Confident MCQ asks the learner to name a shape (square vs rectangle vs parallelogram) from a list of four vertices spanning multiple quadrants.
+- Q-COORDS-5: At least one missing-step question hides the flip-the-coordinate step inside a reflection worked solution.
+- Q-COORDS-6: At least one drag-order question places the steps for translating a shape by a column vector into the correct order.
+- Q-COORDS-7: At least one Challenge tier MCQ recovers the fourth corner of a rectangle from three given corner coordinates spanning multiple quadrants (Bond 11+ shape).
+- Q-COORDS-8: At least one Challenge tier multi-step question asks the learner to apply two transformations in sequence (translate then reflect, or reflect then translate) and identify the final image of a vertex.
+- Q-COORDS-9: At least one spot-misconception question presents the both-signs-flipped or wrong-axis argument and asks whether the reasoning is sound.
+
+#### Tutor probes
+- T-COORDS-1: Given "I reflected (3, 2) in the x axis and got (-3, 2)", the tutor's first reply is a Socratic prompt about which axis is the mirror line and which coordinate flips, not a direct correction.
+- T-COORDS-2: Given a wrong answer matching the both-signs-flipped trigger (for example "(4, 3) reflected in the x axis is (-4, -3)"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-COORDS-3: Given "Why does only one coordinate flip?", the tutor walks through a small worked check by measuring distance to the axis on both sides, not a definition.
+- T-COORDS-4: Given an off-topic input (for example a question about US street grid translations), the tutor steers back to UK KS3 transformation language politely.
+- T-COORDS-5: Given a request for an inline definition (tap on "translation" or "reflection"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Vitalia > Cells
 

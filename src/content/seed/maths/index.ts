@@ -27,10 +27,19 @@ import {
   percentagesOfAmountZoneNodes,
 } from './percentages-of-amount'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
+import { ratioSharing, ratioSharingZoneNodes } from './ratio-sharing'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
+import {
+  sequencesNthTerm,
+  sequencesNthTermZoneNodes,
+} from './sequences-nth-term'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
+import {
+  coordinatesShapes,
+  coordinatesShapesZoneNodes,
+} from './coordinates-shapes'
 import {
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
@@ -60,14 +69,20 @@ export {
   percentagesOfAmountZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
+  ratioSharing,
+  ratioSharingZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
   algebraIntroduction,
   algebraZoneNodes,
   sequencesRules,
   sequencesZoneNodes,
+  sequencesNthTerm,
+  sequencesNthTermZoneNodes,
   coordinatesGrid,
   coordinatesZoneNodes,
+  coordinatesShapes,
+  coordinatesShapesZoneNodes,
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
@@ -84,10 +99,13 @@ export const mathsNodes: SkillNode[] = [
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
   ...ratioZoneNodes,
+  ...ratioSharingZoneNodes,
   ...bidmasZoneNodes,
   ...algebraZoneNodes,
   ...sequencesZoneNodes,
+  ...sequencesNthTermZoneNodes,
   ...coordinatesZoneNodes,
+  ...coordinatesShapesZoneNodes,
   ...fourOperationsZoneNodes,
 ]
 
@@ -141,7 +159,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-ratio',
     name: 'Ratio and Proportion',
     realm: 'numerica',
-    nodeIds: ratioZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...ratioZoneNodes.map(n => n.id),
+      ...ratioSharingZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-bidmas',
@@ -159,13 +180,19 @@ export const mathsZones: Zone[] = [
     id: 'maths-sequences',
     name: 'Sequences',
     realm: 'numerica',
-    nodeIds: sequencesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...sequencesZoneNodes.map(n => n.id),
+      ...sequencesNthTermZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-coordinates',
     name: 'Coordinates',
     realm: 'numerica',
-    nodeIds: coordinatesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...coordinatesZoneNodes.map(n => n.id),
+      ...coordinatesShapesZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-four-operations',

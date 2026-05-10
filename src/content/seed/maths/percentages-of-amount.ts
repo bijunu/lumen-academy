@@ -359,10 +359,10 @@ export const percentagesOfAmount: SkillNode = {
       type: 'multiple-choice',
       stem: 'A Year 7 swimming gala has 80 entries. 75% are from local schools. How many entries are from local schools?',
       tier: 'core',
-      options: ['20', '40', '60', '80'],
-      correctIndex: 2,
+      options: ['20', '40', '55', '60'],
+      correctIndex: 3,
       xpValue: 10,
-      hint: '75% is 50% + 25%. 50% of 80 is 40, and 25% of 80 is 20.',
+      hint: '75% is 50% + 25%. 50% of 80 is 40, and 25% of 80 is 20. Reading 75% as "subtract 25" would give 80 - 25 = 55, which mishandles what the percent symbol means.',
       misconceptionId: 'pa-mis-quarter-as-decimal',
     },
     {
