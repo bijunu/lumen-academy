@@ -6,7 +6,11 @@ import {
   filtrationEvaporation,
   distillation,
 } from './separating-mixtures'
-import { atomsZone, atomsElementsCompoundsBasics } from './atoms'
+import {
+  atomsZone,
+  atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
+} from './atoms'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -15,7 +19,11 @@ export {
   filtrationEvaporation,
   distillation,
 } from './separating-mixtures'
-export { atomsZone, atomsElementsCompoundsBasics } from './atoms'
+export {
+  atomsZone,
+  atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
+} from './atoms'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -24,6 +32,7 @@ export const chemistryNodes: SkillNode[] = [
   filtrationEvaporation,
   distillation,
   atomsElementsCompoundsBasics,
+  symbolsAndSimpleFormulae,
 ]
 
 export const chemistryZones: Zone[] = [

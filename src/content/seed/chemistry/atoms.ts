@@ -610,9 +610,611 @@ export const atomsElementsCompoundsBasics: SkillNode = {
   },
 }
 
+export const symbolsAndSimpleFormulae: SkillNode = {
+  id: 'chemistry-atoms-symbols-formulae',
+  title: 'Symbols and Simple Formulae',
+  description:
+    'Read chemical symbols off the periodic table and use them to write or read simple formulae such as H2O, CO2, NaCl and CH4. Use subscript numbers to count atoms in a formula. No balancing of equations.',
+  subject: 'chemistry',
+  realm: 'elementia',
+  zoneId: 'chemistry-atoms-elements-compounds',
+  zoneName: 'Atoms, Elements, Compounds',
+  tier: 'confident',
+  prerequisites: ['chemistry-atoms-elements-compounds-basics'],
+  curriculum: {
+    ks3Objective:
+      'A simple (Dalton) atomic model; differences between atoms, elements and compounds; chemical symbols and formulae for elements and compounds; conservation of mass changes of state and chemical reactions.',
+    awardingBodies: {
+      aqa: '4.1.1.1 Atoms, elements and compounds; chemical symbols and formulae (8462)',
+      edexcel:
+        'Topic 1.1 Atoms, elements and compounds; 1.2 Chemical formulae of elements and compounds (1CH0)',
+      ocr: 'C1.1a Symbols and formulae of elements and simple compounds (J248 Gateway Chemistry)',
+    },
+  },
+  scenes: [
+    {
+      id: 'sym-scene-symbols',
+      title: 'Reading Symbols Off the Periodic Table',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read the symbol of a common element and the name it stands for.',
+      data: {
+        viewBox: '0 0 320 200',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="30" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="45" y="50" text-anchor="middle" font-size="9" fill="#475569">1</text><text x="45" y="68" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">H</text><text x="45" y="78" text-anchor="middle" font-size="6" fill="#7C2D12">hydrogen</text></g><g><rect x="80" y="30" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="105" y="50" text-anchor="middle" font-size="9" fill="#475569">8</text><text x="105" y="68" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">O</text><text x="105" y="78" text-anchor="middle" font-size="6" fill="#7C2D12">oxygen</text></g><g><rect x="140" y="30" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="165" y="50" text-anchor="middle" font-size="9" fill="#475569">11</text><text x="165" y="68" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">Na</text><text x="165" y="78" text-anchor="middle" font-size="6" fill="#7C2D12">sodium</text></g><g><rect x="200" y="30" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="225" y="50" text-anchor="middle" font-size="9" fill="#475569">19</text><text x="225" y="68" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">K</text><text x="225" y="78" text-anchor="middle" font-size="6" fill="#7C2D12">potassium</text></g><g><rect x="20" y="100" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="45" y="120" text-anchor="middle" font-size="9" fill="#475569">26</text><text x="45" y="138" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">Fe</text><text x="45" y="148" text-anchor="middle" font-size="6" fill="#7C2D12">iron</text></g><g><rect x="80" y="100" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="105" y="120" text-anchor="middle" font-size="9" fill="#475569">29</text><text x="105" y="138" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">Cu</text><text x="105" y="148" text-anchor="middle" font-size="6" fill="#7C2D12">copper</text></g><g><rect x="140" y="100" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="165" y="120" text-anchor="middle" font-size="9" fill="#475569">79</text><text x="165" y="138" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">Au</text><text x="165" y="148" text-anchor="middle" font-size="6" fill="#7C2D12">gold</text></g><g><rect x="200" y="100" width="50" height="50" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="225" y="120" text-anchor="middle" font-size="9" fill="#475569">82</text><text x="225" y="138" text-anchor="middle" font-size="18" fill="#1E3A8A" font-weight="700">Pb</text><text x="225" y="148" text-anchor="middle" font-size="6" fill="#7C2D12">lead</text></g><text x="160" y="180" text-anchor="middle" font-size="8" fill="#1E3A8A">Each box: atomic number, symbol, element name.</text></svg>',
+        hotspots: [
+          {
+            id: 'sym-h-h',
+            x: 14,
+            y: 28,
+            label: 'H means hydrogen',
+            description:
+              'The first letter of the element name is used as the symbol. H stands for hydrogen, the lightest element.',
+          },
+          {
+            id: 'sym-h-o',
+            x: 33,
+            y: 28,
+            label: 'O means oxygen',
+            description:
+              'O is the symbol for oxygen. About one fifth of the air around you is oxygen gas.',
+          },
+          {
+            id: 'sym-h-na',
+            x: 52,
+            y: 28,
+            label: 'Na means sodium',
+            description:
+              'Two-letter symbols start with a capital and end with a small letter. Na comes from the old Latin name natrium and stands for sodium.',
+          },
+          {
+            id: 'sym-h-k',
+            x: 70,
+            y: 28,
+            label: 'K means potassium',
+            description:
+              'K does not start with the letter P. It comes from the Latin name kalium and stands for potassium.',
+          },
+          {
+            id: 'sym-h-fe',
+            x: 14,
+            y: 65,
+            label: 'Fe means iron',
+            description:
+              'Fe comes from the Latin ferrum. It stands for iron, the metal in a garden nail and in a Sevenoaks railway track.',
+          },
+          {
+            id: 'sym-h-cu',
+            x: 33,
+            y: 65,
+            label: 'Cu means copper',
+            description:
+              'Cu comes from the Latin cuprum. It stands for copper, the metal on a 2p coin and in older household water pipes.',
+          },
+          {
+            id: 'sym-h-au',
+            x: 52,
+            y: 65,
+            label: 'Au means gold',
+            description:
+              'Au comes from the Latin aurum. It stands for gold, used for jewellery and in some electronic contacts.',
+          },
+          {
+            id: 'sym-h-pb',
+            x: 70,
+            y: 65,
+            label: 'Pb means lead',
+            description:
+              'Pb comes from the Latin plumbum, the same root as plumber. It stands for lead, the metal once used in old water pipes and in pencil-lead casing (modern pencils use graphite).',
+          },
+        ],
+      },
+    },
+    {
+      id: 'sym-scene-formula',
+      title: 'Reading a Formula: H2O',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker on the formula H2O to see how the symbol and the small number tell you which atoms are bonded together and how many of each.',
+      data: {
+        viewBox: '0 0 320 180',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180"><rect x="0" y="0" width="320" height="180" fill="#FEF3C7"/><text x="120" y="80" font-size="58" font-weight="700" fill="#1E3A8A">H</text><text x="160" y="95" font-size="28" font-weight="700" fill="#1E3A8A">2</text><text x="190" y="80" font-size="58" font-weight="700" fill="#1E3A8A">O</text><g><circle cx="60" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="80" cy="140" r="14" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><circle cx="115" cy="140" r="20" fill="#EF4444" stroke="#7F1D1D" stroke-width="0.8"/><line x1="74" y1="140" x2="100" y2="140" stroke="#475569" stroke-width="1"/></g><text x="100" y="165" text-anchor="middle" font-size="8" fill="#1E3A8A">2 hydrogen atoms + 1 oxygen atom = one water particle</text></svg>',
+        hotspots: [
+          {
+            id: 'sym-h-h2o-h',
+            x: 38,
+            y: 38,
+            label: 'H is the symbol for hydrogen',
+            description:
+              'A capital letter on its own (or capital followed by a small letter) names the kind of atom. Here it means a hydrogen atom.',
+          },
+          {
+            id: 'sym-h-h2o-2',
+            x: 52,
+            y: 50,
+            label: 'The small 2 means two hydrogen atoms',
+            description:
+              'A small number (called a subscript) just after a symbol tells you how many of that atom are in one particle. 2 means two hydrogens are bonded into this particle.',
+          },
+          {
+            id: 'sym-h-h2o-o',
+            x: 65,
+            y: 38,
+            label: 'O is the symbol for oxygen',
+            description:
+              'After the H2 comes O. There is no small number after it, so there is just one oxygen atom in the particle.',
+          },
+          {
+            id: 'sym-h-h2o-default',
+            x: 50,
+            y: 80,
+            label: 'No small number means one atom',
+            description:
+              'If a symbol has no small number after it, count one atom. That keeps formulae short to write.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'sym-scene-formulae-gallery',
+      title: 'Four Common Compound Formulae',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to read four common compound formulae you will meet in Year 7.',
+      data: {
+        viewBox: '0 0 320 200',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#FEF3C7"/><g><rect x="20" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">H2O</text><text x="80" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">water</text></g><g><rect x="160" y="30" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="60" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CO2</text><text x="220" y="80" text-anchor="middle" font-size="8" fill="#7C2D12">carbon dioxide</text></g><g><rect x="20" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="80" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">NaCl</text><text x="80" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">sodium chloride (table salt)</text></g><g><rect x="160" y="110" width="120" height="60" rx="3" fill="#FFFFFF" stroke="#475569"/><text x="220" y="140" text-anchor="middle" font-size="22" font-weight="700" fill="#1E3A8A">CH4</text><text x="220" y="160" text-anchor="middle" font-size="8" fill="#7C2D12">methane (natural gas)</text></g></svg>',
+        hotspots: [
+          {
+            id: 'sym-h-gal-h2o',
+            x: 25,
+            y: 30,
+            label: 'H2O: water (3 atoms)',
+            description:
+              'Two hydrogen atoms bonded to one oxygen atom. The compound that comes out of every UK kitchen tap.',
+          },
+          {
+            id: 'sym-h-gal-co2',
+            x: 70,
+            y: 30,
+            label: 'CO2: carbon dioxide (3 atoms)',
+            description:
+              'One carbon atom bonded to two oxygen atoms. The gas you breathe out, and the gas that fizzes out of a bottle of cola.',
+          },
+          {
+            id: 'sym-h-gal-nacl',
+            x: 25,
+            y: 70,
+            label: 'NaCl: table salt (2 atoms in the simplest unit)',
+            description:
+              'One sodium atom bonded to one chlorine atom. The white crystals from the salt cellar at a Sunday roast.',
+          },
+          {
+            id: 'sym-h-gal-ch4',
+            x: 70,
+            y: 70,
+            label: 'CH4: methane (5 atoms)',
+            description:
+              'One carbon atom bonded to four hydrogen atoms. The main gas burnt by a domestic gas hob across the UK.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'sym-worked-1',
+      title: 'Counting atoms in CO2',
+      steps: [
+        {
+          explanation:
+            'Question: how many atoms in total are in one particle of carbon dioxide, CO2?',
+        },
+        {
+          explanation:
+            'Step 1: read the formula left to right. The first symbol is C. There is no small number after it, so count one carbon atom.',
+          maths: 'C means 1 carbon atom',
+        },
+        {
+          explanation:
+            'Step 2: the next symbol is O. The small 2 just after it tells us there are two oxygen atoms.',
+          maths: 'O2 means 2 oxygen atoms',
+        },
+        {
+          explanation: 'Step 3: add up. 1 carbon + 2 oxygens = 3 atoms in total.',
+          maths: '1 + 2 = 3 atoms',
+        },
+        {
+          explanation: 'So one particle of carbon dioxide holds 3 atoms.',
+        },
+      ],
+    },
+    {
+      id: 'sym-worked-2',
+      title: 'Counting atoms in CH4 (methane)',
+      steps: [
+        {
+          explanation:
+            'Question: a UK gas hob burns methane, formula CH4. How many atoms in total are in one particle of methane, and how many are hydrogen?',
+        },
+        {
+          explanation:
+            'Step 1: read the formula left to right. The first symbol is C with no small number, so count one carbon atom.',
+          maths: 'C means 1 carbon atom',
+        },
+        {
+          explanation:
+            'Step 2: the next symbol is H. The small 4 just after it tells us there are four hydrogen atoms in one particle.',
+          maths: 'H4 means 4 hydrogen atoms',
+        },
+        {
+          explanation:
+            'Step 3: add up to get the total number of atoms in the particle.',
+          maths: '1 + 4 = 5 atoms in total',
+        },
+        {
+          explanation:
+            'So one particle of methane has 5 atoms in total, of which 4 are hydrogen and 1 is carbon.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'sym-q1',
+      type: 'multiple-choice',
+      stem: 'Which element does the symbol O stand for?',
+      tier: 'core',
+      options: [
+        'Oxygen',
+        'Osmium',
+        'Gold',
+        'Iron',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+    },
+    {
+      id: 'sym-q2',
+      type: 'multiple-choice',
+      stem: 'Which element does the symbol Na stand for?',
+      tier: 'core',
+      options: [
+        'Nitrogen',
+        'Neon',
+        'Sodium',
+        'Aluminium',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'sym-mis-symbol-from-english',
+    },
+    {
+      id: 'sym-q3',
+      type: 'multiple-choice',
+      stem: 'Co (capital C, lowercase o) is the symbol for the element cobalt. CO (capital C, capital O) is the formula for the compound carbon monoxide. Which sentence is true?',
+      tier: 'core',
+      options: [
+        'Both Co and CO mean the same thing, because the letters are the same.',
+        'Capitalisation does not matter in chemistry; only the letters matter.',
+        'Co and CO mean different things: Co is one element (cobalt), but CO is two symbols side by side (carbon and oxygen).',
+        'Co and CO are both elements, just with different colours.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'sym-mis-capitalisation',
+    },
+    {
+      id: 'sym-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil writes "CO" for carbon dioxide. What is the problem with the formula?',
+      tier: 'core',
+      options: [
+        'CO is the formula for carbon monoxide, with one oxygen atom. Carbon dioxide has two oxygen atoms, so the correct formula is CO2.',
+        'CO is the formula for cobalt, an element, not a compound.',
+        'CO is the formula for carbon, the element on its own.',
+        'There is no problem; CO and CO2 mean the same thing.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'sym-mis-subscript-optional',
+    },
+    {
+      id: 'sym-q5',
+      type: 'numeric-entry',
+      stem: 'How many atoms in total are in one particle of water, H2O?',
+      tier: 'core',
+      correctAnswer: 3,
+      xpValue: 10,
+      hint: 'Add the small number after H to the one oxygen atom.',
+    },
+    {
+      id: 'sym-q6',
+      type: 'numeric-entry',
+      stem: 'How many oxygen atoms are in one particle of carbon dioxide, CO2?',
+      tier: 'core',
+      correctAnswer: 2,
+      xpValue: 10,
+      hint: 'Look at the small number written just after the O.',
+    },
+    {
+      id: 'sym-q7',
+      type: 'drag-order',
+      stem: 'Place these four formulae in order of how many atoms they hold in one particle, from fewest to most.',
+      tier: 'core',
+      items: ['CH4 (methane)', 'NaCl (sodium chloride)', 'H2O (water)'],
+      correctOrder: [1, 2, 0],
+      xpValue: 15,
+    },
+    {
+      id: 'sym-q8',
+      type: 'labelled-image',
+      stem: 'Drag the correct element name onto each periodic table symbol.',
+      tier: 'core',
+      viewBox: '0 0 320 120',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 120"><rect x="0" y="0" width="320" height="120" fill="#F8FAFC"/><g><rect x="15" y="20" width="60" height="80" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="45" y="65" text-anchor="middle" font-size="22" fill="#1E3A8A" font-weight="700">Cu</text></g><g><rect x="95" y="20" width="60" height="80" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="125" y="65" text-anchor="middle" font-size="22" fill="#1E3A8A" font-weight="700">Au</text></g><g><rect x="175" y="20" width="60" height="80" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="205" y="65" text-anchor="middle" font-size="22" fill="#1E3A8A" font-weight="700">Fe</text></g><g><rect x="255" y="20" width="60" height="80" fill="#FFFFFF" stroke="#475569" stroke-width="1.2"/><text x="285" y="65" text-anchor="middle" font-size="22" fill="#1E3A8A" font-weight="700">Pb</text></g></svg>',
+      hotspots: [
+        { id: 'sym-q8-h1', x: 14, y: 50, correctLabel: 'Copper' },
+        { id: 'sym-q8-h2', x: 39, y: 50, correctLabel: 'Gold' },
+        { id: 'sym-q8-h3', x: 64, y: 50, correctLabel: 'Iron' },
+        { id: 'sym-q8-h4', x: 89, y: 50, correctLabel: 'Lead' },
+      ],
+      labels: ['Copper', 'Gold', 'Iron', 'Lead', 'Carbon', 'Cobalt', 'Krypton'],
+      xpValue: 20,
+    },
+    {
+      id: 'sym-q9',
+      type: 'multiple-choice',
+      stem: 'Which formula matches the description "one nitrogen atom bonded to three hydrogen atoms"? This compound is ammonia, used in some household cleaners.',
+      tier: 'confident',
+      options: [
+        'N3H',
+        'NH',
+        'NH3',
+        'N2H',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'sym-mis-subscript-position',
+    },
+    {
+      id: 'sym-q10',
+      type: 'numeric-entry',
+      stem: 'How many atoms in total are in one particle of methane, CH4?',
+      tier: 'confident',
+      correctAnswer: 5,
+      xpValue: 15,
+      hint: 'One carbon atom plus the number of hydrogens shown by the small 4.',
+    },
+    {
+      id: 'sym-q11',
+      type: 'multiple-choice',
+      stem: 'A formula reads CaCO3. This is the main compound in chalk and in the limescale that builds up inside a Sevenoaks kettle. How many of each kind of atom are in one CaCO3 unit?',
+      tier: 'confident',
+      options: [
+        '1 calcium, 1 carbon, 3 oxygens',
+        '1 calcium, 3 carbons, 1 oxygen',
+        '3 calciums, 1 carbon, 1 oxygen',
+        '1 calcium, 1 carbon, 1 oxygen',
+      ],
+      correctIndex: 0,
+      xpValue: 15,
+    },
+    {
+      id: 'sym-q12',
+      type: 'spot-misconception',
+      stem: 'Tom says: "The formula for sodium is Sd, because both letters of the symbol come from the start of the word sodium." Is he right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Tom is right. Symbols always come from the first two letters of the English name.',
+          isMisconception: true,
+        },
+        {
+          text: 'Tom is wrong. The symbol for sodium is Na, taken from the old Latin name natrium. Some symbols come from Latin or German names, not the English name.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'sym-mis-symbol-from-english',
+    },
+    {
+      id: 'sym-q13',
+      type: 'multiple-choice',
+      stem: 'Which formula correctly represents oxygen gas, the gas that makes up about a fifth of the air? Oxygen gas is made of pairs of oxygen atoms bonded together.',
+      tier: 'confident',
+      options: [
+        'O',
+        'O2',
+        '2O',
+        'OO',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'sym-mis-element-formula',
+    },
+    {
+      id: 'sym-q14',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. Question: A pupil reads the formula CH4 and is asked how many atoms in total are in one particle of methane.',
+      tier: 'confident',
+      steps: [
+        'Read the formula left to right. The first symbol is C with no small number after it, so count one carbon atom.',
+        'The next symbol is H, and the small 4 written just after H tells us how many hydrogen atoms are in the particle.',
+        null,
+        'So one particle of methane holds 5 atoms in total: 1 carbon and 4 hydrogens.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Add the carbon and hydrogen counts together: 1 carbon plus 4 hydrogens makes 5 atoms in total.',
+      xpValue: 20,
+    },
+    {
+      id: 'sym-q15',
+      type: 'data-extraction',
+      stem: 'A pupil records four common compounds in a small table:\n- water: H2O\n- carbon dioxide: CO2\n- ammonia: NH3\n- methane: CH4\n\nWhich compound holds the most atoms in one particle?',
+      tier: 'confident',
+      dataSource:
+        'water: H2O (3 atoms); carbon dioxide: CO2 (3 atoms); ammonia: NH3 (4 atoms); methane: CH4 (5 atoms).',
+      correctAnswer: 'methane',
+      xpValue: 15,
+      hint: 'Add the atom counts for each compound, then pick the largest.',
+    },
+    {
+      id: 'sym-q16',
+      type: 'numeric-entry',
+      stem: 'A bottle of household ammonia cleaner has the active compound ammonia, formula NH3. How many hydrogen atoms are in one particle of ammonia?',
+      tier: 'confident',
+      correctAnswer: 3,
+      xpValue: 15,
+      hint: 'Look at the small number written just after H in the formula.',
+    },
+    {
+      id: 'sym-q17',
+      type: 'multiple-choice',
+      stem: 'Aisha is writing a list of formulae. She wants to write "two carbon dioxide particles". Which of these is the standard chemistry way to write that?',
+      tier: 'challenge',
+      options: [
+        'CO4',
+        'C2O4',
+        '2CO2',
+        'CO22',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'sym-mis-big-vs-small-number',
+    },
+    {
+      id: 'sym-q18',
+      type: 'numeric-entry',
+      stem: 'A teacher in Tunbridge Wells writes the formula for calcium hydroxide as Ca(OH)2 on the board. The brackets mean that everything inside is repeated by the small 2 outside. How many oxygen atoms are in one Ca(OH)2 unit?',
+      tier: 'challenge',
+      correctAnswer: 2,
+      xpValue: 25,
+      hint: 'Inside the brackets there is one O. The small 2 outside multiplies what is inside the brackets by 2.',
+    },
+    {
+      id: 'sym-q19',
+      type: 'multiple-choice',
+      stem: 'Liam reads a formula for glucose, C6H12O6, on a school nutrition poster. Which line gives the correct atom counts in one particle of glucose?',
+      tier: 'challenge',
+      options: [
+        '6 sets of CHO, with no other atoms',
+        '6 carbons, 1 hydrogen, 2 oxygens, 6 of something else',
+        '12 hydrogens, 6 carbons but no oxygens',
+        '6 carbons, 12 hydrogens, 6 oxygens',
+      ],
+      correctIndex: 3,
+      xpValue: 25,
+    },
+    {
+      id: 'sym-q20',
+      type: 'spot-misconception',
+      stem: 'Sophie says: "The formula 2H2O means two hydrogen atoms and 2 oxygen atoms in one particle." Is she right?',
+      tier: 'challenge',
+      statements: [
+        {
+          text: 'Sophie is right. The 2 in front means two atoms, just like the small 2 after H.',
+          isMisconception: true,
+        },
+        {
+          text: 'Sophie is wrong. The big 2 in front means two whole H2O particles. So 2H2O means 4 hydrogen atoms and 2 oxygen atoms across two particles.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 25,
+      misconceptionId: 'sym-mis-big-vs-small-number',
+    },
+    {
+      id: 'sym-q21',
+      type: 'numeric-entry',
+      stem: 'A pupil writes 3CO2 to mean three particles of carbon dioxide. How many oxygen atoms are there in 3CO2 in total?',
+      tier: 'challenge',
+      correctAnswer: 6,
+      xpValue: 25,
+      hint: 'One CO2 particle has 2 oxygen atoms. Three particles means 3 times that.',
+      misconceptionId: 'sym-mis-big-vs-small-number',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Chemistry examiner report June 2018 (8462/1F), Q01 on chemical symbols: candidates "regularly wrote So or Sd as the symbol for sodium, and Po for potassium, missing that several common symbols come from Latin or German names." Reinforced by CGP KS3 Chemistry common-mistake callouts on the periodic table.
+    {
+      id: 'sym-mis-symbol-from-english',
+      description:
+        'Every chemical symbol is taken from the first one or two letters of the English name of the element.',
+      triggerAnswer: 'symbol-from-english',
+      correction:
+        'In fact several common symbols come from older Latin names. Na is sodium (from natrium), K is potassium (from kalium), Fe is iron (from ferrum), Cu is copper, Au is gold, Pb is lead.',
+      reExplanation:
+        'Many symbols on the periodic table were chosen by chemists who wrote in Latin hundreds of years ago, so the symbol came from the Latin name. The Year 7 trick is to learn the small set that catches you out: Na, K, Fe, Cu, Au, Pb. Most other symbols (H for hydrogen, O for oxygen, C for carbon) do come from the English name.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2019 (1CH0/1F), Q02 on simple chemical formulae: candidates "frequently omitted the subscript, writing CO for carbon dioxide and HO for water." Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on writing simple formulae.
+    {
+      id: 'sym-mis-subscript-optional',
+      description:
+        'Subscript numbers in a formula are optional decoration. CO and CO2 mean the same thing, and HO and H2O mean the same thing.',
+      triggerAnswer: 'subscript-optional',
+      correction:
+        'In fact the subscript number tells you exactly how many of the atom just before it are in the particle. CO and CO2 are different compounds: CO is carbon monoxide and CO2 is carbon dioxide.',
+      reExplanation:
+        'Think of the subscript as a count. H2O means two hydrogen atoms bonded to one oxygen atom; remove the small 2 and HO would mean one of each, which is a different compound (and a very rare one). Carbon monoxide (CO) and carbon dioxide (CO2) behave very differently: CO is the deadly gas that smoke alarms detect, while CO2 is the gas you breathe out. So the small numbers always matter; never drop one to make a formula shorter.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q02 on writing formulae from particle pictures: candidates "wrote subscripts in front of symbols, e.g. 3H rather than H3, mixing the meaning of a multiplier with the meaning of a subscript." Reinforced by CGP KS3 Chemistry on the order of letters and numbers in a formula.
+    {
+      id: 'sym-mis-subscript-position',
+      description:
+        'A small number in a formula belongs in front of the symbol, so 3H and H3 mean the same thing.',
+      triggerAnswer: 'subscript-position',
+      correction:
+        'In fact the position of the number changes its meaning. A small number after a symbol counts atoms inside one particle, while a bigger number in front of the formula counts whole particles.',
+      reExplanation:
+        'Read NH3 as "one nitrogen bonded to three hydrogens", with the 3 sitting just after H. Compare with 3NH3, which means "three particles of NH3", so 3 nitrogen atoms and 9 hydrogen atoms in total. The two numbers answer different questions: the small one says how many atoms inside one particle, and the big one says how many particles.',
+    },
+    // Source: Vanessa Kind, "Beyond Appearances: Students' ideas about the particulate nature of matter", RSC Education: documents the persistent learner habit of writing element gases as single atoms (e.g. O for oxygen gas) rather than as bonded pairs. Reinforced by Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q03: "candidates wrote O for oxygen gas, missing that oxygen exists as O2 molecules."
+    {
+      id: 'sym-mis-element-formula',
+      description:
+        'Every element is written as a single symbol on its own. So oxygen gas is O, hydrogen gas is H and nitrogen gas is N.',
+      triggerAnswer: 'element-formula',
+      correction:
+        'In fact several common gas elements exist as bonded pairs of atoms (called diatomic molecules). Oxygen gas is O2, hydrogen gas is H2, nitrogen gas is N2 and chlorine gas is Cl2.',
+      reExplanation:
+        'Look closely at the air you breathe. About a fifth of it is oxygen, and oxygen atoms in the air come in pairs that are bonded together. So a particle of oxygen gas is two oxygen atoms stuck side by side, written O2. Hydrogen, nitrogen and chlorine behave the same way: they exist as pairs in their gas form. The noble gases (helium He, neon Ne, argon Ar) are an exception because they sit happily as single atoms.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q03 on counting atoms in formulae with multipliers: candidates "wrote that 2H2O contains 2 hydrogen atoms and 2 oxygen atoms, missing that the leading 2 multiplies the whole formula." Reinforced by Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic on multipliers in formulae.
+    {
+      id: 'sym-mis-big-vs-small-number',
+      description:
+        'A big number in front of a formula and a small number after a symbol mean the same thing.',
+      triggerAnswer: 'big-vs-small-number',
+      correction:
+        'In fact the big number in front multiplies the whole formula, while the small number after a symbol only counts the atoms just before it.',
+      reExplanation:
+        'Take 2H2O. The small 2 inside the formula belongs to H, so each particle has 2 hydrogens and 1 oxygen. The big 2 in front multiplies everything in the formula by 2, so 2H2O means two whole particles of water: 4 hydrogens and 2 oxygens in total. The big number is for counting whole particles, the small number is for counting atoms inside one particle. Mix them up and your atom count will always be wrong.',
+    },
+    // Source: David Paterson, "Teaching elements, compounds and mixtures at Key Stage 3", RSC Education CPD article (2021-04-13): a recurring Year 7 confusion is to read the symbol of a multi-letter element with two capital letters (e.g. CO read as carbon and oxygen rather than as cobalt). Reinforced by AQA GCSE Chemistry examiner report June 2019 (8462/1F), Q01: "candidates wrote that CO meant 'carbon and oxygen' rather than the compound carbon monoxide or the element cobalt depending on capitalisation."
+    {
+      id: 'sym-mis-capitalisation',
+      description:
+        'Both letters of a chemical symbol can be capitals. So CO and Co mean the same thing.',
+      triggerAnswer: 'capitalisation',
+      correction:
+        'In fact a chemical symbol uses one capital followed by one lowercase letter. CO is the formula for carbon monoxide (a compound). Co is the symbol for the element cobalt.',
+      reExplanation:
+        'Capitalisation is the rule that tells you whether you are looking at one element or two side by side in a formula. Co (capital C, lowercase o) is one symbol, the element cobalt. CO (capital C, capital O) is two symbols side by side: the element carbon next to the element oxygen, joined into the compound carbon monoxide. The same rule means HF (the compound hydrogen fluoride) is different from Hf (the element hafnium). Read symbols carefully, letter by letter.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
 export const atomsZone: Zone = {
   id: 'chemistry-atoms-elements-compounds',
   name: 'Atoms, Elements, Compounds',
   realm: 'elementia',
-  nodeIds: ['chemistry-atoms-elements-compounds-basics'],
+  nodeIds: [
+    'chemistry-atoms-elements-compounds-basics',
+    'chemistry-atoms-symbols-formulae',
+  ],
 }

@@ -824,6 +824,18 @@ Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-for
   - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Challenge spot-misconception or MCQ presenting iron filings on a magnet as a compound.
 - C-AT-6: Learner believes alloys (brass, steel) are compounds because two metals have been combined.
   - Required handling: misconception entry on `chemistry-atoms-elements-compounds-basics`; at least one Confident MCQ on brass or steel that pairs alloy-as-mixture against alloy-as-compound.
+- C-AT-7: Learner believes every chemical symbol is taken from the first one or two letters of the English name (writing Sd for sodium, Po for potassium, Go for gold).
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ or spot-misconception covering the Latin-derived symbols Na, K, Fe, Cu, Au, Pb.
+- C-AT-8: Learner believes subscript numbers in a formula are optional decoration, so CO and CO2 mean the same thing.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ contrasting CO with CO2 or HO with H2O.
+- C-AT-9: Learner writes subscript numbers in front of a symbol (e.g. 3H rather than H3), mixing the meaning of a multiplier with the meaning of a subscript.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ asking the learner to write the formula for ammonia or methane from a description.
+- C-AT-10: Learner writes diatomic gas elements as single atoms (O for oxygen gas, H for hydrogen gas), missing that several gases exist as bonded pairs.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one MCQ on the formula of oxygen gas with O, O2, 2O and OO as distractors.
+- C-AT-11: Learner treats the big number in front of a formula and the small subscript number after a symbol as the same thing, so 2H2O is read as 2 hydrogens plus 2 oxygens.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one Challenge spot-misconception or numeric-entry question that asks the learner to count atoms in a multiplied formula such as 2H2O or 3CO2.
+- C-AT-12: Learner treats two capital letters in a row in a chemistry formula as one element, so Co (cobalt) and CO (carbon monoxide) are read as the same thing.
+  - Required handling: misconception entry on `chemistry-atoms-symbols-formulae`; at least one Core MCQ contrasting Co with CO.
 
 ### Question shape probes
 
@@ -833,6 +845,12 @@ Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-for
 - Q-AT-4: At least one drag-order question on `chemistry-atoms-elements-compounds-basics` ranks named substances by how many kinds of atom they hold (element, compound, mixture).
 - Q-AT-5: At least one Challenge tier word problem on `chemistry-atoms-elements-compounds-basics` uses a UK domestic or laboratory context (1p coin, brass band trumpet, sea water in the English Channel, a green-crusted church roof) and requires the learner to choose between element, compound and mixture.
 - Q-AT-6: At least one missing-step question on `chemistry-atoms-elements-compounds-basics` hides the "the substances are not chemically bonded, only mixed together" step in a mixture-or-compound explanation.
+- Q-AT-7: At least one labelled-image question on `chemistry-atoms-symbols-formulae` requires the learner to drag element names (Copper, Gold, Iron, Lead) onto periodic-table tiles showing the Latin-derived symbols (Cu, Au, Fe, Pb), with a label pool no larger than twice the hotspot count.
+- Q-AT-8: At least three numeric-entry questions on `chemistry-atoms-symbols-formulae` ask the learner to count atoms in a formula, spread across Core, Confident, and Challenge tiers (water; methane; calcium hydroxide).
+- Q-AT-9: At least one drag-order question on `chemistry-atoms-symbols-formulae` ranks named formulae (NaCl, H2O, CH4) by the number of atoms in one particle.
+- Q-AT-10: At least one missing-step question on `chemistry-atoms-symbols-formulae` hides the "add the carbon and hydrogen atom counts together" step in a counting-atoms-in-CH4 walk-through.
+- Q-AT-11: At least one data-extraction question on `chemistry-atoms-symbols-formulae` requires the learner to read four common compound formulae from a table and pick the one with the most atoms in one particle.
+- Q-AT-12: At least one Challenge tier item on `chemistry-atoms-symbols-formulae` involves a multiplied formula (2H2O or 3CO2) and asks the learner to count atoms in total.
 
 ### Tutor probes
 
@@ -841,6 +859,10 @@ Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-for
 - T-AT-3: Given "If sugar dissolves in tea, the sugar bonds with the water and the tea is a compound", the tutor scaffolds the learner toward the test of recovering the sugar by evaporation, without flatly stating the answer.
 - T-AT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 atoms, elements and compounds language and metric units politely.
 - T-AT-5: Given a request for an inline definition (tap on "atom", "element", "compound" or "mixture"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-AT-6: Given "The symbol for sodium is Sd because the first two letters of sodium are S and d", the tutor's first reply is a Socratic prompt about which Latin name sodium comes from, not a flat correction.
+- T-AT-7: Given a wrong answer matching the subscript-optional trigger (for example "CO and CO2 are the same"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-AT-8: Given "2H2O means 2 hydrogens and 2 oxygens", the tutor scaffolds the learner toward the multiplier rule by walking through one H2O particle first, without simply stating the right atom counts.
+- T-AT-9: Given a request for an inline definition (tap on "subscript" or "formula"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Periodic Table
 
