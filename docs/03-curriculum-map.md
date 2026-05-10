@@ -337,24 +337,24 @@
 - **OCR**: C1.2a The periodic table: groups and periods; C1.2b Metals and non-metals (GCSE Chemistry A J248 Gateway)
 
 #### Groups 1 and 7 (Confident, `chemistry-periodic-table-group-1-7`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The periodic table)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The principles underpinning the Mendeleev periodic table; the periodic table: periods and groups; metals and non-metals; how patterns in reactions can be predicted with reference to the periodic table.
+- **AQA**: 4.1.2.4 Group 0 (the noble gases); 4.1.2.5 Group 1 (the alkali metals); 4.1.2.6 Group 7 (the halogens) (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.36 Group 1 alkali metals; 1.37 Group 7 halogens; 1.38 Reactivity trends in groups (GCSE Chemistry 1CH0)
+- **OCR**: C1.2c Group 1 alkali metals: trends; C1.2d Group 7 halogens: trends and displacement (GCSE Chemistry A J248 Gateway)
 
 ### Zone: Acids and Alkalis (`chemistry-acids-alkalis`)
 
 #### Common Acids and Alkalis (Core, `chemistry-acids-alkalis-common`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: acids and alkalis)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The properties of acids and alkalis (including neutralisation); the use of indicators to identify acids and alkalis; the chemistry of acids; reactions with metals (qualitative observations).
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.2 Strong and weak acids; properties of acids and alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.5 Acids and alkalis; 3.6 Indicators and the pH scale (GCSE Chemistry 1CH0)
+- **OCR**: C3.1a Acids and alkalis; C3.1b Indicators (GCSE Chemistry A J248 Gateway)
 
 #### Neutralisation (Confident, `chemistry-acids-alkalis-neutralisation`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: acids and alkalis)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The properties of acids and alkalis, including neutralisation; the reactions of acids with alkalis to produce salts; the use of indicators to identify acids and alkalis.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.3 Reactions of acids with alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.7 Neutralisation reactions; 3.8 Salts produced by neutralisation (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Neutralisation: acid + alkali → salt + water; C3.1d Salts and their uses (GCSE Chemistry A J248 Gateway)
 
 ### Zone: pH (`chemistry-ph`)
 

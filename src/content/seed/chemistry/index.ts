@@ -11,7 +11,16 @@ import {
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
 } from './atoms'
-import { periodicTableZone, periodicTableLayout } from './periodic-table'
+import {
+  periodicTableZone,
+  periodicTableLayout,
+  periodicTableGroup1And7,
+} from './periodic-table'
+import {
+  acidsAlkalisZone,
+  acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
+} from './acids-alkalis'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -25,7 +34,16 @@ export {
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
 } from './atoms'
-export { periodicTableZone, periodicTableLayout } from './periodic-table'
+export {
+  periodicTableZone,
+  periodicTableLayout,
+  periodicTableGroup1And7,
+} from './periodic-table'
+export {
+  acidsAlkalisZone,
+  acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
+} from './acids-alkalis'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -36,6 +54,9 @@ export const chemistryNodes: SkillNode[] = [
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
   periodicTableLayout,
+  periodicTableGroup1And7,
+  acidsAlkalisCommon,
+  acidsAlkalisNeutralisation,
 ]
 
 export const chemistryZones: Zone[] = [
@@ -43,4 +64,5 @@ export const chemistryZones: Zone[] = [
   separatingMixturesZone,
   atomsZone,
   periodicTableZone,
+  acidsAlkalisZone,
 ]
