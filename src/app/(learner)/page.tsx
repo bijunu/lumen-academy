@@ -1,22 +1,22 @@
 'use client'
 
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Skeleton } from '@/components/ui/skeleton'
-import { REALM_LIST, type RealmId } from '@/lib/constants/realms'
-import { ShortcutHelpOverlay } from '@/components/layout/ShortcutHelpOverlay'
 import { DailyChallengeCard } from '@/components/home/DailyChallengeCard'
-import { DailyQuestCard } from '@/components/home/DailyQuestCard'
+import { DailyQuestCard, type DailyQuestState } from '@/components/home/DailyQuestCard'
+import { HomeHero } from '@/components/home/HomeHero'
+import { RealmTile } from '@/components/home/RealmTile'
 import { WeakSpotsCard } from '@/components/home/WeakSpotsCard'
+import { ShortcutHelpOverlay } from '@/components/layout/ShortcutHelpOverlay'
+import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
+import { REALM_LIST, type RealmId } from '@/lib/constants/realms'
 import {
   STREAK_WINDOW_DAYS,
   emptyRealmProgress,
   type RealmProgressMap,
 } from '@/lib/progress/homeSummary'
-import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
+import type { DailyQuestRecord } from '@/types/dailyQuest'
 
 interface HomeSummary {
   streakDays: boolean[]
@@ -30,72 +30,53 @@ type SummaryState =
   | { kind: 'error' }
   | { kind: 'ready'; summary: HomeSummary }
 
+interface QuestNode {
+  id: string
+  title: string
+  realm: RealmId
+}
+
+interface DailyQuestSuccess {
+  status: 'ok'
+  quest: DailyQuestRecord
+  nodes: QuestNode[]
+}
+
+interface DailyQuestEmpty {
+  status: 'no-content'
+}
+
+type DailyQuestResponse = DailyQuestSuccess | DailyQuestEmpty
+
 const PLACEHOLDER_DAYS: boolean[] = Array.from(
   { length: STREAK_WINDOW_DAYS },
   () => false
 )
 
-function StreakStrip({ days }: { days: boolean[] }) {
+function StreakBand({ days }: { days: boolean[] }) {
   const activeCount = days.filter(Boolean).length
   return (
-    <div className="flex items-center gap-1.5">
-      {days.map((active, i) => (
-        <div
-          key={i}
-          role="img"
-          className={`h-3 w-3 rounded-full ${active ? 'bg-primary' : 'bg-muted'}`}
-          aria-label={active ? 'Active day' : 'Inactive day'}
-        />
-      ))}
-      <span className="ml-2 text-xs text-muted-foreground">
-        {activeCount} of last {STREAK_WINDOW_DAYS} days
-      </span>
-    </div>
-  )
-}
-
-function SubjectProgressBars({
-  realmProgress,
-}: {
-  realmProgress: RealmProgressMap
-}) {
-  return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-      {REALM_LIST.map(realm => {
-        const { mastered, total } = realmProgress[realm.id as RealmId]
-        const percent = total > 0 ? Math.round((mastered / total) * 100) : 0
-        return (
-          <Link
-            key={realm.id}
-            href={`/realm/${realm.id}`}
-            className="space-y-1 rounded-md p-1 transition-colors hover:bg-muted/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-          >
-            <div className="flex items-center justify-between text-sm">
-              <span className="flex items-center gap-1.5">
-                <realm.icon
-                  className="h-3.5 w-3.5"
-                  style={{ color: realm.colour }}
-                />
-                {realm.label}
-              </span>
-              <span className="text-muted-foreground">
-                {mastered} of {total}
-              </span>
-            </div>
-            <div className="h-2 rounded-full bg-muted">
-              <div
-                className="h-2 rounded-full transition-all"
-                style={{
-                  width: `${percent}%`,
-                  backgroundColor: realm.colour,
-                }}
-                aria-label={`${realm.label} progress ${percent}%`}
-              />
-            </div>
-          </Link>
-        )
-      })}
-    </div>
+    <section
+      aria-label="Streak"
+      className="flex items-center justify-between rounded-xl border bg-card px-4 py-3"
+    >
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium tracking-tight">Streak</span>
+        <span className="text-xs text-muted-foreground">
+          {activeCount} of last {STREAK_WINDOW_DAYS} days
+        </span>
+      </div>
+      <div className="flex items-center gap-1.5">
+        {days.map((active, i) => (
+          <div
+            key={i}
+            role="img"
+            className={`h-2.5 w-2.5 rounded-full ${active ? 'bg-primary' : 'bg-muted'}`}
+            aria-label={active ? 'Active day' : 'Inactive day'}
+          />
+        ))}
+      </div>
+    </section>
   )
 }
 
@@ -136,9 +117,55 @@ function useHomeSummary(): SummaryState {
   return state
 }
 
+function useDailyQuest(): DailyQuestState {
+  const { status } = useSession()
+  const [state, setState] = useState<DailyQuestState>({ kind: 'loading' })
+
+  useEffect(() => {
+    if (status === 'loading') {
+      setState({ kind: 'loading' })
+      return
+    }
+    if (status !== 'authenticated') {
+      setState({ kind: 'unauthenticated' })
+      return
+    }
+
+    let cancelled = false
+    setState({ kind: 'loading' })
+    fetch('/api/daily-quest')
+      .then(async r => {
+        if (!r.ok) throw new Error(`status ${r.status}`)
+        return (await r.json()) as DailyQuestResponse
+      })
+      .then(payload => {
+        if (cancelled) return
+        if (payload.status === 'no-content') {
+          setState({ kind: 'no-content' })
+        } else {
+          setState({
+            kind: 'ready',
+            quest: payload.quest,
+            nodes: payload.nodes,
+          })
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setState({ kind: 'error' })
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [status])
+
+  return state
+}
+
 export default function HomePage() {
   const { showHelp, setShowHelp } = useKeyboardShortcuts()
   const summaryState = useHomeSummary()
+  const questState = useDailyQuest()
 
   const days =
     summaryState.kind === 'ready'
@@ -152,45 +179,37 @@ export default function HomePage() {
   return (
     <>
       <div className="space-y-6">
-        <h1 className="text-2xl font-bold tracking-tight">Welcome back, Scholar</h1>
+        <HomeHero state={questState} />
 
-        <div className="grid gap-4 md:grid-cols-2">
-          <DailyQuestCard />
+        <section aria-labelledby="home-realms-heading">
+          <h2
+            id="home-realms-heading"
+            className="mb-3 text-sm font-semibold uppercase tracking-wider text-muted-foreground"
+          >
+            Realms
+          </h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {REALM_LIST.map(realm => {
+              const progress = realmProgress[realm.id as RealmId]
+              return (
+                <RealmTile
+                  key={realm.id}
+                  realmId={realm.id as RealmId}
+                  mastered={progress.mastered}
+                  total={progress.total}
+                />
+              )
+            })}
+          </div>
+        </section>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Continue Adventure</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Skeleton className="h-24 w-full" />
-              <p className="mt-3 text-sm text-muted-foreground">
-                Pick up where you left off in your current zone.
-              </p>
-            </CardContent>
-          </Card>
-
+        <div className="grid gap-4 md:grid-cols-3">
+          <DailyQuestCard state={questState} />
           <DailyChallengeCard />
-
           <WeakSpotsCard />
         </div>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Streak</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <StreakStrip days={days} />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Subject Progress</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <SubjectProgressBars realmProgress={realmProgress} />
-          </CardContent>
-        </Card>
+        <StreakBand days={days} />
       </div>
 
       <ShortcutHelpOverlay open={showHelp} onClose={() => setShowHelp(false)} />

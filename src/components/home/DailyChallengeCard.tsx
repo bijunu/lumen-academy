@@ -4,8 +4,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { useSession } from 'next-auth/react'
 
 import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
-import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { QuestionShell } from '@/components/questions/QuestionShell'
 import type { ScoreInput } from '@/lib/progress/serverScoring'
@@ -60,15 +58,16 @@ function isTerminal(status: DailyChallengeStatus): boolean {
 
 function CardFrame({ children }: { children: React.ReactNode }) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          Daily Challenge
-          <Badge variant="secondary">25 XP</Badge>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-    </Card>
+    <section
+      aria-label="Daily Challenge"
+      className="rounded-xl border bg-card p-4"
+    >
+      <div className="flex items-baseline justify-between">
+        <h2 className="text-sm font-semibold tracking-tight">Daily Challenge</h2>
+        <p className="text-xs font-medium text-muted-foreground">25 XP</p>
+      </div>
+      <div className="mt-3">{children}</div>
+    </section>
   )
 }
 
@@ -168,10 +167,7 @@ export function DailyChallengeCard() {
   if (state.kind === 'idle' || state.kind === 'loading') {
     return (
       <CardFrame>
-        <Skeleton className="h-16 w-full" />
-        <p className="mt-3 text-sm text-muted-foreground">
-          One bonus question. Refreshes daily.
-        </p>
+        <Skeleton className="h-12 w-full" />
       </CardFrame>
     )
   }

@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import { TrendingDown } from 'lucide-react'
 import { useSession } from 'next-auth/react'
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { REALMS, type RealmId } from '@/lib/constants/realms'
 
@@ -29,14 +28,26 @@ interface GetResponse {
   spots: WeakSpotPayload[]
 }
 
-function CardFrame({ children }: { children: React.ReactNode }) {
+function CardFrame({
+  caption,
+  children,
+}: {
+  caption?: string
+  children: React.ReactNode
+}) {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Weak Spots</CardTitle>
-      </CardHeader>
-      <CardContent>{children}</CardContent>
-    </Card>
+    <section
+      aria-label="Weak Spots"
+      className="rounded-xl border bg-card p-4"
+    >
+      <div className="flex items-baseline justify-between">
+        <h2 className="text-sm font-semibold tracking-tight">Weak Spots</h2>
+        {caption && (
+          <p className="text-xs text-muted-foreground">{caption}</p>
+        )}
+      </div>
+      <div className="mt-3">{children}</div>
+    </section>
   )
 }
 
@@ -106,10 +117,7 @@ export function WeakSpotsCard() {
   if (state.kind === 'idle' || state.kind === 'loading') {
     return (
       <CardFrame>
-        <Skeleton className="h-16 w-full" />
-        <p className="mt-3 text-sm text-muted-foreground">
-          Three topics ready for another go.
-        </p>
+        <Skeleton className="h-12 w-full" />
       </CardFrame>
     )
   }
@@ -154,11 +162,8 @@ export function WeakSpotsCard() {
   }
 
   return (
-    <CardFrame>
-      <p className="mb-2 text-xs uppercase tracking-wide text-muted-foreground">
-        {state.spots.length} ready for another go
-      </p>
-      <ul className="space-y-2">
+    <CardFrame caption={`${state.spots.length} ready for another go`}>
+      <ul className="space-y-1.5">
         {state.spots.map(spot => (
           <SpotRow key={spot.nodeId} spot={spot} />
         ))}
