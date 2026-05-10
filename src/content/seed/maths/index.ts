@@ -45,6 +45,12 @@ import {
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
 } from './four-operations'
+import {
+  areaRectangles,
+  areaRectanglesZoneNodes,
+} from './area-rectangles'
+import { perimeter, perimeterZoneNodes } from './perimeter'
+import { volumeCuboids, volumeCuboidsZoneNodes } from './volume-cuboids'
 
 export {
   whatIsAFraction,
@@ -86,6 +92,12 @@ export {
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
+  areaRectangles,
+  areaRectanglesZoneNodes,
+  perimeter,
+  perimeterZoneNodes,
+  volumeCuboids,
+  volumeCuboidsZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -107,6 +119,9 @@ export const mathsNodes: SkillNode[] = [
   ...coordinatesZoneNodes,
   ...coordinatesShapesZoneNodes,
   ...fourOperationsZoneNodes,
+  ...areaRectanglesZoneNodes,
+  ...perimeterZoneNodes,
+  ...volumeCuboidsZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -199,5 +214,15 @@ export const mathsZones: Zone[] = [
     name: 'Four Operations',
     realm: 'numerica',
     nodeIds: fourOperationsZoneNodes.map(n => n.id),
+  },
+  {
+    id: 'maths-geometry-measure',
+    name: 'Geometry and Measure',
+    realm: 'numerica',
+    nodeIds: [
+      ...areaRectanglesZoneNodes.map(n => n.id),
+      ...perimeterZoneNodes.map(n => n.id),
+      ...volumeCuboidsZoneNodes.map(n => n.id),
+    ],
   },
 ]

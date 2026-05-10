@@ -1546,6 +1546,69 @@ Covers `physics-space-solar-system`, `physics-space-day-night-seasons`.
 ### Tutor probes
 - _to be drafted by the Mechanica author session_
 
+## Zone: Numerica > Geometry and Measure
+
+Covers `maths-geometry-measure-area-rectangles`, `maths-geometry-measure-perimeter`, `maths-geometry-measure-volume-cuboids`.
+
+### Content probes
+
+#### Area of rectangles and composite rectangles (`maths-geometry-measure-area-rectangles`)
+- C-GEO-1: Learner finds the area of a rectangle by adding the side lengths (or all four sides), giving 6 + 4 = 10 m squared for a 6 m by 4 m rug instead of multiplying.
+  - Required handling: misconception entry; at least one question whose distractors include the add-the-sides answer.
+- C-GEO-2: Learner conflates area and perimeter, giving 2 x (length + width) and labelling it as the area.
+  - Required handling: misconception entry; at least one Core question with the perimeter value present as a distractor.
+- C-GEO-3: Learner treats an L-shape as a single rectangle by multiplying the two longest outer sides, giving the bounding rectangle area instead of splitting the shape.
+  - Required handling: misconception entry; at least one Confident question that exposes the bounding-rectangle answer.
+- C-GEO-4: Learner converts cm squared to m squared by dividing by 100 instead of 10 000 (does not square the conversion factor).
+  - Required handling: misconception entry; at least one Confident question that exposes the linear-conversion slip in a square-unit context.
+- C-GEO-5: Learner mixes units, multiplying a length in metres by a width in centimetres without converting first.
+  - Required handling: misconception entry; at least one Confident question with a length in metres and a width in centimetres in the stem.
+- C-GEO-6: Learner finds the bigger rectangle of a composite shape and forgets to add (or subtract) the smaller piece.
+  - Required handling: misconception entry; at least one missing-step question that surfaces the second-rectangle calculation.
+
+#### Perimeter of rectangles and composite shapes (`maths-geometry-measure-perimeter`)
+- C-GEO-7: Learner forgets to count both pairs of sides on a rectangle, giving length + width = perimeter instead of 2 x (length + width).
+  - Required handling: misconception entry; at least one Core MCQ with the half-perimeter answer present as a distractor.
+- C-GEO-8: Learner multiplies length by width and labels the answer as perimeter, mixing up area and perimeter from the other direction.
+  - Required handling: misconception entry; at least one Core question with the area value present as a perimeter distractor.
+- C-GEO-9: Learner does not work out the missing side of a composite shape from the given sides, giving an incomplete perimeter.
+  - Required handling: misconception entry; at least one Confident "missing-side" question on an L-shape or T-shape composite.
+- C-GEO-10: Learner only counts the labelled sides of a composite shape, missing one or more interior segments that form part of the outline.
+  - Required handling: misconception entry; at least one Confident question on a composite shape where one segment must be deduced.
+
+#### Volume of cuboids (`maths-geometry-measure-volume-cuboids`)
+- C-GEO-11: Learner finds the volume of a cuboid by adding the three side lengths, giving 5 + 4 + 3 = 12 cm cubed for a 5 cm by 4 cm by 3 cm box instead of multiplying.
+  - Required handling: misconception entry; at least one Core question whose distractors include the add-the-sides answer.
+- C-GEO-12: Learner multiplies only two of the three side lengths of a cuboid (treating it as a rectangle), labelling the result as volume.
+  - Required handling: misconception entry; at least one Core question with the surface-pair area answer present as a distractor.
+- C-GEO-13: Learner converts ml to litres or cm cubed to m cubed using the wrong factor (divides by 100 or 1 000 instead of 1 000 000 for cm cubed to m cubed).
+  - Required handling: misconception entry; at least one Confident question on cm cubed/ml or m cubed/litre conversion.
+- C-GEO-14: Learner does not link cm cubed to ml at the 1:1 ratio, treating capacity and volume as different quantities even when the units agree.
+  - Required handling: misconception entry; at least one Confident question that asks the learner to read off capacity (ml or L) from a volume in cm cubed or m cubed.
+
+### Question shape probes
+
+- Q-GEO-1: At least one Core numeric-entry question asks the learner to find the area of a simple rectangle from its length and width in cm or m.
+- Q-GEO-2: At least one Core MCQ on rectangle area includes the add-the-sides distractor.
+- Q-GEO-3: At least one Confident question asks the learner to find the area of an L-shape composite by splitting into two rectangles.
+- Q-GEO-4: At least one Confident question asks the learner to find a composite area by subtracting a cut-out rectangle from a larger rectangle.
+- Q-GEO-5: At least one Challenge tier word problem requires recovering the area of a composite shape and then doing one further step (cost per m squared, ordering bags of topsoil, rounding up to the next whole m squared).
+- Q-GEO-6: At least one Core numeric-entry question asks the learner to find the perimeter of a rectangle.
+- Q-GEO-7: At least one Confident question asks the learner to find a missing side of an L-shape composite from the labelled sides, then state the perimeter.
+- Q-GEO-8: At least one Confident MCQ asks the learner to compare the area and perimeter of the same rectangle, with the swap answer present as a distractor.
+- Q-GEO-9: At least one Core numeric-entry question asks the learner to find the volume of a simple cuboid in cm cubed or m cubed from its three side lengths.
+- Q-GEO-10: At least one Confident question asks the learner to convert cm cubed to ml (1 cm cubed = 1 ml) or m cubed to litres (1 m cubed = 1 000 litres) in a UK context (fish tank, removal box, swimming pool estimate).
+- Q-GEO-11: At least one Challenge tier word problem on volume requires finding a cuboid volume and then doing one further step (capacity in litres, number of boxes that fit, water-fill time at a given rate).
+- Q-GEO-12: At least one drag-order or missing-step question across the zone places composite-shape calculation steps into the right order.
+- Q-GEO-13: At least one spot-misconception question presents the area-as-perimeter or volume-as-rectangle-area argument and asks whether the reasoning is sound.
+
+### Tutor probes
+
+- T-GEO-1: Given "I added the sides 6 + 4 = 10 m squared because the rug is 6 m by 4 m", the tutor's first reply is a Socratic prompt about whether the unit cm squared or m squared can come from adding two lengths, not a direct correction.
+- T-GEO-2: Given a wrong answer matching the bounding-rectangle trigger ("L-shape area is 8 x 5 = 40 m squared"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-GEO-3: Given an off-topic input (for example a question about US-style "square feet" or "gallons"), the tutor steers back to UK KS3 metric units (cm squared, m squared, cm cubed, m cubed, ml, L) politely.
+- T-GEO-4: Given a request for an inline definition (tap on "composite shape"), the glossary returns a UK English age-12 definition under 2 seconds.
+
 ## Pending zones
 
 The following Numerica zones are scheduled for authoring during Phase 10e+. Their eval sections will be added alongside the content drafts.
@@ -1554,7 +1617,6 @@ The following Numerica zones are scheduled for authoring during Phase 10e+. Thei
 - Four operations
 - Angle rules
 - 2D and 3D shapes
-- Perimeter, area, volume
 - Averages and range
 - Probability basics
 - Charts and graphs
