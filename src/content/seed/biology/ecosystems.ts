@@ -1423,14 +1423,732 @@ export const foodWebs: SkillNode = {
 }
 
 // ---------------------------------------------------------------------------
+// Node 3 SVGs (Energy Flow)
+// ---------------------------------------------------------------------------
+
+const energyEntryFlowSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="26" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">How energy enters and flows along a chain</text>
+  <circle cx="80" cy="120" r="40" fill="#FEF08A" stroke="#A16207" stroke-width="3" />
+  <text x="80" y="124" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Sun</text>
+  <line x1="125" y1="130" x2="180" y2="160" stroke="#F59E0B" stroke-width="3" stroke-dasharray="4,3" />
+  <text x="155" y="118" font-family="sans-serif" font-size="11" fill="#1F2937">light energy</text>
+  <rect x="180" y="140" width="100" height="50" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="230" y="166" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Oak leaf</text>
+  <text x="230" y="182" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(producer)</text>
+  <line x1="285" y1="165" x2="320" y2="165" stroke="#1F2937" stroke-width="3" marker-end="url(#ef-arrow)" />
+  <rect x="325" y="140" width="100" height="50" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="375" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Caterpillar</text>
+  <line x1="430" y1="165" x2="465" y2="165" stroke="#1F2937" stroke-width="3" marker-end="url(#ef-arrow)" />
+  <rect x="470" y="140" width="100" height="50" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="520" y="170" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Blue tit</text>
+  <text x="300" y="240" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Energy enters at the producer through photosynthesis.</text>
+  <text x="300" y="262" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">It then flows ONE WAY along the chain, food to eater.</text>
+  <text x="300" y="294" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">No arrow ever points back from blue tit to caterpillar.</text>
+  <text x="300" y="312" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Energy that has been used cannot be recovered by the chain.</text>
+  <text x="300" y="350" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(The Sun is not a link; it is the source of the energy outside the chain.)</text>
+  <defs>
+    <marker id="ef-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2937" />
+    </marker>
+  </defs>
+</svg>
+`.trim()
+
+const energyLostSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="24" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">Energy lost at each level (not transferred to the next)</text>
+  <rect x="180" y="60" width="240" height="50" rx="10" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="300" y="86" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Producer (oak leaf)</text>
+  <text x="300" y="102" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">traps light, builds glucose</text>
+  <line x1="300" y1="115" x2="300" y2="155" stroke="#1F2937" stroke-width="3" marker-end="url(#el-arrow)" />
+  <rect x="180" y="160" width="240" height="50" rx="10" fill="#FEF3C7" stroke="#92400E" stroke-width="2" />
+  <text x="300" y="186" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Primary consumer (caterpillar)</text>
+  <line x1="300" y1="215" x2="300" y2="255" stroke="#1F2937" stroke-width="3" marker-end="url(#el-arrow)" />
+  <rect x="180" y="260" width="240" height="50" rx="10" fill="#FED7AA" stroke="#9A3412" stroke-width="2" />
+  <text x="300" y="286" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">Secondary consumer (blue tit)</text>
+  <text x="450" y="98" font-family="sans-serif" font-size="12" fill="#7F1D1D">heat lost</text>
+  <text x="450" y="114" font-family="sans-serif" font-size="12" fill="#7F1D1D">(respiration)</text>
+  <line x1="425" y1="86" x2="445" y2="92" stroke="#7F1D1D" stroke-width="2" marker-end="url(#el-loss)" />
+  <text x="450" y="190" font-family="sans-serif" font-size="12" fill="#7F1D1D">movement,</text>
+  <text x="450" y="206" font-family="sans-serif" font-size="12" fill="#7F1D1D">heat, waste</text>
+  <line x1="425" y1="184" x2="445" y2="190" stroke="#7F1D1D" stroke-width="2" marker-end="url(#el-loss)" />
+  <text x="450" y="290" font-family="sans-serif" font-size="12" fill="#7F1D1D">movement,</text>
+  <text x="450" y="306" font-family="sans-serif" font-size="12" fill="#7F1D1D">heat, waste</text>
+  <line x1="425" y1="284" x2="445" y2="290" stroke="#7F1D1D" stroke-width="2" marker-end="url(#el-loss)" />
+  <text x="120" y="98" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1F2937">undigested</text>
+  <text x="120" y="114" text-anchor="end" font-family="sans-serif" font-size="12" fill="#1F2937">parts pass</text>
+  <line x1="180" y1="92" x2="155" y2="98" stroke="#1F2937" stroke-width="2" marker-end="url(#el-loss)" />
+  <text x="300" y="346" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Each step keeps less energy than the one before.</text>
+  <text x="300" y="364" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">Most chains run out of energy after 4 or 5 links.</text>
+  <defs>
+    <marker id="el-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#1F2937" />
+    </marker>
+    <marker id="el-loss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7F1D1D" />
+    </marker>
+  </defs>
+</svg>
+`.trim()
+
+const pyramidOfNumbersSvg = `
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <text x="300" y="22" text-anchor="middle" font-family="sans-serif" font-size="17" fill="#1F2937">Pyramid of numbers: a Kentish oak chain</text>
+  <rect x="100" y="56" width="400" height="50" fill="#DCFCE7" stroke="#15803D" stroke-width="3" />
+  <text x="300" y="82" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">1 oak tree (producer)</text>
+  <text x="300" y="98" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">a single huge organism</text>
+  <rect x="50" y="116" width="500" height="60" fill="#FEF3C7" stroke="#92400E" stroke-width="3" />
+  <text x="300" y="144" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">~5000 caterpillars (primary consumer)</text>
+  <text x="300" y="162" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">many small herbivores feed on the one tree</text>
+  <rect x="200" y="186" width="200" height="60" fill="#FED7AA" stroke="#9A3412" stroke-width="3" />
+  <text x="300" y="214" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">~50 blue tits (secondary consumer)</text>
+  <text x="300" y="232" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">fewer than the caterpillars they hunt</text>
+  <rect x="265" y="256" width="70" height="50" fill="#FECACA" stroke="#7F1D1D" stroke-width="3" />
+  <text x="300" y="282" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1F2937">1 sparrowhawk</text>
+  <text x="300" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1F2937">(top predator)</text>
+  <text x="300" y="340" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">The bars show NUMBERS of organisms, not their size or mass.</text>
+  <text x="300" y="358" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">A pyramid of numbers can look upside down at the bottom</text>
+  <text x="300" y="374" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1F2937">when one big producer feeds many small herbivores.</text>
+</svg>
+`.trim()
+
+// ---------------------------------------------------------------------------
+// Node 3: Energy Flow (Confident)
+// ---------------------------------------------------------------------------
+
+export const energyFlow: SkillNode = {
+  id: 'biology-ecosystems-energy-flow',
+  title: 'Energy Flow Through an Ecosystem',
+  description:
+    'Trace energy from sunlight through a producer into consumers, and read why energy is lost at each step (movement, heat, waste, undigested parts). Build pyramids of numbers from a Kentish oak chain. Year 7 scope: pyramids of NUMBERS only, no biomass percentages, no 10% rule.',
+  subject: 'biology',
+  realm: 'vitalia',
+  zoneId: 'biology-ecosystems',
+  zoneName: 'Ecosystems',
+  tier: 'confident',
+  prerequisites: ['biology-ecosystems-food-chains'],
+  curriculum: {
+    ks3Objective:
+      'The interdependence of organisms in an ecosystem, including food webs and insect pollinated crops; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials.',
+    awardingBodies: {
+      aqa: '4.7.2.2 Pyramids of biomass; energy transfers and biomass (GCSE Biology 8461). Year 7 scope is pyramid of numbers only.',
+      edexcel: 'SB9d Energy flow through an ecosystem; trophic levels (GCSE Biology 1BI0, Topic 9). Year 7 scope is qualitative energy loss only.',
+      ocr: 'B6.1e Pyramids of numbers and energy flow (GCSE Biology A J247). Year 7 scope is pyramid of numbers only.',
+    },
+  },
+  scenes: [
+    {
+      id: 'efl-scene-flow',
+      title: 'Energy In, Energy Along',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each part of the diagram to see how energy enters at the producer and flows along the chain.',
+      data: {
+        svg: energyEntryFlowSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'efl-hs-sun',
+            x: 13,
+            y: 30,
+            label: 'Sun (energy source, not a chain link)',
+            description:
+              'The Sun supplies the light energy that the producer traps in photosynthesis. It is the source of the chain\'s energy but is not a chain link itself.',
+          },
+          {
+            id: 'efl-hs-producer',
+            x: 38,
+            y: 41,
+            label: 'Producer traps the energy',
+            description:
+              'The oak leaf uses light, CO₂, and water in photosynthesis to build glucose. The energy in glucose is the start of the chain.',
+          },
+          {
+            id: 'efl-hs-flow',
+            x: 65,
+            y: 41,
+            label: 'Energy flows one way',
+            description:
+              'When the caterpillar eats the leaf, some energy passes to it. When the blue tit eats the caterpillar, some passes on. Energy moves from food to eater, never back.',
+          },
+          {
+            id: 'efl-hs-oneway',
+            x: 50,
+            y: 75,
+            label: 'No reverse flow',
+            description:
+              'No arrow ever points back from blue tit to caterpillar, or caterpillar to oak. Energy used by an organism (heat, movement) cannot return to a previous level.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'efl-scene-lost',
+      title: 'Energy Lost at Each Step',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each loss arrow to read where energy goes when it is not passed on to the next level.',
+      data: {
+        svg: energyLostSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'efl-hs-loss-heat',
+            x: 80,
+            y: 26,
+            label: 'Heat lost in respiration',
+            description:
+              'Cells release energy from glucose to keep working. A lot of that energy ends up as heat, which warms the air and never reaches the next animal in the chain.',
+          },
+          {
+            id: 'efl-hs-loss-move',
+            x: 80,
+            y: 50,
+            label: 'Movement and waste',
+            description:
+              'A caterpillar wriggling, a blue tit flying, urine and droppings: all of these use up or carry away energy. None of it gets passed up the chain.',
+          },
+          {
+            id: 'efl-hs-undigested',
+            x: 16,
+            y: 26,
+            label: 'Undigested parts',
+            description:
+              'A caterpillar leaves stalks and veins behind when it eats a leaf. Those bits hold energy that the caterpillar never absorbs, so the energy never enters the chain at all.',
+          },
+          {
+            id: 'efl-hs-chain-limit',
+            x: 50,
+            y: 89,
+            label: 'Why chains end',
+            description:
+              'Each level keeps only a fraction of the energy below it. After 4 or 5 links there is rarely enough energy left to feed another animal, so chains tend to be short.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'efl-scene-pyramid',
+      title: 'Pyramid of Numbers',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each level of the pyramid to read how the count of organisms changes along a Kentish oak chain.',
+      data: {
+        svg: pyramidOfNumbersSvg,
+        viewBox: '0 0 600 400',
+        hotspots: [
+          {
+            id: 'efl-hs-tree',
+            x: 50,
+            y: 18,
+            label: 'One oak tree',
+            description:
+              'A single producer can feed many primary consumers because it is huge. The bottom bar of a numbers pyramid is sometimes thinner than the bar above it.',
+          },
+          {
+            id: 'efl-hs-caterpillars',
+            x: 50,
+            y: 35,
+            label: 'About 5000 caterpillars',
+            description:
+              'Many small herbivores feed on one big producer. The caterpillar bar is the widest in this pyramid because there are so many of them.',
+          },
+          {
+            id: 'efl-hs-bluetits',
+            x: 50,
+            y: 53,
+            label: 'About 50 blue tits',
+            description:
+              'Each blue tit eats many caterpillars over its lifetime, so there are far fewer blue tits than caterpillars. Counts fall as we move up.',
+          },
+          {
+            id: 'efl-hs-hawk',
+            x: 50,
+            y: 70,
+            label: 'One sparrowhawk',
+            description:
+              'The top predator usually has the lowest count. One sparrowhawk hunts many blue tits across its territory.',
+          },
+          {
+            id: 'efl-hs-numbers-only',
+            x: 50,
+            y: 90,
+            label: 'NUMBERS only at Year 7',
+            description:
+              'These bars show counts of organisms, not their size or mass. Pyramids of biomass are GCSE work; for now we only count.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'efl-worked-1',
+      title: 'Tracking energy lost between two levels',
+      steps: [
+        {
+          explanation:
+            'A caterpillar eats an oak leaf. Why does the blue tit that later eats the caterpillar not get all the energy that was in the leaf?',
+        },
+        {
+          explanation:
+            'Step 1: The caterpillar leaves leaf veins and tough parts uneaten. Energy in those scraps is undigested and never enters the caterpillar.',
+        },
+        {
+          explanation:
+            'Step 2: The caterpillar uses some of the energy it does absorb for its own life: moving, growing, breathing. A lot of this energy leaves as heat through respiration.',
+        },
+        {
+          explanation:
+            'Step 3: Some of the absorbed energy is lost as waste (droppings) before the caterpillar is eaten by the blue tit.',
+        },
+        {
+          explanation:
+            'Step 4: Only the energy still stored in the caterpillar\'s body when the blue tit catches it can be passed on. That is much less than the total energy in the original leaf.',
+        },
+        {
+          explanation:
+            'Take-away: at every step, three losses (undigested parts, heat from respiration, movement and waste) reduce how much energy makes it to the next link. Stack the losses across many steps and the chain runs out.',
+        },
+      ],
+    },
+    {
+      id: 'efl-worked-2',
+      title: 'Reading a pyramid of numbers (NOT biomass)',
+      steps: [
+        {
+          explanation:
+            'A Sevenoaks oak chain shows: 1 oak tree, 5000 caterpillars, 50 blue tits, 1 sparrowhawk. Build a pyramid of NUMBERS.',
+        },
+        {
+          explanation:
+            'Step 1: Order the levels with the producer at the bottom and the top predator at the top.',
+        },
+        // Missing step (filled in by the worked example)
+        {
+          explanation:
+            'Step 2: Make each bar\'s width match the COUNT at that level (not the size of the organism). The 5000-caterpillar bar is the widest; the 1-tree bar and 1-hawk bar are the narrowest.',
+        },
+        {
+          explanation:
+            'Step 3: Notice the shape. The producer level has only 1 organism, so the bottom bar is THIN. This is the famous "inverted" look that pyramids of numbers can take when one big plant feeds many small herbivores.',
+        },
+        {
+          explanation:
+            'Step 4: Stop here. Year 7 does not weigh the organisms. We do not draw a pyramid of biomass; we do not apply the 10% rule. Numbers only.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'efl-q1',
+      type: 'multiple-choice',
+      stem: 'Where does the energy in a food chain first come from?',
+      tier: 'core',
+      options: [
+        'the soil that holds the producer',
+        'the top predator',
+        'sunlight, trapped by the producer in photosynthesis',
+        'the air the consumers breathe',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'Producers photosynthesise using light.',
+    },
+    {
+      id: 'efl-q2',
+      type: 'multiple-choice',
+      stem: 'In which direction does energy flow along a food chain?',
+      tier: 'core',
+      options: [
+        'from the eater to the food',
+        'in both directions, equally',
+        'from food to eater, in one direction only',
+        'in a circle',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'efl-mis-energy-flows-back',
+      hint: 'Read the chain arrows: food to eater. Energy follows.',
+    },
+    {
+      id: 'efl-q3',
+      type: 'multiple-choice',
+      stem: 'Which of these is NOT a way that energy is lost from one level of a food chain to the next?',
+      tier: 'core',
+      options: [
+        'heat from respiration',
+        'movement (a blue tit flying)',
+        'undigested parts (leaf veins left behind)',
+        'energy passed to the next level along the chain',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'efl-mis-no-energy-loss',
+      hint: 'The question asks what is NOT a loss. Three are losses; one is the transfer.',
+    },
+    {
+      id: 'efl-q4',
+      type: 'multiple-choice',
+      stem: 'Why do most food chains have only 4 or 5 links?',
+      tier: 'core',
+      options: [
+        'Because energy is lost at each step, so there is not enough left to support another level.',
+        'Because animals get bored eating after 5 levels.',
+        'Because writing a 6-link chain is too hard.',
+        'Because the Sun stops shining after 5 links.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'efl-mis-chain-length-no-limit',
+      hint: 'Each step keeps only a fraction of the energy below it.',
+    },
+    {
+      id: 'efl-q5',
+      type: 'multiple-choice',
+      stem: 'In a pyramid of numbers for the chain "1 oak tree, 5000 caterpillars, 50 blue tits, 1 sparrowhawk", which bar is the widest?',
+      tier: 'core',
+      options: [
+        'oak tree',
+        'sparrowhawk',
+        'blue tits',
+        'caterpillars',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'efl-mis-pyramid-bottom-largest',
+      hint: 'A pyramid of numbers shows COUNTS, not sizes. Which level has the most organisms?',
+    },
+    {
+      id: 'efl-q6',
+      type: 'numeric-entry',
+      stem: 'In the chain "1 oak tree, 5000 caterpillars, 50 blue tits, 1 sparrowhawk", how many blue tits are there?',
+      tier: 'core',
+      correctAnswer: 50,
+      xpValue: 10,
+      hint: 'Read the number at the blue tit level.',
+    },
+    {
+      id: 'efl-q7',
+      type: 'numeric-entry',
+      stem: 'Most food chains run out of energy after about how many links? Give a single number that is an accepted Y7 maximum.',
+      tier: 'core',
+      correctAnswer: 5,
+      xpValue: 10,
+      hint: 'Year 7 says "4 or 5 links". Choose the upper limit.',
+    },
+    {
+      id: 'efl-q8',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "energy from the sparrowhawk passes back down the chain when it produces droppings, so the chain recycles energy." Is this method sound?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'The method is sound. Droppings return energy to the lower levels of the chain.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound. Energy lost as droppings or heat does NOT return to lower levels of the chain. Some carbon and minerals can be recycled by decomposers, but the energy itself flows one way.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'efl-mis-energy-flows-back',
+    },
+    {
+      id: 'efl-q9',
+      type: 'multiple-choice',
+      stem: 'A Y7 pupil writes that "no energy is lost as a chain runs through caterpillar to blue tit." What is the most accurate correction?',
+      tier: 'challenge',
+      options: [
+        'Correct: caterpillars are very efficient.',
+        'No: most of the energy is lost as movement, heat from respiration, undigested parts, and waste before it reaches the blue tit.',
+        'No: energy is gained at each step.',
+        'Correct: the Sun keeps topping it up.',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'efl-mis-no-energy-loss',
+    },
+    {
+      id: 'efl-q10',
+      type: 'multiple-choice',
+      stem: 'In the oak-tree pyramid (1 tree, 5000 caterpillars, 50 blue tits, 1 sparrowhawk), why is the bottom bar (oak tree) NARROWER than the caterpillar bar above it?',
+      tier: 'challenge',
+      options: [
+        'because the oak is small',
+        'because there is only ONE oak tree, but many caterpillars feed on it; the bar shows the count, not the size of the organism',
+        'because pyramids of numbers always invert',
+        'because oaks are not producers',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'efl-mis-pyramid-bottom-largest',
+    },
+    {
+      id: 'efl-q11',
+      type: 'data-extraction',
+      stem: 'A pyramid of numbers for a Sevenoaks pond chain shows: 1 layer of pondweed, 200 water fleas, 30 sticklebacks, 1 heron. Which level has the smallest count?',
+      tier: 'confident',
+      dataSource:
+        'Sevenoaks pond pyramid: pondweed (1), water fleas (200), sticklebacks (30), heron (1). Counts at each level.',
+      correctAnswer: '1',
+      xpValue: 15,
+      hint: 'Two levels share the smallest count (the producer and the top predator); the answer is that count.',
+    },
+    {
+      id: 'efl-q12',
+      type: 'numeric-entry',
+      stem: 'In a Kentish meadow chain "grass, rabbits, foxes" the count is 100,000 grass plants, 200 rabbits, 5 foxes. How many rabbits per fox does the chain support, on average? (Round to the nearest whole number.)',
+      tier: 'confident',
+      correctAnswer: 40,
+      xpValue: 15,
+      hint: 'Divide 200 by 5.',
+    },
+    {
+      id: 'efl-q13',
+      type: 'spot-misconception',
+      stem: 'A pupil writes that "every level of a food chain keeps about 10% of the energy from the level below, so we can calculate energy at each level using 10% steps." Is this method sound for Year 7?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'The method is sound. The 10% rule is the standard Y7 calculation.',
+          isMisconception: true,
+        },
+        {
+          text: 'The method is not sound for Year 7. The 10% rule is GCSE work; at Y7 we describe energy loss qualitatively (movement, heat, waste, undigested parts) without putting a percentage on it.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 20,
+      misconceptionId: 'efl-mis-ten-percent-rule',
+    },
+    {
+      id: 'efl-q14',
+      type: 'drag-order',
+      stem: 'Place these stages in the order energy moves through a Kentish hedgerow chain.',
+      tier: 'confident',
+      items: [
+        'A blue tit eats the caterpillar; some energy passes on, much is lost.',
+        'Sunlight reaches the oak leaf.',
+        'A caterpillar eats the leaf; some energy passes on, much is lost.',
+        'The oak leaf traps light energy in glucose by photosynthesis.',
+      ],
+      correctOrder: [1, 3, 2, 0],
+      xpValue: 20,
+    },
+    {
+      id: 'efl-q15',
+      type: 'drag-drop-builder',
+      stem: 'Build a list of all the ways energy is LOST between two levels of a food chain. Drag each loss into the answer; ignore the distractors.',
+      tier: 'confident',
+      parts: [
+        'heat from respiration',
+        'undigested parts',
+        'movement',
+        'waste (droppings)',
+        'energy passed to the next consumer',
+        'sunlight added at each level',
+      ],
+      correctArrangement: [
+        'heat from respiration',
+        'undigested parts',
+        'movement',
+        'waste (droppings)',
+      ],
+      xpValue: 20,
+      misconceptionId: 'efl-mis-no-energy-loss',
+    },
+    {
+      id: 'efl-q16',
+      type: 'numeric-entry',
+      stem: 'In a Sevenoaks oak pyramid (1 oak tree, 5000 caterpillars, 50 blue tits, 1 sparrowhawk), how many caterpillars on average must each blue tit\'s share work out to be? (Divide and round to the nearest whole number.)',
+      tier: 'confident',
+      correctAnswer: 100,
+      xpValue: 15,
+      hint: 'Divide 5000 by 50.',
+    },
+    {
+      id: 'efl-q17',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of why a Kentish hedgerow chain ends after 4 or 5 links.',
+      tier: 'confident',
+      steps: [
+        'Energy enters the chain at the producer through photosynthesis.',
+        'At each step, only some of the energy in the food is passed to the next eater.',
+        null,
+        'After 4 or 5 steps, there is too little energy left to support another animal, so the chain ends.',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'Most of the energy at each step is lost as heat from respiration, movement, waste, and undigested parts.',
+      xpValue: 20,
+    },
+    {
+      id: 'efl-q18',
+      type: 'multiple-choice',
+      stem: 'Why does Year 7 use a pyramid of NUMBERS rather than a pyramid of biomass?',
+      tier: 'confident',
+      options: [
+        'Pyramids of biomass do not exist.',
+        'Numbers and biomass always give exactly the same shape.',
+        'Pyramids of numbers are always upside down.',
+        'Counting is simpler than weighing every organism, and it builds the right qualitative picture; biomass calculations belong to GCSE.',
+      ],
+      correctIndex: 3,
+      xpValue: 15,
+      misconceptionId: 'efl-mis-biomass-at-y7',
+    },
+    {
+      id: 'efl-q19',
+      type: 'free-text',
+      stem: 'Explain in two sentences why a food chain rarely has more than 4 or 5 links. Use the words "energy" and "lost".',
+      tier: 'challenge',
+      sampleAnswer:
+        'Each step in the chain keeps only some of the energy from the level below, because energy is lost as heat from respiration, movement, waste, and undigested parts. After 4 or 5 levels, so much energy has been lost that there is not enough left to support another animal.',
+      keywords: ['energy', 'lost', 'heat', 'links', 'each'],
+      xpValue: 25,
+      misconceptionId: 'efl-mis-chain-length-no-limit',
+    },
+    {
+      id: 'efl-q20',
+      type: 'multiple-choice',
+      stem: 'A Y7 pupil draws a pyramid of numbers for "1 cabbage, 200 caterpillars, 5 robins" and shades the bottom bar (cabbage) widest because "the producer is always the biggest level". Which is the strongest correction?',
+      tier: 'challenge',
+      options: [
+        'The pupil is right; the producer bar is always widest.',
+        'The pupil is right because cabbages are heavy.',
+        'The pyramid bars show counts, not size or position. With 1 cabbage and 200 caterpillars, the caterpillar bar is wider than the cabbage bar.',
+        'Pyramids of numbers do not exist.',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'efl-mis-pyramid-bottom-largest',
+      hint: 'Pyramid of NUMBERS: width matches count, not size.',
+    },
+    {
+      id: 'efl-q21',
+      type: 'multiple-choice',
+      stem: 'A Y7 pupil writes that "after a fox eats a rabbit, energy in the fox\'s droppings cycles back up to the grass and feeds the next rabbit". Which is the strongest correction?',
+      tier: 'challenge',
+      options: [
+        'Decomposers DO release some carbon and minerals from droppings back into the soil for plants to reuse, but the ENERGY itself is lost as heat as decomposers work and cannot be reused by the chain.',
+        'The pupil is right; ecosystems perfectly recycle energy.',
+        'The pupil is right but only for very small animals.',
+        'Energy is recycled, but only when the Sun is out.',
+      ],
+      correctIndex: 0,
+      xpValue: 25,
+      misconceptionId: 'efl-mis-decomposers-vanish',
+    },
+    {
+      id: 'efl-q22',
+      type: 'free-text',
+      stem: 'A Y7 GCSE-stretch question asks how much of an oak tree\'s energy reaches the sparrowhawk at the top of a 4-link chain. Explain in two sentences why a Y7 answer should describe energy loss qualitatively rather than calculating a percentage.',
+      tier: 'challenge',
+      sampleAnswer:
+        'At Year 7 we describe energy lost as heat, movement, waste, and undigested parts at each step, without putting a percentage on the loss. Numerical efficiency arithmetic (such as the 10% rule) is GCSE work, and using it now would hide the real reasons energy is lost rather than name them.',
+      keywords: ['heat', 'movement', 'waste', 'qualitative', 'GCSE'],
+      xpValue: 25,
+      misconceptionId: 'efl-mis-ten-percent-rule',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Biology Foundation tier (8461/2F) Report on the Examination, June 2018, Question 6 (food chains and energy): "Several candidates wrote that energy passes back down the food chain through droppings or decomposition, missing the one-way flow of energy." https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2018/june/AQA-84612F-WRE-2018.PDF
+    {
+      id: 'efl-mis-energy-flows-back',
+      description:
+        'Energy flows in both directions along a food chain because droppings and dead bodies return to lower levels.',
+      triggerAnswer: 'energy-flows-back',
+      correction:
+        'Actually, energy flows ONE way: food to eater. Some carbon and minerals can be recycled by decomposers, but the energy itself is lost as heat and cannot be reused by the chain.',
+      reExplanation:
+        'Picture energy as one-time fuel. The caterpillar burns most of it for movement and warmth; that heat warms the air and never comes back. Decomposers break droppings down for nutrients, but they too release the remaining energy as heat. The chain runs forward only.',
+    },
+    // Source: Edexcel GCSE Biology (1BI0) Topic 9 (SB9) "Ecosystems and material cycles" examiner report 2019, comments on Question 5 (energy): "Many candidates assumed all energy in the producer is transferred to the consumer, ignoring losses to respiration, movement, and undigested matter." https://qualifications.pearson.com/en/qualifications/edexcel-gcses/sciences-2016.html
+    {
+      id: 'efl-mis-no-energy-loss',
+      description:
+        'All the energy in the producer is passed on to the next level of the chain.',
+      triggerAnswer: 'no-energy-loss',
+      correction:
+        'In fact, most of the energy is lost at each step. Heat from respiration, movement, waste, and undigested parts all carry energy away before it reaches the next level.',
+      reExplanation:
+        'Imagine a leaky bucket passed up a chain. Each animal pours its share but loses most along the way. The bucket reaching the top holds far less than the leaf started with. That is why chains run out of energy after a few links.',
+    },
+    // Source: CGP KS3 Science Complete Study and Practice (Higher), 2014 edition, p.200 Common mistake: "Pupils sometimes apply the 10% rule numerically at KS3, calculating energy passed up at exactly 10% per level, when KS3 expects qualitative description only." https://www.cgpbooks.co.uk/secondary-books/ks3/science/sht43-ks3-science-complete-study-practice
+    {
+      id: 'efl-mis-ten-percent-rule',
+      description:
+        'Each level of a food chain keeps exactly 10% of the energy from the level below, so we can calculate energy at every step.',
+      triggerAnswer: 'ten-percent-rule',
+      correction:
+        'In fact, the 10% figure is a GCSE rule of thumb. Year 7 describes energy loss qualitatively (heat, movement, waste, undigested parts) without putting a percentage on it.',
+      reExplanation:
+        'At Y7 the right answer to "how much energy is lost?" is in words: "most of it, as heat, movement, and waste". Save the numbers for Y10 / 11 GCSE work, where the 10% rule has its proper place. At KS3, percentages just hide the real reasons.',
+    },
+    // Source: AQA GCSE Biology specification 8461, section 4.7.2.2 Pyramids of biomass: pyramids of numbers vs pyramids of biomass are introduced together at GCSE; KS3 stops at numbers. Pupils sometimes assume the producer level always has the largest count, missing one-tree-many-caterpillars chains. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification
+    {
+      id: 'efl-mis-pyramid-bottom-largest',
+      description:
+        'In a pyramid of numbers, the bottom bar (producer) is always the widest.',
+      triggerAnswer: 'pyramid-bottom-widest',
+      correction:
+        'Actually, in a pyramid of NUMBERS the bar widths show counts, not sizes. One huge oak tree feeds many small caterpillars, so the producer bar can be narrower than the primary consumer bar above it.',
+      reExplanation:
+        'Test it on the oak chain: 1 oak, 5000 caterpillars. The oak count is 1 and the caterpillar count is 5000, so the caterpillar bar is much wider. The pyramid of numbers can look "upside down" at the bottom. A pyramid of BIOMASS (where mass matters, GCSE work) usually does have the widest bar at the producer; that is a different chart.',
+    },
+    // Source: BBC Bitesize KS3 Biology, "Energy in food chains" topic page (Ecosystems sub-section): "Some pupils believe food chains can be any length, missing that energy loss at each step limits chains to about four or five links." https://www.bbc.co.uk/bitesize/topics/zxhhvcw
+    {
+      id: 'efl-mis-chain-length-no-limit',
+      description:
+        'Food chains can be any length, including 8 or 10 links.',
+      triggerAnswer: 'no-chain-limit',
+      correction:
+        'In fact, energy loss at each step limits real chains to about 4 or 5 links. After that, there is rarely enough energy left to support another animal.',
+      reExplanation:
+        'Stack the losses: at each step, most of the energy in the food is lost (heat, movement, waste, undigested parts). After 4 or 5 stacks the energy left is tiny, far too little for a sixth predator to live on. Real chains end where the energy runs out.',
+    },
+    // Source: AQA GCSE Biology specification 8461, sections 4.7.2.1 and 4.7.2.2: pyramids of biomass are explicitly placed at GCSE Foundation tier, after pyramids of numbers. Pupils who hear "biomass" at Y7 often try to draw it before they have the data. https://www.aqa.org.uk/subjects/biology/gcse/biology-8461/specification
+    {
+      id: 'efl-mis-biomass-at-y7',
+      description:
+        'Pyramids of biomass and the 10% rule are Year 7 work.',
+      triggerAnswer: 'biomass-at-y7',
+      correction:
+        'Actually, pyramids of biomass and the 10% rule are GCSE work. At Year 7 we draw pyramids of NUMBERS only and describe energy loss qualitatively.',
+      reExplanation:
+        'Year 7 has two tools: count organisms (pyramid of numbers) and describe losses in words. Year 10 / 11 picks up biomass weighing and the 10% rule. Trying both at once at Y7 mixes ideas before the foundations are firm.',
+    },
+    // Source: CGP KS3 Science Complete Study and Practice (Higher), 2014 edition, p.201 Common mistake: "Students sometimes leave decomposers out of energy descriptions entirely, treating waste and dead bodies as if their energy simply vanishes." https://www.cgpbooks.co.uk/secondary-books/ks3/science/sht43-ks3-science-complete-study-practice
+    {
+      id: 'efl-mis-decomposers-vanish',
+      description:
+        'Energy in droppings and dead bodies just vanishes from the ecosystem.',
+      triggerAnswer: 'energy-vanishes',
+      correction:
+        'In fact, decomposers (bacteria and fungi) break down droppings and dead bodies, releasing the remaining energy as heat. The energy still leaves the chain; it does not return to the producers as usable energy.',
+      reExplanation:
+        'Energy never disappears, but it does change to forms the chain cannot reuse. Decomposers warm up the compost heap as they work; that heat is the lost energy leaving the system. Some of the carbon and minerals are recycled to producers; the energy is not.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+// ---------------------------------------------------------------------------
 // Zone wiring
 // ---------------------------------------------------------------------------
 
-export const ecosystemsZoneNodes: SkillNode[] = [foodChains, foodWebs]
+export const ecosystemsZoneNodes: SkillNode[] = [foodChains, foodWebs, energyFlow]
 
 export const ecosystemsZone: Zone = {
   id: 'biology-ecosystems',
   name: 'Ecosystems',
   realm: 'vitalia',
-  nodeIds: [foodChains.id, foodWebs.id],
+  nodeIds: [foodChains.id, foodWebs.id, energyFlow.id],
 }

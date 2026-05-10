@@ -49,6 +49,7 @@ export {
 export {
   foodChains,
   foodWebs,
+  energyFlow,
   ecosystemsZone,
   ecosystemsZoneNodes,
 } from './ecosystems'
