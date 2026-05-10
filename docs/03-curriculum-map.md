@@ -329,10 +329,10 @@
 - **OCR**: C2.1d Recover a solvent by simple distillation; C2.1e Separate miscible liquids by fractional distillation (J248 Gateway Chemistry)
 
 #### Chromatography (Confident, `chemistry-separating-chromatography`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Pure and impure substances)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.
+- **AQA**: 4.10.1.4 Chromatography (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.44 Paper chromatography (GCSE Chemistry 1CH0)
+- **OCR**: C2.1f Separate substances by paper chromatography (GCSE Chemistry A J248 Gateway)
 
 ### Zone: Atoms, Elements, Compounds (`chemistry-atoms-elements-compounds`)
 
@@ -379,16 +379,16 @@
 ### Zone: pH (`chemistry-ph`)
 
 #### The pH Scale (Core, `chemistry-ph-scale`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: pH)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The pH scale for measuring acidity / alkalinity; and indicators; reactions of acids with alkalis to produce a salt plus water.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.2 Strong and weak acids (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 Indicators and the pH scale; 3.7 Acidity, alkalinity and the pH scale (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b The pH scale; indicators (GCSE Chemistry A J248 Gateway)
 
 #### Strong and Weak (Confident, `chemistry-ph-strong-weak`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions: pH)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The pH scale for measuring acidity / alkalinity; and indicators; reactions of acids with alkalis to produce a salt plus water.
+- **AQA**: 4.4.2.2 Strong and weak acids; concentration vs strength (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.10 Strong and weak acids; the difference between concentration and strength (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Strong and weak acids and alkalis (GCSE Chemistry A J248 Gateway)
 
 ### Zone: Simple Reactions (`chemistry-simple-reactions`)
 

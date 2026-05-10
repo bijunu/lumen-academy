@@ -1273,6 +1273,602 @@ export const distillation: SkillNode = {
   },
 }
 
+export const chromatography: SkillNode = {
+  id: 'chemistry-separating-chromatography',
+  title: 'Chromatography',
+  description:
+    'Use paper chromatography to separate the coloured dyes inside an ink, a food colouring, or a leaf pigment. Spot the baseline, watch the solvent front travel up the paper, and explain why each colour stops at a different height because of how strongly it sticks to the paper or to the solvent. Qualitative only at this stage; no Rf calculations.',
+  subject: 'chemistry',
+  realm: 'elementia',
+  zoneId: 'chemistry-separating-mixtures',
+  zoneName: 'Separating Mixtures',
+  tier: 'confident',
+  prerequisites: ['chemistry-separating-filtration-evaporation'],
+  curriculum: {
+    ks3Objective:
+      'The concept of a pure substance; mixtures, including dissolving; simple techniques for separating mixtures: filtration, evaporation, distillation and chromatography.',
+    awardingBodies: {
+      aqa: '4.10.1.4 Chromatography (8462)',
+      edexcel: 'Topic 1.44 Paper chromatography (1CH0)',
+      ocr: 'C2.1f Separate substances by paper chromatography (J248 Gateway Chemistry)',
+    },
+  },
+  scenes: [
+    {
+      id: 'ch-scene-setup',
+      title: 'Paper Chromatography: How the Apparatus Fits Together',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker on the chromatography set-up to name the part and read what it does.',
+      data: {
+        viewBox: '0 0 320 240',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240"><rect x="0" y="0" width="320" height="240" fill="#FEF3C7"/><rect x="0" y="220" width="320" height="20" fill="#D6D3D1"/><g><path d="M 60 110 L 60 215 L 260 215 L 260 110 z" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="63" y="180" width="194" height="35" fill="#BFDBFE" opacity="0.6"/><text x="280" y="200" font-size="8" fill="#1E3A8A">solvent (water</text><text x="280" y="210" font-size="8" fill="#1E3A8A">or ethanol)</text></g><g><rect x="120" y="40" width="80" height="160" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8"/><line x1="125" y1="170" x2="195" y2="170" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><text x="100" y="174" text-anchor="end" font-size="7" fill="#475569">baseline</text><circle cx="140" cy="170" r="3" fill="#7C2D12"/><circle cx="160" cy="170" r="3" fill="#1E3A8A"/><circle cx="180" cy="170" r="3" fill="#14532D"/><line x1="125" y1="80" x2="195" y2="80" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><text x="100" y="84" text-anchor="end" font-size="7" fill="#475569">solvent front</text><circle cx="140" cy="105" r="3" fill="#FB923C" opacity="0.85"/><circle cx="160" cy="120" r="3" fill="#3B82F6" opacity="0.85"/><circle cx="180" cy="135" r="3" fill="#22C55E" opacity="0.85"/></g><g><line x1="100" y1="35" x2="220" y2="35" stroke="#475569" stroke-width="2"/><line x1="160" y1="35" x2="160" y2="40" stroke="#475569" stroke-width="0.8"/><text x="280" y="40" font-size="8" fill="#1E3A8A">pencil line</text><text x="280" y="50" font-size="8" fill="#1E3A8A">(supports paper)</text></g><text x="160" y="20" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">PAPER CHROMATOGRAPHY</text></svg>',
+        hotspots: [
+          {
+            id: 'ch-h-baseline',
+            x: 50,
+            y: 70,
+            label: 'Baseline',
+            description:
+              'A pencil line drawn near the bottom of the paper. The ink spots are placed on this line. Pencil is used (not pen) so the line itself does not dissolve and travel up.',
+          },
+          {
+            id: 'ch-h-spots',
+            x: 50,
+            y: 78,
+            label: 'Sample spots',
+            description:
+              'Tiny dots of the inks or colourings being tested, placed on the baseline. Each spot stays small so that the colours do not run into each other on the way up.',
+          },
+          {
+            id: 'ch-h-solvent',
+            x: 50,
+            y: 90,
+            label: 'Solvent',
+            description:
+              'A shallow layer of liquid (water for water-based dyes, or ethanol for some food colourings) at the bottom of the beaker. The liquid level is below the baseline so the spots are not washed off.',
+          },
+          {
+            id: 'ch-h-front',
+            x: 50,
+            y: 35,
+            label: 'Solvent front',
+            description:
+              'The wet edge of the solvent as it travels up the paper. Mark this line in pencil as soon as the paper is taken out, before the solvent dries.',
+          },
+          {
+            id: 'ch-h-suspend',
+            x: 75,
+            y: 18,
+            label: 'Pencil line / lid',
+            description:
+              'A pencil rod or beaker lid holds the paper so that it dips into the solvent without bending or touching the side of the beaker.',
+          },
+          {
+            id: 'ch-h-spread',
+            x: 50,
+            y: 50,
+            label: 'Separated colours',
+            description:
+              'After 10 to 20 minutes, each dye in the original spot has travelled a different distance up the paper. The colours are now spread out, showing that the original ink was a mixture.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'ch-scene-why',
+      title: 'Why Each Colour Stops at a Different Height',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see why some dyes climb high up the paper and others stay low down.',
+      data: {
+        viewBox: '0 0 320 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220"><rect x="0" y="0" width="320" height="220" fill="#FEF3C7"/><g><rect x="60" y="40" width="60" height="160" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8"/><line x1="60" y1="180" x2="120" y2="180" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><circle cx="90" cy="180" r="4" fill="#1E3A8A"/><line x1="60" y1="60" x2="120" y2="60" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><circle cx="90" cy="80" r="3.5" fill="#FB923C"/><circle cx="90" cy="120" r="3.5" fill="#3B82F6"/><circle cx="90" cy="160" r="3.5" fill="#7C2D12"/><text x="90" y="32" text-anchor="middle" font-size="8" fill="#1E3A8A">solvent front</text><text x="90" y="195" text-anchor="middle" font-size="8" fill="#1E3A8A">baseline</text></g><g><rect x="170" y="40" width="135" height="160" rx="4" fill="#FFFFFF" stroke="#475569" stroke-width="0.8"/><text x="237" y="58" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">High climbers</text><text x="237" y="72" text-anchor="middle" font-size="8" fill="#1E3A8A">dissolve well in the solvent,</text><text x="237" y="83" text-anchor="middle" font-size="8" fill="#1E3A8A">stick weakly to the paper</text><text x="237" y="105" text-anchor="middle" font-size="9" font-weight="600" fill="#7C2D12">Low stayers</text><text x="237" y="119" text-anchor="middle" font-size="8" fill="#7C2D12">dissolve poorly in the solvent,</text><text x="237" y="130" text-anchor="middle" font-size="8" fill="#7C2D12">stick strongly to the paper</text><text x="237" y="155" text-anchor="middle" font-size="8" fill="#1E3A8A">Two forces tug on each dye:</text><text x="237" y="167" text-anchor="middle" font-size="8" fill="#1E3A8A">paper pulls down,</text><text x="237" y="178" text-anchor="middle" font-size="8" fill="#1E3A8A">solvent pulls up.</text></g></svg>',
+        hotspots: [
+          {
+            id: 'ch-h-high',
+            x: 28,
+            y: 38,
+            label: 'High climber: orange dye',
+            description:
+              'The orange dye dissolves easily in the solvent and barely sticks to the paper, so it is carried high up the paper. The solvent has pulled it nearly to the front.',
+          },
+          {
+            id: 'ch-h-mid',
+            x: 28,
+            y: 55,
+            label: 'Middle dye: blue',
+            description:
+              'The blue dye dissolves in the solvent fairly well, but it also sticks a little to the paper. It ends up halfway between the baseline and the solvent front.',
+          },
+          {
+            id: 'ch-h-low',
+            x: 28,
+            y: 75,
+            label: 'Low stayer: brown dye',
+            description:
+              'The brown dye dissolves only a little in the solvent and sticks strongly to the paper, so it has barely moved up from the baseline.',
+          },
+          {
+            id: 'ch-h-rule',
+            x: 75,
+            y: 50,
+            label: 'The tug of war',
+            description:
+              'Two pulls compete for every dye: how well it dissolves in the solvent, and how strongly it grips the paper. Stronger solvent pull wins, the dye climbs high. Stronger paper grip wins, the dye stays low.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'ch-scene-uses',
+      title: 'Three UK Uses of Chromatography',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see how chromatography is used in real UK forensics, food checking, and biology.',
+      data: {
+        viewBox: '0 0 320 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220"><rect x="0" y="0" width="320" height="220" fill="#FEF3C7"/><g><rect x="15" y="20" width="95" height="180" rx="4" fill="#E0E7FF" stroke="#1E3A8A" stroke-width="1"/><text x="62" y="40" text-anchor="middle" font-size="9" font-weight="600" fill="#1E3A8A">FORENSIC INK</text><rect x="30" y="55" width="65" height="120" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.6"/><line x1="30" y1="160" x2="95" y2="160" stroke="#475569" stroke-width="0.4" stroke-dasharray="2 1"/><circle cx="50" cy="160" r="2.5" fill="#1E3A8A"/><circle cx="75" cy="160" r="2.5" fill="#1E3A8A"/><circle cx="50" cy="100" r="2.5" fill="#3B82F6"/><circle cx="50" cy="120" r="2.5" fill="#7C2D12"/><circle cx="75" cy="105" r="2.5" fill="#3B82F6"/><circle cx="75" cy="80" r="2.5" fill="#FB923C"/><text x="62" y="190" text-anchor="middle" font-size="7" fill="#1E3A8A">match suspect ink</text></g><g><rect x="115" y="20" width="95" height="180" rx="4" fill="#FECACA" stroke="#7C2D12" stroke-width="1"/><text x="162" y="40" text-anchor="middle" font-size="9" font-weight="600" fill="#7C2D12">FOOD COLOURS</text><rect x="130" y="55" width="65" height="120" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.6"/><line x1="130" y1="160" x2="195" y2="160" stroke="#475569" stroke-width="0.4" stroke-dasharray="2 1"/><circle cx="162" cy="160" r="3" fill="#DC2626"/><circle cx="162" cy="120" r="2.5" fill="#FB923C"/><circle cx="162" cy="100" r="2.5" fill="#DC2626"/><circle cx="162" cy="80" r="2.5" fill="#A78BFA"/><text x="162" y="190" text-anchor="middle" font-size="7" fill="#7C2D12">red sweet shell</text></g><g><rect x="215" y="20" width="95" height="180" rx="4" fill="#BBF7D0" stroke="#14532D" stroke-width="1"/><text x="262" y="40" text-anchor="middle" font-size="9" font-weight="600" fill="#14532D">LEAF PIGMENTS</text><rect x="230" y="55" width="65" height="120" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.6"/><line x1="230" y1="160" x2="295" y2="160" stroke="#475569" stroke-width="0.4" stroke-dasharray="2 1"/><circle cx="262" cy="160" r="3" fill="#14532D"/><circle cx="262" cy="105" r="2.5" fill="#22C55E"/><circle cx="262" cy="80" r="2.5" fill="#FACC15"/><text x="262" y="190" text-anchor="middle" font-size="7" fill="#14532D">green leaf extract</text></g></svg>',
+        hotspots: [
+          {
+            id: 'ch-h-forensic',
+            x: 20,
+            y: 50,
+            label: 'Forensic ink check',
+            description:
+              'Police compare ink on a forged note with inks from a list of suspect pens. Two inks that match a suspect pen produce the same pattern of spots. Two that do not match show different spots at different heights.',
+          },
+          {
+            id: 'ch-h-sweets',
+            x: 51,
+            y: 50,
+            label: 'Food colouring check',
+            description:
+              'Food labs run the red shell colour from a sweet up a paper. A label that says "red colouring" can split into two or three different food dyes, each of which has to appear on the ingredients list.',
+          },
+          {
+            id: 'ch-h-leaves',
+            x: 82,
+            y: 50,
+            label: 'Leaf pigment separation',
+            description:
+              'A green leaf extract spotted on paper splits into the green chlorophyll and a yellow xanthophyll behind it. The leaf was never just one colour; the green hid a yellow pigment all along.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'ch-worked-1',
+      title: 'Setting up a paper chromatogram of black ink',
+      steps: [
+        {
+          explanation:
+            'Question: A pupil wants to find out how many dyes make up the black ink in their pen. Describe the steps to set up a chromatogram and what to look for.',
+        },
+        {
+          explanation:
+            'Step 1: take a strip of filter paper. Draw a faint baseline in pencil about 2 cm from the bottom edge. Pencil is used because pencil graphite does not dissolve in the solvent, so the line itself will not move up the paper.',
+        },
+        {
+          explanation:
+            'Step 2: place a small spot of the black ink on the baseline. Keep the spot small so the colours do not run into each other.',
+        },
+        {
+          explanation:
+            'Step 3: pour about 1 cm of water into a beaker. Hang the paper from a pencil resting across the beaker so the bottom of the paper dips in but the water level stays below the baseline.',
+        },
+        {
+          explanation:
+            'Step 4: leave the apparatus alone for 10 to 20 minutes. The water travels up the paper and carries the dyes with it. Each dye stops at a different height.',
+          maths: 'water front rises; dyes ride at different heights',
+        },
+        {
+          explanation:
+            'Step 5: take the paper out before the water reaches the top. Mark the solvent front in pencil. The pupil counts the spots above the baseline. If they see three coloured spots, the original black ink was a mixture of three dyes.',
+        },
+      ],
+    },
+    {
+      id: 'ch-worked-2',
+      title: 'Forensic ink match with a missing step',
+      steps: [
+        {
+          explanation:
+            'Question: Police find a forged shopping receipt and want to know which of three suspect pens (A, B, C) wrote it. Describe what they would do.',
+        },
+        {
+          explanation:
+            'Step 1: cut a strip of paper. Draw a baseline in pencil and place four spots on it: one from the receipt, and one from each of the suspect pens.',
+        },
+        {
+          explanation:
+            'Step 2: stand the paper in a shallow layer of solvent (water or ethanol depending on the ink type) and let the solvent travel up.',
+          maths: 'solvent rises past the baseline and on up the paper',
+        },
+        {
+          explanation:
+            'Step 3: wait while the solvent rises up the paper. Each ink spot stretches up the strip and splits into a pattern of coloured spots above the baseline. That pattern is unique to each pen.',
+        },
+        {
+          explanation:
+            'Step 4: lift the paper out before the solvent reaches the top, mark the front, and read off which pen pattern matches the receipt. The matching pen is the one used to forge the receipt.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    // 9 multiple-choice (mix of core/confident/challenge)
+    {
+      id: 'ch-q1',
+      type: 'multiple-choice',
+      stem: 'Which separating method would you use to find out how many different dyes are mixed together in a black felt-tip pen ink?',
+      tier: 'core',
+      options: ['Filtration', 'Distillation', 'Chromatography', 'Evaporation'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'ch-mis-no-mixtures-needed',
+    },
+    {
+      id: 'ch-q2',
+      type: 'multiple-choice',
+      stem: 'Why must the baseline on a chromatography paper be drawn in pencil and not in pen?',
+      tier: 'core',
+      options: [
+        'Pencil is easier to rub out if the experiment goes wrong',
+        'Pencil graphite does not dissolve in the solvent, so the line stays put while the dyes move',
+        'Pencil is sharper than pen and gives a thinner line',
+        'Pencil shows up better against the wet paper',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'ch-mis-pen-baseline',
+    },
+    {
+      id: 'ch-q3',
+      type: 'multiple-choice',
+      stem: 'In a paper chromatogram, the level of solvent in the beaker should be:',
+      tier: 'core',
+      options: [
+        'Above the baseline so that the dye spots dissolve straight into the bulk solvent',
+        'Exactly at the baseline so the dyes start to move at once',
+        'Right at the top of the paper so the spots can travel further',
+        'Below the baseline so that the spots are not washed straight off the paper',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'ch-mis-solvent-too-high',
+    },
+    {
+      id: 'ch-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil runs a chromatogram of green leaf extract. After 15 minutes the paper shows a green spot lower down and a yellow spot higher up. What does this tell you about the leaf extract?',
+      tier: 'confident',
+      options: [
+        'The leaf was a single pure substance and the yellow is a mistake',
+        'The leaf extract was a mixture; it contains green chlorophyll and a yellow pigment',
+        'The yellow spot has nothing to do with the leaf and came from the paper',
+        'The leaf had run out of green colour and turned yellow during the test',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+    },
+    {
+      id: 'ch-q5',
+      type: 'multiple-choice',
+      stem: 'A red dye climbs nearly to the top of the paper. A blue dye stops only a quarter of the way up. Which statement best explains the difference?',
+      tier: 'core',
+      options: [
+        'The red dye is lighter, so it floats up further than the heavier blue dye',
+        'The blue dye dissolves more strongly in the solvent than the red dye',
+        'The red dye dissolves more strongly in the solvent (or sticks less to the paper) than the blue dye',
+        'The blue dye is older than the red dye, so it has run out of energy',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'ch-mis-by-mass',
+    },
+    {
+      id: 'ch-q6',
+      type: 'multiple-choice',
+      stem: 'Police compare an ink stain from a forged note against four suspect pens (A, B, C, D). After running the chromatogram, the note ink shows the same pattern of spots, at the same heights, as suspect pen C. What can the police conclude?',
+      tier: 'confident',
+      options: [
+        'Suspect C’s pen and the note ink contain the same set of dyes; the note was likely written with this pen',
+        'Suspect C definitely did not write the note, because the patterns match',
+        'Suspect C’s pen ink is pure and the note ink is a mixture, so they cannot be the same',
+        'The match means nothing because all inks behave the same way on paper',
+      ],
+      correctIndex: 0,
+      xpValue: 15,
+    },
+    {
+      id: 'ch-q7',
+      type: 'multiple-choice',
+      stem: 'Which of these original substances would NOT be separated by paper chromatography?',
+      tier: 'confident',
+      options: [
+        'A black felt-tip ink made of three coloured dyes',
+        'A red food colouring made of two coloured dyes',
+        'A pure single-colour dye that has not been mixed with any other dye',
+        'A green plant pigment extract holding green and yellow pigments',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'ch-mis-pure-shows-spots',
+    },
+    {
+      id: 'ch-q8',
+      type: 'multiple-choice',
+      stem: 'A pupil leaves the chromatogram in the beaker so long that the solvent reaches the top of the paper. What is the main problem with this?',
+      tier: 'challenge',
+      options: [
+        'The dyes will turn back into one colour at the top',
+        'There is no problem; the longer the better',
+        'You cannot mark the solvent front any more, so you cannot tell where it stopped, and the highest dye may have run off the paper',
+        'The paper will dissolve into the solvent',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+    },
+    {
+      id: 'ch-q9',
+      type: 'multiple-choice',
+      stem: 'A Year 7 pupil from York runs Smarties red shell colour up filter paper using water as the solvent. They see two clear spots: one orange-red and one pink-red. What does this tell them about the labelled "red shell colour"?',
+      tier: 'challenge',
+      options: [
+        'The shell colour is a mixture of two food dyes; the label "red" is the colour you see, not the number of dyes used',
+        'The label is wrong; only one dye is present',
+        'Both spots are the same dye that has split in half by accident',
+        'Water has reacted with the sugar in the shell to make new colours',
+      ],
+      correctIndex: 0,
+      xpValue: 25,
+    },
+    // 4 numeric-entry
+    {
+      id: 'ch-q10',
+      type: 'numeric-entry',
+      stem: 'A pupil runs a chromatogram of black ink. After 15 minutes they count three coloured spots above the baseline. How many different dyes were mixed together to make the original black ink?',
+      tier: 'core',
+      correctAnswer: 3,
+      xpValue: 10,
+      hint: 'Each spot above the baseline came from a different dye.',
+    },
+    {
+      id: 'ch-q11',
+      type: 'numeric-entry',
+      stem: 'A green leaf extract is run on chromatography paper. The chromatogram shows one green spot and one yellow spot. How many different pigments are in the extract?',
+      tier: 'core',
+      correctAnswer: 2,
+      xpValue: 10,
+    },
+    {
+      id: 'ch-q12',
+      type: 'numeric-entry',
+      stem: 'A pupil starts the chromatogram with 0.30 g of mixed dye on the baseline. After the run is complete, they cut out and weigh the spots: 0.12 g of orange dye, 0.10 g of blue dye, and 0.05 g of brown dye. By how many grams is the total mass on the paper less than the starting 0.30 g?',
+      tier: 'challenge',
+      correctAnswer: 0.03,
+      tolerance: 0.005,
+      unit: 'g',
+      xpValue: 25,
+      hint: 'Add up the dye masses; subtract from 0.30 g. The missing mass has either soaked into the paper or spread along it with the solvent front.',
+    },
+    {
+      id: 'ch-q13',
+      type: 'numeric-entry',
+      stem: 'A police forensic lab runs four ink samples (note ink + suspect pens A, B, C). Suspect A makes 3 spots, suspect B makes 2, suspect C makes 4, and the note ink makes 4 spots in the same pattern as one of the pens. How many spots in total appear on the paper across all four samples?',
+      tier: 'confident',
+      correctAnswer: 13,
+      xpValue: 15,
+    },
+    // 1 drag-order
+    {
+      id: 'ch-q14',
+      type: 'drag-order',
+      stem: 'Place these steps of a paper chromatogram in the correct order, from start to finish.',
+      tier: 'core',
+      items: [
+        'Stand the paper in a shallow layer of solvent so the bottom dips in but the solvent stays below the baseline',
+        'Wait 10 to 20 minutes while the solvent travels up the paper, carrying the dyes',
+        'Draw a baseline in pencil near the bottom of the paper and place small spots of each ink on it',
+        'Lift the paper out, mark the solvent front in pencil, and let the paper dry',
+      ],
+      correctOrder: [2, 0, 1, 3],
+      xpValue: 15,
+    },
+    // 2 spot-misconception
+    {
+      id: 'ch-q15',
+      type: 'spot-misconception',
+      stem: 'Riya says: "I am going to mark the baseline on my chromatography paper in red biro so I can see it more clearly while I work." Is her plan a good one?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'Riya is right. A bright pen makes the baseline easier to see and the rest of the experiment will work the same.',
+          isMisconception: true,
+        },
+        {
+          text: 'Riya is wrong. Pen ink is itself a mixture of dyes that will dissolve and travel up the paper, so the baseline would smudge into the experiment. She should use pencil.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'ch-mis-pen-baseline',
+    },
+    {
+      id: 'ch-q16',
+      type: 'spot-misconception',
+      stem: 'Tom runs a chromatogram of a pure single-dye food colouring. After the run, his paper shows just one coloured spot above the baseline. He says: "The chromatography did not work, because there was only one spot." Is Tom right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Tom is right. A single spot means the chromatography failed; the dye should have separated into more spots.',
+          isMisconception: true,
+        },
+        {
+          text: 'Tom is wrong. A single spot is exactly what you should see for a pure substance. Chromatography only splits a sample into more spots if the sample was a mixture to start with.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'ch-mis-pure-shows-spots',
+    },
+    // 1 free-text
+    {
+      id: 'ch-q17',
+      type: 'free-text',
+      stem: 'Explain in 2 to 3 sentences why a green leaf extract often shows a yellow spot above the green spot on a chromatogram, even though the leaf looked only green to begin with.',
+      tier: 'confident',
+      sampleAnswer:
+        'The green leaf extract is a mixture of pigments. The green chlorophyll is the strongest colour, so it hides the yellow pigment in the leaf. Chromatography spreads the pigments out by how well they dissolve in the solvent and how strongly they stick to the paper, so the yellow pigment shows up at a different height once they are separated.',
+      keywords: ['mixture', 'chlorophyll', 'pigment', 'separate'],
+      xpValue: 20,
+    },
+    // 1 missing-step
+    {
+      id: 'ch-q18',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of a forensic ink check.',
+      tier: 'confident',
+      steps: [
+        'A forensic chemist cuts a strip of filter paper, draws a baseline in pencil and places one spot of the note ink and one spot of each suspect pen on the baseline',
+        'They stand the paper in a shallow layer of solvent so it dips in below the baseline',
+        null,
+        'They lift the paper out, mark the solvent front in pencil and let the paper dry',
+        'They compare the patterns: the suspect pen with the same set of spots at the same heights as the note ink is the likely match',
+      ],
+      missingStepIndex: 2,
+      correctStep:
+        'They wait 10 to 20 minutes while the solvent travels up the paper, carrying each dye in each ink to a different height',
+      xpValue: 20,
+    },
+    // 1 labelled-image
+    {
+      id: 'ch-q19',
+      type: 'labelled-image',
+      stem: 'Drag each label onto the correct part of the chromatography set-up.',
+      tier: 'confident',
+      viewBox: '0 0 320 240',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240"><rect x="0" y="0" width="320" height="240" fill="#F8FAFC"/><g><path d="M 60 110 L 60 215 L 260 215 L 260 110 z" fill="none" stroke="#475569" stroke-width="1.5"/><rect x="63" y="180" width="194" height="35" fill="#BFDBFE" opacity="0.6"/></g><g><rect x="120" y="40" width="80" height="160" fill="#FFFFFF" stroke="#94A3B8" stroke-width="0.8"/><line x1="125" y1="170" x2="195" y2="170" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><circle cx="140" cy="170" r="3" fill="#7C2D12"/><circle cx="160" cy="170" r="3" fill="#1E3A8A"/><circle cx="180" cy="170" r="3" fill="#14532D"/><line x1="125" y1="80" x2="195" y2="80" stroke="#475569" stroke-width="0.6" stroke-dasharray="2 1"/><circle cx="140" cy="105" r="3" fill="#FB923C" opacity="0.85"/><circle cx="160" cy="120" r="3" fill="#3B82F6" opacity="0.85"/><circle cx="180" cy="135" r="3" fill="#22C55E" opacity="0.85"/></g><g><line x1="100" y1="35" x2="220" y2="35" stroke="#475569" stroke-width="2"/></g></svg>',
+      hotspots: [
+        { id: 'ch-q19-h1', x: 50, y: 70, correctLabel: 'Baseline' },
+        { id: 'ch-q19-h2', x: 50, y: 35, correctLabel: 'Solvent front' },
+        { id: 'ch-q19-h3', x: 50, y: 90, correctLabel: 'Solvent' },
+        { id: 'ch-q19-h4', x: 75, y: 18, correctLabel: 'Pencil line' },
+      ],
+      labels: [
+        'Baseline',
+        'Solvent front',
+        'Solvent',
+        'Pencil line',
+        'Filter paper',
+        'Filtrate',
+      ],
+      xpValue: 20,
+    },
+    // 4 challenge MCQs (already have q8 + q9; one more would help)
+    {
+      id: 'ch-q20',
+      type: 'multiple-choice',
+      stem: 'A school technician in Sevenoaks must check whether a green felt-tip ink is a single dye or a mixture. They run a chromatogram in water and see only one green spot at the top. They run the same ink in ethanol and see one yellow spot and one blue spot at different heights. What does this tell them?',
+      tier: 'challenge',
+      options: [
+        'The ink is a single pure dye and the ethanol caused a chemical reaction',
+        'Water cancels chromatography; only ethanol works',
+        'Ethanol is wrong for chromatography and the result must be ignored',
+        'The ink is a mixture of two dyes; water did not separate them but ethanol did, because the dyes dissolve very differently in the two solvents',
+      ],
+      correctIndex: 3,
+      xpValue: 25,
+    },
+    {
+      id: 'ch-q21',
+      type: 'free-text',
+      stem: 'A pupil places their chromatography paper into the beaker upside down (with the baseline near the top of the beaker, just below the rim). What would happen, and why? Answer in 2 to 3 sentences.',
+      tier: 'challenge',
+      sampleAnswer:
+        'The dye spots would not travel anywhere, because the paper is not in contact with the solvent. The solvent only carries the dyes once the paper has soaked it up from the bottom, so the direction is decided by the solvent and not by which way up the paper is placed. With the baseline at the top, the bottom of the paper is dry and the experiment cannot start.',
+      keywords: ['solvent', 'direction', 'soak', 'baseline'],
+      xpValue: 25,
+      misconceptionId: 'ch-mis-direction',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Chemistry examiner report June 2018 (8462/1F), Q08 on chromatography: candidates "drew the baseline in pen rather than pencil" and lost the mark. Reinforced by CGP KS3 Chemistry Study Book p.55 Common Mistake box on chromatography apparatus.
+    {
+      id: 'ch-mis-pen-baseline',
+      description:
+        'You can use any kind of pen to draw the baseline on chromatography paper, as long as the line is clear.',
+      triggerAnswer: 'pen-baseline',
+      correction:
+        'In fact the baseline must be drawn in pencil. Pen ink is itself a mixture of dyes that would dissolve in the solvent and run up the paper, smudging the experiment.',
+      reExplanation:
+        'Pencil graphite is a solid that does not dissolve in water or ethanol. The pencil line stays exactly where it was drawn while the dyes move up. A pen baseline would itself separate into colours and travel up the paper, mixing into the test spots and ruining the chromatogram.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2019 (1CH0/1F), Q07 on paper chromatography: candidates "set the solvent level above the baseline" and reported all the dye washing off into the beaker. Reinforced by RSC Education article "Teaching paper chromatography in 11 to 14" (rsc.org/education, accessed 2026-05-10).
+    {
+      id: 'ch-mis-solvent-too-high',
+      description:
+        'The solvent in a chromatography beaker should start at or above the baseline so the dyes start to dissolve straight away.',
+      triggerAnswer: 'solvent-too-high',
+      correction:
+        'In fact the solvent must stay below the baseline. If it covers the baseline, the dye spots dissolve straight into the bulk solvent in the beaker rather than rising up the paper.',
+      reExplanation:
+        'Chromatography works by the solvent slowly soaking up the paper from below. The dye sits on the baseline and the solvent reaches it from below, lifting it gradually. If the solvent starts above the baseline, the dyes dissolve into the puddle in the beaker and never travel up the paper. The trick is to keep the level low and let the paper carry the solvent up.',
+    },
+    // Source: Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on separating mixtures: a recurring Year 7 expectation is that "a chromatogram with one spot is a failed test", missing that a single spot is the right outcome for a pure substance. Reinforced by CGP KS3 Chemistry Study Book p.55 chapter on chromatography.
+    {
+      id: 'ch-mis-pure-shows-spots',
+      description:
+        'A pure single-colour dye will still split into several spots on a chromatogram if the experiment is done correctly.',
+      triggerAnswer: 'pure-shows-spots',
+      correction:
+        'In fact a pure substance only ever produces a single spot on a chromatogram. Multiple spots above one baseline mean the original sample was a mixture.',
+      reExplanation:
+        'Chromatography separates a sample into its parts. If the sample only has one part to begin with (a pure dye), then there is nothing to separate and only one spot appears. The single spot is itself useful evidence that the substance is pure. More than one spot means the sample is a mixture.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2020 (8462/1F), Q07 on chromatography of food colourings: candidates "wrote that the solvent decides which dye is heaviest", treating chromatography as a sorting by mass. Reinforced by RSC Education article "Common student misconceptions about chromatography" (rsc.org/education, accessed 2026-05-10).
+    {
+      id: 'ch-mis-by-mass',
+      description:
+        'Dyes that climb high up the paper are lighter; dyes that stay low are heavier.',
+      triggerAnswer: 'by-mass',
+      correction:
+        'In fact the height has nothing to do with the mass of the dye. It depends on how well the dye dissolves in the solvent and how strongly it sticks to the paper.',
+      reExplanation:
+        'A dye that dissolves easily in the solvent and grips the paper only weakly is carried up to a high level. A dye that grips the paper strongly and dissolves only a little is barely lifted off the baseline. Two dyes can have similar masses and end up at very different heights, because the deciding question is "how strongly does this dye stick to the paper compared to how well it dissolves in the solvent?".',
+    },
+    // Source: David Paterson, "Teaching pupils to separate mixtures", RSC Education CPD article (2020-09-21): a recurring Year 7 idea is that the solvent only carries the dye in one direction "because the paper was placed that way up", missing that the solvent travels up because the paper soaks it up. Reinforced by CGP KS3 Chemistry Study Book p.55 chapter on chromatography.
+    {
+      id: 'ch-mis-direction',
+      description:
+        'The dyes only travel up the paper because the paper has been placed with the dyed end at the bottom; if you flipped it, they would go the other way.',
+      triggerAnswer: 'direction',
+      correction:
+        'In fact the dyes always travel in the direction the solvent travels. The solvent soaks up the paper from where it dips into the liquid, so the dyes are carried away from that wet end towards the dry end.',
+      reExplanation:
+        'The paper acts like a stack of tiny straws. Where the paper dips into the solvent, the liquid is drawn into the paper and pulled along it by tiny forces between the paper fibres and the solvent. The dye spot is carried with the solvent front. Flip the paper round and put the dyed end into the solvent and the dye would just dissolve straight into the beaker, not travel anywhere.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2018 (1CH0/1F), Q08 on chromatography of inks: candidates "claimed that paper chromatography only works on coloured substances" without realising that uncoloured substances can be detected with a developing agent. KEY HONEST POINT for Year 7: at our level we DO restrict chromatography to coloured mixtures. Reinforced by CGP KS3 Chemistry Study Book p.55 chapter on chromatography.
+    {
+      id: 'ch-mis-no-mixtures-needed',
+      description:
+        'You can use chromatography to separate any mixture, even ones where the parts have no colour at all, just as easily as coloured inks.',
+      triggerAnswer: 'no-mixtures-needed',
+      correction:
+        'In fact at Year 7 level paper chromatography only shows up coloured substances. Dyes leave coloured spots; colourless mixtures (like sugar in water) need a different technique.',
+      reExplanation:
+        'A chromatogram works because each dye leaves a coloured spot at a different height on the paper. If the parts of the mixture are colourless, there is nothing to see at the end. Chemists at higher levels use sprays and UV light to make colourless spots show up, but that is not what we use in Year 7. For now, paper chromatography is the right choice for inks, food colourings, and leaf pigments.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
 export const separatingMixturesZone: Zone = {
   id: 'chemistry-separating-mixtures',
   name: 'Separating Mixtures',
@@ -1280,5 +1876,6 @@ export const separatingMixturesZone: Zone = {
   nodeIds: [
     'chemistry-separating-filtration-evaporation',
     'chemistry-separating-distillation',
+    'chemistry-separating-chromatography',
   ],
 }
