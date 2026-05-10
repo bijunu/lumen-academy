@@ -22,7 +22,7 @@ import {
   acidsAlkalisCommon,
   acidsAlkalisNeutralisation,
 } from './acids-alkalis'
-import { phZone, phScale } from './ph'
+import { phZone, phScale, phStrongWeak } from './ph'
 
 export { particleModelZone, statesOfMatter, diffusion } from './particle-model'
 export { stateChanges } from './state-changes'
@@ -47,7 +47,7 @@ export {
   acidsAlkalisCommon,
   acidsAlkalisNeutralisation,
 } from './acids-alkalis'
-export { phZone, phScale } from './ph'
+export { phZone, phScale, phStrongWeak } from './ph'
 
 export const chemistryNodes: SkillNode[] = [
   statesOfMatter,
@@ -63,6 +63,7 @@ export const chemistryNodes: SkillNode[] = [
   acidsAlkalisCommon,
   acidsAlkalisNeutralisation,
   phScale,
+  phStrongWeak,
 ]
 
 export const chemistryZones: Zone[] = [
