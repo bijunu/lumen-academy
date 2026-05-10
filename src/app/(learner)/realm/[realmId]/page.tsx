@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 
+import { BackLink } from '@/components/layout/BackLink'
 import { auth } from '@/lib/auth/authOptions'
 import { getBossRepository } from '@/lib/boss/bossRepository'
 import { REALMS, type RealmId } from '@/lib/constants/realms'
@@ -54,6 +55,7 @@ export default async function RealmPage({ params }: RealmPageProps) {
 
   return (
     <div className="space-y-5">
+      <BackLink href="/" label="Back to home" />
       <header
         className="relative overflow-hidden rounded-2xl border p-6"
         style={{

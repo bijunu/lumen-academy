@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
+import { BackLink } from '@/components/layout/BackLink'
 import {
   Card,
   CardContent,
@@ -72,6 +73,7 @@ export default async function ParentPage() {
 
   return (
     <div className="space-y-6">
+      <BackLink href="/" label="Back to home" />
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm text-muted-foreground">
           Signed in as <strong>{session.user.email}</strong>. Last 7 days,{' '}

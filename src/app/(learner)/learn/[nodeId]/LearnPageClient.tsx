@@ -3,9 +3,11 @@
 import { useState, useCallback, useEffect } from 'react'
 import type { SkillNode } from '@/types/content'
 import type { HintLevel } from '@/types/tutor'
+import { BackLink } from '@/components/layout/BackLink'
 import { NodeLearningFlow } from '@/components/learn/NodeLearningFlow'
 import { TutorPanel } from '@/components/tutor/TutorPanel'
 import { useRightRail } from '@/contexts/RightRailContext'
+import { REALMS } from '@/lib/constants/realms'
 
 interface LearnPageClientProps {
   node: SkillNode
@@ -49,8 +51,11 @@ export function LearnPageClient({ node }: LearnPageClientProps) {
     [open]
   )
 
+  const realm = REALMS[node.realm]
+
   return (
     <div className="space-y-4">
+      <BackLink href={`/realm/${realm.id}`} label={`Back to ${realm.label}`} />
       <h1 className="text-2xl font-bold tracking-tight">{node.title}</h1>
       <NodeLearningFlow
         node={node}

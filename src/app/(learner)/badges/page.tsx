@@ -1,5 +1,6 @@
 import { Award, Lock } from 'lucide-react'
 
+import { BackLink } from '@/components/layout/BackLink'
 import { auth } from '@/lib/auth/authOptions'
 import { BADGES } from '@/lib/badges/badgeRules'
 import { freshScholarProfile } from '@/lib/scholar/applyScholarUpdate'
@@ -21,6 +22,7 @@ export default async function BadgesPage() {
 
   return (
     <div className="space-y-6">
+      <BackLink href="/" label="Back to home" />
       <header>
         <h1 className="text-2xl font-bold tracking-tight">Badges</h1>
         <p className="text-sm text-muted-foreground">
