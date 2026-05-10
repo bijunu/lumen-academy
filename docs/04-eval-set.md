@@ -905,13 +905,40 @@ Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overv
 Covers `biology-variation-continuous-discontinuous`, `biology-classification-five-kingdoms`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-VAR-1: Learner labels categorical traits such as blood group or eye colour as continuous because there are several categories.
+  - Required handling: misconception entry on the variation node; at least one Core MCQ that asks for a discontinuous example with a categorical trait, and at least one Core spot-misconception or MCQ surfacing the four-blood-groups slip.
+- C-VAR-2: Learner believes a trait must show a different value for every pupil to be continuous.
+  - Required handling: misconception entry on the variation node; at least one Challenge-tier MCQ on a measured-data set with repeated values that is still continuous.
+- C-VAR-3: Learner treats bar charts and histograms as interchangeable, missing that touching bars vs gaps carry meaning.
+  - Required handling: misconception entry on the variation node; at least one Core MCQ that asks which chart fits continuous data and one that asks which chart fits discontinuous data.
+- C-VAR-4: Learner judges tongue-rolling as continuous because of perceived "degrees" of ability.
+  - Required handling: misconception entry on the variation node; at least one Confident-tier spot-misconception that surfaces the yes/no recording rule at KS3.
+- C-VAR-5: Learner believes that rounding measurements to whole numbers turns a continuous trait into a discontinuous one.
+  - Required handling: misconception entry on the variation node; at least one Challenge-tier MCQ that surfaces the "rounded values are still continuous" rule.
+- C-VAR-6: Learner picks the kind of variation by the cause of the trait (single cause vs many causes) rather than by the data.
+  - Required handling: misconception entry on the variation node, framed against KS3 scope (cause-of-variation depth is not in scope at Year 7).
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-VAR-1: At least one Core MCQ on the variation node asks for a continuous example, with discrete-category traits as distractors.
+- Q-VAR-2: At least one Core MCQ on the variation node asks for a discontinuous example, with measured-on-a-scale traits as distractors.
+- Q-VAR-3: At least one Core MCQ on the variation node asks which chart (histogram vs bar chart with gaps) fits a given trait, and another asks the opposite case.
+- Q-VAR-4: At least one Confident-tier data-extraction on the variation node uses a UK-context Year 7 class survey histogram (shoe size in a Sevenoaks Y7 class) and asks for the modal value.
+- Q-VAR-5: At least one Confident-tier numeric on the variation node asks the learner to compute a count from a class survey (e.g. "size 7 or larger").
+- Q-VAR-6: At least one drag-drop-builder on the variation node asks the learner to pick all continuous traits and reject the discontinuous distractors.
+- Q-VAR-7: At least one Challenge-tier numeric on the variation node uses a class survey (eye colour or blood group) and requires a percentage calculation.
+- Q-VAR-8: At least one missing-step question on the variation node fills in the "group the measurements into bands" step within a chart-drawing routine.
+- Q-VAR-9: At least one free-text question on the variation node asks the learner to explain why one trait is plotted as a histogram and another as a bar chart.
+- Q-VAR-10: All UK-context survey contexts on the variation node use a Sevenoaks Y7 class (or another named UK school) with neutral observable traits only; no traits tied to ethnicity or race.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-VAR-1: Given "Why is blood group not continuous? It has four groups", the tutor's first reply is a Socratic prompt about whether anything sits between the groups, not a direct correction.
+- T-VAR-2: Given a wrong answer matching the categories-as-continuous trigger on vcd-q1 or vcd-q2, the tutor cites the relevant misconception's `reExplanation` (the "halfway between two values?" test) rather than producing a fresh hint.
+- T-VAR-3: Given "All bar charts are histograms", the tutor steers via "do the bars touch or have a gap?", not a definition dump.
+- T-VAR-4: Given a request for an inline definition (tap on "continuous" or "histogram"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-VAR-5: Given an off-topic input on the variation node (for example a question about alleles or genetic causes), the tutor flags that cause-of-variation depth comes later in Year 8 / 9 and steers back to "is the data on a scale or in categories?".
 
 ## Zone: Vitalia > Ecosystems and Food Webs
 

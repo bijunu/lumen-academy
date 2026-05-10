@@ -231,10 +231,10 @@
 ### Zone: Variation and Classification (`biology-variation-classification`)
 
 #### Continuous and Discontinuous Variation (Core, `biology-variation-continuous-discontinuous`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Inheritance, chromosomes, DNA and genes)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The variation between individuals within a species being continuous or discontinuous, to include measurement and graphical representation of variation.
+- **AQA**: 4.6.2.4 Variation (GCSE Biology 8461)
+- **Edexcel**: SB4a Variation within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
+- **OCR**: B6.2.1 Variation (GCSE Biology A J247)
 
 #### Classification: Five Kingdoms (Confident, `biology-classification-five-kingdoms`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Inheritance, chromosomes, DNA and genes)_
