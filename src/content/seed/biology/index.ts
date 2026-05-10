@@ -12,6 +12,7 @@ import {
   photosynthesisZone,
   photosynthesisZoneNodes,
 } from './photosynthesis'
+import { ecosystemsZone, ecosystemsZoneNodes } from './ecosystems'
 
 export { animalCell, cellsZone, cellsZoneNodes } from './cells'
 export { plantCell } from './plant-cell'
@@ -45,6 +46,13 @@ export {
   photosynthesisZone,
   photosynthesisZoneNodes,
 } from './photosynthesis'
+export {
+  foodChains,
+  foodWebs,
+  energyFlow,
+  ecosystemsZone,
+  ecosystemsZoneNodes,
+} from './ecosystems'
 
 export const biologyNodes: SkillNode[] = [
   ...cellsZoneNodes,
@@ -53,6 +61,7 @@ export const biologyNodes: SkillNode[] = [
   ...reproductionZoneNodes,
   ...variationClassificationZoneNodes,
   ...photosynthesisZoneNodes,
+  ...ecosystemsZoneNodes,
 ]
 
 export const biologyZones: Zone[] = [
@@ -62,4 +71,5 @@ export const biologyZones: Zone[] = [
   reproductionZone,
   variationClassificationZone,
   photosynthesisZone,
+  ecosystemsZone,
 ]

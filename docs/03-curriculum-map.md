@@ -288,19 +288,25 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: SB4d Classification within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
 - **OCR**: B6.2.2 Classification (GCSE Biology A J247)
 
-### Zone: Ecosystems and Food Webs (`biology-ecosystems-food-webs`)
+### Zone: Ecosystems (`biology-ecosystems`)
 
 #### Food Chains (Core, `biology-ecosystems-food-chains`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Relationships in an ecosystem)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The interdependence of organisms in an ecosystem, including food webs and insect pollinated crops; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials.
+- **AQA**: 4.7.2.1 Levels of organisation; producers, primary, secondary and tertiary consumers; food chains and webs (GCSE Biology 8461)
+- **Edexcel**: SB9b Feeding relationships and food chains (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.1c Feeding relationships; producer, consumer, predator, prey (GCSE Biology A J247)
 
-#### Food Webs and Disruption (Confident, `biology-ecosystems-food-webs`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Relationships in an ecosystem)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+#### Food Webs (Confident, `biology-ecosystems-food-webs`)
+- **KS3**: The interdependence of organisms in an ecosystem, including food webs and insect pollinated crops; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials.
+- **AQA**: 4.7.2.1 Levels of organisation; food webs; effects of removing or adding species (GCSE Biology 8461)
+- **Edexcel**: SB9c Food webs and changes in feeding relationships (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.1d Interdependence; the effect of changing the population of one species on others in the food web (GCSE Biology A J247)
+
+#### Energy Flow Through an Ecosystem (Confident, `biology-ecosystems-energy-flow`)
+- **KS3**: The interdependence of organisms in an ecosystem, including food webs and insect pollinated crops; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials.
+- **AQA**: 4.7.2.2 Pyramids of biomass and energy transfers (GCSE Biology 8461). Year 7 scope is the pyramid of numbers only.
+- **Edexcel**: SB9d Energy flow through an ecosystem (GCSE Biology 1BI0, Topic 9). Year 7 scope is qualitative energy loss only.
+- **OCR**: B6.1e Energy flow and pyramids of numbers (GCSE Biology A J247). Year 7 scope is the pyramid of numbers only.
 
 ### Zone: Photosynthesis (`biology-photosynthesis`)
 

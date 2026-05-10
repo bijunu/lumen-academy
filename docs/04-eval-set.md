@@ -978,18 +978,76 @@ Covers `biology-variation-continuous-discontinuous`, `biology-classification-fiv
 - T-CLASS-4: Given a request for an inline definition (tap on "eukaryote", "prokaryote", or "chitin"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-CLASS-5: Given an off-topic input on the classification node (for example a US AP Biology three-domains reference, or "what about Archaea?"), the tutor flags that the three-domain system is GCSE+ depth and steers back to the five-kingdom system.
 
-## Zone: Vitalia > Ecosystems and Food Webs
+## Zone: Vitalia > Ecosystems
 
-Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`.
+Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`, `biology-ecosystems-energy-flow`.
 
-### Content probes
-- _to be drafted by the Vitalia author session_
+### Content probes (food chains)
+
+- C-ECO-1: Learner reverses the food chain arrow direction, treating the arrow as "what eats what" (eater to food) rather than "is eaten by" (food to eater).
+  - Required handling: misconception entry on the food chains node; at least one MCQ where the wrong-direction chain is the dominant distractor; at least one spot-misconception that surfaces the eater-to-food slip.
+- C-ECO-2: Learner mislabels the producer in a chain by picking the largest or most prominent organism (for example calling the fox the producer because it is the biggest).
+  - Required handling: misconception entry on the food chains node; at least one Core MCQ where the producer is correctly identified by photosynthesis, with size-based distractors.
+- C-ECO-3: Learner defines an organism's role purely by its position in the chain ("first thing is the producer") rather than by what it does (photosynthesises / eats which level).
+  - Required handling: misconception entry on the food chains node; at least one Confident-tier spot-misconception that surfaces the position-equals-role slip.
+- C-ECO-4: Learner conflates "predator" with "consumer" and uses them interchangeably, missing that primary, secondary, and top label the chain level.
+  - Required handling: misconception entry on the food chains node; at least one Confident-tier MCQ that distinguishes consumer level from predator behaviour.
+- C-ECO-5: Learner draws "Sun" as the first link in the chain, treating sunlight as a living organism.
+  - Required handling: misconception entry on the food chains node; at least one Core free-text or MCQ that asks why the Sun is not a chain link.
+- C-ECO-6: Learner believes the top predator is the most important organism because it is "at the top" and the others depend on it.
+  - Required handling: misconception entry on the food chains node; at least one MCQ on the heron / sparrowhawk / fox role that surfaces the top-equals-most-important slip.
+
+### Content probes (food webs)
+
+- C-ECO-7: Learner predicts numerical changes when a species is removed (for example "rabbit numbers rise by 30%"), going beyond Y7 qualitative scope.
+  - Required handling: misconception entry on the food webs node; at least one Confident-tier item that asks for direction-only effects (rise / fall / no immediate effect); NO numerical predictions in the bank.
+- C-ECO-8: Learner believes that removing the top predator only affects the level immediately below, missing the cascade effect on producers and other levels.
+  - Required handling: misconception entry on the food webs node; at least one Confident-tier item where removing a top predator changes both the prey level AND the producer level qualitatively.
+- C-ECO-9: Learner reads a food web as a single chain, picking only one path through the web rather than seeing multiple chains sharing species.
+  - Required handling: misconception entry on the food webs node; at least one item that asks how many chains share a named species in the web.
+- C-ECO-10: Learner treats two animals at the same level as competing automatically, without checking they share a food source.
+  - Required handling: misconception entry on the food webs node; at least one Confident-tier item that asks which two animals share a food source AND therefore compete.
+
+### Content probes (energy flow)
+
+- C-ECO-11: Learner believes energy flows in both directions along a food chain, or that the top predator passes energy "back" to lower levels.
+  - Required handling: misconception entry on the energy flow node; at least one Core MCQ on the one-way direction of energy flow; at least one spot-misconception on energy "going back".
+- C-ECO-12: Learner believes no energy is lost between trophic levels, treating the chain as a perfect transfer.
+  - Required handling: misconception entry on the energy flow node; at least one Core MCQ that names sources of energy loss (movement, heat, waste, undigested parts).
+- C-ECO-13: Learner draws a pyramid of biomass or applies the 10% rule numerically, going beyond Y7 scope.
+  - Required handling: misconception entry on the energy flow node; pyramids in the bank are pyramids of NUMBERS only; NO biomass percentages or 10% rule calculations.
+- C-ECO-14: Learner thinks food chains can have any number of links (including 8 or 10) without realising energy loss limits chain length to 4-5.
+  - Required handling: misconception entry on the energy flow node; at least one Confident-tier item that links the chain length limit to energy lost at each step.
+- C-ECO-15: Learner reads a pyramid of numbers expecting the bottom level to always have the largest organisms, missing that it has the largest count.
+  - Required handling: misconception entry on the energy flow node; at least one Core data-extraction or numeric on the pyramid of numbers (one tree, many caterpillars, fewer blue tits, one sparrowhawk).
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-ECO-1: At least one Core MCQ on the food chains node tests arrow direction, with the reversed arrow as the dominant distractor.
+- Q-ECO-2: At least one drag-order on the food chains node sequences a hedgerow chain (oak leaf, caterpillar, blue tit, sparrowhawk), with items shuffled so the natural order is NOT the input order (drag-order grading is index-based).
+- Q-ECO-3: At least one drag-drop-builder on the food chains node restricts the chain to living organisms and rejects non-organism distractors (water, soil, Sun).
+- Q-ECO-4: At least one labelled-image OR data-extraction on the food chains node uses a Sevenoaks pond chain (pond algae, mayfly nymph, stickleback, heron).
+- Q-ECO-5: At least one Confident-tier MCQ on the food chains node distinguishes consumer level from predator behaviour (predator is HOW it hunts, consumer level is WHERE in the chain).
+- Q-ECO-6: At least one Challenge-tier MCQ on the food chains node maps a 4-link Kentish meadow chain (clover, honeybee, great tit, kestrel) onto producer / primary / secondary / top predator labels.
+- Q-ECO-7: At least one Core or Confident-tier item on the food webs node asks for the direction of effect when a species is removed (rise / fall / no immediate effect), NEVER a numerical prediction.
+- Q-ECO-8: At least one data-extraction on the food webs node reads a Kentish farmland or oak-tree web and counts how many chains share a named species.
+- Q-ECO-9: At least one Confident-tier item on the food webs node tests a top-down cascade (remove the top predator, prey rise, producer falls) qualitatively only.
+- Q-ECO-10: At least one Core MCQ on the energy flow node names a source of energy loss (movement, heat, waste, undigested parts), with non-loss distractors.
+- Q-ECO-11: At least one Core data-extraction or numeric on the energy flow node reads a pyramid of NUMBERS (1 oak, many caterpillars, fewer blue tits, 1 sparrowhawk).
+- Q-ECO-12: At least one Confident-tier MCQ on the energy flow node connects the chain length limit (4-5 links) to energy lost at each step.
+- Q-ECO-13: At least one Challenge-tier item on the energy flow node forbids biomass / 10% rule reasoning and rewards a qualitative answer.
+- Q-ECO-14: NO numerical biomass percentages or 10% rule calculations anywhere in the zone.
+- Q-ECO-15: All UK contexts in the zone use Kentish hedgerow / Sevenoaks pond / Kentish farmland / Sevenoaks woodland; NO US biomes (deserts of Arizona, Yellowstone wolves, etc).
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-ECO-1: Given "the arrow shows what each animal hunts", the tutor's first reply is a Socratic prompt about reading the arrow as "is eaten by", not a direct correction.
+- T-ECO-2: Given a wrong answer matching the arrow-reversed trigger on fch-q1 or fch-q7, the tutor cites the relevant misconception's `reExplanation` (the energy-as-river framing) rather than producing a fresh hint.
+- T-ECO-3: Given "If foxes disappear, rabbits will rise by 50%", the tutor steers the learner to qualitative reasoning ("rise" alone is the Y7 answer; numbers are GCSE+) rather than working through the percentage.
+- T-ECO-4: Given "Why are food chains never 10 links long?", the tutor walks the learner through "energy is lost at each step", not a launch into 10% rule arithmetic.
+- T-ECO-5: Given a request for an inline definition (tap on "producer", "primary consumer", "trophic level"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-ECO-6: Given an off-topic input on the energy flow node (for example "what's the 10% rule?"), the tutor flags that the 10% rule is GCSE depth and steers back to the qualitative pyramid of numbers.
+- T-ECO-7: Given an off-topic input on the food webs node (for example "what about Yellowstone wolves?"), the tutor steers back to UK contexts (Kentish farmland, Sevenoaks pond) politely.
 
 ## Zone: Vitalia > Photosynthesis
 
