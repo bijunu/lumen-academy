@@ -138,6 +138,26 @@
 - **Edexcel**: A24 Deduce expressions to calculate the nth term of linear sequences (GCSE Mathematics 1MA1)
 - **OCR**: 8.02b Recognise arithmetic sequences and find the nth term (GCSE Mathematics J560)
 
+### Zone: Geometry and Measure (`maths-geometry-measure`)
+
+#### Area of Rectangles and Composite Rectangles (Core, `maths-geometry-measure-area-rectangles`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia; calculate and solve problems involving: perimeters of 2-D shapes (including circles), areas of circles and composite shapes.
+- **AQA**: G16 Know and apply formulae to calculate area of triangles, parallelograms, trapezia; G17 Calculate areas of composite shapes (GCSE Mathematics 8300)
+- **Edexcel**: G16 Know and apply formulae to calculate area of triangles, parallelograms, trapezia; G17 Calculate areas of composite shapes (GCSE Mathematics 1MA1)
+- **OCR**: 10.03a Area of triangles, parallelograms and trapezia; 10.03b Area of composite shapes (GCSE Mathematics J560)
+
+#### Perimeter of Rectangles and Composite Shapes (Core, `maths-geometry-measure-perimeter`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia; calculate and solve problems involving: perimeters of 2-D shapes (including circles), areas of circles and composite shapes.
+- **AQA**: G17 Calculate perimeters of 2D shapes, including circles (GCSE Mathematics 8300)
+- **Edexcel**: G17 Calculate perimeters of 2D shapes, including circles (GCSE Mathematics 1MA1)
+- **OCR**: 10.02a Perimeter of rectilinear shapes (GCSE Mathematics J560)
+
+#### Volume of Cuboids (Confident, `maths-geometry-measure-volume-cuboids`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia, volume of cuboids (including cubes) and other prisms (including cylinders).
+- **AQA**: G16 Know and apply formulae to calculate volume of cuboids and other right prisms (GCSE Mathematics 8300)
+- **Edexcel**: G16 Know and apply formulae to calculate volume of cuboids and other right prisms (GCSE Mathematics 1MA1)
+- **OCR**: 10.04a Volume of cuboids and prisms (GCSE Mathematics J560)
+
 ### Zone: Coordinates (`maths-coordinates`)
 
 #### Coordinates on a Grid (Core, `maths-coordinates-grid`)
