@@ -1855,7 +1855,7 @@ Zone id: `physics-waves`. Covers `physics-waves-anatomy`, `physics-waves-sound-l
 
 ## Zone: Mechanica > Space
 
-Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-day-night-seasons` (day-night-seasons deferred to slice 7).
+Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-day-night-seasons`.
 
 ### Content probes
 - C-SP-1: Learner names Pluto as the ninth planet of the Solar System, missing the IAU 2006 reclassification of Pluto as a dwarf planet. (Covers `physics-space-solar-system`.)
@@ -1867,6 +1867,12 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 - C-SP-7: Learner believes all the planets are the same size, often drawing them at the same scale on a diagram. (Covers `physics-space-solar-system`.)
 - C-SP-8: Learner believes the planets orbit in straight lines, or that they orbit Earth rather than the Sun (geocentric mistake). (Covers `physics-space-solar-system`.)
 - C-SP-9: Learner names a recent Mars rover or a science-fiction spacecraft as the body that astronauts live on, missing that the ISS is the long-term crewed station in low Earth orbit. (Covers `physics-space-solar-system`.)
+- C-SP-10: Learner believes the UK has summer because Earth is closer to the Sun in summer than in winter, missing that perihelion (closest distance) is in early January and that axial tilt drives the seasons. (Covers `physics-space-day-night-seasons`.)
+- C-SP-11: Learner believes the Sun moves round Earth once a day, citing sunrise in the east as evidence, rather than Earth spinning on its axis once every 24 hours. (Covers `physics-space-day-night-seasons`.)
+- C-SP-12: Learner believes the whole Earth has the same season at the same time, missing that the southern hemisphere has the opposite season to the UK. (Covers `physics-space-day-night-seasons`.)
+- C-SP-13: Learner believes Earth's orbit is strongly oval and that distance from the Sun drives the seasons, rather than the small (about 3 percent) eccentricity of the actual orbit. (Covers `physics-space-day-night-seasons`.)
+- C-SP-14: Learner believes Earth's axis flips its tilt direction during the year, rather than keeping the same fixed lean as it travels round the Sun. (Covers `physics-space-day-night-seasons`.)
+- C-SP-15: Learner believes Edinburgh and London have similar daylight all year, missing that Edinburgh has roughly 17 hours at midsummer and 7 hours at midwinter (about 10 hours of difference). (Covers `physics-space-day-night-seasons`.)
 
 ### Question shape probes
 - Q-SP-1: At least one labelled-image question on the solar-system node has the learner place planet names onto a Sun-and-orbits diagram in the right order, with a label pool no larger than twice the hotspot count. (Covers `physics-space-solar-system`.)
@@ -1875,12 +1881,66 @@ Zone id: `physics-space`. Covers `physics-space-solar-system`, `physics-space-da
 - Q-SP-4: At least one spot-misconception question on the solar-system node confronts the "Pluto is the ninth planet" claim and references the IAU 2006 reclassification. (Covers `physics-space-solar-system`.)
 - Q-SP-5: At least one Confident or Challenge item on the solar-system node uses a UK astronomy context (Royal Greenwich Observatory, UK Space Agency, Tim Peake on the ISS) without quoting orbital periods or AU distances quantitatively. (Covers `physics-space-solar-system`.)
 - Q-SP-6: No question on the solar-system node uses Kepler's laws, orbital-period calculations, or AU-based exact distance arithmetic. KS3 stays qualitative; quantitative orbital mechanics is GCSE+. (Covers `physics-space-solar-system`.)
+- Q-SP-7: At least one Core MCQ on the day-night-seasons node names Earth's axial tilt of about 23.5° as the cause of the seasons, with at least one distractor that uses distance from the Sun. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-8: At least one spot-misconception question on the day-night-seasons node confronts the "closer to the Sun in summer" claim and corrects with the perihelion-in-January fact. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-9: At least one item on the day-night-seasons node uses the Edinburgh midsummer (about 17 hours) versus midwinter (about 7 hours) daylight contrast as a UK context. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-10: At least one spot-misconception or MCQ item on the day-night-seasons node addresses the "Sun moves round Earth" or "Earth fixed in space" picture and corrects with the 24-hour spin. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-11: At least one Confident or Challenge item on the day-night-seasons node uses a comparison between hemispheres (UK winter ↔ Australia/Cape Town summer in December, or similar) to test the opposite-season idea. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-12: At least one Challenge tier multi-step item on the day-night-seasons node combines two ideas (tilt + direct sunlight + longer days) or uses a numeric step (360° ÷ 24 h, hours of daylight subtraction) on a UK context. (Covers `physics-space-day-night-seasons`.)
+- Q-SP-13: No question on the day-night-seasons node uses Coriolis effects, axial precession, or the formal equinox/solstice naming beyond "longest" and "shortest" day. KS3 stays qualitative; those topics are GCSE+ or A-Level. (Covers `physics-space-day-night-seasons`.)
 
 ### Tutor probes
 - T-SP-1: Given the prompt "Why isn't Pluto a planet?", the tutor escalates from a nudge ("what kinds of objects do you think the IAU said a planet has to be?") to a worked recap of the 2006 reclassification (size, near-spherical, cleared its orbit), without inventing recent news.
 - T-SP-2: Given a question that asks for the speed of an orbit or a Kepler-style calculation, the tutor steers back to the KS3-qualitative framing politely and notes that orbital-period calculation is GCSE+ territory.
 - T-SP-3: Given an off-topic input (for example a question about black holes or dark matter), the tutor stays inside the KS3 syllabus and offers the relevant solar-system fact, deferring the bigger topic to later years.
 - T-SP-4: Given a request for an inline definition (tap on "asteroid" or "dwarf planet"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SP-5: Given the prompt "Why does the UK have summer?", the tutor nudges the learner toward axial tilt (rather than distance to the Sun) and surfaces the perihelion-in-January counter-fact if the learner sticks with the distance idea.
+- T-SP-6: Given the prompt "What time is it in Sydney when it is 11 a.m. in London?", the tutor explains the 24-hour spin and the half-turn idea without reaching for time-zone tables or precise UTC offsets, since KS3 stays qualitative on this.
+- T-SP-7: Given a request for an inline definition (tap on "axial tilt" or "perihelion"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+## Zone: Mechanica > Magnetism
+
+Zone id: `physics-magnetism`. Covers `physics-magnetism-fields`, `physics-magnetism-electromagnets`.
+
+### Content probes
+- C-MAG-1: Learner believes every metal is magnetic, often because magnets stick to "metal" fridge doors and tools. (Covers `physics-magnetism-fields`, `physics-magnetism-electromagnets`.)
+- C-MAG-2: Learner mixes up the like-poles rule, saying two strong N poles will snap together or that "stronger poles always attract". (Covers `physics-magnetism-fields`.)
+- C-MAG-3: Learner draws magnetic field lines pointing from S to N outside the magnet, or as straight rays rather than as loops. (Covers `physics-magnetism-fields`.)
+- C-MAG-4: Learner believes the magnetic field round a bar magnet is the same strength everywhere or strongest in the middle, missing that field strength is highest at the poles. (Covers `physics-magnetism-fields`.)
+- C-MAG-5: Learner explains the compass with non-magnetic causes (gravity, the Sun, wind, a heavier N end), missing that Earth's magnetic field is what lines the needle up. (Covers `physics-magnetism-fields`.)
+- C-MAG-6: Learner confuses magnetic attraction with gravity, saying things like "a magnet pulls a paper clip because of gravity" or "all heavy objects are magnetic". (Covers `physics-magnetism-fields`.)
+- C-MAG-7: Learner names strength as the key advantage of an electromagnet over a permanent magnet, missing that the on-off switching ability is what determines design choices. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-8: Learner believes the iron core stays magnetised after the current is switched off, treating the coil as a way to "make" a permanent magnet. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-9: Learner believes more turns of wire makes an electromagnet weaker (often by reasoning about resistance), or that there is a small Year 7 limit beyond which extra turns stop helping. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-10: Learner calls an electromagnet a "permanent magnet while the current is on", missing that the word "permanent" means "stays magnetic after the source is removed". (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-11: Learner believes any metal core works in an electromagnet (e.g. a copper or aluminium rod), missing that only iron and other magnetic metals boost the field. (Covers `physics-magnetism-electromagnets`.)
+- C-MAG-12: Learner blurs the motor effect and electromagnet ideas, treating "current makes a force on a wire in a magnetic field" as the same as "a coil with current is a magnet". (Covers `physics-magnetism-electromagnets`.)
+
+### Question shape probes
+- Q-MAG-1: At least one Core MCQ on the magnetism-fields node asks "what happens when N faces N" with the like-poles-repel rule, with at least one distractor that uses the "they attract" misstep. (Covers `physics-magnetism-fields`.)
+- Q-MAG-2: At least one Core MCQ on the magnetism-fields node tests "aluminium is a metal but not magnetic" or an equivalent (copper coin, gold ring), with at least one distractor that uses "all metals stick to magnets". (Covers `physics-magnetism-fields`.)
+- Q-MAG-3: At least one labelled-image question on the magnetism-fields node has the learner drag material names onto magnetic vs non-magnetic columns, with a label pool no larger than twice the hotspot count. (Covers `physics-magnetism-fields`.)
+- Q-MAG-4: At least one MCQ or labelled-image item on the magnetism-fields node tests "field lines run N to S outside the magnet" with a distractor that reverses the direction. (Covers `physics-magnetism-fields`.)
+- Q-MAG-5: At least one item on the magnetism-fields node tests "field is strongest at the poles" with a distractor that places the strongest point in the middle of the magnet. (Covers `physics-magnetism-fields`.)
+- Q-MAG-6: At least one item on the magnetism-fields node uses a UK context (fridge magnet, school lab tray, Lake District compass walk, iron-filing practical, 2p coin) without quoting a numeric field strength in tesla. (Covers `physics-magnetism-fields`.)
+- Q-MAG-7: At least one Confident or Challenge spot-misconception on the magnetism-fields node confronts either the "all metals are magnetic" or the "two N poles snap together" claim. (Covers `physics-magnetism-fields`.)
+- Q-MAG-8: No question on the magnetism-fields node uses Faraday's law of induction, magnetic flux density (B in tesla), or the motor effect. KS3 stays qualitative; those topics are GCSE Higher / A-Level. (Covers `physics-magnetism-fields`.)
+- Q-MAG-9: At least one Core MCQ on the electromagnets node asks "what is the key advantage of an electromagnet?" with the on-off answer correct and at least one distractor that names strength. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-10: At least one item on the electromagnets node uses the scrapyard crane UK context (lifting then dropping a car by switching the current). (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-11: At least one item on the electromagnets node tests "more turns = stronger" with a distractor that says more turns weakens the coil or that there is a small Year 7 limit. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-12: At least one Confident or Challenge spot-misconception on the electromagnets node confronts the "iron core stays magnetised after the switch is opened" claim. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-13: At least one item on the electromagnets node uses a UK MRI scanner, electric bell, or scrapyard crane context to ground the on-off advantage. (Covers `physics-magnetism-electromagnets`.)
+- Q-MAG-14: No question on the electromagnets node uses Faraday's law of induction, Lenz's law, or the motor-effect right-hand rule. KS3 stays at "coil + current + iron core, switchable"; the rest is GCSE Higher / A-Level. (Covers `physics-magnetism-electromagnets`.)
+
+### Tutor probes
+- T-MAG-1: Given the prompt "Why doesn't a magnet stick to my Coke can?", the tutor escalates from a nudge ("which metals are actually magnetic?") to the iron/steel/nickel/cobalt rule, and notes that aluminium and copper are common metals that do not stick.
+- T-MAG-2: Given the prompt "What does a field line mean?", the tutor explains it as the direction the N pole of a tiny test compass would point, and describes the loop shape (N round to S outside).
+- T-MAG-3: Given a question that uses motor-effect derivation or flux density in tesla, the tutor steers back to the KS3-qualitative framing politely and notes that those calculations are GCSE+ territory.
+- T-MAG-4: Given a request for an inline definition (tap on "field line", "pole", or "compass"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-MAG-5: Given the prompt "Why does a scrapyard crane use an electromagnet?", the tutor nudges toward the on-off ability ("could a permanent magnet drop the car?") and only later names "switchable" as the key advantage.
+- T-MAG-6: Given the prompt "What happens to the iron core when I switch off?", the tutor explains that soft iron loses its magnetism almost straight away and that this is why the electromagnet is useful, without naming "soft" vs "hard" magnetic materials unless the learner asks.
+- T-MAG-7: Given a question that asks for Faraday's law of induction, Lenz's law, or the right-hand-rule motor formula, the tutor politely defers to GCSE Higher / A-Level and offers a Year 7 alternative on switching, turns, or core material.
+- T-MAG-8: Given a request for an inline definition (tap on "solenoid", "core", or "switch"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Numerica > Geometry and Measure
 

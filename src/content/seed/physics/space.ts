@@ -88,6 +88,118 @@ const PLANET_SIZES_SVG = `
   </g>
 `
 
+const TILT_SEASONS_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Earth's tilted axis causes the seasons (not the distance from the Sun)</text>
+
+    <!-- Sun on the left -->
+    <circle cx="80" cy="200" r="34" fill="currentColor" />
+    <text x="80" y="206" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="white">Sun</text>
+
+    <!-- N-summer Earth (tilted, N pole towards Sun) -->
+    <circle cx="320" cy="200" r="40" />
+    <line x1="290" y1="180" x2="350" y2="220" stroke-width="2.5" />
+    <line x1="285" y1="175" x2="295" y2="185" stroke-width="2" />
+    <line x1="345" y1="215" x2="355" y2="225" stroke-width="2" />
+    <text x="276" y="170" text-anchor="end" font-size="11" font-weight="700" stroke="none" fill="currentColor">N pole</text>
+    <text x="362" y="232" text-anchor="start" font-size="11" font-weight="700" stroke="none" fill="currentColor">S pole</text>
+    <line x1="280" y1="200" x2="360" y2="200" stroke-dasharray="3,3" stroke-width="1" />
+    <text x="320" y="270" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">N hemisphere summer</text>
+    <text x="320" y="288" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">N pole tilted toward Sun</text>
+    <text x="320" y="304" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">longer days, more direct sunlight</text>
+
+    <!-- N-winter Earth (tilted, N pole away from Sun) -->
+    <circle cx="600" cy="200" r="40" />
+    <line x1="570" y1="220" x2="630" y2="180" stroke-width="2.5" />
+    <line x1="565" y1="225" x2="575" y2="215" stroke-width="2" />
+    <line x1="625" y1="175" x2="635" y2="185" stroke-width="2" />
+    <text x="556" y="232" text-anchor="end" font-size="11" font-weight="700" stroke="none" fill="currentColor">N pole</text>
+    <text x="642" y="170" text-anchor="start" font-size="11" font-weight="700" stroke="none" fill="currentColor">S pole</text>
+    <line x1="560" y1="200" x2="640" y2="200" stroke-dasharray="3,3" stroke-width="1" />
+    <text x="600" y="270" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">N hemisphere winter</text>
+    <text x="600" y="288" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">N pole tilted away from Sun</text>
+    <text x="600" y="304" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">shorter days, glancing sunlight</text>
+
+    <!-- Tilt label across both Earths -->
+    <text x="460" y="80" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">tilt 23.5° relative to vertical</text>
+    <text x="460" y="98" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Earth keeps the same tilt all year as it orbits</text>
+
+    <!-- Note on perihelion -->
+    <text x="400" y="350" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Earth is actually closest to the Sun in early January (N-winter), not in summer.</text>
+    <text x="400" y="366" text-anchor="middle" font-size="11" font-weight="700" stroke="none" fill="currentColor">Tilt, not distance.</text>
+  </g>
+`
+
+const DAY_NIGHT_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Day and night: Earth spins once every 24 hours</text>
+
+    <!-- Sun on left -->
+    <circle cx="100" cy="200" r="36" fill="currentColor" />
+    <text x="100" y="206" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="white">Sun</text>
+
+    <!-- Light arrows from Sun -->
+    <line x1="140" y1="170" x2="320" y2="170" stroke-width="1.5" />
+    <polygon points="312,164 325,170 312,176" fill="currentColor" stroke="none" />
+    <line x1="140" y1="200" x2="320" y2="200" stroke-width="1.5" />
+    <polygon points="312,194 325,200 312,206" fill="currentColor" stroke="none" />
+    <line x1="140" y1="230" x2="320" y2="230" stroke-width="1.5" />
+    <polygon points="312,224 325,230 312,236" fill="currentColor" stroke="none" />
+
+    <!-- Earth -->
+    <circle cx="500" cy="200" r="80" />
+    <!-- Lit half (right side facing Sun is actually left side here since Sun is on left) -->
+    <path d="M 500 120 A 80 80 0 0 0 500 280 Z" fill="currentColor" opacity="0.18" />
+    <text x="445" y="200" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">day</text>
+    <text x="555" y="200" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">night</text>
+
+    <!-- Spin arrow on top of Earth -->
+    <path d="M 470 110 A 30 30 0 0 1 530 110" stroke-width="2.5" />
+    <polygon points="522,104 535,108 525,118" fill="currentColor" stroke="none" />
+    <text x="500" y="98" text-anchor="middle" font-size="12" stroke="none" fill="currentColor">spin (24 h)</text>
+
+    <!-- UK marker -->
+    <circle cx="455" cy="170" r="5" fill="currentColor" />
+    <text x="430" y="160" text-anchor="end" font-size="11" font-weight="700" stroke="none" fill="currentColor">UK</text>
+    <text x="500" y="335" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">As Earth spins, the UK moves from the lit half (day) to the dark half (night) and back.</text>
+    <text x="500" y="352" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">The Sun does not move round Earth.</text>
+  </g>
+`
+
+const UK_DAYLIGHT_HOURS_SVG = `
+  <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
+    <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">Edinburgh daylight hours: midsummer vs midwinter</text>
+
+    <!-- Bar chart: midsummer 17h, midwinter 7h, max scale 24 -->
+    <line x1="160" y1="80" x2="160" y2="320" stroke-width="2" />
+    <line x1="160" y1="320" x2="640" y2="320" stroke-width="2" />
+
+    <!-- y-axis ticks -->
+    <line x1="155" y1="80" x2="160" y2="80" stroke-width="1.5" />
+    <text x="148" y="84" text-anchor="end" font-size="10" stroke="none" fill="currentColor">24 h</text>
+    <line x1="155" y1="160" x2="160" y2="160" stroke-width="1.5" />
+    <text x="148" y="164" text-anchor="end" font-size="10" stroke="none" fill="currentColor">16 h</text>
+    <line x1="155" y1="240" x2="160" y2="240" stroke-width="1.5" />
+    <text x="148" y="244" text-anchor="end" font-size="10" stroke="none" fill="currentColor">8 h</text>
+    <text x="148" y="324" text-anchor="end" font-size="10" stroke="none" fill="currentColor">0 h</text>
+
+    <!-- Midsummer bar: 17h -> 17/24 of 240 = 170 px tall -->
+    <rect x="240" y="150" width="80" height="170" fill="currentColor" opacity="0.3" />
+    <text x="280" y="345" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">midsummer</text>
+    <text x="280" y="360" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">21 June</text>
+    <text x="280" y="140" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">~17 h daylight</text>
+
+    <!-- Midwinter bar: 7h -> 7/24 of 240 = 70 px tall -->
+    <rect x="440" y="250" width="80" height="70" fill="currentColor" opacity="0.3" />
+    <text x="480" y="345" text-anchor="middle" font-size="12" font-weight="700" stroke="none" fill="currentColor">midwinter</text>
+    <text x="480" y="360" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">21 December</text>
+    <text x="480" y="240" text-anchor="middle" font-size="13" font-weight="700" stroke="none" fill="currentColor">~7 h daylight</text>
+
+    <!-- Difference label -->
+    <text x="400" y="60" text-anchor="middle" font-size="11" stroke="none" fill="currentColor">Edinburgh: about 10 hours more daylight at midsummer than at midwinter.</text>
+  </g>
+`
+
 const UK_SPACE_CONTEXTS_SVG = `
   <g stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round">
     <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">UK contexts: Greenwich, the UK Space Agency, the ISS</text>
@@ -818,7 +930,585 @@ export const spaceSolarSystem: SkillNode = {
   },
 }
 
-export const spaceZoneNodes = [spaceSolarSystem]
+export const spaceDayNightSeasons: SkillNode = {
+  id: 'physics-space-day-night-seasons',
+  title: 'Day, Night, and the Seasons',
+  description:
+    'Earth\'s axis is tilted at about 23.5° from vertical relative to its orbital plane. The seasons happen because of that tilt, not because Earth gets closer to or further from the Sun. When the northern hemisphere tilts toward the Sun, the UK has summer (longer days, more direct sunlight). When the northern hemisphere tilts away, the UK has winter. Day and night come from Earth spinning on its own axis once every 24 hours, so the UK turns from the lit half (day) into the shadow (night) and back. UK contexts include Edinburgh midsummer with about 17 hours of daylight versus midwinter with about 7 hours, the British Summer Time clock change in March and October, and the sundial on the Prime Meridian at Greenwich. Year 7 keeps it qualitative; equinox and solstice naming, Coriolis effects, and precession are GCSE+ territory.',
+  subject: 'physics',
+  realm: 'mechanica',
+  zoneId: 'physics-space',
+  zoneName: 'Space',
+  tier: 'confident',
+  prerequisites: ['physics-space-solar-system'],
+  curriculum: {
+    ks3Objective:
+      'The seasons and the Earth\'s tilt, day length at different times of year, in different hemispheres.',
+    awardingBodies: {
+      aqa: '4.8.1.1 Our solar system; orbital motion and the link between day length, seasons and Earth\'s tilt (GCSE Physics 8463)',
+      edexcel: 'Topic 8 Astronomy, 8.4 Earth\'s rotation, day length and the seasons (GCSE Physics 1PH0)',
+      ocr: 'P8.1 Solar System and the Universe; Earth\'s axial tilt, day, year, seasons (GCSE Physics J259 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'dns-scene-tilt',
+      title: 'Earth\'s Axis is Tilted: That Causes the Seasons',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see how the same tilt gives the UK summer at one side of the orbit and winter at the other.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: TILT_SEASONS_SVG,
+        hotspots: [
+          {
+            id: 'dns-t-tilt',
+            x: 50,
+            y: 22,
+            label: 'Tilt of about 23.5°',
+            description:
+              'Earth\'s spin axis is tilted by about 23.5° from vertical, measured against the plane of its orbit round the Sun. The axis points the same way all year, like a leaning pencil that does not wobble as it is carried round a room.',
+          },
+          {
+            id: 'dns-t-summer',
+            x: 40,
+            y: 65,
+            label: 'N hemisphere summer',
+            description:
+              'When the north pole tilts toward the Sun, sunlight hits the UK more directly and the UK gets longer days. This is summer for the UK and the rest of the northern hemisphere. At the same time the southern hemisphere has winter.',
+          },
+          {
+            id: 'dns-t-winter',
+            x: 75,
+            y: 65,
+            label: 'N hemisphere winter',
+            description:
+              'Six months later, the north pole tilts away from the Sun. UK sunlight arrives at a shallow angle and days are shorter. This is winter for the UK and summer for the southern hemisphere.',
+          },
+          {
+            id: 'dns-t-distance',
+            x: 50,
+            y: 88,
+            label: 'Tilt, not distance',
+            description:
+              'Earth is actually closest to the Sun in early January (a point called perihelion) and furthest in early July. So the UK is slightly closer to the Sun in winter than in summer. Distance does not cause the seasons; tilt does.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'dns-scene-daynight',
+      title: 'Day and Night: Earth Spins, the Sun Stays Put',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to see why the UK turns into and out of the lit half of Earth as the planet spins.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: DAY_NIGHT_SVG,
+        hotspots: [
+          {
+            id: 'dns-d-sun',
+            x: 12,
+            y: 50,
+            label: 'The Sun lights one half of Earth',
+            description:
+              'Sunlight only reaches the half of Earth that faces the Sun. The other half sits in Earth\'s own shadow. The Sun does not move round Earth; it stays roughly where it is on the timescale of a day.',
+          },
+          {
+            id: 'dns-d-spin',
+            x: 62,
+            y: 25,
+            label: 'Earth spins once every 24 hours',
+            description:
+              'Earth turns on its axis once every 24 hours. As the UK rotates, it moves from the lit half (day) into the shadow (night) and back round to the lit half again. Sunrise and sunset are the moments the UK crosses the boundary.',
+          },
+          {
+            id: 'dns-d-uk',
+            x: 56,
+            y: 42,
+            label: 'The UK on the spinning Earth',
+            description:
+              'Right now, somewhere in the UK is in daylight and somewhere on the other side of the world is in night. Six hours later, the UK has carried round and is heading toward sunset.',
+          },
+          {
+            id: 'dns-d-myth',
+            x: 62,
+            y: 88,
+            label: 'It feels as if the Sun moves: it does not',
+            description:
+              'In daily speech we say "the Sun rises in the east." In fact, Earth turns toward the east, which carries the UK into the lit half. The Sun staying still is a simpler, more useful picture once you have the spin in mind.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'dns-scene-edinburgh',
+      title: 'UK Daylight Hours: Edinburgh in Midsummer vs Midwinter',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each marker to compare midsummer and midwinter daylight in Edinburgh and see why the difference grows further north.',
+      data: {
+        viewBox: '0 0 800 400',
+        svg: UK_DAYLIGHT_HOURS_SVG,
+        hotspots: [
+          {
+            id: 'dns-e-summer',
+            x: 35,
+            y: 38,
+            label: 'About 17 hours at midsummer',
+            description:
+              'Around the longest day (about 21 June), Edinburgh gets about 17 hours of daylight. Sunrise is around 04:30 and sunset around 22:00. Further north (Shetland, Orkney) gets even more, and the sky never fully darkens.',
+          },
+          {
+            id: 'dns-e-winter',
+            x: 60,
+            y: 62,
+            label: 'About 7 hours at midwinter',
+            description:
+              'Around the shortest day (about 21 December), Edinburgh gets about 7 hours of daylight. Sunrise is around 08:40 and sunset around 15:40. The difference between summer and winter day length is bigger the further north you go.',
+          },
+          {
+            id: 'dns-e-tilt-link',
+            x: 50,
+            y: 85,
+            label: 'The link to tilt',
+            description:
+              'In June the UK\'s end of Earth tilts toward the Sun, so the UK\'s spin path stays in the lit half longer each day. In December that end tilts away, so the UK\'s path through the lit half is short. Same spin, different tilt direction.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'dns-worked-1',
+      title: 'Why the UK has summer when the north pole tilts toward the Sun',
+      steps: [
+        {
+          explanation:
+            'Set the scene. A pupil in Sevenoaks notices that summer days in the UK are long and warm, while winter days are short and cold, and asks why.',
+        },
+        {
+          explanation:
+            'Recall the tilt. Earth\'s axis is tilted at about 23.5° from vertical. The axis keeps pointing the same way as Earth orbits the Sun, like a leaning stick carried round a room.',
+          maths: 'tilt of axis ≈ 23.5° from vertical',
+        },
+        {
+          explanation:
+            'Locate the UK. The UK is in the northern hemisphere. So when the north end of the axis tilts toward the Sun, the UK tilts toward the Sun too.',
+        },
+        {
+          explanation:
+            'Two effects of that tilt. First, sunlight hits the UK more directly (closer to overhead), so each square metre of ground gets more energy. Second, the UK\'s daily spin path keeps it in the lit half of Earth for longer, so days are longer.',
+          maths: 'more direct sunlight + longer days = summer',
+        },
+        {
+          explanation:
+            'State the result. The UK has summer when the north pole tilts toward the Sun, and winter six months later when it tilts away. The southern hemisphere is on the opposite cycle.',
+        },
+        {
+          explanation:
+            'A quick check on the "closer-to-the-Sun" idea. Earth is actually closest to the Sun in early January, in the middle of UK winter, and furthest in early July. So the seasons are not caused by distance to the Sun. Tilt, not distance.',
+        },
+      ],
+    },
+    {
+      id: 'dns-worked-2',
+      title: 'Why the Sun seems to rise in the east',
+      steps: [
+        {
+          explanation:
+            'Set the scene. A pupil in Manchester watches the Sun appear over the rooftops in the morning and disappear behind the hills in the evening, and asks whether the Sun is moving round Earth.',
+        },
+        {
+          explanation:
+            'Recall the spin. Earth turns on its axis once every 24 hours. Looking down on the north pole, Earth spins anticlockwise. From the ground, that means each part of the surface turns toward the east.',
+          maths: 'spin period = 24 h, eastward as seen from the surface',
+        },
+        {
+          explanation:
+            'Picture the boundary. Half of Earth always faces the Sun (day), half is in shadow (night). The line between them is sunrise on one side and sunset on the other.',
+        },
+        {
+          explanation:
+            'Carry the UK across the boundary. Manchester turns toward the east. As it does, it crosses the day side first along the eastern edge, so the Sun appears to rise in the east. Twelve hours later it crosses the western edge into night.',
+          maths: 'Manchester crosses east boundary → "sunrise"; west boundary → "sunset"',
+        },
+        {
+          explanation:
+            'State the result. The Sun is not moving round Earth on a daily timescale. Earth is spinning, and Manchester is being carried round. Saying "the Sun rises in the east" is a useful shorthand once you know the spin is doing the work.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'dns-q1',
+      type: 'multiple-choice',
+      stem: 'What causes the seasons in the UK?',
+      tier: 'core',
+      options: [
+        'Earth gets closer to the Sun in summer and further in winter.',
+        'The Sun gets hotter in summer and cooler in winter.',
+        'Earth\'s axis is tilted, so the UK tilts toward the Sun in summer and away in winter.',
+        'The Moon shades the UK in winter.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'dns-mis-distance',
+      hint: 'Think about the direction the north pole leans, not the distance from the Sun.',
+    },
+    {
+      id: 'dns-q2',
+      type: 'multiple-choice',
+      stem: 'Roughly what angle is Earth\'s axis tilted from vertical, relative to its orbit?',
+      tier: 'core',
+      options: [
+        '0° (not tilted)',
+        '5°',
+        '23.5°',
+        '90° (lying on its side)',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      hint: 'About a quarter of a right angle.',
+    },
+    {
+      id: 'dns-q3',
+      type: 'numeric-entry',
+      stem: 'How many hours does Earth take to spin once on its axis?',
+      tier: 'core',
+      correctAnswer: 24,
+      unit: 'hours',
+      xpValue: 10,
+      hint: 'One full day.',
+    },
+    {
+      id: 'dns-q4',
+      type: 'multiple-choice',
+      stem: 'When the UK is in summer, what is the southern hemisphere doing?',
+      tier: 'core',
+      options: [
+        'Also having summer.',
+        'Having spring.',
+        'Having winter (the south pole tilts away from the Sun).',
+        'Standing still in the dark.',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'dns-mis-same-season',
+      hint: 'The two hemispheres are on opposite halves of Earth\'s tilt.',
+    },
+    {
+      id: 'dns-q5',
+      type: 'multiple-choice',
+      stem: 'Why does the Sun appear to rise in the east each morning in the UK?',
+      tier: 'core',
+      options: [
+        'The Sun orbits Earth once a day, moving from east to west.',
+        'Earth spins on its axis, carrying the UK toward the east into the lit half of Earth.',
+        'The Moon pushes the Sun across the sky.',
+        'The Sun is closer in the morning than at night.',
+      ],
+      correctIndex: 1,
+      xpValue: 10,
+      misconceptionId: 'dns-mis-sun-moves',
+      hint: 'It is Earth that moves on this timescale, not the Sun.',
+    },
+    {
+      id: 'dns-q6',
+      type: 'multiple-choice',
+      stem: 'Edinburgh has about 17 hours of daylight at midsummer and about 7 hours at midwinter. What is the main reason the day length changes through the year?',
+      tier: 'core',
+      options: [
+        'Earth\'s tilt: the UK\'s spin path stays in the lit half of Earth longer when the north pole leans toward the Sun.',
+        'The Sun stays on for longer in summer.',
+        'Earth spins faster in summer.',
+        'Cloud cover blocks more of the day in winter.',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      hint: 'Same spin speed, different tilt direction.',
+    },
+    {
+      id: 'dns-q7',
+      type: 'spot-misconception',
+      stem: 'Priya writes, "The UK has summer because Earth is closer to the Sun in summer than in winter." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Priya is right. Earth is closer in summer, so the UK gets more heat and has summer.',
+          isMisconception: true,
+        },
+        {
+          text: 'Priya is not right. Earth is actually closest to the Sun in early January (perihelion), in the middle of UK winter. The seasons are caused by Earth\'s 23.5° axial tilt, not by distance from the Sun.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'dns-mis-distance',
+    },
+    {
+      id: 'dns-q8',
+      type: 'spot-misconception',
+      stem: 'Theo writes, "The Sun moves round Earth once a day, and that is why we get day and night." Is the method sound?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Theo is right. The Sun rises in the east and sets in the west, so it must be moving round Earth.',
+          isMisconception: true,
+        },
+        {
+          text: 'Theo is not right. Earth spins on its axis once every 24 hours. The UK is carried from the lit half (day) into the shadow (night) and back. The Sun does not move round Earth on this timescale.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'dns-mis-sun-moves',
+    },
+    {
+      id: 'dns-q9',
+      type: 'numeric-entry',
+      stem: 'Edinburgh has about 17 hours of daylight at midsummer and about 7 hours at midwinter. Roughly how many more hours of daylight does Edinburgh have at midsummer than at midwinter?',
+      tier: 'confident',
+      correctAnswer: 10,
+      unit: 'hours',
+      tolerance: 1,
+      xpValue: 15,
+      hint: '17 - 7.',
+    },
+    {
+      id: 'dns-q10',
+      type: 'multiple-choice',
+      stem: 'A pupil in Cape Town (in the southern hemisphere) is on the phone to a friend in London on 25 December. Both are looking out of the window. Which sentence is true?',
+      tier: 'confident',
+      options: [
+        'Both are in winter, with similar daylight hours.',
+        'Both are in summer, because the whole Earth has summer at the same time.',
+        'Cape Town has neither summer nor winter, because it is on the equator.',
+        'London is in winter (short days); Cape Town is in summer (long days), because the southern hemisphere tilts toward the Sun in December.',
+      ],
+      correctIndex: 3,
+      xpValue: 15,
+      misconceptionId: 'dns-mis-same-season',
+      hint: 'When the UK has winter, the opposite hemisphere has summer.',
+    },
+    {
+      id: 'dns-q11',
+      type: 'multiple-choice',
+      stem: 'Which fact about the date of perihelion (when Earth is closest to the Sun) is correct?',
+      tier: 'confident',
+      options: [
+        'Perihelion is in late June, in the middle of UK summer.',
+        'Perihelion is in early January, in the middle of UK winter, which shows that the seasons are not caused by distance from the Sun.',
+        'Perihelion is on 21 March each year.',
+        'Earth never gets closer to or further from the Sun.',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'dns-mis-orbit-shape',
+      hint: 'It is in the same UK month as the New Year.',
+    },
+    {
+      id: 'dns-q12',
+      type: 'missing-step',
+      stem: 'Fill in the missing step. A pupil is explaining why the UK has summer when the north pole tilts toward the Sun, given that the axis keeps pointing the same way all year.',
+      tier: 'confident',
+      steps: [
+        'Recall that Earth\'s axis is tilted at about 23.5° and keeps pointing the same way as Earth orbits.',
+        'Note that the UK is in the northern hemisphere.',
+        'When the north pole tilts toward the Sun, the UK tilts toward the Sun too.',
+        null,
+        'State the result: the UK has summer (longer days, more direct sunlight) when the north pole tilts toward the Sun.',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'List the two effects: sunlight hits the UK more directly, and the UK\'s spin path stays in the lit half of Earth for longer.',
+      xpValue: 15,
+      misconceptionId: 'dns-mis-tilt-flips',
+    },
+    {
+      id: 'dns-q13',
+      type: 'drag-order',
+      stem: 'Order these UK midsummer events on 21 June, in Edinburgh, from earliest in the day to latest. (Times shown are approximate BST.)',
+      tier: 'confident',
+      items: [
+        'Sunset, around 22:00',
+        'Sunrise, around 04:30',
+        'Noon (Sun highest in the sky), around 13:00 BST',
+      ],
+      correctOrder: [1, 2, 0],
+      xpValue: 15,
+      hint: 'Sunrise comes first; the Sun is highest near the middle of the day; sunset comes last.',
+    },
+    {
+      id: 'dns-q14',
+      type: 'data-extraction',
+      stem: 'A school project lists Edinburgh daylight hours: "March equinox: 12 h. Midsummer (21 June): 17 h. September equinox: 12 h. Midwinter (21 December): 7 h." How many hours of daylight does Edinburgh have at the September equinox?',
+      tier: 'confident',
+      dataSource:
+        'March equinox: 12 h. Midsummer (21 June): 17 h. September equinox: 12 h. Midwinter (21 December): 7 h.',
+      correctAnswer: '12',
+      xpValue: 15,
+      hint: 'Read the row labelled "September equinox".',
+    },
+    {
+      id: 'dns-q15',
+      type: 'multiple-choice',
+      stem: 'A Year 7 in London phones a friend in Sydney at 11 a.m. London time. Sydney is on the opposite side of Earth, roughly half a turn round from London. Roughly what time is it in Sydney, and why?',
+      tier: 'challenge',
+      options: [
+        'About 11 p.m. in Sydney; Earth spins once every 24 hours, and a half turn moves the clock by about 12 hours, so Sydney is on the night side when London is in late morning.',
+        '11 a.m. in Sydney; the whole Earth shares one clock, and time runs the same everywhere on the same date.',
+        '5 a.m. in Sydney; Earth spins, but Sydney is six hours ahead because it is south of London.',
+        'It is dawn in Sydney; the Sun is starting to rise wherever it is morning anywhere on Earth.',
+      ],
+      correctIndex: 0,
+      xpValue: 20,
+      misconceptionId: 'dns-mis-sun-moves',
+      hint: 'Half of 24 hours is 12. Sydney is on the dark side when London is on the lit side.',
+    },
+    {
+      id: 'dns-q16',
+      type: 'numeric-entry',
+      stem: 'Earth spins through 360° once every 24 hours. Roughly how many degrees does it spin in 1 hour?',
+      tier: 'challenge',
+      correctAnswer: 15,
+      unit: 'degrees per hour',
+      tolerance: 1,
+      xpValue: 20,
+      hint: '360 ÷ 24.',
+    },
+    {
+      id: 'dns-q17',
+      type: 'multiple-choice',
+      stem: 'A Year 7 pupil reads three claims. Which two together correctly explain UK summer?',
+      tier: 'challenge',
+      options: [
+        '(1) Earth is closest to the Sun in summer; (2) the Sun is hotter in summer.',
+        '(1) The Moon blocks less light in summer; (2) Earth orbits faster in summer.',
+        '(1) The UK has more trees in summer; (2) air pressure changes the day length.',
+        '(1) The north pole tilts toward the Sun; (2) sunlight hits the UK more directly and the UK\'s daily spin path stays in the lit half of Earth for longer.',
+      ],
+      correctIndex: 3,
+      xpValue: 20,
+      misconceptionId: 'dns-mis-distance',
+      hint: 'Pick the option that uses tilt, direct sunlight, and longer days, and does NOT use distance to the Sun.',
+    },
+    {
+      id: 'dns-q18',
+      type: 'numeric-entry',
+      stem: 'A Year 7 in Sheffield reads that London on 21 June has about 16 hours and 38 minutes of daylight, and London on 21 December has about 7 hours and 50 minutes. To the nearest hour, how many more hours of daylight does London have at midsummer than at midwinter?',
+      tier: 'challenge',
+      correctAnswer: 9,
+      unit: 'hours',
+      tolerance: 1,
+      xpValue: 20,
+      hint: 'Round each value to the nearest hour, then subtract.',
+    },
+    {
+      id: 'dns-q19',
+      type: 'free-text',
+      stem: 'A Year 7 in Sevenoaks asks why the UK has summer in June. In two or three sentences, write a reply that names Earth\'s 23.5° axial tilt, says the north pole tilts toward the Sun in June, and points out that perihelion (closest distance to the Sun) is in early January, so distance is not what causes the seasons.',
+      tier: 'challenge',
+      sampleAnswer:
+        'Earth\'s axis is tilted at about 23.5° from vertical, and it keeps pointing the same way all year. In June, the north pole tilts toward the Sun, so the UK gets more direct sunlight and longer days, which is summer. Earth is actually closest to the Sun (perihelion) in early January, in the middle of UK winter, so the seasons are caused by tilt, not by distance from the Sun.',
+      keywords: ['tilt', '23.5', 'north pole', 'perihelion', 'January', 'distance'],
+      xpValue: 20,
+      misconceptionId: 'dns-mis-distance',
+    },
+    {
+      id: 'dns-q20',
+      type: 'multiple-choice',
+      stem: 'Which two ideas does a UK Year 7 pupil need to explain "the Sun rises in the east"?',
+      tier: 'challenge',
+      options: [
+        'Earth spins on its axis once every 24 hours; the surface turns toward the east, so the eastern edge of the lit half meets the UK first.',
+        'The Sun orbits Earth once a day; the Sun moves toward the east.',
+        'The Moon pulls the Sun east; gravity is stronger in the east.',
+        'The Sun jumps across the sky in steps; the east is closer to space.',
+      ],
+      correctIndex: 0,
+      xpValue: 20,
+      misconceptionId: 'dns-mis-fixed-earth',
+      hint: 'You need spin (not Sun motion) and east-facing surface (not east-facing Sun).',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Physics examiner report June 2019, Paper 2F, candidates explaining seasons by Earth-Sun distance
+    {
+      id: 'dns-mis-distance',
+      description:
+        'Believing the UK has summer because Earth is closer to the Sun, and winter because Earth is further away.',
+      triggerAnswer: 'distance',
+      correction:
+        'The seasons are caused by Earth\'s 23.5° axial tilt, not by distance from the Sun. Earth is actually closest to the Sun in early January, in the middle of UK winter.',
+      reExplanation:
+        'When the north pole tilts toward the Sun, the UK gets more direct sunlight and longer days; that is summer. When the north pole tilts away, the UK gets shallow sunlight and shorter days; that is winter. Earth\'s orbit is nearly circular, so the small distance change does not drive the seasons.',
+    },
+    // Source: CGP KS3 Physics Study Guide Common Mistake box on day-night cause
+    {
+      id: 'dns-mis-sun-moves',
+      description:
+        'Believing the Sun moves round Earth once a day to cause day and night, often because the Sun rises in the east and sets in the west.',
+      triggerAnswer: 'sun-moves',
+      correction:
+        'Earth spins on its own axis once every 24 hours. The Sun does not move round Earth on a daily timescale. Sunrise and sunset are the moments the UK is carried into and out of the lit half of Earth.',
+      reExplanation:
+        'Picture half of Earth in sunlight and half in shadow. As Earth turns, the boundary sweeps over the surface. Saying "the Sun rises in the east" is a shorthand: it is the UK turning toward the east into the lit half. The Sun is roughly fixed on this timescale.',
+    },
+    // Source: Edexcel GCSE Physics examiner report June 2022, Paper 1PH0/1F, candidates assuming both hemispheres share a season
+    {
+      id: 'dns-mis-same-season',
+      description:
+        'Believing the whole Earth has the same season at the same time, missing that the two hemispheres are on opposite cycles.',
+      triggerAnswer: 'same-season',
+      correction:
+        'When the UK has summer (north pole tilted toward the Sun), the southern hemisphere has winter (south pole tilted away). The two hemispheres always have opposite seasons.',
+      reExplanation:
+        'Earth\'s tilt has the same direction all year. So one end of the axis leans into the Sun while the other leans away. Three months later both ends lean sideways and the equinoxes split the difference. The hemispheres swap roles every six months.',
+    },
+    // Source: IOPSpark "Earth in space" guidance on the role of tilt vs orbit shape
+    {
+      id: 'dns-mis-orbit-shape',
+      description:
+        'Believing Earth\'s orbit is strongly oval, so the season changes follow distance to the Sun rather than the tilt of the axis.',
+      triggerAnswer: 'orbit-shape',
+      correction:
+        'Earth\'s orbit is only slightly oval. The closest distance (perihelion, early January) and the furthest (aphelion, early July) only differ by about 3 percent. That tiny change is not what drives the seasons; the 23.5° tilt is.',
+      reExplanation:
+        'A useful check: if distance drove the seasons, the whole Earth would have summer at the same time and winter at the same time, and the UK\'s summer would line up with perihelion. Neither matches what we see.',
+    },
+    // Source: AQA GCSE Physics examiner report June 2023, Paper 2F, candidates believing the Sun moves overhead through 24 hours
+    {
+      id: 'dns-mis-fixed-earth',
+      description:
+        'Believing Earth is fixed in place while the Sun travels round it overhead each day.',
+      triggerAnswer: 'fixed-earth',
+      correction:
+        'Earth spins on its axis once every 24 hours. The Sun stays roughly fixed on this timescale. The day-night cycle is caused by Earth turning, not by the Sun moving round Earth.',
+      reExplanation:
+        'A simple test: time-lapse views of Earth from space show the planet turning, with the lit half sweeping across continents. The Sun in the picture stays still. Old "the Sun goes round Earth" models were replaced from the 1500s onward.',
+    },
+    // Source: CGP KS3 Physics Workbook Common Mistake box on tilt direction over the year
+    {
+      id: 'dns-mis-tilt-flips',
+      description:
+        'Believing Earth\'s axis flips its tilt direction during the year, so the UK leans toward the Sun in summer and points the other way in winter.',
+      triggerAnswer: 'tilt-flips',
+      correction:
+        'Earth\'s axis points the same way all year; it never flips. Six months apart, Earth sits on opposite sides of its orbit, so the same fixed tilt leans the UK toward the Sun in June and away in December.',
+      reExplanation:
+        'Picture a leaning stick carried round a room. The stick stays leaning the same way; what changes is where in the room you are. That is the same picture for Earth: same tilt all year, different position in the orbit.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}
+
+export const spaceZoneNodes = [spaceSolarSystem, spaceDayNightSeasons]
 
 export const spaceZone: Zone = {
   id: 'physics-space',
