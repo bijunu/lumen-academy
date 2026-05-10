@@ -848,13 +848,57 @@ Covers `biology-body-systems-digestive`, `biology-body-systems-circulatory`, `bi
 Covers `biology-reproduction-flowering-plant`, `biology-reproduction-human-overview`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-REPRO-1: Learner conflates pollination with fertilisation, treating the bee landing on a flower as the moment of fertilisation.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ that defines pollination, at least one that defines fertilisation, and at least one drag-order or spot-misconception that places the two in sequence.
+- C-REPRO-2: Learner swaps the male anther and the female stigma, naming the stigma as the pollen-maker.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ on which part makes pollen and at least one MCQ on which part receives it.
+- C-REPRO-3: Learner believes that bright petals and nectar are signs of wind pollination.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ or spot-misconception that contrasts insect-pollinated and wind-pollinated flower features.
+- C-REPRO-4: Learner believes any seed from a tall tree must be wind-dispersed (so acorns and conkers must blow away).
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ that names the correct dispersal method for a UK animal-dispersed seed.
+- C-REPRO-5: Learner conflates pollination and seed dispersal, treating them as the same event.
+  - Required handling: misconception entry on the flowering-plant node; at least one Challenge-tier item that distinguishes the two and uses a UK example where the methods differ (e.g. silver birch wind-pollinated, wind-dispersed; bramble insect-pollinated, animal-dispersed).
+- C-REPRO-6: Learner believes seeds do not need to be dispersed because the parent plant grows new seeds each year, missing the competition-for-resources reason.
+  - Required handling: misconception entry on the flowering-plant node; at least one MCQ on why dispersal helps survival.
+- C-REPRO-7: Learner believes the period is the egg leaving the body, rather than the lining of the uterus.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ or spot-misconception that names the lining (not the egg) as the substance shed during a period.
+- C-REPRO-8: Learner names the uterus as the site of fertilisation rather than the oviduct.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks where fertilisation happens; at least one Confident or Challenge spot-misconception or missing-step that places fertilisation in the oviduct followed by implantation in the uterus.
+- C-REPRO-9: Learner believes the uterus produces the egg cells (largest organ on the diagram bias).
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks which organ releases the egg.
+- C-REPRO-10: Learner places ovulation on day 1 of the cycle, when the period starts.
+  - Required handling: misconception entry on the human-overview node; at least one Core MCQ that asks for the day of ovulation in an average 28-day cycle.
+- C-REPRO-11: Learner believes the placenta pumps blood from the parent into the foetus.
+  - Required handling: misconception entry on the human-overview node; at least one Confident-tier MCQ that asks the role of the placenta and includes "pumps blood" as an explicit distractor.
+- C-REPRO-12: Learner uses "embryo" and "foetus" interchangeably from day 1 of pregnancy.
+  - Required handling: misconception entry on the human-overview node; at least one MCQ on which name applies at a given week of pregnancy.
+- C-REPRO-13: Learner believes the placenta blocks all harmful substances, missing the NHS warning about smoking, alcohol and medicines.
+  - Required handling: misconception entry on the human-overview node; at least one Challenge-tier MCQ that maps an NHS lifestyle warning to the placenta-as-barrier mental model.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-REPRO-1: At least one labelled-image question on the flowering-plant node places stigma, anther, ovary, and petal onto hotspots on a flower diagram, with off-flower distractors (root / leaf) in the pool.
+- Q-REPRO-2: At least one drag-order question on the flowering-plant node sequences the four steps pollination, fertilisation, seed and fruit formation, seed dispersal, in that order.
+- Q-REPRO-3: At least one Challenge-tier numeric on the flowering-plant node uses a UK orchard, hedgerow, or playing-field context (Sevenoaks, Manchester, Lake District, Tunbridge Wells) and requires at least one inferred multiplication or fraction step.
+- Q-REPRO-4: At least one Confident-tier data-extraction on the flowering-plant node compares average dispersal distances of three named UK seeds in a class investigation.
+- Q-REPRO-5: At least one labelled-image question on the human-overview node places ovary, oviduct, uterus, and vagina onto hotspots on the female system diagram, with at least one male-system label as a distractor.
+- Q-REPRO-6: At least one labelled-image question on the human-overview node places testes, sperm tube, and penis onto hotspots on the male system diagram, with at least one female-system label as a distractor.
+- Q-REPRO-7: At least one drag-order question on the human-overview node sequences fertilisation, implantation, embryo, foetus, birth in that order.
+- Q-REPRO-8: At least one drag-drop-builder on the human-overview node restricts the build to the in-order journey of a sperm cell from testes through to oviduct, rejecting non-reproductive organs (stomach, bladder, lungs).
+- Q-REPRO-9: At least one Confident-tier numeric on the human-overview node uses an average-cycle date arithmetic step (cycle starts on date X, on which date does ovulation fall).
+- Q-REPRO-10: At least one Challenge-tier MCQ on the human-overview node uses an NHS-sourced public-health framing (smoking and pregnancy) and asks the learner to map the warning onto the placenta mechanism.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-REPRO-1: Given "Pollination is the same as fertilisation, right?", the tutor's first reply is a Socratic prompt about how the pollen actually reaches the ovule, not a direct correction.
+- T-REPRO-2: Given a wrong answer matching the anther/stigma swap, the tutor cites the relevant misconception's `reExplanation` (the A-for-ammo, S-for-sticky memory trick) rather than producing a fresh hint.
+- T-REPRO-3: Given "All flowers must be pollinated by bees", the tutor steers the learner to compare an oak catkin with an apple blossom, not a definition dump.
+- T-REPRO-4: Given an off-topic input on the human-overview node (for example a US health-class question on insurance or AP Biology hormones), the tutor steers back to UK KS3 reproductive system language politely.
+- T-REPRO-5: Given "Doesn't the period mean the egg comes out?", the tutor's first reply is a Socratic prompt about the size of an egg cell vs the visible blood, not a direct correction.
+- T-REPRO-6: Given a wrong answer matching the uterus-makes-eggs trigger on hro-q1, the tutor cites the relevant misconception's `reExplanation` (two ovaries, two roles) rather than producing a fresh hint.
+- T-REPRO-7: Given a request for an inline definition (tap on "ovulation" or "placenta"), the glossary returns a UK English age-12 NHS-style definition under 2 seconds.
+- T-REPRO-8: Given "Why does the NHS say not to smoke during pregnancy?", the tutor walks the learner through "the placenta passes small molecules across, including harmful ones; smoke molecules are small", not a moral framing or a definition of smoking.
 
 ## Zone: Vitalia > Variation and Classification
 
@@ -887,13 +931,46 @@ Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`.
 Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-PHOTO-1: Learner reverses the photosynthesis equation, naming glucose and oxygen as the reactants.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ that asks for the reactants and at least one Core MCQ that asks for the products.
+- C-PHOTO-2: Learner believes plants only photosynthesise and never respire.
+  - Required handling: misconception entry on the overview node; at least one Core spot-misconception or MCQ that surfaces both processes happening in the same plant cell.
+- C-PHOTO-3: Learner places photosynthesis in the mitochondria, conflating it with respiration.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ on the location of photosynthesis (chloroplast) and one Confident-tier spot-misconception that surfaces the chloroplast vs mitochondrion mix-up.
+- C-PHOTO-4: Learner writes chlorophyll into the word equation, treating it as a reactant or a product.
+  - Required handling: misconception entry on the overview node; at least one drag-drop-builder that restricts the build to CO₂, water, glucose, and oxygen and rejects chlorophyll.
+- C-PHOTO-5: Learner believes chlorophyll is itself converted into glucose during photosynthesis.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ on the role of chlorophyll (traps light, not used up).
+- C-PHOTO-6: Learner believes plants can photosynthesise in the dark.
+  - Required handling: misconception entry on the overview node; at least one Challenge-tier item using a dark-period investigation (starch test, mass loss, or pondweed bubbles).
+- C-PHOTO-7: Learner inverts the gas exchange of photosynthesis, claiming plants take in oxygen and give out CO₂ during photosynthesis.
+  - Required handling: misconception entry on the overview node; at least one Confident-tier MCQ that asks which gas is given out during photosynthesis.
+- C-PHOTO-8: Learner does not connect photosynthesis to the food chain (does not see photosynthesis as the energy-trapping step almost all life depends on).
+  - Required handling: at least one Confident-tier MCQ on the overview node that asks why photosynthesis underpins almost every food chain.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-PHOTO-1: At least one Core MCQ on the overview node asks for the reactants of photosynthesis (carbon dioxide and water), with the products as the dominant distractor.
+- Q-PHOTO-2: At least one Core MCQ on the overview node asks for the products (glucose and oxygen), with the reactants as the dominant distractor.
+- Q-PHOTO-3: At least one drag-order question on the overview node sequences the journey of one CO₂ molecule from leaf intake through chloroplast trapping to glucose storage.
+- Q-PHOTO-4: At least one labelled-image question on the overview node places chloroplast, nucleus, and large permanent vacuole onto a leaf cell diagram, with a non-plant-cell distractor (mitochondrion or cell membrane) in the pool.
+- Q-PHOTO-5: At least one drag-drop-builder on the overview node restricts the build to the four word-equation substances and rejects chlorophyll, nitrogen, salt.
+- Q-PHOTO-6: At least one Confident-tier data-extraction on the overview node compares oxygen readings across three sealed-jar conditions (empty, green plant, dead twig) and asks which jar holds a photosynthesising plant.
+- Q-PHOTO-7: At least one missing-step question on the overview node fills in the chloroplast-and-chlorophyll step inside an account of photosynthesis.
+- Q-PHOTO-8: At least one Challenge-tier numeric on the overview node uses a UK-context investigation (Lake District oak, Sevenoaks pondweed, Manchester field) and requires a multiplication or rate calculation across multiple beakers or hours.
+- Q-PHOTO-9: At least one free-text question on the overview node asks the learner to explain a dark-room mass loss in terms of "photosynthesis off, respiration on".
+- Q-PHOTO-10: All chemical formulae in stems, options, scenes, and explanations on the overview node use Unicode subscripts (CO₂, O₂, H₂O), not ASCII (CO2, O2, H2O).
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-PHOTO-1: Given "Plants only photosynthesise, right?", the tutor's first reply is a Socratic prompt about what happens at night, not a direct correction.
+- T-PHOTO-2: Given a wrong answer matching the equation-reversed trigger on po-q1 or po-q2, the tutor cites the relevant misconception's `reExplanation` (the photosynthesis-and-respiration are opposites framing) rather than producing a fresh hint.
+- T-PHOTO-3: Given "Where does photosynthesis happen?" with the wrong answer "mitochondria", the tutor steers via "What colour are mitochondria? What colour are chloroplasts?", not a definition dump.
+- T-PHOTO-4: Given "Is chlorophyll one of the reactants?", the tutor's first reply is a Socratic prompt about what is consumed in the reaction, not a direct correction.
+- T-PHOTO-5: Given a request for an inline definition (tap on "chloroplast" or "chlorophyll"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PHOTO-6: Given "Why does the pondweed bubble more under a torch?", the tutor walks the learner through "more light, more photosynthesis, more oxygen", not a launch into limiting-factors graphs (those belong to the rate node).
+- T-PHOTO-7: Given an off-topic input (for example a US AP Biology Calvin-cycle reference), the tutor steers back to UK KS3 word-equation language politely.
 
 ## Zone: Elementia > Particle Model
 

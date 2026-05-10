@@ -217,16 +217,16 @@
 ### Zone: Reproduction (`biology-reproduction`)
 
 #### Flowering Plant Reproduction (Core, `biology-reproduction-flowering-plant`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Reproduction)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: Reproduction in plants, including flower structure, wind and insect pollination, fertilisation, seed and fruit formation and dispersal, including quantitative investigation of some dispersal mechanisms.
+- **AQA**: 4.5.1.4 Plant reproduction; sexual reproduction in flowering plants (GCSE Biology 8461)
+- **Edexcel**: SB7a Sexual reproduction in plants (GCSE Biology 1BI0, Topic 7)
+- **OCR**: B6.1f Plant reproduction and dispersal (GCSE Biology A J247)
 
 #### Human Reproduction Overview (Confident, `biology-reproduction-human-overview`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Reproduction)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: Reproduction in humans (as an example of a mammal), including the structure and function of the male and female reproductive systems, menstrual cycle (without details of hormones), gametes, fertilisation, gestation and birth, to include the effect of maternal lifestyle on the foetus through the placenta.
+- **AQA**: 4.5.3 Hormones in human reproduction (GCSE Biology 8461)
+- **Edexcel**: SB7c Human reproduction; SB7d The menstrual cycle (GCSE Biology 1BI0, Topic 7)
+- **OCR**: B6.1g Human reproduction (GCSE Biology A J247)
 
 ### Zone: Variation and Classification (`biology-variation-classification`)
 
@@ -259,16 +259,16 @@
 ### Zone: Photosynthesis (`biology-photosynthesis`)
 
 #### Photosynthesis Overview (Core, `biology-photosynthesis-overview`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Nutrition and digestion: photosynthesis)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The reactants in, and products of, photosynthesis, and a word summary for photosynthesis; the dependence of almost all life on Earth on the ability of photosynthetic organisms, such as plants and algae, to use sunlight in photosynthesis to build organic molecules that are an essential energy store and to maintain levels of oxygen and carbon dioxide in the atmosphere.
+- **AQA**: 4.4.1.1 Photosynthesis: reaction and word equation (GCSE Biology 8461)
+- **Edexcel**: SB6a Photosynthesis (GCSE Biology 1BI0, Topic 6)
+- **OCR**: B4.1.1 Photosynthesis (GCSE Biology A J247)
 
 #### Rate of Photosynthesis (Confident, `biology-photosynthesis-rate`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Nutrition and digestion: photosynthesis)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The reactants in, and products of, photosynthesis, and a word summary for photosynthesis; the adaptations of leaves for photosynthesis.
+- **AQA**: 4.4.1.2 Rate of photosynthesis; limiting factors (GCSE Biology 8461)
+- **Edexcel**: SB6b Limiting factors and the rate of photosynthesis (GCSE Biology 1BI0, Topic 6)
+- **OCR**: B4.1.2 Rate of photosynthesis (GCSE Biology A J247)
 
 ---
 
