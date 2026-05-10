@@ -579,3 +579,592 @@ export const combustion: SkillNode = {
     spacedReviewDays: [1, 3, 7, 14, 30],
   },
 }
+
+export const acidMetal: SkillNode = {
+  id: 'chemistry-simple-reactions-acid-metal',
+  title: 'Acid plus Metal: Salt and Hydrogen',
+  description:
+    'When an acid reacts with a metal, the products are a salt and hydrogen gas. The general word equation is: metal + acid → salt + hydrogen. Classic UK lab examples: zinc + hydrochloric acid → zinc chloride + hydrogen; magnesium + sulfuric acid → magnesium sulfate + hydrogen. The hydrogen is tested with a lit splint: a "squeaky pop" confirms hydrogen. A light reactivity touch only at Y7: of Mg, Zn and Fe, magnesium fizzes the fastest in dilute acid; iron is the slowest. Concentration changes the SPEED of the reaction but not the products.',
+  subject: 'chemistry',
+  realm: 'elementia',
+  zoneId: 'chemistry-simple-reactions',
+  zoneName: 'Simple Reactions',
+  tier: 'confident',
+  prerequisites: ['chemistry-simple-reactions-combustion', 'chemistry-acids-alkalis-common'],
+  curriculum: {
+    ks3Objective:
+      'Combustion, thermal decomposition, oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.',
+    awardingBodies: {
+      aqa: '4.4.2.3 Reactions of acids with metals; 4.4.1.1 Reactivity of metals (GCSE Chemistry 8462)',
+      edexcel:
+        'Topic 4 Extracting metals; CC9 Reactivity of metals; Topic 8.4 Reactions of acids with metals (GCSE Chemistry 1CH0)',
+      ocr: 'C3.2 Reactions of acids; C5.1 The reactivity series (GCSE Chemistry A J248 Gateway)',
+    },
+  },
+  scenes: [
+    {
+      id: 'am-scene-equation',
+      title: 'The General Equation: Metal plus Acid',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each label to read the general word equation for a metal reacting with an acid.',
+      data: {
+        viewBox: '0 0 320 220',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220"><rect x="0" y="0" width="320" height="220" fill="#FEF3C7"/><rect x="20" y="60" width="55" height="40" rx="3" fill="#E5E7EB" stroke="#475569" stroke-width="1"/><text x="47" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#1F2937">metal</text><text x="47" y="92" text-anchor="middle" font-size="8" fill="#1F2937">e.g. Zn, Mg</text><text x="85" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">+</text><rect x="95" y="60" width="55" height="40" rx="3" fill="#FECACA" stroke="#7C2D12" stroke-width="1"/><text x="122" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">acid</text><text x="122" y="92" text-anchor="middle" font-size="8" fill="#7C2D12">e.g. HCl</text><text x="160" y="84" text-anchor="middle" font-size="16" font-weight="700" fill="#1E3A8A">→</text><rect x="170" y="60" width="55" height="40" rx="3" fill="#DBEAFE" stroke="#1E3A8A" stroke-width="1"/><text x="197" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">salt</text><text x="197" y="92" text-anchor="middle" font-size="8" fill="#1E3A8A">e.g. ZnCl₂</text><text x="235" y="84" text-anchor="middle" font-size="14" font-weight="700" fill="#475569">+</text><rect x="245" y="60" width="55" height="40" rx="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="1"/><text x="272" y="80" text-anchor="middle" font-size="10" font-weight="600" fill="#854D0E">hydrogen</text><text x="272" y="92" text-anchor="middle" font-size="8" fill="#854D0E">H₂ gas</text><text x="160" y="135" text-anchor="middle" font-size="11" font-weight="600" fill="#7C2D12">metal + acid → salt + hydrogen</text><text x="160" y="160" text-anchor="middle" font-size="9" fill="#7C2D12">Two products: a SALT (stays in the liquid)</text><text x="160" y="174" text-anchor="middle" font-size="9" fill="#7C2D12">and HYDROGEN gas (bubbles off).</text></svg>',
+        hotspots: [
+          {
+            id: 'am-h-metal',
+            x: 14,
+            y: 36,
+            label: 'Metal',
+            description:
+              'Common UK lab metals are magnesium ribbon, zinc granules, and iron filings. The metal sits as a solid in the bottom of the tube.',
+          },
+          {
+            id: 'am-h-acid',
+            x: 38,
+            y: 36,
+            label: 'Acid',
+            description:
+              'Common UK lab acids are dilute hydrochloric acid (HCl) and dilute sulfuric acid (H₂SO₄). The acid is a colourless liquid.',
+          },
+          {
+            id: 'am-h-salt',
+            x: 62,
+            y: 36,
+            label: 'Salt',
+            description:
+              'A salt is a compound made when an acid reacts with a metal or a base. The name comes from the metal and the acid: zinc + HCl gives zinc chloride; magnesium + H₂SO₄ gives magnesium sulfate.',
+          },
+          {
+            id: 'am-h-hydrogen',
+            x: 87,
+            y: 36,
+            label: 'Hydrogen gas',
+            description:
+              'Hydrogen bubbles rise out of the test tube and can be collected. A lit splint at the top of the tube goes "pop", which is the standard UK test for hydrogen.',
+          },
+          {
+            id: 'am-h-rule',
+            x: 50,
+            y: 70,
+            label: 'The rule to remember',
+            description:
+              'metal + acid → salt + hydrogen. This works for every reactive-enough metal at Y7: magnesium, zinc, iron with dilute HCl or sulfuric acid.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'am-scene-pop-test',
+      title: 'The Squeaky-Pop Test for Hydrogen',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each label to see how the standard UK lab test for hydrogen works.',
+      data: {
+        viewBox: '0 0 320 240',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240"><rect x="0" y="0" width="320" height="240" fill="#FEF3C7"/><rect x="120" y="40" width="50" height="140" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.4"/><rect x="120" y="155" width="50" height="25" fill="#FECACA" stroke="#7C2D12" stroke-width="0.8"/><g><circle cx="130" cy="120" r="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="0.5"/><circle cx="145" cy="100" r="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="0.5"/><circle cx="158" cy="130" r="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="0.5"/><circle cx="138" cy="80" r="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="0.5"/><circle cx="155" cy="65" r="3" fill="#FEF9C3" stroke="#854D0E" stroke-width="0.5"/></g><g><rect x="135" y="167" width="6" height="10" fill="#94A3B8"/><rect x="148" y="170" width="5" height="7" fill="#94A3B8"/><rect x="155" y="168" width="6" height="9" fill="#94A3B8"/></g><line x1="195" y1="40" x2="220" y2="20" stroke="#1F2937" stroke-width="1"/><polygon points="218,16 224,17 220,24" fill="#FB923C"/><text x="240" y="22" text-anchor="start" font-size="9" fill="#7C2D12">lit splint</text><text x="100" y="100" text-anchor="end" font-size="9" fill="#854D0E">H₂ gas</text><line x1="105" y1="100" x2="125" y2="100" stroke="#854D0E" stroke-width="0.6"/><text x="100" y="170" text-anchor="end" font-size="9" fill="#7C2D12">acid + Zn</text><line x1="105" y1="170" x2="125" y2="170" stroke="#7C2D12" stroke-width="0.6"/><text x="160" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">"pop" → hydrogen</text></svg>',
+        hotspots: [
+          {
+            id: 'am-h-tube',
+            x: 45,
+            y: 50,
+            label: 'Test tube of acid + metal',
+            description:
+              'Zinc granules sit at the bottom of the tube under dilute hydrochloric acid. Bubbles of hydrogen gas rise from the metal as the reaction goes on.',
+          },
+          {
+            id: 'am-h-bubbles',
+            x: 31,
+            y: 42,
+            label: 'Hydrogen bubbles',
+            description:
+              'Each bubble carries hydrogen gas (H₂). Hydrogen is the lightest gas; it rises straight to the top of the tube.',
+          },
+          {
+            id: 'am-h-splint',
+            x: 75,
+            y: 9,
+            label: 'Lit wooden splint',
+            description:
+              'A pupil holds a lit wooden splint at the open top of the tube once enough hydrogen has gathered. This is the standard UK pop-test.',
+          },
+          {
+            id: 'am-h-pop',
+            x: 50,
+            y: 92,
+            label: 'The "squeaky pop"',
+            description:
+              'Hydrogen plus oxygen from the air burns at speed when the splint touches it. The reaction is loud enough to make a sharp "pop" sound. A pop confirms hydrogen.',
+          },
+        ],
+      },
+    },
+    {
+      id: 'am-scene-reactivity',
+      title: 'Three Metals, Three Speeds: Mg, Zn, Fe in Dilute Acid',
+      type: 'labelled-diagram',
+      instructions:
+        'Click each test tube to see how three common UK lab metals fizz at different rates in the same dilute acid.',
+      data: {
+        viewBox: '0 0 320 240',
+        svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240"><rect x="0" y="0" width="320" height="240" fill="#FEF3C7"/><g><rect x="20" y="40" width="60" height="160" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="20" y="160" width="60" height="40" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><rect x="35" y="170" width="6" height="20" fill="#94A3B8"/><rect x="48" y="170" width="6" height="20" fill="#94A3B8"/><rect x="60" y="170" width="6" height="20" fill="#94A3B8"/><circle cx="35" cy="120" r="3" fill="#BFDBFE"/><circle cx="50" cy="100" r="3" fill="#BFDBFE"/><circle cx="40" cy="80" r="3" fill="#BFDBFE"/><circle cx="60" cy="90" r="3" fill="#BFDBFE"/><circle cx="55" cy="60" r="3" fill="#BFDBFE"/><circle cx="35" cy="140" r="3" fill="#BFDBFE"/><circle cx="65" cy="130" r="3" fill="#BFDBFE"/><circle cx="50" cy="50" r="3" fill="#BFDBFE"/><text x="50" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">MAGNESIUM</text><text x="50" y="232" text-anchor="middle" font-size="8" fill="#1E3A8A">fastest fizz</text></g><g><rect x="120" y="40" width="60" height="160" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="120" y="160" width="60" height="40" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><rect x="135" y="170" width="6" height="20" fill="#475569"/><rect x="148" y="170" width="6" height="20" fill="#475569"/><rect x="160" y="170" width="6" height="20" fill="#475569"/><circle cx="135" cy="120" r="3" fill="#BFDBFE"/><circle cx="150" cy="100" r="3" fill="#BFDBFE"/><circle cx="160" cy="135" r="3" fill="#BFDBFE"/><text x="150" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">ZINC</text><text x="150" y="232" text-anchor="middle" font-size="8" fill="#1E3A8A">steady fizz</text></g><g><rect x="220" y="40" width="60" height="160" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="220" y="160" width="60" height="40" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><rect x="235" y="170" width="6" height="20" fill="#7C2D12"/><rect x="248" y="170" width="6" height="20" fill="#7C2D12"/><rect x="260" y="170" width="6" height="20" fill="#7C2D12"/><circle cx="245" cy="135" r="2.5" fill="#BFDBFE"/><text x="250" y="220" text-anchor="middle" font-size="10" font-weight="600" fill="#1E3A8A">IRON</text><text x="250" y="232" text-anchor="middle" font-size="8" fill="#1E3A8A">slow fizz</text></g><text x="160" y="20" text-anchor="middle" font-size="10" font-weight="600" fill="#7C2D12">All three give the SAME products: salt + hydrogen.</text></svg>',
+        hotspots: [
+          {
+            id: 'am-h-mg',
+            x: 16,
+            y: 50,
+            label: 'Magnesium: fastest fizz',
+            description:
+              'A short strip of magnesium ribbon in dilute HCl bubbles vigorously and may finish reacting in under a minute. The tube can feel warm to the touch.',
+          },
+          {
+            id: 'am-h-zn',
+            x: 47,
+            y: 50,
+            label: 'Zinc: steady fizz',
+            description:
+              'Zinc granules in the same dilute HCl bubble at a steady rate, slower than magnesium. The reaction continues for many minutes; this is the classic UK lab demo for the squeaky-pop test.',
+          },
+          {
+            id: 'am-h-fe',
+            x: 78,
+            y: 50,
+            label: 'Iron: slow fizz',
+            description:
+              'Iron filings in the same dilute HCl bubble only slowly. The fizz is quiet; you may need to wait several minutes to collect enough hydrogen for a pop test. Of these three, iron is the least reactive.',
+          },
+          {
+            id: 'am-h-same-products',
+            x: 50,
+            y: 8,
+            label: 'Same products, different speeds',
+            description:
+              'In each tube the products are a chloride salt plus hydrogen. Magnesium chloride, zinc chloride, iron chloride. The metal changes the speed and the salt name; concentration of the acid would change the speed too, but never the products.',
+          },
+        ],
+      },
+    },
+  ],
+  workedExamples: [
+    {
+      id: 'am-worked-1',
+      title: 'Zinc and dilute hydrochloric acid in a school lab',
+      steps: [
+        {
+          explanation:
+            'Question: A pupil drops two zinc granules into a test tube of dilute hydrochloric acid. Bubbles rise from the metal. Write the word equation for the reaction and name the gas.',
+        },
+        {
+          explanation:
+            'Step 1: spot the type of reaction. Metal plus acid. Use the general rule: metal + acid → salt + hydrogen.',
+        },
+        {
+          explanation:
+            'Step 2: name the salt. The acid is hydrochloric, so the salt name ends in chloride. The metal is zinc, so the salt is zinc chloride.',
+          maths: 'salt = zinc chloride',
+        },
+        {
+          explanation:
+            'Step 3: name the gas. The general rule says hydrogen. The bubbles are hydrogen gas, H₂.',
+        },
+        {
+          explanation: 'Step 4: write the full word equation.',
+          maths: 'zinc + hydrochloric acid → zinc chloride + hydrogen',
+        },
+        {
+          explanation:
+            'So the answer is: zinc + hydrochloric acid → zinc chloride + hydrogen. Hold a lit wooden splint at the top of the tube and the hydrogen will go "pop".',
+        },
+      ],
+    },
+    {
+      id: 'am-worked-2',
+      title: 'Magnesium and dilute sulfuric acid',
+      steps: [
+        {
+          explanation:
+            'Question: A school technician adds a strip of magnesium ribbon to a tube of dilute sulfuric acid. The ribbon fizzes vigorously. Predict the products and write the word equation.',
+        },
+        {
+          explanation:
+            'Step 1: spot the reaction type. Metal plus acid → salt + hydrogen.',
+        },
+        {
+          explanation:
+            'Step 2: name the salt. Sulfuric acid gives a sulfate salt. The metal is magnesium, so the salt is magnesium sulfate.',
+          maths: 'salt = magnesium sulfate',
+        },
+        {
+          explanation: '',
+        },
+        {
+          explanation:
+            'Step 4: state the answer. Word equation: magnesium + sulfuric acid → magnesium sulfate + hydrogen. The fizz is hydrogen gas. Magnesium fizzes faster than zinc in the same acid because it is more reactive.',
+        },
+      ],
+    },
+  ],
+  questions: [
+    {
+      id: 'am-q1',
+      type: 'multiple-choice',
+      stem: 'What is the general word equation when a metal reacts with an acid?',
+      tier: 'core',
+      options: [
+        'metal + acid → metal oxide + water',
+        'metal + acid → salt + water',
+        'metal + acid → salt + hydrogen',
+        'metal + acid → hydrogen + oxygen',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'am-mis-water-product',
+    },
+    {
+      id: 'am-q2',
+      type: 'multiple-choice',
+      stem: 'A pupil places zinc granules in dilute hydrochloric acid. What is the name of the salt formed?',
+      tier: 'core',
+      options: [
+        'Zinc sulfate',
+        'Zinc oxide',
+        'Zinc nitrate',
+        'Zinc chloride',
+      ],
+      correctIndex: 3,
+      xpValue: 10,
+      misconceptionId: 'am-mis-salt-naming',
+    },
+    {
+      id: 'am-q3',
+      type: 'multiple-choice',
+      stem: 'A pupil places magnesium ribbon in dilute sulfuric acid. What is the name of the salt formed?',
+      tier: 'core',
+      options: [
+        'Magnesium sulfate',
+        'Magnesium chloride',
+        'Magnesium hydroxide',
+        'Magnesium oxide',
+      ],
+      correctIndex: 0,
+      xpValue: 10,
+      misconceptionId: 'am-mis-salt-naming',
+    },
+    {
+      id: 'am-q4',
+      type: 'multiple-choice',
+      stem: 'A pupil holds a lit wooden splint at the top of a tube where zinc and acid are reacting. The gas inside the tube goes "pop". What does this confirm?',
+      tier: 'core',
+      options: [
+        'The gas is oxygen',
+        'The gas is carbon dioxide',
+        'The gas is hydrogen',
+        'The gas is steam',
+      ],
+      correctIndex: 2,
+      xpValue: 10,
+    },
+    {
+      id: 'am-q5',
+      type: 'multiple-choice',
+      stem: 'Of these three UK lab metals in the SAME dilute hydrochloric acid, which fizzes the FASTEST?',
+      tier: 'confident',
+      options: [
+        'Iron',
+        'Zinc',
+        'Magnesium',
+        'They all fizz at the same speed because the acid is the same',
+      ],
+      correctIndex: 2,
+      xpValue: 15,
+      misconceptionId: 'am-mis-all-same-speed',
+    },
+    {
+      id: 'am-q7',
+      type: 'multiple-choice',
+      stem: 'A teacher in Sevenoaks doubles the concentration of dilute HCl in a tube containing zinc granules. What changes about the reaction?',
+      tier: 'confident',
+      options: [
+        'The products change: a different salt is now formed',
+        'The reaction is faster but the products are still zinc chloride + hydrogen',
+        'No hydrogen is produced any more, only oxygen',
+        'The zinc turns into a different metal',
+      ],
+      correctIndex: 1,
+      xpValue: 15,
+      misconceptionId: 'am-mis-conc-changes-products',
+    },
+    {
+      id: 'am-q8',
+      type: 'multiple-choice',
+      stem: 'A pupil writes: "When iron filings are added to dilute sulfuric acid, the products are iron chloride and hydrogen." Choose the BEST correction.',
+      tier: 'challenge',
+      options: [
+        'The salt should be iron sulfate, because the acid is sulfuric (sulfate); chloride only comes from hydrochloric acid',
+        'The salt should be iron oxide, because metals always make oxides',
+        'The gas should be oxygen, not hydrogen',
+        'The pupil is right; iron chloride is the product',
+      ],
+      correctIndex: 0,
+      xpValue: 25,
+      misconceptionId: 'am-mis-salt-naming',
+    },
+    {
+      id: 'am-q9',
+      type: 'multiple-choice',
+      stem: 'A school technician puts a tiny piece of copper into dilute hydrochloric acid in a UK school lab. After ten minutes there are no bubbles and the copper looks unchanged. Which of these is the BEST Year 7 explanation?',
+      tier: 'challenge',
+      options: [
+        'Copper is too dense to react with acids',
+        'Copper is less reactive than magnesium, zinc and iron, so it does not react with dilute hydrochloric acid at school-lab strength',
+        'The acid was not strong enough; pure HCl is needed for any metal to react',
+        'Copper does react, but the products are invisible',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+    },
+    {
+      id: 'am-q10',
+      type: 'numeric-entry',
+      stem: 'Three test tubes hold the SAME dilute HCl. Tube A has magnesium, tube B has zinc, tube C has iron, in equal-mass pieces. Rank the speed of fizzing from fastest to slowest. How many SECONDS does the magnesium tube usually take to finish in a school lab demo: 30 seconds, or several minutes? Type the rough number of seconds (use 30).',
+      tier: 'core',
+      correctAnswer: 30,
+      unit: 's',
+      tolerance: 15,
+      xpValue: 10,
+      hint: 'Magnesium is the fastest of the three; the tube can finish reacting in around half a minute.',
+    },
+    {
+      id: 'am-q11',
+      type: 'numeric-entry',
+      stem: 'A pupil drops 2 g of zinc into excess dilute hydrochloric acid. After the reaction is over, all the zinc has gone. They evaporate the liquid and weigh the salt left behind: 4.2 g. The hydrogen released into the air weighed 0.06 g. The acid used weighed 2.26 g. Use conservation of mass to check: total mass before should equal total mass after. What was the mass of the acid plus zinc, in grams (give one decimal place)?',
+      tier: 'confident',
+      correctAnswer: 4.3,
+      unit: 'g',
+      tolerance: 0.05,
+      xpValue: 15,
+      hint: 'Add the mass of zinc (2 g) and the mass of acid (2.26 g) used.',
+    },
+    {
+      id: 'am-q12',
+      type: 'numeric-entry',
+      stem: 'In the previous question, the salt left after evaporating weighed 4.2 g and the hydrogen released weighed 0.06 g. Mass is conserved. What is the total mass of the products in grams (to two decimal places)?',
+      tier: 'confident',
+      correctAnswer: 4.26,
+      unit: 'g',
+      tolerance: 0.02,
+      xpValue: 15,
+    },
+    {
+      id: 'am-q13',
+      type: 'numeric-entry',
+      stem: 'A school technician collects hydrogen from a zinc-and-acid reaction in a small test tube held over the fizzing mixture. They time how long the tube takes to fill: zinc takes 90 s, magnesium of the same mass takes 30 s. How many TIMES faster does the magnesium tube fill compared with zinc? Give a whole number.',
+      tier: 'challenge',
+      correctAnswer: 3,
+      xpValue: 25,
+      hint: '90 ÷ 30 gives the speed multiplier.',
+    },
+    {
+      id: 'am-q14',
+      type: 'drag-order',
+      stem: 'A pupil writes a wobbly account of zinc + dilute HCl. Drag these phrases to put them in the correct order to read as the standard word equation, left to right.',
+      tier: 'core',
+      items: [
+        '+ hydrogen',
+        'zinc',
+        'zinc chloride',
+        '→',
+        '+ hydrochloric acid',
+      ],
+      correctOrder: [1, 4, 3, 2, 0],
+      xpValue: 20,
+    },
+    {
+      id: 'am-q15',
+      type: 'spot-misconception',
+      stem: 'Priya argues: "Hydrogen, oxygen, carbon dioxide, they all give a pop test if they are concentrated enough. The pop just means a gas is in the tube." Is Priya right?',
+      tier: 'core',
+      statements: [
+        {
+          text: 'Priya is right. Any gas in a test tube will go "pop" when a lit splint is held to it.',
+          isMisconception: true,
+        },
+        {
+          text: 'Priya is wrong. The squeaky-pop test is specific to hydrogen. Oxygen relights a glowing splint; carbon dioxide turns limewater milky and puts out a flame. Each common gas has its own UK lab test.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'am-mis-pop-any-gas',
+    },
+    {
+      id: 'am-q16',
+      type: 'spot-misconception',
+      stem: 'Olu says: "If I make the acid more concentrated, the products of zinc + HCl change. Maybe more concentrated acid gives a different salt or even a different gas." Is Olu right?',
+      tier: 'confident',
+      statements: [
+        {
+          text: 'Olu is right. Concentration of the acid changes which salt and which gas come out.',
+          isMisconception: true,
+        },
+        {
+          text: 'Olu is wrong. Concentration changes the SPEED of the reaction (more concentrated acid fizzes faster), but the products stay the same: zinc chloride and hydrogen. Strong vs weak and dilute vs concentrated never change the names of the products at Y7 level.',
+          isMisconception: false,
+        },
+      ],
+      xpValue: 15,
+      misconceptionId: 'am-mis-conc-changes-products',
+    },
+    {
+      id: 'am-q17',
+      type: 'free-text',
+      stem: 'In 2 to 3 sentences, describe the squeaky-pop test for hydrogen. Mention what you do, what you hear, and why it works.',
+      tier: 'confident',
+      sampleAnswer:
+        'You hold a lit wooden splint at the open top of a test tube where a metal and acid are reacting. The hydrogen gas in the tube reacts with oxygen from the air at the splint flame, very fast, and you hear a sharp "pop". The pop sound confirms the gas is hydrogen.',
+      keywords: ['hydrogen', 'splint', 'pop', 'oxygen'],
+      xpValue: 20,
+    },
+    {
+      id: 'am-q18',
+      type: 'missing-step',
+      stem: 'Fill in the missing step in this account of a zinc-and-acid lab session.',
+      tier: 'confident',
+      steps: [
+        'A pupil pours dilute hydrochloric acid into a test tube on a rack',
+        'The pupil drops two zinc granules into the tube and stoppers it loosely',
+        'Bubbles of gas rise from the metal at a steady rate',
+        null,
+        'The tube goes "pop", which confirms the gas is hydrogen',
+      ],
+      missingStepIndex: 3,
+      correctStep:
+        'The pupil holds a lit wooden splint at the open top of the tube once enough gas has gathered',
+      xpValue: 20,
+    },
+    {
+      id: 'am-q19',
+      type: 'labelled-image',
+      stem: 'Drag each label onto the correct part of this Mg / Zn / Fe reactivity comparison.',
+      tier: 'confident',
+      viewBox: '0 0 320 200',
+      svg: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"><rect x="0" y="0" width="320" height="200" fill="#F8FAFC"/><rect x="20" y="40" width="60" height="120" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="20" y="125" width="60" height="35" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><circle cx="35" cy="100" r="3" fill="#BFDBFE"/><circle cx="55" cy="80" r="3" fill="#BFDBFE"/><circle cx="45" cy="65" r="3" fill="#BFDBFE"/><circle cx="65" cy="55" r="3" fill="#BFDBFE"/><circle cx="40" cy="90" r="3" fill="#BFDBFE"/><circle cx="50" cy="110" r="3" fill="#BFDBFE"/><rect x="120" y="40" width="60" height="120" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="120" y="125" width="60" height="35" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><circle cx="135" cy="105" r="3" fill="#BFDBFE"/><circle cx="155" cy="90" r="3" fill="#BFDBFE"/><circle cx="160" cy="115" r="3" fill="#BFDBFE"/><rect x="220" y="40" width="60" height="120" rx="2" fill="none" stroke="#1E3A8A" stroke-width="1.2"/><rect x="220" y="125" width="60" height="35" fill="#FECACA" stroke="#7C2D12" stroke-width="0.6"/><circle cx="245" cy="115" r="2.5" fill="#BFDBFE"/></svg>',
+      hotspots: [
+        { id: 'am-q19-h1', x: 16, y: 18, correctLabel: 'Magnesium (fastest)' },
+        { id: 'am-q19-h2', x: 47, y: 18, correctLabel: 'Zinc (steady)' },
+        { id: 'am-q19-h3', x: 78, y: 18, correctLabel: 'Iron (slowest)' },
+      ],
+      labels: [
+        'Magnesium (fastest)',
+        'Zinc (steady)',
+        'Iron (slowest)',
+        'Copper (fastest)',
+        'Sodium (slowest)',
+      ],
+      xpValue: 20,
+    },
+    {
+      id: 'am-q20',
+      type: 'multiple-choice',
+      stem: 'A school technician in Norwich has a tube of dilute HCl with zinc; the reaction is fizzing slowly. They want to gather more hydrogen for a pop test. Which UK-school-safe change is MOST likely to speed up the fizz, without changing the products?',
+      tier: 'challenge',
+      options: [
+        'Add salt to the acid',
+        'Use more concentrated dilute HCl (still in the safe school range)',
+        'Cool the tube in an ice bath',
+        'Stopper the tube tightly so no gas escapes',
+      ],
+      correctIndex: 1,
+      xpValue: 25,
+      misconceptionId: 'am-mis-conc-changes-products',
+    },
+    {
+      id: 'am-q21',
+      type: 'multiple-choice',
+      stem: 'A pupil claims: "When zinc reacts with dilute HCl, the bubbles you see are oxygen, because oxygen is in the air all around us." What is the BEST response for Year 7?',
+      tier: 'challenge',
+      options: [
+        'The pupil is right; the bubbles are oxygen from the air',
+        'The bubbles are nitrogen, the most common gas in air',
+        'The bubbles are hydrogen, not oxygen. Hydrogen is made when the H of the acid pairs up with itself; the pop test shows hydrogen, not oxygen',
+        'The bubbles are water vapour, made by the acid heating up',
+      ],
+      correctIndex: 2,
+      xpValue: 25,
+      misconceptionId: 'am-mis-bubbles-are-oxygen',
+    },
+  ],
+  misconceptions: [
+    // Source: AQA GCSE Combined Science Trilogy examiner report June 2019 (8464/C/1F), Q07 on metal + acid: candidates "named the gas as oxygen because the bubbles came from a watery liquid". Reinforced by CGP KS3 Chemistry Study Book p.48 Common Mistake box on the squeaky-pop test.
+    {
+      id: 'am-mis-bubbles-are-oxygen',
+      description:
+        'The bubbles in a zinc-and-acid reaction are oxygen, because oxygen is the gas in the air around us.',
+      triggerAnswer: 'bubbles-are-oxygen',
+      correction:
+        'In fact the bubbles are hydrogen. The squeaky-pop test confirms hydrogen; oxygen would relight a glowing splint instead.',
+      reExplanation:
+        'Hydrogen comes from the H part of HCl pairing up to make H₂ molecules. Oxygen would not bubble out of an acid; it would stay in the air. The school-lab test is to hold a lit splint at the top of the tube. A "pop" sound means hydrogen; a glowing splint that bursts back into flame would mean oxygen, but that does not happen in this reaction.',
+    },
+    // Source: Edexcel GCSE Chemistry examiner report June 2020 (1CH0/1F), Q06 on naming salts: candidates "named zinc + sulfuric acid as zinc chloride, and magnesium + HCl as magnesium sulfate". Reinforced by CGP KS3 Chemistry Study Book p.49 Common Mistake box on salt naming.
+    {
+      id: 'am-mis-salt-naming',
+      description:
+        'Any salt made from acid and metal can be called a chloride; the acid name does not matter for the salt name.',
+      triggerAnswer: 'salt-naming',
+      correction:
+        'In fact the salt name comes from the acid: hydrochloric acid gives a chloride salt, sulfuric acid gives a sulfate salt, nitric acid gives a nitrate salt.',
+      reExplanation:
+        'Each acid has a matching salt ending. HCl ends in -chloride. H₂SO₄ ends in -sulfate. HNO₃ ends in -nitrate. Magnesium plus HCl gives magnesium chloride. Magnesium plus H₂SO₄ gives magnesium sulfate. The metal sets the first word; the acid sets the second word. Mix the two endings and the salt name is wrong.',
+    },
+    // Source: Best Evidence Science Teaching (BEST) UCL/STEM Learning diagnostic question sets on metal + acid: a recurring Year 7 expectation is that "more concentrated acid gives different products". Reinforced by RSC Education article "Common student misconceptions about acids and bases" (rsc.org/education, accessed 2026-05-10).
+    {
+      id: 'am-mis-conc-changes-products',
+      description:
+        'Making the acid more concentrated changes the products of a metal + acid reaction.',
+      triggerAnswer: 'conc-changes-products',
+      correction:
+        'In fact concentration changes the SPEED of the reaction, not the products. Zinc + HCl always gives zinc chloride + hydrogen, whether the acid is dilute or concentrated.',
+      reExplanation:
+        'Speed is set by how often acid particles collide with the metal: more particles per mL means more collisions per second, so faster fizz. The chemistry of the products is set by which atoms are there to react. The H of HCl pairs up to make hydrogen gas; the Cl pairs with the metal to make a chloride salt. Adding more HCl to the bottle does not add a new ingredient.',
+    },
+    // Source: CGP KS3 Chemistry Study Book p.48 Common Mistake box on the squeaky-pop test: "Some students think any gas in a tube goes pop when a splint is held to it". Reinforced by CLEAPSS PS56-22 (Hydrogen pop test guidance for school chemistry).
+    {
+      id: 'am-mis-pop-any-gas',
+      description:
+        'Any gas in a test tube will go "pop" when a lit splint is held to it; the pop only means there is gas there.',
+      triggerAnswer: 'pop-any-gas',
+      correction:
+        'In fact the pop test is specific to hydrogen. Oxygen relights a glowing splint; carbon dioxide puts out a flame and turns limewater milky.',
+      reExplanation:
+        'Each common school-lab gas has its own UK test. Hydrogen: pop with a lit splint. Oxygen: relights a glowing splint. Carbon dioxide: turns limewater (calcium hydroxide solution) cloudy. So the pop sound is a hydrogen-only signature, not a general "gas is here" sign.',
+    },
+    // Source: AQA GCSE Chemistry examiner report June 2021 (8462/1F), Q08 on metal reactivity: candidates "wrote that all metals fizz at the same speed in the same dilute acid". Reinforced by CGP KS3 Chemistry Study Book p.50 reactivity-series chapter and CLEAPSS PS92-21 Year 7 reactivity-series practical guide.
+    {
+      id: 'am-mis-all-same-speed',
+      description:
+        'In the same dilute acid, every metal fizzes at the same speed because the acid is the same.',
+      triggerAnswer: 'all-same-speed',
+      correction:
+        'In fact different metals fizz at different speeds in the same acid, because they have different reactivities. Magnesium is faster than zinc, which is faster than iron.',
+      reExplanation:
+        'A more reactive metal gives up its outer electron more readily, so it reacts faster with acid. In the school lab Mg is the quickest of the common three, then Zn at a steady rate, then Fe at a slow rate. Copper sits below all three and does not react with dilute HCl at school strength at all.',
+    },
+    // Source: Edexcel GCSE Combined Science examiner report June 2019 (1SC0/1CF), Q05 on metal + acid: candidates "wrote that water was a product of metal + acid", confusing it with metal-oxide + acid → salt + water. Reinforced by CGP KS3 Chemistry Study Book p.49 Common Mistake box on metal vs metal-oxide reactions.
+    {
+      id: 'am-mis-water-product',
+      description:
+        'Water is a product when a metal reacts with an acid, like in a neutralisation reaction.',
+      triggerAnswer: 'water-product',
+      correction:
+        'In fact metal + acid → salt + hydrogen. Water is the second product when a metal OXIDE or alkali reacts with an acid (neutralisation), but pure metal gives hydrogen, not water.',
+      reExplanation:
+        'Two different general rules at Y7. Pure metal + acid → salt + hydrogen (zinc + HCl → zinc chloride + hydrogen). Metal oxide / hydroxide / alkali + acid → salt + water (copper oxide + sulfuric acid → copper sulfate + water; that is neutralisation). The pop test confirms hydrogen in the first kind; no pop in the second kind.',
+    },
+  ],
+  masteryRule: {
+    streak: 5,
+    spacedReviewDays: [1, 3, 7, 14, 30],
+  },
+}

@@ -399,10 +399,10 @@
 - **OCR**: C5.2 Energetics; C7.2 Combustion of hydrocarbons (GCSE Chemistry A J248 Gateway)
 
 #### Acid plus Metal (Confident, `chemistry-simple-reactions-acid-metal`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: Combustion, thermal decomposition, oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.4.2.3 Reactions of acids with metals; 4.4.1.1 Reactivity of metals (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; CC9 Reactivity of metals; Topic 8.4 Reactions of acids with metals (GCSE Chemistry 1CH0)
+- **OCR**: C3.2 Reactions of acids; C5.1 The reactivity series (GCSE Chemistry A J248 Gateway)
 
 #### Rusting (Confident, `chemistry-simple-reactions-rusting`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Chemical reactions)_
