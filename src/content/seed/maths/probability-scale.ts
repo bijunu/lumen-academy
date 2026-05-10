@@ -158,9 +158,10 @@ export const probabilityScale: SkillNode = {
       type: 'multiple-choice',
       stem: 'A coin is fair. What is the probability it lands heads?',
       tier: 'core',
-      options: ['0', '1/4', '1/2', '1'],
+      options: ['0', '1/3', '1/2', '1'],
       correctIndex: 2,
       xpValue: 10,
+      misconceptionId: 'ps-mis-fraction-form',
       hint: 'A fair coin has two equally likely outcomes: heads or tails. So P(heads) = 1 out of 2.',
     },
     // Core 3
@@ -211,6 +212,7 @@ export const probabilityScale: SkillNode = {
       options: ['impossible', 'unlikely', 'even chance', 'likely'],
       correctIndex: 1,
       xpValue: 10,
+      misconceptionId: 'ps-mis-impossible-vs-unlikely',
       hint: 'P(win) = 1 / 50 = 0.02. That is small but not zero.',
     },
     // Core 7
@@ -257,6 +259,7 @@ export const probabilityScale: SkillNode = {
       ],
       correctIndex: 0,
       xpValue: 15,
+      misconceptionId: 'ps-mis-place-on-line',
       hint: 'Least likely is closest to 0; most likely is closest to 1. Read the values left to right and check they grow.',
     },
     // Confident 2
