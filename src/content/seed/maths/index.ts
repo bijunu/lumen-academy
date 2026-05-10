@@ -59,6 +59,10 @@ import {
   probabilityListingOutcomes,
   probabilityListingOutcomesZoneNodes,
 } from './probability-listing'
+import {
+  probabilityExperimental,
+  probabilityExperimentalZoneNodes,
+} from './probability-experimental'
 
 export {
   whatIsAFraction,
@@ -110,6 +114,8 @@ export {
   probabilityScaleZoneNodes,
   probabilityListingOutcomes,
   probabilityListingOutcomesZoneNodes,
+  probabilityExperimental,
+  probabilityExperimentalZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -136,6 +142,7 @@ export const mathsNodes: SkillNode[] = [
   ...volumeCuboidsZoneNodes,
   ...probabilityScaleZoneNodes,
   ...probabilityListingOutcomesZoneNodes,
+  ...probabilityExperimentalZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -246,6 +253,7 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...probabilityScaleZoneNodes.map(n => n.id),
       ...probabilityListingOutcomesZoneNodes.map(n => n.id),
+      ...probabilityExperimentalZoneNodes.map(n => n.id),
     ],
   },
 ]
