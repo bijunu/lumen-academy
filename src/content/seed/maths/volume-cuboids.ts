@@ -299,10 +299,11 @@ export const volumeCuboids: SkillNode = {
       type: 'multiple-choice',
       stem: 'A removal-firm box is 1 m by 0.6 m by 0.5 m. What is its volume?',
       tier: 'confident',
-      options: ['0.3 m cubed', '0.6 m cubed', '1.5 m cubed', '3 m cubed'],
+      options: ['0.3 m cubed', '0.6 m cubed', '2.1 m cubed', '3 m cubed'],
       correctIndex: 0,
       xpValue: 15,
-      hint: 'Multiply the three side lengths: 1 x 0.6 x 0.5. First 1 x 0.6 = 0.6, then 0.6 x 0.5 = 0.3.',
+      misconceptionId: 'vc-mis-add-instead-of-multiply',
+      hint: 'Multiply the three side lengths: 1 x 0.6 x 0.5. First 1 x 0.6 = 0.6, then 0.6 x 0.5 = 0.3. The 2.1 figure comes from adding the three sides instead of multiplying.',
     },
     // Confident 3
     {

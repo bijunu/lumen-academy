@@ -182,6 +182,7 @@ export const perimeter: SkillNode = {
         {
           explanation:
             'The left side runs the full height of the L-shape, which equals the two right verticals added together.',
+          maths: 'left = 3 + 5 = 8 m',
         },
         {
           explanation:
@@ -240,18 +241,6 @@ export const perimeter: SkillNode = {
     {
       id: 'pe-q4',
       type: 'multiple-choice',
-      stem: 'A picture frame is 30 cm by 20 cm. What length of moulding is needed to go all the way around the frame?',
-      tier: 'core',
-      options: ['50 cm', '60 cm', '100 cm', '600 cm'],
-      correctIndex: 2,
-      xpValue: 10,
-      misconceptionId: 'pe-mis-perimeter-as-area',
-      hint: 'Perimeter = 2 x (30 + 20). The value 600 cm comes from multiplying 30 x 20, which gives the area in cm squared.',
-    },
-    // Core 5
-    {
-      id: 'pe-q5',
-      type: 'multiple-choice',
       stem: 'Which of these is the correct unit for the perimeter of a 6 m by 4 m playground?',
       tier: 'core',
       options: ['metres', 'metres squared', 'metres cubed', 'centimetres'],
@@ -259,6 +248,18 @@ export const perimeter: SkillNode = {
       xpValue: 10,
       misconceptionId: 'pe-mis-perimeter-unit-square',
       hint: 'Perimeter is a length, just like the distance you walk around the edge. Metres squared is a unit for area.',
+    },
+    // Core 5
+    {
+      id: 'pe-q5',
+      type: 'multiple-choice',
+      stem: 'A picture frame is 30 cm by 20 cm. What length of moulding is needed to go all the way around the frame?',
+      tier: 'core',
+      options: ['50 cm', '60 cm', '100 cm', '600 cm'],
+      correctIndex: 2,
+      xpValue: 10,
+      misconceptionId: 'pe-mis-perimeter-as-area',
+      hint: 'Perimeter = 2 x (30 + 20). The value 600 cm comes from multiplying 30 x 20, which gives the area in cm squared.',
     },
     // Core 6
     {
