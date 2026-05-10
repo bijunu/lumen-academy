@@ -18,6 +18,10 @@ import {
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
 } from './percentages'
+import {
+  percentagesOfAmount,
+  percentagesOfAmountZoneNodes,
+} from './percentages-of-amount'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
@@ -46,6 +50,8 @@ export {
   placeValueZoneNodes,
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
+  percentagesOfAmount,
+  percentagesOfAmountZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
   bidmasOrderOfOperations,
@@ -69,6 +75,7 @@ export const mathsNodes: SkillNode[] = [
   ...decimalsRoundingZoneNodes,
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
+  ...percentagesOfAmountZoneNodes,
   ...ratioZoneNodes,
   ...bidmasZoneNodes,
   ...algebraZoneNodes,
@@ -115,7 +122,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-percentages',
     name: 'Percentages',
     realm: 'numerica',
-    nodeIds: percentagesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...percentagesZoneNodes.map(n => n.id),
+      ...percentagesOfAmountZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-ratio',

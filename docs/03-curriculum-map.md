@@ -52,6 +52,12 @@
 - **Edexcel**: N10 Equivalence between fractions, decimals and percentages
 - **OCR**: 2.02a Equivalence of fractions, decimals and percentages
 
+#### Percentage of an Amount (Confident, `maths-percentages-of-amount`)
+- **KS3**: Solve problems involving percentage change, including percentage increase and decrease and original value problems, and simple interest including in financial mathematics.
+- **AQA**: R9 Solve problems involving percentage change
+- **Edexcel**: R9 Solve problems involving percentage change, including percentage increase, decrease and original value problems
+- **OCR**: 6.03a Solve problems involving percentages, including percentage of an amount
+
 ### Zone: Ratio and Proportion (`maths-ratio`)
 
 #### Introducing Ratio (Core, `maths-ratio-introduction`)

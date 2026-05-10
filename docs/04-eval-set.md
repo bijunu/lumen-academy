@@ -314,7 +314,7 @@ Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future deci
 
 ## Zone: Numerica > Percentages
 
-Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (percentage of an amount, percentage change, reverse percentages).
+Covers `maths-percentages-as-decimals-fractions`, `maths-percentages-of-amount`, plus future percentages nodes (percentage change, reverse percentages, simple interest).
 
 ### Content probes
 
@@ -332,6 +332,14 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
   - Required handling: misconception entry; at least one ordering question on a mix of three or more forms.
 - C-PCT-7: Learner believes percentages cannot exceed 100%.
   - Required handling: misconception entry; at least one Challenge tier question that recognises a percentage above 100% as valid.
+- C-PA-1: Learner divides by 100 when finding 10% of an amount (mixing up the rule for 10% with the rule for 1%). (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the divide-by-100 answer for a 10% question, plus a spot-misconception that names the slip.
+- C-PA-2: Learner finds 10% of an amount but multiplies by the percentage value (rather than the number of building blocks) to reach larger percentages, so 30% becomes 30 lots of 10%. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the multiply-by-30 answer.
+- C-PA-3: Learner reports the calculated VAT or discount as the new total price rather than adding it to (or subtracting it from) the original amount. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Challenge tier multi-step question (VAT or sale-price) where the percentage of the amount is a distractor and the new total is the correct answer.
+- C-PA-4: Learner finds 20% VAT by computing 10% only and forgetting to double the result. (Covers `maths-percentages-of-amount`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the half-VAT (10%-only) answer.
 
 ### Question shape probes
 
@@ -342,6 +350,10 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
 - Q-PCT-5: At least one MCQ on fraction-to-percent conversion includes the stacked-digits answer as a distractor.
 - Q-PCT-6: At least one spot-misconception question presents the per-cent-as-number or stacked-digits argument and asks whether the reasoning is sound.
 - Q-PCT-7: At least one Challenge tier question recognises a percentage greater than 100% as valid (for example, an exam score reported above 100% on a re-scaled mark scheme, or a doubled quantity expressed as 200%).
+- Q-PA-1: At least one Core or Confident numeric-entry on the percentage-of-amount node requires finding a single building-block percentage (50%, 25%, 10%, 5%, or 1%) of a UK money amount. (Covers `maths-percentages-of-amount`.)
+- Q-PA-2: At least one Confident question on the percentage-of-amount node combines two or more building blocks (for example 35% = 25% + 10%, or 65% = 50% + 10% + 5%). (Covers `maths-percentages-of-amount`.)
+- Q-PA-3: At least one Challenge tier word problem on the percentage-of-amount node frames a UK VAT or sale-price scenario where the new total (not the percentage of the amount) is the correct answer. (Covers `maths-percentages-of-amount`.)
+- Q-PA-4: At least one numeric-entry on the percentage-of-amount node requires a decimal percentage (12.5%, 17.5%) found by halving a building block. (Covers `maths-percentages-of-amount`.)
 
 ### Tutor probes
 
@@ -349,6 +361,8 @@ Covers `maths-percentages-as-decimals-fractions` plus future percentages nodes (
 - T-PCT-2: Given a wrong answer matching the decimal-shift trigger (for example "35% = 3.5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 - T-PCT-3: Given an off-topic input (for example a question about US sales tax percentages), the tutor steers back to UK percentage forms politely.
 - T-PCT-4: Given a request for an inline definition (tap on "per cent"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PA-1: Given "How do I find 35% of £80?", the tutor's first reply is a Socratic prompt about which building blocks combine to make 35% (25% + 10%), not a direct multiplication formula. (Covers `maths-percentages-of-amount`.)
+- T-PA-2: Given a wrong answer matching the multiply-by-percent trigger (for example "30% of £40 = £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-percentages-of-amount`.)
 
 ## Zone: Numerica > Ratio and Proportion
 
