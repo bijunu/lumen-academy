@@ -299,13 +299,13 @@ export const areaRectangles: SkillNode = {
     {
       id: 'ar-q12',
       type: 'multiple-choice',
-      stem: 'A floor area is 200 cm long and 150 cm wide. A pupil writes that the area is 200 x 150 = 30 000 cm squared, which is the same as 3 m squared. Which row corrects the mistake?',
+      stem: 'A floor area is 200 cm long and 150 cm wide. A pupil writes that the area is 200 x 150 = 30 000 cm squared, which is the same as 300 m squared. Which row corrects the mistake?',
       tier: 'confident',
       options: [
-        'Nothing is wrong: 30 000 cm squared = 3 m squared.',
-        '30 000 cm squared = 30 m squared, not 3 m squared (1 m squared = 100 cm squared).',
-        '30 000 cm squared = 300 m squared (1 m squared = 100 cm squared).',
-        '30 000 cm squared = 3 m squared (1 m squared = 10 000 cm squared, but the floor is bigger).',
+        'Nothing is wrong: 30 000 cm squared = 300 m squared.',
+        '30 000 cm squared = 30 m squared (1 m squared = 1000 cm squared).',
+        '30 000 cm squared = 3 m squared (1 m squared = 10 000 cm squared).',
+        '30 000 cm squared = 0.3 m squared (the floor is so much bigger in cm that the m squared number must be smaller still).',
       ],
       correctIndex: 2,
       xpValue: 15,
