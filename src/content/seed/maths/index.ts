@@ -49,6 +49,7 @@ import {
   areaRectangles,
   areaRectanglesZoneNodes,
 } from './area-rectangles'
+import { perimeter, perimeterZoneNodes } from './perimeter'
 
 export {
   whatIsAFraction,
@@ -92,6 +93,8 @@ export {
   fourOperationsZoneNodes,
   areaRectangles,
   areaRectanglesZoneNodes,
+  perimeter,
+  perimeterZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -114,6 +117,7 @@ export const mathsNodes: SkillNode[] = [
   ...coordinatesShapesZoneNodes,
   ...fourOperationsZoneNodes,
   ...areaRectanglesZoneNodes,
+  ...perimeterZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -211,6 +215,9 @@ export const mathsZones: Zone[] = [
     id: 'maths-geometry-measure',
     name: 'Geometry and Measure',
     realm: 'numerica',
-    nodeIds: areaRectanglesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...areaRectanglesZoneNodes.map(n => n.id),
+      ...perimeterZoneNodes.map(n => n.id),
+    ],
   },
 ]
