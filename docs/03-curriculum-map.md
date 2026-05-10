@@ -161,10 +161,10 @@
 ### Zone: Body Systems (`biology-body-systems`)
 
 #### Digestive System (Core, `biology-body-systems-digestive`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Structure and function of body systems)_
-- **AQA**: _GCSE Biology spec ref_
-- **Edexcel**: _GCSE Biology spec ref_
-- **OCR**: _GCSE Biology spec ref_
+- **KS3**: The content of a healthy human diet: carbohydrates, lipids (fats and oils), proteins, vitamins, minerals, dietary fibre and water, and why each is needed; the consequences of imbalances in the diet, including obesity, starvation and deficiency diseases; the tissues and organs of the human digestive system, including adaptations to function and how the digestive system digests food (enzymes simply as biological catalysts)
+- **AQA**: 4.2.2.1 The human digestive system (GCSE Biology 8461)
+- **Edexcel**: CB2a / CB2 Cells and control: digestive system (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.1 The human digestive system (GCSE Biology A J247)
 
 #### Circulatory System (Core, `biology-body-systems-circulatory`)
 - **KS3**: _fill verbatim from DfE Science KS3 (Structure and function of body systems)_

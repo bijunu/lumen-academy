@@ -639,13 +639,31 @@ Covers `biology-microscopy-light-microscope`, `biology-microscopy-magnification`
 Covers `biology-body-systems-digestive`, `biology-body-systems-circulatory`, `biology-body-systems-respiratory`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-BS-1: Learner believes all digestion happens in the stomach in one go.
+  - Required handling: misconception entry on the digestive node; at least one MCQ or spot-misconception that distributes digestion across mouth, stomach, and small intestine.
+- C-BS-2: Learner believes digested food enters the blood from the stomach rather than from the small intestine.
+  - Required handling: misconception entry on the digestive node; at least one Core MCQ that asks where food enters the blood.
+- C-BS-3: Learner skips the oesophagus when sequencing the gut from mouth to anus.
+  - Required handling: misconception entry on the digestive node; at least one drag-order or labelled-image item that includes the oesophagus.
+- C-BS-4: Learner conflates mechanical and chemical digestion (for example, claiming "mechanical uses enzymes and chemical uses teeth").
+  - Required handling: misconception entry on the digestive node; at least one MCQ that defines both kinds correctly and at least one Confident-tier item that distinguishes them.
+- C-BS-5: Learner believes the large intestine does most of the digesting, rather than reclaiming water.
+  - Required handling: misconception entry on the digestive node; at least one MCQ on the role of the large intestine.
+- C-BS-6: Learner believes food passes through non-gut organs (heart, lungs, liver) on its journey through the body.
+  - Required handling: misconception entry on the digestive node; at least one drag-drop-builder or MCQ that excludes non-gut organs from the gut path.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-BS-1: At least one labelled-image question on the digestive node places mouth, oesophagus, stomach, small intestine, and large intestine onto hotspots on a gut diagram, with at least one off-gut distractor (heart / lung / liver) in the pool.
+- Q-BS-2: At least one drag-order question on the digestive node sequences the gut organs from mouth to anus.
+- Q-BS-3: At least one Challenge tier numeric on the digestive node uses a UK school-meal context (Sunday roast, school lunch portions in grams, vitamin C in mg) for arithmetic that includes a conversion or fraction step.
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-BS-1: Given "All digestion happens in the stomach, right?", the tutor's first reply is a Socratic prompt about where the food then goes when it leaves the stomach, not a direct correction.
+- T-BS-2: Given a wrong answer matching the stomach-after-mouth trigger, the tutor cites the relevant misconception's `reExplanation` (the oesophagus link) rather than producing a fresh hint.
+- T-BS-3: Given an off-topic input (for example a US AP Biology food-pyramid analogy), the tutor steers back to UK KS3 gut language politely.
 
 ## Zone: Vitalia > Reproduction
 
