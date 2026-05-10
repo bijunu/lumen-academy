@@ -1,11 +1,13 @@
 'use client'
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useMemo, useState, useCallback, useEffect, useRef } from 'react'
 import { useSession } from 'next-auth/react'
 import type { SkillNode } from '@/types/content'
 import type { HintLevel } from '@/types/tutor'
 import { FractionWall } from '@/components/scenes/FractionWall'
 import { LabelledDiagram } from '@/components/scenes/LabelledDiagram'
+import { LessonPhaseStrip, type LessonPhaseStep } from './LessonPhaseStrip'
+import { LessonSection } from './LessonSection'
 import { WorkedExample } from './WorkedExample'
 import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
@@ -144,48 +146,75 @@ export function NodeLearningFlow({
     celebrate,
   ])
 
+  const realmAccent = `hsl(var(--realm-${node.realm}))`
+
+  const phases = useMemo<LessonPhaseStep[]>(() => {
+    const list: LessonPhaseStep[] = [{ id: 'scenes', label: 'Explore' }]
+    if (node.workedExamples.length > 0) {
+      list.push({ id: 'worked-examples', label: 'Worked example' })
+    }
+    list.push({ id: 'questions', label: 'Practice' })
+    list.push({ id: 'summary', label: 'Summary' })
+    return list
+  }, [node.workedExamples.length])
+
+  const phaseStrip = (
+    <LessonPhaseStrip phases={phases} activeId={phase} realmAccent={realmAccent} />
+  )
+
   if (phase === 'scenes') {
     const scene = node.scenes[sceneIndex]
     return (
-      <div className="space-y-4">
-        <header>
-          <h2 className="text-lg font-semibold">{scene.title}</h2>
-          <p className="text-sm text-muted-foreground">
-            Scene {sceneIndex + 1} of {node.scenes.length}
-          </p>
-        </header>
-        {scene.type === 'fraction-wall' ? (
-          <FractionWall scene={scene} onComplete={advanceScene} />
-        ) : scene.type === 'labelled-diagram' ? (
-          <LabelledDiagram scene={scene} onComplete={advanceScene} />
-        ) : (
-          <div className="space-y-3 rounded-lg border p-4">
-            <p className="text-sm">{scene.instructions}</p>
-            <button
-              onClick={advanceScene}
-              className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
-            >
-              Continue
-            </button>
-          </div>
-        )}
+      <div className="space-y-5">
+        {phaseStrip}
+        <LessonSection
+          kind="Explore the idea"
+          title={scene.title}
+          position={`Scene ${sceneIndex + 1} of ${node.scenes.length}`}
+          realmAccent={realmAccent}
+        >
+          {scene.type === 'fraction-wall' ? (
+            <FractionWall scene={scene} onComplete={advanceScene} />
+          ) : scene.type === 'labelled-diagram' ? (
+            <LabelledDiagram
+              scene={scene}
+              onComplete={advanceScene}
+              realmAccent={realmAccent}
+            />
+          ) : (
+            <div className="space-y-4">
+              <p className="text-base text-foreground">{scene.instructions}</p>
+              <button
+                onClick={advanceScene}
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                style={{ backgroundColor: realmAccent }}
+              >
+                Continue
+                <span aria-hidden>→</span>
+              </button>
+            </div>
+          )}
+        </LessonSection>
       </div>
     )
   }
 
   if (phase === 'worked-examples') {
     return (
-      <div className="space-y-4">
-        <header>
-          <h2 className="text-lg font-semibold">Worked Example</h2>
-          <p className="text-sm text-muted-foreground">
-            Example {exampleIndex + 1} of {node.workedExamples.length}
-          </p>
-        </header>
-        <WorkedExample
-          example={node.workedExamples[exampleIndex]}
-          onComplete={advanceExample}
-        />
+      <div className="space-y-5">
+        {phaseStrip}
+        <LessonSection
+          kind="See it done"
+          title={node.workedExamples[exampleIndex].title}
+          position={`Example ${exampleIndex + 1} of ${node.workedExamples.length}`}
+          realmAccent={realmAccent}
+        >
+          <WorkedExample
+            example={node.workedExamples[exampleIndex]}
+            onComplete={advanceExample}
+            realmAccent={realmAccent}
+          />
+        </LessonSection>
       </div>
     )
   }
@@ -193,33 +222,39 @@ export function NodeLearningFlow({
   if (phase === 'questions') {
     const question = node.questions[questionIndex]
     return (
-      <div className="space-y-4">
-        <header>
-          <h2 className="text-lg font-semibold">{node.title}</h2>
-          <p className="text-sm text-muted-foreground">
-            Question {questionIndex + 1} of {node.questions.length}
-          </p>
-        </header>
-        <QuestionShell
-          key={question.id}
-          question={question}
-          misconceptions={node.misconceptions}
-          onComplete={handleQuestionComplete}
-          onHintRequest={() => onRequestHint(question.stem)}
-        />
+      <div className="space-y-5">
+        {phaseStrip}
+        <LessonSection
+          kind="Your turn"
+          title={node.title}
+          position={`Question ${questionIndex + 1} of ${node.questions.length}`}
+          realmAccent={realmAccent}
+        >
+          <QuestionShell
+            key={question.id}
+            question={question}
+            misconceptions={node.misconceptions}
+            onComplete={handleQuestionComplete}
+            onHintRequest={() => onRequestHint(question.stem)}
+            realmAccent={realmAccent}
+          />
+        </LessonSection>
       </div>
     )
   }
 
   return (
-    <SessionSummary
-      nodeId={node.id}
-      nodeTitle={node.title}
-      realm={node.realm}
-      questionsAttempted={tracker.questionsAttempted}
-      questionsCorrect={tracker.questionsCorrect}
-      xpEarned={tracker.xpEarned}
-      streak={tracker.currentStreak}
-    />
+    <div className="space-y-5">
+      {phaseStrip}
+      <SessionSummary
+        nodeId={node.id}
+        nodeTitle={node.title}
+        realm={node.realm}
+        questionsAttempted={tracker.questionsAttempted}
+        questionsCorrect={tracker.questionsCorrect}
+        xpEarned={tracker.xpEarned}
+        streak={tracker.currentStreak}
+      />
+    </div>
   )
 }

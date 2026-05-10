@@ -28,6 +28,7 @@ interface QuestionShellProps {
   ) => void
   onHintRequest?: () => void
   oneShot?: boolean
+  realmAccent?: string
 }
 
 export function QuestionShell({
@@ -36,6 +37,7 @@ export function QuestionShell({
   onComplete,
   onHintRequest,
   oneShot = false,
+  realmAccent,
 }: QuestionShellProps) {
   const { payload, status, attemptCount, showFeedback, submit, reset } =
     useQuestionState(question)
@@ -71,6 +73,7 @@ export function QuestionShell({
           selectedIndex={selectedIndex}
           disabled={isAnswered}
           onSelect={index => submit({ answer: index })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -79,6 +82,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={value => submit({ answer: value })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -87,6 +91,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={order => submit({ answer: order })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -96,6 +101,7 @@ export function QuestionShell({
           selectedIndex={selectedIndex}
           disabled={isAnswered}
           onSelect={index => submit({ answer: index })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -104,6 +110,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={value => submit({ answer: value })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -112,6 +119,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={result => submit({ clientCorrect: result === 'correct' })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -120,6 +128,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={value => submit({ answer: value })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -128,6 +137,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={result => submit({ clientCorrect: result === 'correct' })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -136,6 +146,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={arrangement => submit({ answer: arrangement })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -144,6 +155,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={value => submit({ answer: value })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -152,6 +164,7 @@ export function QuestionShell({
           question={question}
           disabled={isAnswered}
           onSubmit={placements => submit({ answer: placements })}
+          realmAccent={realmAccent}
         />
       )}
 
@@ -162,6 +175,7 @@ export function QuestionShell({
           onNext={handleNext}
           nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
           modelAnswer={question.type === 'free-text' ? question.sampleAnswer : undefined}
+          realmAccent={realmAccent}
         />
       )}
 

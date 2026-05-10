@@ -1,12 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { SliderExploreQuestion } from '@/types/content'
 
 interface SliderExploreProps {
   question: SliderExploreQuestion
   disabled: boolean
   onSubmit: (value: number) => void
+  realmAccent?: string
 }
 
 function midpoint(min: number, max: number, step: number): number {
@@ -15,7 +18,12 @@ function midpoint(min: number, max: number, step: number): number {
   return Math.round(raw / step) * step
 }
 
-export function SliderExplore({ question, disabled, onSubmit }: SliderExploreProps) {
+export function SliderExplore({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: SliderExploreProps) {
   const [value, setValue] = useState(() => midpoint(question.min, question.max, question.step))
 
   const handleSubmit = () => {
@@ -46,13 +54,13 @@ export function SliderExplore({ question, disabled, onSubmit }: SliderExplorePro
         <span>{question.min}</span>
         <span>{question.max}</span>
       </div>
-      <button
+      <LessonCTA
         onClick={handleSubmit}
         disabled={disabled}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </div>
   )
 }

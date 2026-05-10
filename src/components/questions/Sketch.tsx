@@ -1,12 +1,15 @@
 'use client'
 
 import { useRef, useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { SketchQuestion } from '@/types/content'
 
 interface SketchProps {
   question: SketchQuestion
   disabled: boolean
   onSubmit: (result: 'correct' | 'incorrect') => void
+  realmAccent?: string
 }
 
 export function pointsMatch(
@@ -19,7 +22,12 @@ export function pointsMatch(
 
 const PAD = 0.6
 
-export function Sketch({ question, disabled, onSubmit }: SketchProps) {
+export function Sketch({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: SketchProps) {
   const { xMin, xMax, yMin, yMax } = question.gridConfig
   const [points, setPoints] = useState<Array<[number, number]>>([])
   const svgRef = useRef<SVGSVGElement | null>(null)
@@ -155,13 +163,13 @@ export function Sketch({ question, disabled, onSubmit }: SketchProps) {
         {points.length > 0 &&
           ` Placed: ${points.map(([x, y]) => `(${x}, ${y})`).join(', ')}.`}
       </p>
-      <button
+      <LessonCTA
         onClick={handleSubmit}
         disabled={disabled || points.length === 0}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </div>
   )
 }

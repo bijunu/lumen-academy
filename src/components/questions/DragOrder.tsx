@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useCallback, useRef, useEffect, type KeyboardEvent } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { DragOrderQuestion } from '@/types/content'
 import { cn } from '@/lib/utils'
 
@@ -8,6 +10,7 @@ interface DragOrderProps {
   question: DragOrderQuestion
   disabled: boolean
   onSubmit: (order: number[]) => void
+  realmAccent?: string
 }
 
 function moveItem<T>(arr: T[], from: number, to: number): T[] {
@@ -18,7 +21,12 @@ function moveItem<T>(arr: T[], from: number, to: number): T[] {
   return next
 }
 
-export function DragOrder({ question, disabled, onSubmit }: DragOrderProps) {
+export function DragOrder({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: DragOrderProps) {
   const [items, setItems] = useState(() => question.items.map((text, i) => ({ text, originalIndex: i })))
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -95,13 +103,13 @@ export function DragOrder({ question, disabled, onSubmit }: DragOrderProps) {
           </div>
         ))}
       </div>
-      <button
+      <LessonCTA
         onClick={handleSubmit}
         disabled={disabled}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
-        Submit Order
-      </button>
+        Submit order
+      </LessonCTA>
     </div>
   )
 }

@@ -1,15 +1,23 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { NumericEntryQuestion } from '@/types/content'
 
 interface NumericEntryProps {
   question: NumericEntryQuestion
   disabled: boolean
   onSubmit: (value: number) => void
+  realmAccent?: string
 }
 
-export function NumericEntry({ question, disabled, onSubmit }: NumericEntryProps) {
+export function NumericEntry({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: NumericEntryProps) {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,27 +29,27 @@ export function NumericEntry({ question, disabled, onSubmit }: NumericEntryProps
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <div className="flex items-center gap-2">
         <input
           type="number"
           value={value}
           onChange={e => setValue(e.target.value)}
           disabled={disabled}
-          className="w-32 rounded-md border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+          className="w-40 rounded-md border bg-background px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-ring"
           placeholder="Answer"
           autoFocus
           step="any"
         />
         {question.unit && <span className="text-sm text-muted-foreground">{question.unit}</span>}
       </div>
-      <button
+      <LessonCTA
         type="submit"
         disabled={disabled || value === ''}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </form>
   )
 }

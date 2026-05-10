@@ -1,8 +1,9 @@
 'use client'
 
+import { ArrowRight, CheckCircle2, RefreshCw, XCircle } from 'lucide-react'
+
 import type { AnswerStatus } from '@/hooks/useQuestionState'
 import type { Misconception } from '@/types/content'
-import { cn } from '@/lib/utils'
 
 interface QuestionFeedbackProps {
   status: AnswerStatus
@@ -10,6 +11,7 @@ interface QuestionFeedbackProps {
   onNext: () => void
   nextLabel?: string
   modelAnswer?: string
+  realmAccent?: string
 }
 
 export function QuestionFeedback({
@@ -18,39 +20,73 @@ export function QuestionFeedback({
   onNext,
   nextLabel,
   modelAnswer,
+  realmAccent = 'hsl(var(--primary))',
 }: QuestionFeedbackProps) {
   if (status === 'unanswered') return null
 
+  const correct = status === 'correct'
+
   return (
     <div
-      className={cn(
-        'mt-4 rounded-lg border p-4',
-        status === 'correct'
-          ? 'border-green-500/50 bg-green-50 dark:bg-green-950/30'
-          : 'border-red-500/50 bg-red-50 dark:bg-red-950/30'
-      )}
       role="alert"
+      className="mt-4 rounded-xl border p-4"
+      style={
+        correct
+          ? {
+              borderColor: `${realmAccent}55`,
+              backgroundColor: `${realmAccent}10`,
+            }
+          : {
+              borderColor: 'rgb(245 158 11 / 0.5)',
+              backgroundColor: 'rgb(245 158 11 / 0.08)',
+            }
+      }
     >
-      <p className="font-semibold">
-        {status === 'correct' ? 'Correct!' : 'Not quite right.'}
-      </p>
-      {status === 'incorrect' && misconception && (
-        <div className="mt-2 space-y-1 text-sm">
-          <p>{misconception.correction}</p>
-          <p className="text-muted-foreground">{misconception.reExplanation}</p>
+      <div className="flex items-start gap-3">
+        <span
+          className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-white"
+          style={{
+            backgroundColor: correct ? realmAccent : '#F59E0B',
+          }}
+          aria-hidden
+        >
+          {correct ? (
+            <CheckCircle2 className="h-4 w-4" />
+          ) : (
+            <XCircle className="h-4 w-4" />
+          )}
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-base font-semibold">
+            {correct ? 'Spot on.' : 'Not quite.'}
+          </p>
+          {!correct && misconception && (
+            <div className="mt-2 space-y-1 text-sm">
+              <p>{misconception.correction}</p>
+              <p className="text-muted-foreground">
+                {misconception.reExplanation}
+              </p>
+            </div>
+          )}
+          {!correct && modelAnswer && (
+            <div className="mt-2 space-y-1 text-sm">
+              <p className="font-medium">A good answer might say:</p>
+              <p className="text-muted-foreground">{modelAnswer}</p>
+            </div>
+          )}
         </div>
-      )}
-      {status === 'incorrect' && modelAnswer && (
-        <div className="mt-2 space-y-1 text-sm">
-          <p className="font-medium">A good answer might say:</p>
-          <p className="text-muted-foreground">{modelAnswer}</p>
-        </div>
-      )}
+      </div>
       <button
         onClick={onNext}
-        className="mt-3 rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
+        className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        style={{ backgroundColor: correct ? realmAccent : '#F59E0B' }}
       >
-        {nextLabel ?? (status === 'correct' ? 'Next' : 'Try Again')}
+        {nextLabel ?? (correct ? 'Next' : 'Try again')}
+        {correct ? (
+          <ArrowRight className="h-4 w-4" />
+        ) : (
+          <RefreshCw className="h-4 w-4" />
+        )}
       </button>
     </div>
   )

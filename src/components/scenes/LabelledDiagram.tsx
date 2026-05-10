@@ -1,20 +1,28 @@
 'use client'
 
 import { useState } from 'react'
+import { Lock } from 'lucide-react'
+
 import type {
   InteractiveScene,
   LabelledDiagramHotspot,
   LabelledDiagramSceneData,
 } from '@/types/content'
+import { cn } from '@/lib/utils'
 
 interface LabelledDiagramProps {
   scene: InteractiveScene
   onComplete: () => void
+  realmAccent?: string
 }
 
 const DEFAULT_VIEWBOX = '0 0 600 400'
 
-export function LabelledDiagram({ scene, onComplete }: LabelledDiagramProps) {
+export function LabelledDiagram({
+  scene,
+  onComplete,
+  realmAccent = 'hsl(var(--primary))',
+}: LabelledDiagramProps) {
   const data = scene.data as Partial<LabelledDiagramSceneData>
   const hotspots: LabelledDiagramHotspot[] = data.hotspots ?? []
   const viewBox = data.viewBox ?? DEFAULT_VIEWBOX
@@ -29,15 +37,20 @@ export function LabelledDiagram({ scene, onComplete }: LabelledDiagramProps) {
   }
 
   const [, , vbWidth, vbHeight] = viewBox.split(' ').map(Number)
+  const minDim = Math.min(vbWidth, vbHeight)
+  const hotspotRadius = minDim * 0.045
+  const hotspotStroke = Math.max(0.6, minDim * 0.006)
+  const numberFontSize = hotspotRadius * 1.1
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-lg border bg-card p-4">
-        <p className="mb-3 text-sm text-muted-foreground">{scene.instructions}</p>
-        <div className="relative w-full max-w-[600px]">
+    <div className="space-y-5">
+      <p className="text-base text-foreground">{scene.instructions}</p>
+
+      <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(240px,320px)]">
+        <div className="rounded-xl border bg-slate-50 p-4 shadow-inner dark:bg-slate-100">
           <svg
             viewBox={viewBox}
-            className="w-full"
+            className="mx-auto block w-full max-w-[640px]"
             role="img"
             aria-label={scene.title}
           >
@@ -58,24 +71,37 @@ export function LabelledDiagram({ scene, onComplete }: LabelledDiagramProps) {
               />
             ) : null}
 
-            {hotspots.map(h => {
+            {hotspots.map((h, idx) => {
               const cx = (h.x / 100) * vbWidth
               const cy = (h.y / 100) * vbHeight
               const isRevealed = revealed.has(h.id)
+              const number = idx + 1
               return (
                 <g key={h.id}>
                   <circle
                     cx={cx}
                     cy={cy}
-                    r={14}
-                    fill={isRevealed ? 'var(--primary, #3B82F6)' : 'white'}
-                    stroke="var(--primary, #3B82F6)"
-                    strokeWidth={2}
+                    r={hotspotRadius * 1.4}
+                    fill={realmAccent}
+                    fillOpacity="0.18"
+                    pointerEvents="none"
+                  />
+                  <circle
+                    cx={cx}
+                    cy={cy}
+                    r={hotspotRadius}
+                    fill={isRevealed ? realmAccent : 'white'}
+                    stroke={realmAccent}
+                    strokeWidth={hotspotStroke}
                     className="cursor-pointer transition-colors"
                     onClick={() => reveal(h.id)}
                     role="button"
                     tabIndex={0}
-                    aria-label={isRevealed ? h.label : `Reveal label for hotspot ${h.id}`}
+                    aria-label={
+                      isRevealed
+                        ? `Marker ${number}: ${h.label}`
+                        : `Reveal label for hotspot ${h.id}`
+                    }
                     aria-pressed={isRevealed}
                     onKeyDown={e => {
                       if (e.key === 'Enter' || e.key === ' ') {
@@ -84,45 +110,98 @@ export function LabelledDiagram({ scene, onComplete }: LabelledDiagramProps) {
                       }
                     }}
                   />
-                  {isRevealed && (
-                    <text
-                      x={cx + 22}
-                      y={cy + 4}
-                      fontSize={14}
-                      fontWeight={500}
-                      fill="currentColor"
-                      pointerEvents="none"
-                    >
-                      {h.label}
-                    </text>
-                  )}
+                  <text
+                    x={cx}
+                    y={cy + numberFontSize * 0.34}
+                    fontSize={numberFontSize}
+                    fontWeight={700}
+                    fill={isRevealed ? 'white' : realmAccent}
+                    textAnchor="middle"
+                    pointerEvents="none"
+                  >
+                    {number}
+                  </text>
                 </g>
               )
             })}
           </svg>
         </div>
-        {hotspots.some(h => revealed.has(h.id)) && (
-          <ul className="mt-3 space-y-1 text-xs text-muted-foreground">
-            {hotspots
-              .filter(h => revealed.has(h.id) && h.description)
-              .map(h => (
-                <li key={h.id}>
-                  <strong className="font-medium text-foreground">{h.label}</strong>
-                  {' '}
-                  {h.description}
-                </li>
-              ))}
-          </ul>
-        )}
+
+        <ol className="space-y-2.5">
+          {hotspots.map((h, idx) => {
+            const isRevealed = revealed.has(h.id)
+            const number = idx + 1
+            return (
+              <li key={h.id}>
+                <button
+                  type="button"
+                  onClick={() => reveal(h.id)}
+                  className={cn(
+                    'group flex w-full items-start gap-3 rounded-xl border p-3 text-left transition-all',
+                    isRevealed
+                      ? 'bg-card shadow-sm'
+                      : 'bg-muted/30 hover:bg-muted/50',
+                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+                  )}
+                  style={
+                    isRevealed
+                      ? {
+                          borderColor: `${realmAccent}55`,
+                          backgroundColor: `${realmAccent}0E`,
+                        }
+                      : undefined
+                  }
+                  aria-pressed={isRevealed}
+                >
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold"
+                    style={{
+                      backgroundColor: isRevealed ? realmAccent : 'hsl(var(--muted))',
+                      color: isRevealed ? 'white' : 'hsl(var(--muted-foreground))',
+                    }}
+                    aria-hidden
+                  >
+                    {number}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p
+                      className={cn(
+                        'text-sm font-semibold',
+                        !isRevealed && 'text-muted-foreground'
+                      )}
+                    >
+                      {h.label}
+                    </p>
+                    {isRevealed && h.description && (
+                      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                        {h.description}
+                      </p>
+                    )}
+                    {!isRevealed && (
+                      <p className="mt-1 inline-flex items-center gap-1 text-xs text-muted-foreground">
+                        <Lock className="h-3 w-3" aria-hidden />
+                        Click marker {number} on the diagram or this card
+                      </p>
+                    )}
+                  </div>
+                </button>
+              </li>
+            )
+          })}
+        </ol>
       </div>
 
       <button
         type="button"
         onClick={onComplete}
         disabled={revealed.size === 0}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:translate-y-0 disabled:bg-muted disabled:text-muted-foreground disabled:shadow-none"
+        style={
+          revealed.size === 0 ? undefined : { backgroundColor: realmAccent }
+        }
       >
         Continue
+        <span aria-hidden>→</span>
       </button>
     </div>
   )

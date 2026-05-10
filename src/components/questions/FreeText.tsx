@@ -1,12 +1,15 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { FreeTextQuestion } from '@/types/content'
 
 interface FreeTextProps {
   question: FreeTextQuestion
   disabled: boolean
   onSubmit: (result: 'correct' | 'incorrect') => void
+  realmAccent?: string
 }
 
 function hasAllKeywords(answer: string, keywords: string[]): boolean {
@@ -14,7 +17,12 @@ function hasAllKeywords(answer: string, keywords: string[]): boolean {
   return keywords.every(k => lower.includes(k.toLowerCase()))
 }
 
-export function FreeText({ question, disabled, onSubmit }: FreeTextProps) {
+export function FreeText({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: FreeTextProps) {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -36,13 +44,13 @@ export function FreeText({ question, disabled, onSubmit }: FreeTextProps) {
         aria-label="Your answer"
         autoFocus
       />
-      <button
+      <LessonCTA
         type="submit"
         disabled={disabled || value.trim() === ''}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </form>
   )
 }

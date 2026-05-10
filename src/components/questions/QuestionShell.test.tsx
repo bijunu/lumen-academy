@@ -47,7 +47,7 @@ describe('QuestionShell', () => {
     )
 
     fireEvent.click(getByText('3/6'))
-    expect(getByText('Correct!')).toBeTruthy()
+    expect(getByText('Spot on.')).toBeTruthy()
   })
 
   it('shows incorrect feedback when wrong answer is selected', () => {
@@ -60,7 +60,7 @@ describe('QuestionShell', () => {
     )
 
     fireEvent.click(getByText('2/3'))
-    expect(getByText('Not quite right.')).toBeTruthy()
+    expect(getByText('Not quite.')).toBeTruthy()
   })
 
   it('displays tier badge', () => {

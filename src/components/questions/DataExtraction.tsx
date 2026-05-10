@@ -1,15 +1,23 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { DataExtractionQuestion } from '@/types/content'
 
 interface DataExtractionProps {
   question: DataExtractionQuestion
   disabled: boolean
   onSubmit: (value: string) => void
+  realmAccent?: string
 }
 
-export function DataExtraction({ question, disabled, onSubmit }: DataExtractionProps) {
+export function DataExtraction({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: DataExtractionProps) {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,13 +41,13 @@ export function DataExtraction({ question, disabled, onSubmit }: DataExtractionP
         aria-label="Your answer"
         autoFocus
       />
-      <button
+      <LessonCTA
         type="submit"
         disabled={disabled || value.trim() === ''}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </form>
   )
 }

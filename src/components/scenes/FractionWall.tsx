@@ -1,11 +1,14 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { InteractiveScene } from '@/types/content'
 
 interface FractionWallProps {
   scene: InteractiveScene
   onComplete: () => void
+  realmAccent?: string
 }
 
 interface FractionRow {
@@ -13,7 +16,11 @@ interface FractionRow {
   colour: string
 }
 
-export function FractionWall({ scene, onComplete }: FractionWallProps) {
+export function FractionWall({
+  scene,
+  onComplete,
+  realmAccent,
+}: FractionWallProps) {
   const rows = (scene.data.rows ?? []) as FractionRow[]
   const [selectedParts, setSelectedParts] = useState<Set<string>>(new Set())
 
@@ -35,12 +42,13 @@ export function FractionWall({ scene, onComplete }: FractionWallProps) {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="rounded-lg border bg-card p-4">
-        <p className="mb-3 text-sm text-muted-foreground">{scene.instructions}</p>
+    <div className="space-y-5">
+      <p className="text-base text-foreground">{scene.instructions}</p>
+
+      <div className="rounded-xl border bg-slate-50 p-4 shadow-inner dark:bg-slate-100">
         <svg
           viewBox={`0 0 ${wallWidth} ${rows.length * (rowHeight + gap)}`}
-          className="w-full max-w-[600px]"
+          className="mx-auto block w-full max-w-[640px]"
           role="img"
           aria-label="Fraction wall showing rows of different denominators"
         >
@@ -56,7 +64,7 @@ export function FractionWall({ scene, onComplete }: FractionWallProps) {
                   y={rowIdx * (rowHeight + gap)}
                   width={partWidth - 2}
                   height={rowHeight}
-                  rx={4}
+                  rx={6}
                   fill={isSelected ? row.colour : `${row.colour}33`}
                   stroke={row.colour}
                   strokeWidth={1.5}
@@ -69,17 +77,15 @@ export function FractionWall({ scene, onComplete }: FractionWallProps) {
             })
           })}
         </svg>
-        <p className="mt-2 text-xs text-muted-foreground">
-          Click on bars to highlight them. Look for fractions that line up.
-        </p>
       </div>
 
-      <button
-        onClick={onComplete}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90"
-      >
+      <p className="text-sm text-muted-foreground">
+        Click on bars to highlight them. Look for fractions that line up.
+      </p>
+
+      <LessonCTA onClick={onComplete} realmAccent={realmAccent}>
         I&apos;ve explored the wall, continue
-      </button>
+      </LessonCTA>
     </div>
   )
 }

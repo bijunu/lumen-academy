@@ -1,15 +1,23 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { DragDropBuilderQuestion } from '@/types/content'
 
 interface DragDropBuilderProps {
   question: DragDropBuilderQuestion
   disabled: boolean
   onSubmit: (arrangement: string[]) => void
+  realmAccent?: string
 }
 
-export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilderProps) {
+export function DragDropBuilder({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent = 'hsl(var(--primary))',
+}: DragDropBuilderProps) {
   const [builtIndices, setBuiltIndices] = useState<number[]>([])
 
   const isUsed = (i: number) => builtIndices.includes(i)
@@ -29,16 +37,18 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-4">
       <div>
-        <p className="mb-1 text-xs text-muted-foreground">Your answer:</p>
+        <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Your answer
+        </p>
         <div
-          className="flex min-h-[3rem] flex-wrap gap-2 rounded-md border border-dashed bg-muted/20 p-2"
+          className="flex min-h-[3rem] flex-wrap gap-2 rounded-xl border border-dashed bg-muted/20 p-3"
           role="list"
           aria-label="Build area"
         >
           {builtIndices.length === 0 && (
-            <span className="self-center text-xs text-muted-foreground">
+            <span className="self-center text-sm text-muted-foreground">
               Tap parts below to add them here.
             </span>
           )}
@@ -48,7 +58,8 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
               type="button"
               onClick={() => moveToPool(i)}
               disabled={disabled}
-              className="rounded-md bg-primary px-3 py-1 text-sm text-primary-foreground hover:opacity-90 disabled:opacity-50"
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-white shadow-sm transition-transform hover:-translate-y-0.5 disabled:opacity-50"
+              style={{ backgroundColor: realmAccent }}
               aria-label={`Remove ${question.parts[i]} from answer`}
             >
               {question.parts[i]}
@@ -57,7 +68,9 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
         </div>
       </div>
       <div>
-        <p className="mb-1 text-xs text-muted-foreground">Available parts:</p>
+        <p className="mb-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Available parts
+        </p>
         <div className="flex flex-wrap gap-2" role="list" aria-label="Parts pool">
           {question.parts.map((part, i) => (
             <button
@@ -65,7 +78,7 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
               type="button"
               onClick={() => moveToBuild(i)}
               disabled={disabled || isUsed(i)}
-              className="rounded-md border bg-background px-3 py-1 text-sm hover:bg-muted disabled:opacity-30"
+              className="rounded-md border-2 bg-background px-3 py-1.5 text-sm font-medium transition-colors hover:bg-muted disabled:opacity-30"
               aria-label={`Add ${part} to answer`}
             >
               {part}
@@ -73,13 +86,13 @@ export function DragDropBuilder({ question, disabled, onSubmit }: DragDropBuilde
           ))}
         </div>
       </div>
-      <button
+      <LessonCTA
         onClick={handleSubmit}
         disabled={disabled || builtIndices.length === 0}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </div>
   )
 }

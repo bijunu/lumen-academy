@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+
+import { LessonCTA } from '@/components/learn/LessonCTA'
 import type { MissingStepQuestion } from '@/types/content'
 import { cn } from '@/lib/utils'
 
@@ -8,9 +10,15 @@ interface MissingStepProps {
   question: MissingStepQuestion
   disabled: boolean
   onSubmit: (value: string) => void
+  realmAccent?: string
 }
 
-export function MissingStep({ question, disabled, onSubmit }: MissingStepProps) {
+export function MissingStep({
+  question,
+  disabled,
+  onSubmit,
+  realmAccent,
+}: MissingStepProps) {
   const [value, setValue] = useState('')
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -51,13 +59,13 @@ export function MissingStep({ question, disabled, onSubmit }: MissingStepProps) 
           )
         })}
       </ol>
-      <button
+      <LessonCTA
         type="submit"
         disabled={disabled || value.trim() === ''}
-        className="rounded-md bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 disabled:opacity-50"
+        realmAccent={realmAccent}
       >
         Submit
-      </button>
+      </LessonCTA>
     </form>
   )
 }
