@@ -986,6 +986,26 @@ Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
 - Q-PT-5: At least one Challenge tier word problem on `chemistry-periodic-table-layout` uses a UK domestic context (double-glazed windows, neon shop signs, party balloons) and requires the learner to choose a noble gas by reasoning about Group 0 properties.
 - Q-PT-6: At least one missing-step question on `chemistry-periodic-table-layout` hides the "elements in the same group share similar chemical properties" step in a Group 1 reactivity walk-through.
 - Q-PT-7: At least one Challenge tier question on `chemistry-periodic-table-layout` asks the learner to count how many of the first 20 elements fall into a stated category (noble gases, metals).
+- C-G17-1: Learner swaps the trends, saying reactivity falls down Group 1 or rises down Group 7. (Covers `chemistry-periodic-table-group-1-7`.)
+  - Required handling: misconception entry on `chemistry-periodic-table-group-1-7`; at least one MCQ on the Group 1 trend and at least one MCQ on the Group 7 trend; at least one spot-misconception that names the swap directly.
+- C-G17-2: Learner believes the gas given off when an alkali metal reacts with water is oxygen, not hydrogen.
+  - Required handling: misconception entry on `chemistry-periodic-table-group-1-7`; at least one Core MCQ asking which gas is given off in the reaction.
+- C-G17-3: Learner believes all halogens are gases at room temperature, missing that bromine is a liquid and iodine is a solid.
+  - Required handling: misconception entry; at least one Core MCQ asking the state of chlorine, bromine and iodine at room temperature.
+- C-G17-4: Learner reverses halogen displacement, saying the less reactive halogen displaces the more reactive one.
+  - Required handling: misconception entry; at least one MCQ comparing what happens with chlorine into KBr versus iodine into KCl, plus at least one numeric or free-text question on a displacement word equation.
+- C-G17-5: Learner swaps Group 1 and Group 7, naming halogens as Group 1 or alkali metals as Group 7.
+  - Required handling: misconception entry; at least one Core MCQ asking which group holds the alkali metals and at least one asking which group holds the halogens.
+- C-G17-6: Learner believes Group 1 metals are mild reactive metals like iron or copper at home, missing that they are stored under oil in school labs.
+  - Required handling: misconception entry; at least one Challenge MCQ on why sodium is stored under oil.
+
+- Q-G17-1: At least one labelled-image question on `chemistry-periodic-table-group-1-7` requires the learner to drag labels (Group 1 alkali metals, Group 7 halogens, "Reactivity rises down Group 1", "Reactivity falls down Group 7") onto a simplified periodic-table outline, with a label pool no larger than twice the hotspot count.
+- Q-G17-2: At least two drag-order questions on `chemistry-periodic-table-group-1-7` rank Group 1 metals (Li, Na, K) by reactivity ascending and Group 7 halogens (Cl, Br, I) by reactivity descending.
+- Q-G17-3: At least four numeric-entry questions on `chemistry-periodic-table-group-1-7` ask the learner to read outer-shell electron counts (matching group number) or count which of a small set of metals or test tubes show a stated reaction.
+- Q-G17-4: At least one missing-step question on `chemistry-periodic-table-group-1-7` hides the "elements in the same group share similar chemical properties, so [Rb / Cs] is more reactive than [K / Na]" step in a Group 1 prediction.
+- Q-G17-5: At least one Challenge tier word problem on `chemistry-periodic-table-group-1-7` uses a UK school context (storage of sodium under oil in Dover; francium in Manchester; chlorine displacement experiments in a Sevenoaks chemistry club) and requires the learner to apply a Group 1 or Group 7 trend.
+- Q-G17-6: At least one free-text question on `chemistry-periodic-table-group-1-7` asks the learner to write a halogen-displacement word equation (chlorine + potassium iodide → potassium chloride + iodine).
+- Q-G17-7: At least one Challenge tier drag-order extends the displacement trend to a fourth halogen (fluorine above chlorine), requiring the learner to apply the Group 7 trend to an element they have not seen react.
 
 ### Tutor probes
 
@@ -994,6 +1014,9 @@ Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
 - T-PT-3: Given "Most elements are non-metals because the right side of the periodic table looks bigger", the tutor scaffolds the learner toward counting metal vs non-metal positions, without flatly stating the answer.
 - T-PT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 periodic-table language and metric units politely.
 - T-PT-5: Given a request for an inline definition (tap on "group", "period", "noble gas" or "metal"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-G17-1: Given "Group 1 reactivity falls going down", the tutor asks the learner to picture lithium then sodium then potassium reacting with water in turn, building toward the rising trend without flatly stating it.
+- T-G17-2: Given "Bromine displaces chlorine from potassium chloride", the tutor cites the displacement-direction misconception's `reExplanation` rather than producing a fresh hint.
+- T-G17-3: Given an off-topic input (for example a question about US chemistry brands or another subject), the tutor steers back to UK KS3 Group 1 and Group 7 examples (sodium under oil in a school lab, chlorine in a UK swimming pool, iodine antiseptic in a UK pharmacy).
 
 ## Zone: Elementia > Acids and Alkalis
 
