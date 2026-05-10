@@ -1484,16 +1484,89 @@ Covers `chemistry-ph-scale`, `chemistry-ph-strong-weak`.
 
 ## Zone: Elementia > Simple Reactions
 
-Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid-metal`.
+Covers `chemistry-simple-reactions-combustion`, `chemistry-simple-reactions-acid-metal`, `chemistry-simple-reactions-rusting`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-SR-1: Learner believes that when a candle or fuel burns, the missing mass has been destroyed. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one spot-misconception or MCQ that contrasts an open candle (mass drops) with a sealed jar (mass stays the same).
+- C-SR-2: Learner ignores oxygen as a reactant when working out combustion product masses, so they predict the mass of products equals the mass of fuel alone. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Challenge MCQ or numeric-entry where the learner must add the mass of oxygen used to the mass of fuel.
+- C-SR-3: Learner conflates burning with evaporation, so they say "no new substance is made when something burns". (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Challenge MCQ or spot-misconception that contrasts evaporation (water → water vapour) with combustion (methane → CO₂ and water).
+- C-SR-4: Learner names the product of burning magnesium ribbon as magnesium hydroxide or magnesium chloride, missing that combustion in air gives the oxide. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one MCQ that asks the learner to choose magnesium oxide from a list including hydroxide, chloride and sulfate.
+- C-SR-5: Learner thinks a fire only needs two sides (fuel and oxygen) and will keep going forever once lit. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception or MCQ that requires all three sides of the fire triangle.
+- C-SR-6: Learner says a fire blanket smothers a fire by removing the fuel, missing that the blanket cuts off oxygen. (Covers `chemistry-simple-reactions-combustion`.)
+  - Required handling: misconception entry; at least one Confident MCQ that maps a real UK fire-extinguishing action (fire blanket, glass cup over a tea-light) to the side of the triangle it removes.
+- C-SR-7: Learner names the gas in a metal-and-acid reaction as oxygen, because the bubbles come from a watery liquid. (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one Challenge MCQ that contrasts the squeaky-pop test (hydrogen) with what oxygen would do (relight a glowing splint).
+- C-SR-8: Learner mismatches the salt name to the acid (e.g. "iron + sulfuric acid → iron chloride"). (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one MCQ that maps each acid to its salt ending (HCl → chloride, sulfuric → sulfate, nitric → nitrate).
+- C-SR-9: Learner thinks more concentrated acid changes the products of metal + acid, not just the speed. (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception or MCQ that holds the products fixed while concentration varies.
+- C-SR-10: Learner thinks the squeaky-pop test responds to any gas, not specifically hydrogen. (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one Core spot-misconception or MCQ that contrasts pop (hydrogen), relighting a glowing splint (oxygen), and turning limewater milky (CO₂).
+- C-SR-11: Learner predicts every metal fizzes at the same rate in the same dilute acid, missing the Mg > Zn > Fe ordering at Y7. (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one Confident or Core MCQ that asks which of Mg, Zn, Fe fizzes fastest in the same dilute HCl.
+- C-SR-12: Learner thinks water is a product of metal + acid, confusing it with metal-oxide + acid neutralisation. (Covers `chemistry-simple-reactions-acid-metal`.)
+  - Required handling: misconception entry; at least one MCQ that holds the general equation `metal + acid → salt + hydrogen` against decoys with `+ water`.
+- C-SR-13: Learner thinks rusting only needs iron and oxygen, missing the role of water. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Core spot-misconception or MCQ that contrasts dry-air iron (no rust) with damp iron (rusts).
+- C-SR-14: Learner thinks rusting only needs iron and water, missing the role of oxygen. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Confident MCQ that explains why the boiled-water-with-oil tube does not rust.
+- C-SR-15: Learner thinks paint only hides rust visually, missing that paint blocks water and oxygen from reaching the metal. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception or MCQ on UK paint contexts (Forth Bridge, garden gates).
+- C-SR-16: Learner thinks rust forms a protective layer like aluminium oxide, missing that rust is flaky and exposes fresh iron. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Challenge MCQ that asks the learner to choose paint or galvanising over leaving the metal bare.
+- C-SR-17: Learner thinks salt is the rusting agent rather than oxygen and water, missing that salt only speeds up rusting. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one Challenge MCQ that compares rusting in tap water vs salty water and isolates the role of salt as a speed-up.
+- C-SR-18: Learner thinks rust is dust or dirt that lands on iron from the air, missing that rust IS the iron itself, chemically transformed. (Covers `chemistry-simple-reactions-rusting`.)
+  - Required handling: misconception entry; at least one numeric-entry that asks for the increase in mass when iron rusts (proving extra mass came from oxygen and water).
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-SR-1: At least one Core MCQ on `chemistry-simple-reactions-combustion` asks the learner to name the three things on the fire triangle (fuel, oxygen, heat).
+- Q-SR-2: At least one Core MCQ on `chemistry-simple-reactions-combustion` asks the learner to write the word equation for methane burning on a UK gas hob: methane + oxygen → carbon dioxide + water.
+- Q-SR-3: At least one Confident MCQ on `chemistry-simple-reactions-combustion` names magnesium oxide as the product of burning magnesium ribbon (UK Bonfire Night sparkler context).
+- Q-SR-4: At least one numeric-entry question on `chemistry-simple-reactions-combustion` asks the learner to add the mass of fuel and the mass of oxygen to get the mass of products.
+- Q-SR-5: At least one drag-order question on `chemistry-simple-reactions-combustion` asks the learner to assemble the word equation `methane + oxygen → carbon dioxide + water` from shuffled phrases.
+- Q-SR-6: At least one labelled-image question on `chemistry-simple-reactions-combustion` places "Fuel", "Oxygen" and "Heat" labels on the three corners of the fire triangle.
+- Q-SR-7: At least one Challenge MCQ on `chemistry-simple-reactions-combustion` describes a sealed-jar combustion scenario and tests conservation of mass when gas products are trapped.
+- Q-SR-8: All combustion questions stay at word-equation depth: no balanced symbol equations, no enthalpy values, no percentage yield.
+- Q-SR-9: At least one Core MCQ on `chemistry-simple-reactions-acid-metal` states the general rule `metal + acid → salt + hydrogen`, with `+ water` and `+ oxygen` as named distractors.
+- Q-SR-10: At least one Core MCQ on `chemistry-simple-reactions-acid-metal` names the salt for zinc + HCl (zinc chloride) and another names the salt for magnesium + sulfuric acid (magnesium sulfate).
+- Q-SR-11: At least one Confident MCQ or numeric-entry on `chemistry-simple-reactions-acid-metal` orders Mg, Zn, Fe by speed of fizz in the same dilute acid (Mg fastest, Fe slowest).
+- Q-SR-12: At least one Core MCQ on `chemistry-simple-reactions-acid-metal` asks the learner to interpret a "pop" sound as confirmation of hydrogen.
+- Q-SR-13: At least one Confident or Challenge spot-misconception on `chemistry-simple-reactions-acid-metal` pairs concentration with speed and holds products fixed.
+- Q-SR-14: At least one drag-order question on `chemistry-simple-reactions-acid-metal` assembles `zinc + hydrochloric acid → zinc chloride + hydrogen` from shuffled phrases.
+- Q-SR-15: All acid-metal questions stay at word-equation depth: no ionic equations, no half-equations, reactivity-series ranking limited to Mg, Zn, Fe.
+- Q-SR-16: At least one Core MCQ on `chemistry-simple-reactions-rusting` states the word equation `iron + oxygen + water → iron oxide`, with `iron + oxygen → iron oxide` as a named distractor.
+- Q-SR-17: At least one Core MCQ on `chemistry-simple-reactions-rusting` asks the learner to identify which test tube in the three-tube experiment rusts (the one with both water and oxygen).
+- Q-SR-18: At least one Confident MCQ on `chemistry-simple-reactions-rusting` explains why the boiled-water-with-oil tube does not rust (no oxygen).
+- Q-SR-19: At least one Core MCQ on `chemistry-simple-reactions-rusting` lists three UK rust-prevention methods (paint, oil, galvanising).
+- Q-SR-20: At least one MCQ on `chemistry-simple-reactions-rusting` uses the Forth Bridge in Scotland or another famous UK iron context.
+- Q-SR-21: At least one numeric-entry on `chemistry-simple-reactions-rusting` asks for the increase in mass when iron rusts (extra mass from oxygen + water atoms).
+- Q-SR-22: At least one drag-order question on `chemistry-simple-reactions-rusting` assembles `iron + oxygen + water → iron oxide` from shuffled phrases.
+- Q-SR-23: At least one Challenge MCQ on `chemistry-simple-reactions-rusting` compares rusting in tap water vs salty seawater and isolates salt as a speed-up.
+- Q-SR-24: All rusting questions stay at word-equation depth: no sacrificial-anode mechanism depth, no redox half-equations.
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-SR-1: Given "the wax has been destroyed when a candle burns", the tutor scaffolds toward the sealed-jar mental picture before stating the rule (mass conserved when gas products are counted).
+- T-SR-2: Given a wrong answer matching the "magnesium chloride / hydroxide" trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-SR-3: Given "fuel and oxygen alone are enough to keep a fire going", the tutor reminds the learner of the heat side of the triangle, ideally by reference to a blown-out candle.
+- T-SR-4: Given a request for an inline definition (tap on "combustion", "fire triangle", "fuel", "oxygen", "magnesium oxide"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SR-5: Given "the fire blanket put out the chip-pan fire by removing the fuel", the tutor scaffolds the learner toward "the blanket removed oxygen" without flat correction first.
+- T-SR-6: Given "the bubbles from zinc and acid are oxygen", the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint, and references the squeaky-pop test.
+- T-SR-7: Given "iron + sulfuric acid gives iron chloride and hydrogen", the tutor scaffolds toward the salt-naming rule (sulfuric → sulfate, hydrochloric → chloride) without flat correction first.
+- T-SR-8: Given a request for an inline definition (tap on "salt", "hydrogen", "squeaky-pop test", "reactivity"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-SR-9: Given "rusting only needs iron and oxygen", the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint, and references the dry-air tube of the three-test-tube experiment.
+- T-SR-10: Given "paint just hides rust", the tutor scaffolds the learner toward "paint is a barrier against water and oxygen" without flat correction first.
+- T-SR-11: Given "the salt in seawater is what causes rust", the tutor scaffolds the learner toward "salt speeds up rusting; iron, oxygen and water still do the reaction" without flat correction first.
+- T-SR-12: Given "rust is just dust on the iron, the iron itself has not changed", the tutor scaffolds toward "weigh a rusty bolt to see it is heavier than when shiny" without flat correction first.
+- T-SR-13: Given a request for an inline definition (tap on "rust", "iron oxide", "galvanising", "Forth Bridge"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Forces
 
