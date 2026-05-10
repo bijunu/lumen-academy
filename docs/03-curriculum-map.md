@@ -295,10 +295,10 @@
 ### Zone: Periodic Table (`chemistry-periodic-table`)
 
 #### Layout: Groups and Periods (Core, `chemistry-periodic-table-layout`)
-- **KS3**: _fill verbatim from DfE Science KS3 (The periodic table)_
-- **AQA**: _GCSE Chemistry spec ref_
-- **Edexcel**: _GCSE Chemistry spec ref_
-- **OCR**: _GCSE Chemistry spec ref_
+- **KS3**: The principles underpinning the Mendeleev periodic table; the periodic table: periods and groups; metals and non-metals.
+- **AQA**: 4.1.2.1 The periodic table; 4.1.2.2 Development of the periodic table; 4.1.2.3 Metals and non-metals (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.30 The periodic table; 1.31 Development of the periodic table; 1.32 Groups and periods (GCSE Chemistry 1CH0)
+- **OCR**: C1.2a The periodic table: groups and periods; C1.2b Metals and non-metals (GCSE Chemistry A J248 Gateway)
 
 #### Groups 1 and 7 (Confident, `chemistry-periodic-table-group-1-7`)
 - **KS3**: _fill verbatim from DfE Science KS3 (The periodic table)_

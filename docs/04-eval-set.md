@@ -869,13 +869,37 @@ Covers `chemistry-atoms-elements-compounds-basics`, `chemistry-atoms-symbols-for
 Covers `chemistry-periodic-table-layout`, `chemistry-periodic-table-group-1-7`.
 
 ### Content probes
-- _to be drafted by the Elementia author session_
+
+- C-PT-1: Learner swaps the words group and period, naming a vertical column as a period and a horizontal row as a group.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Core MCQ asking what a vertical column is called and at least one Core MCQ or spot-misconception asking what a horizontal row is called.
+- C-PT-2: Learner believes metals sit on the right of the periodic table and non-metals on the left.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one MCQ asking where the metals sit relative to the staircase line.
+- C-PT-3: Learner believes elements in the same period (row) share chemical properties, missing that the row crosses from metals on the left to non-metals on the right.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Confident MCQ that gives a list of period-3 elements and asks what they have in common.
+- C-PT-4: Learner believes the noble gases (Group 0) are very reactive, like the alkali metals (Group 1).
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Challenge MCQ that asks the learner to predict the chemistry of a new Group 0 element.
+- C-PT-5: Learner believes there are the same number of groups across the table as periods down it.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one labelled-image or numeric question that requires the learner to identify rows and columns separately.
+- C-PT-6: Learner places the noble gases in Group 8 (the eighth column from the left) rather than Group 0.
+  - Required handling: misconception entry on `chemistry-periodic-table-layout`; at least one Confident free-text or MCQ asking which group holds the noble gases on the UK GCSE periodic table.
 
 ### Question shape probes
-- _to be drafted by the Elementia author session_
+
+- Q-PT-1: At least one labelled-image question on `chemistry-periodic-table-layout` requires the learner to drag the labels Group 1, Group 0, Metals, and Non-metals onto a coloured-region periodic table outline, with a label pool no larger than twice the hotspot count.
+- Q-PT-2: At least three Core multiple-choice questions on `chemistry-periodic-table-layout` cover the meaning of a group, the meaning of a period, and the position of metals.
+- Q-PT-3: At least one numeric-entry question on `chemistry-periodic-table-layout` asks the learner to read the period or group number for a named element such as carbon or sodium.
+- Q-PT-4: At least one drag-order question on `chemistry-periodic-table-layout` orders the noble gases by their position in Group 0 from helium at the top down.
+- Q-PT-5: At least one Challenge tier word problem on `chemistry-periodic-table-layout` uses a UK domestic context (double-glazed windows, neon shop signs, party balloons) and requires the learner to choose a noble gas by reasoning about Group 0 properties.
+- Q-PT-6: At least one missing-step question on `chemistry-periodic-table-layout` hides the "elements in the same group share similar chemical properties" step in a Group 1 reactivity walk-through.
+- Q-PT-7: At least one Challenge tier question on `chemistry-periodic-table-layout` asks the learner to count how many of the first 20 elements fall into a stated category (noble gases, metals).
 
 ### Tutor probes
-- _to be drafted by the Elementia author session_
+
+- T-PT-1: Given "I think a period is a vertical column on the periodic table", the tutor's first reply is a Socratic prompt about what shape a row makes versus a column, not a flat correction.
+- T-PT-2: Given a wrong answer matching the noble-gases-are-reactive trigger (for example "Argon must be very reactive because it is a gas"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+- T-PT-3: Given "Most elements are non-metals because the right side of the periodic table looks bigger", the tutor scaffolds the learner toward counting metal vs non-metal positions, without flatly stating the answer.
+- T-PT-4: Given an off-topic input (for example a question about US units or a different subject), the tutor steers back to UK KS3 periodic-table language and metric units politely.
+- T-PT-5: Given a request for an inline definition (tap on "group", "period", "noble gas" or "metal"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Elementia > Acids and Alkalis
 
