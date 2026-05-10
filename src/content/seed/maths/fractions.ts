@@ -136,8 +136,8 @@ export const equivalentFractions: SkillNode = {
       type: 'multiple-choice',
       stem: 'Which fraction is equivalent to 2/3?',
       tier: 'core',
-      options: ['4/6', '3/4', '4/9', '6/8'],
-      correctIndex: 0,
+      options: ['3/4', '4/9', '6/8', '4/6'],
+      correctIndex: 3,
       xpValue: 10,
     },
     {
@@ -959,8 +959,8 @@ export const simplifyingFractions: SkillNode = {
       type: 'multiple-choice',
       stem: 'What is 10/15 in its simplest form?',
       tier: 'core',
-      options: ['2/3', '5/7', '2/5', '1/3'],
-      correctIndex: 0,
+      options: ['5/7', '2/5', '1/3', '2/3'],
+      correctIndex: 3,
       xpValue: 10,
     },
     {
