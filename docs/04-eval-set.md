@@ -1150,16 +1150,69 @@ Zone id: `physics-gravity`. Covers `physics-gravity-mass-vs-weight`, `physics-gr
 
 ## Zone: Mechanica > Energy Stores and Transfers
 
-Covers `physics-energy-stores`, `physics-energy-transfers`, `physics-energy-efficiency`.
+Zone id: `physics-energy-stores-transfers`. Covers `physics-energy-stores`, `physics-energy-transfers`, `physics-energy-efficiency`.
+
+The IOPSpark "stores not types" framing is the modern KS3 standard, adopted by AQA, Edexcel, and OCR. Pupils carry forward primary-school "kinds of energy" labels (heat energy, light energy, sound energy, electrical energy, motion energy) and treat them as stores; reviewers must check that the language across all three nodes consistently uses the eight stores plus four transfer pathways.
 
 ### Content probes
-- _to be drafted by the Mechanica author session_
+
+- C-EN-1: Learner treats "heat energy", "light energy", "sound energy", or "electrical energy" as a store, listing them alongside the eight true stores. (Covers `physics-energy-stores`, `physics-energy-transfers`.)
+  - Required handling: misconception entry; at least one spot-misconception question that presents the "kinds of energy" claim and asks whether the framing is sound; at least one labelled-image question whose label pool includes both the eight true stores and the legacy "light energy", "sound energy", "heat energy" distractors.
+- C-EN-2: Learner calls the energy held in a cell or battery the "electrical store", because the cell drives a current. (Covers `physics-energy-stores`.)
+  - Required handling: misconception entry; at least one core MCQ that pairs chemical store and electrical transfer for the same battery example.
+- C-EN-3: Learner confuses the magnetic store of two magnets held apart with the electrostatic store of two charged objects held apart. (Covers `physics-energy-stores`.)
+  - Required handling: misconception entry; at least one Confident MCQ that asks the learner to pick the correct store for a balloon-and-hair situation versus a magnet-and-paperclip situation.
+- C-EN-4: Learner labels nuclear fuel (uranium rods, the Sun) as a chemical store, because both involve atoms. (Covers `physics-energy-stores`.)
+  - Required handling: misconception entry; at least one Confident MCQ that contrasts a coal fire (chemical) with a nuclear power station (nuclear).
+- C-EN-5: Learner believes an object can only have one energy store at a time, so a hot mug on a high shelf has either thermal or gravitational, not both. (Covers `physics-energy-stores`.)
+  - Required handling: misconception entry; at least one Challenge tier MCQ or free-text item that requires listing two or more stores for one object.
+- C-EN-6: Learner believes only hot things like fires and heaters have a thermal store, so a cup of room-temperature water has none. (Covers `physics-energy-stores`.)
+  - Required handling: misconception entry; at least one Challenge tier MCQ comparing two cups of water at different temperatures.
+- C-EN-7: Learner forgets that food holds a chemical store, so saying that food gives the body "energy" without naming the store. (Covers `physics-energy-stores`, `physics-energy-transfers`.)
+  - Required handling: misconception entry on the stores node; at least one item on the transfers node that traces food chemical store to body kinetic and thermal stores.
+- C-EN-8: Learner uses "transferred" and "stored" interchangeably, treating heating a cup of water as the kettle "storing" energy in the water. (Covers `physics-energy-transfers`.)
+  - Required handling: misconception entry on the transfers node; at least one MCQ that asks the learner to pick the transfer pathway separately from the store names.
+- C-EN-9: Learner only names mechanical (force times distance) and electrical as the two transfer pathways, missing heating (temperature difference) and radiation (light, sound, infrared). (Covers `physics-energy-transfers`.)
+  - Required handling: misconception entry on the transfers node; at least one labelled-image or drag-order question that requires placing all four pathways onto example situations.
+- C-EN-10: Learner says light is "given off as light energy", treating light as a store rather than a radiation transfer. (Covers `physics-energy-transfers`.)
+  - Required handling: misconception entry on the transfers node; at least one spot-misconception question presenting the "light energy is given off" claim.
+- C-EN-11: Learner says sound is the same kind of thing as a store and adds it to a list of stores in a kettle or speaker example. (Covers `physics-energy-transfers`.)
+  - Required handling: misconception entry on the transfers node; at least one Confident or Challenge MCQ that asks the learner to label sound as a transfer (radiation), not a store.
+- C-EN-12: Learner believes useful energy is created and wasted energy disappears, missing the conservation rule that energy is never lost, only transferred between stores or to the surroundings. (Covers `physics-energy-efficiency`.)
+  - Required handling: misconception entry on the efficiency node; at least one spot-misconception question that presents the "wasted energy disappears" claim.
+- C-EN-13: Learner uses percentage efficiency calculations from primary-school sources or from GCSE textbooks, calculating "the energy is 60% efficient", which is a GCSE Higher-tier skill not in the KS3 specification. (Covers `physics-energy-efficiency`.)
+  - Required handling: in the seed file, restrict the efficiency node to qualitative useful-vs-wasted comparison; do NOT include any percentage efficiency calculations; flag in the node description that the calculation is GCSE.
+- C-EN-14: Learner reads a Sankey diagram top-down or right-to-left, mistaking a wasted-energy branch for the input. (Covers `physics-energy-efficiency`.)
+  - Required handling: misconception entry on the efficiency node; at least one labelled-image or data-extraction question on a Sankey diagram with the input clearly labelled on the left and useful and wasted branches separated.
+- C-EN-15: Learner believes wasted energy can be recovered by waiting (the heat will "come back" into the bulb). (Covers `physics-energy-efficiency`.)
+  - Required handling: misconception entry on the efficiency node; at least one MCQ that contrasts useful and wasted energy paths after a torch bulb has cooled.
 
 ### Question shape probes
-- _to be drafted by the Mechanica author session_
+
+- Q-EN-1: At least one labelled-image question on the stores node has the learner place all eight store names ("Kinetic store", "Gravitational store", "Elastic store", "Thermal store", "Chemical store", "Nuclear store", "Magnetic store", "Electrostatic store") onto a gallery diagram, with a label pool that includes the legacy "light energy", "sound energy", "heat energy" distractors and is no larger than twice the hotspot count. (Covers `physics-energy-stores`.)
+- Q-EN-2: At least four Core MCQs on the stores node each present one everyday UK situation (kettle, cyclist, wound-up torch, book on a shelf, balloon on hair, drawn catapult, AA cell, mug of hot tea) and ask the learner to pick the main store, with one distractor mapping to the "kinds of energy" or one of the store-confusion misconceptions. (Covers `physics-energy-stores`.)
+- Q-EN-3: At least one Confident drag-order or missing-step question on the stores node walks the learner through naming the main store of an object (pick the object, list what changed, match to a store, name the store). (Covers `physics-energy-stores`.)
+- Q-EN-4: At least one Challenge tier item on the stores node lists more than one store for a single object (a hot mug on a shelf, a 0.5 kg apple held above the floor) and credits the learner only when both are named. (Covers `physics-energy-stores`.)
+- Q-EN-5: At least one labelled-image question on the transfers node has the learner place each of the four transfer pathway labels ("Mechanical (force x distance)", "Electrical (current x voltage)", "Heating (temperature difference)", "Radiation (light or sound or infrared)") onto a gallery of example situations, with a label pool no larger than twice the hotspot count. (Covers `physics-energy-transfers`.)
+- Q-EN-6: At least three Core MCQs on the transfers node each ask the learner to pick the pathway used to move energy between two named stores in a UK context (kettle, motor, torch, hot drink cooling on a counter), with distractors drawn from neighbouring pathways. (Covers `physics-energy-transfers`.)
+- Q-EN-7: At least one drag-order question on the transfers node walks the learner through a store-to-store chain (chemical store of fuel falls, mechanical transfer turns wheels, kinetic store of car grows, plus a thermal-store growth from friction), in the right order. (Covers `physics-energy-transfers`.)
+- Q-EN-8: At least one Challenge tier missing-step or free-text item on the transfers node maps a UK context (a falling brick, a moving car) onto a complete chain of store-to-store transfers, naming both the stores and the pathways. (Covers `physics-energy-transfers`.)
+- Q-EN-9: At least one labelled-image question on the efficiency node has the learner place "Input energy", "Useful output", and "Wasted output" labels onto a Sankey diagram with the input flowing in from the left, with a label pool no larger than twice the hotspot count. (Covers `physics-energy-efficiency`.)
+- Q-EN-10: At least one data-extraction question on the efficiency node reads off the largest wasted-energy branch from the description of a Sankey diagram for an everyday UK appliance (light bulb, kettle, electric motor, electric scooter). (Covers `physics-energy-efficiency`.)
+- Q-EN-11: At least one Confident drag-order or missing-step question on the efficiency node walks the learner through a useful-versus-wasted analysis of a torch bulb (input chemical from cell, useful as light to read by, wasted as heat to the surroundings, total stays the same by conservation). (Covers `physics-energy-efficiency`.)
+- Q-EN-12: At least two spot-misconception questions across the three energy nodes each present a "kinds of energy" claim, a "wasted energy disappears" claim, or a "battery stores electricity" claim, and ask whether the framing is sound. (Covers all three nodes.)
+- Q-EN-13: No question across the three energy nodes uses a percentage efficiency calculation. Efficiency at Year 7 is qualitative only; reviewers must reject any item that asks the learner to compute a percentage. (Covers `physics-energy-efficiency`.)
+- Q-EN-14: At least three numeric-entry questions on the efficiency node compare useful-vs-wasted joule values from a Sankey description (input - useful = wasted), without using division to express a percentage. (Covers `physics-energy-efficiency`.)
+- Q-EN-15: At least one Challenge tier item on the efficiency node uses a UK appliance comparison (an old filament bulb versus an LED, or an old kettle versus a new kettle) framed as which one wastes the smaller share of its input, qualitatively. (Covers `physics-energy-efficiency`.)
 
 ### Tutor probes
-- _to be drafted by the Mechanica author session_
+
+- T-EN-1: Given "I think heat energy and light energy are stores, like kinetic", the tutor first asks the learner to name where the energy is held before the candle burns, before stating the "stores not types" rule. The reply uses the eight-stores list and names heat and light as transfer pathways.
+- T-EN-2: Given a wrong answer matching the "battery stores electricity" trigger ("the battery has electrical energy"), the tutor cites the relevant misconception's `reExplanation` and contrasts the chemical store inside the cell with the electrical transfer to the bulb.
+- T-EN-3: Given "Where does the wasted energy go in a torch bulb?", the tutor walks the learner through conservation: the input chemical store falls, useful light leaves by radiation, wasted thermal store of the bulb and the air around it grows. No "lost" or "destroyed" language.
+- T-EN-4: Given a request to compute the percentage efficiency of an appliance (above KS3 scope), the tutor declines politely and offers a qualitative useful-vs-wasted comparison instead, and explains the calculation comes at GCSE.
+- T-EN-5: Given an off-topic input (for example a question about US imperial heat units or BTUs), the tutor steers back to KS3 UK Physics examples and metric units (J for energy, W for power are GCSE).
+- T-EN-6: Given a request for an inline definition (tap on "energy store", "transfer pathway", "Sankey diagram", or "thermal store"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Electricity and Circuits
 
