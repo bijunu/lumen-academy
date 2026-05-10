@@ -4,6 +4,10 @@ import { cellsZone, cellsZoneNodes } from './cells'
 import { microscopyZone, microscopyZoneNodes } from './microscopy'
 import { bodySystemsZone, bodySystemsZoneNodes } from './body-systems'
 import { reproductionZone, reproductionZoneNodes } from './reproduction'
+import {
+  photosynthesisZone,
+  photosynthesisZoneNodes,
+} from './photosynthesis'
 
 export { animalCell, cellsZone, cellsZoneNodes } from './cells'
 export { plantCell } from './plant-cell'
@@ -27,12 +31,18 @@ export {
   reproductionZone,
   reproductionZoneNodes,
 } from './reproduction'
+export {
+  photosynthesisOverview,
+  photosynthesisZone,
+  photosynthesisZoneNodes,
+} from './photosynthesis'
 
 export const biologyNodes: SkillNode[] = [
   ...cellsZoneNodes,
   ...microscopyZoneNodes,
   ...bodySystemsZoneNodes,
   ...reproductionZoneNodes,
+  ...photosynthesisZoneNodes,
 ]
 
 export const biologyZones: Zone[] = [
@@ -40,4 +50,5 @@ export const biologyZones: Zone[] = [
   microscopyZone,
   bodySystemsZone,
   reproductionZone,
+  photosynthesisZone,
 ]

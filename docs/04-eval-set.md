@@ -829,13 +829,46 @@ Covers `biology-ecosystems-food-chains`, `biology-ecosystems-food-webs`.
 Covers `biology-photosynthesis-overview`, `biology-photosynthesis-rate`.
 
 ### Content probes
-- _to be drafted by the Vitalia author session_
+
+- C-PHOTO-1: Learner reverses the photosynthesis equation, naming glucose and oxygen as the reactants.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ that asks for the reactants and at least one Core MCQ that asks for the products.
+- C-PHOTO-2: Learner believes plants only photosynthesise and never respire.
+  - Required handling: misconception entry on the overview node; at least one Core spot-misconception or MCQ that surfaces both processes happening in the same plant cell.
+- C-PHOTO-3: Learner places photosynthesis in the mitochondria, conflating it with respiration.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ on the location of photosynthesis (chloroplast) and one Confident-tier spot-misconception that surfaces the chloroplast vs mitochondrion mix-up.
+- C-PHOTO-4: Learner writes chlorophyll into the word equation, treating it as a reactant or a product.
+  - Required handling: misconception entry on the overview node; at least one drag-drop-builder that restricts the build to CO₂, water, glucose, and oxygen and rejects chlorophyll.
+- C-PHOTO-5: Learner believes chlorophyll is itself converted into glucose during photosynthesis.
+  - Required handling: misconception entry on the overview node; at least one Core MCQ on the role of chlorophyll (traps light, not used up).
+- C-PHOTO-6: Learner believes plants can photosynthesise in the dark.
+  - Required handling: misconception entry on the overview node; at least one Challenge-tier item using a dark-period investigation (starch test, mass loss, or pondweed bubbles).
+- C-PHOTO-7: Learner inverts the gas exchange of photosynthesis, claiming plants take in oxygen and give out CO₂ during photosynthesis.
+  - Required handling: misconception entry on the overview node; at least one Confident-tier MCQ that asks which gas is given out during photosynthesis.
+- C-PHOTO-8: Learner does not connect photosynthesis to the food chain (does not see photosynthesis as the energy-trapping step almost all life depends on).
+  - Required handling: at least one Confident-tier MCQ on the overview node that asks why photosynthesis underpins almost every food chain.
 
 ### Question shape probes
-- _to be drafted by the Vitalia author session_
+
+- Q-PHOTO-1: At least one Core MCQ on the overview node asks for the reactants of photosynthesis (carbon dioxide and water), with the products as the dominant distractor.
+- Q-PHOTO-2: At least one Core MCQ on the overview node asks for the products (glucose and oxygen), with the reactants as the dominant distractor.
+- Q-PHOTO-3: At least one drag-order question on the overview node sequences the journey of one CO₂ molecule from leaf intake through chloroplast trapping to glucose storage.
+- Q-PHOTO-4: At least one labelled-image question on the overview node places chloroplast, nucleus, and large permanent vacuole onto a leaf cell diagram, with a non-plant-cell distractor (mitochondrion or cell membrane) in the pool.
+- Q-PHOTO-5: At least one drag-drop-builder on the overview node restricts the build to the four word-equation substances and rejects chlorophyll, nitrogen, salt.
+- Q-PHOTO-6: At least one Confident-tier data-extraction on the overview node compares oxygen readings across three sealed-jar conditions (empty, green plant, dead twig) and asks which jar holds a photosynthesising plant.
+- Q-PHOTO-7: At least one missing-step question on the overview node fills in the chloroplast-and-chlorophyll step inside an account of photosynthesis.
+- Q-PHOTO-8: At least one Challenge-tier numeric on the overview node uses a UK-context investigation (Lake District oak, Sevenoaks pondweed, Manchester field) and requires a multiplication or rate calculation across multiple beakers or hours.
+- Q-PHOTO-9: At least one free-text question on the overview node asks the learner to explain a dark-room mass loss in terms of "photosynthesis off, respiration on".
+- Q-PHOTO-10: All chemical formulae in stems, options, scenes, and explanations on the overview node use Unicode subscripts (CO₂, O₂, H₂O), not ASCII (CO2, O2, H2O).
 
 ### Tutor probes
-- _to be drafted by the Vitalia author session_
+
+- T-PHOTO-1: Given "Plants only photosynthesise, right?", the tutor's first reply is a Socratic prompt about what happens at night, not a direct correction.
+- T-PHOTO-2: Given a wrong answer matching the equation-reversed trigger on po-q1 or po-q2, the tutor cites the relevant misconception's `reExplanation` (the photosynthesis-and-respiration are opposites framing) rather than producing a fresh hint.
+- T-PHOTO-3: Given "Where does photosynthesis happen?" with the wrong answer "mitochondria", the tutor steers via "What colour are mitochondria? What colour are chloroplasts?", not a definition dump.
+- T-PHOTO-4: Given "Is chlorophyll one of the reactants?", the tutor's first reply is a Socratic prompt about what is consumed in the reaction, not a direct correction.
+- T-PHOTO-5: Given a request for an inline definition (tap on "chloroplast" or "chlorophyll"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-PHOTO-6: Given "Why does the pondweed bubble more under a torch?", the tutor walks the learner through "more light, more photosynthesis, more oxygen", not a launch into limiting-factors graphs (those belong to the rate node).
+- T-PHOTO-7: Given an off-topic input (for example a US AP Biology Calvin-cycle reference), the tutor steers back to UK KS3 word-equation language politely.
 
 ## Zone: Elementia > Particle Model
 
