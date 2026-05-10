@@ -897,6 +897,20 @@ Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-fricti
   - Required handling: misconception entry; at least one Confident or Challenge multiple-choice question that asks what the net force is on an object moving at constant velocity.
 - C-FO-10: Learner predicts that two equal and opposite force arrows always make the object stop, rather than continue at constant velocity if it was already moving. (Covers `physics-forces-balanced`.)
   - Required handling: misconception entry; at least one spot-misconception question presenting the "balanced means stopped" argument.
+- C-FO-11: Learner believes friction only acts on a moving object, so a still box being pushed gently has no friction acting on it. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one spot-misconception or MCQ that contrasts a still pulled box (static friction matches the pull) with the no-friction claim.
+- C-FO-12: Learner believes static friction equals sliding friction, so once an object starts sliding it needs the same force to keep going as it did to start it. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one MCQ asking how the largest static friction compares with sliding friction on the same pair of surfaces.
+- C-FO-13: Learner believes drag only happens in air, so a swimmer or rowing boat moving through water has no resistive force. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one MCQ that pairs water resistance (drag in a fluid) against an "air only" or "upthrust" distractor in a UK pool or rowing context.
+- C-FO-14: Learner believes air resistance is a fixed size that does not depend on speed, so a falling object never reaches a steady terminal speed. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one MCQ on a falling skydiver where drag grows with speed until it balances the weight; at least one data-extraction question reading terminal speed off a v-t graph.
+- C-FO-15: Learner believes that when forces balance on a falling skydiver the skydiver stops in mid-air, rather than continuing to fall at a steady terminal speed. (Covers `physics-forces-friction`, `physics-forces-balanced`.)
+  - Required handling: misconception entry on the friction node; at least one MCQ that asks what happens once drag equals weight.
+- C-FO-16: Learner adds (rather than subtracts) the friction force when finding the net horizontal force on an object pulled along a flat surface. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one numeric-entry question requiring the learner to subtract a backwards friction from a forwards pull, with the friction-added distractor visible in MCQ form.
+- C-FO-17: Learner believes friction is always a bad thing to remove, missing that brakes, walking, gripping a pencil, and tyres on a road all rely on friction. (Covers `physics-forces-friction`.)
+  - Required handling: misconception entry; at least one Challenge tier MCQ or free-text question that asks the learner to sort everyday steps into "lowers unwanted friction" and "raises useful friction".
 
 ### Question shape probes
 
@@ -907,6 +921,12 @@ Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-fricti
 - Q-FO-5: At least one labelled-image question on the forces-balanced node has the learner place named forces (with their direction) on a free-body diagram of a stationary or constant-velocity object. (Covers `physics-forces-balanced`.)
 - Q-FO-6: At least one Confident or Challenge multiple-choice question on the forces-balanced node uses a pair of arrow lengths (e.g. 30 N right, 20 N left) and asks for the net force value and direction. (Covers `physics-forces-balanced`.)
 - Q-FO-7: At least one spot-misconception question on the forces-balanced node presents the "balanced means stopped" or "needs a force to keep moving" argument and asks if the method is sound. (Covers `physics-forces-balanced`.)
+- Q-FO-8: At least one Confident MCQ on the friction node compares the largest static friction with sliding friction for the same pair of surfaces. (Covers `physics-forces-friction`.)
+- Q-FO-9: At least one labelled-image question on the friction node has the learner place "Pull", "Static friction", and "Sliding friction" labels onto a paired free-body diagram (still box vs same box sliding), with a label pool no larger than twice the hotspot count. (Covers `physics-forces-friction`.)
+- Q-FO-10: At least two numeric-entry questions on the friction node require subtracting backwards friction from a forwards pull on a UK domestic context (kitchen, sledge, school library, cyclist), at least one with the result equal to zero (constant velocity). (Covers `physics-forces-friction`.)
+- Q-FO-11: At least one drag-order or missing-step question on the friction node walks the learner through the static-then-sliding sequence (small pull, growing static friction, breakaway, sliding friction, constant-speed slide). (Covers `physics-forces-friction`.)
+- Q-FO-12: At least one data-extraction question on the friction node reads the terminal speed of a falling object off a labelled v-t graph description before the parachute opens. (Covers `physics-forces-friction`.)
+- Q-FO-13: At least one Challenge tier item on the friction node maps a UK context (Sheffield bike workshop, South Downs descent, school library) onto either a free-body force list with three or more arrows or a useful-vs-unwanted friction sort. (Covers `physics-forces-friction`.)
 
 ### Tutor probes
 
@@ -915,6 +935,9 @@ Covers `physics-forces-types`, `physics-forces-balanced`, `physics-forces-fricti
 - T-FO-3: Given "If two forces are balanced, does the object stop?", the tutor walks the learner through the difference between zero net force on a stationary object and zero net force on a moving object, using a coasting puck as a concrete example.
 - T-FO-4: Given an off-topic input (for example a question about US football tackling forces), the tutor steers back to KS3 UK Physics examples (Tube, cycling, garden, swimming pool).
 - T-FO-5: Given a request for an inline definition (tap on "tension" or "upthrust"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-FO-6: Given "I think a still box being pushed gently has no friction on it", the tutor's first reply is a Socratic prompt about why the box does not move under the push, before stating the static-friction rule.
+- T-FO-7: Given a wrong answer matching the drag-fixed-size trigger (for example "the skydiver speeds up forever after the chute opens"), the tutor cites the relevant misconception's `reExplanation` and walks through the speed-grows-drag-grows chain.
+- T-FO-8: Given a request for an inline definition (tap on "drag", "static friction", or "terminal speed"), the glossary returns a UK English age-12 definition under 2 seconds.
 
 ## Zone: Mechanica > Gravity, Weight, Mass
 

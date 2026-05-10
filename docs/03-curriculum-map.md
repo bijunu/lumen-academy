@@ -367,10 +367,10 @@
 - **OCR**: P2.2 Newton's laws, balanced and unbalanced forces (GCSE Physics J259 Gateway)
 
 #### Friction and Drag (Confident, `physics-forces-friction`)
-- **KS3**: _fill verbatim from DfE Science KS3 (Forces)_
-- **AQA**: _GCSE Physics spec ref_
-- **Edexcel**: _GCSE Physics spec ref_
-- **OCR**: _GCSE Physics spec ref_
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); friction between solid surfaces; resistance to motion of air and water.
+- **AQA**: 4.5.6 Forces and motion: friction; 4.5.6.2.4 Resistive forces and terminal velocity (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.27-1.30 Resistive forces, drag and terminal velocity (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws and forces; resistive forces, friction and air resistance (GCSE Physics J259 Gateway)
 
 ### Zone: Gravity, Weight, Mass (`physics-gravity-mass`)
 

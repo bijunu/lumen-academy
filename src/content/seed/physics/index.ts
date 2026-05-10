@@ -9,6 +9,7 @@ import {
 import {
   forcesTypes,
   forcesBalanced,
+  forcesFriction,
   forcesZoneNodes,
   forcesZone,
 } from './forces'
@@ -20,6 +21,7 @@ export {
   electricityCircuitsZoneNodes,
   forcesTypes,
   forcesBalanced,
+  forcesFriction,
   forcesZoneNodes,
   forcesZone,
 }
