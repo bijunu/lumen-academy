@@ -89,6 +89,10 @@ export function LabelledImage({
               const cy = (h.y / 100) * vbHeight
               const placed = placements[h.id]
               const number = idx + 1
+              const badgeCx = cx + hotspotRadius * 0.95
+              const badgeCy = cy - hotspotRadius * 0.95
+              const badgeRadius = hotspotRadius * 0.55
+              const badgeFontSize = numberFontSize * 0.7
               return (
                 <g key={h.id}>
                   <circle
@@ -96,16 +100,17 @@ export function LabelledImage({
                     cy={cy}
                     r={hotspotRadius * 1.4}
                     fill={realmAccent}
-                    fillOpacity="0.18"
+                    fillOpacity={placed ? 0.28 : 0.14}
                     pointerEvents="none"
                   />
                   <circle
                     cx={cx}
                     cy={cy}
                     r={hotspotRadius}
-                    fill={placed ? realmAccent : 'white'}
+                    fill={realmAccent}
+                    fillOpacity={placed ? 0.35 : 0}
                     stroke={realmAccent}
-                    strokeWidth={hotspotStroke}
+                    strokeWidth={hotspotStroke * 1.5}
                     className={disabled ? '' : 'cursor-pointer transition-colors'}
                     onClick={() => handleHotspotClick(h.id)}
                     role="button"
@@ -122,17 +127,26 @@ export function LabelledImage({
                       }
                     }}
                   />
-                  <text
-                    x={cx}
-                    y={cy + numberFontSize * 0.34}
-                    fontSize={numberFontSize}
-                    fontWeight={700}
-                    fill={placed ? 'white' : realmAccent}
-                    textAnchor="middle"
-                    pointerEvents="none"
-                  >
-                    {number}
-                  </text>
+                  <g pointerEvents="none">
+                    <circle
+                      cx={badgeCx}
+                      cy={badgeCy}
+                      r={badgeRadius}
+                      fill={realmAccent}
+                      stroke="white"
+                      strokeWidth={hotspotStroke}
+                    />
+                    <text
+                      x={badgeCx}
+                      y={badgeCy + badgeFontSize * 0.34}
+                      fontSize={badgeFontSize}
+                      fontWeight={700}
+                      fill="white"
+                      textAnchor="middle"
+                    >
+                      {number}
+                    </text>
+                  </g>
                 </g>
               )
             })}
