@@ -47,6 +47,10 @@ export function NodeLearningFlow({
   const { celebrate } = useRewardCelebration()
   const startedAtRef = useRef<Date>(new Date())
   const sessionPostedRef = useRef(false)
+  const firstTryStreakRef = useRef<{ tier: string | null; count: number }>({
+    tier: null,
+    count: 0,
+  })
 
   const advanceScene = useCallback(() => {
     if (sceneIndex < node.scenes.length - 1) {
@@ -97,8 +101,45 @@ export function NodeLearningFlow({
         })
       }
 
-      if (questionIndex < node.questions.length - 1) {
-        setQuestionIndex(prev => prev + 1)
+      // Adaptive ordering: after two consecutive first-try corrects at the
+      // current tier, skip past the rest of that tier's questions and jump
+      // to the first question of the next-higher tier. Resets on any wrong
+      // answer or multi-attempt answer.
+      const streak = firstTryStreakRef.current
+      const firstTryCorrect = correct && attemptCount === 1
+      if (firstTryCorrect) {
+        if (streak.tier === question.tier) {
+          streak.count += 1
+        } else {
+          streak.tier = question.tier
+          streak.count = 1
+        }
+      } else {
+        streak.tier = null
+        streak.count = 0
+      }
+
+      const tierRank: Record<string, number> = {
+        core: 0,
+        confident: 1,
+        challenge: 2,
+      }
+      const currentRank = tierRank[question.tier] ?? 0
+      let nextIdx = questionIndex + 1
+      if (streak.count >= 2 && currentRank < 2) {
+        const skipToIdx = node.questions.findIndex(
+          (q, i) =>
+            i > questionIndex && (tierRank[q.tier] ?? 0) > currentRank
+        )
+        if (skipToIdx > nextIdx) {
+          nextIdx = skipToIdx
+          streak.tier = null
+          streak.count = 0
+        }
+      }
+
+      if (nextIdx < node.questions.length) {
+        setQuestionIndex(nextIdx)
       } else {
         setPhase('summary')
       }
