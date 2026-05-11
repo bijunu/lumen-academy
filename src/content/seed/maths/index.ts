@@ -42,8 +42,24 @@ import {
   percentagesOfAmount,
   percentagesOfAmountZoneNodes,
 } from './percentages-of-amount'
+import {
+  percentagesChange,
+  percentagesChangeZoneNodes,
+} from './percentages-change'
+import {
+  percentagesReverse,
+  percentagesReverseZoneNodes,
+} from './percentages-reverse'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
 import { ratioSharing, ratioSharingZoneNodes } from './ratio-sharing'
+import {
+  ratioScalingRecipes,
+  ratioScalingRecipesZoneNodes,
+} from './ratio-scaling-recipes'
+import {
+  ratioProportion,
+  ratioProportionZoneNodes,
+} from './ratio-proportion'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
@@ -109,10 +125,18 @@ export {
   percentagesZoneNodes,
   percentagesOfAmount,
   percentagesOfAmountZoneNodes,
+  percentagesChange,
+  percentagesChangeZoneNodes,
+  percentagesReverse,
+  percentagesReverseZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
   ratioSharing,
   ratioSharingZoneNodes,
+  ratioScalingRecipes,
+  ratioScalingRecipesZoneNodes,
+  ratioProportion,
+  ratioProportionZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
   algebraIntroduction,
@@ -155,8 +179,12 @@ export const mathsNodes: SkillNode[] = [
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
+  ...percentagesChangeZoneNodes,
+  ...percentagesReverseZoneNodes,
   ...ratioZoneNodes,
   ...ratioSharingZoneNodes,
+  ...ratioScalingRecipesZoneNodes,
+  ...ratioProportionZoneNodes,
   ...bidmasZoneNodes,
   ...bidmasWithNegativesZoneNodes,
   ...algebraZoneNodes,
@@ -220,6 +248,8 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...percentagesZoneNodes.map(n => n.id),
       ...percentagesOfAmountZoneNodes.map(n => n.id),
+      ...percentagesChangeZoneNodes.map(n => n.id),
+      ...percentagesReverseZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -229,6 +259,8 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...ratioZoneNodes.map(n => n.id),
       ...ratioSharingZoneNodes.map(n => n.id),
+      ...ratioScalingRecipesZoneNodes.map(n => n.id),
+      ...ratioProportionZoneNodes.map(n => n.id),
     ],
   },
   {

@@ -394,6 +394,22 @@ Covers `maths-percentages-as-decimals-fractions`, `maths-percentages-of-amount`,
   - Required handling: misconception entry; at least one Challenge tier multi-step question (VAT or sale-price) where the percentage of the amount is a distractor and the new total is the correct answer.
 - C-PA-4: Learner finds 20% VAT by computing 10% only and forgetting to double the result. (Covers `maths-percentages-of-amount`.)
   - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the half-VAT (10%-only) answer.
+- C-PC-1: Learner believes a percentage increase and a decrease of the same size cancel out, so 20% up then 20% down returns to the original. (Covers `maths-percentages-change`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question that chains an increase and a decrease and shows the net effect.
+- C-PC-2: Learner calculates percentage change by dividing the change by the new value instead of the original. (Covers `maths-percentages-change`.)
+  - Required handling: misconception entry; at least one question whose distractors include the change-against-new answer.
+- C-PC-3: Learner reads a multiplier (1.20) as an addition (add 1.20 to the amount) rather than a multiplication. (Covers `maths-percentages-change`.)
+  - Required handling: misconception entry; at least one spot-misconception question that names the multiplier-as-add trap.
+- C-PC-4: Learner adds the percentages in chained changes rather than multiplying the multipliers, so 10% off then 10% off equals 20% off. (Covers `maths-percentages-change`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the additive-percentages answer.
+- C-PR-1: Learner undoes a 20% sale by adding 20% of the sale price back on, instead of dividing by the multiplier. (Covers `maths-percentages-reverse`.)
+  - Required handling: misconception entry; at least one spot-misconception question that names the inverse-on-new trap.
+- C-PR-2: Learner treats a reverse percentage problem as a direct one, multiplying instead of dividing. (Covers `maths-percentages-reverse`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the multiply-by-the-multiplier answer.
+- C-PR-3: Learner confuses "after a 25% sale" with "is 25% of the original", so divides by 0.25 instead of by 0.75. (Covers `maths-percentages-reverse`.)
+  - Required handling: misconception entry; at least one Confident or Challenge spot-misconception that exposes the "of vs by" slip.
+- C-PR-4: Learner uses the VAT rate alone (0.20) as the multiplier when reversing a VAT-inclusive total, instead of 1.20. (Covers `maths-percentages-reverse`.)
+  - Required handling: misconception entry; at least one question whose distractors include the divide-by-the-rate answer.
 
 ### Question shape probes
 
@@ -408,6 +424,12 @@ Covers `maths-percentages-as-decimals-fractions`, `maths-percentages-of-amount`,
 - Q-PA-2: At least one Confident question on the percentage-of-amount node combines two or more building blocks (for example 35% = 25% + 10%, or 65% = 50% + 10% + 5%). (Covers `maths-percentages-of-amount`.)
 - Q-PA-3: At least one Challenge tier word problem on the percentage-of-amount node frames a UK VAT or sale-price scenario where the new total (not the percentage of the amount) is the correct answer. (Covers `maths-percentages-of-amount`.)
 - Q-PA-4: At least one numeric-entry on the percentage-of-amount node requires a decimal percentage (12.5%, 17.5%) found by halving a building block. (Covers `maths-percentages-of-amount`.)
+- Q-PC-1: At least one MCQ on the percentage-change node tests an X% increase followed by an X% decrease, with the wrongly-restored-to-original answer as a distractor. (Covers `maths-percentages-change`.)
+- Q-PC-2: At least one numeric-entry on the percentage-change node computes a percentage change from old to new values, where dividing by the new value (instead of the old) is a distractor pattern. (Covers `maths-percentages-change`.)
+- Q-PC-3: At least one Challenge tier word problem on the percentage-change node frames a UK context (railcard payback, VAT-inclusive bill, compound pay rise) and requires either multi-step chained multipliers or a comparison across two changes. (Covers `maths-percentages-change`.)
+- Q-PR-1: At least one MCQ on the reverse-percentages node tests recovery of the original from a VAT-inclusive total, with the divide-by-rate-only answer as a distractor. (Covers `maths-percentages-reverse`.)
+- Q-PR-2: At least one numeric-entry on the reverse-percentages node requires reversing two chained percentage changes (e.g. 30% off label price, label price 10% lower than launch) with the answer being the launch price. (Covers `maths-percentages-reverse`.)
+- Q-PR-3: At least one Challenge tier word problem on the reverse-percentages node frames a UK context (sale, salary rise, school intake growth, profit margin) and requires identifying the multiplier first. (Covers `maths-percentages-reverse`.)
 
 ### Tutor probes
 
@@ -417,6 +439,9 @@ Covers `maths-percentages-as-decimals-fractions`, `maths-percentages-of-amount`,
 - T-PCT-4: Given a request for an inline definition (tap on "per cent"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-PA-1: Given "How do I find 35% of £80?", the tutor's first reply is a Socratic prompt about which building blocks combine to make 35% (25% + 10%), not a direct multiplication formula. (Covers `maths-percentages-of-amount`.)
 - T-PA-2: Given a wrong answer matching the multiply-by-percent trigger (for example "30% of £40 = £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-percentages-of-amount`.)
+- T-PC-1: Given "If a price goes up 20% then comes down 20%, it must be back to where it started", the tutor's first reply is a Socratic prompt about whether the two changes act on the same starting amount. (Covers `maths-percentages-change`.)
+- T-PC-2: Given a wrong answer matching the multiplier-as-add trigger (for example "Increase £30 by 20% means £30 + 1.20 = £31.20"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-percentages-change`.)
+- T-PR-1: Given "After a 20% sale the price is £40, so original was £40 + 20% of £40 = £48", the tutor's first reply is a Socratic prompt about whether the 20% refers to the sale price or the original. (Covers `maths-percentages-reverse`.)
 
 ## Zone: Numerica > Ratio and Proportion
 
@@ -489,6 +514,52 @@ Covers `maths-ratio-introduction` plus future ratio nodes (sharing in a ratio, s
 - T-RAT-2: Given a wrong answer matching the multiply-by-ratio trigger (for example "£30 in ratio 1:4 gives shares of £30 and £120"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 - T-RAT-3: Given an off-topic input (for example a question about US college tuition split by ratio), the tutor steers back to UK KS3 sharing-in-a-ratio language politely.
 - T-RAT-4: Given a request for an inline definition (tap on "share in a ratio"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+### Scaling-recipes extensions (`maths-ratio-scaling-recipes`)
+
+#### Content probes
+- C-RSR-1: Learner scales a recipe additively (add a constant to every ingredient) instead of multiplicatively, so scaling from 4 to 6 portions adds 2 to each ingredient.
+  - Required handling: misconception entry; at least one Confident or Challenge question with the additive-scaling answer as a distractor.
+- C-RSR-2: Learner picks best-buy packs by inspection (bigger or smaller pack) without computing price per unit.
+  - Required handling: misconception entry; at least one question that requires per-unit (per 100 g or per litre) comparison.
+- C-RSR-3: Learner finds the per-unit value but stops there, reporting the unit value as the answer to a question that asks for a total.
+  - Required handling: misconception entry; at least one question that explicitly asks for a total scaled to a target.
+- C-RSR-4: Learner reads a part-to-part ratio as a part-to-whole fraction (3:2 read as 2/3 of the mix).
+  - Required handling: misconception entry; at least one spot-misconception that surfaces the part-to-part vs part-to-whole slip.
+- C-RSR-5: Learner mixes units mid-calculation (grams with kilograms, or millilitres with litres) without converting first.
+  - Required handling: misconception entry; at least one Confident or Challenge question where mixed units would lead to a magnitude error.
+
+#### Question shape probes
+- Q-RSR-1: At least one numeric-entry asks the learner to scale a recipe ingredient by a non-integer multiplier (1.5, 1.75, 0.5).
+- Q-RSR-2: At least one MCQ on best-buy contrasts two pack sizes where the bigger pack is the better per-unit value, with the buy-the-bigger-pack-by-default answer as a distractor.
+- Q-RSR-3: At least one Challenge tier word problem on the scaling-recipes node frames a UK catering or classroom context (Yorkshire pudding for 8, class of 27, smoothie scale-up) and requires unitary calculation across multiple ingredients.
+- Q-RSR-4: At least one drag-order question places four pack sizes into order from worst to best value per 100 g or per litre.
+
+#### Tutor probes
+- T-RSR-1: Given "to scale from 4 to 6 portions, just add 2 to every ingredient", the tutor's first reply is a Socratic prompt about whether ratios are preserved, not a direct correction.
+- T-RSR-2: Given a wrong answer matching the best-buy-by-inspection trigger (for example "the bigger pack is always cheaper per gram"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+
+### Direct-and-inverse-proportion extensions (`maths-ratio-proportion`)
+
+#### Content probes
+- C-RPR-1: Learner treats every proportional relationship as direct, so doubling the number of workers doubles the time taken or doubling the speed doubles the journey time. (Covers `maths-ratio-proportion`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question that requires identifying inverse proportion in a UK context (painters, pipes, school trip costs).
+- C-RPR-2: Learner confuses "in proportion" with "the same value", treating proportional lists as identical. (Covers `maths-ratio-proportion`.)
+  - Required handling: misconception entry; at least one spot-misconception question that exposes the "same value" slip.
+- C-RPR-3: Learner extrapolates without first finding the constant of proportionality k, applying ad-hoc multipliers from the changes in x. (Covers `maths-ratio-proportion`.)
+  - Required handling: misconception entry; at least one missing-step question that walks "find k, then apply".
+- C-RPR-4: Learner picks the wrong direction of proportion based on surface word patterns, missing that the test is "what is held constant". (Covers `maths-ratio-proportion`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question that pairs a direct context with an inverse context using similar words.
+
+#### Question shape probes
+- Q-RPR-1: At least one Core MCQ on the proportion node asks the learner to identify which scenario is direct and which is inverse from short UK contexts (painters, tickets, pipes, taxis).
+- Q-RPR-2: At least one Confident numeric-entry on the proportion node requires finding k from a single (x, y) pair and then computing y for a new x. (Covers `maths-ratio-proportion`.)
+- Q-RPR-3: At least one Challenge tier word problem on the proportion node frames a multi-step inverse scenario (mid-job change in workforce, shared trip cost, partial completion).
+- Q-RPR-4: At least one Confident drag-order on the proportion node arranges rates (items per minute, miles per hour) from slowest to fastest.
+
+#### Tutor probes
+- T-RPR-1: Given "12 builders take 16 days because 6 builders take 8 days", the tutor's first reply is a Socratic prompt about whether the total work depends on the number of builders. (Covers `maths-ratio-proportion`.)
+- T-RPR-2: Given a wrong answer matching the all-direct trigger in an inverse-proportion context, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-ratio-proportion`.)
 
 ## Zone: Numerica > BIDMAS
 

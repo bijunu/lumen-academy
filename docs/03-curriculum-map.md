@@ -82,6 +82,18 @@
 - **Edexcel**: R9 Solve problems involving percentage change, including percentage increase, decrease and original value problems
 - **OCR**: 6.03a Solve problems involving percentages, including percentage of an amount
 
+#### Percentage Change: Increase, Decrease, and the Multiplier Method (Confident, `maths-percentages-change`)
+- **KS3**: Solve problems involving percentage change, including: percentage increase, decrease and original value problems and simple interest, including in financial mathematics.
+- **AQA**: N12 Solve problems involving percentage change (GCSE Mathematics 8300)
+- **Edexcel**: N12 Solve problems involving percentage change (GCSE Mathematics 1MA1)
+- **OCR**: 2.04b Percentage change, increase and decrease, by multiplier method (GCSE Mathematics J560)
+
+#### Reverse Percentages: Finding the Original (Challenge, `maths-percentages-reverse`)
+- **KS3**: Solve problems involving percentage change, including: percentage increase, decrease and original value problems and simple interest, including in financial mathematics.
+- **AQA**: N12 Solve original-value problems by reverse percentages (GCSE Mathematics 8300)
+- **Edexcel**: N12 Solve problems involving original value (reverse percentages) (GCSE Mathematics 1MA1)
+- **OCR**: 2.04c Reverse percentages: find the original quantity given a percentage-changed value (GCSE Mathematics J560)
+
 ### Zone: Ratio and Proportion (`maths-ratio`)
 
 #### Introducing Ratio (Core, `maths-ratio-introduction`)
@@ -95,6 +107,18 @@
 - **AQA**: R5 Divide a given quantity into two parts in a given part:part or part:whole ratio (GCSE Mathematics 8300)
 - **Edexcel**: R5 Divide a given quantity into two parts in a given part:part or part:whole ratio (GCSE Mathematics 1MA1)
 - **OCR**: 6.01b Share a quantity in a given ratio including three-part ratios (GCSE Mathematics J560)
+
+#### Scaling Recipes and the Unitary Method (Confident, `maths-ratio-scaling-recipes`)
+- **KS3**: Solve problems involving direct proportion, including using formal methods (the unitary method); use ratio notation to compare quantities and to scale.
+- **AQA**: R10 Solve problems involving direct proportion (GCSE Mathematics 8300)
+- **Edexcel**: R7 Solve problems involving direct proportion, including using the unitary method (GCSE Mathematics 1MA1)
+- **OCR**: 2.04a Solve problems involving direct proportion and the unitary method (GCSE Mathematics J560)
+
+#### Direct and Inverse Proportion (Challenge, `maths-ratio-proportion`)
+- **KS3**: Solve problems involving direct and inverse proportion, including graphical and algebraic representations; use compound units such as speed, unit pricing and density to solve problems.
+- **AQA**: R10 Direct and inverse proportion (GCSE Mathematics 8300)
+- **Edexcel**: R10 Direct and inverse proportion (GCSE Mathematics 1MA1)
+- **OCR**: 6.03a Direct and inverse proportion, including y = kx and y = k/x (GCSE Mathematics J560)
 
 ### Zone: Four Operations (`maths-four-operations`)
 
