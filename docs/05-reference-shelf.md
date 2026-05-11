@@ -61,6 +61,14 @@ Source: each board's GCSE Mathematics, GCSE Biology, GCSE Chemistry, GCSE Physic
 
 These are not curriculum sources. They shape how the content is presented.
 
+### Atom Learning
+
+UK 11+/ISEB and GCSE practice platform. The closest published benchmark to Lumen's target learner profile (Year 7 entering grammar school).
+
+- **Take**: question style and difficulty curve for 11+/ISEB-adjacent maths and English. Mark-scheme-aligned feedback that names exactly which concept was demonstrated or missed, addressed directly to the learner ("you halved instead of doubled" rather than "incorrect"). Personalised pacing that adapts to current level rather than marching every learner through the same sequence.
+- **Leave**: subscription/paywall framing. Past-paper-first pedagogy (Lumen's Brilliant-style scenes go before any test format). Per-paper test framing (Lumen is mastery-paced, not test-paced). Parent-facing analytics dashboards built primarily to drive renewal.
+- **Lift signal**: free-text feedback (now LLM-judged) should read like an Atom-style instant mark: one short sentence, examiner voice, name the concept the learner did or did not show. Generic "not quite" feedback is a Revise.
+
 ### Brilliant
 
 - **Take**: scene before symbol. The lesson begins with something the learner manipulates, and notation arrives only after intuition is in place. Sliders that show how a relationship moves.
