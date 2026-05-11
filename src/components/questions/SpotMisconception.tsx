@@ -19,11 +19,21 @@ export function SpotMisconception({
   realmAccent = 'hsl(var(--primary))',
 }: SpotMisconceptionProps) {
   return (
-    <div
-      className="space-y-2.5"
-      role="radiogroup"
-      aria-label="Identify the misconception"
-    >
+    <div className="space-y-2.5">
+      <p
+        className="mb-1 text-sm text-muted-foreground"
+        data-testid="spot-misconception-prompt"
+      >
+        <span className="font-semibold text-foreground">
+          Spot the misconception.
+        </span>{' '}
+        Tap the statement that is wrong.
+      </p>
+      <div
+        role="radiogroup"
+        aria-label="Identify the misconception"
+        className="space-y-2.5"
+      >
       {question.statements.map((stmt, i) => {
         const isSelected = selectedIndex === i
         return (
@@ -66,6 +76,7 @@ export function SpotMisconception({
           </button>
         )
       })}
+      </div>
     </div>
   )
 }
