@@ -242,6 +242,28 @@ function scanFile(absPath) {
       }
     }
 
+    // R6: hotspot coordinates must be percentages of the viewBox (0..100),
+    // not raw pixel coordinates. The renderer interprets x/y as percentages.
+    // Matches `{ id: '...', x: <num>, y: <num>` which is the hotspot literal
+    // used in both labelled-image questions and labelled-diagram scenes.
+    const hotspotMatch = line.match(
+      /^\s*\{\s*id:\s*['"][\w-]+['"]\s*,\s*x:\s*(-?\d+(?:\.\d+)?)\s*,\s*y:\s*(-?\d+(?:\.\d+)?)/
+    )
+    if (hotspotMatch) {
+      const hx = Number(hotspotMatch[1])
+      const hy = Number(hotspotMatch[2])
+      if (hx < 0 || hx > 100 || hy < 0 || hy > 100) {
+        record(
+          'blocker',
+          'R6',
+          file,
+          lineNo,
+          `hotspot coordinate out of [0, 100]: x=${hx}, y=${hy} (looks like pixel coordinates)`,
+          'Hotspot x and y are percentages of the viewBox width/height. Divide pixel coords by viewBox dimensions and multiply by 100.',
+        )
+      }
+    }
+
     // MCQ correctIndex collection
     // Match `correctIndex: <0-9>` only when we know we're inside an MCQ.
     // Simpler approach: collect every `correctIndex:` we see. MCQ is the only question type using it.
