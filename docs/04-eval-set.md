@@ -656,6 +656,28 @@ Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes 
 - T-BWN-1: Given "-3^2 must equal 9 because the minus sign goes with the 3", the tutor's first reply is a Socratic prompt about whether the brackets are written, not a direct correction. (Covers `maths-bidmas-with-negatives`.)
 - T-BWN-2: Given a wrong answer matching the double-negative-blanket trigger (for example "-3 + (-2) = +5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-bidmas-with-negatives`.)
 
+### Substitution extensions (`maths-bidmas-with-substitution`)
+
+#### Content probes
+- C-BWS-1: Learner reads 3x as the two-digit number with 3 in the tens column and x in the units column, so 3x with x = 4 becomes 34. (Covers `maths-bidmas-with-substitution`.)
+  - Required handling: misconception entry; at least one Core MCQ whose distractors include the digits-side-by-side answer.
+- C-BWS-2: Learner abandons BIDMAS when an expression contains a letter, working strictly left to right after substituting. (Covers `maths-bidmas-with-substitution`.)
+  - Required handling: misconception entry; at least one Confident spot-misconception that names the abandonment.
+- C-BWS-3: Learner substitutes a negative value without brackets, so x^2 with x = -3 becomes -9 instead of 9. (Covers `maths-bidmas-with-substitution`.)
+  - Required handling: misconception entry; at least one Core MCQ on (-a)^2 whose distractors include the negative-result slip.
+- C-BWS-4: Learner reads 3x^2 as (3x)^2, applying the power to both the coefficient and the variable. (Covers `maths-bidmas-with-substitution`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose distractors include the wrong-base power answer.
+
+#### Question shape probes
+- Q-BWS-1: At least one Core MCQ on the substitution node tests 3x with the digits-side-by-side slip as a distractor. (Covers `maths-bidmas-with-substitution`.)
+- Q-BWS-2: At least one Confident numeric-entry on the substitution node uses a scientific formula (v = u + at, F = ma, or area of a trapezium). (Covers `maths-bidmas-with-substitution`.)
+- Q-BWS-3: At least one Challenge tier question on the substitution node substitutes a negative value into a quadratic-style expression. (Covers `maths-bidmas-with-substitution`.)
+- Q-BWS-4: At least one drag-order question on the substitution node sorts four expressions by their value at a given x. (Covers `maths-bidmas-with-substitution`.)
+
+#### Tutor probes
+- T-BWS-1: Given "3x with x = 4 is 34", the tutor's first reply is a Socratic prompt about what the letter next to the number means in algebra. (Covers `maths-bidmas-with-substitution`.)
+- T-BWS-2: Given a wrong answer matching the negative-loses-sign trigger (for example "(-3)^2 = -9"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-bidmas-with-substitution`.)
+
 ## Zone: Numerica > Basic Algebra
 
 Covers `maths-algebra-introduction` plus future algebra nodes (solving one-step equations, expanding brackets, factorising linear expressions).
@@ -696,6 +718,28 @@ Covers `maths-algebra-introduction` plus future algebra nodes (solving one-step 
 - T-ALG-3: Given "Does the letter n always equal 14 because that is its place in the alphabet?", the tutor explains with a concrete substitution example, not a definition.
 - T-ALG-4: Given an off-topic input (for example a question about US algebra textbook variable conventions), the tutor steers back to UK KS3 algebraic notation politely.
 - T-ALG-5: Given a request for an inline definition (tap on "coefficient" or "term"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+### Simple-equations extensions (`maths-algebra-simple-equations`)
+
+#### Content probes
+- C-ASE-1: Learner treats x as the number on the right-hand side, so for 2x + 5 = 13 reports x = 13. (Covers `maths-algebra-simple-equations`.)
+  - Required handling: misconception entry; at least one Core spot-misconception that names the slip.
+- C-ASE-2: Learner uses the wrong inverse operation when undoing a step (adds 3 instead of dividing by 3 for 3x = 12). (Covers `maths-algebra-simple-equations`.)
+  - Required handling: misconception entry; at least one Core question with the wrong-direction answer as a distractor.
+- C-ASE-3: Learner deletes the x term from one side of an unknown-on-both-sides equation instead of subtracting it from both sides. (Covers `maths-algebra-simple-equations`.)
+  - Required handling: misconception entry; at least one Confident spot-misconception that surfaces the delete-vs-subtract slip.
+- C-ASE-4: Learner expands a bracket like 2(x + 3) by only multiplying the first term, writing 2x + 3 instead of 2x + 6. (Covers `maths-algebra-simple-equations`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question that exposes the partial-distribution answer.
+
+#### Question shape probes
+- Q-ASE-1: At least one Core numeric-entry on the simple-equations node tests a one-step equation (x + a = b or ax = b). (Covers `maths-algebra-simple-equations`.)
+- Q-ASE-2: At least one Confident question on the simple-equations node tests an unknown-on-both-sides equation. (Covers `maths-algebra-simple-equations`.)
+- Q-ASE-3: At least one Challenge tier word problem on the simple-equations node frames a UK context (school books, ticket sale, club fee) and requires setting up an equation. (Covers `maths-algebra-simple-equations`.)
+- Q-ASE-4: At least one missing-step question on the simple-equations node walks the unknown-on-both-sides flow (collect, then peel). (Covers `maths-algebra-simple-equations`.)
+
+#### Tutor probes
+- T-ASE-1: Given "For 2x + 5 = 13, x must be 13 because that is what the equation equals", the tutor's first reply is a Socratic prompt about what x has to do for the equation to be true. (Covers `maths-algebra-simple-equations`.)
+- T-ASE-2: Given a wrong answer matching the delete-x-from-one-side trigger (for example "5x = 2x" cancels to "5 = 2"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-algebra-simple-equations`.)
 
 ## Zone: Numerica > Sequences
 

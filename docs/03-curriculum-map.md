@@ -176,6 +176,12 @@
 - **Edexcel**: N4 Use the priority of operations applied to expressions with brackets, powers and negative numbers (GCSE Mathematics 1MA1)
 - **OCR**: 2.05b Apply the priority of operations to expressions involving negative numbers (GCSE Mathematics J560)
 
+#### BIDMAS with Substitution into Expressions and Formulae (Challenge, `maths-bidmas-with-substitution`)
+- **KS3**: Substitute numerical values into formulae and expressions, including scientific formulae; use conventional notation for the priority of operations.
+- **AQA**: A2 Substitute numerical values into formulae and expressions (GCSE Mathematics 8300)
+- **Edexcel**: A2 Substitute numerical values into formulae and expressions, including scientific formulae (GCSE Mathematics 1MA1)
+- **OCR**: 6.02a Substitute numerical values into formulae and expressions, including scientific formulae (GCSE Mathematics J560)
+
 ### Zone: Basic Algebra (`maths-algebra`)
 
 #### Introduction to Algebra (Core, `maths-algebra-introduction`)
@@ -183,6 +189,12 @@
 - **AQA**: A1 The basics of algebra; A4 Simplifying expressions and collecting like terms
 - **Edexcel**: A1 Use and interpret algebraic notation; A4 Simplify and manipulate algebraic expressions
 - **OCR**: 6.01a Algebraic notation; 6.02a Collecting like terms and substitution
+
+#### Solving Simple Linear Equations (Confident, `maths-algebra-simple-equations`)
+- **KS3**: Solve linear equations in one unknown algebraically (including those with the unknown on both sides of the equation); use inverse operations to undo each step.
+- **AQA**: A17 Solve linear equations in one unknown algebraically (GCSE Mathematics 8300)
+- **Edexcel**: A17 Solve linear equations in one unknown algebraically, including with the unknown on both sides (GCSE Mathematics 1MA1)
+- **OCR**: 6.04a Solve linear equations in one unknown (GCSE Mathematics J560)
 
 ### Zone: Sequences (`maths-sequences`)
 

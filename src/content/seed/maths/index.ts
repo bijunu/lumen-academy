@@ -69,7 +69,15 @@ import {
   ratioProportionZoneNodes,
 } from './ratio-proportion'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
+import {
+  bidmasWithSubstitution,
+  bidmasWithSubstitutionZoneNodes,
+} from './bidmas-with-substitution'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
+import {
+  algebraSimpleEquations,
+  algebraSimpleEquationsZoneNodes,
+} from './algebra-simple-equations'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
 import {
   sequencesNthTerm,
@@ -151,8 +159,12 @@ export {
   ratioProportionZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
+  bidmasWithSubstitution,
+  bidmasWithSubstitutionZoneNodes,
   algebraIntroduction,
   algebraZoneNodes,
+  algebraSimpleEquations,
+  algebraSimpleEquationsZoneNodes,
   sequencesRules,
   sequencesZoneNodes,
   sequencesNthTerm,
@@ -201,7 +213,9 @@ export const mathsNodes: SkillNode[] = [
   ...ratioProportionZoneNodes,
   ...bidmasZoneNodes,
   ...bidmasWithNegativesZoneNodes,
+  ...bidmasWithSubstitutionZoneNodes,
   ...algebraZoneNodes,
+  ...algebraSimpleEquationsZoneNodes,
   ...sequencesZoneNodes,
   ...sequencesNthTermZoneNodes,
   ...coordinatesZoneNodes,
@@ -290,13 +304,17 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...bidmasZoneNodes.map(n => n.id),
       ...bidmasWithNegativesZoneNodes.map(n => n.id),
+      ...bidmasWithSubstitutionZoneNodes.map(n => n.id),
     ],
   },
   {
     id: 'maths-algebra',
     name: 'Basic Algebra',
     realm: 'numerica',
-    nodeIds: algebraZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...algebraZoneNodes.map(n => n.id),
+      ...algebraSimpleEquationsZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-sequences',
