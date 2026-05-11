@@ -30,6 +30,9 @@ interface QuestionShellProps {
   onJudgeFreeText?: (
     answer: string
   ) => Promise<{ correct: boolean; reason: string } | null>
+  onJudgeMissingStep?: (
+    answer: string
+  ) => Promise<{ correct: boolean; reason: string } | null>
   oneShot?: boolean
   realmAccent?: string
 }
@@ -40,6 +43,7 @@ export function QuestionShell({
   onComplete,
   onHintRequest,
   onJudgeFreeText,
+  onJudgeMissingStep,
   oneShot = false,
   realmAccent,
 }: QuestionShellProps) {
@@ -152,7 +156,11 @@ export function QuestionShell({
         <MissingStep
           question={question}
           disabled={isAnswered}
-          onSubmit={value => submit({ answer: value })}
+          onSubmit={(result, reason) => {
+            setJudgeReason(reason ?? null)
+            submit({ clientCorrect: result === 'correct' })
+          }}
+          onJudge={onJudgeMissingStep}
           realmAccent={realmAccent}
         />
       )}
@@ -221,7 +229,13 @@ export function QuestionShell({
           misconception={status === 'incorrect' ? activeMisconception : undefined}
           onNext={handleNext}
           nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
-          modelAnswer={question.type === 'free-text' ? question.sampleAnswer : undefined}
+          modelAnswer={
+            question.type === 'free-text'
+              ? question.sampleAnswer
+              : question.type === 'missing-step'
+                ? question.correctStep
+                : undefined
+          }
           judgeReason={judgeReason ?? undefined}
           hideNextButton={hideRetryButton}
           retryHint={

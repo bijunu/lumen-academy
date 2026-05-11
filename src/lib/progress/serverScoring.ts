@@ -1,15 +1,20 @@
 import type {
   FreeTextQuestion,
+  MissingStepQuestion,
   Question,
   SketchQuestion,
 } from '@/types/content'
 
-type RendererScoredQuestion = FreeTextQuestion | SketchQuestion
+type RendererScoredQuestion =
+  | FreeTextQuestion
+  | SketchQuestion
+  | MissingStepQuestion
 type RendererScoredType = RendererScoredQuestion['type']
 
 const RENDERER_SCORED: ReadonlySet<RendererScoredType> = new Set<RendererScoredType>([
   'free-text',
   'sketch',
+  'missing-step',
 ])
 
 function isRendererScoredQuestion(q: Question): q is RendererScoredQuestion {
@@ -60,8 +65,6 @@ export function scoreAnswer(question: Question, input: ScoreInput): boolean {
       return scoreSliderExplore(question.correctRange, input.answer)
     case 'drag-drop-builder':
       return scoreStringArray(question.correctArrangement, input.answer)
-    case 'missing-step':
-      return scoreMissingStep(question.correctStep, input.answer)
     case 'data-extraction':
       return scoreDataExtraction(question.correctAnswer, input.answer)
     case 'labelled-image':
@@ -150,13 +153,6 @@ function scoreSliderExplore(
     throw new InvalidAnswerError('slider-explore answer must be a finite number')
   }
   return answer >= range[0] && answer <= range[1]
-}
-
-function scoreMissingStep(correctStep: string, answer: unknown): boolean {
-  if (typeof answer !== 'string') {
-    throw new InvalidAnswerError('missing-step answer must be a string')
-  }
-  return normaliseText(answer) === normaliseText(correctStep)
 }
 
 function scoreDataExtraction(

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 
 import { scoreFreeTextWithJudge } from '@/lib/ai/scoreFreeTextWithJudge'
+import { scoreMissingStepWithJudge } from '@/lib/ai/scoreMissingStepWithJudge'
 import { auth } from '@/lib/auth/authOptions'
 import { evaluateBadges } from '@/lib/badges/badgeRules'
 import { getContentRepository } from '@/lib/content'
@@ -54,6 +55,17 @@ export async function POST(request: Request) {
   try {
     if (question.type === 'free-text' && typeof answer === 'string') {
       const judged = await scoreFreeTextWithJudge({
+        question,
+        answer,
+        userId: session.user.id,
+      })
+      correct = judged.correct
+      judgeReason = judged.reason
+    } else if (
+      question.type === 'missing-step' &&
+      typeof answer === 'string'
+    ) {
+      const judged = await scoreMissingStepWithJudge({
         question,
         answer,
         userId: session.user.id,

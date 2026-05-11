@@ -19,9 +19,10 @@ import { InvalidAnswerError, isRendererScored, scoreAnswer } from './serverScori
 const base = { id: 'q', stem: 's', tier: 'core' as const, xpValue: 10 }
 
 describe('isRendererScored', () => {
-  it('flags free-text and sketch as renderer-scored', () => {
+  it('flags free-text, sketch, and missing-step as renderer-scored', () => {
     expect(isRendererScored('free-text')).toBe(true)
     expect(isRendererScored('sketch')).toBe(true)
+    expect(isRendererScored('missing-step')).toBe(true)
   })
 
   it('treats deterministic types as server-scored', () => {
@@ -170,10 +171,10 @@ describe('scoreAnswer — missing-step', () => {
     correctStep: 'Add 3 to both sides',
   }
 
-  it('normalises whitespace and case', () => {
-    expect(scoreAnswer(q, { answer: 'add 3 to both sides' })).toBe(true)
-    expect(scoreAnswer(q, { answer: '  ADD 3   to BOTH sides ' })).toBe(true)
-    expect(scoreAnswer(q, { answer: 'add 4 to both sides' })).toBe(false)
+  it('returns clientCorrect (renderer/judge-scored)', () => {
+    expect(scoreAnswer(q, { clientCorrect: true })).toBe(true)
+    expect(scoreAnswer(q, { clientCorrect: false })).toBe(false)
+    expect(scoreAnswer(q, {})).toBe(false)
   })
 })
 

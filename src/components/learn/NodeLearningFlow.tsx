@@ -14,6 +14,7 @@ import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
 import {
   judgeFreeTextAnswer,
+  judgeMissingStepAnswer,
   postAttempt,
   postSession,
 } from '@/lib/progress/client'
@@ -244,6 +245,16 @@ export function NodeLearningFlow({
               status === 'authenticated'
                 ? async answer =>
                     judgeFreeTextAnswer({
+                      nodeId: node.id,
+                      questionId: question.id,
+                      answer,
+                    })
+                : undefined
+            }
+            onJudgeMissingStep={
+              status === 'authenticated'
+                ? async answer =>
+                    judgeMissingStepAnswer({
                       nodeId: node.id,
                       questionId: question.id,
                       answer,
