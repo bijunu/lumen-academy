@@ -197,7 +197,7 @@ export const coordinatesGrid: SkillNode = {
     {
       id: 'coord-q6',
       type: 'spot-misconception',
-      stem: 'Liam is reading a point on a grid. He says, "I count up first, then across, so (3, 5) means 3 up and 5 across." Is his method sound?',
+      stem: 'Liam is reading a point on a grid. He says, "I count up first, then across, so (3, 5) means 3 up and 5 across."',
       tier: 'core',
       statements: [
         {
@@ -299,7 +299,7 @@ export const coordinatesGrid: SkillNode = {
     {
       id: 'coord-q15',
       type: 'spot-misconception',
-      stem: 'Maya wants to plot (-2, 3). She says, "Negative just means I count from the right hand end, so I go 2 squares to the right of the y axis." Is her method sound?',
+      stem: 'Maya wants to plot (-2, 3). She says, "Negative just means I count from the right hand end, so I go 2 squares to the right of the y axis."',
       tier: 'confident',
       statements: [
         {

@@ -368,7 +368,7 @@ export const negativeNumbersAddSubtract: SkillNode = {
     {
       id: 'negas-q13',
       type: 'spot-misconception',
-      stem: 'Tom says: "(-6) + (-7) is +13 because two negatives make a positive." Is his reasoning sound?',
+      stem: 'Tom says: "(-6) + (-7) is +13 because two negatives make a positive."',
       tier: 'confident',
       statements: [
         {
@@ -414,7 +414,7 @@ export const negativeNumbersAddSubtract: SkillNode = {
     {
       id: 'negas-q16',
       type: 'spot-misconception',
-      stem: 'Aisha says: "-12 must be greater than -5 because 12 is greater than 5." Is her reasoning sound?',
+      stem: 'Aisha says: "-12 must be greater than -5 because 12 is greater than 5."',
       tier: 'challenge',
       statements: [
         {
@@ -940,7 +940,7 @@ export const multiplyDivideNegatives: SkillNode = {
     {
       id: 'mdneg-q14',
       type: 'spot-misconception',
-      stem: 'Liam says: "(-4) × (-6) is -24, because the two negatives keep the answer negative." Is his reasoning sound?',
+      stem: 'Liam says: "(-4) × (-6) is -24, because the two negatives keep the answer negative."',
       tier: 'confident',
       statements: [
         {
@@ -1016,7 +1016,7 @@ export const multiplyDivideNegatives: SkillNode = {
     {
       id: 'mdneg-q20',
       type: 'spot-misconception',
-      stem: 'Aisha says: "(-4) squared is -16, because squaring just multiplies a number by itself, and the minus sign stays." Is her reasoning sound?',
+      stem: 'Aisha says: "(-4) squared is -16, because squaring just multiplies a number by itself, and the minus sign stays."',
       tier: 'challenge',
       statements: [
         {

@@ -218,7 +218,7 @@ export const probabilityExperimental: SkillNode = {
     {
       id: 'pe-q7',
       type: 'spot-misconception',
-      stem: 'After 60 rolls of a fair 6-sided die, the class records exactly 12 sixes. Liam says "the die must be biased because the count is not 10, the theoretical value." Is his reasoning sound?',
+      stem: 'After 60 rolls of a fair 6-sided die, the class records exactly 12 sixes. Liam says "the die must be biased because the count is not 10, the theoretical value."',
       tier: 'core',
       statements: [
         {
@@ -248,7 +248,7 @@ export const probabilityExperimental: SkillNode = {
     {
       id: 'pe-q9',
       type: 'spot-misconception',
-      stem: 'Aisha tosses a coin 10 times. It lands heads 8 times. She says "the coin must be biased because P(heads) should be 0.5 and we got 0.8." Is her conclusion sound?',
+      stem: 'Aisha tosses a coin 10 times. It lands heads 8 times. She says "the coin must be biased because P(heads) should be 0.5 and we got 0.8."',
       tier: 'confident',
       statements: [
         {

@@ -413,7 +413,7 @@ export const continuousDiscontinuousVariation: SkillNode = {
     {
       id: 'vcd-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "blood group is continuous variation because there are four groups, so it goes from low to high." Is this method sound?',
+      stem: 'A pupil writes that "blood group is continuous variation because there are four groups, so it goes from low to high."',
       tier: 'core',
       statements: [
         {
@@ -480,7 +480,7 @@ export const continuousDiscontinuousVariation: SkillNode = {
     {
       id: 'vcd-q13',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "tongue-rolling is continuous variation because some pupils can roll their tongue a bit and some pupils can roll it a lot." Is this method sound?',
+      stem: 'A pupil writes that "tongue-rolling is continuous variation because some pupils can roll their tongue a bit and some pupils can roll it a lot."',
       tier: 'confident',
       statements: [
         {
@@ -1151,7 +1151,7 @@ export const fiveKingdomsClassification: SkillNode = {
     {
       id: 'cls-q9',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "fungi are in the plant kingdom because they grow out of the ground." Is this method sound?',
+      stem: 'A pupil writes that "fungi are in the plant kingdom because they grow out of the ground."',
       tier: 'confident',
       statements: [
         {
@@ -1169,7 +1169,7 @@ export const fiveKingdomsClassification: SkillNode = {
     {
       id: 'cls-q10',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "all single-celled organisms are bacteria." Is this method sound?',
+      stem: 'A pupil writes that "all single-celled organisms are bacteria."',
       tier: 'confident',
       statements: [
         {

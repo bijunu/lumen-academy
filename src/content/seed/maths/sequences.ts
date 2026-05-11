@@ -283,7 +283,7 @@ export const sequencesRules: SkillNode = {
     {
       id: 'seq-q12',
       type: 'spot-misconception',
-      stem: 'Priya says: "The sequence is 5, 8, 11, 14, ... and the rule adds 3 each time, so the 10th term must be 5 + 3 = 8." Is her thinking sound?',
+      stem: 'Priya says: "The sequence is 5, 8, 11, 14, ... and the rule adds 3 each time, so the 10th term must be 5 + 3 = 8."',
       tier: 'confident',
       statements: [
         {
@@ -392,7 +392,7 @@ export const sequencesRules: SkillNode = {
     {
       id: 'seq-q21',
       type: 'spot-misconception',
-      stem: 'Liam looks at the sequence 4, 8, 12, 16, ... He says "the rule is add 4 each time, so the position-to-term rule must be n + 4." Is his reasoning sound?',
+      stem: 'Liam looks at the sequence 4, 8, 12, 16, ... He says "the rule is add 4 each time, so the position-to-term rule must be n + 4."',
       tier: 'challenge',
       statements: [
         {

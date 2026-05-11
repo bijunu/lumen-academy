@@ -310,7 +310,7 @@ export const sequencesNthTerm: SkillNode = {
     {
       id: 'seqn-q8',
       type: 'spot-misconception',
-      stem: 'Liam looks at 6, 10, 14, 18, ... He says "the common difference is 4, so the nth term rule is just n + 4." Is his reasoning sound?',
+      stem: 'Liam looks at 6, 10, 14, 18, ... He says "the common difference is 4, so the nth term rule is just n + 4."',
       tier: 'core',
       statements: [
         {

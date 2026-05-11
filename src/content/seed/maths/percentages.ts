@@ -190,7 +190,7 @@ export const percentagesAsDecimalsFractions: SkillNode = {
     {
       id: 'pct-q6',
       type: 'spot-misconception',
-      stem: 'Liam says: "30% means a value of 30, because the per cent sign is just decoration." Is his thinking sound?',
+      stem: 'Liam says: "30% means a value of 30, because the per cent sign is just decoration."',
       tier: 'core',
       statements: [
         {
@@ -266,7 +266,7 @@ export const percentagesAsDecimalsFractions: SkillNode = {
     {
       id: 'pct-q13',
       type: 'spot-misconception',
-      stem: 'Maya writes "60% = 6.0" because she shifts the decimal point one place to the left. Is her method sound?',
+      stem: 'Maya writes "60% = 6.0" because she shifts the decimal point one place to the left.',
       tier: 'confident',
       statements: [
         {

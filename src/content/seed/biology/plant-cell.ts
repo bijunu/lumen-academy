@@ -351,7 +351,7 @@ export const plantCell: SkillNode = {
     {
       id: 'pc-q5',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "plant cells do not need to respire because they get energy from photosynthesis." Is this method sound?',
+      stem: 'A pupil writes that "plant cells do not need to respire because they get energy from photosynthesis."',
       tier: 'core',
       statements: [
         {
@@ -489,7 +489,7 @@ export const plantCell: SkillNode = {
     {
       id: 'pc-q13',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "plants only respire at night, when they cannot do photosynthesis." Is this method sound?',
+      stem: 'A pupil writes that "plants only respire at night, when they cannot do photosynthesis."',
       tier: 'confident',
       statements: [
         {

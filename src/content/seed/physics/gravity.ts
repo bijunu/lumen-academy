@@ -403,7 +403,7 @@ export const gravityMassVsWeight: SkillNode = {
     {
       id: 'mw-q9',
       type: 'spot-misconception',
-      stem: 'Aisha says, "Weight and mass mean the same thing. A 5 kg dog also weighs 5 kg, that is just two ways of saying it." Is the method sound?',
+      stem: 'Aisha says, "Weight and mass mean the same thing. A 5 kg dog also weighs 5 kg, that is just two ways of saying it."',
       tier: 'confident',
       statements: [
         {
@@ -562,7 +562,7 @@ export const gravityMassVsWeight: SkillNode = {
     {
       id: 'mw-q19',
       type: 'spot-misconception',
-      stem: 'Theo says, "A balance set of scales would still read my mass correctly on the Moon, because the standard masses on the other side are pulled less hard too. The balance just compares the two sides under the same gravity, so the reading does not change." Is the method sound?',
+      stem: 'Theo says, "A balance set of scales would still read my mass correctly on the Moon, because the standard masses on the other side are pulled less hard too. The balance just compares the two sides under the same gravity, so the reading does not change."',
       tier: 'challenge',
       statements: [
         {
@@ -1115,7 +1115,7 @@ export const gravityWeightCalculation: SkillNode = {
     {
       id: 'wc-q12',
       type: 'spot-misconception',
-      stem: 'Aisha works out the weight of a 200 g phone on Earth as W = 200 x 10 = 2000 N. Is the method sound?',
+      stem: 'Aisha works out the weight of a 200 g phone on Earth as W = 200 x 10 = 2000 N.',
       tier: 'confident',
       statements: [
         {

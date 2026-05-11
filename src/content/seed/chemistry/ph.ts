@@ -469,7 +469,7 @@ export const phScale: SkillNode = {
     {
       id: 'phs-q16',
       type: 'spot-misconception',
-      stem: 'Olu says: "Acids turn universal indicator blue and alkalis turn it red." Is Olu right?',
+      stem: 'Olu says: "Acids turn universal indicator blue and alkalis turn it red."',
       tier: 'core',
       statements: [
         {
@@ -487,7 +487,7 @@ export const phScale: SkillNode = {
     {
       id: 'phs-q17',
       type: 'spot-misconception',
-      stem: 'Priya argues: "If pure water is neutral and has pH 7, then anything below pH 7 cannot really be a substance, because pH 0 means there is no acid at all." Is Priya right?',
+      stem: 'Priya argues: "If pure water is neutral and has pH 7, then anything below pH 7 cannot really be a substance, because pH 0 means there is no acid at all."',
       tier: 'confident',
       statements: [
         {
@@ -1026,7 +1026,7 @@ export const phStrongWeak: SkillNode = {
     {
       id: 'phsw-q15',
       type: 'spot-misconception',
-      stem: 'Maya argues: "If two acids in two beakers have different pH numbers, then the one with the LOWER pH must always be the STRONGER acid." Is Maya right?',
+      stem: 'Maya argues: "If two acids in two beakers have different pH numbers, then the one with the LOWER pH must always be the STRONGER acid."',
       tier: 'confident',
       statements: [
         {
@@ -1044,7 +1044,7 @@ export const phStrongWeak: SkillNode = {
     {
       id: 'phsw-q16',
       type: 'spot-misconception',
-      stem: 'Ben says: "Citric acid is a food acid in oranges, and HCl is a school lab acid in a glass bottle. So food acids are weak and lab acids are strong." Is Ben right that the food vs lab line is what makes an acid strong or weak?',
+      stem: 'Ben says: "Citric acid is a food acid in oranges, and HCl is a school lab acid in a glass bottle. So food acids are weak and lab acids are strong."',
       tier: 'challenge',
       statements: [
         {

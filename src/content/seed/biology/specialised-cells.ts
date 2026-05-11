@@ -397,7 +397,7 @@ export const specialisedCells: SkillNode = {
     {
       id: 'sc-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that a red blood cell "must have a nucleus, because every cell does." Is this method sound?',
+      stem: 'A pupil writes that a red blood cell "must have a nucleus, because every cell does."',
       tier: 'core',
       statements: [
         {
@@ -526,7 +526,7 @@ export const specialisedCells: SkillNode = {
     {
       id: 'sc-q15',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the long tail on a sperm cell makes the energy that powers the swim." Is this method sound?',
+      stem: 'A pupil writes that "the long tail on a sperm cell makes the energy that powers the swim."',
       tier: 'confident',
       statements: [
         {

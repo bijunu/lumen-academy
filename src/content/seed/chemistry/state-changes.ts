@@ -395,7 +395,7 @@ export const stateChanges: SkillNode = {
     {
       id: 'scc-q10',
       type: 'spot-misconception',
-      stem: 'Sophie says: "I dropped a sugar cube into my tea and it melted away." Is she using the right word?',
+      stem: 'Sophie says: "I dropped a sugar cube into my tea and it melted away."',
       tier: 'confident',
       statements: [
         {

@@ -275,7 +275,7 @@ export const bidmasOrderOfOperations: SkillNode = {
     {
       id: 'bid-q8',
       type: 'spot-misconception',
-      stem: 'Liam evaluates 12 ÷ 3 x 2. He says, "BIDMAS means division comes before multiplication, so I do 3 x 2 first to get 6, then 12 ÷ 6 = 2." Is his method sound?',
+      stem: 'Liam evaluates 12 ÷ 3 x 2. He says, "BIDMAS means division comes before multiplication, so I do 3 x 2 first to get 6, then 12 ÷ 6 = 2."',
       tier: 'core',
       statements: [
         {
@@ -325,7 +325,7 @@ export const bidmasOrderOfOperations: SkillNode = {
     {
       id: 'bid-q13',
       type: 'spot-misconception',
-      stem: 'Aisha evaluates 18 - 5 + 4. She says, "BIDMAS means addition comes before subtraction, so I do 5 + 4 = 9 first, then 18 - 9 = 9." Is her method sound?',
+      stem: 'Aisha evaluates 18 - 5 + 4. She says, "BIDMAS means addition comes before subtraction, so I do 5 + 4 = 9 first, then 18 - 9 = 9."',
       tier: 'confident',
       statements: [
         {

@@ -611,7 +611,7 @@ export const spaceSolarSystem: SkillNode = {
     {
       id: 'ss-q8',
       type: 'spot-misconception',
-      stem: 'Sam writes, "Pluto is the ninth planet of the Solar System." Is the method sound?',
+      stem: 'Sam writes, "Pluto is the ninth planet of the Solar System."',
       tier: 'confident',
       statements: [
         {
@@ -714,7 +714,7 @@ export const spaceSolarSystem: SkillNode = {
     {
       id: 'ss-q13',
       type: 'spot-misconception',
-      stem: 'Theo writes, "The Sun and the planets all orbit the Earth, because the Sun rises and sets each day." Is the method sound?',
+      stem: 'Theo writes, "The Sun and the planets all orbit the Earth, because the Sun rises and sets each day."',
       tier: 'confident',
       statements: [
         {
@@ -1233,7 +1233,7 @@ export const spaceDayNightSeasons: SkillNode = {
     {
       id: 'dns-q7',
       type: 'spot-misconception',
-      stem: 'Priya writes, "The UK has summer because Earth is closer to the Sun in summer than in winter." Is the method sound?',
+      stem: 'Priya writes, "The UK has summer because Earth is closer to the Sun in summer than in winter."',
       tier: 'confident',
       statements: [
         {
@@ -1251,7 +1251,7 @@ export const spaceDayNightSeasons: SkillNode = {
     {
       id: 'dns-q8',
       type: 'spot-misconception',
-      stem: 'Theo writes, "The Sun moves round Earth once a day, and that is why we get day and night." Is the method sound?',
+      stem: 'Theo writes, "The Sun moves round Earth once a day, and that is why we get day and night."',
       tier: 'confident',
       statements: [
         {

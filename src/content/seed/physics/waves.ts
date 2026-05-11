@@ -438,7 +438,7 @@ export const wavesAnatomy: SkillNode = {
     {
       id: 'wa-q8',
       type: 'spot-misconception',
-      stem: 'Maya looks at a wave diagram and writes, "The amplitude is the distance from the trough up to the crest." Is the method sound?',
+      stem: 'Maya looks at a wave diagram and writes, "The amplitude is the distance from the trough up to the crest."',
       tier: 'challenge',
       statements: [
         {
@@ -548,7 +548,7 @@ export const wavesAnatomy: SkillNode = {
     {
       id: 'wa-q15',
       type: 'spot-misconception',
-      stem: 'Theo says, "Sound waves are transverse, like ripples on a pond." Is the method sound?',
+      stem: 'Theo says, "Sound waves are transverse, like ripples on a pond."',
       tier: 'confident',
       statements: [
         {
@@ -1103,7 +1103,7 @@ export const wavesSoundLight: SkillNode = {
     {
       id: 'sl-q6',
       type: 'spot-misconception',
-      stem: 'Sam says, "Pluto astronauts in a sci-fi film could clearly hear the engine roar from a passing ship." Is the method sound?',
+      stem: 'Sam says, "Pluto astronauts in a sci-fi film could clearly hear the engine roar from a passing ship."',
       tier: 'core',
       statements: [
         {
@@ -1319,7 +1319,7 @@ export const wavesSoundLight: SkillNode = {
     {
       id: 'sl-q21',
       type: 'spot-misconception',
-      stem: 'Theo writes, "We see the firework before we hear it because the light started first; the explosion happened a moment earlier." Is the method sound?',
+      stem: 'Theo writes, "We see the firework before we hear it because the light started first; the explosion happened a moment earlier."',
       tier: 'challenge',
       statements: [
         {

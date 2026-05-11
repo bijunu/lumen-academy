@@ -170,7 +170,7 @@ export const equivalentFractions: SkillNode = {
     {
       id: 'ef-q6',
       type: 'spot-misconception',
-      stem: 'A pupil says: "To find an equivalent fraction of 2/5, I add 2 to the top and bottom to get 4/7." Is this correct?',
+      stem: 'A pupil says: "To find an equivalent fraction of 2/5, I add 2 to the top and bottom to get 4/7."',
       tier: 'core',
       statements: [
         { text: 'Adding 2 to both gives an equivalent fraction.', isMisconception: true },
@@ -221,7 +221,7 @@ export const equivalentFractions: SkillNode = {
     {
       id: 'ef-q11',
       type: 'spot-misconception',
-      stem: 'Maya says 4/8 is larger than 1/2 because 4 and 8 are bigger numbers than 1 and 2. What do you think?',
+      stem: 'Maya says 4/8 is larger than 1/2 because 4 and 8 are bigger numbers than 1 and 2.',
       tier: 'core',
       statements: [
         { text: 'Maya is correct because bigger numbers mean a bigger fraction.', isMisconception: true },
@@ -613,7 +613,7 @@ export const whatIsAFraction: SkillNode = {
     {
       id: 'wf-q8',
       type: 'spot-misconception',
-      stem: 'Maya says: "The fraction 2/3 means two ones added to three ones, which is 5." Is she correct?',
+      stem: 'Maya says: "The fraction 2/3 means two ones added to three ones, which is 5."',
       tier: 'core',
       statements: [
         {
@@ -695,7 +695,7 @@ export const whatIsAFraction: SkillNode = {
     {
       id: 'wf-q16',
       type: 'spot-misconception',
-      stem: 'Joe writes the fraction 3/2 and says it cannot be a fraction because the top number is bigger than the bottom number. Is Joe right?',
+      stem: 'Joe writes the fraction 3/2 and says it cannot be a fraction because the top number is bigger than the bottom number.',
       tier: 'confident',
       statements: [
         {
@@ -974,7 +974,7 @@ export const simplifyingFractions: SkillNode = {
     {
       id: 'sf-q3',
       type: 'spot-misconception',
-      stem: 'Liam writes 16/64 = 1/4 because he says he can cross out the 6 on the top and the 6 on the bottom. The answer is right, but is the method sound?',
+      stem: 'Liam writes 16/64 = 1/4 because he says he can cross out the 6 on the top and the 6 on the bottom. The answer is right, but',
       tier: 'core',
       statements: [
         {
@@ -1080,7 +1080,7 @@ export const simplifyingFractions: SkillNode = {
     {
       id: 'sf-q12',
       type: 'spot-misconception',
-      stem: 'Aisha tries to simplify 20/30 by dividing the top by 2 and the bottom by 3. She writes 10/10 = 1. Is her method sound?',
+      stem: 'Aisha tries to simplify 20/30 by dividing the top by 2 and the bottom by 3. She writes 10/10 = 1.',
       tier: 'confident',
       statements: [
         {

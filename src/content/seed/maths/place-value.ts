@@ -297,7 +297,7 @@ export const wholeNumberPlaceValue: SkillNode = {
     {
       id: 'pv-q12',
       type: 'spot-misconception',
-      stem: 'Aisha rounds 4,963 to the nearest 100. She writes 4,900 because she dropped the last two digits. Is her method sound?',
+      stem: 'Aisha rounds 4,963 to the nearest 100. She writes 4,900 because she dropped the last two digits.',
       tier: 'confident',
       statements: [
         {
@@ -388,7 +388,7 @@ export const wholeNumberPlaceValue: SkillNode = {
     {
       id: 'pv-q19',
       type: 'spot-misconception',
-      stem: 'A pupil reads the number 1234567 by counting digits one at a time and says it is one hundred and twenty-three million, four hundred and fifty-six thousand and seven. Is this method sound?',
+      stem: 'A pupil reads the number 1234567 by counting digits one at a time and says it is one hundred and twenty-three million, four hundred and fifty-six thousand and seven.',
       tier: 'challenge',
       statements: [
         {

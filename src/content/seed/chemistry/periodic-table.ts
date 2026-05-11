@@ -405,7 +405,7 @@ export const periodicTableLayout: SkillNode = {
     {
       id: 'pt-q11',
       type: 'spot-misconception',
-      stem: 'Sophie says: "Period 3 means the third column from the left, so sodium is in Period 3." Is she right about what a period is?',
+      stem: 'Sophie says: "Period 3 means the third column from the left, so sodium is in Period 3."',
       tier: 'confident',
       statements: [
         {
@@ -491,7 +491,7 @@ export const periodicTableLayout: SkillNode = {
     {
       id: 'pt-q17',
       type: 'spot-misconception',
-      stem: 'Tom says: "Most of the elements on the periodic table are non-metals, because the table is bigger on the right than on the left." Is he right?',
+      stem: 'Tom says: "Most of the elements on the periodic table are non-metals, because the table is bigger on the right than on the left."',
       tier: 'challenge',
       statements: [
         {
@@ -889,7 +889,7 @@ export const periodicTableGroup1And7: SkillNode = {
     {
       id: 'g17-q5',
       type: 'spot-misconception',
-      stem: 'A pupil says: "In Group 1 of the periodic table, reactivity falls going down the column, so caesium at the bottom is less reactive than lithium at the top." Is the pupil right?',
+      stem: 'A pupil says: "In Group 1 of the periodic table, reactivity falls going down the column, so caesium at the bottom is less reactive than lithium at the top."',
       tier: 'core',
       statements: [
         {
@@ -974,7 +974,7 @@ export const periodicTableGroup1And7: SkillNode = {
     {
       id: 'g17-q12',
       type: 'spot-misconception',
-      stem: 'Aisha says: "Group 1 and Group 7 both follow the same rule, so reactivity rises going down both groups." Is she right?',
+      stem: 'Aisha says: "Group 1 and Group 7 both follow the same rule, so reactivity rises going down both groups."',
       tier: 'confident',
       statements: [
         {

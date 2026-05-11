@@ -445,7 +445,7 @@ export const foodChains: SkillNode = {
     {
       id: 'fch-q10',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "in the chain grass --&gt; rabbit --&gt; fox, the arrows show what each animal hunts." Is this method sound?',
+      stem: 'A pupil writes that "in the chain grass --&gt; rabbit --&gt; fox, the arrows show what each animal hunts."',
       tier: 'core',
       statements: [
         {
@@ -514,7 +514,7 @@ export const foodChains: SkillNode = {
     {
       id: 'fch-q15',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the oak leaf is a producer because it is at the start of the chain." Is the reasoning sound?',
+      stem: 'A pupil writes that "the oak leaf is a producer because it is at the start of the chain."',
       tier: 'confident',
       statements: [
         {
@@ -1119,7 +1119,7 @@ export const foodWebs: SkillNode = {
     {
       id: 'fwb-q6',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "if foxes disappear from a Kentish farm, rabbit numbers will rise by 50%." Is this method sound for Year 7?',
+      stem: 'A pupil writes that "if foxes disappear from a Kentish farm, rabbit numbers will rise by 50%."',
       tier: 'core',
       statements: [
         {
@@ -1191,7 +1191,7 @@ export const foodWebs: SkillNode = {
     {
       id: 'fwb-q12',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "in the oak-tree web, if the sparrowhawk leaves, only the blue tit and tawny owl are affected; nothing further down changes." Is the reasoning sound?',
+      stem: 'A pupil writes that "in the oak-tree web, if the sparrowhawk leaves, only the blue tit and tawny owl are affected; nothing further down changes."',
       tier: 'confident',
       statements: [
         {
@@ -1842,7 +1842,7 @@ export const energyFlow: SkillNode = {
     {
       id: 'efl-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "energy from the sparrowhawk passes back down the chain when it produces droppings, so the chain recycles energy." Is this method sound?',
+      stem: 'A pupil writes that "energy from the sparrowhawk passes back down the chain when it produces droppings, so the chain recycles energy."',
       tier: 'core',
       statements: [
         {
@@ -1910,7 +1910,7 @@ export const energyFlow: SkillNode = {
     {
       id: 'efl-q13',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "every level of a food chain keeps about 10% of the energy from the level below, so we can calculate energy at each level using 10% steps." Is this method sound for Year 7?',
+      stem: 'A pupil writes that "every level of a food chain keeps about 10% of the energy from the level below, so we can calculate energy at each level using 10% steps."',
       tier: 'confident',
       statements: [
         {

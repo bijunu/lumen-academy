@@ -219,7 +219,7 @@ export const probabilityScale: SkillNode = {
     {
       id: 'ps-q7',
       type: 'spot-misconception',
-      stem: 'Aisha says "I rolled a fair 6-sided die five times in a row and got a 6 every time. The probability of the next roll being a 6 must be bigger than 1, because the run will keep going." Is her reasoning sound?',
+      stem: 'Aisha says "I rolled a fair 6-sided die five times in a row and got a 6 every time. The probability of the next roll being a 6 must be bigger than 1, because the run will keep going."',
       tier: 'core',
       statements: [
         {
@@ -310,7 +310,7 @@ export const probabilityScale: SkillNode = {
     {
       id: 'ps-q13',
       type: 'spot-misconception',
-      stem: 'Sam says "120 percent of pupils in our class brought a packed lunch on Monday, so the probability is 1.2." Is the reasoning sound?',
+      stem: 'Sam says "120 percent of pupils in our class brought a packed lunch on Monday, so the probability is 1.2."',
       tier: 'confident',
       statements: [
         {

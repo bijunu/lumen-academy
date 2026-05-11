@@ -271,7 +271,7 @@ export const probabilityListingOutcomes: SkillNode = {
     {
       id: 'pl-q8',
       type: 'spot-misconception',
-      stem: 'Liam tosses two coins and lists the sample space as {HH, HT, TT}. He says HT and TH are the same outcome because both have one head and one tail. Is his reasoning sound?',
+      stem: 'Liam tosses two coins and lists the sample space as {HH, HT, TT}. He says HT and TH are the same outcome because both have one head and one tail.',
       tier: 'core',
       statements: [
         {
@@ -352,7 +352,7 @@ export const probabilityListingOutcomes: SkillNode = {
     {
       id: 'pl-q14',
       type: 'spot-misconception',
-      stem: 'Sam draws a card from a UK 52-card deck and says "P(heart) = 1/13 because there are 13 hearts in the deck." Is the reasoning sound?',
+      stem: 'Sam draws a card from a UK 52-card deck and says "P(heart) = 1/13 because there are 13 hearts in the deck."',
       tier: 'confident',
       statements: [
         {

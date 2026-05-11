@@ -226,7 +226,7 @@ export const recognisingPrimes: SkillNode = {
     {
       id: 'rp-q7',
       type: 'spot-misconception',
-      stem: 'Tom says: "1 must be prime because it has no other factors apart from itself." Is Tom right?',
+      stem: 'Tom says: "1 must be prime because it has no other factors apart from itself."',
       tier: 'core',
       statements: [
         {
@@ -288,7 +288,7 @@ export const recognisingPrimes: SkillNode = {
     {
       id: 'rp-q12',
       type: 'spot-misconception',
-      stem: 'Aisha says: "57 must be prime because it is odd and is not in the 5 times table." Is her reasoning sound?',
+      stem: 'Aisha says: "57 must be prime because it is odd and is not in the 5 times table."',
       tier: 'confident',
       statements: [
         {

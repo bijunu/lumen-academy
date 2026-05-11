@@ -255,7 +255,7 @@ export const volumeCuboids: SkillNode = {
     {
       id: 'vc-q7',
       type: 'spot-misconception',
-      stem: 'For a cuboid that is 5 cm by 4 cm by 3 cm, Liam works out the volume as "5 x 4 = 20 cm cubed". Is his method sound?',
+      stem: 'For a cuboid that is 5 cm by 4 cm by 3 cm, Liam works out the volume as "5 x 4 = 20 cm cubed".',
       tier: 'core',
       statements: [
         {
@@ -338,7 +338,7 @@ export const volumeCuboids: SkillNode = {
     {
       id: 'vc-q13',
       type: 'spot-misconception',
-      stem: 'For a cuboid that is 5 cm by 4 cm by 3 cm, Aisha says "the volume is 5 + 4 + 3 = 12 cm cubed". Is her method sound?',
+      stem: 'For a cuboid that is 5 cm by 4 cm by 3 cm, Aisha says "the volume is 5 + 4 + 3 = 12 cm cubed".',
       tier: 'confident',
       statements: [
         {

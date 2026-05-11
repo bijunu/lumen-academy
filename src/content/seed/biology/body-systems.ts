@@ -438,7 +438,7 @@ export const digestiveSystem: SkillNode = {
     {
       id: 'ds-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "all digestion happens in the stomach." Is this method sound?',
+      stem: 'A pupil writes that "all digestion happens in the stomach."',
       tier: 'core',
       statements: [
         {
@@ -570,7 +570,7 @@ export const digestiveSystem: SkillNode = {
     {
       id: 'ds-q15',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the small intestine is small because it is short." Is this method sound?',
+      stem: 'A pupil writes that "the small intestine is small because it is short."',
       tier: 'confident',
       statements: [
         {
@@ -1129,7 +1129,7 @@ export const circulatorySystem: SkillNode = {
     {
       id: 'cs-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "blood passes through the heart only once on each trip around the body." Is this method sound?',
+      stem: 'A pupil writes that "blood passes through the heart only once on each trip around the body."',
       tier: 'core',
       statements: [
         {
@@ -1253,7 +1253,7 @@ export const circulatorySystem: SkillNode = {
     {
       id: 'cs-q15',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "all veins carry blood that is low in oxygen, and all arteries carry blood that is rich in oxygen." Is this method sound?',
+      stem: 'A pupil writes that "all veins carry blood that is low in oxygen, and all arteries carry blood that is rich in oxygen."',
       tier: 'confident',
       statements: [
         {
@@ -1790,7 +1790,7 @@ export const respiratorySystem: SkillNode = {
     {
       id: 'rs-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "breathing in is the same as respiration." Is this method sound?',
+      stem: 'A pupil writes that "breathing in is the same as respiration."',
       tier: 'confident',
       statements: [
         {
@@ -1905,7 +1905,7 @@ export const respiratorySystem: SkillNode = {
     {
       id: 'rs-q14',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "we breathe in oxygen and breathe out carbon dioxide only, with no other gases." Is this method sound?',
+      stem: 'A pupil writes that "we breathe in oxygen and breathe out carbon dioxide only, with no other gases."',
       tier: 'confident',
       statements: [
         {

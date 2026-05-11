@@ -251,7 +251,7 @@ export const coordinatesShapes: SkillNode = {
     {
       id: 'cs-q8',
       type: 'spot-misconception',
-      stem: 'Liam reflects the point (3, 2) in the x axis. He writes the new point as (-3, 2). Is his method sound?',
+      stem: 'Liam reflects the point (3, 2) in the x axis. He writes the new point as (-3, 2).',
       tier: 'core',
       statements: [
         {
@@ -416,7 +416,7 @@ export const coordinatesShapes: SkillNode = {
     {
       id: 'cs-q22',
       type: 'spot-misconception',
-      stem: 'A pupil is asked to reflect (4, 3) in the x axis. They write the new point as (-4, -3). Is the reasoning sound?',
+      stem: 'A pupil is asked to reflect (4, 3) in the x axis. They write the new point as (-4, -3).',
       tier: 'challenge',
       statements: [
         {

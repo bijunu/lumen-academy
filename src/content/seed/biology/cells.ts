@@ -335,7 +335,7 @@ export const animalCell: SkillNode = {
     {
       id: 'ac-q6',
       type: 'spot-misconception',
-      stem: 'A pupil writes that mitochondria "make energy" for the cell. Is this method sound?',
+      stem: 'A pupil writes that mitochondria "make energy" for the cell.',
       tier: 'core',
       statements: [
         {
@@ -440,7 +440,7 @@ export const animalCell: SkillNode = {
     {
       id: 'ac-q13',
       type: 'spot-misconception',
-      stem: 'A pupil says: "Skin cells, muscle cells, and nerve cells are all about the same size." Is this method sound?',
+      stem: 'A pupil says: "Skin cells, muscle cells, and nerve cells are all about the same size."',
       tier: 'confident',
       statements: [
         {

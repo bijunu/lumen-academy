@@ -245,7 +245,7 @@ export const decimalPlaceValue: SkillNode = {
     {
       id: 'dpv-q6',
       type: 'spot-misconception',
-      stem: 'Liam says: "0.65 must be bigger than 0.7 because 65 is bigger than 7." Is his reasoning sound?',
+      stem: 'Liam says: "0.65 must be bigger than 0.7 because 65 is bigger than 7."',
       tier: 'core',
       statements: [
         {
@@ -376,7 +376,7 @@ export const decimalPlaceValue: SkillNode = {
     {
       id: 'dpv-q16',
       type: 'spot-misconception',
-      stem: 'Aisha writes 0.5 + 0.5 = 0.10 because "five plus five is ten and you put it after the point." Is her method sound?',
+      stem: 'Aisha writes 0.5 + 0.5 = 0.10 because "five plus five is ten and you put it after the point."',
       tier: 'confident',
       statements: [
         {

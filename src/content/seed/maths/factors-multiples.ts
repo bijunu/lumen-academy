@@ -227,7 +227,7 @@ export const findingFactorsAndMultiples: SkillNode = {
     {
       id: 'fm-q7',
       type: 'spot-misconception',
-      stem: 'Liam says: "1 cannot be a factor of 15, because 1 is too small to be useful." Is he right?',
+      stem: 'Liam says: "1 cannot be a factor of 15, because 1 is too small to be useful."',
       tier: 'core',
       statements: [
         {
@@ -312,7 +312,7 @@ export const findingFactorsAndMultiples: SkillNode = {
     {
       id: 'fm-q14',
       type: 'spot-misconception',
-      stem: 'Aisha says: "45 is a multiple of 9 and 9 is a factor of 45, so the two sentences mean different things." What do you think?',
+      stem: 'Aisha says: "45 is a multiple of 9 and 9 is a factor of 45, so the two sentences mean different things."',
       tier: 'confident',
       statements: [
         {

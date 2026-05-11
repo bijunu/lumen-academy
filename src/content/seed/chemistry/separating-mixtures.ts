@@ -359,7 +359,7 @@ export const filtrationEvaporation: SkillNode = {
     {
       id: 'fe-q7',
       type: 'spot-misconception',
-      stem: 'Sophie says: "I will use filter paper to take the salt out of saltwater. The paper will catch the salt and let the water through." Is she right?',
+      stem: 'Sophie says: "I will use filter paper to take the salt out of saltwater. The paper will catch the salt and let the water through."',
       tier: 'core',
       statements: [
         {
@@ -1002,7 +1002,7 @@ export const distillation: SkillNode = {
     {
       id: 'di-q8',
       type: 'spot-misconception',
-      stem: 'Sophie says: "When you distil a salt solution, the salt evaporates with the water. The condenser then catches the salt and the water together, so the distillate has salt in it." Is she right?',
+      stem: 'Sophie says: "When you distil a salt solution, the salt evaporates with the water. The condenser then catches the salt and the water together, so the distillate has salt in it."',
       tier: 'confident',
       statements: [
         {
@@ -1172,7 +1172,7 @@ export const distillation: SkillNode = {
     {
       id: 'di-q20',
       type: 'spot-misconception',
-      stem: 'Tom says: "If I just use simple distillation on a 50:50 ethanol and water mixture, I will get pure ethanol in the beaker, because ethanol has a lower boiling point and boils first." Is he right?',
+      stem: 'Tom says: "If I just use simple distillation on a 50:50 ethanol and water mixture, I will get pure ethanol in the beaker, because ethanol has a lower boiling point and boils first."',
       tier: 'challenge',
       statements: [
         {
@@ -1682,7 +1682,7 @@ export const chromatography: SkillNode = {
     {
       id: 'ch-q15',
       type: 'spot-misconception',
-      stem: 'Riya says: "I am going to mark the baseline on my chromatography paper in red biro so I can see it more clearly while I work." Is her plan a good one?',
+      stem: 'Riya says: "I am going to mark the baseline on my chromatography paper in red biro so I can see it more clearly while I work."',
       tier: 'core',
       statements: [
         {
@@ -1700,7 +1700,7 @@ export const chromatography: SkillNode = {
     {
       id: 'ch-q16',
       type: 'spot-misconception',
-      stem: 'Tom runs a chromatogram of a pure single-dye food colouring. After the run, his paper shows just one coloured spot above the baseline. He says: "The chromatography did not work, because there was only one spot." Is Tom right?',
+      stem: 'Tom runs a chromatogram of a pure single-dye food colouring. After the run, his paper shows just one coloured spot above the baseline. He says: "The chromatography did not work, because there was only one spot."',
       tier: 'confident',
       statements: [
         {

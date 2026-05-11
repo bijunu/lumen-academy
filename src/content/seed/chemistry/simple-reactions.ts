@@ -416,7 +416,7 @@ export const combustion: SkillNode = {
     {
       id: 'comb-q16',
       type: 'spot-misconception',
-      stem: 'Aisha says: "When a candle burns and the wax disappears, the wax has been destroyed; mass cannot be conserved when something burns away." Is Aisha right?',
+      stem: 'Aisha says: "When a candle burns and the wax disappears, the wax has been destroyed; mass cannot be conserved when something burns away."',
       tier: 'core',
       statements: [
         {
@@ -434,7 +434,7 @@ export const combustion: SkillNode = {
     {
       id: 'comb-q17',
       type: 'spot-misconception',
-      stem: 'Olu says: "If a fire has plenty of fuel and plenty of oxygen, it will always keep burning forever." Is Olu right?',
+      stem: 'Olu says: "If a fire has plenty of fuel and plenty of oxygen, it will always keep burning forever."',
       tier: 'confident',
       statements: [
         {
@@ -985,7 +985,7 @@ export const acidMetal: SkillNode = {
     {
       id: 'am-q15',
       type: 'spot-misconception',
-      stem: 'Priya argues: "Hydrogen, oxygen, carbon dioxide, they all give a pop test if they are concentrated enough. The pop just means a gas is in the tube." Is Priya right?',
+      stem: 'Priya argues: "Hydrogen, oxygen, carbon dioxide, they all give a pop test if they are concentrated enough. The pop just means a gas is in the tube."',
       tier: 'core',
       statements: [
         {
@@ -1003,7 +1003,7 @@ export const acidMetal: SkillNode = {
     {
       id: 'am-q16',
       type: 'spot-misconception',
-      stem: 'Olu says: "If I make the acid more concentrated, the products of zinc + HCl change. Maybe more concentrated acid gives a different salt or even a different gas." Is Olu right?',
+      stem: 'Olu says: "If I make the acid more concentrated, the products of zinc + HCl change. Maybe more concentrated acid gives a different salt or even a different gas."',
       tier: 'confident',
       statements: [
         {
@@ -1584,7 +1584,7 @@ export const rusting: SkillNode = {
     {
       id: 'rust-q16',
       type: 'spot-misconception',
-      stem: 'Aisha says: "Rusting only needs iron and oxygen. Water has nothing to do with it." Is Aisha right?',
+      stem: 'Aisha says: "Rusting only needs iron and oxygen. Water has nothing to do with it."',
       tier: 'core',
       statements: [
         {
@@ -1602,7 +1602,7 @@ export const rusting: SkillNode = {
     {
       id: 'rust-q17',
       type: 'spot-misconception',
-      stem: 'Ben argues: "Painting an iron gate just hides the rust under a layer of paint. The iron is still rusting, you just cannot see it." Is Ben right?',
+      stem: 'Ben argues: "Painting an iron gate just hides the rust under a layer of paint. The iron is still rusting, you just cannot see it."',
       tier: 'confident',
       statements: [
         {

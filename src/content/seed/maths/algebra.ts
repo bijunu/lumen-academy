@@ -198,7 +198,7 @@ export const algebraIntroduction: SkillNode = {
     {
       id: 'alg-q6',
       type: 'spot-misconception',
-      stem: 'Priya simplifies 3a + 2b as "5ab" because she says letters and numbers must combine. Is her thinking sound?',
+      stem: 'Priya simplifies 3a + 2b as "5ab" because she says letters and numbers must combine.',
       tier: 'core',
       statements: [
         {
@@ -292,7 +292,7 @@ export const algebraIntroduction: SkillNode = {
     {
       id: 'alg-q14',
       type: 'spot-misconception',
-      stem: 'Tom substitutes x = 3 into the expression 4x and writes the answer 43, treating 4x as the digits 4 and x sitting side by side. Is his method sound?',
+      stem: 'Tom substitutes x = 3 into the expression 4x and writes the answer 43, treating 4x as the digits 4 and x sitting side by side.',
       tier: 'confident',
       statements: [
         {

@@ -236,7 +236,7 @@ export const areaRectangles: SkillNode = {
     {
       id: 'ar-q7',
       type: 'spot-misconception',
-      stem: 'Liam works out the area of a 6 m by 4 m rug as "6 + 4 = 10 m squared". Is his method sound?',
+      stem: 'Liam works out the area of a 6 m by 4 m rug as "6 + 4 = 10 m squared".',
       tier: 'core',
       statements: [
         {
@@ -316,7 +316,7 @@ export const areaRectangles: SkillNode = {
     {
       id: 'ar-q13',
       type: 'spot-misconception',
-      stem: 'For an L-shaped patio, Aisha measures the bottom edge as 8 m, the right edge as 5 m, then says "the area is 8 x 5 = 40 m squared" without splitting the shape. Is her method sound?',
+      stem: 'For an L-shaped patio, Aisha measures the bottom edge as 8 m, the right edge as 5 m, then says "the area is 8 x 5 = 40 m squared" without splitting the shape.',
       tier: 'confident',
       statements: [
         {

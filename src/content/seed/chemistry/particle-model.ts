@@ -264,7 +264,7 @@ export const statesOfMatter: SkillNode = {
     {
       id: 'pms-q6',
       type: 'spot-misconception',
-      stem: 'Sophie says: "When water in a kettle gets hot, the water particles get bigger." Is she right?',
+      stem: 'Sophie says: "When water in a kettle gets hot, the water particles get bigger."',
       tier: 'core',
       statements: [
         {
@@ -413,7 +413,7 @@ export const statesOfMatter: SkillNode = {
     {
       id: 'pms-q13',
       type: 'spot-misconception',
-      stem: 'Tom says: "When a gas is in a sealed jar, the gas particles fall and sit in a thin layer at the bottom because of gravity." Is he right?',
+      stem: 'Tom says: "When a gas is in a sealed jar, the gas particles fall and sit in a thin layer at the bottom because of gravity."',
       tier: 'confident',
       statements: [
         {
@@ -943,7 +943,7 @@ export const diffusion: SkillNode = {
     {
       id: 'dif-q7',
       type: 'spot-misconception',
-      stem: 'Liam says: "Bromine vapour is much heavier than air, so when the glass disc is taken away from the gas jar demo the bromine just stays at the bottom and never mixes with the air above." Is he right?',
+      stem: 'Liam says: "Bromine vapour is much heavier than air, so when the glass disc is taken away from the gas jar demo the bromine just stays at the bottom and never mixes with the air above."',
       tier: 'core',
       statements: [
         {
@@ -1032,7 +1032,7 @@ export const diffusion: SkillNode = {
     {
       id: 'dif-q13',
       type: 'spot-misconception',
-      stem: 'Sophie says: "Diffusion only works if you stir the liquid. Without stirring the dye in a beaker would just stay still." Is she right?',
+      stem: 'Sophie says: "Diffusion only works if you stir the liquid. Without stirring the dye in a beaker would just stay still."',
       tier: 'confident',
       statements: [
         {

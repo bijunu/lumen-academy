@@ -536,7 +536,7 @@ export const electricityCircuitSymbols: SkillNode = {
     {
       id: 'cs-q15',
       type: 'spot-misconception',
-      stem: 'Theo says, "I will draw the voltmeter in series with the lamp, on the same wire, because then the voltage flows through it the way current does." Is his method sound?',
+      stem: 'Theo says, "I will draw the voltmeter in series with the lamp, on the same wire, because then the voltage flows through it the way current does."',
       tier: 'confident',
       statements: [
         {
@@ -598,7 +598,7 @@ export const electricityCircuitSymbols: SkillNode = {
     {
       id: 'cs-q19',
       type: 'spot-misconception',
-      stem: 'Maya says, "An ammeter and a voltmeter are both circles, so it does not matter which letter I write inside on my diagram." Is her method sound?',
+      stem: 'Maya says, "An ammeter and a voltmeter are both circles, so it does not matter which letter I write inside on my diagram."',
       tier: 'challenge',
       statements: [
         {
@@ -1298,7 +1298,7 @@ export const electricitySeriesParallel: SkillNode = {
     {
       id: 'sp-q12',
       type: 'spot-misconception',
-      stem: 'Mia says, "When I added a second bulb in parallel to my torch circuit, both bulbs got dimmer because they have to share the cell’s energy." Is her reasoning sound?',
+      stem: 'Mia says, "When I added a second bulb in parallel to my torch circuit, both bulbs got dimmer because they have to share the cell’s energy."',
       tier: 'confident',
       statements: [
         {
@@ -1388,7 +1388,7 @@ export const electricitySeriesParallel: SkillNode = {
     {
       id: 'sp-q18',
       type: 'spot-misconception',
-      stem: 'Aisha says, "In my parallel circuit each branch has its own potential difference, so the voltages across the two branches add up to the battery voltage." Is her reasoning sound?',
+      stem: 'Aisha says, "In my parallel circuit each branch has its own potential difference, so the voltages across the two branches add up to the battery voltage."',
       tier: 'challenge',
       statements: [
         {
@@ -2057,7 +2057,7 @@ export const electricityCurrentVoltage: SkillNode = {
     {
       id: 'cv-q16',
       type: 'spot-misconception',
-      stem: 'Sam says, "The lamp uses up the current, so the ammeter on the wire after the lamp will read less than the one on the wire before the lamp." Is the method sound?',
+      stem: 'Sam says, "The lamp uses up the current, so the ammeter on the wire after the lamp will read less than the one on the wire before the lamp."',
       tier: 'confident',
       statements: [
         {

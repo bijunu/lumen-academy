@@ -287,7 +287,7 @@ export const perimeter: SkillNode = {
     {
       id: 'pe-q8',
       type: 'spot-misconception',
-      stem: 'For a 6 m by 4 m garden, Liam writes the perimeter as 6 + 4 = 10 m. Is his method sound?',
+      stem: 'For a 6 m by 4 m garden, Liam writes the perimeter as 6 + 4 = 10 m.',
       tier: 'core',
       statements: [
         {
@@ -375,7 +375,7 @@ export const perimeter: SkillNode = {
     {
       id: 'pe-q14',
       type: 'spot-misconception',
-      stem: 'For an L-shape garden with labelled sides 6 m, 3 m, 4 m, 5 m clockwise from the top-left, Maya adds only the four labelled sides and writes the perimeter as 6 + 3 + 4 + 5 = 18 m. Is her method sound?',
+      stem: 'For an L-shape garden with labelled sides 6 m, 3 m, 4 m, 5 m clockwise from the top-left, Maya adds only the four labelled sides and writes the perimeter as 6 + 3 + 4 + 5 = 18 m.',
       tier: 'confident',
       statements: [
         {

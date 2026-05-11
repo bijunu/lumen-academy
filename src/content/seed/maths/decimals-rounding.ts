@@ -223,7 +223,7 @@ export const decimalsRounding: SkillNode = {
     {
       id: 'dr-q6',
       type: 'spot-misconception',
-      stem: 'Tom rounds 3.146 to 2 decimal places. He says: "The decider is 4, then I look at 6 too, and 4 plus 6 is 10, so I round up to 3.15." Is his method sound?',
+      stem: 'Tom rounds 3.146 to 2 decimal places. He says: "The decider is 4, then I look at 6 too, and 4 plus 6 is 10, so I round up to 3.15."',
       tier: 'core',
       statements: [
         {
@@ -331,7 +331,7 @@ export const decimalsRounding: SkillNode = {
     {
       id: 'dr-q15',
       type: 'spot-misconception',
-      stem: 'Maya rounds 8.972 to 1 decimal place by chopping off everything after the tenths column. She writes 8.9. Is her method sound?',
+      stem: 'Maya rounds 8.972 to 1 decimal place by chopping off everything after the tenths column. She writes 8.9.',
       tier: 'confident',
       statements: [
         {

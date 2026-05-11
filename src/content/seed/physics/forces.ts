@@ -498,7 +498,7 @@ export const forcesTypes: SkillNode = {
     {
       id: 'ft-q11',
       type: 'spot-misconception',
-      stem: 'Lila says, "Air resistance only acts on objects when they are falling. A car driving along a flat road has no air resistance." Is the method sound?',
+      stem: 'Lila says, "Air resistance only acts on objects when they are falling. A car driving along a flat road has no air resistance."',
       tier: 'confident',
       statements: [
         {
@@ -1220,7 +1220,7 @@ export const forcesBalanced: SkillNode = {
     {
       id: 'fb-q13',
       type: 'spot-misconception',
-      stem: 'Theo says, "If two forces on a box are balanced, the box must be stood still. So a moving box always has unbalanced forces." Is the method sound?',
+      stem: 'Theo says, "If two forces on a box are balanced, the box must be stood still. So a moving box always has unbalanced forces."',
       tier: 'confident',
       statements: [
         {
@@ -1238,7 +1238,7 @@ export const forcesBalanced: SkillNode = {
     {
       id: 'fb-q14',
       type: 'spot-misconception',
-      stem: 'Lila says, "An object only keeps moving if a force keeps pushing it. So a coasting bicycle must have a forwards force on it as long as it keeps moving." Is the method sound?',
+      stem: 'Lila says, "An object only keeps moving if a force keeps pushing it. So a coasting bicycle must have a forwards force on it as long as it keeps moving."',
       tier: 'confident',
       statements: [
         {
@@ -1853,7 +1853,7 @@ export const forcesFriction: SkillNode = {
     {
       id: 'fr-q9',
       type: 'spot-misconception',
-      stem: 'Theo says, "Friction only acts on things that are moving. A still box on the floor has no friction acting on it, even when I push on it gently." Is the method sound?',
+      stem: 'Theo says, "Friction only acts on things that are moving. A still box on the floor has no friction acting on it, even when I push on it gently."',
       tier: 'confident',
       statements: [
         {

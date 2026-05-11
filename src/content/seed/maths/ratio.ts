@@ -267,7 +267,7 @@ export const ratioIntroduction: SkillNode = {
     {
       id: 'ri-q8',
       type: 'spot-misconception',
-      stem: 'Liam says the ratio 2:3 of red to blue beads means 2/3 of the beads in the jar are red. Is he right?',
+      stem: 'Liam says the ratio 2:3 of red to blue beads means 2/3 of the beads in the jar are red.',
       tier: 'core',
       statements: [
         {
@@ -432,7 +432,7 @@ export const ratioIntroduction: SkillNode = {
     {
       id: 'ri-q21',
       type: 'spot-misconception',
-      stem: 'A pupil sees the ratio 4:6 and writes "the difference is 2, so the simplest form is 1:1 with a gap of 2". Is the pupil correct?',
+      stem: 'A pupil sees the ratio 4:6 and writes "the difference is 2, so the simplest form is 1:1 with a gap of 2".',
       tier: 'challenge',
       statements: [
         {

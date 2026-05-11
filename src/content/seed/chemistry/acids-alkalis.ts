@@ -253,7 +253,7 @@ export const acidsAlkalisCommon: SkillNode = {
     {
       id: 'aac-q5',
       type: 'spot-misconception',
-      stem: 'A pupil says: "A solution that turns universal indicator dark blue must be a strong acid, because dark colours mean strong chemicals." Is the pupil right?',
+      stem: 'A pupil says: "A solution that turns universal indicator dark blue must be a strong acid, because dark colours mean strong chemicals."',
       tier: 'confident',
       statements: [
         {
@@ -353,7 +353,7 @@ export const acidsAlkalisCommon: SkillNode = {
     {
       id: 'aac-q14',
       type: 'spot-misconception',
-      stem: 'Tom says: "Every alkali is safe to touch because alkalis are not acids, and only acids burn skin." Is he right?',
+      stem: 'Tom says: "Every alkali is safe to touch because alkalis are not acids, and only acids burn skin."',
       tier: 'confident',
       statements: [
         {
@@ -901,7 +901,7 @@ export const acidsAlkalisNeutralisation: SkillNode = {
     {
       id: 'aan-q12',
       type: 'spot-misconception',
-      stem: 'Sophie says: "If I keep adding more and more alkali to an acid, the mixture stays neutral once the green colour appears." Is she right?',
+      stem: 'Sophie says: "If I keep adding more and more alkali to an acid, the mixture stays neutral once the green colour appears."',
       tier: 'confident',
       statements: [
         {
@@ -997,7 +997,7 @@ export const acidsAlkalisNeutralisation: SkillNode = {
     {
       id: 'aan-q18',
       type: 'spot-misconception',
-      stem: 'Tom says: "When an acid and an alkali react, the acid disappears and only the alkali is left." Is he right?',
+      stem: 'Tom says: "When an acid and an alkali react, the acid disappears and only the alkali is left."',
       tier: 'confident',
       statements: [
         {

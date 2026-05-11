@@ -406,7 +406,7 @@ export const photosynthesisOverview: SkillNode = {
     {
       id: 'po-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "plants only photosynthesise; they do not respire." Is this method sound?',
+      stem: 'A pupil writes that "plants only photosynthesise; they do not respire."',
       tier: 'core',
       statements: [
         {
@@ -492,7 +492,7 @@ export const photosynthesisOverview: SkillNode = {
     {
       id: 'po-q14',
       type: 'spot-misconception',
-      stem: 'A pupil says: "Photosynthesis happens in the mitochondria of a plant cell." Is this method sound?',
+      stem: 'A pupil says: "Photosynthesis happens in the mitochondria of a plant cell."',
       tier: 'confident',
       statements: [
         {
@@ -1134,7 +1134,7 @@ export const photosynthesisRate: SkillNode = {
     {
       id: 'pr-q9',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "warmer water always speeds up photosynthesis, so 50 °C is better than 40 °C." Is this method sound?',
+      stem: 'A pupil writes that "warmer water always speeds up photosynthesis, so 50 °C is better than 40 °C."',
       tier: 'confident',
       statements: [
         {
@@ -1173,7 +1173,7 @@ export const photosynthesisRate: SkillNode = {
     {
       id: 'pr-q12',
       type: 'spot-misconception',
-      stem: 'A class plots rate of photosynthesis against CO₂ concentration. The line rises and then flattens. A pupil writes "the flat part means CO₂ has become the only limiting factor." Is this method sound?',
+      stem: 'A class plots rate of photosynthesis against CO₂ concentration. The line rises and then flattens. A pupil writes "the flat part means CO₂ has become the only limiting factor."',
       tier: 'confident',
       statements: [
         {

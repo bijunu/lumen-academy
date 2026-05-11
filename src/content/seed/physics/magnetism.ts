@@ -570,7 +570,7 @@ export const magnetismFields: SkillNode = {
     {
       id: 'mag-q7',
       type: 'spot-misconception',
-      stem: 'Aisha writes, "Anything made of metal will stick to a fridge magnet, because all metals are magnetic." Is the method sound?',
+      stem: 'Aisha writes, "Anything made of metal will stick to a fridge magnet, because all metals are magnetic."',
       tier: 'confident',
       statements: [
         {
@@ -589,7 +589,7 @@ export const magnetismFields: SkillNode = {
     {
       id: 'mag-q8',
       type: 'spot-misconception',
-      stem: 'Theo writes, "If I push two N poles toward each other, they should snap together, because they are both strong." Is the method sound?',
+      stem: 'Theo writes, "If I push two N poles toward each other, they should snap together, because they are both strong."',
       tier: 'confident',
       statements: [
         {
@@ -1198,7 +1198,7 @@ export const magnetismElectromagnets: SkillNode = {
     {
       id: 'em-q7',
       type: 'spot-misconception',
-      stem: 'Aisha writes, "Once you switch the current on through the coil, the iron core becomes a permanent magnet. You can take it out and use it as a bar magnet, even after switching off." Is the method sound?',
+      stem: 'Aisha writes, "Once you switch the current on through the coil, the iron core becomes a permanent magnet. You can take it out and use it as a bar magnet, even after switching off."',
       tier: 'confident',
       statements: [
         {
@@ -1216,7 +1216,7 @@ export const magnetismElectromagnets: SkillNode = {
     {
       id: 'em-q8',
       type: 'spot-misconception',
-      stem: 'Theo writes, "An electromagnet is better than a permanent magnet because it is always stronger." Is the method sound?',
+      stem: 'Theo writes, "An electromagnet is better than a permanent magnet because it is always stronger."',
       tier: 'confident',
       statements: [
         {

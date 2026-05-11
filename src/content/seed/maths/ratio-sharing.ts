@@ -253,7 +253,7 @@ export const ratioSharing: SkillNode = {
     {
       id: 'rs-q8',
       type: 'spot-misconception',
-      stem: 'To share £40 in the ratio 1:3, Liam writes 40 / 3 = £13.33 for each part. Is his method sound?',
+      stem: 'To share £40 in the ratio 1:3, Liam writes 40 / 3 = £13.33 for each part.',
       tier: 'core',
       statements: [
         {
@@ -366,7 +366,7 @@ export const ratioSharing: SkillNode = {
     {
       id: 'rs-q16',
       type: 'spot-misconception',
-      stem: 'Maya shares £30 in the ratio 1:4. She writes "1 x £30 = £30 for the first share and 4 x £30 = £120 for the second share". Is her method sound?',
+      stem: 'Maya shares £30 in the ratio 1:4. She writes "1 x £30 = £30 for the first share and 4 x £30 = £120 for the second share".',
       tier: 'confident',
       statements: [
         {

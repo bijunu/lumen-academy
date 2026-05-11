@@ -489,7 +489,7 @@ export const floweringPlantReproduction: SkillNode = {
     {
       id: 'fpr-q9',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "fertilisation happens as soon as a bee lands on a flower." Is this method sound?',
+      stem: 'A pupil writes that "fertilisation happens as soon as a bee lands on a flower."',
       tier: 'confident',
       statements: [
         {
@@ -595,7 +595,7 @@ export const floweringPlantReproduction: SkillNode = {
     {
       id: 'fpr-q15',
       type: 'spot-misconception',
-      stem: 'A pupil says: "Bright petals and sweet nectar are signs that a flower uses the wind to spread its pollen." Is this method sound?',
+      stem: 'A pupil says: "Bright petals and sweet nectar are signs that a flower uses the wind to spread its pollen."',
       tier: 'challenge',
       statements: [
         {
@@ -1188,7 +1188,7 @@ export const humanReproductionOverview: SkillNode = {
     {
       id: 'hro-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the period is the body throwing away an egg." Is this method sound?',
+      stem: 'A pupil writes that "the period is the body throwing away an egg."',
       tier: 'core',
       statements: [
         {
@@ -1316,7 +1316,7 @@ export const humanReproductionOverview: SkillNode = {
     {
       id: 'hro-q17',
       type: 'spot-misconception',
-      stem: 'A pupil says: "Fertilisation always happens in the uterus." Is this method sound?',
+      stem: 'A pupil says: "Fertilisation always happens in the uterus."',
       tier: 'confident',
       statements: [
         {

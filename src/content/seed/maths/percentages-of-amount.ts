@@ -249,7 +249,7 @@ export const percentagesOfAmount: SkillNode = {
     {
       id: 'pa-q7',
       type: 'spot-misconception',
-      stem: 'Tom finds 10% of 240 by dividing by 100. He writes 2.4 as the answer. Is his method sound?',
+      stem: 'Tom finds 10% of 240 by dividing by 100. He writes 2.4 as the answer.',
       tier: 'core',
       statements: [
         {
@@ -339,7 +339,7 @@ export const percentagesOfAmount: SkillNode = {
     {
       id: 'pa-q14',
       type: 'spot-misconception',
-      stem: 'Maya wants 30% of £40. She works out 10% of £40 = £4, then writes 30 lots of £4 = £120. Is her method sound?',
+      stem: 'Maya wants 30% of £40. She works out 10% of £40 = £4, then writes 30 lots of £4 = £120.',
       tier: 'confident',
       statements: [
         {

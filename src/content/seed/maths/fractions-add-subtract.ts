@@ -205,7 +205,7 @@ export const fractionsAddSubtract: SkillNode = {
     {
       id: 'fas-q6',
       type: 'spot-misconception',
-      stem: 'Liam writes 2/5 + 1/5 = 3/10 because he says: "Add the tops and add the bottoms." Is his method sound?',
+      stem: 'Liam writes 2/5 + 1/5 = 3/10 because he says: "Add the tops and add the bottoms."',
       tier: 'core',
       statements: [
         {
@@ -311,7 +311,7 @@ export const fractionsAddSubtract: SkillNode = {
     {
       id: 'fas-q15',
       type: 'spot-misconception',
-      stem: 'Tom writes 1/2 + 1/3 = 2/5 by adding 1+1 on top and 2+3 on the bottom. Is his method sound?',
+      stem: 'Tom writes 1/2 + 1/3 = 2/5 by adding 1+1 on top and 2+3 on the bottom.',
       tier: 'confident',
       statements: [
         {

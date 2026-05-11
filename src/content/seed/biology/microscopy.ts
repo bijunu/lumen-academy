@@ -390,7 +390,7 @@ export const lightMicroscope: SkillNode = {
     {
       id: 'lm-q7',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the eyepiece is the lens that magnifies the slide on its own." Is this method sound?',
+      stem: 'A pupil writes that "the eyepiece is the lens that magnifies the slide on its own."',
       tier: 'core',
       statements: [
         {
@@ -529,7 +529,7 @@ export const lightMicroscope: SkillNode = {
     {
       id: 'lm-q15',
       type: 'spot-misconception',
-      stem: 'A pupil claims that "the bigger the magnification, the wider the slide area you can see at once." Is this method sound?',
+      stem: 'A pupil claims that "the bigger the magnification, the wider the slide area you can see at once."',
       tier: 'confident',
       statements: [
         {
@@ -1035,7 +1035,7 @@ export const magnificationCalculations: SkillNode = {
     {
       id: 'mc-q8',
       type: 'spot-misconception',
-      stem: 'A pupil writes that "the magnification of a microscope is just whatever the objective lens says." Is this method sound?',
+      stem: 'A pupil writes that "the magnification of a microscope is just whatever the objective lens says."',
       tier: 'core',
       statements: [
         {

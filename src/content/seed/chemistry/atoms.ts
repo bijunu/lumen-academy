@@ -410,7 +410,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
     {
       id: 'aec-q13',
       type: 'spot-misconception',
-      stem: 'Tom says: "When sugar dissolves in tea, the sugar bonds with the water, so the sweet tea must be a compound." Is he right?',
+      stem: 'Tom says: "When sugar dissolves in tea, the sugar bonds with the water, so the sweet tea must be a compound."',
       tier: 'confident',
       statements: [
         {
@@ -511,7 +511,7 @@ export const atomsElementsCompoundsBasics: SkillNode = {
     {
       id: 'aec-q20',
       type: 'spot-misconception',
-      stem: 'Liam says: "Iron filings stuck to a magnet must be a compound, because two things are touching." Is he right?',
+      stem: 'Liam says: "Iron filings stuck to a magnet must be a compound, because two things are touching."',
       tier: 'challenge',
       statements: [
         {
@@ -1002,7 +1002,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q12',
       type: 'spot-misconception',
-      stem: 'Tom says: "The formula for sodium is Sd, because both letters of the symbol come from the start of the word sodium." Is he right?',
+      stem: 'Tom says: "The formula for sodium is Sd, because both letters of the symbol come from the start of the word sodium."',
       tier: 'confident',
       statements: [
         {
@@ -1109,7 +1109,7 @@ export const symbolsAndSimpleFormulae: SkillNode = {
     {
       id: 'sym-q20',
       type: 'spot-misconception',
-      stem: 'Sophie says: "The formula 2H₂O means two hydrogen atoms and 2 oxygen atoms in one particle." Is she right?',
+      stem: 'Sophie says: "The formula 2H₂O means two hydrogen atoms and 2 oxygen atoms in one particle."',
       tier: 'challenge',
       statements: [
         {

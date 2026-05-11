@@ -470,7 +470,7 @@ export const energyStores: SkillNode = {
     {
       id: 'es-q10',
       type: 'spot-misconception',
-      stem: 'Aisha says, "Heat energy and light energy are two of the main types of energy a candle holds. The wax holds heat and light." Is the method sound?',
+      stem: 'Aisha says, "Heat energy and light energy are two of the main types of energy a candle holds. The wax holds heat and light."',
       tier: 'confident',
       statements: [
         {
@@ -578,7 +578,7 @@ export const energyStores: SkillNode = {
     {
       id: 'es-q17',
       type: 'spot-misconception',
-      stem: 'Theo says, "Sound energy is one of the main stores; that is why a loudspeaker holds it." What is the most accurate way to describe sound in the stores framing?',
+      stem: 'Theo says, "Sound energy is one of the main stores; that is why a loudspeaker holds it."',
       tier: 'confident',
       statements: [
         {
@@ -1242,7 +1242,7 @@ export const energyTransfers: SkillNode = {
     {
       id: 'et-q10',
       type: 'spot-misconception',
-      stem: 'Lila says, "When the kettle boils, the chemical store of the water grows because the water is being filled with heat energy." What is the most accurate way to describe what is happening?',
+      stem: 'Lila says, "When the kettle boils, the chemical store of the water grows because the water is being filled with heat energy."',
       tier: 'confident',
       statements: [
         {
@@ -1260,7 +1260,7 @@ export const energyTransfers: SkillNode = {
     {
       id: 'et-q11',
       type: 'spot-misconception',
-      stem: 'Aisha says, "A loudspeaker holds sound energy inside it; that is one of the stores it carries, alongside the chemical store of its battery." What is the most accurate way to describe the sound from a speaker?',
+      stem: 'Aisha says, "A loudspeaker holds sound energy inside it; that is one of the stores it carries, alongside the chemical store of its battery."',
       tier: 'challenge',
       statements: [
         {
@@ -1922,7 +1922,7 @@ export const energyEfficiency: SkillNode = {
     {
       id: 'ee-q11',
       type: 'spot-misconception',
-      stem: 'Lila says, "Once the wasted heat leaves the kettle, it disappears. It is gone forever." What is the most accurate way to describe wasted energy?',
+      stem: 'Lila says, "Once the wasted heat leaves the kettle, it disappears. It is gone forever."',
       tier: 'confident',
       statements: [
         {
@@ -1998,7 +1998,7 @@ export const energyEfficiency: SkillNode = {
     {
       id: 'ee-q16',
       type: 'spot-misconception',
-      stem: 'Theo says, "If I leave the kitchen door open, the wasted heat from the kettle will come back into the kettle once the kitchen has cooled. So no energy is wasted in the long run." Is the method sound?',
+      stem: 'Theo says, "If I leave the kitchen door open, the wasted heat from the kettle will come back into the kettle once the kitchen has cooled. So no energy is wasted in the long run."',
       tier: 'confident',
       statements: [
         {
