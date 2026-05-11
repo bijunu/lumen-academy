@@ -142,6 +142,12 @@
 - **Edexcel**: N4 Factors, multiples and primes
 - **OCR**: 2.02a Factors, multiples and primes
 
+#### Highest Common Factor and Lowest Common Multiple (Confident, `maths-factors-multiples-hcf-lcm`)
+- **KS3**: Use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation, including using product notation and the unique factorisation property.
+- **AQA**: N4 Use the concepts and vocabulary of factors, multiples, HCF and LCM (GCSE Mathematics 8300)
+- **Edexcel**: N4 Use the concepts and vocabulary of factors, multiples, HCF and LCM (GCSE Mathematics 1MA1)
+- **OCR**: 2.03a Highest common factor and lowest common multiple (GCSE Mathematics J560)
+
 ### Zone: Primes (`maths-primes`)
 
 #### Recognising Prime Numbers (Core, `maths-primes-recognising-primes`)
@@ -149,6 +155,12 @@
 - **AQA**: N1.5 Prime numbers, factors and multiples
 - **Edexcel**: N4 Prime numbers, factors and multiples
 - **OCR**: 2.01c Prime numbers
+
+#### Prime Factorisation and Index Notation (Confident, `maths-primes-prime-factorisation`)
+- **KS3**: Use the concepts and vocabulary of prime numbers, factors (divisors), multiples, common factors, common multiples, highest common factor, lowest common multiple, prime factorisation, including using product notation and the unique factorisation property.
+- **AQA**: N4 Express a number as a product of its prime factors using index notation (GCSE Mathematics 8300)
+- **Edexcel**: N4 Prime factorisation, including using product notation and the unique factorisation property (GCSE Mathematics 1MA1)
+- **OCR**: 2.03b Prime factorisation: factor trees and index notation (GCSE Mathematics J560)
 
 ### Zone: BIDMAS (`maths-bidmas`)
 

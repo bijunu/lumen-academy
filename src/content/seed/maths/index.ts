@@ -14,7 +14,15 @@ import {
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
 } from './factors-multiples'
+import {
+  factorsMultiplesHcfLcm,
+  factorsMultiplesHcfLcmZoneNodes,
+} from './factors-multiples-hcf-lcm'
 import { recognisingPrimes, primesZoneNodes } from './primes'
+import {
+  primesPrimeFactorisation,
+  primesPrimeFactorisationZoneNodes,
+} from './primes-prime-factorisation'
 import { decimalPlaceValue, decimalsZoneNodes } from './decimals'
 import { decimalsRounding, decimalsRoundingZoneNodes } from './decimals-rounding'
 import {
@@ -105,8 +113,12 @@ export {
   fractionsAddSubtractZoneNodes,
   findingFactorsAndMultiples,
   factorsMultiplesZoneNodes,
+  factorsMultiplesHcfLcm,
+  factorsMultiplesHcfLcmZoneNodes,
   recognisingPrimes,
   primesZoneNodes,
+  primesPrimeFactorisation,
+  primesPrimeFactorisationZoneNodes,
   decimalPlaceValue,
   decimalsZoneNodes,
   decimalsRounding,
@@ -172,7 +184,9 @@ export const mathsNodes: SkillNode[] = [
   ...fractionsMultiplyDivideZoneNodes,
   ...fractionsMixedNumbersZoneNodes,
   ...factorsMultiplesZoneNodes,
+  ...factorsMultiplesHcfLcmZoneNodes,
   ...primesZoneNodes,
+  ...primesPrimeFactorisationZoneNodes,
   ...decimalsZoneNodes,
   ...decimalsRoundingZoneNodes,
   ...decimalsArithmeticZoneNodes,
@@ -217,13 +231,19 @@ export const mathsZones: Zone[] = [
     id: 'maths-factors-multiples',
     name: 'Factors and Multiples',
     realm: 'numerica',
-    nodeIds: factorsMultiplesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...factorsMultiplesZoneNodes.map(n => n.id),
+      ...factorsMultiplesHcfLcmZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-primes',
     name: 'Primes',
     realm: 'numerica',
-    nodeIds: primesZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...primesZoneNodes.map(n => n.id),
+      ...primesPrimeFactorisationZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-decimals',

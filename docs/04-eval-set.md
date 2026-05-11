@@ -254,6 +254,28 @@ Covers `maths-factors-multiples-finding-factors` plus future factors and multipl
 - T-FM-3: Given an off-topic input (for example a question about US Common Core factor trees), the tutor steers back to UK KS3 factor and multiple language.
 - T-FM-4: Given a request for an inline definition (tap on "multiple" or "factor"), the glossary returns a UK English age-12 definition under 2 seconds.
 
+### HCF and LCM extensions (`maths-factors-multiples-hcf-lcm`)
+
+#### Content probes
+- C-FML-1: Learner swaps HCF and LCM, returning the LCM when asked for the HCF or vice versa.
+  - Required handling: misconception entry; at least one spot-misconception question that contrasts "divides into" with "is divisible by".
+- C-FML-2: Learner always finds the LCM by multiplying the two numbers, ignoring shared factors.
+  - Required handling: misconception entry; at least one Confident or Challenge question where the product is a distractor.
+- C-FML-3: Learner assumes the HCF of two numbers is just the smaller one, even when the smaller does not divide the larger.
+  - Required handling: misconception entry; at least one question with the smaller-input as a distractor.
+- C-FML-4: Learner writes a common multiple but not the LOWEST, returning e.g. 24 for LCM(4, 6) instead of 12.
+  - Required handling: misconception entry; at least one question whose distractors include valid but non-lowest common multiples.
+
+#### Question shape probes
+- Q-FML-1: At least one numeric-entry on the HCF-LCM node asks for the HCF of three numbers.
+- Q-FML-2: At least one Confident question on the HCF-LCM node frames the LCM as a "smallest common denominator" for adding fractions.
+- Q-FML-3: At least one Challenge tier word problem on the HCF-LCM node frames a scheduling or tiling scenario (clock bells, bus timetable, paving slabs).
+- Q-FML-4: At least one drag-order question on the HCF-LCM node sorts four LCM pairs by size.
+
+#### Tutor probes
+- T-FML-1: Given "HCF(4, 6) = 12 because 12 is the highest number that 4 and 6 go into", the tutor's first reply is a Socratic prompt about whether HCF means "goes into" or "goes from".
+- T-FML-2: Given a wrong answer matching the LCM-as-product trigger (for example "LCM(6, 8) = 48"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
+
 ## Zone: Numerica > Primes
 
 Covers `maths-primes-recognising-primes` plus future prime nodes (prime factorisation as a procedure, prime factor decomposition for HCF and LCM).
@@ -291,6 +313,28 @@ Covers `maths-primes-recognising-primes` plus future prime nodes (prime factoris
 - T-PR-3: Given "Can the tutor just list every prime under 100 for me?", the tutor declines and offers a scaffolded sieve approach.
 - T-PR-4: Given an off-topic input (for example a question about US lottery numbers), the tutor steers back to primes politely.
 - T-PR-5: Given a request for an inline definition (tap on "prime"), the glossary returns a UK English age-12 definition under 2 seconds.
+
+### Prime factorisation extensions (`maths-primes-prime-factorisation`)
+
+#### Content probes
+- C-PFM-1: Learner includes 1 in a prime factorisation, writing 30 = 1 x 2 x 3 x 5.
+  - Required handling: misconception entry; at least one MCQ whose distractors include the "1 x primes" answer.
+- C-PFM-2: Learner reads 2^3 as 2 x 3 = 6 (or 3^2 as 3 x 2 = 6), confusing index notation with multiplication.
+  - Required handling: misconception entry; at least one Core MCQ that contrasts the index value with the factor product.
+- C-PFM-3: Learner stops a factor tree at a composite factor (writes 28 = 4 x 7 as the prime factorisation).
+  - Required handling: misconception entry; at least one question where the half-broken tree appears as a distractor.
+- C-PFM-4: Learner computes HCF from prime factorisations by multiplying ALL primes from both numbers (producing the LCM) instead of just shared ones.
+  - Required handling: misconception entry; at least one Confident question where the LCM answer appears as a distractor for an HCF prompt.
+
+#### Question shape probes
+- Q-PFM-1: At least one numeric-entry on the prime-factorisation node asks the learner to read off an exponent (the a or b in 2^a x 3^b).
+- Q-PFM-2: At least one Confident MCQ on the prime-factorisation node tests an HCF or LCM by prime-factor comparison, with both the HCF and the LCM among the options.
+- Q-PFM-3: At least one Challenge tier word problem on the prime-factorisation node frames a perfect-square or perfect-cube prompt requiring extra prime factors.
+- Q-PFM-4: At least one drag-order question on the prime-factorisation node orders numbers by total prime-factor count (with multiplicity).
+
+#### Tutor probes
+- T-PFM-1: Given "2^3 = 6 because 2 multiplied by 3 is 6", the tutor's first reply is a Socratic prompt about what the small 3 above the 2 means (exponent vs factor).
+- T-PFM-2: Given a wrong answer matching the include-1-in-factorisation trigger, the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 
 ## Zone: Numerica > Decimals
 
