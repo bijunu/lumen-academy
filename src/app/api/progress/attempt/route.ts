@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 
+import { scoreFreeTextWithJudge } from '@/lib/ai/scoreFreeTextWithJudge'
 import { auth } from '@/lib/auth/authOptions'
 import { evaluateBadges } from '@/lib/badges/badgeRules'
 import { getContentRepository } from '@/lib/content'
@@ -49,8 +50,19 @@ export async function POST(request: Request) {
   }
 
   let correct: boolean
+  let judgeReason: string | undefined
   try {
-    correct = scoreAnswer(question, { answer, clientCorrect })
+    if (question.type === 'free-text' && typeof answer === 'string') {
+      const judged = await scoreFreeTextWithJudge({
+        question,
+        answer,
+        userId: session.user.id,
+      })
+      correct = judged.correct
+      judgeReason = judged.reason
+    } else {
+      correct = scoreAnswer(question, { answer, clientCorrect })
+    }
   } catch (err) {
     if (err instanceof InvalidAnswerError) {
       return NextResponse.json(
@@ -133,6 +145,8 @@ export async function POST(request: Request) {
       badgeUnlocks,
       masteryUpgraded: progress.mastery !== previousMastery,
       previousMastery,
+      correct,
+      ...(judgeReason !== undefined ? { judgeReason } : {}),
     })
   } catch (err) {
     logger.error('progress.attempt.failed', { err })

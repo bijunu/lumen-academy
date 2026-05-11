@@ -12,6 +12,7 @@ export const DAILY_CHALLENGES_COLLECTION = 'daily_challenges'
 export const DAILY_QUESTS_COLLECTION = 'daily_quests'
 export const BOSS_ATTEMPTS_COLLECTION = 'boss_attempts'
 export const BOSS_DEFEATS_COLLECTION = 'boss_defeats'
+export const FREETEXT_JUDGMENTS_COLLECTION = 'freetext_judgments'
 
 export async function ensureIndexes(db: Db): Promise<void> {
   const nodes = db.collection(CONTENT_NODES_COLLECTION)
@@ -51,6 +52,12 @@ export async function ensureIndexes(db: Db): Promise<void> {
   const bossDefeats = db.collection(BOSS_DEFEATS_COLLECTION)
   await bossDefeats.createIndex({ userId: 1, zoneId: 1 }, { unique: true })
   await bossDefeats.createIndex({ userId: 1 })
+
+  const freetextJudgments = db.collection(FREETEXT_JUDGMENTS_COLLECTION)
+  await freetextJudgments.createIndex(
+    { questionId: 1, answerHash: 1 },
+    { unique: true }
+  )
 
   const parentTokens = db.collection(PARENT_TOKENS_COLLECTION)
   await parentTokens.createIndex({ token: 1 }, { unique: true })

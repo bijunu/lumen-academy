@@ -10,12 +10,39 @@ import type {
 
 const ATTEMPT_URL = '/api/progress/attempt'
 const SESSION_URL = '/api/progress/session'
+const JUDGE_FREETEXT_URL = '/api/judge/freetext'
 
 export interface AttemptResponse {
   progress: NodeProgress
   badgeUnlocks: BadgeId[]
   masteryUpgraded: boolean
   previousMastery: MasteryLevel
+  correct?: boolean
+  judgeReason?: string
+}
+
+export interface FreeTextJudgeResponse {
+  correct: boolean
+  reason: string
+}
+
+export async function judgeFreeTextAnswer(input: {
+  nodeId: string
+  questionId: string
+  answer: string
+}): Promise<FreeTextJudgeResponse | null> {
+  try {
+    const res = await fetch(JUDGE_FREETEXT_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(input),
+      credentials: 'same-origin',
+    })
+    if (!res.ok) return null
+    return (await res.json()) as FreeTextJudgeResponse
+  } catch {
+    return null
+  }
 }
 
 export async function postAttempt(

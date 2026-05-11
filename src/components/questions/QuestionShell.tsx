@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useCallback, useState } from 'react'
 import type { Question, Misconception } from '@/types/content'
 import { useQuestionState } from '@/hooks/useQuestionState'
 import type { ScoreInput } from '@/lib/progress/serverScoring'
@@ -27,6 +27,9 @@ interface QuestionShellProps {
     payload: ScoreInput
   ) => void
   onHintRequest?: () => void
+  onJudgeFreeText?: (
+    answer: string
+  ) => Promise<{ correct: boolean; reason: string } | null>
   oneShot?: boolean
   realmAccent?: string
 }
@@ -36,11 +39,13 @@ export function QuestionShell({
   misconceptions,
   onComplete,
   onHintRequest,
+  onJudgeFreeText,
   oneShot = false,
   realmAccent,
 }: QuestionShellProps) {
   const { payload, status, attemptCount, showFeedback, submit, reset } =
     useQuestionState(question)
+  const [judgeReason, setJudgeReason] = useState<string | null>(null)
 
   const activeMisconception = question.misconceptionId
     ? misconceptions.find(m => m.id === question.misconceptionId)
@@ -50,6 +55,7 @@ export function QuestionShell({
     if (oneShot || status === 'correct') {
       onComplete(status === 'correct', attemptCount, payload ?? {})
     } else {
+      setJudgeReason(null)
       reset()
     }
   }, [oneShot, status, attemptCount, payload, onComplete, reset])
@@ -118,7 +124,11 @@ export function QuestionShell({
         <FreeText
           question={question}
           disabled={isAnswered}
-          onSubmit={result => submit({ clientCorrect: result === 'correct' })}
+          onSubmit={(result, reason) => {
+            setJudgeReason(reason ?? null)
+            submit({ clientCorrect: result === 'correct' })
+          }}
+          onJudge={onJudgeFreeText}
           realmAccent={realmAccent}
         />
       )}
@@ -175,6 +185,7 @@ export function QuestionShell({
           onNext={handleNext}
           nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
           modelAnswer={question.type === 'free-text' ? question.sampleAnswer : undefined}
+          judgeReason={judgeReason ?? undefined}
           realmAccent={realmAccent}
         />
       )}

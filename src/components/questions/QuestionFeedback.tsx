@@ -11,6 +11,7 @@ interface QuestionFeedbackProps {
   onNext: () => void
   nextLabel?: string
   modelAnswer?: string
+  judgeReason?: string
   realmAccent?: string
 }
 
@@ -20,6 +21,7 @@ export function QuestionFeedback({
   onNext,
   nextLabel,
   modelAnswer,
+  judgeReason,
   realmAccent = 'hsl(var(--primary))',
 }: QuestionFeedbackProps) {
   if (status === 'unanswered') return null
@@ -60,6 +62,9 @@ export function QuestionFeedback({
           <p className="text-base font-semibold">
             {correct ? 'Spot on.' : 'Not quite.'}
           </p>
+          {judgeReason && (
+            <p className="mt-1 text-sm text-muted-foreground">{judgeReason}</p>
+          )}
           {!correct && misconception && (
             <div className="mt-2 space-y-1 text-sm">
               <p>{misconception.correction}</p>

@@ -12,7 +12,11 @@ import { WorkedExample } from './WorkedExample'
 import { QuestionShell } from '@/components/questions/QuestionShell'
 import { SessionSummary } from './SessionSummary'
 import { useSessionTracker } from '@/lib/mastery/sessionTracker'
-import { postAttempt, postSession } from '@/lib/progress/client'
+import {
+  judgeFreeTextAnswer,
+  postAttempt,
+  postSession,
+} from '@/lib/progress/client'
 import type { ScoreInput } from '@/lib/progress/serverScoring'
 import { useRewardCelebration } from '@/components/celebration/RewardCelebration'
 import {
@@ -236,6 +240,16 @@ export function NodeLearningFlow({
             misconceptions={node.misconceptions}
             onComplete={handleQuestionComplete}
             onHintRequest={() => onRequestHint(question.stem)}
+            onJudgeFreeText={
+              status === 'authenticated'
+                ? async answer =>
+                    judgeFreeTextAnswer({
+                      nodeId: node.id,
+                      questionId: question.id,
+                      answer,
+                    })
+                : undefined
+            }
             realmAccent={realmAccent}
           />
         </LessonSection>
