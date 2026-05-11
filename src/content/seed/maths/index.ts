@@ -30,6 +30,26 @@ import {
   decimalsArithmeticZoneNodes,
 } from './decimals-arithmetic'
 import {
+  decimalsWordProblems,
+  decimalsWordProblemsZoneNodes,
+} from './decimals-word-problems'
+import {
+  decimalsComparingPrecision,
+  decimalsComparingPrecisionZoneNodes,
+} from './decimals-comparing-precision'
+import {
+  decimalsFractionConversion,
+  decimalsFractionConversionZoneNodes,
+} from './decimals-fraction-conversion'
+import {
+  decimalsEstimation,
+  decimalsEstimationZoneNodes,
+} from './decimals-estimation'
+import {
+  decimalsRecurring,
+  decimalsRecurringZoneNodes,
+} from './decimals-recurring'
+import {
   fractionsMultiplyDivide,
   fractionsMultiplyDivideZoneNodes,
 } from './fractions-multiply-divide'
@@ -96,6 +116,26 @@ import {
   bidmasWithSubstitution,
   bidmasWithSubstitutionZoneNodes,
 } from './bidmas-with-substitution'
+import {
+  bidmasWithPowersRoots,
+  bidmasWithPowersRootsZoneNodes,
+} from './bidmas-with-powers-roots'
+import {
+  bidmasWithFractions,
+  bidmasWithFractionsZoneNodes,
+} from './bidmas-with-fractions'
+import {
+  bidmasWithDecimals,
+  bidmasWithDecimalsZoneNodes,
+} from './bidmas-with-decimals'
+import {
+  bidmasNestedBrackets,
+  bidmasNestedBracketsZoneNodes,
+} from './bidmas-nested-brackets'
+import {
+  bidmasInFormulae,
+  bidmasInFormulaeZoneNodes,
+} from './bidmas-in-formulae'
 import { algebraIntroduction, algebraZoneNodes } from './algebra'
 import {
   algebraSimpleEquations,
@@ -156,6 +196,16 @@ export {
   decimalsRoundingZoneNodes,
   decimalsArithmetic,
   decimalsArithmeticZoneNodes,
+  decimalsWordProblems,
+  decimalsWordProblemsZoneNodes,
+  decimalsComparingPrecision,
+  decimalsComparingPrecisionZoneNodes,
+  decimalsFractionConversion,
+  decimalsFractionConversionZoneNodes,
+  decimalsEstimation,
+  decimalsEstimationZoneNodes,
+  decimalsRecurring,
+  decimalsRecurringZoneNodes,
   fractionsMultiplyDivide,
   fractionsMultiplyDivideZoneNodes,
   fractionsMixedNumbers,
@@ -200,6 +250,16 @@ export {
   bidmasZoneNodes,
   bidmasWithSubstitution,
   bidmasWithSubstitutionZoneNodes,
+  bidmasWithPowersRoots,
+  bidmasWithPowersRootsZoneNodes,
+  bidmasWithFractions,
+  bidmasWithFractionsZoneNodes,
+  bidmasWithDecimals,
+  bidmasWithDecimalsZoneNodes,
+  bidmasNestedBrackets,
+  bidmasNestedBracketsZoneNodes,
+  bidmasInFormulae,
+  bidmasInFormulaeZoneNodes,
   algebraIntroduction,
   algebraZoneNodes,
   algebraSimpleEquations,
@@ -241,6 +301,11 @@ export const mathsNodes: SkillNode[] = [
   ...decimalsZoneNodes,
   ...decimalsRoundingZoneNodes,
   ...decimalsArithmeticZoneNodes,
+  ...decimalsWordProblemsZoneNodes,
+  ...decimalsComparingPrecisionZoneNodes,
+  ...decimalsFractionConversionZoneNodes,
+  ...decimalsEstimationZoneNodes,
+  ...decimalsRecurringZoneNodes,
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
@@ -261,6 +326,11 @@ export const mathsNodes: SkillNode[] = [
   ...bidmasZoneNodes,
   ...bidmasWithNegativesZoneNodes,
   ...bidmasWithSubstitutionZoneNodes,
+  ...bidmasWithPowersRootsZoneNodes,
+  ...bidmasWithFractionsZoneNodes,
+  ...bidmasWithDecimalsZoneNodes,
+  ...bidmasNestedBracketsZoneNodes,
+  ...bidmasInFormulaeZoneNodes,
   ...algebraZoneNodes,
   ...algebraSimpleEquationsZoneNodes,
   ...sequencesZoneNodes,
@@ -314,6 +384,11 @@ export const mathsZones: Zone[] = [
       ...decimalsZoneNodes.map(n => n.id),
       ...decimalsRoundingZoneNodes.map(n => n.id),
       ...decimalsArithmeticZoneNodes.map(n => n.id),
+      ...decimalsWordProblemsZoneNodes.map(n => n.id),
+      ...decimalsComparingPrecisionZoneNodes.map(n => n.id),
+      ...decimalsFractionConversionZoneNodes.map(n => n.id),
+      ...decimalsEstimationZoneNodes.map(n => n.id),
+      ...decimalsRecurringZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -360,6 +435,11 @@ export const mathsZones: Zone[] = [
       ...bidmasZoneNodes.map(n => n.id),
       ...bidmasWithNegativesZoneNodes.map(n => n.id),
       ...bidmasWithSubstitutionZoneNodes.map(n => n.id),
+      ...bidmasWithPowersRootsZoneNodes.map(n => n.id),
+      ...bidmasWithFractionsZoneNodes.map(n => n.id),
+      ...bidmasWithDecimalsZoneNodes.map(n => n.id),
+      ...bidmasNestedBracketsZoneNodes.map(n => n.id),
+      ...bidmasInFormulaeZoneNodes.map(n => n.id),
     ],
   },
   {
