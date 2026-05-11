@@ -58,6 +58,26 @@ import {
   fractionsMixedNumbersZoneNodes,
 } from './fractions-mixed-numbers'
 import {
+  fractionsComparingOrdering,
+  fractionsComparingOrderingZoneNodes,
+} from './fractions-comparing-ordering'
+import {
+  fractionsOfAmount,
+  fractionsOfAmountZoneNodes,
+} from './fractions-of-amount'
+import {
+  fractionsFdpConversion,
+  fractionsFdpConversionZoneNodes,
+} from './fractions-fdp-conversion'
+import {
+  fractionsOnNumberLine,
+  fractionsOnNumberLineZoneNodes,
+} from './fractions-on-number-line'
+import {
+  fractionsMultiStepProblems,
+  fractionsMultiStepProblemsZoneNodes,
+} from './fractions-multi-step-problems'
+import {
   bidmasWithNegatives,
   bidmasWithNegativesZoneNodes,
 } from './bidmas-with-negatives'
@@ -141,6 +161,30 @@ import {
   algebraSimpleEquations,
   algebraSimpleEquationsZoneNodes,
 } from './algebra-simple-equations'
+import {
+  algebraCollectingLikeTerms,
+  algebraCollectingLikeTermsZoneNodes,
+} from './algebra-collecting-like-terms'
+import {
+  algebraExpandingSingleBrackets,
+  algebraExpandingSingleBracketsZoneNodes,
+} from './algebra-expanding-single-brackets'
+import {
+  algebraFactorisingSingleBrackets,
+  algebraFactorisingSingleBracketsZoneNodes,
+} from './algebra-factorising-single-brackets'
+import {
+  algebraFunctionMachines,
+  algebraFunctionMachinesZoneNodes,
+} from './algebra-function-machines'
+import {
+  algebraFormingEquations,
+  algebraFormingEquationsZoneNodes,
+} from './algebra-forming-equations'
+import {
+  algebraEquationsWithBrackets,
+  algebraEquationsWithBracketsZoneNodes,
+} from './algebra-equations-with-brackets'
 import { sequencesRules, sequencesZoneNodes } from './sequences'
 import {
   sequencesNthTerm,
@@ -210,6 +254,16 @@ export {
   fractionsMultiplyDivideZoneNodes,
   fractionsMixedNumbers,
   fractionsMixedNumbersZoneNodes,
+  fractionsComparingOrdering,
+  fractionsComparingOrderingZoneNodes,
+  fractionsOfAmount,
+  fractionsOfAmountZoneNodes,
+  fractionsFdpConversion,
+  fractionsFdpConversionZoneNodes,
+  fractionsOnNumberLine,
+  fractionsOnNumberLineZoneNodes,
+  fractionsMultiStepProblems,
+  fractionsMultiStepProblemsZoneNodes,
   bidmasWithNegatives,
   bidmasWithNegativesZoneNodes,
   wholeNumberPlaceValue,
@@ -264,6 +318,18 @@ export {
   algebraZoneNodes,
   algebraSimpleEquations,
   algebraSimpleEquationsZoneNodes,
+  algebraCollectingLikeTerms,
+  algebraCollectingLikeTermsZoneNodes,
+  algebraExpandingSingleBrackets,
+  algebraExpandingSingleBracketsZoneNodes,
+  algebraFactorisingSingleBrackets,
+  algebraFactorisingSingleBracketsZoneNodes,
+  algebraFunctionMachines,
+  algebraFunctionMachinesZoneNodes,
+  algebraFormingEquations,
+  algebraFormingEquationsZoneNodes,
+  algebraEquationsWithBrackets,
+  algebraEquationsWithBracketsZoneNodes,
   sequencesRules,
   sequencesZoneNodes,
   sequencesNthTerm,
@@ -294,6 +360,11 @@ export const mathsNodes: SkillNode[] = [
   ...fractionsAddSubtractZoneNodes,
   ...fractionsMultiplyDivideZoneNodes,
   ...fractionsMixedNumbersZoneNodes,
+  ...fractionsComparingOrderingZoneNodes,
+  ...fractionsOfAmountZoneNodes,
+  ...fractionsFdpConversionZoneNodes,
+  ...fractionsOnNumberLineZoneNodes,
+  ...fractionsMultiStepProblemsZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...factorsMultiplesHcfLcmZoneNodes,
   ...primesZoneNodes,
@@ -333,6 +404,12 @@ export const mathsNodes: SkillNode[] = [
   ...bidmasInFormulaeZoneNodes,
   ...algebraZoneNodes,
   ...algebraSimpleEquationsZoneNodes,
+  ...algebraCollectingLikeTermsZoneNodes,
+  ...algebraExpandingSingleBracketsZoneNodes,
+  ...algebraFactorisingSingleBracketsZoneNodes,
+  ...algebraFunctionMachinesZoneNodes,
+  ...algebraFormingEquationsZoneNodes,
+  ...algebraEquationsWithBracketsZoneNodes,
   ...sequencesZoneNodes,
   ...sequencesNthTermZoneNodes,
   ...coordinatesZoneNodes,
@@ -356,6 +433,11 @@ export const mathsZones: Zone[] = [
       ...fractionsAddSubtractZoneNodes.map(n => n.id),
       ...fractionsMultiplyDivideZoneNodes.map(n => n.id),
       ...fractionsMixedNumbersZoneNodes.map(n => n.id),
+      ...fractionsComparingOrderingZoneNodes.map(n => n.id),
+      ...fractionsOfAmountZoneNodes.map(n => n.id),
+      ...fractionsFdpConversionZoneNodes.map(n => n.id),
+      ...fractionsOnNumberLineZoneNodes.map(n => n.id),
+      ...fractionsMultiStepProblemsZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -449,6 +531,12 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...algebraZoneNodes.map(n => n.id),
       ...algebraSimpleEquationsZoneNodes.map(n => n.id),
+      ...algebraCollectingLikeTermsZoneNodes.map(n => n.id),
+      ...algebraExpandingSingleBracketsZoneNodes.map(n => n.id),
+      ...algebraFactorisingSingleBracketsZoneNodes.map(n => n.id),
+      ...algebraFunctionMachinesZoneNodes.map(n => n.id),
+      ...algebraFormingEquationsZoneNodes.map(n => n.id),
+      ...algebraEquationsWithBracketsZoneNodes.map(n => n.id),
     ],
   },
   {
