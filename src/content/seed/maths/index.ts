@@ -58,6 +58,22 @@ import {
   percentagesReverse,
   percentagesReverseZoneNodes,
 } from './percentages-reverse'
+import {
+  percentagesFinancialInterest,
+  percentagesFinancialInterestZoneNodes,
+} from './percentages-financial-interest'
+import {
+  percentagesComparing,
+  percentagesComparingZoneNodes,
+} from './percentages-comparing'
+import {
+  percentagesRepeatedChange,
+  percentagesRepeatedChangeZoneNodes,
+} from './percentages-repeated-change'
+import {
+  percentagesCompoundGrowth,
+  percentagesCompoundGrowthZoneNodes,
+} from './percentages-compound-growth'
 import { ratioIntroduction, ratioZoneNodes } from './ratio'
 import { ratioSharing, ratioSharingZoneNodes } from './ratio-sharing'
 import {
@@ -68,6 +84,13 @@ import {
   ratioProportion,
   ratioProportionZoneNodes,
 } from './ratio-proportion'
+import { ratioThreePart, ratioThreePartZoneNodes } from './ratio-three-part'
+import { ratioBestValue, ratioBestValueZoneNodes } from './ratio-best-value'
+import { ratioCombining, ratioCombiningZoneNodes } from './ratio-combining'
+import {
+  ratioSpeedDensity,
+  ratioSpeedDensityZoneNodes,
+} from './ratio-speed-density'
 import { bidmasOrderOfOperations, bidmasZoneNodes } from './bidmas'
 import {
   bidmasWithSubstitution,
@@ -149,6 +172,14 @@ export {
   percentagesChangeZoneNodes,
   percentagesReverse,
   percentagesReverseZoneNodes,
+  percentagesFinancialInterest,
+  percentagesFinancialInterestZoneNodes,
+  percentagesComparing,
+  percentagesComparingZoneNodes,
+  percentagesRepeatedChange,
+  percentagesRepeatedChangeZoneNodes,
+  percentagesCompoundGrowth,
+  percentagesCompoundGrowthZoneNodes,
   ratioIntroduction,
   ratioZoneNodes,
   ratioSharing,
@@ -157,6 +188,14 @@ export {
   ratioScalingRecipesZoneNodes,
   ratioProportion,
   ratioProportionZoneNodes,
+  ratioThreePart,
+  ratioThreePartZoneNodes,
+  ratioBestValue,
+  ratioBestValueZoneNodes,
+  ratioCombining,
+  ratioCombiningZoneNodes,
+  ratioSpeedDensity,
+  ratioSpeedDensityZoneNodes,
   bidmasOrderOfOperations,
   bidmasZoneNodes,
   bidmasWithSubstitution,
@@ -207,10 +246,18 @@ export const mathsNodes: SkillNode[] = [
   ...percentagesOfAmountZoneNodes,
   ...percentagesChangeZoneNodes,
   ...percentagesReverseZoneNodes,
+  ...percentagesFinancialInterestZoneNodes,
+  ...percentagesComparingZoneNodes,
+  ...percentagesRepeatedChangeZoneNodes,
+  ...percentagesCompoundGrowthZoneNodes,
   ...ratioZoneNodes,
   ...ratioSharingZoneNodes,
   ...ratioScalingRecipesZoneNodes,
   ...ratioProportionZoneNodes,
+  ...ratioThreePartZoneNodes,
+  ...ratioBestValueZoneNodes,
+  ...ratioCombiningZoneNodes,
+  ...ratioSpeedDensityZoneNodes,
   ...bidmasZoneNodes,
   ...bidmasWithNegativesZoneNodes,
   ...bidmasWithSubstitutionZoneNodes,
@@ -284,6 +331,10 @@ export const mathsZones: Zone[] = [
       ...percentagesOfAmountZoneNodes.map(n => n.id),
       ...percentagesChangeZoneNodes.map(n => n.id),
       ...percentagesReverseZoneNodes.map(n => n.id),
+      ...percentagesFinancialInterestZoneNodes.map(n => n.id),
+      ...percentagesComparingZoneNodes.map(n => n.id),
+      ...percentagesRepeatedChangeZoneNodes.map(n => n.id),
+      ...percentagesCompoundGrowthZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -295,6 +346,10 @@ export const mathsZones: Zone[] = [
       ...ratioSharingZoneNodes.map(n => n.id),
       ...ratioScalingRecipesZoneNodes.map(n => n.id),
       ...ratioProportionZoneNodes.map(n => n.id),
+      ...ratioThreePartZoneNodes.map(n => n.id),
+      ...ratioBestValueZoneNodes.map(n => n.id),
+      ...ratioCombiningZoneNodes.map(n => n.id),
+      ...ratioSpeedDensityZoneNodes.map(n => n.id),
     ],
   },
   {
