@@ -10,6 +10,48 @@
 - **Edexcel**: N2 Order positive and negative integers, decimals and fractions; use the symbols =, not equal, less than, greater than, less than or equal to, greater than or equal to
 - **OCR**: 2.01a Order positive and negative integers, decimals and fractions
 
+#### Multiplying and Dividing by Powers of Ten (Confident, `maths-place-value-powers-of-ten`)
+- **KS3**: Understand and use place value for decimals, measures and integers of any size.
+- **AQA**: N2 Multiply and divide numbers by powers of 10 (GCSE Mathematics 8300)
+- **Edexcel**: N2 Multiply and divide numbers by positive and negative powers of 10 (GCSE Mathematics 1MA1)
+- **OCR**: 1.01b Multiply and divide by powers of 10 (GCSE Mathematics J560)
+
+#### Ordering Integers and Decimals (Confident, `maths-place-value-ordering`)
+- **KS3**: Use the number line as a model for ordering of the real numbers; use the symbols =, not equal, less than, greater than, less than or equal to, greater than or equal to.
+- **AQA**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 8300)
+- **Edexcel**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 1MA1)
+- **OCR**: 1.01a Order positive and negative integers, decimals and fractions (GCSE Mathematics J560)
+
+#### Estimation by Rounding to One Significant Figure (Confident, `maths-place-value-estimation`)
+- **KS3**: Round numbers and measures to an appropriate degree of accuracy; use approximation through rounding to estimate answers.
+- **AQA**: N14 Estimate answers; check calculations using approximation and estimation (GCSE Mathematics 8300)
+- **Edexcel**: N14 Estimate answers; check calculations using approximation and estimation, including answers obtained using technology (GCSE Mathematics 1MA1)
+- **OCR**: 1.04b Estimate answers to calculations by rounding to 1 significant figure (GCSE Mathematics J560)
+
+#### Significant Figures and Rounding (Confident, `maths-place-value-significant-figures`)
+- **KS3**: Round numbers and measures to an appropriate degree of accuracy (e.g. to a number of decimal places or significant figures).
+- **AQA**: N15 Round numbers and measures to an appropriate degree of accuracy (significant figures) (GCSE Mathematics 8300)
+- **Edexcel**: N15 Round numbers and measures to an appropriate degree of accuracy (significant figures) (GCSE Mathematics 1MA1)
+- **OCR**: 1.04a Rounding to a given number of significant figures (GCSE Mathematics J560)
+
+#### Very Large and Very Small Numbers (Confident, `maths-place-value-very-large-very-small`)
+- **KS3**: Understand and use place value for decimals, measures and integers of any size.
+- **AQA**: N1.1 Place value with numbers up to billions and decimals to thousandths
+- **Edexcel**: N2 Read, write and compare numbers up to one billion, and decimals to thousandths
+- **OCR**: 1.01a Place value across large and small numbers
+
+#### Standard Form: An Introduction (Challenge, `maths-place-value-standard-form-intro`)
+- **KS3**: Interpret and compare numbers in standard form A x 10^n where 1 less than or equal to A less than 10, and n is a positive or negative integer or zero.
+- **AQA**: N9 Calculate with and interpret standard form A x 10^n where 1 less than or equal to A less than 10 and n is an integer (GCSE Mathematics 8300)
+- **Edexcel**: N9 Calculate with and interpret standard form A x 10^n where 1 less than or equal to A less than 10 and n is an integer (GCSE Mathematics 1MA1)
+- **OCR**: 1.04c Standard form: converting between ordinary form and standard form (GCSE Mathematics J560)
+
+#### Standard Form: Arithmetic (Challenge, `maths-place-value-standard-form-arithmetic`)
+- **KS3**: Calculate with and interpret numbers in standard form A x 10^n.
+- **AQA**: N9 Calculate with numbers in standard form (GCSE Mathematics 8300)
+- **Edexcel**: N9 Calculate with numbers in standard form, including using a calculator (GCSE Mathematics 1MA1)
+- **OCR**: 1.04c Add, subtract, multiply and divide numbers in standard form (GCSE Mathematics J560)
+
 ### Zone: Decimals (`maths-decimals`)
 
 #### Decimal Place Value (Core, `maths-decimals-place-value`)
@@ -29,6 +71,36 @@
 - **AQA**: N2 Apply the four operations, including formal written methods, to integers, decimals and simple fractions (GCSE Mathematics 8300)
 - **Edexcel**: N2 Apply the four operations, including formal written methods, to integers, decimals and simple fractions (GCSE Mathematics 1MA1)
 - **OCR**: 2.02a Calculate exactly with decimals (GCSE Mathematics J560)
+
+#### Comparing Decimals with Different Precision (Confident, `maths-decimals-comparing-precision`)
+- **KS3**: Use the number line as a model for ordering of the real numbers; understand and use place value for decimals of any size.
+- **AQA**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 8300)
+- **Edexcel**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 1MA1)
+- **OCR**: 1.01a Order positive and negative decimals to varying degrees of precision (GCSE Mathematics J560)
+
+#### Converting Between Decimals and Fractions (Confident, `maths-decimals-fraction-conversion`)
+- **KS3**: Define percentage as 'number of parts per hundred', interpret percentages and percentage changes as a fraction or a decimal; work interchangeably with terminating decimals and their corresponding fractions.
+- **AQA**: N10 Work interchangeably with terminating decimals and their corresponding fractions (such as 3.5 and 7/2 or 0.375 and 3/8) (GCSE Mathematics 8300)
+- **Edexcel**: N10 Work interchangeably with terminating decimals and their corresponding fractions (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Equivalence between fractions, decimals and percentages (GCSE Mathematics J560)
+
+#### Estimating with Decimals (Confident, `maths-decimals-estimation`)
+- **KS3**: Use approximation through rounding to estimate answers and calculate possible resulting errors expressed using inequality notation a less than x less than or equal to b.
+- **AQA**: N14 Estimate answers; check calculations using approximation and estimation (GCSE Mathematics 8300)
+- **Edexcel**: N14 Estimate answers, including answers obtained using technology (GCSE Mathematics 1MA1)
+- **OCR**: 1.04b Estimate calculations involving decimals by rounding (GCSE Mathematics J560)
+
+#### Recurring Decimals (Challenge, `maths-decimals-recurring`)
+- **KS3**: Work interchangeably with terminating decimals and their corresponding fractions (such as 3.5 and 7/2 or 0.375 and 3/8); change recurring decimals into their corresponding fractions and vice versa.
+- **AQA**: N10 Identify and work with fractions in ratio problems; recognise recurring decimals (GCSE Mathematics 8300)
+- **Edexcel**: N10 Change recurring decimals into their corresponding fractions and vice versa (GCSE Mathematics 1MA1)
+- **OCR**: 1.03a Recognise that some fractions produce recurring decimals (GCSE Mathematics J560)
+
+#### Decimal Word Problems with Money and Measure (Challenge, `maths-decimals-word-problems`)
+- **KS3**: Solve problems involving the four operations applied to decimals; convert between standard units of measure (length, mass, volume/capacity, time) and money.
+- **AQA**: N2 Solve problems involving the four operations applied to decimals in real contexts (GCSE Mathematics 8300)
+- **Edexcel**: N2 Solve multi-step decimal arithmetic problems including financial maths and measures (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Solve problems involving decimals, money and measures (GCSE Mathematics J560)
 
 ### Zone: Fractions (`maths-fractions`)
 
@@ -68,6 +140,36 @@
 - **Edexcel**: N8 Calculate exactly with fractions including mixed numbers (GCSE Mathematics 1MA1)
 - **OCR**: 2.01c Apply the four operations to mixed numbers (GCSE Mathematics J560)
 
+#### Comparing and Ordering Fractions (Confident, `maths-fractions-comparing-ordering`)
+- **KS3**: Use common multiples to express fractions in the same denomination; order positive and negative integers, decimals and fractions.
+- **AQA**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 8300)
+- **Edexcel**: N1 Order positive and negative integers, decimals and fractions (GCSE Mathematics 1MA1)
+- **OCR**: 1.01a Order fractions including those with different denominators (GCSE Mathematics J560)
+
+#### Finding a Fraction of an Amount (Confident, `maths-fractions-of-amount`)
+- **KS3**: Express one quantity as a fraction of another; solve problems involving fractions.
+- **AQA**: N12 Solve problems involving fractions of quantities (GCSE Mathematics 8300)
+- **Edexcel**: N12 Find a fraction of a quantity (GCSE Mathematics 1MA1)
+- **OCR**: 2.04a Calculate a fraction of a quantity (GCSE Mathematics J560)
+
+#### Converting Between Fractions, Decimals and Percentages (Confident, `maths-fractions-fdp-conversion`)
+- **KS3**: Define percentage as 'number of parts per hundred', interpret percentages and percentage changes as a fraction or a decimal, interpret these multiplicatively, express one quantity as a percentage of another.
+- **AQA**: N10 Work interchangeably with terminating decimals and their corresponding fractions; convert between fractions, decimals and percentages (GCSE Mathematics 8300)
+- **Edexcel**: N10 Equivalence between fractions, decimals and percentages (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Equivalence between fractions, decimals and percentages (GCSE Mathematics J560)
+
+#### Fractions on a Number Line (Confident, `maths-fractions-on-number-line`)
+- **KS3**: Use the number line as a model for ordering of the real numbers; place fractions and mixed numbers on a number line.
+- **AQA**: N1 Order fractions on a number line (GCSE Mathematics 8300)
+- **Edexcel**: N1 Place positive and negative fractions on a number line (GCSE Mathematics 1MA1)
+- **OCR**: 1.01a Use a number line to represent fractions and mixed numbers (GCSE Mathematics J560)
+
+#### Multi-step Fraction Word Problems (Challenge, `maths-fractions-multi-step-problems`)
+- **KS3**: Solve problems involving the four operations applied to fractions; express one quantity as a fraction of another.
+- **AQA**: N8 Solve problems combining several operations on fractions, including fractions of amounts (GCSE Mathematics 8300)
+- **Edexcel**: N8 Solve multi-step problems involving fractions in real contexts (GCSE Mathematics 1MA1)
+- **OCR**: 2.01b Solve word problems involving fractions and the four operations (GCSE Mathematics J560)
+
 ### Zone: Percentages (`maths-percentages`)
 
 #### Percentages, Decimals, and Fractions (Core, `maths-percentages-as-decimals-fractions`)
@@ -93,6 +195,30 @@
 - **AQA**: N12 Solve original-value problems by reverse percentages (GCSE Mathematics 8300)
 - **Edexcel**: N12 Solve problems involving original value (reverse percentages) (GCSE Mathematics 1MA1)
 - **OCR**: 2.04c Reverse percentages: find the original quantity given a percentage-changed value (GCSE Mathematics J560)
+
+#### Simple Interest and Financial Maths (Confident, `maths-percentages-financial-interest`)
+- **KS3**: Solve problems involving percentage change, including percentage increase, decrease and original value problems and simple interest, including in financial mathematics.
+- **AQA**: R9 Solve problems involving simple interest, including in financial mathematics (GCSE Mathematics 8300)
+- **Edexcel**: R9 Solve problems involving simple interest, including in financial mathematics (GCSE Mathematics 1MA1)
+- **OCR**: 6.03b Solve problems involving simple interest in financial contexts (GCSE Mathematics J560)
+
+#### Expressing One Quantity as a Percentage of Another (Confident, `maths-percentages-comparing`)
+- **KS3**: Express one quantity as a percentage of another; compare two quantities using percentages.
+- **AQA**: N12 Express one quantity as a percentage of another and compare quantities using percentages (GCSE Mathematics 8300)
+- **Edexcel**: N12 Express one quantity as a percentage of another (GCSE Mathematics 1MA1)
+- **OCR**: 2.04a Compare two quantities using percentages (GCSE Mathematics J560)
+
+#### Repeated Percentage Change (Confident, `maths-percentages-repeated-change`)
+- **KS3**: Solve problems involving percentage change, including percentage increase, decrease and original value problems; use the multiplier method for repeated change.
+- **AQA**: R9 Solve problems involving repeated proportional change using a multiplier (GCSE Mathematics 8300)
+- **Edexcel**: R16 Set up, solve and interpret growth and decay problems involving repeated percentage change (GCSE Mathematics 1MA1)
+- **OCR**: 6.03c Solve problems involving repeated percentage change (GCSE Mathematics J560)
+
+#### Compound Interest and Compound Growth/Decay (Challenge, `maths-percentages-compound-growth`)
+- **KS3**: Solve problems involving percentage change, including percentage increase, decrease and original value problems and simple interest, including in financial mathematics.
+- **AQA**: R9 Solve problems involving compound interest and other growth and decay problems (GCSE Mathematics 8300)
+- **Edexcel**: R16 Set up, solve and interpret answers in growth and decay problems, including compound interest (GCSE Mathematics 1MA1)
+- **OCR**: 6.03c Compound interest, growth and decay including using the multiplier (GCSE Mathematics J560)
 
 ### Zone: Ratio and Proportion (`maths-ratio`)
 
@@ -120,6 +246,30 @@
 - **Edexcel**: R10 Direct and inverse proportion (GCSE Mathematics 1MA1)
 - **OCR**: 6.03a Direct and inverse proportion, including y = kx and y = k/x (GCSE Mathematics J560)
 
+#### Three-Part Ratios (Confident, `maths-ratio-three-part`)
+- **KS3**: Divide a given quantity into two parts in a given part:part or part:whole ratio; extend to three-part ratios.
+- **AQA**: R5 Divide a given quantity into more than two parts in a given ratio (GCSE Mathematics 8300)
+- **Edexcel**: R5 Share a quantity in a given three-part ratio (GCSE Mathematics 1MA1)
+- **OCR**: 6.01b Share a quantity in a given three-part ratio (GCSE Mathematics J560)
+
+#### Best-Value Comparisons and Unitary Pricing (Confident, `maths-ratio-best-value`)
+- **KS3**: Solve problems involving direct proportion, including using formal methods (the unitary method); use compound units such as unit pricing.
+- **AQA**: R11 Use the unitary method to compare best value (GCSE Mathematics 8300)
+- **Edexcel**: R11 Use the unitary method to solve best value problems (GCSE Mathematics 1MA1)
+- **OCR**: 2.04a Solve best-buy problems using unit pricing (GCSE Mathematics J560)
+
+#### Combining Two Ratios (Confident, `maths-ratio-combining`)
+- **KS3**: Use ratio notation, including reduction to simplest form; relate ratios.
+- **AQA**: R6 Combine two related ratios to find a third ratio (GCSE Mathematics 8300)
+- **Edexcel**: R6 Express ratios in 1:n form and combine ratios (GCSE Mathematics 1MA1)
+- **OCR**: 6.01c Combine ratios where a common quantity is given (GCSE Mathematics J560)
+
+#### Compound Measures: Speed, Density, Unit Pricing (Challenge, `maths-ratio-speed-density`)
+- **KS3**: Use compound units such as speed, unit pricing and density to solve problems.
+- **AQA**: R11 Use compound units (such as speed, density, pressure, rates of pay) in numerical and algebraic contexts (GCSE Mathematics 8300)
+- **Edexcel**: R11 Use compound units (such as speed, rates of pay, unit pricing, density and pressure) (GCSE Mathematics 1MA1)
+- **OCR**: 6.03b Use compound units: speed, density, unit pricing (GCSE Mathematics J560)
+
 ### Zone: Four Operations (`maths-four-operations`)
 
 #### Adding and Subtracting Negative Numbers (Core, `maths-four-operations-negative-numbers-add-subtract`)
@@ -133,6 +283,48 @@
 - **AQA**: N2 Apply the four operations, including formal written methods, to integers (positive and negative)
 - **Edexcel**: N2 The four operations applied to integers, both positive and negative
 - **OCR**: 1.02a Apply the four operations to directed numbers
+
+#### Long Multiplication: Formal Written Method (Confident, `maths-four-operations-long-multiplication`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N2 Apply formal written methods for multiplication of multi-digit integers and decimals (GCSE Mathematics 8300)
+- **Edexcel**: N2 Apply the four operations using formal written methods, including long multiplication (GCSE Mathematics 1MA1)
+- **OCR**: 1.02a Apply the four operations to integers and decimals using formal written methods (GCSE Mathematics J560)
+
+#### Long and Short Division: Formal Written Method (Confident, `maths-four-operations-long-division`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N2 Apply formal written methods for division of multi-digit integers, including by single-digit and two-digit divisors (GCSE Mathematics 8300)
+- **Edexcel**: N2 Apply the four operations using formal written methods, including short and long division (GCSE Mathematics 1MA1)
+- **OCR**: 1.02a Apply the four operations using formal written methods including division (GCSE Mathematics J560)
+
+#### Multi-step Word Problems with Mixed Operations (Confident, `maths-four-operations-mixed-word-problems`)
+- **KS3**: Use the four operations applied to integers and decimals in problem-solving contexts; choose appropriate operations based on context.
+- **AQA**: N2 Solve multi-step problems requiring the four operations (GCSE Mathematics 8300)
+- **Edexcel**: N2 Solve problems involving the four operations in multi-step contexts (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Solve multi-step word problems involving the four operations (GCSE Mathematics J560)
+
+#### Estimating and Checking Calculations (Confident, `maths-four-operations-estimation-checking`)
+- **KS3**: Use approximation through rounding to estimate answers and calculate possible resulting errors expressed using inequality notation a less than x less than or equal to b.
+- **AQA**: N14 Estimate answers; check calculations using approximation and estimation, including answers obtained using technology (GCSE Mathematics 8300)
+- **Edexcel**: N14 Estimate answers; check calculations using approximation and estimation, including answers obtained using technology (GCSE Mathematics 1MA1)
+- **OCR**: 1.04b Estimate to check answers to calculations (GCSE Mathematics J560)
+
+#### Efficient Calculator Use (Confident, `maths-four-operations-calculator-skills`)
+- **KS3**: Use a calculator and other technologies to calculate results accurately and then interpret them appropriately.
+- **AQA**: N3 Use a calculator and other technologies efficiently (GCSE Mathematics 8300)
+- **Edexcel**: N3 Use conventional notation for the priority of operations on a calculator, including brackets, powers, roots, reciprocals (GCSE Mathematics 1MA1)
+- **OCR**: 1.02b Use a calculator for the four operations including brackets, powers and signs (GCSE Mathematics J560)
+
+#### Negative Numbers in Real Contexts (Challenge, `maths-four-operations-negatives-in-context`)
+- **KS3**: Use the four operations applied to positive and negative integers in real contexts (temperature, sea level, money, time zones).
+- **AQA**: N2 Apply the four operations to directed numbers in real contexts (GCSE Mathematics 8300)
+- **Edexcel**: N2 Solve problems involving directed numbers in real contexts (GCSE Mathematics 1MA1)
+- **OCR**: 1.02a Apply the four operations to directed numbers in real-world contexts (GCSE Mathematics J560)
+
+#### Powers of Negative Numbers (Challenge, `maths-four-operations-powers-of-negatives`)
+- **KS3**: Use conventional notation for the priority of operations, including brackets, powers; apply the sign rules to powers of negative numbers.
+- **AQA**: N6 Use positive integer powers and associated real roots; apply sign rules to powers of negatives (GCSE Mathematics 8300)
+- **Edexcel**: N6 Use positive integer powers and associated real roots; apply sign rules to powers of negative numbers (GCSE Mathematics 1MA1)
+- **OCR**: 1.05a Calculate with positive integer powers and roots, including for negative bases (GCSE Mathematics J560)
 
 ### Zone: Factors and Multiples (`maths-factors-multiples`)
 
@@ -148,6 +340,42 @@
 - **Edexcel**: N4 Use the concepts and vocabulary of factors, multiples, HCF and LCM (GCSE Mathematics 1MA1)
 - **OCR**: 2.03a Highest common factor and lowest common multiple (GCSE Mathematics J560)
 
+#### HCF and LCM of Three Numbers (Confident, `maths-factors-multiples-three-numbers`)
+- **KS3**: Use the concepts and vocabulary of factors, multiples, common factors, common multiples, highest common factor, lowest common multiple.
+- **AQA**: N4 Find HCF and LCM of more than two numbers (GCSE Mathematics 8300)
+- **Edexcel**: N4 Calculate HCF and LCM of three or more numbers (GCSE Mathematics 1MA1)
+- **OCR**: 2.03a Find HCF and LCM for two or more numbers (GCSE Mathematics J560)
+
+#### The Sieve of Eratosthenes and Divisibility (Confident, `maths-factors-multiples-sieve-eratosthenes`)
+- **KS3**: Use the concepts and vocabulary of prime numbers, factors (or divisors), multiples; identify primes within the first hundred numbers.
+- **AQA**: N4 Identify prime numbers using systematic methods (GCSE Mathematics 8300)
+- **Edexcel**: N4 Identify primes within the first 100 (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Identify prime numbers using the sieve of Eratosthenes (GCSE Mathematics J560)
+
+#### HCF and LCM Word Problems (Confident, `maths-factors-multiples-word-problems`)
+- **KS3**: Use the concepts of HCF and LCM to solve problems (intervals, repeating events, tiling).
+- **AQA**: N4 Apply HCF and LCM to solve problems in context (GCSE Mathematics 8300)
+- **Edexcel**: N4 Solve problems involving HCF and LCM (GCSE Mathematics 1MA1)
+- **OCR**: 2.03a Use HCF and LCM to solve word problems (GCSE Mathematics J560)
+
+#### Divisibility Tests (Confident, `maths-factors-multiples-divisibility-tests`)
+- **KS3**: Use the concepts and vocabulary of factors, multiples, and divisibility.
+- **AQA**: N4 Use divisibility tests for 2, 3, 4, 5, 6, 8, 9, 10 and 11 (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply divisibility tests to identify factors (GCSE Mathematics 1MA1)
+- **OCR**: 2.02b Apply divisibility tests to integers (GCSE Mathematics J560)
+
+#### Finding HCF and LCM via Prime Factorisation (Challenge, `maths-factors-multiples-via-prime-factorisation`)
+- **KS3**: Use the concepts and vocabulary of prime factorisation, including using product notation and the unique factorisation property; apply this to HCF and LCM.
+- **AQA**: N4 Express a number as a product of its prime factors and use this to find HCF and LCM (GCSE Mathematics 8300)
+- **Edexcel**: N4 Use prime factorisation to find HCF and LCM (GCSE Mathematics 1MA1)
+- **OCR**: 2.03b Use prime factorisation (via Venn diagrams) to find HCF and LCM (GCSE Mathematics J560)
+
+#### The Euclidean Algorithm for HCF (Challenge, `maths-factors-multiples-euclidean`)
+- **KS3**: Develop and apply algorithmic methods to find the highest common factor of two integers (enrichment).
+- **AQA**: N4 Use an efficient algorithm to compute the HCF of two integers (enrichment, GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply iterative methods to find the HCF (enrichment, GCSE Mathematics 1MA1)
+- **OCR**: 2.03c Use the Euclidean algorithm to compute HCF (enrichment, GCSE Mathematics J560)
+
 ### Zone: Primes (`maths-primes`)
 
 #### Recognising Prime Numbers (Core, `maths-primes-recognising-primes`)
@@ -161,6 +389,42 @@
 - **AQA**: N4 Express a number as a product of its prime factors using index notation (GCSE Mathematics 8300)
 - **Edexcel**: N4 Prime factorisation, including using product notation and the unique factorisation property (GCSE Mathematics 1MA1)
 - **OCR**: 2.03b Prime factorisation: factor trees and index notation (GCSE Mathematics J560)
+
+#### Squares, Cubes, and Their Roots (Confident, `maths-primes-squares-cubes`)
+- **KS3**: Use positive integer powers and associated real roots (square, cube and higher), recognise powers of 2, 3, 4, 5; estimate powers and roots of any given positive number.
+- **AQA**: N6 Use positive integer powers and associated real roots, recognise powers of 2, 3, 4, 5 (GCSE Mathematics 8300)
+- **Edexcel**: N6 Use positive integer powers and associated real roots; recognise powers of 2, 3, 4, 5 (GCSE Mathematics 1MA1)
+- **OCR**: 1.05a Calculate with positive integer powers and exact roots (GCSE Mathematics J560)
+
+#### Indices: Multiplying Powers of the Same Base (Confident, `maths-primes-indices-multiplication`)
+- **KS3**: Use the laws of indices for multiplication of integer powers of the same base.
+- **AQA**: N7 Calculate with integer powers; apply the index law a^m x a^n = a^(m+n) (GCSE Mathematics 8300)
+- **Edexcel**: N7 Calculate with roots and with integer indices; apply a^m x a^n = a^(m+n) (GCSE Mathematics 1MA1)
+- **OCR**: 1.05b Apply the index laws including a^m x a^n = a^(m+n) (GCSE Mathematics J560)
+
+#### Indices: Dividing Powers of the Same Base (Confident, `maths-primes-indices-division`)
+- **KS3**: Use the laws of indices for division of integer powers of the same base.
+- **AQA**: N7 Calculate with integer powers; apply the index law a^m / a^n = a^(m-n) (GCSE Mathematics 8300)
+- **Edexcel**: N7 Calculate with roots and with integer indices; apply a^m / a^n = a^(m-n) (GCSE Mathematics 1MA1)
+- **OCR**: 1.05b Apply the index laws including a^m / a^n = a^(m-n) (GCSE Mathematics J560)
+
+#### Indices: Power of a Power (Confident, `maths-primes-indices-power-of-power`)
+- **KS3**: Use the laws of indices for (a^m)^n.
+- **AQA**: N7 Apply the index law (a^m)^n = a^(mn) (GCSE Mathematics 8300)
+- **Edexcel**: N7 Apply the index law (a^m)^n = a^(mn) (GCSE Mathematics 1MA1)
+- **OCR**: 1.05b Apply the index law (a^m)^n = a^(mn) (GCSE Mathematics J560)
+
+#### Zero and Negative Indices (Challenge, `maths-primes-zero-negative-indices`)
+- **KS3**: Interpret and apply zero and negative integer indices.
+- **AQA**: N7 Calculate with negative and zero indices: a^0 = 1, a^(-n) = 1/a^n (GCSE Mathematics 8300)
+- **Edexcel**: N7 Apply the index laws to zero and negative integer indices (GCSE Mathematics 1MA1)
+- **OCR**: 1.05c Apply the index laws to zero and negative integer indices (GCSE Mathematics J560)
+
+#### Counting Factors via Prime Factorisation (Challenge, `maths-primes-number-of-factors`)
+- **KS3**: Use prime factorisation, including using product notation and the unique factorisation property, to derive properties of integers (number of factors).
+- **AQA**: N4 Use prime factorisation to determine the number of factors of an integer (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply prime factorisation to derive divisor count (GCSE Mathematics 1MA1)
+- **OCR**: 2.03b Use prime factorisation to count factors (GCSE Mathematics J560)
 
 ### Zone: BIDMAS (`maths-bidmas`)
 
@@ -182,6 +446,36 @@
 - **Edexcel**: A2 Substitute numerical values into formulae and expressions, including scientific formulae (GCSE Mathematics 1MA1)
 - **OCR**: 6.02a Substitute numerical values into formulae and expressions, including scientific formulae (GCSE Mathematics J560)
 
+#### BIDMAS with Powers and Roots (Confident, `maths-bidmas-with-powers-roots`)
+- **KS3**: Use conventional notation for the priority of operations, including brackets, powers, roots and reciprocals.
+- **AQA**: N3 Use the priority of operations, including brackets, powers, roots and reciprocals (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply the priority of operations to expressions involving powers and roots (GCSE Mathematics 1MA1)
+- **OCR**: 2.05b Apply BIDMAS to expressions with powers and roots (GCSE Mathematics J560)
+
+#### BIDMAS with Fractions (Confident, `maths-bidmas-with-fractions`)
+- **KS3**: Use conventional notation for the priority of operations applied to expressions involving fractions.
+- **AQA**: N3 Apply BIDMAS to mixed fraction expressions (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply the priority of operations to expressions involving fractions (GCSE Mathematics 1MA1)
+- **OCR**: 2.05b Apply BIDMAS to fraction expressions (GCSE Mathematics J560)
+
+#### BIDMAS with Decimals (Confident, `maths-bidmas-with-decimals`)
+- **KS3**: Use conventional notation for the priority of operations applied to expressions involving decimals.
+- **AQA**: N3 Apply BIDMAS to decimal expressions (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply the priority of operations to expressions involving decimals (GCSE Mathematics 1MA1)
+- **OCR**: 2.05b Apply BIDMAS to decimal expressions (GCSE Mathematics J560)
+
+#### BIDMAS with Nested Brackets (Confident, `maths-bidmas-nested-brackets`)
+- **KS3**: Use conventional notation for the priority of operations, including multiple and nested brackets.
+- **AQA**: N3 Apply the priority of operations to expressions with nested brackets (GCSE Mathematics 8300)
+- **Edexcel**: N4 Apply the priority of operations to expressions with nested brackets (GCSE Mathematics 1MA1)
+- **OCR**: 2.05b Apply BIDMAS to expressions with nested brackets (GCSE Mathematics J560)
+
+#### BIDMAS in Scientific Formulae (Challenge, `maths-bidmas-in-formulae`)
+- **KS3**: Substitute numerical values into scientific formulae and apply the priority of operations to evaluate them.
+- **AQA**: A2 Substitute numerical values into scientific formulae and evaluate (GCSE Mathematics 8300)
+- **Edexcel**: A2 Substitute numerical values into formulae and expressions, including scientific formulae (GCSE Mathematics 1MA1)
+- **OCR**: 6.02a Substitute numerical values into formulae and evaluate, applying BIDMAS (GCSE Mathematics J560)
+
 ### Zone: Basic Algebra (`maths-algebra`)
 
 #### Introduction to Algebra (Core, `maths-algebra-introduction`)
@@ -196,6 +490,42 @@
 - **Edexcel**: A17 Solve linear equations in one unknown algebraically, including with the unknown on both sides (GCSE Mathematics 1MA1)
 - **OCR**: 6.04a Solve linear equations in one unknown (GCSE Mathematics J560)
 
+#### Collecting Like Terms (Confident, `maths-algebra-collecting-like-terms`)
+- **KS3**: Simplify and manipulate algebraic expressions to maintain equivalence by collecting like terms.
+- **AQA**: A4 Simplify and manipulate algebraic expressions by collecting like terms (GCSE Mathematics 8300)
+- **Edexcel**: A4 Simplify and manipulate algebraic expressions by collecting like terms, including with powers (GCSE Mathematics 1MA1)
+- **OCR**: 6.02b Simplify expressions by collecting like terms (GCSE Mathematics J560)
+
+#### Expanding Single Brackets (Confident, `maths-algebra-expanding-single-brackets`)
+- **KS3**: Simplify and manipulate algebraic expressions by multiplying a single term over a bracket.
+- **AQA**: A4 Multiply a single term over a bracket (GCSE Mathematics 8300)
+- **Edexcel**: A4 Expand products of one bracket (GCSE Mathematics 1MA1)
+- **OCR**: 6.02c Expand a single bracket (GCSE Mathematics J560)
+
+#### Factorising Single Brackets (Confident, `maths-algebra-factorising-single-brackets`)
+- **KS3**: Simplify and manipulate algebraic expressions by taking out common factors.
+- **AQA**: A4 Factorise expressions by taking out a single common factor (GCSE Mathematics 8300)
+- **Edexcel**: A4 Factorise single-bracket expressions, including with a single common factor (GCSE Mathematics 1MA1)
+- **OCR**: 6.02d Factorise into a single bracket (GCSE Mathematics J560)
+
+#### Function Machines (Confident, `maths-algebra-function-machines`)
+- **KS3**: Understand and use function machines to model relationships between inputs and outputs and to introduce inverse operations.
+- **AQA**: A1 Use function machines to represent algebraic expressions (GCSE Mathematics 8300)
+- **Edexcel**: A1 Use function machines including inverse machines (GCSE Mathematics 1MA1)
+- **OCR**: 6.01b Use function machines to model expressions and inverse operations (GCSE Mathematics J560)
+
+#### Forming Equations from Word Problems (Challenge, `maths-algebra-forming-equations`)
+- **KS3**: Translate simple situations or procedures into algebraic expressions or formulae; derive equations and solve them.
+- **AQA**: A18 Form linear equations from word problems and solve (GCSE Mathematics 8300)
+- **Edexcel**: A18 Derive an equation from a problem and solve it (GCSE Mathematics 1MA1)
+- **OCR**: 6.04b Form and solve linear equations from word problems (GCSE Mathematics J560)
+
+#### Linear Equations with Brackets (Challenge, `maths-algebra-equations-with-brackets`)
+- **KS3**: Solve linear equations in one unknown, including those that need to be rearranged or that contain brackets.
+- **AQA**: A17 Solve linear equations including those with brackets (GCSE Mathematics 8300)
+- **Edexcel**: A17 Solve linear equations involving brackets and the unknown on both sides (GCSE Mathematics 1MA1)
+- **OCR**: 6.04a Solve linear equations involving brackets (GCSE Mathematics J560)
+
 ### Zone: Sequences (`maths-sequences`)
 
 #### Term-to-Term and Position-to-Term Rules (Core, `maths-sequences-rules`)
@@ -209,6 +539,42 @@
 - **AQA**: A24 Recognise arithmetic sequences and find the nth term (GCSE Mathematics 8300)
 - **Edexcel**: A24 Deduce expressions to calculate the nth term of linear sequences (GCSE Mathematics 1MA1)
 - **OCR**: 8.02b Recognise arithmetic sequences and find the nth term (GCSE Mathematics J560)
+
+#### Special Sequences: Squares, Cubes, Triangular, Fibonacci (Confident, `maths-sequences-special-types`)
+- **KS3**: Recognise sequences of triangular, square and cube numbers, simple arithmetic progressions, Fibonacci-type sequences, quadratic sequences, and simple geometric progressions (r^n where n is an integer, and r is a rational number greater than 0 or a surd) and other sequences.
+- **AQA**: A25 Recognise and use sequences of triangular, square and cube numbers, simple arithmetic progressions, Fibonacci-type sequences, geometric progressions (GCSE Mathematics 8300)
+- **Edexcel**: A25 Recognise and use sequences of triangular, square and cube numbers, Fibonacci-type sequences (GCSE Mathematics 1MA1)
+- **OCR**: 8.02a Recognise sequences of squares, cubes, triangular, Fibonacci (GCSE Mathematics J560)
+
+#### Recognising Geometric Sequences (Confident, `maths-sequences-geometric`)
+- **KS3**: Recognise geometric sequences and appreciate other sequences that arise.
+- **AQA**: A25 Recognise geometric progressions and find the common ratio (GCSE Mathematics 8300)
+- **Edexcel**: A25 Recognise geometric sequences r^n where n is an integer (GCSE Mathematics 1MA1)
+- **OCR**: 8.02a Recognise geometric sequences and find the common ratio (GCSE Mathematics J560)
+
+#### Sequences from Diagrams and Patterns (Confident, `maths-sequences-from-patterns`)
+- **KS3**: Generate terms of a sequence from either a term-to-term or a position-to-term rule, including in pictorial contexts (matchstick and dot patterns).
+- **AQA**: A23 Generate sequences from pictorial patterns and derive a rule (GCSE Mathematics 8300)
+- **Edexcel**: A23 Generate sequences from diagrams and find the rule (GCSE Mathematics 1MA1)
+- **OCR**: 8.02a Use pictorial pattern sequences to derive position-to-term rules (GCSE Mathematics J560)
+
+#### Finding Missing Terms in a Sequence (Confident, `maths-sequences-missing-terms`)
+- **KS3**: Generate terms of a sequence from either a term-to-term or a position-to-term rule and use this to identify missing terms within the sequence.
+- **AQA**: A23 Find missing terms of arithmetic and other sequences (GCSE Mathematics 8300)
+- **Edexcel**: A23 Find missing terms within a sequence given partial information (GCSE Mathematics 1MA1)
+- **OCR**: 8.02a Identify missing terms in a sequence (GCSE Mathematics J560)
+
+#### nth Term of a Decreasing Arithmetic Sequence (Challenge, `maths-sequences-decreasing-nth-term`)
+- **KS3**: Find the nth term of arithmetic sequences, including those with a negative common difference.
+- **AQA**: A24 Find the nth term of arithmetic sequences with negative common differences (GCSE Mathematics 8300)
+- **Edexcel**: A24 Deduce expressions for the nth term of linear sequences including decreasing sequences (GCSE Mathematics 1MA1)
+- **OCR**: 8.02b Find the nth term of decreasing arithmetic sequences (GCSE Mathematics J560)
+
+#### Recognising Quadratic Sequences (Challenge, `maths-sequences-quadratic-recognition`)
+- **KS3**: Recognise quadratic sequences using second differences (introductory enrichment).
+- **AQA**: A25 Recognise quadratic sequences using second differences (GCSE Mathematics 8300)
+- **Edexcel**: A25 Recognise quadratic sequences and use second differences to identify them (GCSE Mathematics 1MA1)
+- **OCR**: 8.02c Recognise quadratic sequences from second differences (GCSE Mathematics J560)
 
 ### Zone: Geometry and Measure (`maths-geometry-measure`)
 
@@ -230,6 +596,42 @@
 - **Edexcel**: G16 Know and apply formulae to calculate volume of cuboids and other right prisms (GCSE Mathematics 1MA1)
 - **OCR**: 10.04a Volume of cuboids and prisms (GCSE Mathematics J560)
 
+#### Area of Triangles (Confident, `maths-geometry-measure-area-triangles`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia.
+- **AQA**: G16 Know and apply the formula area = 1/2 x base x perpendicular height for triangles (GCSE Mathematics 8300)
+- **Edexcel**: G16 Apply the formula for area of triangles (GCSE Mathematics 1MA1)
+- **OCR**: 10.03a Area of triangles (GCSE Mathematics J560)
+
+#### Area of Parallelograms (Confident, `maths-geometry-measure-area-parallelograms`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia.
+- **AQA**: G16 Know and apply the formula area = base x perpendicular height for parallelograms (GCSE Mathematics 8300)
+- **Edexcel**: G16 Apply the formula for area of parallelograms (GCSE Mathematics 1MA1)
+- **OCR**: 10.03a Area of parallelograms (GCSE Mathematics J560)
+
+#### Area of Trapezia (Confident, `maths-geometry-measure-area-trapezia`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving: perimeter and area of triangles, parallelograms, trapezia.
+- **AQA**: G16 Know and apply the formula area = 1/2 x (a + b) x h for trapezia (GCSE Mathematics 8300)
+- **Edexcel**: G16 Apply the formula for area of trapezia (GCSE Mathematics 1MA1)
+- **OCR**: 10.03a Area of trapezia (GCSE Mathematics J560)
+
+#### Angle Rules: On a Line, Around a Point, Vertically Opposite (Confident, `maths-geometry-measure-angle-rules`)
+- **KS3**: Apply the properties of angles at a point, angles at a point on a straight line, vertically opposite angles.
+- **AQA**: G3 Apply the basic angle rules: angles on a straight line, around a point, vertically opposite (GCSE Mathematics 8300)
+- **Edexcel**: G3 Apply the properties of angles at a point, on a line, vertically opposite (GCSE Mathematics 1MA1)
+- **OCR**: 9.03a Angles at a point, on a line, vertically opposite (GCSE Mathematics J560)
+
+#### Volume of Triangular and Other Right Prisms (Challenge, `maths-geometry-measure-volume-prisms`)
+- **KS3**: Derive and apply formulae to calculate and solve problems involving volume of cuboids and other prisms.
+- **AQA**: G16 Calculate the volume of right prisms, including triangular prisms (GCSE Mathematics 8300)
+- **Edexcel**: G16 Calculate the volume of right prisms, including triangular prisms (GCSE Mathematics 1MA1)
+- **OCR**: 10.04a Volume of prisms with various cross-sections (GCSE Mathematics J560)
+
+#### Surface Area of Cuboids (Challenge, `maths-geometry-measure-surface-area-cuboids`)
+- **KS3**: Calculate surface area of cuboids and other right prisms.
+- **AQA**: G17 Calculate the surface area of cuboids (GCSE Mathematics 8300)
+- **Edexcel**: G17 Calculate the surface area of cuboids and other right prisms (GCSE Mathematics 1MA1)
+- **OCR**: 10.04b Surface area of cuboids and right prisms (GCSE Mathematics J560)
+
 ### Zone: Coordinates (`maths-coordinates`)
 
 #### Coordinates on a Grid (Core, `maths-coordinates-grid`)
@@ -243,6 +645,42 @@
 - **AQA**: G7 Identify, describe and construct congruent and similar shapes by considering rotation, reflection, translation and enlargement (GCSE Mathematics 8300)
 - **Edexcel**: G7 Identify, describe and construct congruent and similar shapes, including on coordinate axes, by considering rotation, reflection, translation and enlargement (GCSE Mathematics 1MA1)
 - **OCR**: 7.05a Identify, describe and construct congruent shapes, including on coordinate axes, using translation and reflection (GCSE Mathematics J560)
+
+#### Midpoint of a Line Segment (Confident, `maths-coordinates-midpoints`)
+- **KS3**: Find the coordinates of the midpoint of a line segment given two endpoints in all four quadrants.
+- **AQA**: G11 Find the coordinates of the midpoint of a line segment (GCSE Mathematics 8300)
+- **Edexcel**: G11 Find the midpoint of a line segment from coordinates of its endpoints (GCSE Mathematics 1MA1)
+- **OCR**: 7.02b Find the midpoint of a line segment in all four quadrants (GCSE Mathematics J560)
+
+#### Plotting Linear Graphs y = mx + c (Confident, `maths-coordinates-plotting-linear`)
+- **KS3**: Plot graphs of equations that correspond to straight-line graphs in the coordinate plane.
+- **AQA**: A9 Plot graphs of straight lines of the form y = mx + c (GCSE Mathematics 8300)
+- **Edexcel**: A9 Plot graphs of straight lines, including y = mx + c (GCSE Mathematics 1MA1)
+- **OCR**: 7.02c Plot straight line graphs from y = mx + c (GCSE Mathematics J560)
+
+#### Equations of Horizontal and Vertical Lines (Confident, `maths-coordinates-horizontal-vertical-lines`)
+- **KS3**: Recognise and identify equations of horizontal and vertical lines (y = a, x = b) and the axes (x = 0, y = 0).
+- **AQA**: A9 Identify equations of horizontal and vertical lines (GCSE Mathematics 8300)
+- **Edexcel**: A9 Identify equations of horizontal and vertical lines (GCSE Mathematics 1MA1)
+- **OCR**: 7.02c Recognise equations x = a and y = b (GCSE Mathematics J560)
+
+#### Distance Between Two Points (Confident, `maths-coordinates-distance-between-points`)
+- **KS3**: Find the distance between two points on a coordinate grid, including by applying Pythagoras' theorem.
+- **AQA**: G11 Calculate the distance between two points on a coordinate grid (GCSE Mathematics 8300)
+- **Edexcel**: G11 Find the distance between two points on a coordinate grid (GCSE Mathematics 1MA1)
+- **OCR**: 7.02b Find the distance between two points on a coordinate grid (GCSE Mathematics J560)
+
+#### Reflections in y = x and y = -x (Challenge, `maths-coordinates-reflections-axes`)
+- **KS3**: Identify, describe and construct congruent shapes including on coordinate axes by considering reflection, with mirror lines y = x and y = -x.
+- **AQA**: G7 Reflect shapes in the lines y = x and y = -x (GCSE Mathematics 8300)
+- **Edexcel**: G7 Reflect shapes in y = x and y = -x (GCSE Mathematics 1MA1)
+- **OCR**: 7.05a Reflect shapes in oblique mirror lines y = x and y = -x (GCSE Mathematics J560)
+
+#### Finding the Equation of a Line from Two Points (Challenge, `maths-coordinates-equation-from-line`)
+- **KS3**: Identify and interpret gradients and intercepts of linear functions graphically and algebraically; find the equation of a line given two points.
+- **AQA**: A9 Find the equation of a line given two points (GCSE Mathematics 8300)
+- **Edexcel**: A9 Find the equation of a line given two points or one point and the gradient (GCSE Mathematics 1MA1)
+- **OCR**: 7.02d Find the equation of a straight line given two points (GCSE Mathematics J560)
 
 ### Zone: Probability (`maths-probability`)
 
@@ -269,6 +707,42 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **KS3**: Record, describe and analyse the frequency of outcomes of simple probability experiments involving randomness, fairness, equally and unequally likely outcomes, using appropriate language and the 0-1 probability scale.
 - **AQA**: P1 Record, describe and analyse the frequency of outcomes of probability experiments using tables and frequency trees; P5 Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size (GCSE Mathematics 8300)
 - **Edexcel**: P5 Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size (GCSE Mathematics 1MA1)
+
+#### Equally Likely Outcomes: Theoretical Probability (Confident, `maths-probability-equally-likely-events`)
+- **KS3**: Construct theoretical possibility spaces for single and combined experiments with equally likely, mutually exclusive outcomes and use these to calculate theoretical probabilities; understand P(event) = favourable outcomes / total outcomes.
+- **AQA**: P7 Calculate the probability of a single event from equally likely outcomes (GCSE Mathematics 8300)
+- **Edexcel**: P7 Calculate the probability of an event from equally likely outcomes (GCSE Mathematics 1MA1)
+- **OCR**: 11.02a Calculate theoretical probabilities from equally likely outcomes (GCSE Mathematics J560)
+
+#### Probabilities Sum to One (Confident, `maths-probability-sum-to-one`)
+- **KS3**: Understand that the probabilities of all possible outcomes sum to 1; apply this to find the probability of an event not occurring.
+- **AQA**: P4 Apply the property that probabilities of all mutually exclusive outcomes sum to 1 (GCSE Mathematics 8300)
+- **Edexcel**: P4 Apply the property that probabilities sum to 1, including for the complement of an event (GCSE Mathematics 1MA1)
+- **OCR**: 11.02b Use that probabilities of mutually exclusive outcomes sum to 1 (GCSE Mathematics J560)
+
+#### Sample Space Diagrams for Two Events (Confident, `maths-probability-sample-space-two-event`)
+- **KS3**: Generate theoretical sample spaces for combined events with equally likely, mutually exclusive outcomes using grids and tables.
+- **AQA**: P7 Construct theoretical possibility spaces for combined experiments and use these to calculate theoretical probabilities (GCSE Mathematics 8300)
+- **Edexcel**: P7 Construct sample space diagrams for combined events (GCSE Mathematics 1MA1)
+- **OCR**: 11.03a Construct sample space diagrams for two-event experiments (GCSE Mathematics J560)
+
+#### Two-Way Tables in Probability (Confident, `maths-probability-two-way-tables`)
+- **KS3**: Enumerate sets and unions/intersections of sets systematically, using tables, grids and Venn diagrams; use two-way tables to calculate probabilities.
+- **AQA**: P6 Use two-way tables to enumerate sets and find probabilities (GCSE Mathematics 8300)
+- **Edexcel**: P6 Use two-way tables to find probabilities and frequencies (GCSE Mathematics 1MA1)
+- **OCR**: 11.03b Read and use two-way tables to find probabilities (GCSE Mathematics J560)
+
+#### Expected Frequency from Probability (Challenge, `maths-probability-expected-frequency`)
+- **KS3**: Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size; calculate expected frequencies.
+- **AQA**: P2 Calculate expected frequencies given probability and number of trials (GCSE Mathematics 8300)
+- **Edexcel**: P2 Apply the relationship probability x number of trials = expected frequency (GCSE Mathematics 1MA1)
+- **OCR**: 11.02c Calculate expected frequency from probability and trial count (GCSE Mathematics J560)
+
+#### Comparing Experimental and Theoretical Probability (Challenge, `maths-probability-comparing-experimental-theoretical`)
+- **KS3**: Understand that empirical unbiased samples tend towards theoretical probability distributions, with increasing sample size; compare experimental relative frequencies with theoretical probability.
+- **AQA**: P5 Compare experimental data with theoretical probability and assess fairness (GCSE Mathematics 8300)
+- **Edexcel**: P5 Compare relative frequency with theoretical probability; assess bias (GCSE Mathematics 1MA1)
+- **OCR**: 11.02d Compare experimental and theoretical probabilities; comment on bias (GCSE Mathematics J560)
 
 ---
 
