@@ -12,6 +12,8 @@ interface QuestionFeedbackProps {
   nextLabel?: string
   modelAnswer?: string
   judgeReason?: string
+  hideNextButton?: boolean
+  retryHint?: string
   realmAccent?: string
 }
 
@@ -22,6 +24,8 @@ export function QuestionFeedback({
   nextLabel,
   modelAnswer,
   judgeReason,
+  hideNextButton = false,
+  retryHint,
   realmAccent = 'hsl(var(--primary))',
 }: QuestionFeedbackProps) {
   if (status === 'unanswered') return null
@@ -79,20 +83,27 @@ export function QuestionFeedback({
               <p className="text-muted-foreground">{modelAnswer}</p>
             </div>
           )}
+          {!correct && hideNextButton && retryHint && (
+            <p className="mt-3 text-sm font-medium" style={{ color: '#92400E' }}>
+              {retryHint}
+            </p>
+          )}
         </div>
       </div>
-      <button
-        onClick={onNext}
-        className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-        style={{ backgroundColor: correct ? realmAccent : '#F59E0B' }}
-      >
-        {nextLabel ?? (correct ? 'Next' : 'Try again')}
-        {correct ? (
-          <ArrowRight className="h-4 w-4" />
-        ) : (
-          <RefreshCw className="h-4 w-4" />
-        )}
-      </button>
+      {!hideNextButton && (
+        <button
+          onClick={onNext}
+          className="mt-4 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          style={{ backgroundColor: correct ? realmAccent : '#F59E0B' }}
+        >
+          {nextLabel ?? (correct ? 'Next' : 'Try again')}
+          {correct ? (
+            <ArrowRight className="h-4 w-4" />
+          ) : (
+            <RefreshCw className="h-4 w-4" />
+          )}
+        </button>
+      )}
     </div>
   )
 }

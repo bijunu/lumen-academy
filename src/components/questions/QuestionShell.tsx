@@ -3,7 +3,7 @@
 import { useCallback, useState } from 'react'
 import type { Question, Misconception } from '@/types/content'
 import { useQuestionState } from '@/hooks/useQuestionState'
-import type { ScoreInput } from '@/lib/progress/serverScoring'
+import { scoreAnswer, type ScoreInput } from '@/lib/progress/serverScoring'
 import { MultipleChoice } from './MultipleChoice'
 import { NumericEntry } from './NumericEntry'
 import { DragOrder } from './DragOrder'
@@ -46,21 +46,56 @@ export function QuestionShell({
   const { payload, status, attemptCount, showFeedback, submit, reset } =
     useQuestionState(question)
   const [judgeReason, setJudgeReason] = useState<string | null>(null)
+  const [triedWrongIndices, setTriedWrongIndices] = useState<Set<number>>(
+    () => new Set()
+  )
 
   const activeMisconception = question.misconceptionId
     ? misconceptions.find(m => m.id === question.misconceptionId)
     : undefined
+
+  const supportsEliminateRetry =
+    !oneShot &&
+    (question.type === 'multiple-choice' ||
+      question.type === 'spot-misconception')
+
+  const handleIndexPick = useCallback(
+    (index: number) => {
+      if (supportsEliminateRetry) {
+        let correct = false
+        try {
+          correct = scoreAnswer(question, { answer: index })
+        } catch {
+          correct = false
+        }
+        if (!correct) {
+          setTriedWrongIndices(prev => {
+            if (prev.has(index)) return prev
+            const next = new Set(prev)
+            next.add(index)
+            return next
+          })
+        }
+      }
+      submit({ answer: index })
+    },
+    [question, supportsEliminateRetry, submit]
+  )
 
   const handleNext = useCallback(() => {
     if (oneShot || status === 'correct') {
       onComplete(status === 'correct', attemptCount, payload ?? {})
     } else {
       setJudgeReason(null)
+      setTriedWrongIndices(new Set())
       reset()
     }
   }, [oneShot, status, attemptCount, payload, onComplete, reset])
 
   const isAnswered = status !== 'unanswered'
+  const optionsLocked = oneShot ? isAnswered : status === 'correct'
+  const hideRetryButton =
+    supportsEliminateRetry && status === 'incorrect'
   const selectedIndex =
     typeof payload?.answer === 'number' ? payload.answer : null
 
@@ -77,8 +112,9 @@ export function QuestionShell({
         <MultipleChoice
           question={question}
           selectedIndex={selectedIndex}
-          disabled={isAnswered}
-          onSelect={index => submit({ answer: index })}
+          disabled={optionsLocked}
+          onSelect={handleIndexPick}
+          triedWrongIndices={triedWrongIndices}
           realmAccent={realmAccent}
         />
       )}
@@ -105,8 +141,9 @@ export function QuestionShell({
         <SpotMisconception
           question={question}
           selectedIndex={selectedIndex}
-          disabled={isAnswered}
-          onSelect={index => submit({ answer: index })}
+          disabled={optionsLocked}
+          onSelect={handleIndexPick}
+          triedWrongIndices={triedWrongIndices}
           realmAccent={realmAccent}
         />
       )}
@@ -186,6 +223,12 @@ export function QuestionShell({
           nextLabel={oneShot && status === 'incorrect' ? 'Done' : undefined}
           modelAnswer={question.type === 'free-text' ? question.sampleAnswer : undefined}
           judgeReason={judgeReason ?? undefined}
+          hideNextButton={hideRetryButton}
+          retryHint={
+            hideRetryButton
+              ? 'Pick another option to try again.'
+              : undefined
+          }
           realmAccent={realmAccent}
         />
       )}
