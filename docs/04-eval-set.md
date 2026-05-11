@@ -77,6 +77,22 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
   - Required handling: misconception entry; at least one Confident or Challenge question whose stem requires the LCM step before combining numerators, plus a worked example or missing-step that walks the rewriting.
 - C-FRAC-11: Learner combines numerators correctly but forgets to simplify, leaving 6/12 instead of 1/2. (Covers `maths-fractions-add-subtract`.)
   - Required handling: misconception entry; at least one question whose correct answer is in simplest form but where the unsimplified intermediate appears as a distractor.
+- C-FRAC-12: Learner multiplies fractions by adding numerators and adding denominators (1/2 x 1/3 = 2/5). (Covers `maths-fractions-multiply-divide`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the added-tops-and-bottoms answer; one spot-misconception that names the trap.
+- C-FRAC-13: Learner believes a common denominator is required before multiplying two fractions, the same way it is for adding. (Covers `maths-fractions-multiply-divide`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question that exposes the unnecessary-LCM step, plus a worked example that contrasts adding with multiplying.
+- C-FRAC-14: Learner believes dividing always makes the result smaller, so rejects answers larger than the dividend when dividing by a fraction less than 1. (Covers `maths-fractions-multiply-divide`.)
+  - Required handling: misconception entry; at least one question on `1/2 / 1/4` or similar where the correct answer is larger than the dividend; a scene that walks "how many quarters fit in a half".
+- C-FRAC-15: Learner flips the dividend rather than the divisor when applying Keep, Flip, Change. (Covers `maths-fractions-multiply-divide`.)
+  - Required handling: misconception entry; at least one missing-step or numeric-entry question that walks the correct flip on the divisor.
+- C-FRAC-16: Learner reads a mixed number as an implicit multiplication, so writes 2 1/3 = 2 x 1/3 = 2/3. (Covers `maths-fractions-mixed-numbers`.)
+  - Required handling: misconception entry; at least one spot-misconception question that names the implicit-multiplication slip.
+- C-FRAC-17: Learner adds mixed numbers by adding the whole parts and the fractional parts separately and never carries when the fractional sum exceeds one whole. (Covers `maths-fractions-mixed-numbers`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose stem produces a fractional sum greater than one whole.
+- C-FRAC-18: Learner subtracts mixed numbers without borrowing across the whole, so produces a negative fractional part or silently reverses the subtraction. (Covers `maths-fractions-mixed-numbers`.)
+  - Required handling: misconception entry; at least one missing-step or numeric-entry question that walks the borrow.
+- C-FRAC-19: Learner multiplies mixed numbers by multiplying the wholes together and the fractions together, dropping the cross-product terms. (Covers `maths-fractions-mixed-numbers`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the dropped-cross-product answer.
 
 ### Question shape probes
 
@@ -90,6 +106,12 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - Q-FRAC-8: At least one numeric-entry on the add-subtract node requires the learner to add or subtract fractions with different denominators (denominators chosen so the LCM is small, e.g. 3 and 4, 4 and 6, 6 and 8). (Covers `maths-fractions-add-subtract`.)
 - Q-FRAC-9: At least one Challenge tier word problem on the add-subtract node frames a UK context (water butt, charity stall, builder's mix) and requires both finding a common denominator and simplifying the result. (Covers `maths-fractions-add-subtract`.)
 - Q-FRAC-10: At least one missing-step question on the add-subtract node walks the LCM rewriting before the numerators are combined. (Covers `maths-fractions-add-subtract`.)
+- Q-FRAC-11: At least one MCQ on the multiply-divide node has the added-tops-and-bottoms slip as a distractor (for example 2/5 alongside 1/6 for 1/2 x 1/3). (Covers `maths-fractions-multiply-divide`.)
+- Q-FRAC-12: At least one numeric-entry on the multiply-divide node divides by a fraction less than 1 and produces an answer larger than the dividend. (Covers `maths-fractions-multiply-divide`.)
+- Q-FRAC-13: At least one Challenge tier word problem on the multiply-divide node frames a UK context (recipe scaling, ribbon cutting, share-of-budget) and requires KFC division with simplification. (Covers `maths-fractions-multiply-divide`.)
+- Q-FRAC-14: At least one numeric-entry on the mixed-numbers node requires conversion from mixed to improper form before applying multiplication or division. (Covers `maths-fractions-mixed-numbers`.)
+- Q-FRAC-15: At least one MCQ on the mixed-numbers node tests subtraction with borrowing where the wrongly negative fractional part is a distractor. (Covers `maths-fractions-mixed-numbers`.)
+- Q-FRAC-16: At least one Challenge tier word problem on the mixed-numbers node requires both addition and subtraction of mixed numbers in a UK context (rope cut, recipe, market stall). (Covers `maths-fractions-mixed-numbers`.)
 
 ### Tutor probes
 
@@ -101,6 +123,9 @@ Covers `maths-fractions-what-is`, `maths-fractions-equivalent`, `maths-fractions
 - T-FRAC-6: Given a request for an inline definition (tap on "denominator"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-FRAC-7: Given "I added 1/2 and 1/3 and got 2/5 by adding the tops and bottoms", the tutor's first reply is a Socratic prompt about whether halves and thirds are the same size, not a direct correction. (Covers `maths-fractions-add-subtract`.)
 - T-FRAC-8: Given a wrong answer matching the no-common-denominator trigger (for example "1/2 + 1/4 = 2/6"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-fractions-add-subtract`.)
+- T-FRAC-9: Given "I multiplied 1/2 by 1/3 and got 2/5 by adding the tops and bottoms", the tutor's first reply is a Socratic prompt about what "of" means with the area model, not a direct correction. (Covers `maths-fractions-multiply-divide`.)
+- T-FRAC-10: Given a wrong answer matching the divide-makes-smaller trigger (for example "1/2 / 1/4 must be less than 1/2"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-fractions-multiply-divide`.)
+- T-FRAC-11: Given "I read 2 1/3 as 2 times 1/3", the tutor's first reply is a Socratic prompt about whether 2 1/3 sits between 2 and 3 on the number line. (Covers `maths-fractions-mixed-numbers`.)
 
 ## Zone: Numerica > Four Operations
 
@@ -299,6 +324,18 @@ Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future deci
   - Required handling: misconception entry; at least one MCQ that asks for the first significant figure of a number with leading zeros.
 - C-DR-6: Learner mixes up "decimal places" with "significant figures", giving the wrong answer when the question target changes between them. (Covers `maths-decimals-rounding`.)
   - Required handling: misconception entry or worked-example callout that contrasts the two on the same number.
+- C-DA-1: Learner aligns decimals by the right edge of the digits when adding or subtracting, the way whole numbers stack right-justified. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; at least one MCQ whose distractors include the right-aligned slip; a worked example that pads with trailing zeros.
+- C-DA-2: Learner places the decimal point in the wrong column when multiplying two decimals, so 0.3 x 0.4 becomes 1.2 or 12 instead of 0.12. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; a scene that uses the 10 x 10 grid model; at least one MCQ whose distractors include each common place-shift error.
+- C-DA-3: Learner believes multiplication always makes the answer bigger, so rejects answers smaller than either factor when multiplying decimals less than 1. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; at least one Confident question whose stem produces an answer smaller than both factors.
+- C-DA-4: Learner believes division always makes the answer smaller, so rejects answers larger than the dividend when dividing by a decimal less than 1. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; at least one Confident question on `a / b` where `b < 1` and the quotient exceeds `a`.
+- C-DA-5: Learner skips the leading zero in the quotient when the answer is less than 1, so 1.2 / 5 becomes 24 or 2.4 instead of 0.24. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; at least one numeric-entry that produces a leading-zero quotient and accepts only the leading-zero form.
+- C-DA-6: Learner fails to borrow across a column-zero in decimal subtraction, so 5.0 - 2.4 becomes 3.4 instead of 2.6. (Covers `maths-decimals-arithmetic`.)
+  - Required handling: misconception entry; at least one Core or Confident numeric-entry whose minuend ends in zero in the tenths column.
 
 ### Question shape probes
 
@@ -312,6 +349,10 @@ Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future deci
 - Q-DR-2: At least one numeric-entry on the rounding node has a kept part ending in 9, requiring a carry into the next column. (Covers `maths-decimals-rounding`.)
 - Q-DR-3: At least one Challenge tier word problem on the rounding node requires rounding to the nearest penny in a UK money context (till receipt, train fare, sale price). (Covers `maths-decimals-rounding`.)
 - Q-DR-4: At least one numeric-entry or MCQ on the rounding node requires rounding to a number of significant figures with at least one leading zero present. (Covers `maths-decimals-rounding`.)
+- Q-DA-1: At least one MCQ on the arithmetic node tests adding two decimals with different decimal-place counts, with the right-aligned slip as a distractor. (Covers `maths-decimals-arithmetic`.)
+- Q-DA-2: At least one numeric-entry on the arithmetic node multiplies two decimals each less than 1, producing an answer smaller than both factors. (Covers `maths-decimals-arithmetic`.)
+- Q-DA-3: At least one numeric-entry on the arithmetic node divides a decimal less than 2 by a single-digit whole number, producing a leading-zero quotient (for example 1.2 / 5 = 0.24). (Covers `maths-decimals-arithmetic`.)
+- Q-DA-4: At least one Challenge tier word problem on the arithmetic node frames a UK context (market stall, ribbon comparison, fuel consumption, bulk-vs-single pricing) and requires at least one decimal multiplication or division step. (Covers `maths-decimals-arithmetic`.)
 
 ### Tutor probes
 
@@ -322,6 +363,8 @@ Covers `maths-decimals-place-value`, `maths-decimals-rounding`, plus future deci
 - T-DEC-5: Given a request for an inline definition (tap on "thousandths"), the glossary returns a UK English age-12 definition under 2 seconds.
 - T-DR-1: Given "I rounded 6.45 to 1 decimal place and got 6.4 because I treat 5 as a tie", the tutor's first reply is a Socratic prompt about the school convention for rounding ties up, not a direct correction. (Covers `maths-decimals-rounding`.)
 - T-DR-2: Given a wrong answer matching the truncation trigger (for example "8.972 to 1 dp = 8.9"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-decimals-rounding`.)
+- T-DA-1: Given "0.5 x 0.4 should be more than 0.5 because multiplying makes things bigger", the tutor's first reply is a Socratic prompt about multiplying by a number smaller than 1, not a direct correction. (Covers `maths-decimals-arithmetic`.)
+- T-DA-2: Given a wrong answer matching the leading-zero-quotient trigger (for example "1.2 / 5 = 24"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-decimals-arithmetic`.)
 
 ## Zone: Numerica > Percentages
 
@@ -465,6 +508,14 @@ Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes 
   - Required handling: misconception entry; at least one question whose distractors include the brackets-ignored answer.
 - C-BID-6: Learner reads an index as repeated multiplication of the wrong factors (says 3² = 6 because 3 × 2 = 6, instead of 3 × 3 = 9).
   - Required handling: misconception entry; at least one question that exposes the index-as-multiply slip.
+- C-BWN-1: Learner treats -3² and (-3)² as the same expression because they assume the minus sign binds to the digit before the power applies. (Covers `maths-bidmas-with-negatives`.)
+  - Required handling: misconception entry; at least one spot-misconception question that contrasts the two forms; a scene that walks priority of indices above the unary minus.
+- C-BWN-2: Learner believes a negative number squared remains negative because "a negative carries through every operation". (Covers `maths-bidmas-with-negatives`.)
+  - Required handling: misconception entry; at least one Core MCQ on (-3)^2 whose distractors include the negative-result slip.
+- C-BWN-3: Learner overgeneralises the "two negatives make a positive" rule from multiplication to addition or to subtraction of a positive, so writes -3 + (-2) = +5 or -3 - 2 = -1. (Covers `maths-bidmas-with-negatives`.)
+  - Required handling: misconception entry; at least one Confident or Challenge question whose stem mixes addition of negatives with subtraction of negatives so the rule's correct domain is visible.
+- C-BWN-4: Learner believes BIDMAS means addition is strictly evaluated before subtraction (or multiplication before division), rather than left to right within shared-priority levels. (Covers `maths-bidmas-with-negatives`.)
+  - Required handling: misconception entry; at least one spot-misconception question that presents the strict A-before-S argument; a worked example that contrasts left-to-right within a level.
 
 ### Question shape probes
 
@@ -476,6 +527,10 @@ Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes 
 - Q-BID-6: At least one missing-step question hides one BIDMAS step in a worked solution and asks the learner to fill it in.
 - Q-BID-7: At least one Challenge tier word problem asks the learner to construct a BIDMAS expression from a UK context (transport fares, tuck shop totals, sports scoring) and then evaluate it.
 - Q-BID-8: At least one spot-misconception question presents a strict-left-to-right or wrong-base-exponent argument and asks whether the reasoning is sound.
+- Q-BWN-1: At least one MCQ on the BIDMAS-with-negatives node tests (-3)^2 with the wrongly-negative -9 as a distractor. (Covers `maths-bidmas-with-negatives`.)
+- Q-BWN-2: At least one numeric-entry on the BIDMAS-with-negatives node chains a square of a negative, a multiplication by a negative, and a subtraction of a negative in a single expression. (Covers `maths-bidmas-with-negatives`.)
+- Q-BWN-3: At least one Challenge tier word problem on the BIDMAS-with-negatives node frames a UK context (Lake District temperature, submarine depth, bank balance) and requires a multi-step BIDMAS evaluation involving at least one negative. (Covers `maths-bidmas-with-negatives`.)
+- Q-BWN-4: At least one missing-step question on the BIDMAS-with-negatives node hides the index step in evaluating a (-a)^2 expression. (Covers `maths-bidmas-with-negatives`.)
 
 ### Tutor probes
 
@@ -483,6 +538,8 @@ Covers `maths-bidmas-order-of-operations` plus future order-of-operations nodes 
 - T-BID-2: Given a wrong answer matching the strict-left-to-right trigger (for example "6 + 4 × 3 = 30"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint.
 - T-BID-3: Given an off-topic input (for example a question about US calculator brand BIDMAS settings), the tutor steers back to UK KS3 order-of-operations conventions politely.
 - T-BID-4: Given a request for an inline definition (tap on "indices"), the glossary returns a UK English age-12 definition under 2 seconds.
+- T-BWN-1: Given "-3^2 must equal 9 because the minus sign goes with the 3", the tutor's first reply is a Socratic prompt about whether the brackets are written, not a direct correction. (Covers `maths-bidmas-with-negatives`.)
+- T-BWN-2: Given a wrong answer matching the double-negative-blanket trigger (for example "-3 + (-2) = +5"), the tutor cites the relevant misconception's `reExplanation` rather than producing a fresh hint. (Covers `maths-bidmas-with-negatives`.)
 
 ## Zone: Numerica > Basic Algebra
 

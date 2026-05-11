@@ -17,6 +17,22 @@ import {
 import { recognisingPrimes, primesZoneNodes } from './primes'
 import { decimalPlaceValue, decimalsZoneNodes } from './decimals'
 import { decimalsRounding, decimalsRoundingZoneNodes } from './decimals-rounding'
+import {
+  decimalsArithmetic,
+  decimalsArithmeticZoneNodes,
+} from './decimals-arithmetic'
+import {
+  fractionsMultiplyDivide,
+  fractionsMultiplyDivideZoneNodes,
+} from './fractions-multiply-divide'
+import {
+  fractionsMixedNumbers,
+  fractionsMixedNumbersZoneNodes,
+} from './fractions-mixed-numbers'
+import {
+  bidmasWithNegatives,
+  bidmasWithNegativesZoneNodes,
+} from './bidmas-with-negatives'
 import { wholeNumberPlaceValue, placeValueZoneNodes } from './place-value'
 import {
   percentagesAsDecimalsFractions,
@@ -79,6 +95,14 @@ export {
   decimalsZoneNodes,
   decimalsRounding,
   decimalsRoundingZoneNodes,
+  decimalsArithmetic,
+  decimalsArithmeticZoneNodes,
+  fractionsMultiplyDivide,
+  fractionsMultiplyDivideZoneNodes,
+  fractionsMixedNumbers,
+  fractionsMixedNumbersZoneNodes,
+  bidmasWithNegatives,
+  bidmasWithNegativesZoneNodes,
   wholeNumberPlaceValue,
   placeValueZoneNodes,
   percentagesAsDecimalsFractions,
@@ -121,16 +145,20 @@ export {
 export const mathsNodes: SkillNode[] = [
   ...fractionsZoneNodes,
   ...fractionsAddSubtractZoneNodes,
+  ...fractionsMultiplyDivideZoneNodes,
+  ...fractionsMixedNumbersZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...primesZoneNodes,
   ...decimalsZoneNodes,
   ...decimalsRoundingZoneNodes,
+  ...decimalsArithmeticZoneNodes,
   ...placeValueZoneNodes,
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
   ...ratioZoneNodes,
   ...ratioSharingZoneNodes,
   ...bidmasZoneNodes,
+  ...bidmasWithNegativesZoneNodes,
   ...algebraZoneNodes,
   ...sequencesZoneNodes,
   ...sequencesNthTermZoneNodes,
@@ -153,6 +181,8 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...fractionsZoneNodes.map(n => n.id),
       ...fractionsAddSubtractZoneNodes.map(n => n.id),
+      ...fractionsMultiplyDivideZoneNodes.map(n => n.id),
+      ...fractionsMixedNumbersZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -174,6 +204,7 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...decimalsZoneNodes.map(n => n.id),
       ...decimalsRoundingZoneNodes.map(n => n.id),
+      ...decimalsArithmeticZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -204,7 +235,10 @@ export const mathsZones: Zone[] = [
     id: 'maths-bidmas',
     name: 'BIDMAS',
     realm: 'numerica',
-    nodeIds: bidmasZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...bidmasZoneNodes.map(n => n.id),
+      ...bidmasWithNegativesZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-algebra',

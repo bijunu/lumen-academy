@@ -24,6 +24,12 @@
 - **Edexcel**: N15 Round numbers and measures to an appropriate degree of accuracy (decimal places and significant figures)
 - **OCR**: 1.04a Rounding to a given number of decimal places or significant figures
 
+#### Decimal Arithmetic: Four Operations (Confident, `maths-decimals-arithmetic`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N2 Apply the four operations, including formal written methods, to integers, decimals and simple fractions (GCSE Mathematics 8300)
+- **Edexcel**: N2 Apply the four operations, including formal written methods, to integers, decimals and simple fractions (GCSE Mathematics 1MA1)
+- **OCR**: 2.02a Calculate exactly with decimals (GCSE Mathematics J560)
+
 ### Zone: Fractions (`maths-fractions`)
 
 #### What is a Fraction? (Core, `maths-fractions-what-is`)
@@ -49,6 +55,18 @@
 - **AQA**: N8 Calculate exactly with fractions
 - **Edexcel**: N8 Calculate exactly with fractions
 - **OCR**: 1.02b Apply the four operations to proper fractions
+
+#### Multiplying and Dividing Fractions (Confident, `maths-fractions-multiply-divide`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N8 Calculate exactly with fractions (GCSE Mathematics 8300)
+- **Edexcel**: N8 Calculate exactly with fractions (GCSE Mathematics 1MA1)
+- **OCR**: 2.01b Apply the four operations to proper fractions (GCSE Mathematics J560)
+
+#### Mixed Numbers and Improper Fractions (Challenge, `maths-fractions-mixed-numbers`)
+- **KS3**: Use the four operations, including formal written methods, applied to integers, decimals, proper and improper fractions, and mixed numbers, all both positive and negative.
+- **AQA**: N8 Calculate exactly with fractions including mixed numbers (GCSE Mathematics 8300)
+- **Edexcel**: N8 Calculate exactly with fractions including mixed numbers (GCSE Mathematics 1MA1)
+- **OCR**: 2.01c Apply the four operations to mixed numbers (GCSE Mathematics J560)
 
 ### Zone: Percentages (`maths-percentages`)
 
@@ -115,6 +133,12 @@
 - **AQA**: N2.1 Apply the four operations, including formal written methods, to integers, decimals and simple fractions; use conventional notation for priority of operations
 - **Edexcel**: N2 Apply the four operations to integers, decimals and simple fractions, including order of operations
 - **OCR**: 2.02a Order of operations including brackets and powers
+
+#### BIDMAS with Negative Numbers (Confident, `maths-bidmas-with-negatives`)
+- **KS3**: Use conventional notation for the priority of operations, including brackets, powers, roots and reciprocals; understand and use the rules for the order of operations applied to expressions involving negative numbers.
+- **AQA**: N3 Use the priority of operations, including brackets and powers (GCSE Mathematics 8300)
+- **Edexcel**: N4 Use the priority of operations applied to expressions with brackets, powers and negative numbers (GCSE Mathematics 1MA1)
+- **OCR**: 2.05b Apply the priority of operations to expressions involving negative numbers (GCSE Mathematics J560)
 
 ### Zone: Basic Algebra (`maths-algebra`)
 
