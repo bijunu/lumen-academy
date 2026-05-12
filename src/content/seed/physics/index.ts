@@ -115,6 +115,54 @@ import {
   energyZone,
 } from './energy'
 import {
+  energySankeyDiagrams,
+  energySankeyDiagramsZoneNodes,
+} from './energy-sankey-diagrams'
+import {
+  energyGravitationalPotential,
+  energyGravitationalPotentialZoneNodes,
+} from './energy-gravitational-potential'
+import {
+  energyConservation,
+  energyConservationZoneNodes,
+} from './energy-conservation'
+import {
+  energyKeGpeInterchange,
+  energyKeGpeInterchangeZoneNodes,
+} from './energy-ke-gpe-interchange'
+import {
+  energyUkMixRenewables,
+  energyUkMixRenewablesZoneNodes,
+} from './energy-uk-mix-renewables'
+import {
+  energyHomeInsulation,
+  energyHomeInsulationZoneNodes,
+} from './energy-home-insulation'
+import {
+  energyKinetic,
+  energyKineticZoneNodes,
+} from './energy-kinetic'
+import {
+  energyEfficiencyPercentage,
+  energyEfficiencyPercentageZoneNodes,
+} from './energy-efficiency-percentage'
+import {
+  energyPower,
+  energyPowerZoneNodes,
+} from './energy-power'
+import {
+  energyWorkDone,
+  energyWorkDoneZoneNodes,
+} from './energy-work-done'
+import {
+  energyNationalGrid,
+  energyNationalGridZoneNodes,
+} from './energy-national-grid'
+import {
+  energyElectricityCost,
+  energyElectricityCostZoneNodes,
+} from './energy-electricity-cost'
+import {
   wavesAnatomy,
   wavesSoundLight,
   wavesZoneNodes,
@@ -196,6 +244,30 @@ export {
   energyEfficiency,
   energyZoneNodes,
   energyZone,
+  energySankeyDiagrams,
+  energySankeyDiagramsZoneNodes,
+  energyGravitationalPotential,
+  energyGravitationalPotentialZoneNodes,
+  energyConservation,
+  energyConservationZoneNodes,
+  energyKeGpeInterchange,
+  energyKeGpeInterchangeZoneNodes,
+  energyUkMixRenewables,
+  energyUkMixRenewablesZoneNodes,
+  energyHomeInsulation,
+  energyHomeInsulationZoneNodes,
+  energyKinetic,
+  energyKineticZoneNodes,
+  energyEfficiencyPercentage,
+  energyEfficiencyPercentageZoneNodes,
+  energyPower,
+  energyPowerZoneNodes,
+  energyWorkDone,
+  energyWorkDoneZoneNodes,
+  energyNationalGrid,
+  energyNationalGridZoneNodes,
+  energyElectricityCost,
+  energyElectricityCostZoneNodes,
   wavesAnatomy,
   wavesSoundLight,
   wavesZoneNodes,
@@ -237,6 +309,18 @@ export const physicsNodes: SkillNode[] = [
   ...gravityInverseSquareZoneNodes,
   ...gravityMassWeightInstrumentsZoneNodes,
   ...energyZoneNodes,
+  ...energySankeyDiagramsZoneNodes,
+  ...energyGravitationalPotentialZoneNodes,
+  ...energyConservationZoneNodes,
+  ...energyKeGpeInterchangeZoneNodes,
+  ...energyUkMixRenewablesZoneNodes,
+  ...energyHomeInsulationZoneNodes,
+  ...energyKineticZoneNodes,
+  ...energyEfficiencyPercentageZoneNodes,
+  ...energyPowerZoneNodes,
+  ...energyWorkDoneZoneNodes,
+  ...energyNationalGridZoneNodes,
+  ...energyElectricityCostZoneNodes,
   ...wavesZoneNodes,
   ...spaceZoneNodes,
   ...magnetismZoneNodes,

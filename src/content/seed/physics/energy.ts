@@ -1,5 +1,8 @@
 import type { SkillNode, Zone } from '@/types/content'
 
+import { energyKeGpeInterchange } from './energy-ke-gpe-interchange'
+import { energyHomeInsulation } from './energy-home-insulation'
+
 const STORES_GALLERY_SVG = `
   <g stroke="currentColor" fill="none" stroke-width="3" stroke-linecap="round">
     <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="700" stroke="none" fill="currentColor">The eight energy stores</text>
@@ -2167,5 +2170,5 @@ export const energyZone: Zone = {
   id: 'physics-energy-stores-transfers',
   name: 'Energy Stores and Transfers',
   realm: 'mechanica',
-  nodeIds: energyZoneNodes.map(n => n.id),
+  nodeIds: [...energyZoneNodes.map(n => n.id), 'physics-energy-sankey-diagrams', 'physics-energy-conservation', 'physics-energy-gravitational-potential', energyKeGpeInterchange.id, 'physics-energy-uk-mix-renewables', 'physics-energy-kinetic', energyHomeInsulation.id, 'physics-energy-efficiency-percentage', 'physics-energy-power', 'physics-energy-work-done', 'physics-energy-national-grid', 'physics-energy-electricity-cost'],
 }
