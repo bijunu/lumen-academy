@@ -18,11 +18,59 @@ import {
   factorsMultiplesHcfLcm,
   factorsMultiplesHcfLcmZoneNodes,
 } from './factors-multiples-hcf-lcm'
+import {
+  factorsMultiplesThreeNumbers,
+  factorsMultiplesThreeNumbersZoneNodes,
+} from './factors-multiples-three-numbers'
+import {
+  factorsMultiplesWordProblems,
+  factorsMultiplesWordProblemsZoneNodes,
+} from './factors-multiples-word-problems'
+import {
+  factorsMultiplesDivisibilityTests,
+  factorsMultiplesDivisibilityTestsZoneNodes,
+} from './factors-multiples-divisibility-tests'
+import {
+  factorsMultiplesSieveEratosthenes,
+  factorsMultiplesSieveEratosthenesZoneNodes,
+} from './factors-multiples-sieve-eratosthenes'
+import {
+  factorsMultiplesViaPrimeFactorisation,
+  factorsMultiplesViaPrimeFactorisationZoneNodes,
+} from './factors-multiples-via-prime-factorisation'
+import {
+  factorsMultiplesEuclidean,
+  factorsMultiplesEuclideanZoneNodes,
+} from './factors-multiples-euclidean'
 import { recognisingPrimes, primesZoneNodes } from './primes'
 import {
   primesPrimeFactorisation,
   primesPrimeFactorisationZoneNodes,
 } from './primes-prime-factorisation'
+import {
+  primesSquaresCubes,
+  primesSquaresCubesZoneNodes,
+} from './primes-squares-cubes'
+import {
+  primesIndicesMultiplication,
+  primesIndicesMultiplicationZoneNodes,
+} from './primes-indices-multiplication'
+import {
+  primesIndicesDivision,
+  primesIndicesDivisionZoneNodes,
+} from './primes-indices-division'
+import {
+  primesIndicesPowerOfPower,
+  primesIndicesPowerOfPowerZoneNodes,
+} from './primes-indices-power-of-power'
+import {
+  primesZeroNegativeIndices,
+  primesZeroNegativeIndicesZoneNodes,
+} from './primes-zero-negative-indices'
+import {
+  primesNumberOfFactors,
+  primesNumberOfFactorsZoneNodes,
+} from './primes-number-of-factors'
 import { decimalPlaceValue, decimalsZoneNodes } from './decimals'
 import { decimalsRounding, decimalsRoundingZoneNodes } from './decimals-rounding'
 import {
@@ -278,10 +326,34 @@ export {
   factorsMultiplesZoneNodes,
   factorsMultiplesHcfLcm,
   factorsMultiplesHcfLcmZoneNodes,
+  factorsMultiplesThreeNumbers,
+  factorsMultiplesThreeNumbersZoneNodes,
+  factorsMultiplesWordProblems,
+  factorsMultiplesWordProblemsZoneNodes,
+  factorsMultiplesDivisibilityTests,
+  factorsMultiplesDivisibilityTestsZoneNodes,
+  factorsMultiplesSieveEratosthenes,
+  factorsMultiplesSieveEratosthenesZoneNodes,
+  factorsMultiplesViaPrimeFactorisation,
+  factorsMultiplesViaPrimeFactorisationZoneNodes,
+  factorsMultiplesEuclidean,
+  factorsMultiplesEuclideanZoneNodes,
   recognisingPrimes,
   primesZoneNodes,
   primesPrimeFactorisation,
   primesPrimeFactorisationZoneNodes,
+  primesSquaresCubes,
+  primesSquaresCubesZoneNodes,
+  primesIndicesMultiplication,
+  primesIndicesMultiplicationZoneNodes,
+  primesIndicesDivision,
+  primesIndicesDivisionZoneNodes,
+  primesIndicesPowerOfPower,
+  primesIndicesPowerOfPowerZoneNodes,
+  primesZeroNegativeIndices,
+  primesZeroNegativeIndicesZoneNodes,
+  primesNumberOfFactors,
+  primesNumberOfFactorsZoneNodes,
   decimalPlaceValue,
   decimalsZoneNodes,
   decimalsRounding,
@@ -439,8 +511,20 @@ export const mathsNodes: SkillNode[] = [
   ...fractionsMultiStepProblemsZoneNodes,
   ...factorsMultiplesZoneNodes,
   ...factorsMultiplesHcfLcmZoneNodes,
+  ...factorsMultiplesThreeNumbersZoneNodes,
+  ...factorsMultiplesWordProblemsZoneNodes,
+  ...factorsMultiplesDivisibilityTestsZoneNodes,
+  ...factorsMultiplesSieveEratosthenesZoneNodes,
+  ...factorsMultiplesViaPrimeFactorisationZoneNodes,
+  ...factorsMultiplesEuclideanZoneNodes,
   ...primesZoneNodes,
   ...primesPrimeFactorisationZoneNodes,
+  ...primesSquaresCubesZoneNodes,
+  ...primesIndicesMultiplicationZoneNodes,
+  ...primesIndicesDivisionZoneNodes,
+  ...primesIndicesPowerOfPowerZoneNodes,
+  ...primesZeroNegativeIndicesZoneNodes,
+  ...primesNumberOfFactorsZoneNodes,
   ...decimalsZoneNodes,
   ...decimalsRoundingZoneNodes,
   ...decimalsArithmeticZoneNodes,
@@ -531,6 +615,12 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...factorsMultiplesZoneNodes.map(n => n.id),
       ...factorsMultiplesHcfLcmZoneNodes.map(n => n.id),
+      ...factorsMultiplesThreeNumbersZoneNodes.map(n => n.id),
+      ...factorsMultiplesWordProblemsZoneNodes.map(n => n.id),
+      ...factorsMultiplesDivisibilityTestsZoneNodes.map(n => n.id),
+      ...factorsMultiplesSieveEratosthenesZoneNodes.map(n => n.id),
+      ...factorsMultiplesViaPrimeFactorisationZoneNodes.map(n => n.id),
+      ...factorsMultiplesEuclideanZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -540,6 +630,12 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...primesZoneNodes.map(n => n.id),
       ...primesPrimeFactorisationZoneNodes.map(n => n.id),
+      ...primesSquaresCubesZoneNodes.map(n => n.id),
+      ...primesIndicesMultiplicationZoneNodes.map(n => n.id),
+      ...primesIndicesDivisionZoneNodes.map(n => n.id),
+      ...primesIndicesPowerOfPowerZoneNodes.map(n => n.id),
+      ...primesZeroNegativeIndicesZoneNodes.map(n => n.id),
+      ...primesNumberOfFactorsZoneNodes.map(n => n.id),
     ],
   },
   {
