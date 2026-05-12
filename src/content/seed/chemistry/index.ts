@@ -32,6 +32,17 @@ import {
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
 } from './atoms'
+import { daltonAtomicModel } from './atoms-dalton-model'
+import { protonsNeutronsElectrons } from './atoms-protons-neutrons-electrons'
+import { atomicNumberAndMassNumber } from './atoms-atomic-mass-number'
+import { isotopesAndProperties } from './atoms-isotopes'
+import { electronShellsArrangement } from './atoms-electron-shells'
+import { readingPeriodicTableCell } from './atoms-periodic-table-cell'
+import { countingAtomsInBrackets } from './atoms-counting-brackets'
+import { plumPuddingToNuclear } from './atoms-plum-pudding-nuclear'
+import { relativeAtomicMass } from './atoms-relative-atomic-mass'
+import { ionicBondingIntro } from './atoms-ionic-bonding-intro'
+import { writingIonicFormulae } from './atoms-ionic-formulae'
 import {
   periodicTableZone,
   periodicTableLayout,
@@ -78,6 +89,17 @@ export {
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
 } from './atoms'
+export { daltonAtomicModel } from './atoms-dalton-model'
+export { protonsNeutronsElectrons } from './atoms-protons-neutrons-electrons'
+export { atomicNumberAndMassNumber } from './atoms-atomic-mass-number'
+export { isotopesAndProperties } from './atoms-isotopes'
+export { electronShellsArrangement } from './atoms-electron-shells'
+export { readingPeriodicTableCell } from './atoms-periodic-table-cell'
+export { countingAtomsInBrackets } from './atoms-counting-brackets'
+export { plumPuddingToNuclear } from './atoms-plum-pudding-nuclear'
+export { relativeAtomicMass } from './atoms-relative-atomic-mass'
+export { ionicBondingIntro } from './atoms-ionic-bonding-intro'
+export { writingIonicFormulae } from './atoms-ionic-formulae'
 export {
   periodicTableZone,
   periodicTableLayout,
@@ -120,6 +142,17 @@ export const chemistryNodes: SkillNode[] = [
   decanting,
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
+  daltonAtomicModel,
+  protonsNeutronsElectrons,
+  atomicNumberAndMassNumber,
+  isotopesAndProperties,
+  electronShellsArrangement,
+  readingPeriodicTableCell,
+  countingAtomsInBrackets,
+  plumPuddingToNuclear,
+  relativeAtomicMass,
+  ionicBondingIntro,
+  writingIonicFormulae,
   periodicTableLayout,
   periodicTableGroup1And7,
   acidsAlkalisCommon,

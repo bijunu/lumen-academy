@@ -1216,5 +1216,16 @@ export const atomsZone: Zone = {
   nodeIds: [
     'chemistry-atoms-elements-compounds-basics',
     'chemistry-atoms-symbols-formulae',
+    'chemistry-atoms-dalton-model',
+    'chemistry-atoms-protons-neutrons-electrons',
+    'chemistry-atoms-atomic-mass-number',
+    'chemistry-atoms-isotopes',
+    'chemistry-atoms-electron-shells',
+    'chemistry-atoms-periodic-table-cell',
+    'chemistry-atoms-counting-brackets',
+    'chemistry-atoms-plum-pudding-nuclear',
+    'chemistry-atoms-relative-atomic-mass',
+    'chemistry-atoms-ionic-bonding-intro',
+    'chemistry-atoms-ionic-formulae',
   ],
 }
