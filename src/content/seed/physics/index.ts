@@ -68,6 +68,46 @@ import {
   gravityZone,
 } from './gravity'
 import {
+  gravityOtherPlanets,
+  gravityOtherPlanetsZoneNodes,
+} from './gravity-other-planets'
+import {
+  gravityFreeFall,
+  gravityFreeFallZoneNodes,
+} from './gravity-free-fall'
+import {
+  gravityVacuumFall,
+  gravityVacuumFallZoneNodes,
+} from './gravity-vacuum-fall'
+import {
+  gravityEarthMoonTides,
+  gravityEarthMoonTidesZoneNodes,
+} from './gravity-earth-moon-tides'
+import {
+  gravitySatellitesOrbits,
+  gravitySatellitesOrbitsZoneNodes,
+} from './gravity-satellites-orbits'
+import {
+  gravityWeightlessness,
+  gravityWeightlessnessZoneNodes,
+} from './gravity-weightlessness'
+import {
+  gravityThirdLawPairs,
+  gravityThirdLawPairsZoneNodes,
+} from './gravity-third-law-pairs'
+import {
+  gravityCentreOfMass,
+  gravityCentreOfMassZoneNodes,
+} from './gravity-centre-of-mass'
+import {
+  gravityInverseSquare,
+  gravityInverseSquareZoneNodes,
+} from './gravity-inverse-square'
+import {
+  gravityMassWeightInstruments,
+  gravityMassWeightInstrumentsZoneNodes,
+} from './gravity-mass-weight-instruments'
+import {
   energyStores,
   energyTransfers,
   energyEfficiency,
@@ -131,6 +171,26 @@ export {
   gravityWeightCalculation,
   gravityZoneNodes,
   gravityZone,
+  gravityOtherPlanets,
+  gravityOtherPlanetsZoneNodes,
+  gravityFreeFall,
+  gravityFreeFallZoneNodes,
+  gravityVacuumFall,
+  gravityVacuumFallZoneNodes,
+  gravityEarthMoonTides,
+  gravityEarthMoonTidesZoneNodes,
+  gravitySatellitesOrbits,
+  gravitySatellitesOrbitsZoneNodes,
+  gravityWeightlessness,
+  gravityWeightlessnessZoneNodes,
+  gravityThirdLawPairs,
+  gravityThirdLawPairsZoneNodes,
+  gravityCentreOfMass,
+  gravityCentreOfMassZoneNodes,
+  gravityInverseSquare,
+  gravityInverseSquareZoneNodes,
+  gravityMassWeightInstruments,
+  gravityMassWeightInstrumentsZoneNodes,
   energyStores,
   energyTransfers,
   energyEfficiency,
@@ -166,6 +226,16 @@ export const physicsNodes: SkillNode[] = [
   ...forcesNewtonThirdZoneNodes,
   ...forcesMomentsZoneNodes,
   ...gravityZoneNodes,
+  ...gravityOtherPlanetsZoneNodes,
+  ...gravityFreeFallZoneNodes,
+  ...gravityVacuumFallZoneNodes,
+  ...gravityEarthMoonTidesZoneNodes,
+  ...gravitySatellitesOrbitsZoneNodes,
+  ...gravityWeightlessnessZoneNodes,
+  ...gravityThirdLawPairsZoneNodes,
+  ...gravityCentreOfMassZoneNodes,
+  ...gravityInverseSquareZoneNodes,
+  ...gravityMassWeightInstrumentsZoneNodes,
   ...energyZoneNodes,
   ...wavesZoneNodes,
   ...spaceZoneNodes,
@@ -199,7 +269,24 @@ export const physicsZones: Zone[] = [
       ...forcesMomentsZoneNodes.map(n => n.id),
     ],
   },
-  gravityZone,
+  {
+    id: 'physics-gravity',
+    name: 'Gravity, Weight, Mass',
+    realm: 'mechanica',
+    nodeIds: [
+      ...gravityZoneNodes.map(n => n.id),
+      ...gravityOtherPlanetsZoneNodes.map(n => n.id),
+      ...gravityFreeFallZoneNodes.map(n => n.id),
+      ...gravityVacuumFallZoneNodes.map(n => n.id),
+      ...gravityEarthMoonTidesZoneNodes.map(n => n.id),
+      ...gravitySatellitesOrbitsZoneNodes.map(n => n.id),
+      ...gravityWeightlessnessZoneNodes.map(n => n.id),
+      ...gravityThirdLawPairsZoneNodes.map(n => n.id),
+      ...gravityCentreOfMassZoneNodes.map(n => n.id),
+      ...gravityInverseSquareZoneNodes.map(n => n.id),
+      ...gravityMassWeightInstrumentsZoneNodes.map(n => n.id),
+    ],
+  },
   energyZone,
   wavesZone,
   spaceZone,
