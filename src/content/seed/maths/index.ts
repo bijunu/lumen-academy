@@ -300,8 +300,32 @@ import {
   areaRectangles,
   areaRectanglesZoneNodes,
 } from './area-rectangles'
+import {
+  areaTriangles,
+  areaTrianglesZoneNodes,
+} from './geometry-measure-area-triangles'
+import {
+  geometryMeasureAreaParallelograms,
+  geometryMeasureAreaParallelogramsZoneNodes,
+} from './geometry-measure-area-parallelograms'
+import {
+  areaTrapezia,
+  areaTrapeziaZoneNodes,
+} from './geometry-measure-area-trapezia'
+import {
+  geometryMeasureAngleRules,
+  geometryMeasureAngleRulesZoneNodes,
+} from './geometry-measure-angle-rules'
 import { perimeter, perimeterZoneNodes } from './perimeter'
 import { volumeCuboids, volumeCuboidsZoneNodes } from './volume-cuboids'
+import {
+  volumePrisms,
+  volumePrismsZoneNodes,
+} from './geometry-measure-volume-prisms'
+import {
+  surfaceAreaCuboids,
+  surfaceAreaCuboidsZoneNodes,
+} from './geometry-measure-surface-area-cuboids'
 import {
   probabilityScale,
   probabilityScaleZoneNodes,
@@ -314,6 +338,30 @@ import {
   probabilityExperimental,
   probabilityExperimentalZoneNodes,
 } from './probability-experimental'
+import {
+  probabilitySumToOne,
+  probabilitySumToOneZoneNodes,
+} from './probability-sum-to-one'
+import {
+  probabilityTwoWayTables,
+  probabilityTwoWayTablesZoneNodes,
+} from './probability-two-way-tables'
+import {
+  probabilityExpectedFrequency,
+  probabilityExpectedFrequencyZoneNodes,
+} from './probability-expected-frequency'
+import {
+  probabilityEquallyLikelyEvents,
+  probabilityEquallyLikelyEventsZoneNodes,
+} from './probability-equally-likely-events'
+import {
+  probabilitySampleSpaceTwoEvent,
+  probabilitySampleSpaceTwoEventZoneNodes,
+} from './probability-sample-space-two-event'
+import {
+  probabilityComparingExperimentalTheoretical,
+  probabilityComparingExperimentalTheoreticalZoneNodes,
+} from './probability-comparing-experimental-theoretical'
 
 export {
   whatIsAFraction,
@@ -487,16 +535,40 @@ export {
   fourOperationsZoneNodes,
   areaRectangles,
   areaRectanglesZoneNodes,
+  areaTriangles,
+  areaTrianglesZoneNodes,
+  geometryMeasureAreaParallelograms,
+  geometryMeasureAreaParallelogramsZoneNodes,
+  areaTrapezia,
+  areaTrapeziaZoneNodes,
+  geometryMeasureAngleRules,
+  geometryMeasureAngleRulesZoneNodes,
   perimeter,
   perimeterZoneNodes,
   volumeCuboids,
   volumeCuboidsZoneNodes,
+  volumePrisms,
+  volumePrismsZoneNodes,
+  surfaceAreaCuboids,
+  surfaceAreaCuboidsZoneNodes,
   probabilityScale,
   probabilityScaleZoneNodes,
   probabilityListingOutcomes,
   probabilityListingOutcomesZoneNodes,
   probabilityExperimental,
   probabilityExperimentalZoneNodes,
+  probabilitySumToOne,
+  probabilitySumToOneZoneNodes,
+  probabilityTwoWayTables,
+  probabilityTwoWayTablesZoneNodes,
+  probabilityEquallyLikelyEvents,
+  probabilityEquallyLikelyEventsZoneNodes,
+  probabilitySampleSpaceTwoEvent,
+  probabilitySampleSpaceTwoEventZoneNodes,
+  probabilityComparingExperimentalTheoretical,
+  probabilityComparingExperimentalTheoreticalZoneNodes,
+  probabilityExpectedFrequency,
+  probabilityExpectedFrequencyZoneNodes,
 }
 
 export const mathsNodes: SkillNode[] = [
@@ -584,11 +656,23 @@ export const mathsNodes: SkillNode[] = [
   ...coordinatesEquationFromLineZoneNodes,
   ...fourOperationsZoneNodes,
   ...areaRectanglesZoneNodes,
+  ...areaTrianglesZoneNodes,
+  ...geometryMeasureAreaParallelogramsZoneNodes,
+  ...areaTrapeziaZoneNodes,
+  ...geometryMeasureAngleRulesZoneNodes,
   ...perimeterZoneNodes,
   ...volumeCuboidsZoneNodes,
+  ...volumePrismsZoneNodes,
+  ...surfaceAreaCuboidsZoneNodes,
   ...probabilityScaleZoneNodes,
   ...probabilityListingOutcomesZoneNodes,
   ...probabilityExperimentalZoneNodes,
+  ...probabilitySumToOneZoneNodes,
+  ...probabilityTwoWayTablesZoneNodes,
+  ...probabilityExpectedFrequencyZoneNodes,
+  ...probabilityEquallyLikelyEventsZoneNodes,
+  ...probabilitySampleSpaceTwoEventZoneNodes,
+  ...probabilityComparingExperimentalTheoreticalZoneNodes,
 ]
 
 export const mathsZones: Zone[] = [
@@ -761,8 +845,14 @@ export const mathsZones: Zone[] = [
     realm: 'numerica',
     nodeIds: [
       ...areaRectanglesZoneNodes.map(n => n.id),
+      ...areaTrianglesZoneNodes.map(n => n.id),
+      ...geometryMeasureAreaParallelogramsZoneNodes.map(n => n.id),
+      ...areaTrapeziaZoneNodes.map(n => n.id),
+      ...geometryMeasureAngleRulesZoneNodes.map(n => n.id),
       ...perimeterZoneNodes.map(n => n.id),
       ...volumeCuboidsZoneNodes.map(n => n.id),
+      ...volumePrismsZoneNodes.map(n => n.id),
+      ...surfaceAreaCuboidsZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -773,6 +863,12 @@ export const mathsZones: Zone[] = [
       ...probabilityScaleZoneNodes.map(n => n.id),
       ...probabilityListingOutcomesZoneNodes.map(n => n.id),
       ...probabilityExperimentalZoneNodes.map(n => n.id),
+      ...probabilitySumToOneZoneNodes.map(n => n.id),
+      ...probabilityTwoWayTablesZoneNodes.map(n => n.id),
+      ...probabilityExpectedFrequencyZoneNodes.map(n => n.id),
+      ...probabilityEquallyLikelyEventsZoneNodes.map(n => n.id),
+      ...probabilitySampleSpaceTwoEventZoneNodes.map(n => n.id),
+      ...probabilityComparingExperimentalTheoreticalZoneNodes.map(n => n.id),
     ],
   },
 ]
