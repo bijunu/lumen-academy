@@ -7,6 +7,62 @@ import {
   electricityCircuitsZoneNodes,
 } from './electricity-circuits'
 import {
+  electricityVoltageRules,
+  electricityVoltageRulesZoneNodes,
+} from './electricity-voltage-rules'
+import {
+  electricityLampBrightness,
+  electricityLampBrightnessZoneNodes,
+} from './electricity-lamp-brightness'
+import {
+  electricityBuildingSeries,
+  electricityBuildingSeriesZoneNodes,
+} from './electricity-building-series'
+import {
+  electricityHazards,
+  electricityHazardsZoneNodes,
+} from './electricity-hazards'
+import {
+  electricityResistanceFactors,
+  electricityResistanceFactorsZoneNodes,
+} from './electricity-resistance-factors'
+import {
+  electricityReadingMeters,
+  electricityReadingMetersZoneNodes,
+} from './electricity-reading-meters'
+import {
+  electricitySwitchesCells,
+  electricitySwitchesCellsZoneNodes,
+} from './electricity-switches-cells'
+import {
+  electricityUkMains,
+  electricityUkMainsZoneNodes,
+} from './electricity-uk-mains'
+import {
+  electricityStaticBasics,
+  electricityStaticBasicsZoneNodes,
+} from './electricity-static-basics'
+import {
+  electricityOhmsLawPractice,
+  electricityOhmsLawPracticeZoneNodes,
+} from './electricity-ohms-law-practice'
+import {
+  electricityCurrentRules,
+  electricityCurrentRulesZoneNodes,
+} from './electricity-current-rules'
+import {
+  electricityPowerFormula,
+  electricityPowerFormulaZoneNodes,
+} from './electricity-power-formula'
+import {
+  electricityFusesPlugRatings,
+  electricityFusesPlugRatingsZoneNodes,
+} from './electricity-fuses-plug-ratings'
+import {
+  electricityFaultFinding,
+  electricityFaultFindingZoneNodes,
+} from './electricity-fault-finding'
+import {
   forcesTypes,
   forcesBalanced,
   forcesFriction,
@@ -186,6 +242,34 @@ export {
   electricitySeriesParallel,
   electricityCurrentVoltage,
   electricityCircuitsZoneNodes,
+  electricityVoltageRules,
+  electricityVoltageRulesZoneNodes,
+  electricityLampBrightness,
+  electricityLampBrightnessZoneNodes,
+  electricityBuildingSeries,
+  electricityBuildingSeriesZoneNodes,
+  electricityHazards,
+  electricityHazardsZoneNodes,
+  electricityReadingMeters,
+  electricityReadingMetersZoneNodes,
+  electricitySwitchesCells,
+  electricitySwitchesCellsZoneNodes,
+  electricityResistanceFactors,
+  electricityResistanceFactorsZoneNodes,
+  electricityUkMains,
+  electricityUkMainsZoneNodes,
+  electricityOhmsLawPractice,
+  electricityOhmsLawPracticeZoneNodes,
+  electricityCurrentRules,
+  electricityCurrentRulesZoneNodes,
+  electricityPowerFormula,
+  electricityPowerFormulaZoneNodes,
+  electricityFusesPlugRatings,
+  electricityFusesPlugRatingsZoneNodes,
+  electricityFaultFinding,
+  electricityFaultFindingZoneNodes,
+  electricityStaticBasics,
+  electricityStaticBasicsZoneNodes,
   forcesTypes,
   forcesBalanced,
   forcesFriction,
@@ -284,6 +368,20 @@ export {
 
 export const physicsNodes: SkillNode[] = [
   ...electricityCircuitsZoneNodes,
+  ...electricityVoltageRulesZoneNodes,
+  ...electricityLampBrightnessZoneNodes,
+  ...electricityBuildingSeriesZoneNodes,
+  ...electricityHazardsZoneNodes,
+  ...electricityReadingMetersZoneNodes,
+  ...electricityResistanceFactorsZoneNodes,
+  ...electricityUkMainsZoneNodes,
+  ...electricityOhmsLawPracticeZoneNodes,
+  ...electricityCurrentRulesZoneNodes,
+  ...electricityPowerFormulaZoneNodes,
+  ...electricityFaultFindingZoneNodes,
+  ...electricityFusesPlugRatingsZoneNodes,
+  ...electricitySwitchesCellsZoneNodes,
+  ...electricityStaticBasicsZoneNodes,
   ...forcesZoneNodes,
   ...forcesFreeBodyZoneNodes,
   ...forcesResultant1DZoneNodes,
@@ -331,7 +429,23 @@ export const physicsZones: Zone[] = [
     id: 'physics-electricity-circuits',
     name: 'Electricity and Circuits',
     realm: 'mechanica',
-    nodeIds: electricityCircuitsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...electricityCircuitsZoneNodes.map(n => n.id),
+      ...electricityVoltageRulesZoneNodes.map(n => n.id),
+      ...electricityLampBrightnessZoneNodes.map(n => n.id),
+      ...electricityBuildingSeriesZoneNodes.map(n => n.id),
+      ...electricityHazardsZoneNodes.map(n => n.id),
+      ...electricityReadingMetersZoneNodes.map(n => n.id),
+      ...electricityResistanceFactorsZoneNodes.map(n => n.id),
+      ...electricityOhmsLawPracticeZoneNodes.map(n => n.id),
+      ...electricityCurrentRulesZoneNodes.map(n => n.id),
+      ...electricityPowerFormulaZoneNodes.map(n => n.id),
+      ...electricityFaultFindingZoneNodes.map(n => n.id),
+      ...electricityFusesPlugRatingsZoneNodes.map(n => n.id),
+      ...electricityUkMainsZoneNodes.map(n => n.id),
+      ...electricitySwitchesCellsZoneNodes.map(n => n.id),
+      ...electricityStaticBasicsZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'physics-forces',
