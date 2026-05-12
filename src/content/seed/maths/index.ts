@@ -131,6 +131,34 @@ import {
 } from './bidmas-with-negatives'
 import { wholeNumberPlaceValue, placeValueZoneNodes } from './place-value'
 import {
+  placeValueSignificantFigures,
+  placeValueSignificantFiguresZoneNodes,
+} from './place-value-significant-figures'
+import {
+  placeValuePowersOfTen,
+  placeValuePowersOfTenZoneNodes,
+} from './place-value-powers-of-ten'
+import {
+  placeValueVeryLargeVerySmall,
+  placeValueVeryLargeVerySmallZoneNodes,
+} from './place-value-very-large-very-small'
+import {
+  placeValueEstimation,
+  placeValueEstimationZoneNodes,
+} from './place-value-estimation'
+import {
+  placeValueStandardFormIntro,
+  placeValueStandardFormIntroZoneNodes,
+} from './place-value-standard-form-intro'
+import {
+  placeValueStandardFormArithmetic,
+  placeValueStandardFormArithmeticZoneNodes,
+} from './place-value-standard-form-arithmetic'
+import {
+  placeValueOrdering,
+  placeValueOrderingZoneNodes,
+} from './place-value-ordering'
+import {
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
 } from './percentages'
@@ -297,6 +325,34 @@ import {
   fourOperationsZoneNodes,
 } from './four-operations'
 import {
+  fourOperationsLongDivision,
+  fourOperationsLongDivisionZoneNodes,
+} from './four-operations-long-division'
+import {
+  fourOperationsLongMultiplication,
+  fourOperationsLongMultiplicationZoneNodes,
+} from './four-operations-long-multiplication'
+import {
+  fourOperationsEstimationChecking,
+  fourOperationsEstimationCheckingZoneNodes,
+} from './four-operations-estimation-checking'
+import {
+  fourOperationsCalculatorSkills,
+  fourOperationsCalculatorSkillsZoneNodes,
+} from './four-operations-calculator-skills'
+import {
+  fourOperationsPowersOfNegatives,
+  fourOperationsPowersOfNegativesZoneNodes,
+} from './four-operations-powers-of-negatives'
+import {
+  fourOperationsMixedWordProblems,
+  fourOperationsMixedWordProblemsZoneNodes,
+} from './four-operations-mixed-word-problems'
+import {
+  fourOperationsNegativesInContext,
+  fourOperationsNegativesInContextZoneNodes,
+} from './four-operations-negatives-in-context'
+import {
   areaRectangles,
   areaRectanglesZoneNodes,
 } from './area-rectangles'
@@ -436,6 +492,20 @@ export {
   bidmasWithNegativesZoneNodes,
   wholeNumberPlaceValue,
   placeValueZoneNodes,
+  placeValueSignificantFigures,
+  placeValueSignificantFiguresZoneNodes,
+  placeValuePowersOfTen,
+  placeValuePowersOfTenZoneNodes,
+  placeValueVeryLargeVerySmall,
+  placeValueVeryLargeVerySmallZoneNodes,
+  placeValueEstimation,
+  placeValueEstimationZoneNodes,
+  placeValueStandardFormIntro,
+  placeValueStandardFormIntroZoneNodes,
+  placeValueStandardFormArithmetic,
+  placeValueStandardFormArithmeticZoneNodes,
+  placeValueOrdering,
+  placeValueOrderingZoneNodes,
   percentagesAsDecimalsFractions,
   percentagesZoneNodes,
   percentagesOfAmount,
@@ -533,6 +603,20 @@ export {
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
+  fourOperationsLongDivision,
+  fourOperationsLongDivisionZoneNodes,
+  fourOperationsLongMultiplication,
+  fourOperationsLongMultiplicationZoneNodes,
+  fourOperationsEstimationChecking,
+  fourOperationsEstimationCheckingZoneNodes,
+  fourOperationsCalculatorSkills,
+  fourOperationsCalculatorSkillsZoneNodes,
+  fourOperationsMixedWordProblems,
+  fourOperationsMixedWordProblemsZoneNodes,
+  fourOperationsNegativesInContext,
+  fourOperationsNegativesInContextZoneNodes,
+  fourOperationsPowersOfNegatives,
+  fourOperationsPowersOfNegativesZoneNodes,
   areaRectangles,
   areaRectanglesZoneNodes,
   areaTriangles,
@@ -606,6 +690,13 @@ export const mathsNodes: SkillNode[] = [
   ...decimalsEstimationZoneNodes,
   ...decimalsRecurringZoneNodes,
   ...placeValueZoneNodes,
+  ...placeValueSignificantFiguresZoneNodes,
+  ...placeValuePowersOfTenZoneNodes,
+  ...placeValueVeryLargeVerySmallZoneNodes,
+  ...placeValueEstimationZoneNodes,
+  ...placeValueStandardFormIntroZoneNodes,
+  ...placeValueStandardFormArithmeticZoneNodes,
+  ...placeValueOrderingZoneNodes,
   ...percentagesZoneNodes,
   ...percentagesOfAmountZoneNodes,
   ...percentagesChangeZoneNodes,
@@ -655,6 +746,13 @@ export const mathsNodes: SkillNode[] = [
   ...coordinatesReflectionsAxesZoneNodes,
   ...coordinatesEquationFromLineZoneNodes,
   ...fourOperationsZoneNodes,
+  ...fourOperationsLongDivisionZoneNodes,
+  ...fourOperationsLongMultiplicationZoneNodes,
+  ...fourOperationsEstimationCheckingZoneNodes,
+  ...fourOperationsCalculatorSkillsZoneNodes,
+  ...fourOperationsNegativesInContextZoneNodes,
+  ...fourOperationsMixedWordProblemsZoneNodes,
+  ...fourOperationsPowersOfNegativesZoneNodes,
   ...areaRectanglesZoneNodes,
   ...areaTrianglesZoneNodes,
   ...geometryMeasureAreaParallelogramsZoneNodes,
@@ -741,7 +839,16 @@ export const mathsZones: Zone[] = [
     id: 'maths-place-value',
     name: 'Place Value',
     realm: 'numerica',
-    nodeIds: placeValueZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...placeValueZoneNodes.map(n => n.id),
+      ...placeValueSignificantFiguresZoneNodes.map(n => n.id),
+      ...placeValuePowersOfTenZoneNodes.map(n => n.id),
+      ...placeValueVeryLargeVerySmallZoneNodes.map(n => n.id),
+      ...placeValueEstimationZoneNodes.map(n => n.id),
+      ...placeValueStandardFormIntroZoneNodes.map(n => n.id),
+      ...placeValueStandardFormArithmeticZoneNodes.map(n => n.id),
+      ...placeValueOrderingZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-percentages',
@@ -837,7 +944,16 @@ export const mathsZones: Zone[] = [
     id: 'maths-four-operations',
     name: 'Four Operations',
     realm: 'numerica',
-    nodeIds: fourOperationsZoneNodes.map(n => n.id),
+    nodeIds: [
+      ...fourOperationsZoneNodes.map(n => n.id),
+      ...fourOperationsLongDivisionZoneNodes.map(n => n.id),
+      ...fourOperationsLongMultiplicationZoneNodes.map(n => n.id),
+      ...fourOperationsEstimationCheckingZoneNodes.map(n => n.id),
+      ...fourOperationsCalculatorSkillsZoneNodes.map(n => n.id),
+      ...fourOperationsNegativesInContextZoneNodes.map(n => n.id),
+      ...fourOperationsMixedWordProblemsZoneNodes.map(n => n.id),
+      ...fourOperationsPowersOfNegativesZoneNodes.map(n => n.id),
+    ],
   },
   {
     id: 'maths-geometry-measure',
