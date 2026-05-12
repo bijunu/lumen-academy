@@ -1474,5 +1474,16 @@ export const magnetismZone: Zone = {
   id: 'physics-magnetism',
   name: 'Magnetism',
   realm: 'mechanica',
-  nodeIds: magnetismZoneNodes.map(n => n.id),
+  nodeIds: [
+    ...magnetismZoneNodes.map(n => n.id),
+    'physics-magnetism-field-lines-bar-magnet',
+    'physics-magnetism-earths-field',
+    'physics-magnetism-plotting-techniques',
+    'physics-magnetism-ferromagnetic-materials',
+    'physics-magnetism-strengthening-electromagnets',
+    'physics-magnetism-solenoid-field',
+    'physics-magnetism-motor-effect',
+    'physics-magnetism-dc-motor',
+    'physics-magnetism-electromagnet-uses',
+  ],
 }

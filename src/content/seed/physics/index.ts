@@ -324,6 +324,42 @@ import {
   magnetismZoneNodes,
   magnetismZone,
 } from './magnetism'
+import {
+  magnetismFieldLinesBarMagnet,
+  magnetismFieldLinesBarMagnetZoneNodes,
+} from './magnetism-field-lines-bar-magnet'
+import {
+  magnetismEarthsField,
+  magnetismEarthsFieldZoneNodes,
+} from './magnetism-earths-field'
+import {
+  magnetismStrengtheningElectromagnets,
+  magnetismStrengtheningElectromagnetsZoneNodes,
+} from './magnetism-strengthening-electromagnets'
+import {
+  magnetismFerromagneticMaterials,
+  magnetismFerromagneticMaterialsZoneNodes,
+} from './magnetism-ferromagnetic-materials'
+import {
+  magnetismPlottingTechniques,
+  magnetismPlottingTechniquesZoneNodes,
+} from './magnetism-plotting-techniques'
+import {
+  magnetismMotorEffect,
+  magnetismMotorEffectZoneNodes,
+} from './magnetism-motor-effect'
+import {
+  magnetismSolenoidField,
+  magnetismSolenoidFieldZoneNodes,
+} from './magnetism-solenoid-field'
+import {
+  magnetismDcMotor,
+  magnetismDcMotorZoneNodes,
+} from './magnetism-dc-motor'
+import {
+  magnetismElectromagnetUses,
+  magnetismElectromagnetUsesZoneNodes,
+} from './magnetism-electromagnet-uses'
 
 export {
   electricityCircuitSymbols,
@@ -496,6 +532,24 @@ export {
   magnetismElectromagnets,
   magnetismZoneNodes,
   magnetismZone,
+  magnetismFieldLinesBarMagnet,
+  magnetismFieldLinesBarMagnetZoneNodes,
+  magnetismEarthsField,
+  magnetismEarthsFieldZoneNodes,
+  magnetismFerromagneticMaterials,
+  magnetismFerromagneticMaterialsZoneNodes,
+  magnetismStrengtheningElectromagnets,
+  magnetismStrengtheningElectromagnetsZoneNodes,
+  magnetismPlottingTechniques,
+  magnetismPlottingTechniquesZoneNodes,
+  magnetismMotorEffect,
+  magnetismMotorEffectZoneNodes,
+  magnetismSolenoidField,
+  magnetismSolenoidFieldZoneNodes,
+  magnetismDcMotor,
+  magnetismDcMotorZoneNodes,
+  magnetismElectromagnetUses,
+  magnetismElectromagnetUsesZoneNodes,
 }
 
 export const physicsNodes: SkillNode[] = [
@@ -576,6 +630,15 @@ export const physicsNodes: SkillNode[] = [
   ...spaceBigBangZoneNodes,
   ...spaceCometsAsteroidsZoneNodes,
   ...magnetismZoneNodes,
+  ...magnetismFieldLinesBarMagnetZoneNodes,
+  ...magnetismEarthsFieldZoneNodes,
+  ...magnetismFerromagneticMaterialsZoneNodes,
+  ...magnetismStrengtheningElectromagnetsZoneNodes,
+  ...magnetismPlottingTechniquesZoneNodes,
+  ...magnetismMotorEffectZoneNodes,
+  ...magnetismSolenoidFieldZoneNodes,
+  ...magnetismElectromagnetUsesZoneNodes,
+  ...magnetismDcMotorZoneNodes,
 ]
 
 export const physicsZones: Zone[] = [
