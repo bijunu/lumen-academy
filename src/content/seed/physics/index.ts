@@ -14,6 +14,54 @@ import {
   forcesZone,
 } from './forces'
 import {
+  forcesFreeBody,
+  forcesFreeBodyZoneNodes,
+} from './forces-free-body'
+import {
+  forcesResultant1D,
+  forcesResultant1DZoneNodes,
+} from './forces-resultant-1d'
+import {
+  forcesSpeedDistanceTime,
+  forcesSpeedDistanceTimeZoneNodes,
+} from './forces-speed-distance-time'
+import {
+  forcesDistanceTimeGraphs,
+  forcesDistanceTimeGraphsZoneNodes,
+} from './forces-distance-time-graphs'
+import {
+  forcesScalarsVectors,
+  forcesScalarsVectorsZoneNodes,
+} from './forces-scalars-vectors'
+import {
+  forcesNewtonFirst,
+  forcesNewtonFirstZoneNodes,
+} from './forces-newton-first'
+import {
+  forcesHookesLaw,
+  forcesHookesLawZoneNodes,
+} from './forces-hookes-law'
+import {
+  forcesAcceleration,
+  forcesAccelerationZoneNodes,
+} from './forces-acceleration'
+import {
+  forcesNewtonSecond,
+  forcesNewtonSecondZoneNodes,
+} from './forces-newton-second'
+import {
+  forcesTerminalVelocity,
+  forcesTerminalVelocityZoneNodes,
+} from './forces-terminal-velocity'
+import {
+  forcesNewtonThird,
+  forcesNewtonThirdZoneNodes,
+} from './forces-newton-third'
+import {
+  forcesMoments,
+  forcesMomentsZoneNodes,
+} from './forces-moments'
+import {
   gravityMassVsWeight,
   gravityWeightCalculation,
   gravityZoneNodes,
@@ -55,6 +103,30 @@ export {
   forcesFriction,
   forcesZoneNodes,
   forcesZone,
+  forcesFreeBody,
+  forcesFreeBodyZoneNodes,
+  forcesResultant1D,
+  forcesResultant1DZoneNodes,
+  forcesSpeedDistanceTime,
+  forcesSpeedDistanceTimeZoneNodes,
+  forcesDistanceTimeGraphs,
+  forcesDistanceTimeGraphsZoneNodes,
+  forcesScalarsVectors,
+  forcesScalarsVectorsZoneNodes,
+  forcesNewtonFirst,
+  forcesNewtonFirstZoneNodes,
+  forcesHookesLaw,
+  forcesHookesLawZoneNodes,
+  forcesAcceleration,
+  forcesAccelerationZoneNodes,
+  forcesNewtonSecond,
+  forcesNewtonSecondZoneNodes,
+  forcesTerminalVelocity,
+  forcesTerminalVelocityZoneNodes,
+  forcesNewtonThird,
+  forcesNewtonThirdZoneNodes,
+  forcesMoments,
+  forcesMomentsZoneNodes,
   gravityMassVsWeight,
   gravityWeightCalculation,
   gravityZoneNodes,
@@ -81,6 +153,18 @@ export {
 export const physicsNodes: SkillNode[] = [
   ...electricityCircuitsZoneNodes,
   ...forcesZoneNodes,
+  ...forcesFreeBodyZoneNodes,
+  ...forcesResultant1DZoneNodes,
+  ...forcesSpeedDistanceTimeZoneNodes,
+  ...forcesDistanceTimeGraphsZoneNodes,
+  ...forcesScalarsVectorsZoneNodes,
+  ...forcesNewtonFirstZoneNodes,
+  ...forcesHookesLawZoneNodes,
+  ...forcesAccelerationZoneNodes,
+  ...forcesNewtonSecondZoneNodes,
+  ...forcesTerminalVelocityZoneNodes,
+  ...forcesNewtonThirdZoneNodes,
+  ...forcesMomentsZoneNodes,
   ...gravityZoneNodes,
   ...energyZoneNodes,
   ...wavesZoneNodes,
@@ -95,7 +179,26 @@ export const physicsZones: Zone[] = [
     realm: 'mechanica',
     nodeIds: electricityCircuitsZoneNodes.map(n => n.id),
   },
-  forcesZone,
+  {
+    id: 'physics-forces',
+    name: 'Forces',
+    realm: 'mechanica',
+    nodeIds: [
+      ...forcesZoneNodes.map(n => n.id),
+      ...forcesFreeBodyZoneNodes.map(n => n.id),
+      ...forcesResultant1DZoneNodes.map(n => n.id),
+      ...forcesSpeedDistanceTimeZoneNodes.map(n => n.id),
+      ...forcesDistanceTimeGraphsZoneNodes.map(n => n.id),
+      ...forcesScalarsVectorsZoneNodes.map(n => n.id),
+      ...forcesNewtonFirstZoneNodes.map(n => n.id),
+      ...forcesHookesLawZoneNodes.map(n => n.id),
+      ...forcesAccelerationZoneNodes.map(n => n.id),
+      ...forcesNewtonSecondZoneNodes.map(n => n.id),
+      ...forcesTerminalVelocityZoneNodes.map(n => n.id),
+      ...forcesNewtonThirdZoneNodes.map(n => n.id),
+      ...forcesMomentsZoneNodes.map(n => n.id),
+    ],
+  },
   gravityZone,
   energyZone,
   wavesZone,
