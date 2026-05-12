@@ -190,11 +190,59 @@ import {
   sequencesNthTerm,
   sequencesNthTermZoneNodes,
 } from './sequences-nth-term'
+import {
+  sequencesMissingTerms,
+  sequencesMissingTermsZoneNodes,
+} from './sequences-missing-terms'
+import {
+  sequencesGeometric,
+  sequencesGeometricZoneNodes,
+} from './sequences-geometric'
+import {
+  sequencesDecreasingNthTerm,
+  sequencesDecreasingNthTermZoneNodes,
+} from './sequences-decreasing-nth-term'
+import {
+  sequencesFromPatterns,
+  sequencesFromPatternsZoneNodes,
+} from './sequences-from-patterns'
+import {
+  sequencesSpecialTypes,
+  sequencesSpecialTypesZoneNodes,
+} from './sequences-special-types'
+import {
+  sequencesQuadraticRecognition,
+  sequencesQuadraticRecognitionZoneNodes,
+} from './sequences-quadratic-recognition'
 import { coordinatesGrid, coordinatesZoneNodes } from './coordinates'
 import {
   coordinatesShapes,
   coordinatesShapesZoneNodes,
 } from './coordinates-shapes'
+import {
+  coordinatesMidpoints,
+  coordinatesMidpointsZoneNodes,
+} from './coordinates-midpoints'
+import {
+  coordinatesEquationFromLine,
+  coordinatesEquationFromLineZoneNodes,
+} from './coordinates-equation-from-line'
+import {
+  coordinatesPlottingLinear,
+  coordinatesPlottingLinearZoneNodes,
+} from './coordinates-plotting-linear'
+import {
+  coordinatesHorizontalVerticalLines,
+  coordinatesHorizontalVerticalLinesZoneNodes,
+} from './coordinates-horizontal-vertical-lines'
+import {
+  coordinatesDistanceBetweenPoints,
+  coordinatesDistanceBetweenPointsZoneNodes,
+} from './coordinates-distance-between-points'
+import {
+  coordinatesReflectionsAxes,
+  coordinatesReflectionsAxesZoneNodes,
+} from './coordinates-reflections-axes'
 import {
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
@@ -334,10 +382,34 @@ export {
   sequencesZoneNodes,
   sequencesNthTerm,
   sequencesNthTermZoneNodes,
+  sequencesMissingTerms,
+  sequencesMissingTermsZoneNodes,
+  sequencesGeometric,
+  sequencesGeometricZoneNodes,
+  sequencesDecreasingNthTerm,
+  sequencesDecreasingNthTermZoneNodes,
+  sequencesFromPatterns,
+  sequencesFromPatternsZoneNodes,
+  sequencesSpecialTypes,
+  sequencesSpecialTypesZoneNodes,
+  sequencesQuadraticRecognition,
+  sequencesQuadraticRecognitionZoneNodes,
   coordinatesGrid,
   coordinatesZoneNodes,
   coordinatesShapes,
   coordinatesShapesZoneNodes,
+  coordinatesMidpoints,
+  coordinatesMidpointsZoneNodes,
+  coordinatesPlottingLinear,
+  coordinatesPlottingLinearZoneNodes,
+  coordinatesHorizontalVerticalLines,
+  coordinatesHorizontalVerticalLinesZoneNodes,
+  coordinatesDistanceBetweenPoints,
+  coordinatesDistanceBetweenPointsZoneNodes,
+  coordinatesReflectionsAxes,
+  coordinatesReflectionsAxesZoneNodes,
+  coordinatesEquationFromLine,
+  coordinatesEquationFromLineZoneNodes,
   negativeNumbersAddSubtract,
   multiplyDivideNegatives,
   fourOperationsZoneNodes,
@@ -412,8 +484,20 @@ export const mathsNodes: SkillNode[] = [
   ...algebraEquationsWithBracketsZoneNodes,
   ...sequencesZoneNodes,
   ...sequencesNthTermZoneNodes,
+  ...sequencesMissingTermsZoneNodes,
+  ...sequencesGeometricZoneNodes,
+  ...sequencesDecreasingNthTermZoneNodes,
+  ...sequencesFromPatternsZoneNodes,
+  ...sequencesSpecialTypesZoneNodes,
+  ...sequencesQuadraticRecognitionZoneNodes,
   ...coordinatesZoneNodes,
   ...coordinatesShapesZoneNodes,
+  ...coordinatesMidpointsZoneNodes,
+  ...coordinatesPlottingLinearZoneNodes,
+  ...coordinatesHorizontalVerticalLinesZoneNodes,
+  ...coordinatesDistanceBetweenPointsZoneNodes,
+  ...coordinatesReflectionsAxesZoneNodes,
+  ...coordinatesEquationFromLineZoneNodes,
   ...fourOperationsZoneNodes,
   ...areaRectanglesZoneNodes,
   ...perimeterZoneNodes,
@@ -546,6 +630,12 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...sequencesZoneNodes.map(n => n.id),
       ...sequencesNthTermZoneNodes.map(n => n.id),
+      ...sequencesMissingTermsZoneNodes.map(n => n.id),
+      ...sequencesGeometricZoneNodes.map(n => n.id),
+      ...sequencesDecreasingNthTermZoneNodes.map(n => n.id),
+      ...sequencesFromPatternsZoneNodes.map(n => n.id),
+      ...sequencesSpecialTypesZoneNodes.map(n => n.id),
+      ...sequencesQuadraticRecognitionZoneNodes.map(n => n.id),
     ],
   },
   {
@@ -555,6 +645,12 @@ export const mathsZones: Zone[] = [
     nodeIds: [
       ...coordinatesZoneNodes.map(n => n.id),
       ...coordinatesShapesZoneNodes.map(n => n.id),
+      ...coordinatesMidpointsZoneNodes.map(n => n.id),
+      ...coordinatesPlottingLinearZoneNodes.map(n => n.id),
+      ...coordinatesHorizontalVerticalLinesZoneNodes.map(n => n.id),
+      ...coordinatesDistanceBetweenPointsZoneNodes.map(n => n.id),
+      ...coordinatesReflectionsAxesZoneNodes.map(n => n.id),
+      ...coordinatesEquationFromLineZoneNodes.map(n => n.id),
     ],
   },
   {
