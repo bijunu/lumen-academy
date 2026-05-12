@@ -17,6 +17,16 @@ import {
   distillation,
   chromatography,
 } from './separating-mixtures'
+import { pureSubstancePurityTesting } from './separating-pure-substance'
+import { solubilityCurves } from './separating-solubility-curves'
+import { saturatedSolutions } from './separating-saturated-solutions'
+import { crystallisationCooling } from './separating-crystallisation-cooling'
+import { crystallisationEvaporation } from './separating-crystallisation-evaporation'
+import { immiscibleFunnel } from './separating-immiscible-funnel'
+import { magneticSeparation } from './separating-magnetic'
+import { dryingDesiccant } from './separating-drying-desiccant'
+import { rfValue } from './separating-rf-value'
+import { decanting } from './separating-decanting'
 import {
   atomsZone,
   atomsElementsCompoundsBasics,
@@ -53,6 +63,16 @@ export {
   distillation,
   chromatography,
 } from './separating-mixtures'
+export { pureSubstancePurityTesting } from './separating-pure-substance'
+export { solubilityCurves } from './separating-solubility-curves'
+export { saturatedSolutions } from './separating-saturated-solutions'
+export { crystallisationCooling } from './separating-crystallisation-cooling'
+export { crystallisationEvaporation } from './separating-crystallisation-evaporation'
+export { immiscibleFunnel } from './separating-immiscible-funnel'
+export { magneticSeparation } from './separating-magnetic'
+export { dryingDesiccant } from './separating-drying-desiccant'
+export { rfValue } from './separating-rf-value'
+export { decanting } from './separating-decanting'
 export {
   atomsZone,
   atomsElementsCompoundsBasics,
@@ -88,6 +108,16 @@ export const chemistryNodes: SkillNode[] = [
   filtrationEvaporation,
   distillation,
   chromatography,
+  pureSubstancePurityTesting,
+  solubilityCurves,
+  saturatedSolutions,
+  crystallisationCooling,
+  crystallisationEvaporation,
+  immiscibleFunnel,
+  magneticSeparation,
+  dryingDesiccant,
+  rfValue,
+  decanting,
   atomsElementsCompoundsBasics,
   symbolsAndSimpleFormulae,
   periodicTableLayout,
