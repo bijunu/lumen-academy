@@ -1437,5 +1437,5 @@ export const wavesZone: Zone = {
   id: 'physics-waves',
   name: 'Waves',
   realm: 'mechanica',
-  nodeIds: wavesZoneNodes.map(n => n.id),
+  nodeIds: [...wavesZoneNodes.map(n => n.id), 'physics-waves-frequency-period', 'physics-waves-law-of-reflection', 'physics-waves-wave-equation', 'physics-waves-speed-of-sound', 'physics-waves-loudness-pitch', 'physics-waves-plane-mirror-images', 'physics-waves-em-spectrum', 'physics-waves-refraction-glass-block', 'physics-waves-dispersion-prism', 'physics-waves-em-uses-dangers', 'physics-waves-sky-blue-scattering', 'physics-waves-doppler-effect'],
 }

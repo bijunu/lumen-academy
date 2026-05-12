@@ -225,6 +225,54 @@ import {
   wavesZone,
 } from './waves'
 import {
+  wavesFrequencyPeriod,
+  wavesFrequencyPeriodZoneNodes,
+} from './waves-frequency-period'
+import {
+  wavesLawOfReflection,
+  wavesLawOfReflectionZoneNodes,
+} from './waves-law-of-reflection'
+import {
+  wavesWaveEquation,
+  wavesWaveEquationZoneNodes,
+} from './waves-wave-equation'
+import {
+  wavesSpeedOfSound,
+  wavesSpeedOfSoundZoneNodes,
+} from './waves-speed-of-sound'
+import {
+  wavesLoudnessPitch,
+  wavesLoudnessPitchZoneNodes,
+} from './waves-loudness-pitch'
+import {
+  wavesPlaneMirrorImages,
+  wavesPlaneMirrorImagesZoneNodes,
+} from './waves-plane-mirror-images'
+import {
+  wavesEmSpectrum,
+  wavesEmSpectrumZoneNodes,
+} from './waves-em-spectrum'
+import {
+  wavesRefractionGlassBlock,
+  wavesRefractionGlassBlockZoneNodes,
+} from './waves-refraction-glass-block'
+import {
+  wavesDispersionPrism,
+  wavesDispersionPrismZoneNodes,
+} from './waves-dispersion-prism'
+import {
+  wavesEmUsesDangers,
+  wavesEmUsesDangersZoneNodes,
+} from './waves-em-uses-dangers'
+import {
+  wavesSkyBlueScattering,
+  wavesSkyBlueScatteringZoneNodes,
+} from './waves-sky-blue-scattering'
+import {
+  wavesDopplerEffect,
+  wavesDopplerEffectZoneNodes,
+} from './waves-doppler-effect'
+import {
   spaceSolarSystem,
   spaceDayNightSeasons,
   spaceZoneNodes,
@@ -356,6 +404,30 @@ export {
   wavesSoundLight,
   wavesZoneNodes,
   wavesZone,
+  wavesFrequencyPeriod,
+  wavesFrequencyPeriodZoneNodes,
+  wavesLawOfReflection,
+  wavesLawOfReflectionZoneNodes,
+  wavesWaveEquation,
+  wavesWaveEquationZoneNodes,
+  wavesSpeedOfSound,
+  wavesSpeedOfSoundZoneNodes,
+  wavesLoudnessPitch,
+  wavesLoudnessPitchZoneNodes,
+  wavesPlaneMirrorImages,
+  wavesPlaneMirrorImagesZoneNodes,
+  wavesEmSpectrum,
+  wavesEmSpectrumZoneNodes,
+  wavesRefractionGlassBlock,
+  wavesRefractionGlassBlockZoneNodes,
+  wavesDispersionPrism,
+  wavesDispersionPrismZoneNodes,
+  wavesEmUsesDangers,
+  wavesEmUsesDangersZoneNodes,
+  wavesSkyBlueScattering,
+  wavesSkyBlueScatteringZoneNodes,
+  wavesDopplerEffect,
+  wavesDopplerEffectZoneNodes,
   spaceSolarSystem,
   spaceDayNightSeasons,
   spaceZoneNodes,
@@ -420,6 +492,18 @@ export const physicsNodes: SkillNode[] = [
   ...energyNationalGridZoneNodes,
   ...energyElectricityCostZoneNodes,
   ...wavesZoneNodes,
+  ...wavesRefractionGlassBlockZoneNodes,
+  ...wavesEmSpectrumZoneNodes,
+  ...wavesPlaneMirrorImagesZoneNodes,
+  ...wavesSpeedOfSoundZoneNodes,
+  ...wavesLawOfReflectionZoneNodes,
+  ...wavesFrequencyPeriodZoneNodes,
+  ...wavesWaveEquationZoneNodes,
+  ...wavesLoudnessPitchZoneNodes,
+  ...wavesDispersionPrismZoneNodes,
+  ...wavesEmUsesDangersZoneNodes,
+  ...wavesSkyBlueScatteringZoneNodes,
+  ...wavesDopplerEffectZoneNodes,
   ...spaceZoneNodes,
   ...magnetismZoneNodes,
 ]
