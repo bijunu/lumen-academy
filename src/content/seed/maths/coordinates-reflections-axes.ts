@@ -129,7 +129,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       title: 'Swap, and Sometimes Negate',
       type: 'diagram',
       instructions:
-        'Read each row to compare the two oblique mirror lines side by side. For y = x, swap the coordinates and stop. For y = -x, swap the coordinates AND flip both signs. The axis-line rules (y = 0 flips y only, x = 0 flips x only) do not apply here: the oblique mirrors always move both numbers.',
+        'Read each row to compare the two oblique mirror lines side by side. For y = x, swap the coordinates and stop. For y = -x, swap the coordinates AND flip both signs. The axis-line rules (y = 0 flips y only, x = 0 flips x only) do not apply here: the oblique mirrors always affect both numbers.',
       data: {
         comparisons: [
           {
@@ -229,7 +229,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
     },
   ],
   questions: [
-    // Core 1: MCQ — reflect single point in y = x
+    // Core 1: MCQ, reflect single point in y = x
     {
       id: 'cra-q1',
       type: 'multiple-choice',
@@ -240,7 +240,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 10,
       hint: 'Reflection in y = x swaps the x and y values. (3, 1) becomes (1, 3).',
     },
-    // Core 2: Numeric — x value after y = x reflection
+    // Core 2: Numeric, x value after y = x reflection
     {
       id: 'cra-q2',
       type: 'numeric-entry',
@@ -250,7 +250,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 10,
       hint: 'For y = x, swap the coordinates. The image is (-2, 5), so the x value is -2.',
     },
-    // Core 3: MCQ — reflect single point in y = -x
+    // Core 3: MCQ, reflect single point in y = -x
     {
       id: 'cra-q3',
       type: 'multiple-choice',
@@ -262,7 +262,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       misconceptionId: 'cra-mis-forgot-negation-in-y-minus-x',
       hint: 'For y = -x, swap then change both signs. (2, 5) swaps to (5, 2), then negates to (-5, -2).',
     },
-    // Core 4: Numeric — x value after y = -x reflection
+    // Core 4: Numeric, x value after y = -x reflection
     {
       id: 'cra-q4',
       type: 'numeric-entry',
@@ -272,7 +272,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 10,
       hint: 'Swap (4, 3) to (3, 4), then negate both to (-3, -4). The x value is -3.',
     },
-    // Core 5: MCQ — identify the rule for y = x
+    // Core 5: MCQ, identify the rule for y = x
     {
       id: 'cra-q5',
       type: 'multiple-choice',
@@ -289,7 +289,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       misconceptionId: 'cra-mis-y-equals-x-as-axis',
       hint: 'Reflection in y = x swaps the coordinates. No sign changes.',
     },
-    // Core 6: Spot-misconception — confusing y = x with horizontal axis
+    // Core 6: Spot-misconception, confusing y = x with horizontal axis
     {
       id: 'cra-q6',
       type: 'spot-misconception',
@@ -308,7 +308,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 15,
       misconceptionId: 'cra-mis-y-equals-x-as-axis',
     },
-    // Core 7: Drag-order — steps to reflect in y = -x
+    // Core 7: Drag-order, steps to reflect in y = -x
     {
       id: 'cra-q7',
       type: 'drag-order',
@@ -324,7 +324,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 20,
       misconceptionId: 'cra-mis-swap-only-in-y-minus-x',
     },
-    // Confident 1: MCQ — reflect single point with one negative in y = x
+    // Confident 1: MCQ, reflect single point with one negative in y = x
     {
       id: 'cra-q8',
       type: 'multiple-choice',
@@ -336,7 +336,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       misconceptionId: 'cra-mis-swap-sign-not-order',
       hint: 'Swap the coordinates: (-4, 1) becomes (1, -4). Do not flip signs; that is the y = -x rule.',
     },
-    // Confident 2: Numeric — reflect point with negatives in y = -x
+    // Confident 2: Numeric, reflect point with negatives in y = -x
     {
       id: 'cra-q9',
       type: 'numeric-entry',
@@ -346,7 +346,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 15,
       hint: 'Swap (-3, -2) to (-2, -3), then negate both: (2, 3). The y value of the image is 3.',
     },
-    // Confident 3: MCQ — reflect triangle vertex in y = x
+    // Confident 3: MCQ, reflect triangle vertex in y = x
     {
       id: 'cra-q10',
       type: 'multiple-choice',
@@ -357,7 +357,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 15,
       hint: 'Reflection in y = x swaps the coordinates of each vertex. (4, 5) becomes (5, 4).',
     },
-    // Confident 4: Numeric — reflect triangle vertex in y = -x
+    // Confident 4: Numeric, reflect triangle vertex in y = -x
     {
       id: 'cra-q11',
       type: 'numeric-entry',
@@ -368,7 +368,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       misconceptionId: 'cra-mis-reflect-only-one-vertex',
       hint: 'Swap (3, 1) to (1, 3), then negate both to (-1, -3). The y value of the image is -3.',
     },
-    // Confident 5: Missing-step — fill in the gap when reflecting in y = -x
+    // Confident 5: Missing-step, fill in the gap when reflecting in y = -x
     {
       id: 'cra-q12',
       type: 'missing-step',
@@ -384,7 +384,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       correctStep: 'Change the sign of both coordinates of (3, -2): the 3 becomes -3 and the -2 becomes 2.',
       xpValue: 20,
     },
-    // Confident 6: MCQ — identify the mirror line from before-and-after
+    // Confident 6: MCQ, identify the mirror line from before-and-after
     {
       id: 'cra-q13',
       type: 'multiple-choice',
@@ -396,7 +396,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       misconceptionId: 'cra-mis-mirror-line-misread',
       hint: 'The coordinates have swapped but no signs have changed. That is the rule for y = x.',
     },
-    // Confident 7: Drag-order — steps to identify the mirror line
+    // Confident 7: Drag-order, steps to identify the mirror line
     {
       id: 'cra-q14',
       type: 'drag-order',
@@ -411,7 +411,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       correctOrder: [1, 0, 2, 3],
       xpValue: 20,
     },
-    // Confident 8: Numeric — composite check
+    // Confident 8: Numeric, composite check
     {
       id: 'cra-q15',
       type: 'numeric-entry',
@@ -421,7 +421,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 15,
       hint: 'Swap (6, 0) to (0, 6), then negate both to (0, -6). The x value of the image is 0.',
     },
-    // Challenge 1: MCQ — Bond 11+ multi-step word problem with pattern context
+    // Challenge 1: MCQ, Bond 11+ multi-step word problem with pattern context
     {
       id: 'cra-q16',
       type: 'multiple-choice',
@@ -432,7 +432,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 25,
       hint: 'Reflect each vertex by swapping coordinates. P(2,1) goes to (1, 2), Q(5, 1) goes to (1, 5), R(5, 4) goes to (4, 5). The image of R is furthest from the origin.',
     },
-    // Challenge 2: Numeric — Bond-style problem with a square
+    // Challenge 2: Numeric, Bond-style problem with a square
     {
       id: 'cra-q17',
       type: 'numeric-entry',
@@ -442,7 +442,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 25,
       hint: 'Image vertices: A goes to (-2, -1), B goes to (-2, -4), C goes to (-5, -4), D goes to (-5, -1). Sum of x values: -2 + -2 + -5 + -5 = -14.',
     },
-    // Challenge 3: MCQ — composition of two reflections
+    // Challenge 3: MCQ, composition of two reflections
     {
       id: 'cra-q18',
       type: 'multiple-choice',
@@ -453,7 +453,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 25,
       hint: 'First reflection: (3, 5) goes to (5, 3). Second reflection in y = -x: swap to (3, 5), then negate both to (-3, -5).',
     },
-    // Challenge 4: Numeric — identify the mirror line numerically
+    // Challenge 4: Numeric, identify the mirror line numerically
     {
       id: 'cra-q19',
       type: 'numeric-entry',
@@ -463,7 +463,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 25,
       hint: 'Swap (-2, 4) to (4, -2). The signs did not change. Wait, check: swapping (-2, 4) gives (4, -2) directly under y = x, but the signs of the original were (-, +) and the image is (+, -). The signs have flipped, so this is y = -x and k = -1.',
     },
-    // Challenge 5: Spot-misconception — Bond-style with confused rule
+    // Challenge 5: Spot-misconception, Bond-style with confused rule
     {
       id: 'cra-q20',
       type: 'spot-misconception',
@@ -482,7 +482,7 @@ export const coordinatesReflectionsAxes: SkillNode = {
       xpValue: 25,
       misconceptionId: 'cra-mis-oblique-as-same-rule',
     },
-    // Challenge 6: MCQ — Bond 11+ symmetry puzzle, full vertex set
+    // Challenge 6: MCQ, Bond 11+ symmetry puzzle, full vertex set
     {
       id: 'cra-q21',
       type: 'multiple-choice',

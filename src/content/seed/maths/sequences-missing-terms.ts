@@ -115,7 +115,7 @@ export const sequencesMissingTerms: SkillNode = {
       title: 'The Four Common Inference Moves',
       type: 'diagram',
       instructions:
-        'Read each move across to see the most common shape of a missing-term problem. Move 1 fills a single hole in the middle using a neighbouring gap. Move 2 splits a long jump across several missing terms by dividing by the count of gaps. Move 3 reverses the gap to find a missing first term. Move 4 uses a given position-to-term rule and substitutes the position number into it.',
+        'Read each row across to see the most common shape of a missing-term problem. Row 1 fills a single hole in the middle using a neighbouring gap. Row 2 splits a long jump across several missing terms by dividing by the count of gaps. Row 3 reverses the gap to find a missing first term. Row 4 uses a given position-to-term rule and substitutes the position number into it.',
       data: {
         moves: [
           {
