@@ -48,6 +48,17 @@ import {
   periodicTableLayout,
   periodicTableGroup1And7,
 } from './periodic-table'
+import { mendeleevPeriodicTable } from './periodic-table-mendeleev'
+import { electronShellsAndGroups } from './periodic-table-electron-shells'
+import { group1ReactionsWithWater } from './periodic-table-group-1-water'
+import { group7PhysicalStates } from './periodic-table-group-7-states'
+import { halogenDisplacement } from './periodic-table-halogen-displacement'
+import { reactivitySeriesBasics } from './periodic-table-reactivity-series'
+import { group0NobleGases } from './periodic-table-group-0'
+import { periodTrendsMetallicCharacter } from './periodic-table-period-trends'
+import { transitionMetalsOverview } from './periodic-table-transition-metals'
+import { predictElementProperties } from './periodic-table-predict-properties'
+import { atomicRadiusAndShielding } from './periodic-table-atomic-radius'
 import {
   acidsAlkalisZone,
   acidsAlkalisCommon,
@@ -105,6 +116,17 @@ export {
   periodicTableLayout,
   periodicTableGroup1And7,
 } from './periodic-table'
+export { mendeleevPeriodicTable } from './periodic-table-mendeleev'
+export { electronShellsAndGroups } from './periodic-table-electron-shells'
+export { group1ReactionsWithWater } from './periodic-table-group-1-water'
+export { group7PhysicalStates } from './periodic-table-group-7-states'
+export { halogenDisplacement } from './periodic-table-halogen-displacement'
+export { reactivitySeriesBasics } from './periodic-table-reactivity-series'
+export { group0NobleGases } from './periodic-table-group-0'
+export { periodTrendsMetallicCharacter } from './periodic-table-period-trends'
+export { transitionMetalsOverview } from './periodic-table-transition-metals'
+export { predictElementProperties } from './periodic-table-predict-properties'
+export { atomicRadiusAndShielding } from './periodic-table-atomic-radius'
 export {
   acidsAlkalisZone,
   acidsAlkalisCommon,
@@ -155,6 +177,17 @@ export const chemistryNodes: SkillNode[] = [
   writingIonicFormulae,
   periodicTableLayout,
   periodicTableGroup1And7,
+  mendeleevPeriodicTable,
+  electronShellsAndGroups,
+  group1ReactionsWithWater,
+  group7PhysicalStates,
+  halogenDisplacement,
+  reactivitySeriesBasics,
+  group0NobleGases,
+  periodTrendsMetallicCharacter,
+  transitionMetalsOverview,
+  predictElementProperties,
+  atomicRadiusAndShielding,
   acidsAlkalisCommon,
   acidsAlkalisNeutralisation,
   phScale,
