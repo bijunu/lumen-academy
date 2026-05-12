@@ -1514,5 +1514,5 @@ export const spaceZone: Zone = {
   id: 'physics-space',
   name: 'Space',
   realm: 'mechanica',
-  nodeIds: spaceZoneNodes.map(n => n.id),
+  nodeIds: [...spaceZoneNodes.map(n => n.id), 'physics-space-moon-phases', 'physics-space-eclipses', 'physics-space-orbits-gravity', 'physics-space-satellites', 'physics-space-sun-as-star', 'physics-space-light-years', 'physics-space-galaxies', 'physics-space-star-life-cycle', 'physics-space-big-bang', 'physics-space-comets-asteroids'],
 }

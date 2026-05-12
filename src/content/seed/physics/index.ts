@@ -279,6 +279,46 @@ import {
   spaceZone,
 } from './space'
 import {
+  spaceMoonPhases,
+  spaceMoonPhasesZoneNodes,
+} from './space-moon-phases'
+import {
+  spaceOrbitsGravity,
+  spaceOrbitsGravityZoneNodes,
+} from './space-orbits-gravity'
+import {
+  spaceEclipses,
+  spaceEclipsesZoneNodes,
+} from './space-eclipses'
+import {
+  spaceSunAsStar,
+  spaceSunAsStarZoneNodes,
+} from './space-sun-as-star'
+import {
+  spaceLightYears,
+  spaceLightYearsZoneNodes,
+} from './space-light-years'
+import {
+  spaceSatellites,
+  spaceSatellitesZoneNodes,
+} from './space-satellites'
+import {
+  spaceGalaxies,
+  spaceGalaxiesZoneNodes,
+} from './space-galaxies'
+import {
+  spaceStarLifeCycle,
+  spaceStarLifeCycleZoneNodes,
+} from './space-star-life-cycle'
+import {
+  spaceBigBang,
+  spaceBigBangZoneNodes,
+} from './space-big-bang'
+import {
+  spaceCometsAsteroids,
+  spaceCometsAsteroidsZoneNodes,
+} from './space-comets-asteroids'
+import {
   magnetismFields,
   magnetismElectromagnets,
   magnetismZoneNodes,
@@ -432,6 +472,26 @@ export {
   spaceDayNightSeasons,
   spaceZoneNodes,
   spaceZone,
+  spaceMoonPhases,
+  spaceMoonPhasesZoneNodes,
+  spaceOrbitsGravity,
+  spaceOrbitsGravityZoneNodes,
+  spaceEclipses,
+  spaceEclipsesZoneNodes,
+  spaceSunAsStar,
+  spaceSunAsStarZoneNodes,
+  spaceSatellites,
+  spaceSatellitesZoneNodes,
+  spaceLightYears,
+  spaceLightYearsZoneNodes,
+  spaceGalaxies,
+  spaceGalaxiesZoneNodes,
+  spaceStarLifeCycle,
+  spaceStarLifeCycleZoneNodes,
+  spaceBigBang,
+  spaceBigBangZoneNodes,
+  spaceCometsAsteroids,
+  spaceCometsAsteroidsZoneNodes,
   magnetismFields,
   magnetismElectromagnets,
   magnetismZoneNodes,
@@ -505,6 +565,16 @@ export const physicsNodes: SkillNode[] = [
   ...wavesSkyBlueScatteringZoneNodes,
   ...wavesDopplerEffectZoneNodes,
   ...spaceZoneNodes,
+  ...spaceMoonPhasesZoneNodes,
+  ...spaceOrbitsGravityZoneNodes,
+  ...spaceEclipsesZoneNodes,
+  ...spaceSatellitesZoneNodes,
+  ...spaceSunAsStarZoneNodes,
+  ...spaceLightYearsZoneNodes,
+  ...spaceGalaxiesZoneNodes,
+  ...spaceStarLifeCycleZoneNodes,
+  ...spaceBigBangZoneNodes,
+  ...spaceCometsAsteroidsZoneNodes,
   ...magnetismZoneNodes,
 ]
 
