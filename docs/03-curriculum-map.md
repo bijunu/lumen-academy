@@ -1012,6 +1012,78 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 1 Motion and forces, 1.27-1.30 Resistive forces, drag and terminal velocity (GCSE Physics 1PH0)
 - **OCR**: P2.2 Newton's laws and forces; resistive forces, friction and air resistance (GCSE Physics J259 Gateway)
 
+#### Force Diagrams and Free-Body Diagrams (Confident, `physics-forces-free-body`)
+- **KS3**: Using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces; forces measured in newtons, measurements of stretch or compression as force is changed.
+- **AQA**: 4.5.1.4 Resultant forces; free-body diagrams (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.21-1.22 Vector diagrams of forces acting on a body (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; representing forces as vectors on free-body diagrams (GCSE Physics J259 Gateway)
+
+#### Resultant Force in One Dimension (Confident, `physics-forces-resultant-1d`)
+- **KS3**: Using force arrows in diagrams, adding forces in one dimension, balanced and unbalanced forces.
+- **AQA**: 4.5.1.4 Resultant forces; calculating the resultant of two forces acting in a straight line (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.21 Resultant of forces that act along a line (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; resultant force as the single force with the same effect (GCSE Physics J259 Gateway)
+
+#### Speed, Distance and Time (Confident, `physics-forces-speed-distance-time`)
+- **KS3**: Speed and the quantitative relationship between average speed, distance and time (speed = distance / time); the representation of a journey on a distance-time graph.
+- **AQA**: 4.5.6.1.2 Speed; distance travelled = average speed x time (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.1 Use the equation: average speed = distance moved / time taken (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion; speed = distance / time, typical speeds of walking, running, cycling (GCSE Physics J259 Gateway)
+
+#### Distance-Time Graphs (Confident, `physics-forces-distance-time-graphs`)
+- **KS3**: The representation of a journey on a distance-time graph.
+- **AQA**: 4.5.6.1.4 Distance-time relationship; gradient of a distance-time graph as speed (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.2-1.3 Distance-time graphs; calculate speed from a distance-time graph (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion; interpreting distance-time graphs, gradient as speed (GCSE Physics J259 Gateway)
+
+#### Scalars and Vectors (Confident, `physics-forces-scalars-vectors`)
+- **KS3**: Forces as pushes or pulls, arising from the interaction between two objects; using force arrows in diagrams; speed and the quantitative relationship between average speed, distance and time.
+- **AQA**: 4.5.1.1 Scalar and vector quantities; distance and speed as scalars, displacement and velocity as vectors (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.4-1.5 Distinguish between vector and scalar quantities (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; scalar and vector quantities, examples of each (GCSE Physics J259 Gateway)
+
+#### Newton's First Law (Confident, `physics-forces-newton-first`)
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); balanced and unbalanced forces.
+- **AQA**: 4.5.6.2.1 Newton's First Law; an object remains at rest or moves at constant velocity unless acted on by a resultant force (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.23 Newton's First Law; the velocity of an object only changes if a resultant force acts on it (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; first law and the effect of balanced forces on motion (GCSE Physics J259 Gateway)
+
+#### Hooke's Law and Springs (Confident, `physics-forces-hookes-law`)
+- **KS3**: Forces measured in newtons, measurements of stretch or compression as force is changed; force-extension linear relation; Hooke's Law as a special case.
+- **AQA**: 4.5.3 Forces and elasticity; extension of an elastic object directly proportional to the force applied, F = k e (GCSE Physics 8463)
+- **Edexcel**: Topic 15 Forces and matter, 15.1-15.4 Hooke's Law and elastic objects; force = spring constant x extension (GCSE Physics 1PH0)
+- **OCR**: P3.2 Forces and matter; linear and non-linear relationships between force and extension, F = k x (GCSE Physics J259 Gateway)
+
+#### Acceleration Basics (Challenge, `physics-forces-acceleration`)
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); change in motion as the effect of a resultant force.
+- **AQA**: 4.5.6.1.5 Acceleration; a = (v - u) / t, uniform acceleration (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.6-1.8 Use the equation: acceleration = change in velocity / time taken (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion; acceleration as change of velocity per unit time, a = (v - u) / t (GCSE Physics J259 Gateway)
+
+#### Newton's Second Law (Challenge, `physics-forces-newton-second`)
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion; resultant force and change in motion.
+- **AQA**: 4.5.6.2.2 Newton's Second Law; resultant force = mass x acceleration, F = m a (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.24-1.26 Newton's Second Law; force = mass x acceleration (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; second law, F = m a, and inertial mass (GCSE Physics J259 Gateway)
+
+#### Terminal Velocity (Challenge, `physics-forces-terminal-velocity`)
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); resistance to motion of air and water.
+- **AQA**: 4.5.6.2.4 Resistive forces and terminal velocity; falling objects and the skydiver scenario (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.30 Terminal velocity; resultant force on a falling object reaches zero (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; falling objects, air resistance and terminal velocity (GCSE Physics J259 Gateway)
+
+#### Newton's Third Law and Force Pairs (Challenge, `physics-forces-newton-third`)
+- **KS3**: Forces as pushes or pulls, arising from the interaction between two objects; opposing forces and equilibrium.
+- **AQA**: 4.5.6.2.3 Newton's Third Law; when two objects interact, the forces they exert on each other are equal and opposite (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, Newton's Third Law; equal and opposite forces in an interaction pair (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; Newton's third law and identifying interaction pairs (GCSE Physics J259 Gateway)
+
+#### Moments and Turning Effect (Challenge, `physics-forces-moments`)
+- **KS3**: Forces measured in newtons; opposing forces and equilibrium; moment as the turning effect of a force.
+- **AQA**: 4.5.4 Moments, levers and gears; moment of a force M = F x d (GCSE Physics 8463)
+- **Edexcel**: Topic 14 Forces and motion (turning forces); the moment of a force = force x perpendicular distance from pivot (GCSE Physics 1PH0)
+- **OCR**: P3.1 Motion; moments, levers and the principle of moments (GCSE Physics J259 Gateway)
+
 ### Zone: Gravity, Weight, Mass (`physics-gravity`)
 
 #### Mass and Weight (Core, `physics-gravity-mass-vs-weight`)
@@ -1025,6 +1097,66 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.5.1.2 Weight, mass and gravitational field strength; W = m g (GCSE Physics 8463)
 - **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight = mass x gravitational field strength (GCSE Physics 1PH0)
 - **OCR**: P2.1 Motion and forces; weight calculations using gravitational field strength (GCSE Physics J259 Gateway)
+
+#### Gravity on Other Planets (Confident, `physics-gravity-other-planets`)
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg, different on other planets and stars; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only).
+- **AQA**: 4.5.1.2 Mass and weight; gravitational field strength varies with location (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight on different planetary bodies (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; gravitational field strength on different planets and moons (GCSE Physics J259 Gateway)
+
+#### Free Fall and Acceleration Due to Gravity (Confident, `physics-gravity-free-fall`)
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg; non-contact forces acting at a distance.
+- **AQA**: 4.5.1.2 Mass and weight; 4.5.6.2.3 Acceleration of objects in free fall (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight and free fall; acceleration due to gravity (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; free fall and acceleration due to gravity near the Earth (GCSE Physics J259 Gateway)
+
+#### Why Objects Fall Together in a Vacuum (Confident, `physics-gravity-vacuum-fall`)
+- **KS3**: Gravity force; non-contact forces; resistance to motion of air and water; comparing the effect of air resistance and gravity on falling objects.
+- **AQA**: 4.5.1.2 Mass and weight; 4.5.6.2.3 Acceleration in free fall, role of air resistance (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight; 1.29-1.30 Falling objects and air resistance (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; falling objects, air resistance and free fall in a vacuum (GCSE Physics J259 Gateway)
+
+#### Earth, Moon and Tides (Confident, `physics-gravity-earth-moon-tides`)
+- **KS3**: Gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); our Sun as a star, other stars in our galaxy, other galaxies.
+- **AQA**: 4.8.1.1 Our solar system; 4.8.1.2 The life cycle of a star (background); gravity in the Earth-Moon system (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.1-8.3 The solar system, Earth-Moon system and gravitational interactions (GCSE Physics 1PH0)
+- **OCR**: P8.1 The Earth in space; gravity between Earth, Moon and Sun (GCSE Physics J259 Gateway)
+
+#### Satellites and Orbits (Confident, `physics-gravity-satellites-orbits`)
+- **KS3**: Gravity force; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); the seasons and the Earth's tilt.
+- **AQA**: 4.8.1.1 Our solar system; orbital motion, natural and artificial satellites (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.4-8.6 Orbits of moons, planets and satellites (GCSE Physics 1PH0)
+- **OCR**: P8.1 The Earth in space; satellites, orbits and the role of gravity (GCSE Physics J259 Gateway)
+
+#### Weightlessness and Apparent Weight (Confident, `physics-gravity-weightlessness`)
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g); non-contact forces; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only).
+- **AQA**: 4.5.1.2 Mass and weight; 4.8.1.1 Our solar system, conditions in orbit (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight; Topic 8 Astronomy, conditions for astronauts in orbit (GCSE Physics 1PH0)
+- **OCR**: P2.1 Mass and weight; P8.1 The Earth in space; apparent weightlessness in free fall (GCSE Physics J259 Gateway)
+
+#### Newton's Third Law and Gravity (Challenge, `physics-gravity-third-law-pairs`)
+- **KS3**: Gravity force; using force arrows in diagrams; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); forces always occurring in pairs.
+- **AQA**: 4.5.1.2 Mass and weight; 4.5.6.3 Newton's Third Law applied to gravitational pairs (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight; 1.42-1.43 Newton's Third Law force pairs (GCSE Physics 1PH0)
+- **OCR**: P2.2 Newton's laws; Newton's Third Law and gravitational interaction pairs (GCSE Physics J259 Gateway)
+
+#### Centre of Mass and Stability (Challenge, `physics-gravity-centre-of-mass`)
+- **KS3**: Forces being needed to cause objects to stop or start moving, or to change their speed or direction of motion (qualitative only); using force arrows in diagrams; gravity force; the centre of gravity of an object and its effect on stability.
+- **AQA**: 4.5.1.2 Mass and weight; 4.5.3 Moments, centre of mass and stability (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight; 1.50-1.52 Moments, centre of mass and stability (GCSE Physics 1PH0)
+- **OCR**: P2.3 Forces in action; centre of mass, line of action of weight and toppling (GCSE Physics J259 Gateway)
+
+#### Inverse Square Law for Gravity (Challenge, `physics-gravity-inverse-square`)
+- **KS3**: Gravity force; non-contact forces; gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); the strength of gravity varies with distance from the source.
+- **AQA**: 4.5.1.2 Mass and weight; 4.8 Space, qualitative treatment of how gravitational field strength varies with distance (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Weight; Topic 8 Astronomy, variation of gravitational field strength with distance (GCSE Physics 1PH0)
+- **OCR**: P8.1 The Earth in space; gravitational field strength decreases with distance from a mass (GCSE Physics J259 Gateway)
+
+#### Mass, Weight and Measuring Instruments (Challenge, `physics-gravity-mass-weight-instruments`)
+- **KS3**: Gravity force, weight = mass x gravitational field strength (g), on Earth g = 10 N/kg, different on other planets and stars; the distinction between mass and weight and the instruments used to measure each.
+- **AQA**: 4.5.1.2 Mass and weight; units of mass (kg) and weight (N); use of newtonmeters and balances (GCSE Physics 8463)
+- **Edexcel**: Topic 1 Motion and forces, 1.16-1.17 Mass and weight; units and measurement instruments (GCSE Physics 1PH0)
+- **OCR**: P2.1 Motion and forces; mass, weight and their measurement (GCSE Physics J259 Gateway)
 
 ### Zone: Energy Stores and Transfers (`physics-energy-stores-transfers`)
 
@@ -1046,6 +1178,78 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 4 Energy, 4.7-4.10 Conservation of energy; useful and wasted energy; Sankey diagrams (GCSE Physics 1PH0)
 - **OCR**: P1.2 Energy transfers; useful and wasted energy; Sankey diagrams (GCSE Physics J259 Gateway)
 
+#### Conservation of Energy (Confident, `physics-energy-conservation`)
+- **KS3**: Conservation of energy in a closed system; the total energy stored before and after a transfer is the same.
+- **AQA**: 4.1.2.1 Energy transfers in a system; conservation of energy principle (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.7-4.8 Conservation of energy in a closed system (GCSE Physics 1PH0)
+- **OCR**: P1.2 Conservation of energy in a closed system; total energy before equals total energy after (GCSE Physics J259 Gateway)
+
+#### Sankey Diagrams (Confident, `physics-energy-sankey-diagrams`)
+- **KS3**: Using a Sankey diagram to show how the input energy is shared between useful and wasted output stores; arrow widths proportional to energy values.
+- **AQA**: 4.1.2.1 Energy transfers; representing useful and wasted energy with Sankey diagrams (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.10 Drawing and interpreting Sankey diagrams (GCSE Physics 1PH0)
+- **OCR**: P1.2 Sankey diagrams; reading proportional arrow widths for energy transfers (GCSE Physics J259 Gateway)
+
+#### Kinetic Energy (Confident, `physics-energy-kinetic`)
+- **KS3**: Energy stored in moving objects; qualitative dependence on mass and speed; introduction to KE = 1/2 m v squared with simple substitution.
+- **AQA**: 4.1.1.2 Changes in energy; kinetic energy E_k = 1/2 m v squared (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.11 Kinetic energy KE = 1/2 x mass x speed squared (GCSE Physics 1PH0)
+- **OCR**: P1.1 Kinetic energy store and its calculation (GCSE Physics J259 Gateway)
+
+#### Gravitational Potential Energy (Confident, `physics-energy-gravitational-potential`)
+- **KS3**: Energy by which a system is raised through a height; GPE depends on mass, height and gravitational field strength; GPE = m g h on Earth with g = 10 N/kg.
+- **AQA**: 4.1.1.2 Gravitational potential energy E_p = m g h (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.12 Gravitational potential energy GPE = mass x g x height (GCSE Physics 1PH0)
+- **OCR**: P1.1 Gravitational potential energy store; calculation using m g h (GCSE Physics J259 Gateway)
+
+#### Energy in Pendulums and Roller Coasters (Confident, `physics-energy-ke-gpe-interchange`)
+- **KS3**: Comparing the starting with the final conditions of a system; describing how energy moves between gravitational and kinetic stores in pendulums and on slopes; qualitative and simple numerical examples.
+- **AQA**: 4.1.2.1 Energy transfers in a system; interchange between kinetic and gravitational potential stores (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.11-4.12 Transfers between kinetic and gravitational potential stores (GCSE Physics 1PH0)
+- **OCR**: P1.1 Energy transfers between kinetic and gravitational stores; pendulum and slope examples (GCSE Physics J259 Gateway)
+
+#### Heating and Insulating UK Homes (Confident, `physics-energy-home-insulation`)
+- **KS3**: Other processes that involve energy transfer: changing temperature; reducing unwanted energy transfers by insulation; loft insulation, cavity wall insulation and double glazing in UK homes.
+- **AQA**: 4.1.2.1 Reducing unwanted energy transfers; thermal insulation (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.9 Reducing unwanted energy transfers; insulation in buildings (GCSE Physics 1PH0)
+- **OCR**: P1.2 Reducing unwanted energy transfers; loft, cavity wall and double glazing (GCSE Physics J259 Gateway)
+
+#### UK Energy Mix (Confident, `physics-energy-uk-mix-renewables`)
+- **KS3**: Comparing energy values of different foods, of fuels and of various other energy resources; fuels and energy resources, renewable and non-renewable; the UK energy mix and trends towards renewables.
+- **AQA**: 4.1.3 National and global energy resources; renewable and non-renewable; UK and global energy mix (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.16-4.18 Energy resources; renewable and non-renewable sources (GCSE Physics 1PH0)
+- **OCR**: P1.3 Energy resources; renewable and non-renewable sources; UK energy mix (GCSE Physics J259 Gateway)
+
+#### Efficiency as a Percentage (Challenge, `physics-energy-efficiency-percentage`)
+- **KS3**: Useful energy stored at the end of a transfer; efficiency expressed as a percentage of useful out compared with total in; calculating efficiency from energy values in joules.
+- **AQA**: 4.1.2.2 Efficiency = useful output energy transfer / total input energy transfer (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.13 Efficiency = useful energy out / total energy in, expressed as a percentage (GCSE Physics 1PH0)
+- **OCR**: P1.2 Efficiency calculations; useful energy out divided by total energy in (GCSE Physics J259 Gateway)
+
+#### Work Done (Challenge, `physics-energy-work-done`)
+- **KS3**: Energy as a quantity transferred by mechanical work; work done when a force moves through a distance; W = F x d, measured in joules.
+- **AQA**: 4.5.2 Work done and energy transfer; W = F s (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.14 Work done = force x distance moved in the direction of the force (GCSE Physics 1PH0)
+- **OCR**: P2.2 Work done; mechanical work as a force moving through a distance (GCSE Physics J259 Gateway)
+
+#### Power (Challenge, `physics-energy-power`)
+- **KS3**: Power as the rate of transfer of energy; P = E / t, measured in watts; kilowatts for household appliances; comparing power ratings of kettles, lamps and ovens.
+- **AQA**: 4.1.1.3 Power as the rate of energy transfer; P = E / t in watts (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.15 Power = energy transferred / time taken; watts and kilowatts (GCSE Physics 1PH0)
+- **OCR**: P1.1 Power as the rate of energy transfer; calculation in watts and kilowatts (GCSE Physics J259 Gateway)
+
+#### Cost of Electricity in UK Homes (Challenge, `physics-energy-electricity-cost`)
+- **KS3**: Domestic fuel bills, fuel use and costs; kilowatt-hour as a unit of energy used by appliances; daily and annual costs in pence and pounds at UK tariffs.
+- **AQA**: 4.2.4 Energy transfers and the National Grid; energy in kilowatt-hours and domestic cost (GCSE Physics 8463)
+- **Edexcel**: Topic 4 Energy, 4.15 Energy in kilowatt-hours; cost of electricity at unit price (GCSE Physics 1PH0)
+- **OCR**: P1.3 Cost of domestic electricity; energy in kWh and unit price in pence per kWh (GCSE Physics J259 Gateway)
+
+#### The National Grid (Challenge, `physics-energy-national-grid`)
+- **KS3**: Energy transferred from power stations to homes and industry; generation, transmission at high voltage and distribution; qualitative role of transformers in efficient transmission across the UK.
+- **AQA**: 4.2.4 The National Grid; step-up and step-down transformers (qualitative at KS3) (GCSE Physics 8463)
+- **Edexcel**: Topic 10.5 The National Grid; transmission and distribution at high voltage (GCSE Physics 1PH0)
+- **OCR**: P4.3 The National Grid; generation, transmission, distribution; role of transformers (GCSE Physics J259 Gateway)
+
 ### Zone: Electricity and Circuits (`physics-electricity-circuits`)
 
 #### Circuit Symbols (Core, `physics-electricity-circuit-symbols`)
@@ -1066,6 +1270,90 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: 10.7 Potential difference and resistance, V = I x R (GCSE Physics 1PH0)
 - **OCR**: P4.2 Resistance and Ohm's law (GCSE Physics J259 Gateway)
 
+#### Building a Series Circuit (Confident, `physics-electricity-building-series`)
+- **KS3**: Electric current, measured in amperes, in circuits, series and parallel circuits; the idea of electric field, forces acting across the space between objects not in contact.
+- **AQA**: 4.2.1.1 Standard circuit diagram symbols; 4.2.1.4 Series and parallel circuits; required practical 3 (investigate current and potential difference) (GCSE Physics 8463)
+- **Edexcel**: Topic 2.2 Circuit diagrams; 2.4 Series circuits and ammeter / voltmeter placement (GCSE Physics 1PH0)
+- **OCR**: P4.2 Circuit symbols; ammeter in series, voltmeter in parallel; building series circuits (GCSE Physics J259 Gateway)
+
+#### Current Rules in Series and Parallel (Confident, `physics-electricity-current-rules`)
+- **KS3**: Electric current, measured in amperes, in circuits, series and parallel circuits, currents add where branches meet and current as flow of charge.
+- **AQA**: 4.2.1.4 Series and parallel circuits; current is the same at every point in a series circuit; total current is the sum of currents through separate parallel branches (GCSE Physics 8463)
+- **Edexcel**: Topic 2.5 Current in series and parallel circuits; sum of currents at a junction (GCSE Physics 1PH0)
+- **OCR**: P4.2 Current rules in series and parallel; conservation of charge at junctions (GCSE Physics J259 Gateway)
+
+#### Voltage Rules in Series and Parallel (Confident, `physics-electricity-voltage-rules`)
+- **KS3**: Potential difference, measured in volts, battery and bulb ratings; resistance, measured in ohms, as the ratio of potential difference (p.d.) to current.
+- **AQA**: 4.2.1.4 Series and parallel circuits; potential differences across components in series add to source p.d.; p.d. across parallel branches is the same (GCSE Physics 8463)
+- **Edexcel**: Topic 2.6 Potential difference in series and parallel circuits (GCSE Physics 1PH0)
+- **OCR**: P4.2 Potential difference rules in series and parallel circuits (GCSE Physics J259 Gateway)
+
+#### Resistance: What Changes It (Confident, `physics-electricity-resistance-factors`)
+- **KS3**: Resistance, measured in ohms, as the ratio of potential difference (p.d.) to current; differences in resistance between conducting and insulating components (quantitative); the role of wires in circuits.
+- **AQA**: 4.2.1.3 Resistance; 4.2.1.5 Resistance of a wire (length and cross-section); 4.2.1.6 Resistors and temperature (GCSE Physics 8463)
+- **Edexcel**: Topic 2.7 Factors affecting resistance: length, thickness and temperature of a wire (GCSE Physics 1PH0)
+- **OCR**: P4.2 Factors that change resistance: length, cross-sectional area, temperature (GCSE Physics J259 Gateway)
+
+#### Ohm's Law Practice: V = I x R (Confident, `physics-electricity-ohms-law-practice`)
+- **KS3**: Resistance, measured in ohms, as the ratio of potential difference (p.d.) to current.
+- **AQA**: 4.2.1.3 Current, potential difference and resistance; V = I R (GCSE Physics 8463)
+- **Edexcel**: Topic 2.10 V = I x R; rearrangement and substitution; ohmic conductors (GCSE Physics 1PH0)
+- **OCR**: P4.2 Ohm's law; V = I R calculations (GCSE Physics J259 Gateway)
+
+#### Reading Ammeters and Voltmeters (Confident, `physics-electricity-reading-meters`)
+- **KS3**: Electric current, measured in amperes; potential difference, measured in volts; battery and bulb ratings.
+- **AQA**: 4.2.1.3 Measuring current and potential difference; required practical use of ammeters and voltmeters (GCSE Physics 8463)
+- **Edexcel**: Topic 2.4 Using ammeters and voltmeters; reading analogue scales (GCSE Physics 1PH0)
+- **OCR**: P4.2 Measuring current and potential difference; reading ammeter and voltmeter scales (GCSE Physics J259 Gateway)
+
+#### Switches and Cells in Series (Confident, `physics-electricity-switches-cells`)
+- **KS3**: Series and parallel circuits; battery and bulb ratings; the effect of cells and batteries on potential difference in a circuit.
+- **AQA**: 4.2.1.1 Circuit symbols including switches and cells; 4.2.1.4 Cells in series; total e.m.f. of cells in series (GCSE Physics 8463)
+- **Edexcel**: Topic 2.6 Cells in series; total potential difference; effect of switch position in series and parallel circuits (GCSE Physics 1PH0)
+- **OCR**: P4.2 Cells and batteries in series; switch position in series and parallel circuits (GCSE Physics J259 Gateway)
+
+#### Adding Lamps: Series Versus Parallel Brightness (Confident, `physics-electricity-lamp-brightness`)
+- **KS3**: Series and parallel circuits; battery and bulb ratings; differences in current and potential difference between series and parallel arrangements.
+- **AQA**: 4.2.1.4 Series and parallel circuits; effect on current, p.d. and lamp brightness when components are added (GCSE Physics 8463)
+- **Edexcel**: Topic 2.5-2.6 Comparing series and parallel circuits; brightness of lamps when more lamps are added (GCSE Physics 1PH0)
+- **OCR**: P4.2 Series and parallel circuits; comparing lamp brightness when lamps are added to each arrangement (GCSE Physics J259 Gateway)
+
+#### Mains Electricity in the UK (Confident, `physics-electricity-uk-mains`)
+- **KS3**: Domestic electrical appliances; the differences between, and uses of, direct and alternating current.
+- **AQA**: 4.2.3.1 Mains electricity: alternating current, 230 V, 50 Hz in the UK; 4.2.3.2 The three-pin plug, live, neutral and earth wires (GCSE Physics 8463)
+- **Edexcel**: Topic 2.13 UK mains electricity: 230 V, 50 Hz, a.c.; 2.14 Three-pin plugs and the role of live, neutral and earth wires (GCSE Physics 1PH0)
+- **OCR**: P4.3 Mains electricity; UK mains supply 230 V, 50 Hz; three-pin plug wiring (GCSE Physics J259 Gateway)
+
+#### Static Electricity Basics (Confident, `physics-electricity-static-basics`)
+- **KS3**: Static electricity; charging by friction; attraction and repulsion between charged objects; non-contact forces due to static electricity.
+- **AQA**: 4.2.5.1 Static charge; insulators charged by friction; forces between charged objects (GCSE Physics 8463; KS3 stops at qualitative)
+- **Edexcel**: Topic 2.21-2.23 Static electricity; charging by friction; attraction and repulsion (GCSE Physics 1PH0)
+- **OCR**: P4.1 Static and charge; charging by friction; attraction and repulsion (GCSE Physics J259 Gateway)
+
+#### Electrical Hazards and Safety (Confident, `physics-electricity-hazards`)
+- **KS3**: Domestic electrical appliances and electrical safety; the dangers of mains electricity, particularly water and damaged cables.
+- **AQA**: 4.2.3.2 Electrical safety; live wire hazards; damaged insulation and overheating cables (GCSE Physics 8463)
+- **Edexcel**: Topic 2.15 Electrical hazards; dangers of damaged cables, overheating and water near sockets (GCSE Physics 1PH0)
+- **OCR**: P4.3 Hazards of mains electricity; safe practice in the home (GCSE Physics J259 Gateway)
+
+#### Fault Finding in a Circuit (Challenge, `physics-electricity-fault-finding`)
+- **KS3**: Series and parallel circuits; current as flow of charge; using meters to investigate circuits.
+- **AQA**: 4.2.1.4 Series and parallel circuits; effect of a broken component or open switch; diagnosing faults using ammeter and voltmeter readings (GCSE Physics 8463)
+- **Edexcel**: Topic 2.4-2.6 Circuit diagnosis; effect of open circuits and short circuits on current and p.d. (GCSE Physics 1PH0)
+- **OCR**: P4.2 Circuit faults; using meter readings to locate breaks and short circuits (GCSE Physics J259 Gateway)
+
+#### Electrical Power: P = I x V (Challenge, `physics-electricity-power-formula`)
+- **KS3**: Comparing power ratings of appliances in watts (W, kW); comparing amounts of energy transferred (J, kJ, kW hour); domestic fuel bills.
+- **AQA**: 4.2.4.1 Electrical power, P = V I; 4.2.4.2 Energy transfers in appliances (GCSE Physics 8463)
+- **Edexcel**: Topic 2.17-2.18 Electrical power, P = I x V; energy transferred by appliances (GCSE Physics 1PH0)
+- **OCR**: P4.3 Power in electric circuits, P = I V; rating of household appliances (GCSE Physics J259 Gateway)
+
+#### Fuses and Plug Ratings (Challenge, `physics-electricity-fuses-plug-ratings`)
+- **KS3**: Domestic electrical appliances; electrical safety; the role of fuses and circuit breakers in protecting wiring.
+- **AQA**: 4.2.3.2 The three-pin plug; the role of the fuse; choosing a 3 A, 5 A or 13 A fuse from the appliance power rating (GCSE Physics 8463)
+- **Edexcel**: Topic 2.14-2.16 The fuse and earth wire; selecting a fuse rating to match the appliance current (GCSE Physics 1PH0)
+- **OCR**: P4.3 Fuses and circuit breakers; selecting an appropriate fuse for a UK plug (GCSE Physics J259 Gateway)
+
 ### Zone: Waves (`physics-waves`)
 
 #### Wave Anatomy (Core, `physics-waves-anatomy`)
@@ -1079,6 +1367,78 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.6.2.1 Reflection of waves; 4.6.2.3 Sound waves (longitudinal, require a medium); 4.6.1.4 Properties of waves including speed of light in vacuum (GCSE Physics 8463)
 - **Edexcel**: Topic 5 Light and the electromagnetic spectrum, 5.1-5.4 reflection, refraction; Topic 4.1 sound as a longitudinal wave (GCSE Physics 1PH0)
 - **OCR**: P5.2 Sound and ultrasound; P5.3 Light, including reflection, refraction, and the wave speed in a vacuum (GCSE Physics J259 Gateway)
+
+#### The Wave Equation (Confident, `physics-waves-wave-equation`)
+- **KS3**: Frequencies of sound waves, measured in hertz (Hz); wavelength and frequency related to wave speed.
+- **AQA**: 4.6.1.2 Properties of waves; wave speed = frequency x wavelength, v = f λ (GCSE Physics 8463)
+- **Edexcel**: Topic 4.2 Wave equation, wave velocity = frequency x wavelength (GCSE Physics 1PH0)
+- **OCR**: P5.1 Wave behaviour; the wave equation v = f λ applied to sound and light (GCSE Physics J259 Gateway)
+
+#### Frequency and Period (Confident, `physics-waves-frequency-period`)
+- **KS3**: Frequencies of sound waves, measured in hertz (Hz); period as time for one oscillation.
+- **AQA**: 4.6.1.1 Amplitude, wavelength, frequency and period of a wave; period T = 1/f (GCSE Physics 8463)
+- **Edexcel**: Topic 4.1 Waves; frequency, period and the relationship T = 1/f (GCSE Physics 1PH0)
+- **OCR**: P5.1 Wave behaviour; frequency and period, T = 1/f (GCSE Physics J259 Gateway)
+
+#### Speed of Sound and Echoes (Confident, `physics-waves-speed-of-sound`)
+- **KS3**: Echoes, reflection and absorption of sound; the speed of sound in air, in water, in solids.
+- **AQA**: 4.6.2.3 Sound waves; speed of sound in air (approx 340 m/s); echo timing (GCSE Physics 8463)
+- **Edexcel**: Topic 4.1 Sound waves; speed of sound, time and distance from echoes (GCSE Physics 1PH0)
+- **OCR**: P5.2 Sound and ultrasound; speed of sound and use of echoes for distance measurement (GCSE Physics J259 Gateway)
+
+#### Loudness, Pitch and Hearing Range (Confident, `physics-waves-loudness-pitch`)
+- **KS3**: Sound produced by vibrations of objects; the auditory range of humans and animals; pitch related to frequency, loudness related to amplitude.
+- **AQA**: 4.6.2.3 Sound waves; pitch and frequency, loudness and amplitude; human hearing range 20 Hz to 20 kHz (GCSE Physics 8463)
+- **Edexcel**: Topic 4.1 Sound; frequency and pitch, amplitude and loudness, human auditory range (GCSE Physics 1PH0)
+- **OCR**: P5.2 Sound and ultrasound; audible range of humans, ultrasound above 20 kHz, infrasound below 20 Hz (GCSE Physics J259 Gateway)
+
+#### Law of Reflection (Confident, `physics-waves-law-of-reflection`)
+- **KS3**: Light waves; reflection at a surface; the transmission of light through materials, specular reflection at a surface.
+- **AQA**: 4.6.2.2 Reflection of waves; angle of incidence equals angle of reflection, normal line (GCSE Physics 8463)
+- **Edexcel**: Topic 5.1 Reflection of light; law of reflection, plane mirrors (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light; reflection at plane surfaces, angle of incidence and angle of reflection (GCSE Physics J259 Gateway)
+
+#### Plane Mirror Images (Confident, `physics-waves-plane-mirror-images`)
+- **KS3**: Specular reflection at a surface; image formation by reflection.
+- **AQA**: 4.6.2.2 Reflection; properties of images in a plane mirror, virtual, upright, same size, laterally inverted (GCSE Physics 8463)
+- **Edexcel**: Topic 5.1 Reflection; ray diagrams for plane mirrors; image properties (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light; image formation in a plane mirror, virtual image behind the mirror (GCSE Physics J259 Gateway)
+
+#### Refraction at a Glass Block (Confident, `physics-waves-refraction-glass-block`)
+- **KS3**: The transmission of light through materials; light changes direction when entering a denser medium.
+- **AQA**: 4.6.2.4 Refraction of light; bending towards or away from the normal when changing medium (GCSE Physics 8463)
+- **Edexcel**: Topic 5.2 Refraction; refraction at boundaries between media, ray diagrams through rectangular glass blocks (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light; refraction at material boundaries, qualitative ray diagrams (GCSE Physics J259 Gateway)
+
+#### The Electromagnetic Spectrum (Confident, `physics-waves-em-spectrum`)
+- **KS3**: Light waves travelling through a vacuum; speed of light; the EM spectrum as a family of transverse waves.
+- **AQA**: 4.6.3.1 Types of electromagnetic waves; the seven regions in order of frequency and wavelength (GCSE Physics 8463)
+- **Edexcel**: Topic 5.3 The electromagnetic spectrum; ordering radio, micro, IR, visible, UV, X-ray, gamma (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light and the electromagnetic spectrum; structure and order of the EM spectrum (GCSE Physics J259 Gateway)
+
+#### Dispersion and the Visible Spectrum (Challenge, `physics-waves-dispersion-prism`)
+- **KS3**: The transmission of light through materials; colours of the visible spectrum; Newton's prism experiment.
+- **AQA**: 4.6.3.1 Types of electromagnetic waves; visible light, ROYGBIV ordering by frequency and wavelength (GCSE Physics 8463)
+- **Edexcel**: Topic 5.3 The electromagnetic spectrum; dispersion of white light by a prism, colours of the spectrum (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light; refraction producing dispersion through a prism, colours of visible light (GCSE Physics J259 Gateway)
+
+#### Uses and Dangers of EM Waves (Challenge, `physics-waves-em-uses-dangers`)
+- **KS3**: Use and application of the EM spectrum in everyday contexts, including communication and medicine.
+- **AQA**: 4.6.3.2 Properties of electromagnetic waves; uses and hazards of radio, micro, IR, visible, UV, X-ray and gamma (GCSE Physics 8463)
+- **Edexcel**: Topic 5.4 Uses and applications of EM waves; hazards from UV, X-rays and gamma (GCSE Physics 1PH0)
+- **OCR**: P5.3 Electromagnetic spectrum; uses and dangers of each region (GCSE Physics J259 Gateway)
+
+#### Why the Sky is Blue (Challenge, `physics-waves-sky-blue-scattering`)
+- **KS3**: The transmission of light through materials; diffuse scattering; colours of visible light.
+- **AQA**: 4.6.3.1 Types of electromagnetic waves; qualitative scattering of visible light in the atmosphere (GCSE Physics 8463)
+- **Edexcel**: Topic 5.3 The electromagnetic spectrum; scattering of shorter wavelengths in the atmosphere (GCSE Physics 1PH0)
+- **OCR**: P5.3 Light; qualitative explanation of atmospheric scattering and sky colour (GCSE Physics J259 Gateway)
+
+#### Doppler Effect (Challenge, `physics-waves-doppler-effect`)
+- **KS3**: Frequencies of sound waves; pitch changes for a moving source, qualitative.
+- **AQA**: 4.8.2 Red-shift; qualitative Doppler shift in frequency and wavelength for a moving source (GCSE Physics 8463)
+- **Edexcel**: Topic 8.5 Doppler effect; observed change in frequency and wavelength from a moving source (GCSE Physics 1PH0)
+- **OCR**: P8.1 The Universe; qualitative Doppler effect, pitch change of a passing siren (GCSE Physics J259 Gateway)
 
 ### Zone: Space (`physics-space`)
 
@@ -1094,6 +1454,66 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 8 Astronomy, 8.4 Earth's rotation, day length and the seasons (GCSE Physics 1PH0)
 - **OCR**: P8.1 Solar System and the Universe; Earth's axial tilt, day, year, seasons (GCSE Physics J259 Gateway)
 
+#### Moon Phases (Confident, `physics-space-moon-phases`)
+- **KS3**: Gravity force, gravity forces between Earth and Moon (qualitative only); the relative positions of the Sun, Earth and Moon.
+- **AQA**: 4.8.1.1 Our solar system; orbital motion of moons around planets (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.1-8.3 the solar system, planets and moons (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; the Moon as a natural satellite of Earth (GCSE Physics J259 Gateway)
+
+#### Eclipses of the Sun and Moon (Confident, `physics-space-eclipses`)
+- **KS3**: Relative positions of the Sun, Earth and Moon; light travels in straight lines, shadows formed by opaque objects.
+- **AQA**: 4.8.1.1 Our solar system; orbital motion of the Moon around Earth and Earth around the Sun (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.1-8.3 the solar system, planets and moons; alignment in orbits (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; orbital alignments of the Sun, Earth and Moon (GCSE Physics J259 Gateway)
+
+#### Orbits and Gravity (Confident, `physics-space-orbits-gravity`)
+- **KS3**: Gravity force, gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); circular motion of planets and moons.
+- **AQA**: 4.8.1.2 Orbital motion, satellites and gravity; circular orbits require a centripetal force provided by gravity (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.5-8.7 gravitational force, orbits of planets, moons and satellites (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; orbital motion under gravity for planets and moons (GCSE Physics J259 Gateway)
+
+#### Satellites and Space Technology (Confident, `physics-space-satellites`)
+- **KS3**: Gravity forces between Earth and Moon (qualitative); uses of artificial satellites in communications and observation.
+- **AQA**: 4.8.1.2 Orbital motion, satellites and gravity; geostationary and low polar orbits (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.5-8.7 orbits of artificial satellites, geostationary and low Earth orbits (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; artificial satellites and their orbits (GCSE Physics J259 Gateway)
+
+#### The Sun as a Star (Confident, `physics-space-sun-as-star`)
+- **KS3**: Our sun as a star, other stars in our galaxy; energy released by the Sun.
+- **AQA**: 4.8.1.1 Our solar system; the Sun as a main sequence star, energy from nuclear fusion of hydrogen (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.8-8.10 stars and the life cycle of a star, main sequence (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; the Sun as a star, fusion in stellar cores (GCSE Physics J259 Gateway)
+
+#### Light Years and Astronomical Distance (Confident, `physics-space-light-years`)
+- **KS3**: The light year as a unit of astronomical distance; speed of light.
+- **AQA**: 4.8.1.1 Our solar system; scale of the universe, distances between stars and galaxies (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.8-8.10 distances to stars and galaxies, the light year (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; light year as a measure of astronomical distance (GCSE Physics J259 Gateway)
+
+#### Galaxies and the Milky Way (Challenge, `physics-space-galaxies`)
+- **KS3**: Our sun as a star, other stars in our galaxy, other galaxies.
+- **AQA**: 4.8.1.1 Our solar system; the Milky Way as our galaxy, structure and scale of the universe (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.8-8.10 galaxies and the structure of the universe (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; galaxies, the Milky Way, scale of the observable universe (GCSE Physics J259 Gateway)
+
+#### Life Cycle of Stars (Challenge, `physics-space-star-life-cycle`)
+- **KS3**: Our sun as a star, other stars in our galaxy (qualitative beyond KS3 core).
+- **AQA**: 4.8.1.1 The life cycle of a star; main sequence, red giant, white dwarf, supernova, neutron star and black hole (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.8-8.10 the life cycle of stars by mass (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; stellar evolution and the life cycle of stars (GCSE Physics J259 Gateway)
+
+#### The Big Bang and an Expanding Universe (Challenge, `physics-space-big-bang`)
+- **KS3**: Other galaxies; the universe on the largest scale (extension beyond KS3 core).
+- **AQA**: 4.8.2 Red-shift and the Big Bang theory; evidence for an expanding universe (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.11-8.13 red shift, the Big Bang and the expanding universe (GCSE Physics 1PH0)
+- **OCR**: P8.2 The Big Bang; red shift and evidence for the expansion of the universe (GCSE Physics J259 Gateway)
+
+#### Comets, Asteroids and Tidal Locking (Challenge, `physics-space-comets-asteroids`)
+- **KS3**: Gravity forces between Earth and Moon, and between Earth and Sun (qualitative only); orbital motion of bodies in the solar system.
+- **AQA**: 4.8.1.2 Orbital motion, satellites and gravity; elliptical orbits of comets, asteroids in the solar system (GCSE Physics 8463)
+- **Edexcel**: Topic 8 Astronomy, 8.1-8.3 the solar system including asteroids and comets, 8.5-8.7 orbital motion (GCSE Physics 1PH0)
+- **OCR**: P8.1 Solar System and the Universe; comets and asteroids, elliptical orbits and tidal locking of moons (GCSE Physics J259 Gateway)
+
 ### Zone: Magnetism (`physics-magnetism`)
 
 #### Magnetic Fields (Core, `physics-magnetism-fields`)
@@ -1107,3 +1527,57 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.7.2 The motor effect; electromagnetism (GCSE Physics 8463; KS3 stops short of induction)
 - **Edexcel**: Topic 7 Magnetism and the motor effect, 7.5-7.13 electromagnets and the motor effect (GCSE Physics 1PH0)
 - **OCR**: P6.2 The motor effect; electromagnets and solenoids (GCSE Physics J259 Gateway)
+
+#### Field Lines of a Bar Magnet (Confident, `physics-magnetism-field-lines-bar-magnet`)
+- **KS3**: Magnetic fields by plotting with compass, representation by field lines; field lines run from N to S outside the magnet, never cross, and crowd where the field is stronger.
+- **AQA**: 4.7.1.2 Magnetic fields; drawing and interpreting field-line diagrams for a bar magnet (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.3-7.4 magnetic field patterns, direction and strength from line spacing (GCSE Physics 1PH0)
+- **OCR**: P6.1 Magnets and magnetic fields; field-line conventions for permanent magnets (GCSE Physics J259 Gateway)
+
+#### Earth's Magnetic Field (Confident, `physics-magnetism-earths-field`)
+- **KS3**: Earth's magnetism, compass and navigation; geographic versus magnetic poles, why a freely suspended compass needle aligns with the field.
+- **AQA**: 4.7.1.2 Magnetic fields; evidence that the Earth's core generates a magnetic field, compass behaviour (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.4 the Earth's magnetic field and the compass (GCSE Physics 1PH0)
+- **OCR**: P6.1 Magnets and magnetic fields; Earth's field and use of a plotting compass (GCSE Physics J259 Gateway)
+
+#### Plotting Fields: Iron Filings vs Plotting Compass (Confident, `physics-magnetism-plotting-techniques`)
+- **KS3**: Magnetic fields by plotting with compass; practical techniques for revealing the field pattern around a bar magnet.
+- **AQA**: 4.7.1.2 Magnetic fields; required practical-style comparison of iron filings and plotting compass methods (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.3 investigating magnetic field patterns using a plotting compass and iron filings (GCSE Physics 1PH0)
+- **OCR**: P6.1 Magnets and magnetic fields; practical methods for plotting the field around a magnet (GCSE Physics J259 Gateway)
+
+#### Ferromagnetic Materials (Confident, `physics-magnetism-ferromagnetic-materials`)
+- **KS3**: Magnetic poles, attraction and repulsion; sorting materials by whether they are attracted to a magnet, including iron, steel, nickel and cobalt versus aluminium, copper, brass and plastic.
+- **AQA**: 4.7.1.1 Poles of a magnet; identifying ferromagnetic materials and induced magnetism in iron, steel, nickel and cobalt (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.1-7.2 permanent and induced magnets, magnetic materials (GCSE Physics 1PH0)
+- **OCR**: P6.1 Magnets and magnetic fields; ferromagnetic versus non-ferromagnetic materials (GCSE Physics J259 Gateway)
+
+#### Strengthening an Electromagnet (Confident, `physics-magnetism-strengthening-electromagnets`)
+- **KS3**: The magnetic effect of a current, electromagnets; factors that change electromagnet strength, including number of turns, current and the use of a soft iron core.
+- **AQA**: 4.7.2.1 Electromagnetism; factors affecting solenoid field strength (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.10-7.12 solenoid field strength, effect of current, turns and core (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; designing a stronger electromagnet, role of the iron core (GCSE Physics J259 Gateway)
+
+#### Field of a Solenoid (Challenge, `physics-magnetism-solenoid-field`)
+- **KS3**: Goes beyond KS3; extension of the magnetic effect of a current to the field shape of a solenoid and finding its poles.
+- **AQA**: 4.7.2.1 Electromagnetism; field pattern of a solenoid resembles a bar magnet, uniform field inside (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.9-7.10 field around a current-carrying wire and a solenoid, locating the poles (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; solenoid field pattern and pole identification (GCSE Physics J259 Gateway)
+
+#### The Motor Effect (Challenge, `physics-magnetism-motor-effect`)
+- **KS3**: D.C. motors, principles only; a current-carrying wire in a magnetic field experiences a force, with direction depending on current and field.
+- **AQA**: 4.7.2.2 Fleming's left-hand rule (qualitative at this stage); force on a current-carrying conductor (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.13-7.15 the motor effect, force on a current-carrying conductor (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; force on a wire carrying a current in a magnetic field (GCSE Physics J259 Gateway)
+
+#### The Simple DC Motor (Challenge, `physics-magnetism-dc-motor`)
+- **KS3**: D.C. motors, principles only; how a current-carrying coil in a magnetic field is made to rotate, role of the split-ring commutator.
+- **AQA**: 4.7.2.2 Electric motors; turning effect on a coil, function of the commutator (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.16-7.17 the d.c. motor and the split-ring commutator (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; structure and operation of a simple d.c. motor (GCSE Physics J259 Gateway)
+
+#### Uses of Electromagnets (Challenge, `physics-magnetism-electromagnet-uses`)
+- **KS3**: Electromagnets; everyday and industrial uses, including scrap-yard cranes, electric bells and doorbells, relays and loudspeakers.
+- **AQA**: 4.7.2.1 Electromagnetism; applications of electromagnets in switching and lifting devices (GCSE Physics 8463)
+- **Edexcel**: Topic 7 Magnetism and the motor effect, 7.11-7.12 uses of electromagnets including relays and circuit breakers (GCSE Physics 1PH0)
+- **OCR**: P6.2 The motor effect; practical applications of electromagnets, including cranes and bells (GCSE Physics J259 Gateway)
