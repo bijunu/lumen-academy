@@ -892,6 +892,66 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 1.13 Diffusion in terms of the particle model (1CH0)
 - **OCR**: C1.1d Diffusion and the particle model (J248 Gateway Chemistry)
 
+#### Evaporation and Boiling (Confident, `chemistry-particle-model-evaporation-boiling`)
+- **KS3**: The distinction between evaporation and boiling in terms of the particle model; evaporation as surface escape at any temperature above absolute zero; boiling as bulk transition at a fixed boiling point.
+- **AQA**: 4.2.2.1 The three states of matter; state changes including evaporation and boiling (8462)
+- **Edexcel**: Topic 1.6 States of matter and changes of state; evaporation and boiling (1CH0)
+- **OCR**: C1.1c Changes of state: evaporation and boiling distinguished (J248 Gateway Chemistry)
+
+#### Gas Pressure and Particle Collisions (Confident, `chemistry-particle-model-gas-pressure`)
+- **KS3**: Gas pressure in terms of the particle model; the frequency and force of collisions between gas particles and container walls; how pressure changes with volume and temperature qualitatively.
+- **AQA**: 4.2.2.1 The three states of matter, including gas pressure (8462)
+- **Edexcel**: Topic 1.6 States of matter; Topic 2.2 Gas behaviour and pressure (1CH0)
+- **OCR**: C1.1b Gas behaviour and pressure explained by the particle model (J248 Gateway Chemistry)
+
+#### Brownian Motion (Challenge, `chemistry-particle-model-brownian-motion`)
+- **KS3**: Brownian motion as evidence for particle movement; observation of smoke or pollen particles jiggling due to bombardment by invisible air or liquid particles; limitations of Brownian motion observations for proving particle existence.
+- **AQA**: 4.2.2.1 The particle model and evidence; Brownian motion as evidence for particles (8462)
+- **Edexcel**: Topic 1.7 Kinetic theory and Brownian motion (1CH0)
+- **OCR**: C1.1a Evidence for particles: Brownian motion and diffusion (J248 Gateway Chemistry)
+
+#### Density and State (Confident, `chemistry-particle-model-density-state`)
+- **KS3**: How density relates to the arrangement and spacing of particles in solids, liquids and gases; why ice floats (anomalous density of water); why gases are much less dense than liquids or solids.
+- **AQA**: 4.2.2.1 States of matter; properties of states including density (8462)
+- **Edexcel**: Topic 2.1 States of matter and particle spacing; density calculations (1CH0)
+- **OCR**: C1.1 The particle model; relative densities of states of matter (J248 Gateway Chemistry)
+
+#### Compressibility (Confident, `chemistry-particle-model-compressibility`)
+- **KS3**: Why solids are incompressible and liquids are almost incompressible, but gases are compressible, explained by particle spacing and the empty space between particles.
+- **AQA**: 4.2.2.1 States of matter; compressibility explained by the particle model (8462)
+- **Edexcel**: Topic 2.1 States of matter; behaviour under compression (1CH0)
+- **OCR**: C1.1 The particle model; explaining why gases are compressible but solids are not (J248 Gateway Chemistry)
+
+#### Temperature, Particle Motion and Energy (Confident, `chemistry-particle-model-temperature-energy`)
+- **KS3**: How temperature links to the average kinetic energy of particles; hotter substances have faster-moving particles; applying this to explain expansion, contraction, and rate of diffusion and evaporation.
+- **AQA**: 4.2.2.1 States of matter; 4.2.2.2 Diffusion; temperature and particle motion (8462)
+- **Edexcel**: Topic 1.6 States of matter; Topic 1.13 Diffusion; temperature and rate (1CH0)
+- **OCR**: C1.1 The particle model; temperature and kinetic energy; C1.1d Factors affecting diffusion (J248 Gateway Chemistry)
+
+#### Latent Heat and Heating Curves (Challenge, `chemistry-particle-model-latent-heat`)
+- **KS3**: The energy needed during a state change (latent heat) to break or form particle forces, not to change temperature; reading and interpreting heating curves and cooling curves with plateaus at melting and boiling points; specific latent heat qualitatively.
+- **AQA**: 4.2.2.1 Changes of state; specific latent heat (GCSE 8462)
+- **Edexcel**: Topic 1.6 State changes; Topic 5.2 Heating and cooling curves; latent heat (GCSE 1CH0)
+- **OCR**: C1.1c Changes of state; C5.2 Energy changes; latent heat qualitatively (J248 Gateway Chemistry)
+
+#### Surface Tension and Intermolecular Forces (Challenge, `chemistry-particle-model-surface-tension`)
+- **KS3**: Why liquids form droplets and have a surface; the stronger pull on surface particles compared to bulk particles; cohesion and adhesion in qualitative terms; examples: water droplets, soap bubbles, capillary action.
+- **AQA**: 4.2.2.1 States of matter; cohesive forces between particles (GCSE 8462)
+- **Edexcel**: Topic 1.6 States of matter; intermolecular forces (GCSE 1CH0)
+- **OCR**: C1.1 The particle model; forces between particles and properties of liquids (J248 Gateway Chemistry)
+
+#### Factors Affecting Diffusion Rate (Confident, `chemistry-particle-model-diffusion-factors`)
+- **KS3**: How diffusion rate depends on temperature, the mass (or size) of particles, and the concentration gradient; applying the particle model to explain why warm gases spread faster than cool gases.
+- **AQA**: 4.2.2.2 Diffusion; factors affecting rate of diffusion (8462)
+- **Edexcel**: Topic 1.13 Diffusion; concentration gradient and temperature effects (1CH0)
+- **OCR**: C1.1d Diffusion; factors that increase or decrease the rate (J248 Gateway Chemistry)
+
+#### Shape and Volume Fixed-ness (Confident, `chemistry-particle-model-shape-volume`)
+- **KS3**: Why solids have both fixed shape and fixed volume (particle forces and grid lock); why liquids have fixed volume but not fixed shape (particles free to slide); why gases have neither (particles far apart and unbound).
+- **AQA**: 4.2.2.1 The three states of matter; properties related to particle arrangement (8462)
+- **Edexcel**: Topic 2.1 States of matter; properties of each state (1CH0)
+- **OCR**: C1.1 The particle model; linking arrangement to observable properties (J248 Gateway Chemistry)
+
 ### Zone: Separating Mixtures (`chemistry-separating-mixtures`)
 
 #### Filtration and Evaporation (Core, `chemistry-separating-filtration-evaporation`)
@@ -912,6 +972,66 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 1.44 Paper chromatography (GCSE Chemistry 1CH0)
 - **OCR**: C2.1f Separate substances by paper chromatography (GCSE Chemistry A J248 Gateway)
 
+#### Pure Substances and Purity Testing (Confident, `chemistry-separating-pure-substance`)
+- **KS3**: The concept of a pure substance; pure substances have fixed melting and boiling points; impure substances have a range of melting and boiling points.
+- **AQA**: 4.10.1.1 Pure substances and mixtures; melting point and boiling point as indicators of purity (8462)
+- **Edexcel**: Topic 1.42 Pure and impure substances; melting point as a test of purity (1CH0)
+- **OCR**: C2.1a Pure and impure substances; characterisation by melting and boiling point (J248 Gateway Chemistry)
+
+#### Solubility and Solubility Curves (Confident, `chemistry-separating-solubility-curves`)
+- **KS3**: Dissolving in terms of the particle model; solubility as a quantitative measure of how much solute dissolves in a solvent at a fixed temperature.
+- **AQA**: 4.10.1.1 Pure substances and mixtures; solubility curves and temperature effects (8462)
+- **Edexcel**: Topic 1.40 Solubility; solubility curves; the effect of temperature on solubility (1CH0)
+- **OCR**: C2.1a Solubility; quantitative interpretation of solubility data (J248 Gateway Chemistry)
+
+#### Saturated Solutions (Confident, `chemistry-separating-saturated-solutions`)
+- **KS3**: A saturated solution is one in which no more solute can dissolve at a given temperature; methods to test and identify a saturated solution.
+- **AQA**: 4.10.1.1 Pure substances and mixtures; saturated solutions (8462)
+- **Edexcel**: Topic 1.40 Saturated solutions; identifying when a solution is saturated (1CH0)
+- **OCR**: C2.1a Saturated solutions; effect of temperature on saturation point (J248 Gateway Chemistry)
+
+#### Crystallisation by Cooling (Confident, `chemistry-separating-crystallisation-cooling`)
+- **KS3**: Crystallisation as a technique to recover a dissolved solid by cooling a hot saturated solution; comparing cooling crystallisation with evaporative crystallisation.
+- **AQA**: 4.10.1.2 Filtration and crystallisation; cooling crystallisation method (8462)
+- **Edexcel**: Topic 1.43 Crystallisation by cooling a hot saturated solution; apparatus and technique (1CH0)
+- **OCR**: C2.1g Recover crystals by cooling a hot saturated solution (J248 Gateway Chemistry)
+
+#### Crystallisation by Evaporation (Confident, `chemistry-separating-crystallisation-evaporation`)
+- **KS3**: Crystallisation by evaporation: leaving a solution to evaporate slowly until crystals form; advantages over rapid evaporation in recovering large crystals.
+- **AQA**: 4.10.1.2 Crystallisation; evaporative crystallisation for obtaining larger crystals (8462)
+- **Edexcel**: Topic 1.43 Crystallisation; slow evaporation versus evaporating basin heating (1CH0)
+- **OCR**: C2.1g Recover crystals by evaporating the solvent (J248 Gateway Chemistry)
+
+#### Separating Immiscible Liquids with a Separating Funnel (Confident, `chemistry-separating-immiscible-funnel`)
+- **KS3**: Two immiscible liquids (such as oil and water) form two layers; a separating funnel is used to collect one liquid at a time from the bottom tap.
+- **AQA**: 4.10.1 Separating mixtures; separating funnel for immiscible liquids (8462)
+- **Edexcel**: Topic 1.42 Mixtures; separating immiscible liquids using a separating funnel (1CH0)
+- **OCR**: C2.1f Separate immiscible liquids using a separating funnel (J248 Gateway Chemistry)
+
+#### Chromatography: Rf Values and Identification (Challenge, `chemistry-separating-rf-value`)
+- **KS3**: The Rf value is calculated as the distance travelled by a dye divided by the distance travelled by the solvent front; Rf is constant for a substance in a given solvent; identification of an unknown by comparing its Rf with those of known dyes.
+- **AQA**: 4.10.1.4 Chromatography; Rf values and identification of components (8462)
+- **Edexcel**: Topic 1.44 Paper chromatography; calculating and interpreting Rf values (1CH0)
+- **OCR**: C2.1f Paper chromatography; Rf values; identification by comparison (J248 Gateway Chemistry)
+
+#### Magnetic Separation (Confident, `chemistry-separating-magnetic`)
+- **KS3**: Magnetic separation uses a magnet to remove magnetic materials (such as iron powder) from a non-magnetic mixture; choosing when magnetic separation is the most efficient method.
+- **AQA**: 4.10.1 Separating mixtures; use of magnetism to separate a magnetic material from a mixture (8462)
+- **Edexcel**: Topic 1.42 Mixtures; magnetic separation of iron filings from non-magnetic solids (1CH0)
+- **OCR**: C2.1c Separate a magnetic metal from a non-magnetic solid mixture using a magnet (J248 Gateway Chemistry)
+
+#### Drying Separated Solids (Confident, `chemistry-separating-drying-desiccant`)
+- **KS3**: After separation, a solid may be wet; drying methods include heating (for thermally stable solids), air drying, or using a desiccant to absorb moisture without heating.
+- **AQA**: 4.10.1 Separating mixtures; drying techniques after separation (8462)
+- **Edexcel**: Topic 1.43 Post-separation processes; drying crystalline solids (1CH0)
+- **OCR**: C2.1 Separating and drying solids after separation; choice of desiccant (J248 Gateway Chemistry)
+
+#### Decanting and Settling (Challenge, `chemistry-separating-decanting`)
+- **KS3**: Decanting pours off the liquid phase from a settled solid or two immiscible layers without moving the residue; used when the solid has settled to the bottom and a filter is not needed.
+- **AQA**: 4.10.1 Separating mixtures; decanting as an alternative to filtration when settling is complete (8462)
+- **Edexcel**: Topic 1.42 Mixtures; decanting as a separation technique for settled solids (1CH0)
+- **OCR**: C2.1c Decant to separate a settled solid from liquid; C2.1f decant to separate two immiscible liquids (J248 Gateway Chemistry)
+
 ### Zone: Atoms, Elements, Compounds (`chemistry-atoms-elements-compounds`)
 
 #### Atoms, Elements, Compounds, Mixtures (Core, `chemistry-atoms-elements-compounds-basics`)
@@ -925,6 +1045,72 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.1.1.1 Atoms, elements and compounds; chemical symbols and formulae (GCSE Chemistry 8462)
 - **Edexcel**: Topic 1.1 Atoms, elements and compounds; 1.2 Chemical formulae of elements and compounds (GCSE Chemistry 1CH0)
 - **OCR**: C1.1a Symbols and formulae of elements and simple compounds (GCSE Chemistry A J248 Gateway)
+
+#### Dalton's Atomic Model (Confident, `chemistry-atoms-dalton-model`)
+- **KS3**: A simple (Dalton) atomic model; understanding the historical development of the atomic model as a key scientific idea.
+- **AQA**: 4.1.1.1 Atoms, elements and compounds; development of models of atomic structure (8462)
+- **Edexcel**: Topic 1.1 Atoms, elements and compounds; development of the periodic table (1CH0)
+- **OCR**: C1.1a Atoms, elements and compounds; development of atomic models (J248 Gateway Chemistry)
+
+#### Plum Pudding to Nuclear Model (Challenge, `chemistry-atoms-plum-pudding-nuclear`)
+- **KS3**: The development of the atomic model; understanding that scientific models develop with new evidence (plum pudding model, Rutherford's nuclear model).
+- **AQA**: 4.1.1.1 Development of models of atomic structure; Rutherford's nuclear model (8462)
+- **Edexcel**: Topic 1.1 Development of atomic models and the evidence from Rutherford scattering (1CH0)
+- **OCR**: C1.1a Historical development of atomic models; Rutherford's scattering experiment (J248 Gateway Chemistry)
+
+#### Protons, Neutrons and Electrons (Confident, `chemistry-atoms-protons-neutrons-electrons`)
+- **KS3**: The structure of the atom: proton, neutron and electron; their charges and relative masses; location within the atom.
+- **AQA**: 4.1.1.1 Atoms: the structure of the atom; proton, neutron, electron; relative mass and charge (8462)
+- **Edexcel**: Topic 1.3 Atoms, isotopes and relative atomic mass; protons, neutrons, electrons (1CH0)
+- **OCR**: C1.1b Subatomic particles: protons, neutrons, electrons; charges and relative mass (J248 Gateway Chemistry)
+
+#### Atomic Number and Mass Number (Confident, `chemistry-atoms-atomic-mass-number`)
+- **KS3**: Atomic number (the number of protons); mass number (total of protons and neutrons); the significance of each for atomic identity.
+- **AQA**: 4.1.1.1 Atomic number and mass number (8462)
+- **Edexcel**: Topic 1.3 Atomic number and mass number; determining numbers of subatomic particles (1CH0)
+- **OCR**: C1.1b Atomic number and mass number; calculating subatomic particle numbers (J248 Gateway Chemistry)
+
+#### Isotopes and Their Properties (Confident, `chemistry-atoms-isotopes`)
+- **KS3**: Isotopes: atoms of the same element with different numbers of neutrons; named examples (chlorine-35, chlorine-37; carbon-12, carbon-14); relative atomic mass as a weighted average.
+- **AQA**: 4.1.1.1 Atoms and isotopes; isotopic notation and relative atomic mass (8462)
+- **Edexcel**: Topic 1.3 Isotopes; relative atomic mass and isotopic composition (1CH0)
+- **OCR**: C1.1b Isotopes and their properties; calculating relative atomic mass (J248 Gateway Chemistry)
+
+#### Relative Atomic Mass (Challenge, `chemistry-atoms-relative-atomic-mass`)
+- **KS3**: Relative atomic mass as a weighted average of isotopic masses and abundances; using data from a mass spectrometer or periodic table.
+- **AQA**: 4.1.1.1 Relative atomic mass; calculating from isotopic abundance (8462)
+- **Edexcel**: Topic 1.3 Relative atomic mass calculations; using mass spectrometry data (1CH0)
+- **OCR**: C1.1c Relative atomic mass; working with isotopic data and percentages (J248 Gateway Chemistry)
+
+#### Electron Shells and Arrangement (Confident, `chemistry-atoms-electron-shells`)
+- **KS3**: Electrons arranged in shells around the nucleus; the 2,8,8 rule for the first three shells; electron configuration for elements up to calcium (Ca, Z=20).
+- **AQA**: 4.1.1.1 Atoms: electron shells and arrangement; first 20 elements (8462)
+- **Edexcel**: Topic 1.3 Electron structure and the periodic table; electron arrangement in shells (1CH0)
+- **OCR**: C1.1b Electron structure and electron arrangements in shells (J248 Gateway Chemistry)
+
+#### Reading a Periodic Table Cell (Confident, `chemistry-atoms-periodic-table-cell`)
+- **KS3**: Extracting atomic number and mass number from a periodic table cell; using this information to determine proton, neutron and electron numbers.
+- **AQA**: 4.1.2.1 The periodic table; interpreting information from periodic table entries (8462)
+- **Edexcel**: Topic 1.30 The periodic table; reading element information (1CH0)
+- **OCR**: C1.2a The periodic table; extracting data from periodic table entries (J248 Gateway Chemistry)
+
+#### Introduction to Ionic Bonding (Challenge, `chemistry-atoms-ionic-bonding-intro`)
+- **KS3**: The basic process of ionic bonding: electron transfer between atoms; formation of cations and anions; role of electron shells in electron loss and gain (qualitative introduction).
+- **AQA**: 4.2.1.1 Ionic bonding; electron transfer; formation of ions (8462)
+- **Edexcel**: Topic 1.4 Ionic bonding; formation of cations and anions (1CH0)
+- **OCR**: C1.3a Ionic bonding and formation of ionic compounds (J248 Gateway Chemistry)
+
+#### Writing Simple Ionic Formulae (Challenge, `chemistry-atoms-ionic-formulae`)
+- **KS3**: Determining the formula of an ionic compound from the charges on the ions; examples such as NaCl, MgO, CaCl2; the criss-cross rule applied simply.
+- **AQA**: 4.1.1.1 Chemical formulae of compounds (8462)
+- **Edexcel**: Topic 1.2 Chemical formulae; simple ionic compounds (1CH0)
+- **OCR**: C1.1a Writing formulae of ionic compounds; balancing charge (J248 Gateway Chemistry)
+
+#### Counting Atoms in Brackets (Confident, `chemistry-atoms-counting-brackets`)
+- **KS3**: Counting the total number of atoms in a molecular formula containing brackets; examples such as Ca(OH)2, Mg(NO3)2; multiplying indices correctly.
+- **AQA**: 4.1.1.1 Chemical formulae and the mole; counting atoms (8462)
+- **Edexcel**: Topic 1.2 Chemical formulae; understanding brackets and indices (1CH0)
+- **OCR**: C1.1a Writing and interpreting formulae; brackets and multiplying indices (J248 Gateway Chemistry)
 
 ### Zone: Periodic Table (`chemistry-periodic-table`)
 
@@ -940,6 +1126,72 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 1.36 Group 1 alkali metals; 1.37 Group 7 halogens; 1.38 Reactivity trends in groups (GCSE Chemistry 1CH0)
 - **OCR**: C1.2c Group 1 alkali metals: trends; C1.2d Group 7 halogens: trends and displacement (GCSE Chemistry A J248 Gateway)
 
+#### Mendeleev's Periodic Table (Confident, `chemistry-periodic-table-mendeleev`)
+- **KS3**: The principles underpinning the Mendeleev periodic table; how Mendeleev predicted the properties of elements not yet discovered.
+- **AQA**: 4.1.2.2 Development of the periodic table; historical development and how Mendeleev predicted properties (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.31 Development of the periodic table; Mendeleev and gaps (GCSE Chemistry 1CH0)
+- **OCR**: C1.2a The periodic table: development; Mendeleev's predictions and gaps (GCSE Chemistry A J248 Gateway)
+
+#### Electron Shells and Groups (Confident, `chemistry-periodic-table-electron-shells`)
+- **KS3**: The number of electrons in the atoms of elements in Groups 1, 7 and 0; the link between electron arrangement and position in the periodic table; the concept of an outer electron.
+- **AQA**: 4.1.1.3 Electronic structure and the periodic table; arranging electrons in shells (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.3 Electronic structure and the periodic table; shells and groups (GCSE Chemistry 1CH0)
+- **OCR**: C1.1b Electronic structure; linking to the periodic table (GCSE Chemistry A J248 Gateway)
+
+#### Group 1 Reactions with Water (Confident, `chemistry-periodic-table-group-1-water`)
+- **KS3**: The reactions of Group 1 elements with water; observational evidence (vigour, heat, product observation); reactivity trends down the group.
+- **AQA**: 4.1.2.5 Group 1 (the alkali metals): reactions with water; reactivity order (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.36 Group 1 alkali metals: reactions with water (GCSE Chemistry 1CH0)
+- **OCR**: C1.2c Group 1 alkali metals: reactions; observations and word equations (GCSE Chemistry A J248 Gateway)
+
+#### Group 7 Physical States (Confident, `chemistry-periodic-table-group-7-states`)
+- **KS3**: The physical properties of Group 7 elements (the halogens); states of matter trend down the group; colour trend across the halogens.
+- **AQA**: 4.1.2.6 Group 7 (the halogens): physical properties; states of matter and colour (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.37 Group 7 halogens: physical properties and trends (GCSE Chemistry 1CH0)
+- **OCR**: C1.2d Group 7 halogens: physical states and colour (GCSE Chemistry A J248 Gateway)
+
+#### Halogen Displacement Reactions (Confident, `chemistry-periodic-table-halogen-displacement`)
+- **KS3**: Displacement reactions of halogens; reactivity order within Group 7; a more reactive halogen displaces a less reactive one from compounds (qualitative, word equations).
+- **AQA**: 4.1.2.6 Group 7 halogens: displacement reactions with halide salts (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.37 Group 7 halogens: displacement reactions (GCSE Chemistry 1CH0)
+- **OCR**: C1.2d Group 7 halogens: trends and displacement reactions (GCSE Chemistry A J248 Gateway)
+
+#### Group 0 Noble Gases (Challenge, `chemistry-periodic-table-group-0`)
+- **KS3**: The properties of Group 0 noble gases; the link between their electron arrangement and their unreactivity; uses of noble gases.
+- **AQA**: 4.1.2.4 Group 0 (the noble gases): properties, uses and unreactivity (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.35 Group 0 noble gases; unreactivity and uses (GCSE Chemistry 1CH0)
+- **OCR**: C1.2b Group 0 noble gases: properties, reactivity, and industrial uses (GCSE Chemistry A J248 Gateway)
+
+#### Period Trends: Metallic Character (Challenge, `chemistry-periodic-table-period-trends`)
+- **KS3**: Properties across a period (metallic character, reactivity, ionic charge); how position links to properties (qualitative atomic-radius and shielding intuition).
+- **AQA**: 4.1.2.3 Metals and non-metals; properties change across a period (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.32 Groups and periods; trends across a period (GCSE Chemistry 1CH0)
+- **OCR**: C1.2a The periodic table: groups and periods; trends across periods (GCSE Chemistry A J248 Gateway)
+
+#### Transition Metals Overview (Challenge, `chemistry-periodic-table-transition-metals`)
+- **KS3**: The basic properties of transition metals; multiple oxidation states (qualitative); coloured compounds; transition metals as catalysts.
+- **AQA**: 4.1.2.7 Transition metals; properties and uses (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.39 Transition metals; properties (GCSE Chemistry 1CH0)
+- **OCR**: C1.2e Transition metals: properties, uses, and reactions (GCSE Chemistry A J248 Gateway)
+
+#### Reactivity Series Basics (Confident, `chemistry-periodic-table-reactivity-series`)
+- **KS3**: The reactivity series; predicting displacement reactions from reactivity order; linking reactivity to position in the periodic table.
+- **AQA**: 4.4.1.1 Reactivity of metals and the reactivity series (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; the reactivity series (GCSE Chemistry 1CH0)
+- **OCR**: C5.1 The reactivity series of metals (GCSE Chemistry A J248 Gateway)
+
+#### Predicting Element Properties (Challenge, `chemistry-periodic-table-predict-properties`)
+- **KS3**: Using the periodic table to predict the properties of an unknown element based on its position (qualitative reasoning: group family, period trends, electron arrangement).
+- **AQA**: 4.1.2.1 The periodic table; using position to predict properties (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.30 The periodic table; predicting properties from position (GCSE Chemistry 1CH0)
+- **OCR**: C1.2a The periodic table: using position to infer properties (GCSE Chemistry A J248 Gateway)
+
+#### Atomic Radius and Shielding Intro (Challenge, `chemistry-periodic-table-atomic-radius`)
+- **KS3**: The concept of atomic radius; how radius changes down a group and across a period (qualitative); shielding and nuclear charge (early KS4 stretch).
+- **AQA**: 4.1.2.8 Atomic radius trends and bonding (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.33 Atomic radius trends (GCSE Chemistry 1CH0)
+- **OCR**: C1.2c Explaining trends: atomic radius, ionisation energy (early stretch) (GCSE Chemistry A J248 Gateway)
+
 ### Zone: Acids and Alkalis (`chemistry-acids-alkalis`)
 
 #### Common Acids and Alkalis (Core, `chemistry-acids-alkalis-common`)
@@ -954,6 +1206,60 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: Topic 3.7 Neutralisation reactions; 3.8 Salts produced by neutralisation (GCSE Chemistry 1CH0)
 - **OCR**: C3.1c Neutralisation: acid + alkali → salt + water; C3.1d Salts and their uses (GCSE Chemistry A J248 Gateway)
 
+#### Indicators: Litmus, Methyl Orange, Phenolphthalein (Confident, `chemistry-acids-alkalis-indicators-detail`)
+- **KS3**: The use of indicators to identify acids and alkalis; understanding how indicators change colour across different pH ranges.
+- **AQA**: 4.4.2.2 Indicators and pH measurement; colour changes of litmus, methyl orange, phenolphthalein across acid/neutral/alkaline ranges (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 Use of indicators: litmus, methyl orange, phenolphthalein, universal indicator and their colour changes (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b Indicators: litmus paper, methyl orange, phenolphthalein; colour changes to identify acids and alkalis (GCSE Chemistry A J248 Gateway)
+
+#### Acid plus Metal: Reactions and Products (Confident, `chemistry-acids-alkalis-acid-metal`)
+- **KS3**: The chemistry of acids; reactions of acids with metals to produce hydrogen gas (qualitative observations); word and symbol equations.
+- **AQA**: 4.4.2.3 Reactions of acids with metals; word and symbol equations; hydrogen gas evolution and detection by pop test (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.8 Salts from acid + metal reactions; recognition of hydrogen gas; symbolic equations (GCSE Chemistry 1CH0)
+- **OCR**: C3.2a Reactions of acids with metals; writing equations; hydrogen gas identification (GCSE Chemistry A J248 Gateway)
+
+#### Acid plus Metal Carbonate: Reactions and Products (Confident, `chemistry-acids-alkalis-metal-carbonate`)
+- **KS3**: Reactions of acids with metal carbonates; salt, water and carbon dioxide gas production; relevant real-world contexts (limestone, antacids).
+- **AQA**: 4.4.2.3 Reactions of acids with carbonates; word and symbol equations; carbon dioxide gas recognition (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.8 Acid + carbonate reactions; identifying carbon dioxide; word equations (GCSE Chemistry 1CH0)
+- **OCR**: C3.2b Reactions of acids with metal carbonates; carbon dioxide release and testing (GCSE Chemistry A J248 Gateway)
+
+#### Acid plus Metal Oxide: Forming Salts (Confident, `chemistry-acids-alkalis-metal-oxide`)
+- **KS3**: Reactions of acids with metal oxides; formation of salts and water only; using copper oxide and dilute sulfuric acid as a key example.
+- **AQA**: 4.4.2.3 Reactions of acids with bases (oxides, hydroxides); word and symbol equations; copper oxide + sulfuric acid for copper sulphate (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.8 Salts from acid + metal oxide reactions; equations; precipitation and crystallisation (GCSE Chemistry 1CH0)
+- **OCR**: C3.2c Reactions of acids with metal oxides and hydroxides; formation of salts; practical examples (GCSE Chemistry A J248 Gateway)
+
+#### Naming Salts from Acid and Base Reactions (Confident, `chemistry-acids-alkalis-salt-naming`)
+- **KS3**: Recognition of salt names from the acid and base used; sulfuric acid produces sulfates, nitric acid produces nitrates, hydrochloric acid produces chlorides.
+- **AQA**: 4.4.2.1 Neutralisation; naming salts from acid and alkali (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.8 Salts and their formulae; naming salts using parent acid and base names (GCSE Chemistry 1CH0)
+- **OCR**: C3.1d Salts and their names; linking salt identity to the acid and alkali used (GCSE Chemistry A J248 Gateway)
+
+#### Preparing a Soluble Salt by Acid-Base Reaction (Challenge, `chemistry-acids-alkalis-salt-preparation`)
+- **KS3**: Practical preparation of a soluble salt using an insoluble base; filtration to separate undissolved base; evaporation or crystallisation to recover salt.
+- **AQA**: 4.10.1.1 Pure substances and mixtures; 4.10.1.2 Filtration and crystallisation; 4.4.2.3 Preparing salts from acid + insoluble base (GCSE Chemistry 8462)
+- **Edexcel**: Topic 1.43 Filtration and crystallisation; Topic 3.8 Practical salt preparation from acid + insoluble hydroxide or oxide (GCSE Chemistry 1CH0)
+- **OCR**: C2.1c Separating insoluble solids by filtration; C3.1c Preparing salts from acid + insoluble base with practical steps (GCSE Chemistry A J248 Gateway)
+
+#### Titration: Qualitative Endpoint Detection (Challenge, `chemistry-acids-alkalis-titration-intro`)
+- **KS3**: Introduction to titration using an indicator to detect the endpoint where acid and alkali fully neutralise (no calculations, qualitative only).
+- **AQA**: 4.4.2.3 Titrations: qualitative endpoint detection using indicators; volumes not required at Foundation (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.9 Titrations using indicators; identifying the endpoint (colour change with indicator); volumes and calculations at Higher only (GCSE Chemistry 1CH0)
+- **OCR**: C3.1e Introduction to titrations; using indicators to find the endpoint of neutralisation (GCSE Chemistry A J248 Gateway)
+
+#### Uses of Neutralisation: Soil, Stings, Indigestion (Challenge, `chemistry-acids-alkalis-neutralisation-uses`)
+- **KS3**: Real-world applications of neutralisation: soil pH correction for agriculture, treating insect stings, indigestion tablets; understanding why neutralisation matters.
+- **AQA**: 4.4.2.1 Neutralisation and its uses; pH control in agriculture, medical contexts (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.7 Neutralisation; Topic 3.8 Real-world uses of neutralisation and salt production (GCSE Chemistry 1CH0)
+- **OCR**: C3.1d Salts and their uses; neutralisation in everyday contexts: farming, health, industry (GCSE Chemistry A J248 Gateway)
+
+#### Concentration vs Strength: Distinguishing Terms (Confident, `chemistry-acids-alkalis-concentration-strength`)
+- **KS3**: Understanding the difference between concentration (amount of solute per unit solvent) and strength (degree of ionisation); why dilute strong acids and concentrated weak acids behave differently.
+- **AQA**: 4.4.2.2 Strong and weak acids; difference between concentration and strength (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.10 Strong and weak acids; concentration is not the same as strength; effect on reactions (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Strong and weak acids and alkalis; concentration versus degree of ionisation (GCSE Chemistry A J248 Gateway)
+
 ### Zone: pH (`chemistry-ph`)
 
 #### The pH Scale (Core, `chemistry-ph-scale`)
@@ -967,6 +1273,60 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.4.2.2 Strong and weak acids; concentration vs strength (GCSE Chemistry 8462)
 - **Edexcel**: Topic 3.10 Strong and weak acids; the difference between concentration and strength (GCSE Chemistry 1CH0)
 - **OCR**: C3.1c Strong and weak acids and alkalis (GCSE Chemistry A J248 Gateway)
+
+#### Reading Universal Indicator: Calibration and Colour Charts (Confident, `chemistry-ph-indicator-calibration`)
+- **KS3**: The use of indicators to identify acids and alkalis; comparing the pH of different solutions using standard colour charts.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; use of indicators (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 Indicators and the pH scale; colour change ranges (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b Indicators and colour ranges; qualitative pH determination (GCSE Chemistry A J248 Gateway)
+
+#### Digital pH Meters and pH Probes (Confident, `chemistry-ph-digital-probes`)
+- **KS3**: Comparing methods of measuring acidity: universal indicator versus pH probe; understanding that digital probes give numerical pH readings directly.
+- **AQA**: 4.4.2.1 The pH scale; measurement and recording of pH using appropriate equipment (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; apparatus for measuring pH accurately (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b Measurement of pH using electronic meters and probes (GCSE Chemistry A J248 Gateway)
+
+#### pH of Everyday Substances: Ranking and Ordering (Confident, `chemistry-ph-common-substances`)
+- **KS3**: Understanding that different everyday solutions sit at different points on the pH scale; lemon juice, vinegar, water, soap, bleach; ordering by acidity or alkalinity.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; identification of pH ranges of common substances (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; pH of everyday materials and solutions (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b Applications of the pH scale to common household and laboratory substances (GCSE Chemistry A J248 Gateway)
+
+#### The Logarithmic Scale: Why Each pH Unit Means 10-fold Change (Challenge, `chemistry-ph-logarithmic-scale`)
+- **KS3**: Appreciating that the pH scale is logarithmic: moving from pH 5 to pH 4 means the solution is ten times more acidic; a qualitative sense of exponential change.
+- **AQA**: 4.4.2.2 Strong and weak acids; understanding relative acidity from pH values (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.10 Strong and weak acids; the significance of pH differences (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Interpreting pH scales and the intensity of acidity or alkalinity (GCSE Chemistry A J248 Gateway)
+
+#### pH During Neutralisation: Curve Shape and Turning Point (Confident, `chemistry-ph-neutralisation-curve`)
+- **KS3**: Observing how pH changes during a titration or neutralisation reaction: starting low (acidic), rising steadily, crossing pH 7, reaching a plateau (alkali); recognising the steep region as the equivalence point.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.3 Reactions of acids with alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.7 Neutralisation reactions; tracking pH change during a reaction (GCSE Chemistry 1CH0)
+- **OCR**: C3.1c Neutralisation; C3.1d Salts produced in neutralisation (GCSE Chemistry A J248 Gateway)
+
+#### Soil pH and Plant Health: Liming and Sulphur Amendments (Confident, `chemistry-ph-soil-alkalinity`)
+- **KS3**: Understanding that soils have a pH, and that plants prefer specific pH ranges; acidic soils benefit from calcium hydroxide (lime); alkaline soils benefit from sulfur compounds.
+- **AQA**: 4.4.2.1 The pH scale; applications to agriculture and soil chemistry (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; environmental and agricultural pH applications (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b The pH scale and its use in agriculture and environmental science (GCSE Chemistry A J248 Gateway)
+
+#### Ocean Acidification: CO₂ Absorption and pH Decline (Challenge, `chemistry-ph-ocean-acidification`)
+- **KS3**: Recognising that atmospheric carbon dioxide dissolves in seawater, forming carbonic acid, and lowering the ocean pH over time; a contemporary KS3 scientific concern.
+- **AQA**: 4.4.2.1 The pH scale; 4.9.2 Atmospheric chemistry and environmental impacts (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; Topic 14 Chemistry and the environment; ocean acidification (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b The pH scale; C7.3 Chemistry of the atmosphere and climate change impacts (GCSE Chemistry A J248 Gateway)
+
+#### Acid Rain: pH Below 5.6, Effects on Limestone and Freshwater (Challenge, `chemistry-ph-acid-rain`)
+- **KS3**: Understanding that rain naturally contains carbonic acid (pH ~5.6) and recognising when pollution creates acid rain (pH below 5.6); damage to limestone buildings, statues, and freshwater ecosystems.
+- **AQA**: 4.4.2.1 The pH scale; 4.9.2 Atmospheric chemistry; sulfur dioxide and acid rain (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; Topic 14.2 Atmospheric chemistry and pollution; acid rain (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b The pH scale and environmental impacts; C7.3 Atmospheric chemistry and acid rain effects (GCSE Chemistry A J248 Gateway)
+
+#### Stomach Acid, Digestion, and Indigestion Remedies (Confident, `chemistry-ph-digestion-antacid`)
+- **KS3**: Recognising that stomach acid (hydrochloric acid, pH ~2) is essential for digestion; indigestion occurs when excess acid causes discomfort; antacids (weak alkalis or salts) neutralise stomach acid.
+- **AQA**: 4.4.2.1 The pH scale and neutralisation; 4.4.2.3 Reactions of acids with alkalis (GCSE Chemistry 8462)
+- **Edexcel**: Topic 3.6 The pH scale; Topic 3.7 Neutralisation; applications to biology and health (GCSE Chemistry 1CH0)
+- **OCR**: C3.1b The pH scale; C3.1c Neutralisation and its applications to medicine (GCSE Chemistry A J248 Gateway)
 
 ### Zone: Simple Reactions (`chemistry-simple-reactions`)
 
@@ -987,6 +1347,66 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.10.1.1 Corrosion and its prevention; rusting of iron requires oxygen and water (GCSE Chemistry 8462)
 - **Edexcel**: Topic 4 Extracting metals; CC10 Reversible reactions; Topic 8 Reactivity of metals (rusting; barrier methods, sacrificial protection) (GCSE Chemistry 1CH0)
 - **OCR**: C5.1d Corrosion; rusting of iron and steel; conditions needed; barrier and sacrificial methods of protection (GCSE Chemistry A J248 Gateway)
+
+#### Complete and Incomplete Combustion (Confident, `chemistry-simple-reactions-combustion-complete-incomplete`)
+- **KS3**: Combustion, thermal decomposition, oxidation and displacement reactions; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.9.1.1 Combustion of hydrocarbons; incomplete combustion, products carbon monoxide and soot (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4.2 Complete combustion and incomplete combustion of hydrocarbons; carbon monoxide and soot formation (GCSE Chemistry 1CH0)
+- **OCR**: C7.2a Complete and incomplete combustion of hydrocarbons; carbon monoxide as hazard (GCSE Chemistry A J248 Gateway)
+
+#### Combustion: Balanced Symbol Equations (Confident, `chemistry-simple-reactions-combustion-symbol-equations`)
+- **KS3**: Chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations; balancing equations.
+- **AQA**: 4.9.1.1 Combustion of hydrocarbons; balancing simple symbol equations CH4 + 2O2 to CO2 + 2H2O (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; CC9 Writing and balancing simple symbol equations for combustion (GCSE Chemistry 1CH0)
+- **OCR**: C7.2b Balanced symbol equations for combustion of hydrocarbons (GCSE Chemistry A J248 Gateway)
+
+#### Oxidation: Gain of Oxygen (Confident, `chemistry-simple-reactions-oxidation-gain`)
+- **KS3**: Oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.5.1.1 Exothermic reactions; oxidation as gain of oxygen (combustion and the burning of metals) (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8.2 Oxidation and reduction; oxidation as gain of oxygen; examples: burning magnesium, iron in oxygen (GCSE Chemistry 1CH0)
+- **OCR**: C5.1a Oxidation as gain of oxygen; examples: magnesium burning to form magnesium oxide, iron burning to form iron oxide (GCSE Chemistry A J248 Gateway)
+
+#### Reduction: Loss of Oxygen (Challenge, `chemistry-simple-reactions-reduction-loss`)
+- **KS3**: Oxidation and displacement reactions; chemical reactions as the rearrangement of atoms; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.5.2 Oxidation and reduction; reduction as loss of oxygen; extracting metals from ores (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; reduction as loss of oxygen; qualitative example copper oxide + carbon to copper (GCSE Chemistry 1CH0)
+- **OCR**: C5.1b Reduction as loss of oxygen; ore reduction by carbon (GCSE Chemistry A J248 Gateway)
+
+#### Displacement Reactions: Reactivity Series (Challenge, `chemistry-simple-reactions-displacement-reactivity`)
+- **KS3**: Displacement reactions; the reactivity series and patterns of reactivity; more reactive metals displace less reactive from salt solutions.
+- **AQA**: 4.4.1.1 Reactivity of metals; the reactivity series (K, Na, Ca, Mg, Al, Zn, Fe, Cu); displacement reactions (GCSE Chemistry 8462)
+- **Edexcel**: Topic 4 Extracting metals; CC9 The reactivity series; displacement: more reactive metal pushes out less reactive (GCSE Chemistry 1CH0)
+- **OCR**: C5.1c The reactivity series and displacement reactions; comparing metal reactivity via solution experiments (GCSE Chemistry A J248 Gateway)
+
+#### Thermal Decomposition of Metal Carbonates (Confident, `chemistry-simple-reactions-thermal-decomposition-carbonates`)
+- **KS3**: Thermal decomposition; oxidation and displacement reactions; representing chemical reactions using formulae and using equations.
+- **AQA**: 4.10.2.1 Thermal decomposition; decomposition of carbonates: CaCO3 to CaO + CO2 (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8.1 Decomposition; thermal decomposition of metal carbonates; limestone in cement and concrete (GCSE Chemistry 1CH0)
+- **OCR**: C7.1 Thermal decomposition of carbonates (qualitative and symbol equations) (GCSE Chemistry A J248 Gateway)
+
+#### Conservation of Mass in Reactions (Challenge, `chemistry-simple-reactions-conservation-mass`)
+- **KS3**: Chemical reactions as the rearrangement of atoms; conservation of mass changes of state and chemical reactions; closed systems.
+- **AQA**: 4.1.1.3 Conservation of mass in chemical reactions (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8.5 Conservation of mass; mass balance in closed-system reactions; explaining apparent mass loss when gas escapes (GCSE Chemistry 1CH0)
+- **OCR**: C1.1b Conservation of mass; reasoning about mass changes when substances dissolve or gas is released (GCSE Chemistry A J248 Gateway)
+
+#### Endothermic and Exothermic Reactions (Confident, `chemistry-simple-reactions-endothermic-exothermic`)
+- **KS3**: Chemical reactions transfer energy (exothermic: heat released; endothermic: heat absorbed); combustion as exothermic.
+- **AQA**: 4.5.1.1 Exothermic reactions; 4.5.1.2 Endothermic reactions; qualitative examples (GCSE Chemistry 8462)
+- **Edexcel**: Topic 5 Energy changes in reactions; exothermic (combustion, neutralisation); endothermic (melting ice, dissolving) (GCSE Chemistry 1CH0)
+- **OCR**: C5.2a Exothermic and endothermic reactions; qualitative energy transfer (GCSE Chemistry A J248 Gateway)
+
+#### Gas Tests: Hydrogen, Oxygen, Carbon Dioxide (Confident, `chemistry-simple-reactions-gas-tests`)
+- **KS3**: Chemical reactions; testing products of reactions (gases); using simple tests to identify hydrogen, oxygen and carbon dioxide.
+- **AQA**: 4.4.2.3 Tests for hydrogen (lit splint, squeaky pop), oxygen (glowing splint relights), CO2 (limewater) (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8.6 Identifying products of reactions; tests for H2, O2, CO2 using splints and limewater (GCSE Chemistry 1CH0)
+- **OCR**: C3.2a Tests for gases: hydrogen squeaky pop, oxygen relights splint, CO2 turns limewater cloudy (GCSE Chemistry A J248 Gateway)
+
+#### Rust Prevention: Barrier and Sacrificial Methods (Challenge, `chemistry-simple-reactions-rust-prevention-methods`)
+- **KS3**: Rusting prevention; barrier methods (paint, oil); sacrificial protection (zinc coating, galvanising).
+- **AQA**: 4.10.1.1 Corrosion and its prevention; barrier methods; sacrificial protection; galvanising (GCSE Chemistry 8462)
+- **Edexcel**: Topic 8 Reactivity of metals; rusting prevention by painting, oiling, galvanising; comparing effectiveness (GCSE Chemistry 1CH0)
+- **OCR**: C5.1d Protection of iron and steel: barrier methods (paint, oil); sacrificial protection (zinc); galvanising (GCSE Chemistry A J248 Gateway)
 
 ---
 
