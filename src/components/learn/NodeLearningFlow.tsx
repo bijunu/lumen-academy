@@ -281,7 +281,11 @@ export function NodeLearningFlow({
             question={question}
             misconceptions={node.misconceptions}
             onComplete={handleQuestionComplete}
-            onHintRequest={() => onRequestHint(question.stem)}
+            onHintRequest={
+              status === 'authenticated'
+                ? () => onRequestHint(question.stem)
+                : undefined
+            }
             onJudgeFreeText={
               status === 'authenticated'
                 ? async answer =>

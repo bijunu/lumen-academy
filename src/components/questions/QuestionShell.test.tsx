@@ -74,6 +74,31 @@ describe('QuestionShell', () => {
     expect(getByText('core')).toBeTruthy()
   })
 
+  describe('hint trigger', () => {
+    it('renders the hint trigger when onHintRequest is provided', () => {
+      const { getByText } = render(
+        <QuestionShell
+          question={mockQuestion}
+          misconceptions={[]}
+          onComplete={vi.fn()}
+          onHintRequest={vi.fn()}
+        />
+      )
+      expect(getByText(/Need a hint/)).toBeTruthy()
+    })
+
+    it('hides the hint trigger when onHintRequest is undefined', () => {
+      const { queryByText } = render(
+        <QuestionShell
+          question={mockQuestion}
+          misconceptions={[]}
+          onComplete={vi.fn()}
+        />
+      )
+      expect(queryByText(/Need a hint/)).toBeNull()
+    })
+  })
+
   describe('eliminate-and-retry mode', () => {
     it('marks wrong picks tried, leaves others clickable, hides Try again', () => {
       const onComplete = vi.fn()

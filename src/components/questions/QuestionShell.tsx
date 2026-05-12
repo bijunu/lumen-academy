@@ -247,7 +247,7 @@ export function QuestionShell({
         />
       )}
 
-      {!isAnswered && question.hint && onHintRequest && (
+      {!isAnswered && onHintRequest && (
         <button
           onClick={onHintRequest}
           className="text-sm text-muted-foreground underline hover:text-foreground"

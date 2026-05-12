@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import { useSession } from 'next-auth/react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { HintButton } from './HintButton'
 import type { HintLevel, TutorInput, TutorOutput } from '@/types/tutor'
@@ -26,6 +27,7 @@ export function TutorPanel({
   currentQuestionStem,
   onHintConsumed,
 }: TutorPanelProps) {
+  const { status } = useSession()
   const [messages, setMessages] = useState<TutorMessage[]>([
     {
       role: 'system',
@@ -100,6 +102,16 @@ export function TutorPanel({
     hintIndex,
     onHintConsumed,
   ])
+
+  if (status !== 'authenticated') {
+    return (
+      <div className="flex h-full items-center justify-center p-6">
+        <p className="text-center text-sm text-muted-foreground">
+          AI Tutor available when signed in.
+        </p>
+      </div>
+    )
+  }
 
   return (
     <div className="flex h-full flex-col">

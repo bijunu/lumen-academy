@@ -1,6 +1,8 @@
 import type { TutorInput, TutorOutput } from '@/types/tutor'
 import { logger } from '@/lib/logger'
 
+const TUTOR_MODEL = process.env.TUTOR_MODEL ?? 'claude-sonnet-4-6'
+
 export async function callTutor(input: TutorInput): Promise<TutorOutput> {
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) {
@@ -16,7 +18,7 @@ export async function callTutor(input: TutorInput): Promise<TutorOutput> {
     const userMessage = buildUserMessage(input)
 
     const response = await client.messages.create({
-      model: 'claude-sonnet-4-6',
+      model: TUTOR_MODEL,
       max_tokens: 512,
       system: systemPrompt,
       messages: [{ role: 'user', content: userMessage }],
