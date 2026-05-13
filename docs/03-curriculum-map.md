@@ -772,6 +772,24 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: CB1c Specialised cells (GCSE Biology 1BI0, Topic 1)
 - **OCR**: B1.1.2 Cell differentiation and specialisation (GCSE Biology A J247)
 
+#### Diffusion and Osmosis in Cells (Confident, `biology-cells-diffusion-osmosis`)
+- **KS3**: The role of the cell membrane in controlling what enters and leaves the cell; how diffusion and osmosis allow substances to move into and out of cells.
+- **AQA**: 4.1.3.1 Diffusion; 4.1.3.2 Osmosis (GCSE Biology 8461)
+- **Edexcel**: CB2a Movement across cell membranes: diffusion; CB2b Osmosis (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.3 Movement across cell membranes: diffusion and osmosis (GCSE Biology A J247)
+
+#### Mitosis and Cell Division (Confident, `biology-cells-mitosis`)
+- **KS3**: How cells divide for growth and repair; the role of mitosis in producing daughter cells with identical genetic material.
+- **AQA**: 4.1.4.1 Cell division (mitosis) (GCSE Biology 8461)
+- **Edexcel**: CB3 The cell cycle and mitosis (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.2.1 The cell cycle and mitosis (GCSE Biology A J247)
+
+#### Surface Area to Volume Ratio (Challenge, `biology-cells-surface-area-to-volume`)
+- **KS3**: The size and scale of cells; why small organisms exchange materials directly with their environment but larger organisms need specialised transport systems.
+- **AQA**: 4.1.1.1 Size of cells; surface area to volume ratio and its effect on the rate of exchange (GCSE Biology 8461)
+- **Edexcel**: CB1f Surface area to volume ratio and exchange surfaces (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.4 Surface area to volume ratio; implications for transport in larger organisms (GCSE Biology A J247)
+
 ### Zone: Microscopy (`biology-microscopy`)
 
 #### Light Microscope (Core, `biology-microscopy-light-microscope`)
@@ -785,6 +803,24 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.1.1.5 Size and scale of cells (GCSE Biology 8461)
 - **Edexcel**: CB1e Magnification (GCSE Biology 1BI0, Topic 1)
 - **OCR**: B1.1.4 Calculating magnification and size (GCSE Biology A J247)
+
+#### Scale Bars and Unit Conversion (Confident, `biology-microscopy-scale-bar`)
+- **KS3**: Cells as the fundamental unit of living organisms, including how to observe, interpret and record cell structure using a light microscope; measurement to scale using a calibrated reference.
+- **AQA**: Required practical 1: Microscopy; scale bar use; conversion between mm, micrometres and nanometres (GCSE Biology 8461)
+- **Edexcel**: CB1e Magnification and scale bars (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.4 Using scale bars to determine actual sizes of cell structures (GCSE Biology A J247)
+
+#### Resolution and the Limits of Light Microscopy (Confident, `biology-microscopy-resolution`)
+- **KS3**: How to observe, interpret and record cell structure using a light microscope; the limits of what can be distinguished with a school microscope.
+- **AQA**: 4.1.1.3 Magnification, resolution and the limits of light microscopy (GCSE Biology 8461)
+- **Edexcel**: CB1e Resolution; why electron microscopes are needed for ultra-small structures (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1.4 The relationship between magnification, resolution and the practical limits of light microscopy (GCSE Biology A J247)
+
+#### Electron Microscopes: TEM and SEM (Challenge, `biology-microscopy-electron-microscopes`)
+- **KS3**: Year 7 grammar-school stretch beyond KS3; introduces the imaging tool that revealed sub-cellular structure.
+- **AQA**: 4.1.1.3 Transmission and scanning electron microscopy; how higher resolution reveals sub-cellular structures (GCSE Biology 8461)
+- **Edexcel**: CB1e Electron microscopy and its role in revealing ultra-structure (GCSE Biology 1BI0, Topic 1)
+- **OCR**: B1.1b Electron microscopes: TEM vs SEM (GCSE Biology A J247)
 
 ### Zone: Body Systems (`biology-body-systems`)
 
@@ -805,6 +841,36 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.2.2.3 Gas exchange in the lungs (GCSE Biology 8461)
 - **Edexcel**: CB2d Respiratory system / SB6c Gas exchange (GCSE Biology 1BI0, Topics 2 and 6)
 - **OCR**: B2.1.3 The respiratory system (GCSE Biology A J247)
+
+#### Balanced Diet and Nutrients (Confident, `biology-body-systems-nutrition`)
+- **KS3**: The content of a healthy human diet: carbohydrates, lipids (fats and oils), proteins, vitamins, minerals, dietary fibre and water, and why each is needed; the consequences of imbalances in the diet, including obesity, starvation and deficiency diseases.
+- **AQA**: 4.2.1.1 Nutrition in humans; food groups, dietary requirements and deficiency diseases (GCSE Biology 8461)
+- **Edexcel**: CB2b Nutrition; balanced diet, food groups, deficiency (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.5 Nutrition and a balanced diet (GCSE Biology A J247)
+
+#### Enzymes as Biological Catalysts (Challenge, `biology-body-systems-enzymes`)
+- **KS3**: Enzymes simply as biological catalysts; how digestive enzymes break down large molecules into smaller, soluble ones; introductory model of how enzymes speed up reactions without being used up.
+- **AQA**: 4.2.2.1 Enzymes in digestion; lock-and-key model at introductory level (GCSE Biology 8461)
+- **Edexcel**: CB2a Enzymes; function and factors affecting activity (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.4 Enzymes (GCSE Biology A J247)
+
+#### Skeleton, Joints, and Muscles (Confident, `biology-body-systems-skeleton`)
+- **KS3**: The structure and functions of the human skeleton, to include support, protection, movement and making blood cells; the role of muscles, joints and the heart in transport; biomechanics; antagonistic muscle pairs.
+- **AQA**: 4.2.2.2 The skeleton, joints and muscles; antagonistic muscle pairs (GCSE Biology 8461)
+- **Edexcel**: CB2e Skeletal and muscular systems (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.2.1 The skeleton and muscles (GCSE Biology A J247)
+
+#### Heart Structure and Blood Vessels (Confident, `biology-body-systems-heart-structure`)
+- **KS3**: The role of the heart and blood vessels in transport; observation of mammalian heart structure; the distinction between arteries, veins and capillaries.
+- **AQA**: 4.2.2.2 The heart and blood vessels: chambers, valves, arteries, veins, capillaries (GCSE Biology 8461)
+- **Edexcel**: CB2c The heart, arteries, veins, capillaries (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.2 Structure and function of the heart and blood vessels (GCSE Biology A J247)
+
+#### Red and White Blood Cells (Confident, `biology-body-systems-blood-cells`)
+- **KS3**: The role of red blood cells in carrying oxygen; the role of white blood cells in defending against pathogens; observation of blood components.
+- **AQA**: 4.2.2.2 Red and white blood cells; adaptations of red blood cells (GCSE Biology 8461)
+- **Edexcel**: CB2c Blood cells; composition and function (GCSE Biology 1BI0, Topic 2)
+- **OCR**: B2.1.2 Blood composition; red and white blood cells, platelets, plasma (GCSE Biology A J247)
 
 ### Zone: Reproduction (`biology-reproduction`)
 
@@ -834,6 +900,24 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: SB4d Classification within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
 - **OCR**: B6.2.2 Classification (GCSE Biology A J247)
 
+#### Genetic and Environmental Variation (Confident, `biology-variation-genetic-environmental`)
+- **KS3**: The variation between individuals within a species being continuous or discontinuous; genes as units of inheritance; environmental factors that influence variation alongside genetics.
+- **AQA**: 4.6.1.1 Genetic and environmental causes of variation (GCSE Biology 8461)
+- **Edexcel**: SB4e Genetic and environmental variation (GCSE Biology 1BI0, Topic 4)
+- **OCR**: B6.3.1 Causes of variation (GCSE Biology A J247)
+
+#### Natural Selection Introduction (Confident, `biology-variation-natural-selection`)
+- **KS3**: The variation between species and between individuals of the same species meaning some organisms compete more successfully, which can drive natural selection.
+- **AQA**: 4.6.3.1 Natural selection; Darwin and the theory of evolution at introductory level (GCSE Biology 8461)
+- **Edexcel**: SB4b Natural selection within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
+- **OCR**: B6.2.3 Natural selection and adaptation (GCSE Biology A J247)
+
+#### Adaptations to Environment (Challenge, `biology-variation-adaptations`)
+- **KS3**: The structural adaptations of some unicellular organisms; how organisms affect, and are affected by, their environment; how adaptations relate to habitat.
+- **AQA**: 4.6.3.2 Adaptations of organisms: structural, behavioural and functional (GCSE Biology 8461)
+- **Edexcel**: SB4c Adaptation within Topic 4 Natural selection and genetic modification (GCSE Biology 1BI0)
+- **OCR**: B6.2.4 Adaptations for survival (GCSE Biology A J247)
+
 ### Zone: Ecosystems (`biology-ecosystems`)
 
 #### Food Chains (Core, `biology-ecosystems-food-chains`)
@@ -854,6 +938,30 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **Edexcel**: SB9d Energy flow through an ecosystem (GCSE Biology 1BI0, Topic 9). Year 7 scope is qualitative energy loss only.
 - **OCR**: B6.1e Energy flow and pyramids of numbers (GCSE Biology A J247). Year 7 scope is the pyramid of numbers only.
 
+#### Bioaccumulation of Toxic Materials (Confident, `biology-ecosystems-bioaccumulation`)
+- **KS3**: The interdependence of organisms in an ecosystem; how organisms affect, and are affected by, their environment, including the accumulation of toxic materials in food chains.
+- **AQA**: 4.7.2.3 Accumulation of toxic materials in food chains (GCSE Biology 8461)
+- **Edexcel**: SB9e Bioaccumulation and biomagnification of toxic substances (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.1e Accumulation of toxic substances in food chains (GCSE Biology A J247)
+
+#### Competition Between Organisms (Confident, `biology-ecosystems-competition`)
+- **KS3**: The interdependence of organisms in an ecosystem; how organisms affect, and are affected by, their environment; how organisms compete for resources such as food, water, light and space.
+- **AQA**: 4.7.2.1 Interdependence; competition for resources (GCSE Biology 8461)
+- **Edexcel**: SB9c Competition between organisms for food and resources (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.1d Competition; organisms competing for resources (GCSE Biology A J247)
+
+#### Predator-Prey Population Cycles (Challenge, `biology-ecosystems-predator-prey-cycles`)
+- **KS3**: How organisms affect, and are affected by, their environment and by other organisms; population changes following environmental change (qualitative).
+- **AQA**: 4.7.2.1 How populations of predators and prey rise and fall in cycles (GCSE Biology 8461)
+- **Edexcel**: SB9c Changes in food relationships leading to predator-prey population cycles (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.1d Population changes; oscillation of predator and prey populations (GCSE Biology A J247)
+
+#### Quadrat Sampling and Population Estimation (Challenge, `biology-ecosystems-quadrat-sampling`)
+- **KS3**: Use sampling methods to investigate the population of organisms in a habitat and collect data on environmental conditions.
+- **AQA**: 4.7.2.5 Sampling techniques; using quadrats to estimate population size (GCSE Biology 8461)
+- **Edexcel**: SB9f Sampling and estimating population size using quadrats and mark-recapture (GCSE Biology 1BI0, Topic 9)
+- **OCR**: B6.3 Sampling; using random quadrats to estimate population size (GCSE Biology A J247)
+
 ### Zone: Photosynthesis (`biology-photosynthesis`)
 
 #### Photosynthesis Overview (Core, `biology-photosynthesis-overview`)
@@ -867,6 +975,24 @@ Year 7 scope: the first three bullets, restricted to single events and two-event
 - **AQA**: 4.4.1.2 Rate of photosynthesis; limiting factors (GCSE Biology 8461)
 - **Edexcel**: SB6b Limiting factors and the rate of photosynthesis (GCSE Biology 1BI0, Topic 6)
 - **OCR**: B4.1.2 Rate of photosynthesis (GCSE Biology A J247)
+
+#### Leaf Structure and Gas Exchange (Confident, `biology-photosynthesis-leaf-gas-exchange`)
+- **KS3**: The adaptations of leaves for photosynthesis; the role of leaf stomata in gas exchange in plants; the structure of a leaf in cross-section.
+- **AQA**: 4.4.1.2 Plant adaptations; 4.4.2 Gas exchange in plants; stomata and guard cells (GCSE Biology 8461)
+- **Edexcel**: SB6b Photosynthesis; SB6c Gas exchange in plants (GCSE Biology 1BI0, Topic 6)
+- **OCR**: B4.2.1 Gas exchange in plants; stomata, guard cells, leaf tissue layers (GCSE Biology A J247)
+
+#### Testing for Starch in Leaves (Confident, `biology-photosynthesis-starch-test`)
+- **KS3**: The reactants in, and products of, photosynthesis; the use of iodine solution to test for starch as evidence that photosynthesis has occurred.
+- **AQA**: 4.4.1.3 Evidence for photosynthesis; starch as the storage product; iodine test (GCSE Biology 8461)
+- **Edexcel**: SB6a Photosynthesis; SB6b Detection of products; iodine test for starch (GCSE Biology 1BI0, Topic 6)
+- **OCR**: B4.1.1 Photosynthesis; identification of starch using iodine (GCSE Biology A J247)
+
+#### Balanced Symbol Equation for Photosynthesis (Challenge, `biology-photosynthesis-balanced-equation`)
+- **KS3**: Year 7 grammar-school stretch; introduces representing photosynthesis as a balanced chemical equation alongside the word equation.
+- **AQA**: 4.4.1.1 Balanced equation: 6CO2 + 6H2O to C6H12O6 + 6O2 (GCSE Biology 8461)
+- **Edexcel**: SB6a Photosynthesis: balanced equation notation (GCSE Biology 1BI0, Topic 6)
+- **OCR**: B4.1.1 Photosynthesis: symbol equation (GCSE Biology A J247)
 
 ---
 
