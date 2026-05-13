@@ -36,6 +36,11 @@ export {
   bodySystemsZone,
   bodySystemsZoneNodes,
 } from './body-systems'
+export { nutrition } from './body-systems-nutrition'
+export { enzymes } from './body-systems-enzymes'
+export { skeletonJoints } from './body-systems-skeleton'
+export { heartStructure } from './body-systems-heart-structure'
+export { bloodCells } from './body-systems-blood-cells'
 export {
   floweringPlantReproduction,
   humanReproductionOverview,

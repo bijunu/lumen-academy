@@ -2081,10 +2081,21 @@ export const respiratorySystem: SkillNode = {
   },
 }
 
+import { nutrition } from './body-systems-nutrition'
+import { skeletonJoints } from './body-systems-skeleton'
+import { heartStructure } from './body-systems-heart-structure'
+import { bloodCells } from './body-systems-blood-cells'
+import { enzymes } from './body-systems-enzymes'
+
 export const bodySystemsZoneNodes: SkillNode[] = [
   digestiveSystem,
   circulatorySystem,
   respiratorySystem,
+  nutrition,
+  enzymes,
+  skeletonJoints,
+  heartStructure,
+  bloodCells,
 ]
 
 export const bodySystemsZone: Zone = {
@@ -2095,5 +2106,10 @@ export const bodySystemsZone: Zone = {
     digestiveSystem.id,
     circulatorySystem.id,
     respiratorySystem.id,
+    nutrition.id,
+    enzymes.id,
+    skeletonJoints.id,
+    heartStructure.id,
+    bloodCells.id,
   ],
 }
