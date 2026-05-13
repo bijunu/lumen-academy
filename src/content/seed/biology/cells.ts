@@ -640,12 +640,29 @@ export const animalCell: SkillNode = {
 
 import { plantCell } from './plant-cell'
 import { specialisedCells } from './specialised-cells'
+import { diffusionOsmosis } from './cells-diffusion-osmosis'
+import { mitosis } from './cells-mitosis'
+import { surfaceAreaToVolume } from './cells-surface-area-to-volume'
 
-export const cellsZoneNodes: SkillNode[] = [animalCell, plantCell, specialisedCells]
+export const cellsZoneNodes: SkillNode[] = [
+  animalCell,
+  plantCell,
+  specialisedCells,
+  diffusionOsmosis,
+  mitosis,
+  surfaceAreaToVolume,
+]
 
 export const cellsZone: Zone = {
   id: 'biology-cells',
   name: 'Cells',
   realm: 'vitalia',
-  nodeIds: [animalCell.id, plantCell.id, specialisedCells.id],
+  nodeIds: [
+    animalCell.id,
+    plantCell.id,
+    specialisedCells.id,
+    diffusionOsmosis.id,
+    mitosis.id,
+    surfaceAreaToVolume.id,
+  ],
 }

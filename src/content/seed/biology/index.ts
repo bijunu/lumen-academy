@@ -17,6 +17,9 @@ import { ecosystemsZone, ecosystemsZoneNodes } from './ecosystems'
 export { animalCell, cellsZone, cellsZoneNodes } from './cells'
 export { plantCell } from './plant-cell'
 export { specialisedCells } from './specialised-cells'
+export { diffusionOsmosis } from './cells-diffusion-osmosis'
+export { mitosis } from './cells-mitosis'
+export { surfaceAreaToVolume } from './cells-surface-area-to-volume'
 export {
   lightMicroscope,
   magnificationCalculations,
