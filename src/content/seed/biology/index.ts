@@ -26,6 +26,9 @@ export {
   microscopyZone,
   microscopyZoneNodes,
 } from './microscopy'
+export { scaleBar } from './microscopy-scale-bar'
+export { resolution } from './microscopy-resolution'
+export { electronMicroscopes } from './microscopy-electron-microscopes'
 export {
   digestiveSystem,
   circulatorySystem,

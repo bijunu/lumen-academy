@@ -1282,11 +1282,27 @@ export const magnificationCalculations: SkillNode = {
   },
 }
 
-export const microscopyZoneNodes: SkillNode[] = [lightMicroscope, magnificationCalculations]
+import { scaleBar } from './microscopy-scale-bar'
+import { resolution } from './microscopy-resolution'
+import { electronMicroscopes } from './microscopy-electron-microscopes'
+
+export const microscopyZoneNodes: SkillNode[] = [
+  lightMicroscope,
+  magnificationCalculations,
+  scaleBar,
+  resolution,
+  electronMicroscopes,
+]
 
 export const microscopyZone: Zone = {
   id: 'biology-microscopy',
   name: 'Microscopy',
   realm: 'vitalia',
-  nodeIds: [lightMicroscope.id, magnificationCalculations.id],
+  nodeIds: [
+    lightMicroscope.id,
+    magnificationCalculations.id,
+    scaleBar.id,
+    resolution.id,
+    electronMicroscopes.id,
+  ],
 }
